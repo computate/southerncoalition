@@ -21,6 +21,10 @@ https://www.computate.org/enUS/course/001/008-how-to-obtain-free-tls-certificate
 
 https://www.openshift.com/products/online/
 
+For Red Hat employees, you can get permission from your manager to create a free OpenShift account to deploy to: 
+
+https://employee.openshift.com/register/employee/introduction
+
 # Installation
 
 The installation of the project for both development and production in containers is completely automated with Ansible. 
