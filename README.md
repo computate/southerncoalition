@@ -9,11 +9,15 @@
 
 https://www.computate.org/enUS/course/001/001-choose-domain-name
 
+For Red Hat employees, see Christopher Tate for details about a domain name you can use for development, or feel free to obtain your own for practice. 
+
 ## What can I do once I have purchased a domain name?
 
 ### Obtain a valid TLS certificate for free, for security and credibility. 
 
 https://www.computate.org/enUS/course/001/008-how-to-obtain-free-tls-certificates
+
+For Red Hat employees, see Christopher Tate for details about the TLS certificates you can use for development, or feel free to generate your own for practice. 
 
 ## Where can I host the project online? 
 
@@ -31,7 +35,8 @@ The installation of the project for both development and production in container
 Begin by installing both the ansible and python3 packages. 
 
 ```bash
-sudo yum install -y ansible python3
+sudo yum install -y ansible python3 python3-pip
+sudo pip3 install psycopg2
 ```
 
 ## Ansible on older operating systems. 
@@ -52,10 +57,18 @@ sudo vim /etc/ansible/ansible.cfg
 [defaults]
 interpreter_python=/usr/bin/python3
 ```
+
+Your dependencies might be different on an older operating system. 
+
+```bash
+sudo yum install -y ansible python python-pip
+sudo pip install psycopg2
+```
+
 ## Ansible training. 
 
 For training on ansible and automation, I recommend the following Red Hat course. 
-By completing the course and taking the exam, you can be a Certified Specialist in Ansible Automation. 
+By completing the course and taking the exam, you can be a Red Hat Certified Specialist in Ansible Automation. 
 
 https://www.redhat.com/en/services/training/do407-automation-ansible-i
 
@@ -129,29 +142,47 @@ Change to the computate ansible directory.
 cd /usr/local/src/computate/ansible
 ```
 
-Run the playbook to install a PostgreSQL server on your development computer. 
+#### Run the playbook to install a PostgreSQL server on your development computer. 
 
 ```bash
 ansible-playbook computate_postgres.yml -i /usr/local/src/southerncoalition-ansible/inventories/$USER-$HOSTNAME/hosts --vault-id @prompt
 ```
 
-Run the playbook to install a Zookeeper cluster manager on your development computer. 
+#### Run the playbook to install a Zookeeper cluster manager on your development computer. 
 
 ```bash
 ansible-playbook computate_zookeeper.yml -i /usr/local/src/southerncoalition-ansible/inventories/$USER-$HOSTNAME/hosts --vault-id @prompt
 ```
 
-Run the playbook to install a Solr search engine on your development computer. 
+#### Run the playbook to install a Solr search engine on your development computer. 
 
 ```bash
 ansible-playbook computate_zookeeper.yml -i /usr/local/src/southerncoalition-ansible/inventories/$USER-$HOSTNAME/hosts --vault-id @prompt
 ```
 
-Run the playbook to install the southerncoalition project for development. 
+#### Run the playbook to install the southerncoalition project for development. 
 
 ```bash
 ansible-playbook southerncoalition.yml -i /usr/local/src/southerncoalition-ansible/inventories/$USER-$HOSTNAME/hosts --vault-id @prompt
 ```
+
+If you are on an older operating system with an older version of ansible, you may run into the following error: 
+
+```
+ERROR! no action detected in task. This often indicates a misspelled module name, or incorrect module path.
+
+The error appears to have been in '/usr/local/src/computate/ansible/roles/southerncoalition/tasks/main.yml': line 62, column 3, but may                                                                                                   
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  become_user: "{{POSTGRES_BECOME_USER}}"
+- name: Grant enUS user access to database
+  ^ here
+```
+
+This means that the older version of ansible probably doesn't support the postgresql_pg_hba module and you will have to remove that task before running the ansible playbook successfully. 
+You will need to configure the PostgreSQL hba configuration yourself in this situation. 
 
 # Start the development project in English. 
 
@@ -200,6 +231,11 @@ Environment Variables:
 * zookeeperPort: 2181
 
 # Deploy southerncoalition in US English to OpenShift. 
+
+For training on OpenShift and modern cloud application development, I recommend the following Red Hat course. 
+By completing the course and taking the exam, you can be a Red Hat Certified Specialist in OpenShift Application Development. 
+
+https://www.redhat.com/en/services/training/do288-red-hat-openshift-development-i-containerizing-applications
 
 ### Create an ansible inventory for production. 
 
