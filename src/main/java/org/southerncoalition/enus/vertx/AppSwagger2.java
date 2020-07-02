@@ -44,7 +44,7 @@ public class AppSwagger2 extends AppSwagger2Gen<Object> {
 	}
 
 	protected void _appName(Wrap<String> c) {
-		c.o("computate-medicale");
+		c.o("southerncoalition");
 	}
 
 	protected void _languageName(Wrap<String> c) {
@@ -213,7 +213,7 @@ public class AppSwagger2 extends AppSwagger2Gen<Object> {
 //		  /callback:
 //		    get:
 //		      operationId: callback
-//		      x-vertx-event-bus: computate-medicale-enUS-School
+//		      x-vertx-event-bus: southerncoalition-enUS-School
 //		      responses:
 //		        '200':
 //		          description: >+
@@ -224,7 +224,7 @@ public class AppSwagger2 extends AppSwagger2Gen<Object> {
 //		  /logout:
 //		    get:
 //		      operationId: logout
-//		      x-vertx-event-bus: computate-medicale-enUS-School
+//		      x-vertx-event-bus: southerncoalition-enUS-School
 //		      responses:
 //		        '200':
 //		          description: >+

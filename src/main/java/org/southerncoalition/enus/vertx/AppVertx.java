@@ -311,7 +311,7 @@ public class AppVertx extends AppVertxGen<AbstractVerticle> {
 				}
 		
 		//		ClusteredSessionStore sessionStore = ClusteredSessionStore.create(vertx);
-				LocalSessionStore sessionStore = LocalSessionStore.create(vertx, "computate-medicale-sessions");
+				LocalSessionStore sessionStore = LocalSessionStore.create(vertx, "southerncoalition-sessions");
 				SessionHandler sessionHandler = SessionHandler.create(sessionStore);
 				sessionHandler.setAuthProvider(authProvider);
 		
