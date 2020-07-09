@@ -32,7 +32,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 
 /**	
- * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstClasse_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true">Trouver la classe  dans Solr</a>
+ * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstClasse_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true">Trouver la classe  dans Solr</a>
  * <br/>
  **/
 public abstract class ClassWritersGen<DEV> extends Object {
@@ -52,7 +52,7 @@ public abstract class ClassWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « siteRequest_ »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:siteRequest_">Trouver l'entité siteRequest_ dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:siteRequest_">Trouver l'entité siteRequest_ dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -90,7 +90,7 @@ public abstract class ClassWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « wClass »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wClass">Trouver l'entité wClass dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wClass">Trouver l'entité wClass dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -130,7 +130,7 @@ public abstract class ClassWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « wFields »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wFields">Trouver l'entité wFields dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wFields">Trouver l'entité wFields dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -170,7 +170,7 @@ public abstract class ClassWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « wGettersSetters »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wGettersSetters">Trouver l'entité wGettersSetters dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wGettersSetters">Trouver l'entité wGettersSetters dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -210,7 +210,7 @@ public abstract class ClassWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « wHashCode »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wHashCode">Trouver l'entité wHashCode dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wHashCode">Trouver l'entité wHashCode dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -250,7 +250,7 @@ public abstract class ClassWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « wToString »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wToString">Trouver l'entité wToString dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wToString">Trouver l'entité wToString dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -290,7 +290,7 @@ public abstract class ClassWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « wEquals »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wEquals">Trouver l'entité wEquals dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wEquals">Trouver l'entité wEquals dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -330,7 +330,7 @@ public abstract class ClassWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « wImports »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wImports">Trouver l'entité wImports dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wImports">Trouver l'entité wImports dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -370,7 +370,7 @@ public abstract class ClassWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « wNamedQuery »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wNamedQuery">Trouver l'entité wNamedQuery dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wNamedQuery">Trouver l'entité wNamedQuery dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -410,7 +410,7 @@ public abstract class ClassWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « wIndex »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wIndex">Trouver l'entité wIndex dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wIndex">Trouver l'entité wIndex dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -450,7 +450,7 @@ public abstract class ClassWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « wStore »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wStore">Trouver l'entité wStore dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wStore">Trouver l'entité wStore dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -490,7 +490,7 @@ public abstract class ClassWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « writersApi »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:writersApi">Trouver l'entité writersApi dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.ClassWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:writersApi">Trouver l'entité writersApi dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/

@@ -37,7 +37,7 @@ import org.southerncoalition.enus.context.SiteContextEnUS;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 
 /**	
- * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstClasse_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true">Trouver la classe  dans Solr</a>
+ * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstClasse_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true">Trouver la classe  dans Solr</a>
  * <br/>
  **/
 public abstract class RepositoryWritersGen<DEV> extends Object {
@@ -57,7 +57,7 @@ public abstract class RepositoryWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « siteRequest_ »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:siteRequest_">Trouver l'entité siteRequest_ dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:siteRequest_">Trouver l'entité siteRequest_ dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -95,7 +95,7 @@ public abstract class RepositoryWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « solrDocumentClass »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:solrDocumentClass">Trouver l'entité solrDocumentClass dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:solrDocumentClass">Trouver l'entité solrDocumentClass dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -133,7 +133,7 @@ public abstract class RepositoryWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « searchEntitiesResults »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:searchEntitiesResults">Trouver l'entité searchEntitiesResults dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:searchEntitiesResults">Trouver l'entité searchEntitiesResults dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -171,7 +171,7 @@ public abstract class RepositoryWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « projectPathLinux »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:projectPathLinux">Trouver l'entité projectPathLinux dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:projectPathLinux">Trouver l'entité projectPathLinux dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -233,7 +233,7 @@ public abstract class RepositoryWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « repositoryPackageName »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:repositoryPackageName">Trouver l'entité repositoryPackageName dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:repositoryPackageName">Trouver l'entité repositoryPackageName dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -295,7 +295,7 @@ public abstract class RepositoryWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « persistPackageName »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:persistPackageName">Trouver l'entité persistPackageName dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:persistPackageName">Trouver l'entité persistPackageName dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -357,7 +357,7 @@ public abstract class RepositoryWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « classSimpleName »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:classSimpleName">Trouver l'entité classSimpleName dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:classSimpleName">Trouver l'entité classSimpleName dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -419,7 +419,7 @@ public abstract class RepositoryWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « persistSimpleName »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:persistSimpleName">Trouver l'entité persistSimpleName dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:persistSimpleName">Trouver l'entité persistSimpleName dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -481,7 +481,7 @@ public abstract class RepositoryWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « classApiMethods »
 	 * Il est construit avant d'être initialisé avec le constructeur par défaut List<String>(). 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:classApiMethods">Trouver l'entité classApiMethods dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:classApiMethods">Trouver l'entité classApiMethods dans Solr</a>
 	 * <br/>
 	 * @param classApiMethods est l'entité déjà construit. 
 	 **/
@@ -560,7 +560,7 @@ public abstract class RepositoryWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « siteContext »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:siteContext">Trouver l'entité siteContext dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:siteContext">Trouver l'entité siteContext dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -600,7 +600,7 @@ public abstract class RepositoryWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « classAbsolutePath »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:classAbsolutePath">Trouver l'entité classAbsolutePath dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:classAbsolutePath">Trouver l'entité classAbsolutePath dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -662,7 +662,7 @@ public abstract class RepositoryWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « repositorySimpleName »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:repositorySimpleName">Trouver l'entité repositorySimpleName dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:repositorySimpleName">Trouver l'entité repositorySimpleName dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -724,7 +724,7 @@ public abstract class RepositoryWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « repositoryImplSimpleName »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:repositoryImplSimpleName">Trouver l'entité repositoryImplSimpleName dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:repositoryImplSimpleName">Trouver l'entité repositoryImplSimpleName dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -786,7 +786,7 @@ public abstract class RepositoryWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « pathDir »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pathDir">Trouver l'entité pathDir dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pathDir">Trouver l'entité pathDir dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -848,7 +848,7 @@ public abstract class RepositoryWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « dir »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:dir">Trouver l'entité dir dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:dir">Trouver l'entité dir dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -886,7 +886,7 @@ public abstract class RepositoryWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « pathRepository »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pathRepository">Trouver l'entité pathRepository dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pathRepository">Trouver l'entité pathRepository dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -948,7 +948,7 @@ public abstract class RepositoryWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « pathRepositoryImpl »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pathRepositoryImpl">Trouver l'entité pathRepositoryImpl dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pathRepositoryImpl">Trouver l'entité pathRepositoryImpl dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -1010,7 +1010,7 @@ public abstract class RepositoryWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « pathSqlDir »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pathSqlDir">Trouver l'entité pathSqlDir dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pathSqlDir">Trouver l'entité pathSqlDir dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -1072,7 +1072,7 @@ public abstract class RepositoryWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « fileRepository »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:fileRepository">Trouver l'entité fileRepository dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:fileRepository">Trouver l'entité fileRepository dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -1110,7 +1110,7 @@ public abstract class RepositoryWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « fileRepositoryImpl »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:fileRepositoryImpl">Trouver l'entité fileRepositoryImpl dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:fileRepositoryImpl">Trouver l'entité fileRepositoryImpl dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -1148,7 +1148,7 @@ public abstract class RepositoryWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « wRepository »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wRepository">Trouver l'entité wRepository dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wRepository">Trouver l'entité wRepository dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/
@@ -1188,7 +1188,7 @@ public abstract class RepositoryWritersGen<DEV> extends Object {
 
 	/**	<br/>L'entité « wRepositoryImpl »
 	 *  est défini comme null avant d'être initialisé. 
-	 * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wRepositoryImpl">Trouver l'entité wRepositoryImpl dans Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.writer.RepositoryWriters&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:wRepositoryImpl">Trouver l'entité wRepositoryImpl dans Solr</a>
 	 * <br/>
 	 * @param c est pour envelopper une valeur à assigner à cette entité lors de l'initialisation. 
 	 **/

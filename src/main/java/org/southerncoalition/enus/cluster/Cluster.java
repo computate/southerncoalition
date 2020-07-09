@@ -45,7 +45,7 @@ import org.southerncoalition.enus.xml.UtilXml;
  * Role.frFR: SiteAdmin
  * Role.enUS: SiteAdmin
  * RoleRead.enUS: User
- */   
+ */  
 public class Cluster extends ClusterGen<Object> {       
 
 	protected void _siteRequest_(Wrap<SiteRequestEnUS> c) {}

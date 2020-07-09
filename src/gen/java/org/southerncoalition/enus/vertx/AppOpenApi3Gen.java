@@ -1,18 +1,37 @@
 package org.southerncoalition.enus.vertx;
 
-import java.util.Objects;
-import java.util.Optional;
-
-import org.apache.commons.lang3.StringUtils;
-import org.southerncoalition.enus.cluster.Cluster;
-import org.southerncoalition.enus.request.SiteRequestEnUS;
+import java.util.Arrays;
 import org.southerncoalition.enus.request.api.ApiRequest;
-
-import io.vertx.core.logging.Logger;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+import java.util.HashMap;
+import org.apache.commons.lang3.StringUtils;
+import java.text.NumberFormat;
 import io.vertx.core.logging.LoggerFactory;
+import java.util.ArrayList;
+import org.apache.commons.collections.CollectionUtils;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.southerncoalition.enus.vertx.AppSwagger2;
+import io.vertx.core.logging.Logger;
+import org.southerncoalition.enus.cluster.Cluster;
+import org.southerncoalition.enus.wrap.Wrap;
+import org.southerncoalition.enus.writer.AllWriter;
+import java.math.MathContext;
+import org.apache.commons.text.StringEscapeUtils;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.southerncoalition.enus.request.SiteRequestEnUS;
+import java.util.Objects;
+import io.vertx.core.json.JsonArray;
+import org.apache.commons.lang3.math.NumberUtils;
+import java.util.Optional;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 
 /**	
- * <br/><a href="http://localhost:10383/solr/computate/select?q=*:*&fq=partEstClasse_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.vertx.AppOpenApi3&fq=classeEtendGen_indexed_boolean:true">Trouver la classe  dans Solr</a>
+ * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstClasse_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.vertx.AppOpenApi3&fq=classeEtendGen_indexed_boolean:true">Find the class  in Solr. </a>
  * <br/>
  **/
 public abstract class AppOpenApi3Gen<DEV> extends AppSwagger2 {
