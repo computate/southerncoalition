@@ -3,7 +3,7 @@ info:
   title: "southerncoalition"
   version: 3.0.0
 servers:
-  - url: https://southerncoalition-dev.example.com:10581
+  - url: https://southerncoalition-dev.heytate.com:10681
 paths:
 
   /callback:
@@ -1184,6 +1184,3109 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/requestBodies/ErrorResponse'
+  /api/html-part:
+    post:
+      operationId: postHtmlPart
+      x-vertx-event-bus: southerncoalition-enUS-HtmlPart
+      security:
+        - openIdConnect:
+          - DefaultAuthScope
+      description: >+
+      summary: >+
+      tags:
+        - Html Part
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/POSTHtmlPartRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/POSTHtmlPartResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+    patch:
+      operationId: patchHtmlPart
+      x-vertx-event-bus: southerncoalition-enUS-HtmlPart
+      security:
+        - openIdConnect:
+          - DefaultAuthScope
+      description: >+
+      summary: >+
+      tags:
+        - Html Part
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PATCHHtmlPartRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PATCHHtmlPartResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+    get:
+      operationId: searchHtmlPart
+      x-vertx-event-bus: southerncoalition-enUS-HtmlPart
+      security:
+        - openIdConnect:
+          - DefaultAuthScope
+      description: >+
+      summary: >+
+      tags:
+        - Html Part
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/SearchHtmlPartResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/html-part/copy:
+    put:
+      operationId: putcopyHtmlPart
+      x-vertx-event-bus: southerncoalition-enUS-HtmlPart
+      security:
+        - openIdConnect:
+          - DefaultAuthScope
+      description: >+
+      summary: >+
+      tags:
+        - Html Part
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PUTCopyHtmlPartRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PUTCopyHtmlPartResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/html-part/import:
+    put:
+      operationId: putimportHtmlPart
+      x-vertx-event-bus: southerncoalition-enUS-HtmlPart
+      security:
+        - openIdConnect:
+          - DefaultAuthScope
+      description: >+
+      summary: >+
+      tags:
+        - Html Part
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PUTImportHtmlPartRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PUTImportHtmlPartResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/html-part/merge:
+    put:
+      operationId: putmergeHtmlPart
+      x-vertx-event-bus: southerncoalition-enUS-HtmlPart
+      security:
+        - openIdConnect:
+          - DefaultAuthScope
+      description: >+
+      summary: >+
+      tags:
+        - Html Part
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PUTMergeHtmlPartRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PUTMergeHtmlPartResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/html-part/{id}:
+    get:
+      operationId: getHtmlPart
+      x-vertx-event-bus: southerncoalition-enUS-HtmlPart
+      security:
+        - openIdConnect:
+          - DefaultAuthScope
+      description: >+
+      summary: >+
+      tags:
+        - Html Part
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: >+
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/GETHtmlPartResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /html-part:
+    get:
+      operationId: searchpageHtmlPart
+      x-vertx-event-bus: southerncoalition-enUS-HtmlPart
+      security:
+        - openIdConnect:
+          - DefaultAuthScope
+      description: >+
+      summary: >+
+      tags:
+        - Html Part
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            text/html; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/SearchPageHtmlPartResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /html-part/{id}:
+    get:
+      operationId: searchpageHtmlPartId
+      x-vertx-event-bus: southerncoalition-enUS-HtmlPart
+      security:
+        - openIdConnect:
+          - DefaultAuthScope
+      description: >+
+      summary: >+
+      tags:
+        - Html Part
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: >+
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            text/html; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/SearchPageHtmlPartResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /:
+    get:
+      operationId: homepagesearchpagePageDesign
+      x-vertx-event-bus: southerncoalition-enUS-PageDesign
+      description: >+
+      summary: >+
+      tags:
+        - Page Design
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            text/html; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/HomePageSearchPagePageDesignResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/admin/page-design:
+    get:
+      operationId: adminsearchPageDesign
+      x-vertx-event-bus: southerncoalition-enUS-PageDesign
+      description: >+
+      summary: >+
+      tags:
+        - Page Design
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/AdminSearchPageDesignResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/page-design:
+    post:
+      operationId: postPageDesign
+      x-vertx-event-bus: southerncoalition-enUS-PageDesign
+      description: >+
+      summary: >+
+      tags:
+        - Page Design
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/POSTPageDesignRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/POSTPageDesignResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+    patch:
+      operationId: patchPageDesign
+      x-vertx-event-bus: southerncoalition-enUS-PageDesign
+      description: >+
+      summary: >+
+      tags:
+        - Page Design
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PATCHPageDesignRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PATCHPageDesignResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+    get:
+      operationId: searchPageDesign
+      x-vertx-event-bus: southerncoalition-enUS-PageDesign
+      description: >+
+      summary: >+
+      tags:
+        - Page Design
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/SearchPageDesignResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/page-design/copy:
+    put:
+      operationId: putcopyPageDesign
+      x-vertx-event-bus: southerncoalition-enUS-PageDesign
+      description: >+
+      summary: >+
+      tags:
+        - Page Design
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PUTCopyPageDesignRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PUTCopyPageDesignResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/page-design/import:
+    put:
+      operationId: putimportPageDesign
+      x-vertx-event-bus: southerncoalition-enUS-PageDesign
+      description: >+
+      summary: >+
+      tags:
+        - Page Design
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PUTImportPageDesignRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PUTImportPageDesignResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/page-design/merge:
+    put:
+      operationId: putmergePageDesign
+      x-vertx-event-bus: southerncoalition-enUS-PageDesign
+      description: >+
+      summary: >+
+      tags:
+        - Page Design
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PUTMergePageDesignRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PUTMergePageDesignResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/page-design/{id}:
+    get:
+      operationId: getPageDesign
+      x-vertx-event-bus: southerncoalition-enUS-PageDesign
+      description: >+
+      summary: >+
+      tags:
+        - Page Design
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: >+
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/GETPageDesignResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /email:
+    get:
+      operationId: designemailsearchpagePageDesign
+      x-vertx-event-bus: southerncoalition-enUS-PageDesign
+      description: >+
+      summary: >+
+      tags:
+        - Page Design
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            text/html; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/DesignEmailSearchPagePageDesignResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /email/{id}:
+    get:
+      operationId: designemailsearchpagePageDesignId
+      x-vertx-event-bus: southerncoalition-enUS-PageDesign
+      description: >+
+      summary: >+
+      tags:
+        - Page Design
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: >+
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            text/html; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/DesignEmailSearchPagePageDesignResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /page:
+    get:
+      operationId: designdisplaysearchpagePageDesign
+      x-vertx-event-bus: southerncoalition-enUS-PageDesign
+      description: >+
+      summary: >+
+      tags:
+        - Page Design
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            text/html; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/DesignDisplaySearchPagePageDesignResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /page/{id}:
+    get:
+      operationId: designdisplaysearchpagePageDesignId
+      x-vertx-event-bus: southerncoalition-enUS-PageDesign
+      description: >+
+      summary: >+
+      tags:
+        - Page Design
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: >+
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            text/html; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/DesignDisplaySearchPagePageDesignResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /page-design:
+    get:
+      operationId: searchpagePageDesign
+      x-vertx-event-bus: southerncoalition-enUS-PageDesign
+      description: >+
+      summary: >+
+      tags:
+        - Page Design
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            text/html; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/SearchPagePageDesignResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /page-design/{id}:
+    get:
+      operationId: searchpagePageDesignId
+      x-vertx-event-bus: southerncoalition-enUS-PageDesign
+      description: >+
+      summary: >+
+      tags:
+        - Page Design
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: >+
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            text/html; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/SearchPagePageDesignResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /pdf:
+    get:
+      operationId: designpdfsearchpagePageDesign
+      x-vertx-event-bus: southerncoalition-enUS-PageDesign
+      description: >+
+      summary: >+
+      tags:
+        - Page Design
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            application/pdf:
+              schema:
+                $ref: '#/components/requestBodies/DesignPdfSearchPagePageDesignResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /pdf/{id}:
+    get:
+      operationId: designpdfsearchpagePageDesignId
+      x-vertx-event-bus: southerncoalition-enUS-PageDesign
+      description: >+
+      summary: >+
+      tags:
+        - Page Design
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: >+
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            application/pdf:
+              schema:
+                $ref: '#/components/requestBodies/DesignPdfSearchPagePageDesignResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
 components:
   securitySchemes:
     openIdConnect:
@@ -1265,6 +4368,161 @@ components:
         application/json; charset=utf-8:
           schema:
             $ref: '#/components/schemas/GETClusterResponse'
+    POSTHtmlPartRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/POSTHtmlPartRequest'
+    POSTHtmlPartResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/POSTHtmlPartResponse'
+    PATCHHtmlPartRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PATCHHtmlPartRequest'
+    PATCHHtmlPartResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PATCHHtmlPartResponse'
+    SearchHtmlPartResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/SearchHtmlPartResponse'
+    PUTCopyHtmlPartRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PUTCopyHtmlPartRequest'
+    PUTCopyHtmlPartResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PUTCopyHtmlPartResponse'
+    PUTImportHtmlPartRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PUTImportHtmlPartRequest'
+    PUTImportHtmlPartResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PUTImportHtmlPartResponse'
+    PUTMergeHtmlPartRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PUTMergeHtmlPartRequest'
+    PUTMergeHtmlPartResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PUTMergeHtmlPartResponse'
+    GETHtmlPartResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/GETHtmlPartResponse'
+    SearchPageHtmlPartResponse:
+      content:
+        text/html; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/SearchPageHtmlPartResponse'
+    HomePageSearchPagePageDesignResponse:
+      content:
+        text/html; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/HomePageSearchPagePageDesignResponse'
+    AdminSearchPageDesignResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/AdminSearchPageDesignResponse'
+    POSTPageDesignRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/POSTPageDesignRequest'
+    POSTPageDesignResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/POSTPageDesignResponse'
+    PATCHPageDesignRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PATCHPageDesignRequest'
+    PATCHPageDesignResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PATCHPageDesignResponse'
+    SearchPageDesignResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/SearchPageDesignResponse'
+    PUTCopyPageDesignRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PUTCopyPageDesignRequest'
+    PUTCopyPageDesignResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PUTCopyPageDesignResponse'
+    PUTImportPageDesignRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PUTImportPageDesignRequest'
+    PUTImportPageDesignResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PUTImportPageDesignResponse'
+    PUTMergePageDesignRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PUTMergePageDesignRequest'
+    PUTMergePageDesignResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PUTMergePageDesignResponse'
+    GETPageDesignResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/GETPageDesignResponse'
+    DesignEmailSearchPagePageDesignResponse:
+      content:
+        text/html; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/DesignEmailSearchPagePageDesignResponse'
+    DesignDisplaySearchPagePageDesignResponse:
+      content:
+        text/html; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/DesignDisplaySearchPagePageDesignResponse'
+    SearchPagePageDesignResponse:
+      content:
+        text/html; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/SearchPagePageDesignResponse'
+    DesignPdfSearchPagePageDesignResponse:
+      content:
+        application/pdf:
+          schema:
+            $ref: '#/components/schemas/DesignPdfSearchPagePageDesignResponse'
   schemas:
     SearchSiteUserResponse:
       allOf:
@@ -2278,6 +5536,1477 @@ components:
               type: string
             pageH1:
               type: string
+    POSTHtmlPartRequest:
+      allOf:
+        - $ref: "#/components/schemas/POSTClusterRequest"
+        - type: object
+          properties:
+            htmlPartKey:
+              type: string
+            pageDesignKeys:
+              type: array
+              items:
+                type: string
+            htmlLink:
+              type: string
+            htmlElement:
+              type: string
+            htmlId:
+              type: string
+            htmlClasses:
+              type: string
+            htmlStyle:
+              type: string
+            htmlBefore:
+              type: string
+            htmlAfter:
+              type: string
+            htmlText:
+              type: string
+            htmlVar:
+              type: string
+            htmlVarSpan:
+              type: string
+            htmlVarForm:
+              type: string
+            htmlVarInput:
+              type: string
+            htmlVarForEach:
+              type: string
+            htmlExclude:
+              type: boolean
+            pdfExclude:
+              type: boolean
+            loginLogout:
+              type: boolean
+            sort1:
+              type: string
+            sort2:
+              type: string
+            sort3:
+              type: string
+            sort4:
+              type: string
+            sort5:
+              type: string
+            sort6:
+              type: string
+            sort7:
+              type: string
+            sort8:
+              type: string
+            sort9:
+              type: string
+            sort10:
+              type: string
+    POSTHtmlPartResponse:
+      allOf:
+        - $ref: "#/components/schemas/POSTClusterResponse"
+        - type: object
+          properties:
+            htmlPartKey:
+              type: string
+            pageDesignKeys:
+              type: array
+              items:
+                type: string
+            htmlLink:
+              type: string
+            htmlElement:
+              type: string
+            htmlId:
+              type: string
+            htmlClasses:
+              type: string
+            htmlStyle:
+              type: string
+            htmlBefore:
+              type: string
+            htmlAfter:
+              type: string
+            htmlText:
+              type: string
+            htmlVar:
+              type: string
+            htmlVarSpan:
+              type: string
+            htmlVarForm:
+              type: string
+            htmlVarInput:
+              type: string
+            htmlVarForEach:
+              type: string
+            htmlExclude:
+              type: boolean
+            pdfExclude:
+              type: boolean
+            loginLogout:
+              type: boolean
+            sort1:
+              type: string
+            sort2:
+              type: string
+            sort3:
+              type: string
+            sort4:
+              type: string
+            sort5:
+              type: string
+            sort6:
+              type: string
+            sort7:
+              type: string
+            sort8:
+              type: string
+            sort9:
+              type: string
+            sort10:
+              type: string
+    PATCHHtmlPartRequest:
+      allOf:
+        - $ref: "#/components/schemas/PATCHClusterRequest"
+        - type: object
+          properties:
+            setHtmlPartKey:
+              type: string
+              nullable: true
+            removeHtmlPartKey:
+              type: string
+            removeAllHtmlPartKey:
+              type: string
+            setPageDesignKeys:
+              type: array
+              nullable: true
+              items:
+                type: string
+            removePageDesignKeys:
+              type: string
+            removeAllPageDesignKeys:
+              type: array
+              items:
+                type: string
+            addPageDesignKeys:
+              type: string
+            addAllPageDesignKeys:
+              type: array
+              items:
+                type: string
+            setHtmlLink:
+              type: string
+              nullable: true
+            removeHtmlLink:
+              type: string
+            removeAllHtmlLink:
+              type: string
+            setHtmlElement:
+              type: string
+              nullable: true
+            removeHtmlElement:
+              type: string
+            removeAllHtmlElement:
+              type: string
+            setHtmlId:
+              type: string
+              nullable: true
+            removeHtmlId:
+              type: string
+            removeAllHtmlId:
+              type: string
+            setHtmlClasses:
+              type: string
+              nullable: true
+            removeHtmlClasses:
+              type: string
+            removeAllHtmlClasses:
+              type: string
+            setHtmlStyle:
+              type: string
+              nullable: true
+            removeHtmlStyle:
+              type: string
+            removeAllHtmlStyle:
+              type: string
+            setHtmlBefore:
+              type: string
+              nullable: true
+            removeHtmlBefore:
+              type: string
+            removeAllHtmlBefore:
+              type: string
+            setHtmlAfter:
+              type: string
+              nullable: true
+            removeHtmlAfter:
+              type: string
+            removeAllHtmlAfter:
+              type: string
+            setHtmlText:
+              type: string
+              nullable: true
+            removeHtmlText:
+              type: string
+            removeAllHtmlText:
+              type: string
+            setHtmlVar:
+              type: string
+              nullable: true
+            removeHtmlVar:
+              type: string
+            removeAllHtmlVar:
+              type: string
+            setHtmlVarSpan:
+              type: string
+              nullable: true
+            removeHtmlVarSpan:
+              type: string
+            removeAllHtmlVarSpan:
+              type: string
+            setHtmlVarForm:
+              type: string
+              nullable: true
+            removeHtmlVarForm:
+              type: string
+            removeAllHtmlVarForm:
+              type: string
+            setHtmlVarInput:
+              type: string
+              nullable: true
+            removeHtmlVarInput:
+              type: string
+            removeAllHtmlVarInput:
+              type: string
+            setHtmlVarForEach:
+              type: string
+              nullable: true
+            removeHtmlVarForEach:
+              type: string
+            removeAllHtmlVarForEach:
+              type: string
+            setHtmlExclude:
+              type: boolean
+              nullable: true
+            removeHtmlExclude:
+              type: boolean
+            removeAllHtmlExclude:
+              type: boolean
+            setPdfExclude:
+              type: boolean
+              nullable: true
+            removePdfExclude:
+              type: boolean
+            removeAllPdfExclude:
+              type: boolean
+            setLoginLogout:
+              type: boolean
+              nullable: true
+            removeLoginLogout:
+              type: boolean
+            removeAllLoginLogout:
+              type: boolean
+            setSort1:
+              type: string
+              nullable: true
+            removeSort1:
+              type: string
+            removeAllSort1:
+              type: string
+            setSort2:
+              type: string
+              nullable: true
+            removeSort2:
+              type: string
+            removeAllSort2:
+              type: string
+            setSort3:
+              type: string
+              nullable: true
+            removeSort3:
+              type: string
+            removeAllSort3:
+              type: string
+            setSort4:
+              type: string
+              nullable: true
+            removeSort4:
+              type: string
+            removeAllSort4:
+              type: string
+            setSort5:
+              type: string
+              nullable: true
+            removeSort5:
+              type: string
+            removeAllSort5:
+              type: string
+            setSort6:
+              type: string
+              nullable: true
+            removeSort6:
+              type: string
+            removeAllSort6:
+              type: string
+            setSort7:
+              type: string
+              nullable: true
+            removeSort7:
+              type: string
+            removeAllSort7:
+              type: string
+            setSort8:
+              type: string
+              nullable: true
+            removeSort8:
+              type: string
+            removeAllSort8:
+              type: string
+            setSort9:
+              type: string
+              nullable: true
+            removeSort9:
+              type: string
+            removeAllSort9:
+              type: string
+            setSort10:
+              type: string
+              nullable: true
+            removeSort10:
+              type: string
+            removeAllSort10:
+              type: string
+    PATCHHtmlPartResponse:
+      allOf:
+        - $ref: "#/components/schemas/PATCHClusterResponse"
+        - type: object
+          properties:
+            setHtmlPartKey:
+              type: string
+              nullable: true
+            removeHtmlPartKey:
+              type: string
+            removeAllHtmlPartKey:
+              type: string
+            setPageDesignKeys:
+              type: array
+              nullable: true
+              items:
+                type: string
+            removePageDesignKeys:
+              type: string
+            removeAllPageDesignKeys:
+              type: array
+              items:
+                type: string
+            addPageDesignKeys:
+              type: string
+            addAllPageDesignKeys:
+              type: array
+              items:
+                type: string
+            setHtmlLink:
+              type: string
+              nullable: true
+            removeHtmlLink:
+              type: string
+            removeAllHtmlLink:
+              type: string
+            setHtmlElement:
+              type: string
+              nullable: true
+            removeHtmlElement:
+              type: string
+            removeAllHtmlElement:
+              type: string
+            setHtmlId:
+              type: string
+              nullable: true
+            removeHtmlId:
+              type: string
+            removeAllHtmlId:
+              type: string
+            setHtmlClasses:
+              type: string
+              nullable: true
+            removeHtmlClasses:
+              type: string
+            removeAllHtmlClasses:
+              type: string
+            setHtmlStyle:
+              type: string
+              nullable: true
+            removeHtmlStyle:
+              type: string
+            removeAllHtmlStyle:
+              type: string
+            setHtmlBefore:
+              type: string
+              nullable: true
+            removeHtmlBefore:
+              type: string
+            removeAllHtmlBefore:
+              type: string
+            setHtmlAfter:
+              type: string
+              nullable: true
+            removeHtmlAfter:
+              type: string
+            removeAllHtmlAfter:
+              type: string
+            setHtmlText:
+              type: string
+              nullable: true
+            removeHtmlText:
+              type: string
+            removeAllHtmlText:
+              type: string
+            setHtmlVar:
+              type: string
+              nullable: true
+            removeHtmlVar:
+              type: string
+            removeAllHtmlVar:
+              type: string
+            setHtmlVarSpan:
+              type: string
+              nullable: true
+            removeHtmlVarSpan:
+              type: string
+            removeAllHtmlVarSpan:
+              type: string
+            setHtmlVarForm:
+              type: string
+              nullable: true
+            removeHtmlVarForm:
+              type: string
+            removeAllHtmlVarForm:
+              type: string
+            setHtmlVarInput:
+              type: string
+              nullable: true
+            removeHtmlVarInput:
+              type: string
+            removeAllHtmlVarInput:
+              type: string
+            setHtmlVarForEach:
+              type: string
+              nullable: true
+            removeHtmlVarForEach:
+              type: string
+            removeAllHtmlVarForEach:
+              type: string
+            setHtmlExclude:
+              type: boolean
+              nullable: true
+            removeHtmlExclude:
+              type: boolean
+            removeAllHtmlExclude:
+              type: boolean
+            setPdfExclude:
+              type: boolean
+              nullable: true
+            removePdfExclude:
+              type: boolean
+            removeAllPdfExclude:
+              type: boolean
+            setLoginLogout:
+              type: boolean
+              nullable: true
+            removeLoginLogout:
+              type: boolean
+            removeAllLoginLogout:
+              type: boolean
+            setSort1:
+              type: string
+              nullable: true
+            removeSort1:
+              type: string
+            removeAllSort1:
+              type: string
+            setSort2:
+              type: string
+              nullable: true
+            removeSort2:
+              type: string
+            removeAllSort2:
+              type: string
+            setSort3:
+              type: string
+              nullable: true
+            removeSort3:
+              type: string
+            removeAllSort3:
+              type: string
+            setSort4:
+              type: string
+              nullable: true
+            removeSort4:
+              type: string
+            removeAllSort4:
+              type: string
+            setSort5:
+              type: string
+              nullable: true
+            removeSort5:
+              type: string
+            removeAllSort5:
+              type: string
+            setSort6:
+              type: string
+              nullable: true
+            removeSort6:
+              type: string
+            removeAllSort6:
+              type: string
+            setSort7:
+              type: string
+              nullable: true
+            removeSort7:
+              type: string
+            removeAllSort7:
+              type: string
+            setSort8:
+              type: string
+              nullable: true
+            removeSort8:
+              type: string
+            removeAllSort8:
+              type: string
+            setSort9:
+              type: string
+              nullable: true
+            removeSort9:
+              type: string
+            removeAllSort9:
+              type: string
+            setSort10:
+              type: string
+              nullable: true
+            removeSort10:
+              type: string
+            removeAllSort10:
+              type: string
+    SearchHtmlPartResponse:
+      allOf:
+        - $ref: "#/components/schemas/SearchClusterResponse"
+        - type: array
+          items:
+            type: object
+            properties:
+              htmlPartKey:
+                type: string
+              pageDesignKeys:
+                type: array
+                items:
+                  type: string
+              htmlLink:
+                type: string
+              htmlElement:
+                type: string
+              htmlId:
+                type: string
+              htmlClasses:
+                type: string
+              htmlStyle:
+                type: string
+              htmlBefore:
+                type: string
+              htmlAfter:
+                type: string
+              htmlText:
+                type: string
+              htmlVar:
+                type: string
+              htmlVarSpan:
+                type: string
+              htmlVarForm:
+                type: string
+              htmlVarInput:
+                type: string
+              htmlVarForEach:
+                type: string
+              htmlExclude:
+                type: boolean
+              pdfExclude:
+                type: boolean
+              loginLogout:
+                type: boolean
+              sort1:
+                type: string
+              sort2:
+                type: string
+              sort3:
+                type: string
+              sort4:
+                type: string
+              sort5:
+                type: string
+              sort6:
+                type: string
+              sort7:
+                type: string
+              sort8:
+                type: string
+              sort9:
+                type: string
+              sort10:
+                type: string
+    PUTCopyHtmlPartRequest:
+      allOf:
+        - type: object
+          properties:
+            htmlPartKey:
+              type: string
+            pageDesignKeys:
+              type: array
+              items:
+                type: string
+            htmlLink:
+              type: string
+            htmlElement:
+              type: string
+            htmlId:
+              type: string
+            htmlClasses:
+              type: string
+            htmlStyle:
+              type: string
+            htmlBefore:
+              type: string
+            htmlAfter:
+              type: string
+            htmlText:
+              type: string
+            htmlVar:
+              type: string
+            htmlVarSpan:
+              type: string
+            htmlVarForm:
+              type: string
+            htmlVarInput:
+              type: string
+            htmlVarForEach:
+              type: string
+            htmlExclude:
+              type: boolean
+            pdfExclude:
+              type: boolean
+            loginLogout:
+              type: boolean
+            sort1:
+              type: string
+            sort2:
+              type: string
+            sort3:
+              type: string
+            sort4:
+              type: string
+            sort5:
+              type: string
+            sort6:
+              type: string
+            sort7:
+              type: string
+            sort8:
+              type: string
+            sort9:
+              type: string
+            sort10:
+              type: string
+    PUTCopyHtmlPartResponse:
+      allOf:
+        - type: object
+          properties:
+            htmlPartKey:
+              type: string
+            pageDesignKeys:
+              type: array
+              items:
+                type: string
+            htmlLink:
+              type: string
+            htmlElement:
+              type: string
+            htmlId:
+              type: string
+            htmlClasses:
+              type: string
+            htmlStyle:
+              type: string
+            htmlBefore:
+              type: string
+            htmlAfter:
+              type: string
+            htmlText:
+              type: string
+            htmlVar:
+              type: string
+            htmlVarSpan:
+              type: string
+            htmlVarForm:
+              type: string
+            htmlVarInput:
+              type: string
+            htmlVarForEach:
+              type: string
+            htmlExclude:
+              type: boolean
+            pdfExclude:
+              type: boolean
+            loginLogout:
+              type: boolean
+            sort1:
+              type: string
+            sort2:
+              type: string
+            sort3:
+              type: string
+            sort4:
+              type: string
+            sort5:
+              type: string
+            sort6:
+              type: string
+            sort7:
+              type: string
+            sort8:
+              type: string
+            sort9:
+              type: string
+            sort10:
+              type: string
+    PUTImportHtmlPartRequest:
+      allOf:
+        - type: object
+          properties:
+            htmlPartKey:
+              type: string
+            pageDesignKeys:
+              type: array
+              items:
+                type: string
+            htmlLink:
+              type: string
+            htmlElement:
+              type: string
+            htmlId:
+              type: string
+            htmlClasses:
+              type: string
+            htmlStyle:
+              type: string
+            htmlBefore:
+              type: string
+            htmlAfter:
+              type: string
+            htmlText:
+              type: string
+            htmlVar:
+              type: string
+            htmlVarSpan:
+              type: string
+            htmlVarForm:
+              type: string
+            htmlVarInput:
+              type: string
+            htmlVarForEach:
+              type: string
+            htmlExclude:
+              type: boolean
+            pdfExclude:
+              type: boolean
+            loginLogout:
+              type: boolean
+            sort1:
+              type: string
+            sort2:
+              type: string
+            sort3:
+              type: string
+            sort4:
+              type: string
+            sort5:
+              type: string
+            sort6:
+              type: string
+            sort7:
+              type: string
+            sort8:
+              type: string
+            sort9:
+              type: string
+            sort10:
+              type: string
+    PUTImportHtmlPartResponse:
+      allOf:
+        - type: object
+          properties:
+            htmlPartKey:
+              type: string
+            pageDesignKeys:
+              type: array
+              items:
+                type: string
+            htmlLink:
+              type: string
+            htmlElement:
+              type: string
+            htmlId:
+              type: string
+            htmlClasses:
+              type: string
+            htmlStyle:
+              type: string
+            htmlBefore:
+              type: string
+            htmlAfter:
+              type: string
+            htmlText:
+              type: string
+            htmlVar:
+              type: string
+            htmlVarSpan:
+              type: string
+            htmlVarForm:
+              type: string
+            htmlVarInput:
+              type: string
+            htmlVarForEach:
+              type: string
+            htmlExclude:
+              type: boolean
+            pdfExclude:
+              type: boolean
+            loginLogout:
+              type: boolean
+            sort1:
+              type: string
+            sort2:
+              type: string
+            sort3:
+              type: string
+            sort4:
+              type: string
+            sort5:
+              type: string
+            sort6:
+              type: string
+            sort7:
+              type: string
+            sort8:
+              type: string
+            sort9:
+              type: string
+            sort10:
+              type: string
+    PUTMergeHtmlPartRequest:
+      allOf:
+        - type: object
+          properties:
+            htmlPartKey:
+              type: string
+            pageDesignKeys:
+              type: array
+              items:
+                type: string
+            htmlLink:
+              type: string
+            htmlElement:
+              type: string
+            htmlId:
+              type: string
+            htmlClasses:
+              type: string
+            htmlStyle:
+              type: string
+            htmlBefore:
+              type: string
+            htmlAfter:
+              type: string
+            htmlText:
+              type: string
+            htmlVar:
+              type: string
+            htmlVarSpan:
+              type: string
+            htmlVarForm:
+              type: string
+            htmlVarInput:
+              type: string
+            htmlVarForEach:
+              type: string
+            htmlExclude:
+              type: boolean
+            pdfExclude:
+              type: boolean
+            loginLogout:
+              type: boolean
+            sort1:
+              type: string
+            sort2:
+              type: string
+            sort3:
+              type: string
+            sort4:
+              type: string
+            sort5:
+              type: string
+            sort6:
+              type: string
+            sort7:
+              type: string
+            sort8:
+              type: string
+            sort9:
+              type: string
+            sort10:
+              type: string
+    PUTMergeHtmlPartResponse:
+      allOf:
+        - type: object
+          properties:
+            htmlPartKey:
+              type: string
+            pageDesignKeys:
+              type: array
+              items:
+                type: string
+            htmlLink:
+              type: string
+            htmlElement:
+              type: string
+            htmlId:
+              type: string
+            htmlClasses:
+              type: string
+            htmlStyle:
+              type: string
+            htmlBefore:
+              type: string
+            htmlAfter:
+              type: string
+            htmlText:
+              type: string
+            htmlVar:
+              type: string
+            htmlVarSpan:
+              type: string
+            htmlVarForm:
+              type: string
+            htmlVarInput:
+              type: string
+            htmlVarForEach:
+              type: string
+            htmlExclude:
+              type: boolean
+            pdfExclude:
+              type: boolean
+            loginLogout:
+              type: boolean
+            sort1:
+              type: string
+            sort2:
+              type: string
+            sort3:
+              type: string
+            sort4:
+              type: string
+            sort5:
+              type: string
+            sort6:
+              type: string
+            sort7:
+              type: string
+            sort8:
+              type: string
+            sort9:
+              type: string
+            sort10:
+              type: string
+    GETHtmlPartResponse:
+      allOf:
+        - $ref: "#/components/schemas/GETClusterResponse"
+        - type: object
+          properties:
+            htmlPartKey:
+              type: string
+            pageDesignKeys:
+              type: array
+              items:
+                type: string
+            htmlLink:
+              type: string
+            htmlElement:
+              type: string
+            htmlId:
+              type: string
+            htmlClasses:
+              type: string
+            htmlStyle:
+              type: string
+            htmlBefore:
+              type: string
+            htmlAfter:
+              type: string
+            htmlText:
+              type: string
+            htmlVar:
+              type: string
+            htmlVarSpan:
+              type: string
+            htmlVarForm:
+              type: string
+            htmlVarInput:
+              type: string
+            htmlVarForEach:
+              type: string
+            htmlExclude:
+              type: boolean
+            pdfExclude:
+              type: boolean
+            loginLogout:
+              type: boolean
+            sort1:
+              type: string
+            sort2:
+              type: string
+            sort3:
+              type: string
+            sort4:
+              type: string
+            sort5:
+              type: string
+            sort6:
+              type: string
+            sort7:
+              type: string
+            sort8:
+              type: string
+            sort9:
+              type: string
+            sort10:
+              type: string
+    SearchPageHtmlPartResponse:
+      allOf:
+        - type: string
+    HomePageSearchPagePageDesignResponse:
+      allOf:
+        - type: string
+    AdminSearchPageDesignResponse:
+      allOf:
+        - type: array
+          items:
+            type: object
+            properties:
+              pageDesignKey:
+                type: string
+              childDesignKeys:
+                type: array
+                items:
+                  type: string
+              parentDesignKeys:
+                type: array
+                items:
+                  type: string
+              htmlPartKeys:
+                type: array
+                items:
+                  type: string
+              pageDesignCompleteName:
+                type: string
+              designHidden:
+                type: boolean
+    POSTPageDesignRequest:
+      allOf:
+        - $ref: "#/components/schemas/POSTClusterRequest"
+        - type: object
+          properties:
+            pageDesignKey:
+              type: string
+            childDesignKeys:
+              type: array
+              items:
+                type: string
+            parentDesignKeys:
+              type: array
+              items:
+                type: string
+            htmlPartKeys:
+              type: array
+              items:
+                type: string
+            pageDesignCompleteName:
+              type: string
+            designHidden:
+              type: boolean
+    POSTPageDesignResponse:
+      allOf:
+        - $ref: "#/components/schemas/POSTClusterResponse"
+        - type: object
+          properties:
+            pageDesignKey:
+              type: string
+            childDesignKeys:
+              type: array
+              items:
+                type: string
+            parentDesignKeys:
+              type: array
+              items:
+                type: string
+            htmlPartKeys:
+              type: array
+              items:
+                type: string
+            pageDesignCompleteName:
+              type: string
+            designHidden:
+              type: boolean
+    PATCHPageDesignRequest:
+      allOf:
+        - $ref: "#/components/schemas/PATCHClusterRequest"
+        - type: object
+          properties:
+            setPageDesignKey:
+              type: string
+              nullable: true
+            removePageDesignKey:
+              type: string
+            removeAllPageDesignKey:
+              type: string
+            setChildDesignKeys:
+              type: array
+              nullable: true
+              items:
+                type: string
+            removeChildDesignKeys:
+              type: string
+            removeAllChildDesignKeys:
+              type: array
+              items:
+                type: string
+            addChildDesignKeys:
+              type: string
+            addAllChildDesignKeys:
+              type: array
+              items:
+                type: string
+            setParentDesignKeys:
+              type: array
+              nullable: true
+              items:
+                type: string
+            removeParentDesignKeys:
+              type: string
+            removeAllParentDesignKeys:
+              type: array
+              items:
+                type: string
+            addParentDesignKeys:
+              type: string
+            addAllParentDesignKeys:
+              type: array
+              items:
+                type: string
+            setHtmlPartKeys:
+              type: array
+              nullable: true
+              items:
+                type: string
+            removeHtmlPartKeys:
+              type: string
+            removeAllHtmlPartKeys:
+              type: array
+              items:
+                type: string
+            addHtmlPartKeys:
+              type: string
+            addAllHtmlPartKeys:
+              type: array
+              items:
+                type: string
+            setPageDesignCompleteName:
+              type: string
+              nullable: true
+            removePageDesignCompleteName:
+              type: string
+            removeAllPageDesignCompleteName:
+              type: string
+            setDesignHidden:
+              type: boolean
+              nullable: true
+            removeDesignHidden:
+              type: boolean
+            removeAllDesignHidden:
+              type: boolean
+    PATCHPageDesignResponse:
+      allOf:
+        - $ref: "#/components/schemas/PATCHClusterResponse"
+        - type: object
+          properties:
+            setPageDesignKey:
+              type: string
+              nullable: true
+            removePageDesignKey:
+              type: string
+            removeAllPageDesignKey:
+              type: string
+            setChildDesignKeys:
+              type: array
+              nullable: true
+              items:
+                type: string
+            removeChildDesignKeys:
+              type: string
+            removeAllChildDesignKeys:
+              type: array
+              items:
+                type: string
+            addChildDesignKeys:
+              type: string
+            addAllChildDesignKeys:
+              type: array
+              items:
+                type: string
+            setParentDesignKeys:
+              type: array
+              nullable: true
+              items:
+                type: string
+            removeParentDesignKeys:
+              type: string
+            removeAllParentDesignKeys:
+              type: array
+              items:
+                type: string
+            addParentDesignKeys:
+              type: string
+            addAllParentDesignKeys:
+              type: array
+              items:
+                type: string
+            setHtmlPartKeys:
+              type: array
+              nullable: true
+              items:
+                type: string
+            removeHtmlPartKeys:
+              type: string
+            removeAllHtmlPartKeys:
+              type: array
+              items:
+                type: string
+            addHtmlPartKeys:
+              type: string
+            addAllHtmlPartKeys:
+              type: array
+              items:
+                type: string
+            setPageDesignCompleteName:
+              type: string
+              nullable: true
+            removePageDesignCompleteName:
+              type: string
+            removeAllPageDesignCompleteName:
+              type: string
+            setDesignHidden:
+              type: boolean
+              nullable: true
+            removeDesignHidden:
+              type: boolean
+            removeAllDesignHidden:
+              type: boolean
+    SearchPageDesignResponse:
+      allOf:
+        - $ref: "#/components/schemas/SearchClusterResponse"
+        - type: array
+          items:
+            type: object
+            properties:
+              pageDesignKey:
+                type: string
+              childDesignKeys:
+                type: array
+                items:
+                  type: string
+              parentDesignKeys:
+                type: array
+                items:
+                  type: string
+              htmlPartKeys:
+                type: array
+                items:
+                  type: string
+              pageDesignCompleteName:
+                type: string
+              designHidden:
+                type: boolean
+    PUTCopyPageDesignRequest:
+      allOf:
+        - type: object
+          properties:
+            pageDesignKey:
+              type: string
+            childDesignKeys:
+              type: array
+              items:
+                type: string
+            parentDesignKeys:
+              type: array
+              items:
+                type: string
+            htmlPartKeys:
+              type: array
+              items:
+                type: string
+            pageDesignCompleteName:
+              type: string
+            designHidden:
+              type: boolean
+    PUTCopyPageDesignResponse:
+      allOf:
+        - type: object
+          properties:
+            pageDesignKey:
+              type: string
+            childDesignKeys:
+              type: array
+              items:
+                type: string
+            parentDesignKeys:
+              type: array
+              items:
+                type: string
+            htmlPartKeys:
+              type: array
+              items:
+                type: string
+            pageDesignCompleteName:
+              type: string
+            designHidden:
+              type: boolean
+    PUTImportPageDesignRequest:
+      allOf:
+        - type: object
+          properties:
+            pageDesignKey:
+              type: string
+            childDesignKeys:
+              type: array
+              items:
+                type: string
+            parentDesignKeys:
+              type: array
+              items:
+                type: string
+            htmlPartKeys:
+              type: array
+              items:
+                type: string
+            pageDesignCompleteName:
+              type: string
+            designHidden:
+              type: boolean
+    PUTImportPageDesignResponse:
+      allOf:
+        - type: object
+          properties:
+            pageDesignKey:
+              type: string
+            childDesignKeys:
+              type: array
+              items:
+                type: string
+            parentDesignKeys:
+              type: array
+              items:
+                type: string
+            htmlPartKeys:
+              type: array
+              items:
+                type: string
+            pageDesignCompleteName:
+              type: string
+            designHidden:
+              type: boolean
+    PUTMergePageDesignRequest:
+      allOf:
+        - type: object
+          properties:
+            pageDesignKey:
+              type: string
+            childDesignKeys:
+              type: array
+              items:
+                type: string
+            parentDesignKeys:
+              type: array
+              items:
+                type: string
+            htmlPartKeys:
+              type: array
+              items:
+                type: string
+            pageDesignCompleteName:
+              type: string
+            designHidden:
+              type: boolean
+    PUTMergePageDesignResponse:
+      allOf:
+        - type: object
+          properties:
+            pageDesignKey:
+              type: string
+            childDesignKeys:
+              type: array
+              items:
+                type: string
+            parentDesignKeys:
+              type: array
+              items:
+                type: string
+            htmlPartKeys:
+              type: array
+              items:
+                type: string
+            pageDesignCompleteName:
+              type: string
+            designHidden:
+              type: boolean
+    GETPageDesignResponse:
+      allOf:
+        - $ref: "#/components/schemas/GETClusterResponse"
+        - type: object
+          properties:
+            pageDesignKey:
+              type: string
+            childDesignKeys:
+              type: array
+              items:
+                type: string
+            parentDesignKeys:
+              type: array
+              items:
+                type: string
+            htmlPartKeys:
+              type: array
+              items:
+                type: string
+            pageDesignCompleteName:
+              type: string
+            designHidden:
+              type: boolean
+    DesignEmailSearchPagePageDesignResponse:
+      allOf:
+        - type: string
+    DesignDisplaySearchPagePageDesignResponse:
+      allOf:
+        - type: string
+    SearchPagePageDesignResponse:
+      allOf:
+        - type: string
+    DesignPdfSearchPagePageDesignResponse:
+      allOf:
+        - type: string
+        - format: binary
     ErrorResponse:
       required:
         - type

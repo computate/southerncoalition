@@ -15,6 +15,8 @@ import org.apache.solr.client.solrj.response.QueryResponse;
 import org.southerncoalition.enus.cluster.ClusterEnUSGenApiService;
 import org.southerncoalition.enus.config.SiteConfig;
 import org.southerncoalition.enus.context.SiteContextEnUS;
+import org.southerncoalition.enus.design.PageDesignEnUSGenApiService;
+import org.southerncoalition.enus.html.part.HtmlPartEnUSGenApiService;
 import org.southerncoalition.enus.java.LocalDateSerializer;
 import org.southerncoalition.enus.java.LocalTimeSerializer;
 import org.southerncoalition.enus.java.ZonedDateTimeSerializer;
@@ -555,11 +557,13 @@ public class AppVertx extends AppVertxGen<AbstractVerticle> {
 
 		ClusterEnUSGenApiService.registerService(siteContextEnUS, vertx);
 		SiteUserEnUSGenApiService.registerService(siteContextEnUS, vertx);
+		PageDesignEnUSGenApiService.registerService(siteContextEnUS, vertx);
+		HtmlPartEnUSGenApiService.registerService(siteContextEnUS, vertx);
 
 		Router siteRouter = siteContextEnUS.getRouter();
 
 		StaticHandler staticHandler = StaticHandler.create().setCachingEnabled(false).setFilesReadOnly(true);
-		if("southerncoalition-dev.computate.org".equals(siteConfig.getSiteHostName())) {
+		if("southerncoalition-dev.heytate.com".equals(siteConfig.getSiteHostName())) {
 			staticHandler.setAllowRootFileSystemAccess(true);
 			staticHandler.setWebRoot("/usr/local/src/southerncoalition-static");
 		}

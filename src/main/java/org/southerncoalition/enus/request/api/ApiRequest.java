@@ -1,4 +1,4 @@
-package org.southerncoalition.enus.request.api;
+package org.southerncoalition.enus.request.api; 
 
 import java.time.ZonedDateTime;
 import java.util.List;
@@ -13,6 +13,10 @@ import org.southerncoalition.enus.wrap.Wrap;
  */
 public class ApiRequest extends ApiRequestGen<Object> {
 
+	/**
+	 * {@inheritDoc}
+	 * Ignore: true
+	 */
 	protected void _siteRequest_(Wrap<SiteRequestEnUS> c) {}
 
 	protected void _created(Wrap<ZonedDateTime> c) {

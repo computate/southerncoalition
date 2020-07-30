@@ -1,6 +1,7 @@
 package org.southerncoalition.enus.cluster;      
 
 import java.text.Normalizer;
+import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -48,6 +49,10 @@ import org.southerncoalition.enus.xml.UtilXml;
  */  
 public class Cluster extends ClusterGen<Object> {       
 
+	/**
+	 * {@inheritDoc}
+	 * Ignore: true
+	 */
 	protected void _siteRequest_(Wrap<SiteRequestEnUS> c) {}
 
 	/**
@@ -104,7 +109,9 @@ public class Cluster extends ClusterGen<Object> {
 	 * HtmlCell: 4
 	 * DisplayName.enUS: modified
 	 */ 
-	protected void _modified(Wrap<ZonedDateTime> c) {}
+	protected void _modified(Wrap<ZonedDateTime> c) {
+		c.o(ZonedDateTime.now(ZoneId.of(siteRequest_.getSiteConfig_().getSiteZone())));
+	}
 
 	/**
 	 * {@inheritDoc}
@@ -197,8 +204,9 @@ public class Cluster extends ClusterGen<Object> {
 	 * {@inheritDoc}
 	 * Indexed: true
 	 * Stored: true
+	 * Saves: true
 	 */ 
-	protected void _saves(Wrap<List<String>> c) {
+	protected void _saves(List<String> l) {
 	}
 
 	/**

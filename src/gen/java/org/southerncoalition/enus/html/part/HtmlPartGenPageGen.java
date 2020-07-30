@@ -1,0 +1,377 @@
+package org.southerncoalition.enus.html.part;
+
+import java.util.Arrays;
+import org.southerncoalition.enus.request.api.ApiRequest;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+import org.southerncoalition.enus.search.SearchList;
+import java.util.HashMap;
+import org.apache.commons.lang3.StringUtils;
+import java.text.NumberFormat;
+import io.vertx.core.logging.LoggerFactory;
+import java.util.ArrayList;
+import org.apache.commons.collections.CollectionUtils;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.southerncoalition.enus.html.part.HtmlPart;
+import io.vertx.core.logging.Logger;
+import org.southerncoalition.enus.cluster.Cluster;
+import java.math.RoundingMode;
+import org.southerncoalition.enus.wrap.Wrap;
+import org.southerncoalition.enus.writer.AllWriter;
+import java.math.MathContext;
+import org.southerncoalition.enus.page.PageLayout;
+import org.apache.commons.text.StringEscapeUtils;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.southerncoalition.enus.request.SiteRequestEnUS;
+import java.util.Objects;
+import io.vertx.core.json.JsonArray;
+import org.apache.commons.lang3.math.NumberUtils;
+import java.util.Optional;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+
+/**	
+ * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstClasse_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.html.part.HtmlPartGenPage&fq=classeEtendGen_indexed_boolean:true">Find the class  in Solr. </a>
+ * <br/>
+ **/
+public abstract class HtmlPartGenPageGen<DEV> extends PageLayout {
+	protected static final Logger LOGGER = LoggerFactory.getLogger(HtmlPartGenPage.class);
+
+	//////////////////
+	// listHtmlPart //
+	//////////////////
+
+	/**	 The entity listHtmlPart
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected SearchList<HtmlPart> listHtmlPart;
+	@JsonIgnore
+	public Wrap<SearchList<HtmlPart>> listHtmlPartWrap = new Wrap<SearchList<HtmlPart>>().p(this).c(SearchList.class).var("listHtmlPart").o(listHtmlPart);
+
+	/**	<br/> The entity listHtmlPart
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.html.part.HtmlPartGenPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:listHtmlPart">Find the entity listHtmlPart in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _listHtmlPart(Wrap<SearchList<HtmlPart>> c);
+
+	public SearchList<HtmlPart> getListHtmlPart() {
+		return listHtmlPart;
+	}
+
+	public void setListHtmlPart(SearchList<HtmlPart> listHtmlPart) {
+		this.listHtmlPart = listHtmlPart;
+		this.listHtmlPartWrap.alreadyInitialized = true;
+	}
+	protected HtmlPartGenPage listHtmlPartInit() {
+		if(!listHtmlPartWrap.alreadyInitialized) {
+			_listHtmlPart(listHtmlPartWrap);
+			if(listHtmlPart == null)
+				setListHtmlPart(listHtmlPartWrap.o);
+		}
+		if(listHtmlPart != null)
+			listHtmlPart.initDeepForClass(siteRequest_);
+		listHtmlPartWrap.alreadyInitialized(true);
+		return (HtmlPartGenPage)this;
+	}
+
+	//////////////
+	// htmlPart //
+	//////////////
+
+	/**	 The entity htmlPart
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected HtmlPart htmlPart;
+	@JsonIgnore
+	public Wrap<HtmlPart> htmlPartWrap = new Wrap<HtmlPart>().p(this).c(HtmlPart.class).var("htmlPart").o(htmlPart);
+
+	/**	<br/> The entity htmlPart
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.html.part.HtmlPartGenPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:htmlPart">Find the entity htmlPart in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _htmlPart(Wrap<HtmlPart> c);
+
+	public HtmlPart getHtmlPart() {
+		return htmlPart;
+	}
+
+	public void setHtmlPart(HtmlPart htmlPart) {
+		this.htmlPart = htmlPart;
+		this.htmlPartWrap.alreadyInitialized = true;
+	}
+	protected HtmlPartGenPage htmlPartInit() {
+		if(!htmlPartWrap.alreadyInitialized) {
+			_htmlPart(htmlPartWrap);
+			if(htmlPart == null)
+				setHtmlPart(htmlPartWrap.o);
+		}
+		if(htmlPart != null)
+			htmlPart.initDeepForClass(siteRequest_);
+		htmlPartWrap.alreadyInitialized(true);
+		return (HtmlPartGenPage)this;
+	}
+
+	//////////////
+	// initDeep //
+	//////////////
+
+	protected boolean alreadyInitializedHtmlPartGenPage = false;
+
+	public HtmlPartGenPage initDeepHtmlPartGenPage(SiteRequestEnUS siteRequest_) {
+		setSiteRequest_(siteRequest_);
+		if(!alreadyInitializedHtmlPartGenPage) {
+			alreadyInitializedHtmlPartGenPage = true;
+			initDeepHtmlPartGenPage();
+		}
+		return (HtmlPartGenPage)this;
+	}
+
+	public void initDeepHtmlPartGenPage() {
+		initHtmlPartGenPage();
+		super.initDeepPageLayout(siteRequest_);
+	}
+
+	public void initHtmlPartGenPage() {
+		listHtmlPartInit();
+		htmlPartInit();
+	}
+
+	@Override public void initDeepForClass(SiteRequestEnUS siteRequest_) {
+		initDeepHtmlPartGenPage(siteRequest_);
+	}
+
+	/////////////////
+	// siteRequest //
+	/////////////////
+
+	public void siteRequestHtmlPartGenPage(SiteRequestEnUS siteRequest_) {
+			super.siteRequestPageLayout(siteRequest_);
+		if(listHtmlPart != null)
+			listHtmlPart.setSiteRequest_(siteRequest_);
+		if(htmlPart != null)
+			htmlPart.setSiteRequest_(siteRequest_);
+	}
+
+	public void siteRequestForClass(SiteRequestEnUS siteRequest_) {
+		siteRequestHtmlPartGenPage(siteRequest_);
+	}
+
+	/////////////
+	// obtain //
+	/////////////
+
+	@Override public Object obtainForClass(String var) {
+		String[] vars = StringUtils.split(var, ".");
+		Object o = null;
+		for(String v : vars) {
+			if(o == null)
+				o = obtainHtmlPartGenPage(v);
+			else if(o instanceof Cluster) {
+				Cluster cluster = (Cluster)o;
+				o = cluster.obtainForClass(v);
+			}
+		}
+		return o;
+	}
+	public Object obtainHtmlPartGenPage(String var) {
+		HtmlPartGenPage oHtmlPartGenPage = (HtmlPartGenPage)this;
+		switch(var) {
+			case "listHtmlPart":
+				return oHtmlPartGenPage.listHtmlPart;
+			case "htmlPart":
+				return oHtmlPartGenPage.htmlPart;
+			default:
+				return super.obtainPageLayout(var);
+		}
+	}
+
+	///////////////
+	// attribute //
+	///////////////
+
+	@Override public boolean attributeForClass(String var, Object val) {
+		String[] vars = StringUtils.split(var, ".");
+		Object o = null;
+		for(String v : vars) {
+			if(o == null)
+				o = attributeHtmlPartGenPage(v, val);
+			else if(o instanceof Cluster) {
+				Cluster cluster = (Cluster)o;
+				o = cluster.attributeForClass(v, val);
+			}
+		}
+		return o != null;
+	}
+	public Object attributeHtmlPartGenPage(String var, Object val) {
+		HtmlPartGenPage oHtmlPartGenPage = (HtmlPartGenPage)this;
+		switch(var) {
+			default:
+				return super.attributePageLayout(var, val);
+		}
+	}
+
+	/////////////
+	// define //
+	/////////////
+
+	@Override public boolean defineForClass(String var, String val) {
+		String[] vars = StringUtils.split(var, ".");
+		Object o = null;
+		if(val != null) {
+			for(String v : vars) {
+				if(o == null)
+					o = defineHtmlPartGenPage(v, val);
+				else if(o instanceof Cluster) {
+					Cluster cluster = (Cluster)o;
+					o = cluster.defineForClass(v, val);
+				}
+			}
+		}
+		return o != null;
+	}
+	public Object defineHtmlPartGenPage(String var, String val) {
+		switch(var) {
+			default:
+				return super.definePageLayout(var, val);
+		}
+	}
+
+	/////////////////
+	// htmlScripts //
+	/////////////////
+
+	@Override public void htmlScripts() {
+		htmlScriptsHtmlPartGenPage();
+		super.htmlScripts();
+	}
+
+	public void htmlScriptsHtmlPartGenPage() {
+	}
+
+	////////////////
+	// htmlScript //
+	////////////////
+
+	@Override public void htmlScript() {
+		htmlScriptHtmlPartGenPage();
+		super.htmlScript();
+	}
+
+	public void htmlScriptHtmlPartGenPage() {
+	}
+
+	//////////////
+	// htmlBody //
+	//////////////
+
+	@Override public void htmlBody() {
+		htmlBodyHtmlPartGenPage();
+		super.htmlBody();
+	}
+
+	public void htmlBodyHtmlPartGenPage() {
+	}
+
+	//////////
+	// html //
+	//////////
+
+	@Override public void html() {
+		htmlHtmlPartGenPage();
+		super.html();
+	}
+
+	public void htmlHtmlPartGenPage() {
+	}
+
+	//////////////
+	// htmlMeta //
+	//////////////
+
+	@Override public void htmlMeta() {
+		htmlMetaHtmlPartGenPage();
+		super.htmlMeta();
+	}
+
+	public void htmlMetaHtmlPartGenPage() {
+	}
+
+	////////////////
+	// htmlStyles //
+	////////////////
+
+	@Override public void htmlStyles() {
+		htmlStylesHtmlPartGenPage();
+		super.htmlStyles();
+	}
+
+	public void htmlStylesHtmlPartGenPage() {
+	}
+
+	///////////////
+	// htmlStyle //
+	///////////////
+
+	@Override public void htmlStyle() {
+		htmlStyleHtmlPartGenPage();
+		super.htmlStyle();
+	}
+
+	public void htmlStyleHtmlPartGenPage() {
+	}
+
+	//////////////////
+	// apiRequest //
+	//////////////////
+
+	public void apiRequestHtmlPartGenPage() {
+		ApiRequest apiRequest = Optional.ofNullable(siteRequest_).map(SiteRequestEnUS::getApiRequest_).orElse(null);
+		Object o = Optional.ofNullable(apiRequest).map(ApiRequest::getOriginal).orElse(null);
+		if(o != null && o instanceof HtmlPartGenPage) {
+			HtmlPartGenPage original = (HtmlPartGenPage)o;
+			super.apiRequestPageLayout();
+		}
+	}
+
+	//////////////
+	// hashCode //
+	//////////////
+
+	@Override public int hashCode() {
+		return Objects.hash(super.hashCode());
+	}
+
+	////////////
+	// equals //
+	////////////
+
+	@Override public boolean equals(Object o) {
+		if(this == o)
+			return true;
+		if(!(o instanceof HtmlPartGenPage))
+			return false;
+		HtmlPartGenPage that = (HtmlPartGenPage)o;
+		return super.equals(o);
+	}
+
+	//////////////
+	// toString //
+	//////////////
+
+	@Override public String toString() {
+		StringBuilder sb = new StringBuilder();
+		sb.append(super.toString() + "\n");
+		sb.append("HtmlPartGenPage { ");
+		sb.append(" }");
+		return sb.toString();
+	}
+}

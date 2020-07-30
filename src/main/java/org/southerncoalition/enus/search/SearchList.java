@@ -31,6 +31,10 @@ public class SearchList<DEV> extends SearchListGen<DEV> {
 		
 	}
 
+	/**
+	 * {@inheritDoc}
+	 * Ignore: true
+	 */
 	protected void _siteRequest_(Wrap<SiteRequestEnUS> c) {
 	}
 
@@ -676,7 +680,6 @@ public class SearchList<DEV> extends SearchListGen<DEV> {
 		} catch (UnsupportedEncodingException e) {
 			ExceptionUtils.rethrow(e);
 		}
-		sb.append(list.toString());
 		Long numFound = Optional.ofNullable(getQueryResponse()).map(QueryResponse::getResults).map(SolrDocumentList::getNumFound).orElse(null);
 		if(numFound != null)
 			sb.append("numFound: ").append(numFound).append("\n");

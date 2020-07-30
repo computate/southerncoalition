@@ -11,6 +11,7 @@ import io.vertx.core.json.JsonObject;
 import java.time.ZoneOffset;
 import io.vertx.core.logging.Logger;
 import org.southerncoalition.enus.cluster.Cluster;
+import java.math.RoundingMode;
 import org.southerncoalition.enus.writer.AllWriter;
 import java.math.MathContext;
 import java.util.Set;
@@ -70,6 +71,7 @@ public abstract class ClusterGen<DEV> extends Object {
 	/**	 The entity siteRequest_
 	 *	 is defined as null before being initialized. 
 	 */
+	@JsonIgnore
 	@JsonInclude(Include.NON_NULL)
 	protected SiteRequestEnUS siteRequest_;
 	@JsonIgnore
@@ -1257,20 +1259,20 @@ public abstract class ClusterGen<DEV> extends Object {
 	///////////
 
 	/**	 The entity saves
-	 *	 is defined as null before being initialized. 
+	 *	Il est construit avant d'être initialisé avec le constructeur par défaut List<String>(). 
 	 */
 	@JsonInclude(Include.NON_NULL)
-	protected List<String> saves;
+	protected List<String> saves = new ArrayList<String>();
 	@JsonIgnore
 	public Wrap<List<String>> savesWrap = new Wrap<List<String>>().p(this).c(List.class).var("saves").o(saves);
 
 	/**	<br/> The entity saves
-	 *  is defined as null before being initialized. 
+	 *  It is constructed before being initialized with the constructor by default List<String>(). 
 	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.cluster.Cluster&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:saves">Find the entity saves in Solr</a>
 	 * <br/>
-	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 * @param saves is the entity already constructed. 
 	 **/
-	protected abstract void _saves(Wrap<List<String>> c);
+	protected abstract void _saves(List<String> l);
 
 	public List<String> getSaves() {
 		return saves;
@@ -1301,9 +1303,7 @@ public abstract class ClusterGen<DEV> extends Object {
 	}
 	protected Cluster savesInit() {
 		if(!savesWrap.alreadyInitialized) {
-			_saves(savesWrap);
-			if(saves == null)
-				setSaves(savesWrap.o);
+			_saves(saves);
 		}
 		savesWrap.alreadyInitialized(true);
 		return (Cluster)this;
@@ -2242,7 +2242,7 @@ public abstract class ClusterGen<DEV> extends Object {
 			if(saves.contains("saves")) {
 				List<String> saves = (List<String>)solrDocument.get("saves_stored_strings");
 				if(saves != null)
-					oCluster.setSaves(saves);
+					oCluster.saves.addAll(saves);
 			}
 
 			if(saves.contains("objectTitle")) {
@@ -2574,7 +2574,7 @@ public abstract class ClusterGen<DEV> extends Object {
 
 		List<String> saves = (List<String>)solrDocument.get("saves_stored_strings");
 		if(saves != null)
-			oCluster.setSaves(saves);
+			oCluster.saves.addAll(saves);
 
 		String objectTitle = (String)solrDocument.get("objectTitle_stored_string");
 		if(objectTitle != null)

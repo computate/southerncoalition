@@ -12,12 +12,16 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
+import java.util.Stack;
 
+import org.apache.commons.collections.CollectionUtils;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.solr.common.SolrDocument;
 import org.southerncoalition.enus.config.SiteConfig;
+import org.southerncoalition.enus.design.PageDesignGenPage;
+import org.southerncoalition.enus.html.part.HtmlPartGenPage;
 import org.southerncoalition.enus.request.SiteRequestEnUS;
 import org.southerncoalition.enus.user.SiteUser;
 import org.southerncoalition.enus.wrap.Wrap;
@@ -29,6 +33,10 @@ import org.southerncoalition.enus.xml.UtilXml;
  * Keyword: classSimpleNamePageLayout
  */
 public class PageLayout extends PageLayoutGen<Object> {
+
+	public static final List<String> ROLES_MANAGER = Arrays.asList("SiteManager");
+
+	public static final List<String> ROLES_ADMIN = Arrays.asList("SiteAdmin");
 
 	public static final List<String> ROLES = Arrays.asList("SiteAdmin");
 
@@ -395,60 +403,116 @@ public class PageLayout extends PageLayoutGen<Object> {
 					g("a");
 				g("div");
 			}
-			if(siteRequest_.getUserId() != null) {
 
+			if(
+					CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES_ADMIN)
+					|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES_ADMIN)
+					) {
+	
 				{ e("div").a("class", "w3-dropdown-hover ").f();
-					{ e("div").a("class", "w3-button w3-hover-green ").f();
-							e("i").a("class", "far fa-user-cog ").f().g("i");
-							sx(siteRequest_.getUserName());
+					{ e("div").a("class", "w3-button w3-hover-khaki ").f();
+							e("i").a("class", "far fa-drafting-compass ").f().g("i");
+							sx("designs");
 					} g("div");
 					{ e("div").a("class", "w3-dropdown-content w3-card-4 w3-padding ").f();
-						SiteUser o = siteRequest_.getSiteUser();
-						{ e("div").a("class", "w3-cell-row ").f();
-							{ e("a").a("href", "/user/", siteRequest_.getUserKey()).a("class", "").f();
-								e("i").a("class", "far fa-user ").f().g("i");
-								sx("my user page");
-							} g("a");
-						} g("div");
-						{ e("div").a("class", "w3-cell-row ").f();
-							e("label").a("for", "Page_seeArchived").a("class", "").f().sx("see archived").g("label");
-							e("input")
-								.a("type", "checkbox")
-								.a("value", "true")
-								.a("class", "setSeeArchived")
-								.a("name", "setSeeArchived")
-								.a("id", "Page_seeArchived")
-								.a("onchange", "patchSiteUserVal([{ name: 'fq', value: 'pk:' + ", siteRequest_.getUserKey(), " }], 'setSeeArchived', $(this).prop('checked'), function() { addGlow($('#Page_seeArchived')); }, function() { addError($('#Page_seeArchived')); }); ")
-								;
-								if(o.getSeeArchived() != null && o.getSeeArchived())
-									a("checked", "checked");
-							fg();
-						} g("div");
-						{ e("div").a("class", "w3-cell-row ").f();
-							e("label").a("for", "Page_seeDeleted").a("class", "").f().sx("see deleted").g("label");
-							e("input")
-								.a("type", "checkbox")
-								.a("value", "true")
-								.a("class", "setSeeDeleted")
-								.a("name", "setSeeDeleted")
-								.a("id", "Page_seeDeleted")
-								.a("onchange", "patchSiteUserVal([{ name: 'fq', value: 'pk:' + ", siteRequest_.getUserKey(), " }], 'setSeeDeleted', $(this).prop('checked'), function() { addGlow($('#Page_seeDeleted')); }, function() { addError($('#Page_seeDeleted')); }); ")
-								;
-								if(o.getSeeDeleted() != null && o.getSeeDeleted())
-									a("checked", "checked");
-							fg();
-						} g("div");
+						PageDesignGenPage.htmlSuggestedPageDesignGenPage(this, id, null);
 					} g("div");
 				} g("div");
-				e("div").a("class", "site-bar-item w3-bar-item ").f();
-					e("a").a("class", "w3-padding ").a("href", pageLogoutUri).f();
-						e("span").a("class", "site-menu-item").f();
-							sx("Logout");
-						g("span");
-					g("a");
-				g("div");
+	
+				{ e("div").a("class", "w3-dropdown-hover ").f();
+					{ e("div").a("class", "w3-button w3-hover-khaki ").f();
+							e("i").a("class", "far fa-puzzle-piece ").f().g("i");
+							sx("HTML");
+					} g("div");
+					{ e("div").a("class", "w3-dropdown-content w3-card-4 w3-padding ").f();
+						HtmlPartGenPage.htmlSuggestedHtmlPartGenPage(this, id, null);
+					} g("div");
+				} g("div");
 			}
+			writeLoginLogout();
 		g("div");
+	}
+
+	public void  writeLoginLogout() {
+		Stack<String> xmlStack = siteRequest_.getXmlStack();
+		boolean empty = xmlStack.isEmpty();
+		if(empty) {
+			xmlStack.push("html");
+			xmlStack.push("body");
+			xmlStack.push("div");
+			xmlStack.push("div");
+			xmlStack.push("div");
+			
+		}
+
+		if(siteRequest_.getUserId() == null) {
+			e("div").a("class", "site-bar-item w3-bar-item ").f();
+				e("a").a("class", "w3-padding ").a("href", pageUserUri).f(); 
+					e("span").a("class", "site-menu-item").f();
+						e("i").a("class", "far fa-sign-in-alt ").f().g("i");
+						sx("Login");
+					g("span");
+				g("a");
+			g("div");
+		}
+		if(siteRequest_.getUserId() != null) {
+
+			{ e("div").a("class", "w3-dropdown-hover ").f();
+				{ e("div").a("class", "w3-button w3-hover-green ").f();
+						e("i").a("class", "far fa-user-cog ").f().g("i");
+						sx(siteRequest_.getUserName());
+				} g("div");
+				{ e("div").a("class", "w3-dropdown-content w3-card-4 w3-padding ").f();
+					SiteUser o = siteRequest_.getSiteUser();
+					{ e("div").a("class", "w3-cell-row ").f();
+						{ e("a").a("href", "/user/", siteRequest_.getUserKey()).a("class", "").f();
+							e("i").a("class", "far fa-user ").f().g("i");
+							sx("my user page");
+						} g("a");
+					} g("div");
+					{ e("div").a("class", "w3-cell-row ").f();
+						e("label").a("for", "Page_seeArchived").a("class", "").f().sx("see archived").g("label");
+						e("input")
+							.a("type", "checkbox")
+							.a("value", "true")
+							.a("class", "setSeeArchived")
+							.a("name", "setSeeArchived")
+							.a("id", "Page_seeArchived")
+							.a("onchange", "patchSiteUserVal([{ name: 'fq', value: 'pk:' + ", siteRequest_.getUserKey(), " }], 'setSeeArchived', $(this).prop('checked'), function() { addGlow($('#Page_seeArchived')); }, function() { addError($('#Page_seeArchived')); }); ")
+							;
+							if(o.getSeeArchived() != null && o.getSeeArchived())
+								a("checked", "checked");
+						fg();
+					} g("div");
+					{ e("div").a("class", "w3-cell-row ").f();
+						e("label").a("for", "Page_seeDeleted").a("class", "").f().sx("see deleted").g("label");
+						e("input")
+							.a("type", "checkbox")
+							.a("value", "true")
+							.a("class", "setSeeDeleted")
+							.a("name", "setSeeDeleted")
+							.a("id", "Page_seeDeleted")
+							.a("onchange", "patchSiteUserVal([{ name: 'fq', value: 'pk:' + ", siteRequest_.getUserKey(), " }], 'setSeeDeleted', $(this).prop('checked'), function() { addGlow($('#Page_seeDeleted')); }, function() { addError($('#Page_seeDeleted')); }); ")
+							;
+							if(o.getSeeDeleted() != null && o.getSeeDeleted())
+								a("checked", "checked");
+						fg();
+					} g("div");
+				} g("div");
+			} g("div");
+			e("div").a("class", "site-bar-item w3-bar-item ").f();
+				e("a").a("class", "w3-padding ").a("href", pageLogoutUri).f();
+					e("span").a("class", "site-menu-item").f();
+						e("i").a("class", "far fa-sign-out-alt ").f().g("i");
+						sx("Logout");
+					g("span");
+				g("a");
+			g("div");
+		}
+
+		if(empty) {
+			xmlStack.clear();
+		}
 	}
 
 	public void  partagerPage() {
