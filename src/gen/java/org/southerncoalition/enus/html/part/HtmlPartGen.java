@@ -271,6 +271,7 @@ public abstract class HtmlPartGen<DEV> extends Cluster {
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row ").f();
 							{ e("a").a("href", "/page-design?fq=htmlPartKeys:", pk).a("class", "w3-cell w3-btn w3-center h4 w3-block h4 w3-khaki w3-hover-khaki ").f();
+								e("i").a("class", "far fa-drafting-compass ").f().g("i");
 								sx("page designs");
 							} g("a");
 						} g("div");

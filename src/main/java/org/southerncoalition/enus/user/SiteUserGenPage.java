@@ -205,6 +205,7 @@ public class SiteUserGenPage extends SiteUserGenPageGen<PageLayout> {
 			o.htmCustomerProfileId("PUTCopy");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmInheritPk("PUTCopy");
 			o.htmUserId("PUTCopy");
 			o.htmUserKey("PUTCopy");
 			o.htmUserId("PUTCopy");
@@ -229,6 +230,7 @@ public class SiteUserGenPage extends SiteUserGenPageGen<PageLayout> {
 			o.htmCustomerProfileId("PATCH");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmInheritPk("PATCH");
 			o.htmUserId("PATCH");
 			o.htmUserKey("PATCH");
 			o.htmUserId("PATCH");
@@ -255,6 +257,7 @@ public class SiteUserGenPage extends SiteUserGenPageGen<PageLayout> {
 			o.htmCustomerProfileId("Search");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmInheritPk("Search");
 			o.htmUserId("Search");
 			o.htmUserKey("Search");
 			o.htmObjectTitle("Search");

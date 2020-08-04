@@ -346,6 +346,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmDelinquentComplaintsAtSchool("PUTCopy");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmInheritPk("PUTCopy");
 			o.htmUserId("PUTCopy");
 			o.htmUserKey("PUTCopy");
 		} g("div");
@@ -400,6 +401,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmDelinquentComplaintsAtSchool("PATCH");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmInheritPk("PATCH");
 			o.htmUserId("PATCH");
 			o.htmUserKey("PATCH");
 		} g("div");
@@ -472,6 +474,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmDelinquentComplaintsAtSchoolPercent("Search");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmInheritPk("Search");
 			o.htmUserId("Search");
 			o.htmUserKey("Search");
 			o.htmObjectTitle("Search");

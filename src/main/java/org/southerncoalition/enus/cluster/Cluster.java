@@ -72,6 +72,7 @@ public class Cluster extends ClusterGen<Object> {
 	 * Indexed: true
 	 * Stored: true
 	 * InheritPrimaryKey: true
+	 * Define: true
 	 */
 	protected void _inheritPk(Wrap<Long> c) {}
 
