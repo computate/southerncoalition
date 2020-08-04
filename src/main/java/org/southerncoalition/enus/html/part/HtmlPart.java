@@ -44,7 +44,7 @@ import org.southerncoalition.enus.wrap.Wrap;
  * Sort.asc: sort8
  * Sort.asc: sort9
  * Sort.asc: sort10
- * Lines: 300
+ * Rows: 300
  * 
  * Role.enUS: SiteAdmin
  * 

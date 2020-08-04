@@ -1,11 +1,10 @@
-package org.southerncoalition.enus.user;
+package org.southerncoalition.enus.reportcard;
 
 import java.util.Arrays;
 import org.southerncoalition.enus.request.api.ApiRequest;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import java.util.HashMap;
 import org.apache.commons.lang3.StringUtils;
-import org.southerncoalition.enus.user.SiteUserGenPage;
 import java.text.NumberFormat;
 import io.vertx.core.logging.LoggerFactory;
 import java.util.ArrayList;
@@ -25,6 +24,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import org.southerncoalition.enus.request.SiteRequestEnUS;
 import java.util.Objects;
 import io.vertx.core.json.JsonArray;
+import org.southerncoalition.enus.reportcard.ReportCardGenPage;
 import org.apache.commons.lang3.math.NumberUtils;
 import java.util.Optional;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -32,49 +32,49 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 
 /**	
- * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstClasse_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.user.SiteUserPage&fq=classeEtendGen_indexed_boolean:true">Find the class  in Solr. </a>
+ * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstClasse_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCardPage&fq=classeEtendGen_indexed_boolean:true">Find the class  in Solr. </a>
  * <br/>
  **/
-public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
-	protected static final Logger LOGGER = LoggerFactory.getLogger(SiteUserPage.class);
+public abstract class ReportCardPageGen<DEV> extends ReportCardGenPage {
+	protected static final Logger LOGGER = LoggerFactory.getLogger(ReportCardPage.class);
 
 	//////////////
 	// initDeep //
 	//////////////
 
-	protected boolean alreadyInitializedSiteUserPage = false;
+	protected boolean alreadyInitializedReportCardPage = false;
 
-	public SiteUserPage initDeepSiteUserPage(SiteRequestEnUS siteRequest_) {
+	public ReportCardPage initDeepReportCardPage(SiteRequestEnUS siteRequest_) {
 		setSiteRequest_(siteRequest_);
-		if(!alreadyInitializedSiteUserPage) {
-			alreadyInitializedSiteUserPage = true;
-			initDeepSiteUserPage();
+		if(!alreadyInitializedReportCardPage) {
+			alreadyInitializedReportCardPage = true;
+			initDeepReportCardPage();
 		}
-		return (SiteUserPage)this;
+		return (ReportCardPage)this;
 	}
 
-	public void initDeepSiteUserPage() {
-		initSiteUserPage();
-		super.initDeepSiteUserGenPage(siteRequest_);
+	public void initDeepReportCardPage() {
+		initReportCardPage();
+		super.initDeepReportCardGenPage(siteRequest_);
 	}
 
-	public void initSiteUserPage() {
+	public void initReportCardPage() {
 	}
 
 	@Override public void initDeepForClass(SiteRequestEnUS siteRequest_) {
-		initDeepSiteUserPage(siteRequest_);
+		initDeepReportCardPage(siteRequest_);
 	}
 
 	/////////////////
 	// siteRequest //
 	/////////////////
 
-	public void siteRequestSiteUserPage(SiteRequestEnUS siteRequest_) {
-			super.siteRequestSiteUserGenPage(siteRequest_);
+	public void siteRequestReportCardPage(SiteRequestEnUS siteRequest_) {
+			super.siteRequestReportCardGenPage(siteRequest_);
 	}
 
 	public void siteRequestForClass(SiteRequestEnUS siteRequest_) {
-		siteRequestSiteUserPage(siteRequest_);
+		siteRequestReportCardPage(siteRequest_);
 	}
 
 	/////////////
@@ -86,7 +86,7 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 		Object o = null;
 		for(String v : vars) {
 			if(o == null)
-				o = obtainSiteUserPage(v);
+				o = obtainReportCardPage(v);
 			else if(o instanceof Cluster) {
 				Cluster cluster = (Cluster)o;
 				o = cluster.obtainForClass(v);
@@ -94,11 +94,11 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 		}
 		return o;
 	}
-	public Object obtainSiteUserPage(String var) {
-		SiteUserPage oSiteUserPage = (SiteUserPage)this;
+	public Object obtainReportCardPage(String var) {
+		ReportCardPage oReportCardPage = (ReportCardPage)this;
 		switch(var) {
 			default:
-				return super.obtainSiteUserGenPage(var);
+				return super.obtainReportCardGenPage(var);
 		}
 	}
 
@@ -111,7 +111,7 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 		Object o = null;
 		for(String v : vars) {
 			if(o == null)
-				o = attributeSiteUserPage(v, val);
+				o = attributeReportCardPage(v, val);
 			else if(o instanceof Cluster) {
 				Cluster cluster = (Cluster)o;
 				o = cluster.attributeForClass(v, val);
@@ -119,11 +119,11 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 		}
 		return o != null;
 	}
-	public Object attributeSiteUserPage(String var, Object val) {
-		SiteUserPage oSiteUserPage = (SiteUserPage)this;
+	public Object attributeReportCardPage(String var, Object val) {
+		ReportCardPage oReportCardPage = (ReportCardPage)this;
 		switch(var) {
 			default:
-				return super.attributeSiteUserGenPage(var, val);
+				return super.attributeReportCardGenPage(var, val);
 		}
 	}
 
@@ -137,7 +137,7 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 		if(val != null) {
 			for(String v : vars) {
 				if(o == null)
-					o = defineSiteUserPage(v, val);
+					o = defineReportCardPage(v, val);
 				else if(o instanceof Cluster) {
 					Cluster cluster = (Cluster)o;
 					o = cluster.defineForClass(v, val);
@@ -146,10 +146,10 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 		}
 		return o != null;
 	}
-	public Object defineSiteUserPage(String var, String val) {
+	public Object defineReportCardPage(String var, String val) {
 		switch(var) {
 			default:
-				return super.defineSiteUserGenPage(var, val);
+				return super.defineReportCardGenPage(var, val);
 		}
 	}
 
@@ -158,11 +158,11 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 	/////////////////
 
 	@Override public void htmlScripts() {
-		htmlScriptsSiteUserPage();
+		htmlScriptsReportCardPage();
 		super.htmlScripts();
 	}
 
-	public void htmlScriptsSiteUserPage() {
+	public void htmlScriptsReportCardPage() {
 	}
 
 	////////////////
@@ -170,11 +170,11 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 	////////////////
 
 	@Override public void htmlScript() {
-		htmlScriptSiteUserPage();
+		htmlScriptReportCardPage();
 		super.htmlScript();
 	}
 
-	public void htmlScriptSiteUserPage() {
+	public void htmlScriptReportCardPage() {
 	}
 
 	//////////////
@@ -182,11 +182,11 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 	//////////////
 
 	@Override public void htmlBody() {
-		htmlBodySiteUserPage();
+		htmlBodyReportCardPage();
 		super.htmlBody();
 	}
 
-	public void htmlBodySiteUserPage() {
+	public void htmlBodyReportCardPage() {
 	}
 
 	//////////
@@ -194,11 +194,11 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 	//////////
 
 	@Override public void html() {
-		htmlSiteUserPage();
+		htmlReportCardPage();
 		super.html();
 	}
 
-	public void htmlSiteUserPage() {
+	public void htmlReportCardPage() {
 	}
 
 	//////////////
@@ -206,11 +206,11 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 	//////////////
 
 	@Override public void htmlMeta() {
-		htmlMetaSiteUserPage();
+		htmlMetaReportCardPage();
 		super.htmlMeta();
 	}
 
-	public void htmlMetaSiteUserPage() {
+	public void htmlMetaReportCardPage() {
 	}
 
 	////////////////
@@ -218,11 +218,11 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 	////////////////
 
 	@Override public void htmlStyles() {
-		htmlStylesSiteUserPage();
+		htmlStylesReportCardPage();
 		super.htmlStyles();
 	}
 
-	public void htmlStylesSiteUserPage() {
+	public void htmlStylesReportCardPage() {
 	}
 
 	///////////////
@@ -230,23 +230,23 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 	///////////////
 
 	@Override public void htmlStyle() {
-		htmlStyleSiteUserPage();
+		htmlStyleReportCardPage();
 		super.htmlStyle();
 	}
 
-	public void htmlStyleSiteUserPage() {
+	public void htmlStyleReportCardPage() {
 	}
 
 	//////////////////
 	// apiRequest //
 	//////////////////
 
-	public void apiRequestSiteUserPage() {
+	public void apiRequestReportCardPage() {
 		ApiRequest apiRequest = Optional.ofNullable(siteRequest_).map(SiteRequestEnUS::getApiRequest_).orElse(null);
 		Object o = Optional.ofNullable(apiRequest).map(ApiRequest::getOriginal).orElse(null);
-		if(o != null && o instanceof SiteUserPage) {
-			SiteUserPage original = (SiteUserPage)o;
-			super.apiRequestSiteUserGenPage();
+		if(o != null && o instanceof ReportCardPage) {
+			ReportCardPage original = (ReportCardPage)o;
+			super.apiRequestReportCardGenPage();
 		}
 	}
 
@@ -265,9 +265,9 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 	@Override public boolean equals(Object o) {
 		if(this == o)
 			return true;
-		if(!(o instanceof SiteUserPage))
+		if(!(o instanceof ReportCardPage))
 			return false;
-		SiteUserPage that = (SiteUserPage)o;
+		ReportCardPage that = (ReportCardPage)o;
 		return super.equals(o);
 	}
 
@@ -278,7 +278,7 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 	@Override public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString() + "\n");
-		sb.append("SiteUserPage { ");
+		sb.append("ReportCardPage { ");
 		sb.append(" }");
 		return sb.toString();
 	}

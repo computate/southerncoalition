@@ -19,6 +19,7 @@ import io.vertx.core.json.JsonObject;
 import java.lang.String;
 import io.vertx.core.logging.Logger;
 import org.southerncoalition.enus.cluster.Cluster;
+import java.math.RoundingMode;
 import org.southerncoalition.enus.wrap.Wrap;
 import org.southerncoalition.enus.writer.AllWriter;
 import java.math.MathContext;
@@ -64,6 +65,7 @@ public abstract class SiteUserGen<DEV> extends Cluster {
 	public static final String SiteUser_NameActual = "current site user";
 	public static final String SiteUser_AllName = "all the site users";
 	public static final String SiteUser_SearchAllNameBy = "search site users by ";
+	public static final String SiteUser_Title = "site users";
 	public static final String SiteUser_ThePluralName = "the site users";
 	public static final String SiteUser_NoNameFound = "no site user found";
 	public static final String SiteUser_NameVar = "siteUser";
@@ -252,7 +254,7 @@ public abstract class SiteUserGen<DEV> extends Cluster {
 					CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
 					|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
 					) {
-				sx(htmUserId());
+				e("span").a("class", "varSiteUser", pk, "UserId ").f().sx(htmUserId()).g("span");
 			}
 		}
 	}
@@ -392,7 +394,7 @@ public abstract class SiteUserGen<DEV> extends Cluster {
 					CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
 					|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
 					) {
-				sx(htmUserKey());
+				e("span").a("class", "varSiteUser", pk, "UserKey ").f().sx(htmUserKey()).g("span");
 			}
 		}
 	}
@@ -524,7 +526,7 @@ public abstract class SiteUserGen<DEV> extends Cluster {
 					CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
 					|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
 					) {
-				sx(htmUserName());
+				e("span").a("class", "varSiteUser", pk, "UserName ").f().sx(htmUserName()).g("span");
 			}
 		}
 	}
@@ -963,7 +965,7 @@ public abstract class SiteUserGen<DEV> extends Cluster {
 					CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
 					|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
 					) {
-				sx(htmCustomerProfileId());
+				e("span").a("class", "varSiteUser", pk, "CustomerProfileId ").f().sx(htmCustomerProfileId()).g("span");
 			}
 		}
 	}
@@ -1111,7 +1113,7 @@ public abstract class SiteUserGen<DEV> extends Cluster {
 					CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
 					|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
 					) {
-				sx(htmUserReceiveEmails());
+				e("span").a("class", "varSiteUser", pk, "UserReceiveEmails ").f().sx(htmUserReceiveEmails()).g("span");
 			}
 		}
 	}
@@ -1243,7 +1245,7 @@ public abstract class SiteUserGen<DEV> extends Cluster {
 					CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
 					|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
 					) {
-				sx(htmSeeArchived());
+				e("span").a("class", "varSiteUser", pk, "SeeArchived ").f().sx(htmSeeArchived()).g("span");
 			}
 		}
 	}
@@ -1378,7 +1380,7 @@ public abstract class SiteUserGen<DEV> extends Cluster {
 					CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
 					|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
 					) {
-				sx(htmSeeDeleted());
+				e("span").a("class", "varSiteUser", pk, "SeeDeleted ").f().sx(htmSeeDeleted()).g("span");
 			}
 		}
 	}
@@ -1958,12 +1960,24 @@ public abstract class SiteUserGen<DEV> extends Cluster {
 		Object o = Optional.ofNullable(apiRequest).map(ApiRequest::getOriginal).orElse(null);
 		if(o != null && o instanceof SiteUser) {
 			SiteUser original = (SiteUser)o;
+			if(!Objects.equals(userKeys, original.getUserKeys()))
+				apiRequest.addVars("userKeys");
 			if(!Objects.equals(userId, original.getUserId()))
 				apiRequest.addVars("userId");
 			if(!Objects.equals(userKey, original.getUserKey()))
 				apiRequest.addVars("userKey");
 			if(!Objects.equals(userName, original.getUserName()))
 				apiRequest.addVars("userName");
+			if(!Objects.equals(userEmail, original.getUserEmail()))
+				apiRequest.addVars("userEmail");
+			if(!Objects.equals(userFirstName, original.getUserFirstName()))
+				apiRequest.addVars("userFirstName");
+			if(!Objects.equals(userLastName, original.getUserLastName()))
+				apiRequest.addVars("userLastName");
+			if(!Objects.equals(userFullName, original.getUserFullName()))
+				apiRequest.addVars("userFullName");
+			if(!Objects.equals(userSite, original.getUserSite()))
+				apiRequest.addVars("userSite");
 			if(!Objects.equals(customerProfileId, original.getCustomerProfileId()))
 				apiRequest.addVars("customerProfileId");
 			if(!Objects.equals(userReceiveEmails, original.getUserReceiveEmails()))
@@ -1981,7 +1995,7 @@ public abstract class SiteUserGen<DEV> extends Cluster {
 	//////////////
 
 	@Override public int hashCode() {
-		return Objects.hash(super.hashCode(), userId, userKey, userName, customerProfileId, userReceiveEmails, seeArchived, seeDeleted);
+		return Objects.hash(super.hashCode(), userKeys, userId, userKey, userName, userEmail, userFirstName, userLastName, userFullName, userSite, customerProfileId, userReceiveEmails, seeArchived, seeDeleted);
 	}
 
 	////////////
@@ -1995,9 +2009,15 @@ public abstract class SiteUserGen<DEV> extends Cluster {
 			return false;
 		SiteUser that = (SiteUser)o;
 		return super.equals(o)
+				&& Objects.equals( userKeys, that.userKeys )
 				&& Objects.equals( userId, that.userId )
 				&& Objects.equals( userKey, that.userKey )
 				&& Objects.equals( userName, that.userName )
+				&& Objects.equals( userEmail, that.userEmail )
+				&& Objects.equals( userFirstName, that.userFirstName )
+				&& Objects.equals( userLastName, that.userLastName )
+				&& Objects.equals( userFullName, that.userFullName )
+				&& Objects.equals( userSite, that.userSite )
 				&& Objects.equals( customerProfileId, that.customerProfileId )
 				&& Objects.equals( userReceiveEmails, that.userReceiveEmails )
 				&& Objects.equals( seeArchived, that.seeArchived )
@@ -2012,9 +2032,15 @@ public abstract class SiteUserGen<DEV> extends Cluster {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString() + "\n");
 		sb.append("SiteUser { ");
-		sb.append( "userId: \"" ).append(userId).append( "\"" );
+		sb.append( "userKeys: " ).append(userKeys);
+		sb.append( ", userId: \"" ).append(userId).append( "\"" );
 		sb.append( ", userKey: " ).append(userKey);
 		sb.append( ", userName: \"" ).append(userName).append( "\"" );
+		sb.append( ", userEmail: \"" ).append(userEmail).append( "\"" );
+		sb.append( ", userFirstName: \"" ).append(userFirstName).append( "\"" );
+		sb.append( ", userLastName: \"" ).append(userLastName).append( "\"" );
+		sb.append( ", userFullName: \"" ).append(userFullName).append( "\"" );
+		sb.append( ", userSite: \"" ).append(userSite).append( "\"" );
 		sb.append( ", customerProfileId: \"" ).append(customerProfileId).append( "\"" );
 		sb.append( ", userReceiveEmails: " ).append(userReceiveEmails);
 		sb.append( ", seeArchived: " ).append(seeArchived);

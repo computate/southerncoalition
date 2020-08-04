@@ -78,6 +78,7 @@ public abstract class HtmlPartGen<DEV> extends Cluster {
 	public static final String HtmlPart_Color = "khaki";
 	public static final String HtmlPart_IconGroup = "regular";
 	public static final String HtmlPart_IconName = "puzzle-piece";
+	public static final Integer HtmlPart_Rows = 300;
 
 	/////////////////
 	// htmlPartKey //

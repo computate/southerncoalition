@@ -1,11 +1,11 @@
-package org.southerncoalition.enus.user;
+package org.southerncoalition.enus.state;
 
 import java.util.Arrays;
+import org.southerncoalition.enus.state.SiteStateGenPage;
 import org.southerncoalition.enus.request.api.ApiRequest;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import java.util.HashMap;
 import org.apache.commons.lang3.StringUtils;
-import org.southerncoalition.enus.user.SiteUserGenPage;
 import java.text.NumberFormat;
 import io.vertx.core.logging.LoggerFactory;
 import java.util.ArrayList;
@@ -32,49 +32,49 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 
 /**	
- * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstClasse_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.user.SiteUserPage&fq=classeEtendGen_indexed_boolean:true">Find the class  in Solr. </a>
+ * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstClasse_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.state.SiteStatePage&fq=classeEtendGen_indexed_boolean:true">Find the class  in Solr. </a>
  * <br/>
  **/
-public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
-	protected static final Logger LOGGER = LoggerFactory.getLogger(SiteUserPage.class);
+public abstract class SiteStatePageGen<DEV> extends SiteStateGenPage {
+	protected static final Logger LOGGER = LoggerFactory.getLogger(SiteStatePage.class);
 
 	//////////////
 	// initDeep //
 	//////////////
 
-	protected boolean alreadyInitializedSiteUserPage = false;
+	protected boolean alreadyInitializedSiteStatePage = false;
 
-	public SiteUserPage initDeepSiteUserPage(SiteRequestEnUS siteRequest_) {
+	public SiteStatePage initDeepSiteStatePage(SiteRequestEnUS siteRequest_) {
 		setSiteRequest_(siteRequest_);
-		if(!alreadyInitializedSiteUserPage) {
-			alreadyInitializedSiteUserPage = true;
-			initDeepSiteUserPage();
+		if(!alreadyInitializedSiteStatePage) {
+			alreadyInitializedSiteStatePage = true;
+			initDeepSiteStatePage();
 		}
-		return (SiteUserPage)this;
+		return (SiteStatePage)this;
 	}
 
-	public void initDeepSiteUserPage() {
-		initSiteUserPage();
-		super.initDeepSiteUserGenPage(siteRequest_);
+	public void initDeepSiteStatePage() {
+		initSiteStatePage();
+		super.initDeepSiteStateGenPage(siteRequest_);
 	}
 
-	public void initSiteUserPage() {
+	public void initSiteStatePage() {
 	}
 
 	@Override public void initDeepForClass(SiteRequestEnUS siteRequest_) {
-		initDeepSiteUserPage(siteRequest_);
+		initDeepSiteStatePage(siteRequest_);
 	}
 
 	/////////////////
 	// siteRequest //
 	/////////////////
 
-	public void siteRequestSiteUserPage(SiteRequestEnUS siteRequest_) {
-			super.siteRequestSiteUserGenPage(siteRequest_);
+	public void siteRequestSiteStatePage(SiteRequestEnUS siteRequest_) {
+			super.siteRequestSiteStateGenPage(siteRequest_);
 	}
 
 	public void siteRequestForClass(SiteRequestEnUS siteRequest_) {
-		siteRequestSiteUserPage(siteRequest_);
+		siteRequestSiteStatePage(siteRequest_);
 	}
 
 	/////////////
@@ -86,7 +86,7 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 		Object o = null;
 		for(String v : vars) {
 			if(o == null)
-				o = obtainSiteUserPage(v);
+				o = obtainSiteStatePage(v);
 			else if(o instanceof Cluster) {
 				Cluster cluster = (Cluster)o;
 				o = cluster.obtainForClass(v);
@@ -94,11 +94,11 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 		}
 		return o;
 	}
-	public Object obtainSiteUserPage(String var) {
-		SiteUserPage oSiteUserPage = (SiteUserPage)this;
+	public Object obtainSiteStatePage(String var) {
+		SiteStatePage oSiteStatePage = (SiteStatePage)this;
 		switch(var) {
 			default:
-				return super.obtainSiteUserGenPage(var);
+				return super.obtainSiteStateGenPage(var);
 		}
 	}
 
@@ -111,7 +111,7 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 		Object o = null;
 		for(String v : vars) {
 			if(o == null)
-				o = attributeSiteUserPage(v, val);
+				o = attributeSiteStatePage(v, val);
 			else if(o instanceof Cluster) {
 				Cluster cluster = (Cluster)o;
 				o = cluster.attributeForClass(v, val);
@@ -119,11 +119,11 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 		}
 		return o != null;
 	}
-	public Object attributeSiteUserPage(String var, Object val) {
-		SiteUserPage oSiteUserPage = (SiteUserPage)this;
+	public Object attributeSiteStatePage(String var, Object val) {
+		SiteStatePage oSiteStatePage = (SiteStatePage)this;
 		switch(var) {
 			default:
-				return super.attributeSiteUserGenPage(var, val);
+				return super.attributeSiteStateGenPage(var, val);
 		}
 	}
 
@@ -137,7 +137,7 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 		if(val != null) {
 			for(String v : vars) {
 				if(o == null)
-					o = defineSiteUserPage(v, val);
+					o = defineSiteStatePage(v, val);
 				else if(o instanceof Cluster) {
 					Cluster cluster = (Cluster)o;
 					o = cluster.defineForClass(v, val);
@@ -146,10 +146,10 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 		}
 		return o != null;
 	}
-	public Object defineSiteUserPage(String var, String val) {
+	public Object defineSiteStatePage(String var, String val) {
 		switch(var) {
 			default:
-				return super.defineSiteUserGenPage(var, val);
+				return super.defineSiteStateGenPage(var, val);
 		}
 	}
 
@@ -158,11 +158,11 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 	/////////////////
 
 	@Override public void htmlScripts() {
-		htmlScriptsSiteUserPage();
+		htmlScriptsSiteStatePage();
 		super.htmlScripts();
 	}
 
-	public void htmlScriptsSiteUserPage() {
+	public void htmlScriptsSiteStatePage() {
 	}
 
 	////////////////
@@ -170,11 +170,11 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 	////////////////
 
 	@Override public void htmlScript() {
-		htmlScriptSiteUserPage();
+		htmlScriptSiteStatePage();
 		super.htmlScript();
 	}
 
-	public void htmlScriptSiteUserPage() {
+	public void htmlScriptSiteStatePage() {
 	}
 
 	//////////////
@@ -182,11 +182,11 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 	//////////////
 
 	@Override public void htmlBody() {
-		htmlBodySiteUserPage();
+		htmlBodySiteStatePage();
 		super.htmlBody();
 	}
 
-	public void htmlBodySiteUserPage() {
+	public void htmlBodySiteStatePage() {
 	}
 
 	//////////
@@ -194,11 +194,11 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 	//////////
 
 	@Override public void html() {
-		htmlSiteUserPage();
+		htmlSiteStatePage();
 		super.html();
 	}
 
-	public void htmlSiteUserPage() {
+	public void htmlSiteStatePage() {
 	}
 
 	//////////////
@@ -206,11 +206,11 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 	//////////////
 
 	@Override public void htmlMeta() {
-		htmlMetaSiteUserPage();
+		htmlMetaSiteStatePage();
 		super.htmlMeta();
 	}
 
-	public void htmlMetaSiteUserPage() {
+	public void htmlMetaSiteStatePage() {
 	}
 
 	////////////////
@@ -218,11 +218,11 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 	////////////////
 
 	@Override public void htmlStyles() {
-		htmlStylesSiteUserPage();
+		htmlStylesSiteStatePage();
 		super.htmlStyles();
 	}
 
-	public void htmlStylesSiteUserPage() {
+	public void htmlStylesSiteStatePage() {
 	}
 
 	///////////////
@@ -230,23 +230,23 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 	///////////////
 
 	@Override public void htmlStyle() {
-		htmlStyleSiteUserPage();
+		htmlStyleSiteStatePage();
 		super.htmlStyle();
 	}
 
-	public void htmlStyleSiteUserPage() {
+	public void htmlStyleSiteStatePage() {
 	}
 
 	//////////////////
 	// apiRequest //
 	//////////////////
 
-	public void apiRequestSiteUserPage() {
+	public void apiRequestSiteStatePage() {
 		ApiRequest apiRequest = Optional.ofNullable(siteRequest_).map(SiteRequestEnUS::getApiRequest_).orElse(null);
 		Object o = Optional.ofNullable(apiRequest).map(ApiRequest::getOriginal).orElse(null);
-		if(o != null && o instanceof SiteUserPage) {
-			SiteUserPage original = (SiteUserPage)o;
-			super.apiRequestSiteUserGenPage();
+		if(o != null && o instanceof SiteStatePage) {
+			SiteStatePage original = (SiteStatePage)o;
+			super.apiRequestSiteStateGenPage();
 		}
 	}
 
@@ -265,9 +265,9 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 	@Override public boolean equals(Object o) {
 		if(this == o)
 			return true;
-		if(!(o instanceof SiteUserPage))
+		if(!(o instanceof SiteStatePage))
 			return false;
-		SiteUserPage that = (SiteUserPage)o;
+		SiteStatePage that = (SiteStatePage)o;
 		return super.equals(o);
 	}
 
@@ -278,7 +278,7 @@ public abstract class SiteUserPageGen<DEV> extends SiteUserGenPage {
 	@Override public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString() + "\n");
-		sb.append("SiteUserPage { ");
+		sb.append("SiteStatePage { ");
 		sb.append(" }");
 		return sb.toString();
 	}

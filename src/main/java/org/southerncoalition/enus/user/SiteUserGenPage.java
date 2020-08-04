@@ -30,6 +30,7 @@ import java.util.stream.Collectors;
 import java.util.Arrays;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.math.MathContext;
 import org.apache.commons.collections.CollectionUtils;
 import java.util.Objects;
@@ -72,9 +73,11 @@ public class SiteUserGenPage extends SiteUserGenPageGen<PageLayout> {
 		if(siteUser != null && siteUser.getObjectTitle() != null)
 			c.o(siteUser.getObjectTitle());
 		else if(siteUser != null)
-			c.o("");
+			c.o("site users");
 		else if(listSiteUser == null || listSiteUser.size() == 0)
 			c.o("no site user found");
+		else
+			c.o("site users");
 	}
 
 	@Override protected void _pageUri(Wrap<String> c) {
@@ -695,7 +698,7 @@ public class SiteUserGenPage extends SiteUserGenPageGen<PageLayout> {
 					.a("name", "suggestSiteUser")
 					.a("id", "suggestSiteUser", id)
 					.a("autocomplete", "off")
-					.a("oninput", "suggestSiteUserObjectSuggest( [ { 'name': 'q', 'value': 'objectSuggest:' + $(this).val() } ], $('#suggestListSiteUser", id, "'), ", p.getSiteRequest_().getRequestPk(), "); ")
+					.a("oninput", "suggestSiteUserObjectSuggest( [ { 'name': 'q', 'value': 'objectSuggest:' + $(this).val() }, { 'name': 'rows', 'value': '10' }, { 'name': 'fl', 'value': 'pk,pageUrlPk,objectTitle' } ], $('#suggestListSiteUser", id, "'), ", p.getSiteRequest_().getRequestPk(), "); ")
 					.a("onkeyup", "if (event.keyCode === 13) { event.preventDefault(); window.location.href = '/user?q=", query1, ":' + encodeURIComponent(this.value) + '", fqs, sorts, "&start=", start2, "&rows=", rows1, "'; }"); 
 				if(listSiteUser != null)
 					p.a("value", query2);

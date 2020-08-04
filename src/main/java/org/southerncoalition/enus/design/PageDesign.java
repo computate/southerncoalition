@@ -67,7 +67,7 @@ import org.southerncoalition.enus.wrap.Wrap;
  * Sort.asc: pageDesignCompleteName
  * 
  * Lines: 100
- **/    
+ **/   
 public class PageDesign extends PageDesignGen<Cluster> {
 
 	/**
