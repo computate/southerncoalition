@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.lang.String;
 import io.vertx.core.logging.Logger;
 import org.southerncoalition.enus.cluster.Cluster;
+import java.math.RoundingMode;
 import org.southerncoalition.enus.wrap.Wrap;
 import org.southerncoalition.enus.writer.AllWriter;
 import java.math.MathContext;

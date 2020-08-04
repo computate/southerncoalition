@@ -338,7 +338,7 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 				.fg();
 
 		} else {
-			sx(htmParentDesignKeys());
+			e("span").a("class", "varPageDesign", pk, "ParentDesignKeys ").f().sx(htmParentDesignKeys()).g("span");
 		}
 	}
 
@@ -496,7 +496,7 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 				.fg();
 
 		} else {
-			sx(htmHtmlPartKeys());
+			e("span").a("class", "varPageDesign", pk, "HtmlPartKeys ").f().sx(htmHtmlPartKeys()).g("span");
 		}
 	}
 
@@ -637,7 +637,7 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 			.fg();
 
 		} else {
-			sx(htmPageDesignCompleteName());
+			e("span").a("class", "varPageDesign", pk, "PageDesignCompleteName ").f().sx(htmPageDesignCompleteName()).g("span");
 		}
 	}
 
@@ -783,7 +783,7 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 			}
 
 		} else {
-			sx(htmDesignHidden());
+			e("span").a("class", "varPageDesign", pk, "DesignHidden ").f().sx(htmDesignHidden()).g("span");
 		}
 	}
 
@@ -1210,6 +1210,8 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 		Object o = Optional.ofNullable(apiRequest).map(ApiRequest::getOriginal).orElse(null);
 		if(o != null && o instanceof PageDesign) {
 			PageDesign original = (PageDesign)o;
+			if(!Objects.equals(pageDesignKey, original.getPageDesignKey()))
+				apiRequest.addVars("pageDesignKey");
 			if(!Objects.equals(childDesignKeys, original.getChildDesignKeys()))
 				apiRequest.addVars("childDesignKeys");
 			if(!Objects.equals(parentDesignKeys, original.getParentDesignKeys()))
@@ -1229,7 +1231,7 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 	//////////////
 
 	@Override public int hashCode() {
-		return Objects.hash(super.hashCode(), childDesignKeys, parentDesignKeys, htmlPartKeys, pageDesignCompleteName, designHidden);
+		return Objects.hash(super.hashCode(), pageDesignKey, childDesignKeys, parentDesignKeys, htmlPartKeys, pageDesignCompleteName, designHidden);
 	}
 
 	////////////
@@ -1243,6 +1245,7 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 			return false;
 		PageDesign that = (PageDesign)o;
 		return super.equals(o)
+				&& Objects.equals( pageDesignKey, that.pageDesignKey )
 				&& Objects.equals( childDesignKeys, that.childDesignKeys )
 				&& Objects.equals( parentDesignKeys, that.parentDesignKeys )
 				&& Objects.equals( htmlPartKeys, that.htmlPartKeys )
@@ -1258,7 +1261,8 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString() + "\n");
 		sb.append("PageDesign { ");
-		sb.append( "childDesignKeys: " ).append(childDesignKeys);
+		sb.append( "pageDesignKey: " ).append(pageDesignKey);
+		sb.append( ", childDesignKeys: " ).append(childDesignKeys);
 		sb.append( ", parentDesignKeys: " ).append(parentDesignKeys);
 		sb.append( ", htmlPartKeys: " ).append(htmlPartKeys);
 		sb.append( ", pageDesignCompleteName: \"" ).append(pageDesignCompleteName).append( "\"" );

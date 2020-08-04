@@ -1,4 +1,4 @@
-package org.southerncoalition.enus.design; 
+package org.southerncoalition.enus.design;  
 
 import java.util.List;
 
