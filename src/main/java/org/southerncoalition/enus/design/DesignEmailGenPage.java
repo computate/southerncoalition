@@ -229,6 +229,14 @@ public class DesignEmailGenPage extends DesignEmailGenPageGen<PageLayout> {
 			c.o("/png/email-999.png");
 	}
 
+	@Override protected void _contextIconGroup(Wrap<String> c) {
+			c.o("regular");
+	}
+
+	@Override protected void _contextIconName(Wrap<String> c) {
+			c.o("drafting-compass");
+	}
+
 	@Override public void initDeepDesignEmailGenPage() {
 		initDesignEmailGenPage();
 		super.initDeepPageLayout();
@@ -659,6 +667,7 @@ public class DesignEmailGenPage extends DesignEmailGenPageGen<PageLayout> {
 				if(getColumnObjectTitle()) {
 					{ e("td").f();
 						{ e("a").a("href", uri).f();
+							e("i").a("class", "far fa-drafting-compass ").f().g("i");
 							{ e("span").f();
 								sx(o.strObjectTitle());
 							} g("span");
@@ -988,6 +997,7 @@ public class DesignEmailGenPage extends DesignEmailGenPageGen<PageLayout> {
 			} p.g("div");
 			{ p.e("div").a("class", "").f();
 				{ p.e("a").a("href", "/email").a("class", "").f();
+					p.e("i").a("class", "far fa-drafting-compass ").f().g("i");
 					p.sx("see all the page designs");
 				} p.g("a");
 			} p.g("div");

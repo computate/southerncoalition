@@ -55,8 +55,8 @@ import org.southerncoalition.enus.wrap.Wrap;
  * 
  * AName.enUS: a page design
  * Color: khaki
- * IconeGroup: regular
- * IconeName: drafting-compass
+ * IconGroup: regular
+ * IconName: drafting-compass
  * NameVar.frFR: design-page
  * NameVar.enUS: page-design
  * 
@@ -67,7 +67,7 @@ import org.southerncoalition.enus.wrap.Wrap;
  * Sort.asc: pageDesignCompleteName
  * 
  * Lines: 100
- **/   
+ **/     
 public class PageDesign extends PageDesignGen<Cluster> {
 
 	/**

@@ -90,6 +90,68 @@ public abstract class PageLayoutGen<DEV> extends Object {
 		return (PageLayout)this;
 	}
 
+	/////////////////
+	// siteBaseUrl //
+	/////////////////
+
+	/**	 The entity siteBaseUrl
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String siteBaseUrl;
+	@JsonIgnore
+	public Wrap<String> siteBaseUrlWrap = new Wrap<String>().p(this).c(String.class).var("siteBaseUrl").o(siteBaseUrl);
+
+	/**	<br/> The entity siteBaseUrl
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.page.PageLayout&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:siteBaseUrl">Find the entity siteBaseUrl in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _siteBaseUrl(Wrap<String> c);
+
+	public String getSiteBaseUrl() {
+		return siteBaseUrl;
+	}
+
+	public void setSiteBaseUrl(String siteBaseUrl) {
+		this.siteBaseUrl = siteBaseUrl;
+		this.siteBaseUrlWrap.alreadyInitialized = true;
+	}
+	protected PageLayout siteBaseUrlInit() {
+		if(!siteBaseUrlWrap.alreadyInitialized) {
+			_siteBaseUrl(siteBaseUrlWrap);
+			if(siteBaseUrl == null)
+				setSiteBaseUrl(siteBaseUrlWrap.o);
+		}
+		siteBaseUrlWrap.alreadyInitialized(true);
+		return (PageLayout)this;
+	}
+
+	public String solrSiteBaseUrl() {
+		return siteBaseUrl;
+	}
+
+	public String strSiteBaseUrl() {
+		return siteBaseUrl == null ? "" : siteBaseUrl;
+	}
+
+	public String jsonSiteBaseUrl() {
+		return siteBaseUrl == null ? "" : siteBaseUrl;
+	}
+
+	public String nomAffichageSiteBaseUrl() {
+		return null;
+	}
+
+	public String htmTooltipSiteBaseUrl() {
+		return null;
+	}
+
+	public String htmSiteBaseUrl() {
+		return siteBaseUrl == null ? "" : StringEscapeUtils.escapeHtml4(strSiteBaseUrl());
+	}
+
 	///////////////////
 	// staticBaseUrl //
 	///////////////////
@@ -2243,6 +2305,7 @@ public abstract class PageLayoutGen<DEV> extends Object {
 
 	public void initPageLayout() {
 		siteRequest_Init();
+		siteBaseUrlInit();
 		staticBaseUrlInit();
 		pageSolrDocumentInit();
 		wInit();
@@ -2318,6 +2381,8 @@ public abstract class PageLayoutGen<DEV> extends Object {
 		switch(var) {
 			case "siteRequest_":
 				return oPageLayout.siteRequest_;
+			case "siteBaseUrl":
+				return oPageLayout.siteBaseUrl;
 			case "staticBaseUrl":
 				return oPageLayout.staticBaseUrl;
 			case "pageSolrDocument":

@@ -77,7 +77,7 @@ public class SiteState extends SiteStateGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 3
 	 * HtmlCell: 2
-	 * DisplayName.enUS: name
+	 * DisplayName.enUS: abbreviation
 	 */ 
 	protected void _stateAbbreviation(Wrap<String> c) {
 	}

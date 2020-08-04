@@ -4404,6 +4404,75 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
+	//////////////
+	// stateKey //
+	//////////////
+
+	/**	 The entity stateKey
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long stateKey;
+	@JsonIgnore
+	public Wrap<Long> stateKeyWrap = new Wrap<Long>().p(this).c(Long.class).var("stateKey").o(stateKey);
+
+	/**	<br/> The entity stateKey
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:stateKey">Find the entity stateKey in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _stateKey(Wrap<Long> c);
+
+	public Long getStateKey() {
+		return stateKey;
+	}
+
+	public void setStateKey(Long stateKey) {
+		this.stateKey = stateKey;
+		this.stateKeyWrap.alreadyInitialized = true;
+	}
+	public ReportCard setStateKey(String o) {
+		if(NumberUtils.isParsable(o))
+			this.stateKey = Long.parseLong(o);
+		this.stateKeyWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard stateKeyInit() {
+		if(!stateKeyWrap.alreadyInitialized) {
+			_stateKey(stateKeyWrap);
+			if(stateKey == null)
+				setStateKey(stateKeyWrap.o);
+		}
+		stateKeyWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrStateKey() {
+		return stateKey;
+	}
+
+	public String strStateKey() {
+		return stateKey == null ? "" : stateKey.toString();
+	}
+
+	public String jsonStateKey() {
+		return stateKey == null ? "" : stateKey.toString();
+	}
+
+	public String nomAffichageStateKey() {
+		return null;
+	}
+
+	public String htmTooltipStateKey() {
+		return null;
+	}
+
+	public String htmStateKey() {
+		return stateKey == null ? "" : StringEscapeUtils.escapeHtml4(strStateKey());
+	}
+
 	///////////////
 	// stateName //
 	///////////////
@@ -4711,6 +4780,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		delinquentComplaintsTotalInit();
 		delinquentComplaintsAtSchoolInit();
 		delinquentComplaintsAtSchoolPercentInit();
+		stateKeyInit();
 		stateNameInit();
 		stateAbbreviationInit();
 		countyNameInit();
@@ -4831,6 +4901,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.delinquentComplaintsAtSchool;
 			case "delinquentComplaintsAtSchoolPercent":
 				return oReportCard.delinquentComplaintsAtSchoolPercent;
+			case "stateKey":
+				return oReportCard.stateKey;
 			case "stateName":
 				return oReportCard.stateName;
 			case "stateAbbreviation":
@@ -5216,6 +5288,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					oReportCard.setDelinquentComplaintsAtSchoolPercent(delinquentComplaintsAtSchoolPercent);
 			}
 
+			if(saves.contains("stateKey")) {
+				Long stateKey = (Long)solrDocument.get("stateKey_stored_long");
+				if(stateKey != null)
+					oReportCard.setStateKey(stateKey);
+			}
+
 			if(saves.contains("stateName")) {
 				String stateName = (String)solrDocument.get("stateName_stored_string");
 				if(stateName != null)
@@ -5450,6 +5528,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			document.addField("delinquentComplaintsAtSchoolPercent_indexed_double", delinquentComplaintsAtSchoolPercent.doubleValue());
 			document.addField("delinquentComplaintsAtSchoolPercent_stored_double", delinquentComplaintsAtSchoolPercent.doubleValue());
 		}
+		if(stateKey != null) {
+			document.addField("stateKey_indexed_long", stateKey);
+			document.addField("stateKey_stored_long", stateKey);
+		}
 		if(stateName != null) {
 			document.addField("stateName_indexed_string", stateName);
 			document.addField("stateName_stored_string", stateName);
@@ -5561,6 +5643,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return "delinquentComplaintsAtSchool_indexed_int";
 			case "delinquentComplaintsAtSchoolPercent":
 				return "delinquentComplaintsAtSchoolPercent_indexed_double";
+			case "stateKey":
+				return "stateKey_indexed_long";
 			case "stateName":
 				return "stateName_indexed_string";
 			case "stateAbbreviation":
@@ -5742,6 +5826,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(delinquentComplaintsAtSchoolPercent != null)
 			oReportCard.setDelinquentComplaintsAtSchoolPercent(delinquentComplaintsAtSchoolPercent);
 
+		Long stateKey = (Long)solrDocument.get("stateKey_stored_long");
+		if(stateKey != null)
+			oReportCard.setStateKey(stateKey);
+
 		String stateName = (String)solrDocument.get("stateName_stored_string");
 		if(stateName != null)
 			oReportCard.setStateName(stateName);
@@ -5842,6 +5930,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("delinquentComplaintsAtSchool");
 			if(!Objects.equals(delinquentComplaintsAtSchoolPercent, original.getDelinquentComplaintsAtSchoolPercent()))
 				apiRequest.addVars("delinquentComplaintsAtSchoolPercent");
+			if(!Objects.equals(stateKey, original.getStateKey()))
+				apiRequest.addVars("stateKey");
 			if(!Objects.equals(stateName, original.getStateName()))
 				apiRequest.addVars("stateName");
 			if(!Objects.equals(stateAbbreviation, original.getStateAbbreviation()))
@@ -5859,7 +5949,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	//////////////
 
 	@Override public int hashCode() {
-		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, countyKey, pupilsTotal, pupilsIndianFemale, pupilsIndianMale, pupilsIndianTotal, pupilsIndianPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsHispanicFemale, pupilsHispanicMale, pupilsHispanicTotal, pupilsHispanicPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, stateName, stateAbbreviation, countyName, countyCompleteName);
+		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, countyKey, pupilsTotal, pupilsIndianFemale, pupilsIndianMale, pupilsIndianTotal, pupilsIndianPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsHispanicFemale, pupilsHispanicMale, pupilsHispanicTotal, pupilsHispanicPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, stateKey, stateName, stateAbbreviation, countyName, countyCompleteName);
 	}
 
 	////////////
@@ -5909,6 +5999,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				&& Objects.equals( delinquentComplaintsTotal, that.delinquentComplaintsTotal )
 				&& Objects.equals( delinquentComplaintsAtSchool, that.delinquentComplaintsAtSchool )
 				&& Objects.equals( delinquentComplaintsAtSchoolPercent, that.delinquentComplaintsAtSchoolPercent )
+				&& Objects.equals( stateKey, that.stateKey )
 				&& Objects.equals( stateName, that.stateName )
 				&& Objects.equals( stateAbbreviation, that.stateAbbreviation )
 				&& Objects.equals( countyName, that.countyName )
@@ -5959,6 +6050,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		sb.append( ", delinquentComplaintsTotal: " ).append(delinquentComplaintsTotal);
 		sb.append( ", delinquentComplaintsAtSchool: " ).append(delinquentComplaintsAtSchool);
 		sb.append( ", delinquentComplaintsAtSchoolPercent: " ).append(delinquentComplaintsAtSchoolPercent);
+		sb.append( ", stateKey: " ).append(stateKey);
 		sb.append( ", stateName: \"" ).append(stateName).append( "\"" );
 		sb.append( ", stateAbbreviation: \"" ).append(stateAbbreviation).append( "\"" );
 		sb.append( ", countyName: \"" ).append(countyName).append( "\"" );

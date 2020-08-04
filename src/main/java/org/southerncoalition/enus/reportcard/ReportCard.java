@@ -529,6 +529,16 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Indexed: true
 	 * Stored: true
 	 */ 
+	protected void _stateKey(Wrap<Long> c) {
+		if(county_ != null)
+			c.o(county_.getStateKey());
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 */ 
 	protected void _stateName(Wrap<String> c) {
 		if(county_ != null)
 			c.o(county_.getStateName());

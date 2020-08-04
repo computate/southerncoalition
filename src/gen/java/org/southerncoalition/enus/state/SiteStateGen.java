@@ -233,7 +233,7 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 			.fg();
 
 		} else {
-			sx(htmStateName());
+			e("span").a("class", "varSiteState", pk, "StateName ").f().sx(htmStateName()).g("span");
 		}
 	}
 
@@ -325,7 +325,7 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageStateAbbreviation() {
-		return "name";
+		return "abbreviation";
 	}
 
 	public String htmTooltipStateAbbreviation() {
@@ -344,7 +344,7 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 				) {
 			e("input")
 				.a("type", "text")
-				.a("placeholder", "name")
+				.a("placeholder", "abbreviation")
 				.a("id", classApiMethodMethod, "_stateAbbreviation");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
 					a("class", "setStateAbbreviation classSiteState inputSiteState", pk, "StateAbbreviation w3-input w3-border ");
@@ -361,7 +361,7 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 			.fg();
 
 		} else {
-			sx(htmStateAbbreviation());
+			e("span").a("class", "varSiteState", pk, "StateAbbreviation ").f().sx(htmStateAbbreviation()).g("span");
 		}
 	}
 
@@ -372,7 +372,7 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 				{ e("div").a("id", "suggest", classApiMethodMethod, "SiteStateStateAbbreviation").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-blue ").f();
-							e("label").a("for", classApiMethodMethod, "_stateAbbreviation").a("class", "").f().sx("name").g("label");
+							e("label").a("for", classApiMethodMethod, "_stateAbbreviation").a("class", "").f().sx("abbreviation").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -507,7 +507,7 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 				.fg();
 
 		} else {
-			sx(htmCountyKeys());
+			e("span").a("class", "varSiteState", pk, "CountyKeys ").f().sx(htmCountyKeys()).g("span");
 		}
 	}
 
@@ -992,12 +992,16 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		Object o = Optional.ofNullable(apiRequest).map(ApiRequest::getOriginal).orElse(null);
 		if(o != null && o instanceof SiteState) {
 			SiteState original = (SiteState)o;
+			if(!Objects.equals(stateKey, original.getStateKey()))
+				apiRequest.addVars("stateKey");
 			if(!Objects.equals(stateName, original.getStateName()))
 				apiRequest.addVars("stateName");
 			if(!Objects.equals(stateAbbreviation, original.getStateAbbreviation()))
 				apiRequest.addVars("stateAbbreviation");
 			if(!Objects.equals(countyKeys, original.getCountyKeys()))
 				apiRequest.addVars("countyKeys");
+			if(!Objects.equals(countyCompleteName, original.getCountyCompleteName()))
+				apiRequest.addVars("countyCompleteName");
 			super.apiRequestCluster();
 		}
 	}
@@ -1007,7 +1011,7 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 	//////////////
 
 	@Override public int hashCode() {
-		return Objects.hash(super.hashCode(), stateName, stateAbbreviation, countyKeys);
+		return Objects.hash(super.hashCode(), stateKey, stateName, stateAbbreviation, countyKeys, countyCompleteName);
 	}
 
 	////////////
@@ -1021,9 +1025,11 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 			return false;
 		SiteState that = (SiteState)o;
 		return super.equals(o)
+				&& Objects.equals( stateKey, that.stateKey )
 				&& Objects.equals( stateName, that.stateName )
 				&& Objects.equals( stateAbbreviation, that.stateAbbreviation )
-				&& Objects.equals( countyKeys, that.countyKeys );
+				&& Objects.equals( countyKeys, that.countyKeys )
+				&& Objects.equals( countyCompleteName, that.countyCompleteName );
 	}
 
 	//////////////
@@ -1034,9 +1040,11 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString() + "\n");
 		sb.append("SiteState { ");
-		sb.append( "stateName: \"" ).append(stateName).append( "\"" );
+		sb.append( "stateKey: " ).append(stateKey);
+		sb.append( ", stateName: \"" ).append(stateName).append( "\"" );
 		sb.append( ", stateAbbreviation: \"" ).append(stateAbbreviation).append( "\"" );
 		sb.append( ", countyKeys: " ).append(countyKeys);
+		sb.append( ", countyCompleteName: \"" ).append(countyCompleteName).append( "\"" );
 		sb.append(" }");
 		return sb.toString();
 	}

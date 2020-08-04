@@ -76,6 +76,8 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 	public static final String PageDesign_NameAdjectiveSingular = "page design";
 	public static final String PageDesign_NameAdjectivePlural = "page designs";
 	public static final String PageDesign_Color = "khaki";
+	public static final String PageDesign_IconGroup = "regular";
+	public static final String PageDesign_IconName = "drafting-compass";
 
 	///////////////////
 	// pageDesignKey //
@@ -350,6 +352,7 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row ").f();
 							{ e("a").a("href", "/page-design?fq=childDesignKeys:", pk).a("class", "w3-cell w3-btn w3-center h4 w3-block h4 w3-khaki w3-hover-khaki ").f();
+								e("i").a("class", "far fa-drafting-compass ").f().g("i");
 								sx("parent designs");
 							} g("a");
 						} g("div");
