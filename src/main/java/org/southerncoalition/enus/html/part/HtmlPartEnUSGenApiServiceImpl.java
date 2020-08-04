@@ -1285,7 +1285,7 @@ public class HtmlPartEnUSGenApiServiceImpl implements HtmlPartEnUSGenApiService 
 			List<Future> futures = new ArrayList<>();
 
 			if(jsonObject != null) {
-				JsonArray entityVars = jsonObject.getJsonArray("");
+				JsonArray entityVars = jsonObject.getJsonArray("saves");
 				for(Integer i = 0; i < entityVars.size(); i++) {
 					String entityVar = entityVars.getString(i);
 					switch(entityVar) {
@@ -3890,6 +3890,7 @@ public class HtmlPartEnUSGenApiServiceImpl implements HtmlPartEnUSGenApiService 
 							try {
 								o.defineForClass(definition.getString(0), definition.getString(1));
 							} catch(Exception e) {
+								LOGGER.error(String.format("defineHtmlPart failed. ", e));
 								LOGGER.error(e);
 							}
 						}

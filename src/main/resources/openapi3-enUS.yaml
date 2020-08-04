@@ -1317,7 +1317,7 @@ paths:
           required: false
           schema:
             type: integer
-            default: 10
+            default: 300
             minimum: 0
         - in: query
           name: var
@@ -1449,7 +1449,7 @@ paths:
           required: false
           schema:
             type: integer
-            default: 10
+            default: 300
             minimum: 0
         - in: query
           name: var
@@ -1575,7 +1575,7 @@ paths:
           required: false
           schema:
             type: integer
-            default: 10
+            default: 300
             minimum: 0
         - in: query
           name: var
@@ -1708,7 +1708,7 @@ paths:
           required: false
           schema:
             type: integer
-            default: 10
+            default: 300
             minimum: 0
         - in: query
           name: var
@@ -1841,7 +1841,7 @@ paths:
           required: false
           schema:
             type: integer
-            default: 10
+            default: 300
             minimum: 0
         - in: query
           name: var
@@ -2053,7 +2053,7 @@ paths:
           required: false
           schema:
             type: integer
-            default: 10
+            default: 300
             minimum: 0
         - in: query
           name: var
@@ -2185,7 +2185,7 @@ paths:
           required: false
           schema:
             type: integer
-            default: 10
+            default: 300
             minimum: 0
         - in: query
           name: var
@@ -4287,6 +4287,3486 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/requestBodies/ErrorResponse'
+  /api/admin/state:
+    get:
+      operationId: adminsearchSiteState
+      x-vertx-event-bus: southerncoalition-enUS-SiteState
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/AdminSearchSiteStateResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/state:
+    post:
+      operationId: postSiteState
+      x-vertx-event-bus: southerncoalition-enUS-SiteState
+      description: >+
+      summary: >+
+      tags:
+        - State
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/POSTSiteStateRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/POSTSiteStateResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+    patch:
+      operationId: patchSiteState
+      x-vertx-event-bus: southerncoalition-enUS-SiteState
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PATCHSiteStateRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PATCHSiteStateResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+    get:
+      operationId: searchSiteState
+      x-vertx-event-bus: southerncoalition-enUS-SiteState
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/SearchSiteStateResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/state/copy:
+    put:
+      operationId: putcopySiteState
+      x-vertx-event-bus: southerncoalition-enUS-SiteState
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PUTCopySiteStateRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PUTCopySiteStateResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/state/import:
+    put:
+      operationId: putimportSiteState
+      x-vertx-event-bus: southerncoalition-enUS-SiteState
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PUTImportSiteStateRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PUTImportSiteStateResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/state/merge:
+    put:
+      operationId: putmergeSiteState
+      x-vertx-event-bus: southerncoalition-enUS-SiteState
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PUTMergeSiteStateRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PUTMergeSiteStateResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/state/{id}:
+    get:
+      operationId: getSiteState
+      x-vertx-event-bus: southerncoalition-enUS-SiteState
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: >+
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/GETSiteStateResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /state:
+    get:
+      operationId: searchpageSiteState
+      x-vertx-event-bus: southerncoalition-enUS-SiteState
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            text/html; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/SearchPageSiteStateResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /state/{id}:
+    get:
+      operationId: searchpageSiteStateId
+      x-vertx-event-bus: southerncoalition-enUS-SiteState
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: >+
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            text/html; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/SearchPageSiteStateResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/admin/reportcard:
+    get:
+      operationId: adminsearchReportCard
+      x-vertx-event-bus: southerncoalition-enUS-ReportCard
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/AdminSearchReportCardResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/reportcard:
+    post:
+      operationId: postReportCard
+      x-vertx-event-bus: southerncoalition-enUS-ReportCard
+      description: >+
+      summary: >+
+      tags:
+        - State
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/POSTReportCardRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/POSTReportCardResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+    patch:
+      operationId: patchReportCard
+      x-vertx-event-bus: southerncoalition-enUS-ReportCard
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PATCHReportCardRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PATCHReportCardResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+    get:
+      operationId: searchReportCard
+      x-vertx-event-bus: southerncoalition-enUS-ReportCard
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/SearchReportCardResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/reportcard/copy:
+    put:
+      operationId: putcopyReportCard
+      x-vertx-event-bus: southerncoalition-enUS-ReportCard
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PUTCopyReportCardRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PUTCopyReportCardResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/reportcard/import:
+    put:
+      operationId: putimportReportCard
+      x-vertx-event-bus: southerncoalition-enUS-ReportCard
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PUTImportReportCardRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PUTImportReportCardResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/reportcard/merge:
+    put:
+      operationId: putmergeReportCard
+      x-vertx-event-bus: southerncoalition-enUS-ReportCard
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PUTMergeReportCardRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PUTMergeReportCardResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/reportcard/{id}:
+    get:
+      operationId: getReportCard
+      x-vertx-event-bus: southerncoalition-enUS-ReportCard
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: >+
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/GETReportCardResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /reportcard:
+    get:
+      operationId: searchpageReportCard
+      x-vertx-event-bus: southerncoalition-enUS-ReportCard
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            text/html; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/SearchPageReportCardResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /reportcard/{id}:
+    get:
+      operationId: searchpageReportCardId
+      x-vertx-event-bus: southerncoalition-enUS-ReportCard
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: >+
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            text/html; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/SearchPageReportCardResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/admin/county:
+    get:
+      operationId: adminsearchSiteCounty
+      x-vertx-event-bus: southerncoalition-enUS-SiteCounty
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/AdminSearchSiteCountyResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/county:
+    post:
+      operationId: postSiteCounty
+      x-vertx-event-bus: southerncoalition-enUS-SiteCounty
+      description: >+
+      summary: >+
+      tags:
+        - State
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/POSTSiteCountyRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/POSTSiteCountyResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+    patch:
+      operationId: patchSiteCounty
+      x-vertx-event-bus: southerncoalition-enUS-SiteCounty
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PATCHSiteCountyRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PATCHSiteCountyResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+    get:
+      operationId: searchSiteCounty
+      x-vertx-event-bus: southerncoalition-enUS-SiteCounty
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/SearchSiteCountyResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/county/copy:
+    put:
+      operationId: putcopySiteCounty
+      x-vertx-event-bus: southerncoalition-enUS-SiteCounty
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PUTCopySiteCountyRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PUTCopySiteCountyResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/county/import:
+    put:
+      operationId: putimportSiteCounty
+      x-vertx-event-bus: southerncoalition-enUS-SiteCounty
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PUTImportSiteCountyRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PUTImportSiteCountyResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/county/merge:
+    put:
+      operationId: putmergeSiteCounty
+      x-vertx-event-bus: southerncoalition-enUS-SiteCounty
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PUTMergeSiteCountyRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PUTMergeSiteCountyResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/county/{id}:
+    get:
+      operationId: getSiteCounty
+      x-vertx-event-bus: southerncoalition-enUS-SiteCounty
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: >+
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/GETSiteCountyResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /county:
+    get:
+      operationId: searchpageSiteCounty
+      x-vertx-event-bus: southerncoalition-enUS-SiteCounty
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            text/html; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/SearchPageSiteCountyResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /county/{id}:
+    get:
+      operationId: searchpageSiteCountyId
+      x-vertx-event-bus: southerncoalition-enUS-SiteCounty
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: >+
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            text/html; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/SearchPageSiteCountyResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
 components:
   securitySchemes:
     openIdConnect:
@@ -4523,6 +8003,216 @@ components:
         application/pdf:
           schema:
             $ref: '#/components/schemas/DesignPdfSearchPagePageDesignResponse'
+    AdminSearchSiteStateResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/AdminSearchSiteStateResponse'
+    POSTSiteStateRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/POSTSiteStateRequest'
+    POSTSiteStateResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/POSTSiteStateResponse'
+    PATCHSiteStateRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PATCHSiteStateRequest'
+    PATCHSiteStateResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PATCHSiteStateResponse'
+    SearchSiteStateResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/SearchSiteStateResponse'
+    PUTCopySiteStateRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PUTCopySiteStateRequest'
+    PUTCopySiteStateResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PUTCopySiteStateResponse'
+    PUTImportSiteStateRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PUTImportSiteStateRequest'
+    PUTImportSiteStateResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PUTImportSiteStateResponse'
+    PUTMergeSiteStateRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PUTMergeSiteStateRequest'
+    PUTMergeSiteStateResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PUTMergeSiteStateResponse'
+    GETSiteStateResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/GETSiteStateResponse'
+    SearchPageSiteStateResponse:
+      content:
+        text/html; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/SearchPageSiteStateResponse'
+    AdminSearchReportCardResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/AdminSearchReportCardResponse'
+    POSTReportCardRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/POSTReportCardRequest'
+    POSTReportCardResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/POSTReportCardResponse'
+    PATCHReportCardRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PATCHReportCardRequest'
+    PATCHReportCardResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PATCHReportCardResponse'
+    SearchReportCardResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/SearchReportCardResponse'
+    PUTCopyReportCardRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PUTCopyReportCardRequest'
+    PUTCopyReportCardResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PUTCopyReportCardResponse'
+    PUTImportReportCardRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PUTImportReportCardRequest'
+    PUTImportReportCardResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PUTImportReportCardResponse'
+    PUTMergeReportCardRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PUTMergeReportCardRequest'
+    PUTMergeReportCardResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PUTMergeReportCardResponse'
+    GETReportCardResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/GETReportCardResponse'
+    SearchPageReportCardResponse:
+      content:
+        text/html; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/SearchPageReportCardResponse'
+    AdminSearchSiteCountyResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/AdminSearchSiteCountyResponse'
+    POSTSiteCountyRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/POSTSiteCountyRequest'
+    POSTSiteCountyResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/POSTSiteCountyResponse'
+    PATCHSiteCountyRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PATCHSiteCountyRequest'
+    PATCHSiteCountyResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PATCHSiteCountyResponse'
+    SearchSiteCountyResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/SearchSiteCountyResponse'
+    PUTCopySiteCountyRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PUTCopySiteCountyRequest'
+    PUTCopySiteCountyResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PUTCopySiteCountyResponse'
+    PUTImportSiteCountyRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PUTImportSiteCountyRequest'
+    PUTImportSiteCountyResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PUTImportSiteCountyResponse'
+    PUTMergeSiteCountyRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PUTMergeSiteCountyRequest'
+    PUTMergeSiteCountyResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PUTMergeSiteCountyResponse'
+    GETSiteCountyResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/GETSiteCountyResponse'
+    SearchPageSiteCountyResponse:
+      content:
+        text/html; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/SearchPageSiteCountyResponse'
   schemas:
     SearchSiteUserResponse:
       allOf:
@@ -7007,6 +10697,2157 @@ components:
       allOf:
         - type: string
         - format: binary
+    AdminSearchSiteStateResponse:
+      allOf:
+        - type: array
+          items:
+            type: object
+            properties:
+              stateKey:
+                type: string
+              stateName:
+                type: string
+              stateAbbreviation:
+                type: string
+              countyKeys:
+                type: array
+                items:
+                  type: string
+              countyCompleteName:
+                type: string
+    POSTSiteStateRequest:
+      allOf:
+        - $ref: "#/components/schemas/POSTClusterRequest"
+        - type: object
+          properties:
+            stateKey:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyKeys:
+              type: array
+              items:
+                type: string
+            countyCompleteName:
+              type: string
+    POSTSiteStateResponse:
+      allOf:
+        - $ref: "#/components/schemas/POSTClusterResponse"
+        - type: object
+          properties:
+            stateKey:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyKeys:
+              type: array
+              items:
+                type: string
+            countyCompleteName:
+              type: string
+    PATCHSiteStateRequest:
+      allOf:
+        - $ref: "#/components/schemas/PATCHClusterRequest"
+        - type: object
+          properties:
+            setStateKey:
+              type: string
+              nullable: true
+            removeStateKey:
+              type: string
+            removeAllStateKey:
+              type: string
+            setStateName:
+              type: string
+              nullable: true
+            removeStateName:
+              type: string
+            removeAllStateName:
+              type: string
+            setStateAbbreviation:
+              type: string
+              nullable: true
+            removeStateAbbreviation:
+              type: string
+            removeAllStateAbbreviation:
+              type: string
+            setCountyKeys:
+              type: array
+              nullable: true
+              items:
+                type: string
+            removeCountyKeys:
+              type: string
+            removeAllCountyKeys:
+              type: array
+              items:
+                type: string
+            addCountyKeys:
+              type: string
+            addAllCountyKeys:
+              type: array
+              items:
+                type: string
+            setCountyCompleteName:
+              type: string
+              nullable: true
+            removeCountyCompleteName:
+              type: string
+            removeAllCountyCompleteName:
+              type: string
+    PATCHSiteStateResponse:
+      allOf:
+        - $ref: "#/components/schemas/PATCHClusterResponse"
+        - type: object
+          properties:
+            setStateKey:
+              type: string
+              nullable: true
+            removeStateKey:
+              type: string
+            removeAllStateKey:
+              type: string
+            setStateName:
+              type: string
+              nullable: true
+            removeStateName:
+              type: string
+            removeAllStateName:
+              type: string
+            setStateAbbreviation:
+              type: string
+              nullable: true
+            removeStateAbbreviation:
+              type: string
+            removeAllStateAbbreviation:
+              type: string
+            setCountyKeys:
+              type: array
+              nullable: true
+              items:
+                type: string
+            removeCountyKeys:
+              type: string
+            removeAllCountyKeys:
+              type: array
+              items:
+                type: string
+            addCountyKeys:
+              type: string
+            addAllCountyKeys:
+              type: array
+              items:
+                type: string
+            setCountyCompleteName:
+              type: string
+              nullable: true
+            removeCountyCompleteName:
+              type: string
+            removeAllCountyCompleteName:
+              type: string
+    SearchSiteStateResponse:
+      allOf:
+        - $ref: "#/components/schemas/SearchClusterResponse"
+        - type: array
+          items:
+            type: object
+            properties:
+              stateKey:
+                type: string
+              stateName:
+                type: string
+              stateAbbreviation:
+                type: string
+              countyKeys:
+                type: array
+                items:
+                  type: string
+              countyCompleteName:
+                type: string
+    PUTCopySiteStateRequest:
+      allOf:
+        - type: object
+          properties:
+            stateKey:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyKeys:
+              type: array
+              items:
+                type: string
+            countyCompleteName:
+              type: string
+    PUTCopySiteStateResponse:
+      allOf:
+        - type: object
+          properties:
+            stateKey:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyKeys:
+              type: array
+              items:
+                type: string
+            countyCompleteName:
+              type: string
+    PUTImportSiteStateRequest:
+      allOf:
+        - type: object
+          properties:
+            stateKey:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyKeys:
+              type: array
+              items:
+                type: string
+            countyCompleteName:
+              type: string
+    PUTImportSiteStateResponse:
+      allOf:
+        - type: object
+          properties:
+            stateKey:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyKeys:
+              type: array
+              items:
+                type: string
+            countyCompleteName:
+              type: string
+    PUTMergeSiteStateRequest:
+      allOf:
+        - type: object
+          properties:
+            stateKey:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyKeys:
+              type: array
+              items:
+                type: string
+            countyCompleteName:
+              type: string
+    PUTMergeSiteStateResponse:
+      allOf:
+        - type: object
+          properties:
+            stateKey:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyKeys:
+              type: array
+              items:
+                type: string
+            countyCompleteName:
+              type: string
+    GETSiteStateResponse:
+      allOf:
+        - $ref: "#/components/schemas/GETClusterResponse"
+        - type: object
+          properties:
+            stateKey:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyKeys:
+              type: array
+              items:
+                type: string
+            countyCompleteName:
+              type: string
+    SearchPageSiteStateResponse:
+      allOf:
+        - type: string
+    AdminSearchReportCardResponse:
+      allOf:
+        - type: array
+          items:
+            type: object
+            properties:
+              reportCardKey:
+                type: string
+              reportCardStartYear:
+                type: string
+              reportCardEndYear:
+                type: string
+              countyKey:
+                type: string
+              pupilsTotal:
+                type: string
+              pupilsIndianFemale:
+                type: string
+              pupilsIndianMale:
+                type: string
+              pupilsIndianTotal:
+                type: string
+              pupilsIndianPercent:
+                type: string
+              pupilsAsianFemale:
+                type: string
+              pupilsAsianMale:
+                type: string
+              pupilsAsianTotal:
+                type: string
+              pupilsAsianPercent:
+                type: string
+              pupilsHispanicFemale:
+                type: string
+              pupilsHispanicMale:
+                type: string
+              pupilsHispanicTotal:
+                type: string
+              pupilsHispanicPercent:
+                type: string
+              pupilsBlackFemale:
+                type: string
+              pupilsBlackMale:
+                type: string
+              pupilsBlackTotal:
+                type: string
+              pupilsBlackPercent:
+                type: string
+              pupilsWhiteFemale:
+                type: string
+              pupilsWhiteMale:
+                type: string
+              pupilsWhiteTotal:
+                type: string
+              pupilsWhitePercent:
+                type: string
+              pupilsPacificIslanderFemale:
+                type: string
+              pupilsPacificIslanderMale:
+                type: string
+              pupilsPacificIslanderTotal:
+                type: string
+              pupilsPacificIslanderPercent:
+                type: string
+              pupilsMultiRacialFemale:
+                type: string
+              pupilsMultiRacialMale:
+                type: string
+              pupilsMultiRacialTotal:
+                type: string
+              pupilsMultiRacialPercent:
+                type: string
+              delinquentComplaintsTotal:
+                type: string
+              delinquentComplaintsAtSchool:
+                type: string
+              delinquentComplaintsAtSchoolPercent:
+                type: string
+              stateName:
+                type: string
+              stateAbbreviation:
+                type: string
+              countyName:
+                type: string
+              countyCompleteName:
+                type: string
+    POSTReportCardRequest:
+      allOf:
+        - $ref: "#/components/schemas/POSTClusterRequest"
+        - type: object
+          properties:
+            reportCardKey:
+              type: string
+            reportCardStartYear:
+              type: string
+            reportCardEndYear:
+              type: string
+            countyKey:
+              type: string
+            pupilsTotal:
+              type: string
+            pupilsIndianFemale:
+              type: string
+            pupilsIndianMale:
+              type: string
+            pupilsIndianTotal:
+              type: string
+            pupilsIndianPercent:
+              type: string
+            pupilsAsianFemale:
+              type: string
+            pupilsAsianMale:
+              type: string
+            pupilsAsianTotal:
+              type: string
+            pupilsAsianPercent:
+              type: string
+            pupilsHispanicFemale:
+              type: string
+            pupilsHispanicMale:
+              type: string
+            pupilsHispanicTotal:
+              type: string
+            pupilsHispanicPercent:
+              type: string
+            pupilsBlackFemale:
+              type: string
+            pupilsBlackMale:
+              type: string
+            pupilsBlackTotal:
+              type: string
+            pupilsBlackPercent:
+              type: string
+            pupilsWhiteFemale:
+              type: string
+            pupilsWhiteMale:
+              type: string
+            pupilsWhiteTotal:
+              type: string
+            pupilsWhitePercent:
+              type: string
+            pupilsPacificIslanderFemale:
+              type: string
+            pupilsPacificIslanderMale:
+              type: string
+            pupilsPacificIslanderTotal:
+              type: string
+            pupilsPacificIslanderPercent:
+              type: string
+            pupilsMultiRacialFemale:
+              type: string
+            pupilsMultiRacialMale:
+              type: string
+            pupilsMultiRacialTotal:
+              type: string
+            pupilsMultiRacialPercent:
+              type: string
+            delinquentComplaintsTotal:
+              type: string
+            delinquentComplaintsAtSchool:
+              type: string
+            delinquentComplaintsAtSchoolPercent:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyName:
+              type: string
+            countyCompleteName:
+              type: string
+    POSTReportCardResponse:
+      allOf:
+        - $ref: "#/components/schemas/POSTClusterResponse"
+        - type: object
+          properties:
+            reportCardKey:
+              type: string
+            reportCardStartYear:
+              type: string
+            reportCardEndYear:
+              type: string
+            countyKey:
+              type: string
+            pupilsTotal:
+              type: string
+            pupilsIndianFemale:
+              type: string
+            pupilsIndianMale:
+              type: string
+            pupilsIndianTotal:
+              type: string
+            pupilsIndianPercent:
+              type: string
+            pupilsAsianFemale:
+              type: string
+            pupilsAsianMale:
+              type: string
+            pupilsAsianTotal:
+              type: string
+            pupilsAsianPercent:
+              type: string
+            pupilsHispanicFemale:
+              type: string
+            pupilsHispanicMale:
+              type: string
+            pupilsHispanicTotal:
+              type: string
+            pupilsHispanicPercent:
+              type: string
+            pupilsBlackFemale:
+              type: string
+            pupilsBlackMale:
+              type: string
+            pupilsBlackTotal:
+              type: string
+            pupilsBlackPercent:
+              type: string
+            pupilsWhiteFemale:
+              type: string
+            pupilsWhiteMale:
+              type: string
+            pupilsWhiteTotal:
+              type: string
+            pupilsWhitePercent:
+              type: string
+            pupilsPacificIslanderFemale:
+              type: string
+            pupilsPacificIslanderMale:
+              type: string
+            pupilsPacificIslanderTotal:
+              type: string
+            pupilsPacificIslanderPercent:
+              type: string
+            pupilsMultiRacialFemale:
+              type: string
+            pupilsMultiRacialMale:
+              type: string
+            pupilsMultiRacialTotal:
+              type: string
+            pupilsMultiRacialPercent:
+              type: string
+            delinquentComplaintsTotal:
+              type: string
+            delinquentComplaintsAtSchool:
+              type: string
+            delinquentComplaintsAtSchoolPercent:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyName:
+              type: string
+            countyCompleteName:
+              type: string
+    PATCHReportCardRequest:
+      allOf:
+        - $ref: "#/components/schemas/PATCHClusterRequest"
+        - type: object
+          properties:
+            setReportCardKey:
+              type: string
+              nullable: true
+            removeReportCardKey:
+              type: string
+            removeAllReportCardKey:
+              type: string
+            setReportCardStartYear:
+              type: string
+              nullable: true
+            removeReportCardStartYear:
+              type: string
+            removeAllReportCardStartYear:
+              type: string
+            setReportCardEndYear:
+              type: string
+              nullable: true
+            removeReportCardEndYear:
+              type: string
+            removeAllReportCardEndYear:
+              type: string
+            setCountyKey:
+              type: string
+              nullable: true
+            removeCountyKey:
+              type: string
+            removeAllCountyKey:
+              type: string
+            setPupilsTotal:
+              type: string
+              nullable: true
+            removePupilsTotal:
+              type: string
+            removeAllPupilsTotal:
+              type: string
+            setPupilsIndianFemale:
+              type: string
+              nullable: true
+            removePupilsIndianFemale:
+              type: string
+            removeAllPupilsIndianFemale:
+              type: string
+            setPupilsIndianMale:
+              type: string
+              nullable: true
+            removePupilsIndianMale:
+              type: string
+            removeAllPupilsIndianMale:
+              type: string
+            setPupilsIndianTotal:
+              type: string
+              nullable: true
+            removePupilsIndianTotal:
+              type: string
+            removeAllPupilsIndianTotal:
+              type: string
+            setPupilsIndianPercent:
+              type: string
+              nullable: true
+            removePupilsIndianPercent:
+              type: string
+            removeAllPupilsIndianPercent:
+              type: string
+            setPupilsAsianFemale:
+              type: string
+              nullable: true
+            removePupilsAsianFemale:
+              type: string
+            removeAllPupilsAsianFemale:
+              type: string
+            setPupilsAsianMale:
+              type: string
+              nullable: true
+            removePupilsAsianMale:
+              type: string
+            removeAllPupilsAsianMale:
+              type: string
+            setPupilsAsianTotal:
+              type: string
+              nullable: true
+            removePupilsAsianTotal:
+              type: string
+            removeAllPupilsAsianTotal:
+              type: string
+            setPupilsAsianPercent:
+              type: string
+              nullable: true
+            removePupilsAsianPercent:
+              type: string
+            removeAllPupilsAsianPercent:
+              type: string
+            setPupilsHispanicFemale:
+              type: string
+              nullable: true
+            removePupilsHispanicFemale:
+              type: string
+            removeAllPupilsHispanicFemale:
+              type: string
+            setPupilsHispanicMale:
+              type: string
+              nullable: true
+            removePupilsHispanicMale:
+              type: string
+            removeAllPupilsHispanicMale:
+              type: string
+            setPupilsHispanicTotal:
+              type: string
+              nullable: true
+            removePupilsHispanicTotal:
+              type: string
+            removeAllPupilsHispanicTotal:
+              type: string
+            setPupilsHispanicPercent:
+              type: string
+              nullable: true
+            removePupilsHispanicPercent:
+              type: string
+            removeAllPupilsHispanicPercent:
+              type: string
+            setPupilsBlackFemale:
+              type: string
+              nullable: true
+            removePupilsBlackFemale:
+              type: string
+            removeAllPupilsBlackFemale:
+              type: string
+            setPupilsBlackMale:
+              type: string
+              nullable: true
+            removePupilsBlackMale:
+              type: string
+            removeAllPupilsBlackMale:
+              type: string
+            setPupilsBlackTotal:
+              type: string
+              nullable: true
+            removePupilsBlackTotal:
+              type: string
+            removeAllPupilsBlackTotal:
+              type: string
+            setPupilsBlackPercent:
+              type: string
+              nullable: true
+            removePupilsBlackPercent:
+              type: string
+            removeAllPupilsBlackPercent:
+              type: string
+            setPupilsWhiteFemale:
+              type: string
+              nullable: true
+            removePupilsWhiteFemale:
+              type: string
+            removeAllPupilsWhiteFemale:
+              type: string
+            setPupilsWhiteMale:
+              type: string
+              nullable: true
+            removePupilsWhiteMale:
+              type: string
+            removeAllPupilsWhiteMale:
+              type: string
+            setPupilsWhiteTotal:
+              type: string
+              nullable: true
+            removePupilsWhiteTotal:
+              type: string
+            removeAllPupilsWhiteTotal:
+              type: string
+            setPupilsWhitePercent:
+              type: string
+              nullable: true
+            removePupilsWhitePercent:
+              type: string
+            removeAllPupilsWhitePercent:
+              type: string
+            setPupilsPacificIslanderFemale:
+              type: string
+              nullable: true
+            removePupilsPacificIslanderFemale:
+              type: string
+            removeAllPupilsPacificIslanderFemale:
+              type: string
+            setPupilsPacificIslanderMale:
+              type: string
+              nullable: true
+            removePupilsPacificIslanderMale:
+              type: string
+            removeAllPupilsPacificIslanderMale:
+              type: string
+            setPupilsPacificIslanderTotal:
+              type: string
+              nullable: true
+            removePupilsPacificIslanderTotal:
+              type: string
+            removeAllPupilsPacificIslanderTotal:
+              type: string
+            setPupilsPacificIslanderPercent:
+              type: string
+              nullable: true
+            removePupilsPacificIslanderPercent:
+              type: string
+            removeAllPupilsPacificIslanderPercent:
+              type: string
+            setPupilsMultiRacialFemale:
+              type: string
+              nullable: true
+            removePupilsMultiRacialFemale:
+              type: string
+            removeAllPupilsMultiRacialFemale:
+              type: string
+            setPupilsMultiRacialMale:
+              type: string
+              nullable: true
+            removePupilsMultiRacialMale:
+              type: string
+            removeAllPupilsMultiRacialMale:
+              type: string
+            setPupilsMultiRacialTotal:
+              type: string
+              nullable: true
+            removePupilsMultiRacialTotal:
+              type: string
+            removeAllPupilsMultiRacialTotal:
+              type: string
+            setPupilsMultiRacialPercent:
+              type: string
+              nullable: true
+            removePupilsMultiRacialPercent:
+              type: string
+            removeAllPupilsMultiRacialPercent:
+              type: string
+            setDelinquentComplaintsTotal:
+              type: string
+              nullable: true
+            removeDelinquentComplaintsTotal:
+              type: string
+            removeAllDelinquentComplaintsTotal:
+              type: string
+            setDelinquentComplaintsAtSchool:
+              type: string
+              nullable: true
+            removeDelinquentComplaintsAtSchool:
+              type: string
+            removeAllDelinquentComplaintsAtSchool:
+              type: string
+            setDelinquentComplaintsAtSchoolPercent:
+              type: string
+              nullable: true
+            removeDelinquentComplaintsAtSchoolPercent:
+              type: string
+            removeAllDelinquentComplaintsAtSchoolPercent:
+              type: string
+            setStateName:
+              type: string
+              nullable: true
+            removeStateName:
+              type: string
+            removeAllStateName:
+              type: string
+            setStateAbbreviation:
+              type: string
+              nullable: true
+            removeStateAbbreviation:
+              type: string
+            removeAllStateAbbreviation:
+              type: string
+            setCountyName:
+              type: string
+              nullable: true
+            removeCountyName:
+              type: string
+            removeAllCountyName:
+              type: string
+            setCountyCompleteName:
+              type: string
+              nullable: true
+            removeCountyCompleteName:
+              type: string
+            removeAllCountyCompleteName:
+              type: string
+    PATCHReportCardResponse:
+      allOf:
+        - $ref: "#/components/schemas/PATCHClusterResponse"
+        - type: object
+          properties:
+            setReportCardKey:
+              type: string
+              nullable: true
+            removeReportCardKey:
+              type: string
+            removeAllReportCardKey:
+              type: string
+            setReportCardStartYear:
+              type: string
+              nullable: true
+            removeReportCardStartYear:
+              type: string
+            removeAllReportCardStartYear:
+              type: string
+            setReportCardEndYear:
+              type: string
+              nullable: true
+            removeReportCardEndYear:
+              type: string
+            removeAllReportCardEndYear:
+              type: string
+            setCountyKey:
+              type: string
+              nullable: true
+            removeCountyKey:
+              type: string
+            removeAllCountyKey:
+              type: string
+            setPupilsTotal:
+              type: string
+              nullable: true
+            removePupilsTotal:
+              type: string
+            removeAllPupilsTotal:
+              type: string
+            setPupilsIndianFemale:
+              type: string
+              nullable: true
+            removePupilsIndianFemale:
+              type: string
+            removeAllPupilsIndianFemale:
+              type: string
+            setPupilsIndianMale:
+              type: string
+              nullable: true
+            removePupilsIndianMale:
+              type: string
+            removeAllPupilsIndianMale:
+              type: string
+            setPupilsIndianTotal:
+              type: string
+              nullable: true
+            removePupilsIndianTotal:
+              type: string
+            removeAllPupilsIndianTotal:
+              type: string
+            setPupilsIndianPercent:
+              type: string
+              nullable: true
+            removePupilsIndianPercent:
+              type: string
+            removeAllPupilsIndianPercent:
+              type: string
+            setPupilsAsianFemale:
+              type: string
+              nullable: true
+            removePupilsAsianFemale:
+              type: string
+            removeAllPupilsAsianFemale:
+              type: string
+            setPupilsAsianMale:
+              type: string
+              nullable: true
+            removePupilsAsianMale:
+              type: string
+            removeAllPupilsAsianMale:
+              type: string
+            setPupilsAsianTotal:
+              type: string
+              nullable: true
+            removePupilsAsianTotal:
+              type: string
+            removeAllPupilsAsianTotal:
+              type: string
+            setPupilsAsianPercent:
+              type: string
+              nullable: true
+            removePupilsAsianPercent:
+              type: string
+            removeAllPupilsAsianPercent:
+              type: string
+            setPupilsHispanicFemale:
+              type: string
+              nullable: true
+            removePupilsHispanicFemale:
+              type: string
+            removeAllPupilsHispanicFemale:
+              type: string
+            setPupilsHispanicMale:
+              type: string
+              nullable: true
+            removePupilsHispanicMale:
+              type: string
+            removeAllPupilsHispanicMale:
+              type: string
+            setPupilsHispanicTotal:
+              type: string
+              nullable: true
+            removePupilsHispanicTotal:
+              type: string
+            removeAllPupilsHispanicTotal:
+              type: string
+            setPupilsHispanicPercent:
+              type: string
+              nullable: true
+            removePupilsHispanicPercent:
+              type: string
+            removeAllPupilsHispanicPercent:
+              type: string
+            setPupilsBlackFemale:
+              type: string
+              nullable: true
+            removePupilsBlackFemale:
+              type: string
+            removeAllPupilsBlackFemale:
+              type: string
+            setPupilsBlackMale:
+              type: string
+              nullable: true
+            removePupilsBlackMale:
+              type: string
+            removeAllPupilsBlackMale:
+              type: string
+            setPupilsBlackTotal:
+              type: string
+              nullable: true
+            removePupilsBlackTotal:
+              type: string
+            removeAllPupilsBlackTotal:
+              type: string
+            setPupilsBlackPercent:
+              type: string
+              nullable: true
+            removePupilsBlackPercent:
+              type: string
+            removeAllPupilsBlackPercent:
+              type: string
+            setPupilsWhiteFemale:
+              type: string
+              nullable: true
+            removePupilsWhiteFemale:
+              type: string
+            removeAllPupilsWhiteFemale:
+              type: string
+            setPupilsWhiteMale:
+              type: string
+              nullable: true
+            removePupilsWhiteMale:
+              type: string
+            removeAllPupilsWhiteMale:
+              type: string
+            setPupilsWhiteTotal:
+              type: string
+              nullable: true
+            removePupilsWhiteTotal:
+              type: string
+            removeAllPupilsWhiteTotal:
+              type: string
+            setPupilsWhitePercent:
+              type: string
+              nullable: true
+            removePupilsWhitePercent:
+              type: string
+            removeAllPupilsWhitePercent:
+              type: string
+            setPupilsPacificIslanderFemale:
+              type: string
+              nullable: true
+            removePupilsPacificIslanderFemale:
+              type: string
+            removeAllPupilsPacificIslanderFemale:
+              type: string
+            setPupilsPacificIslanderMale:
+              type: string
+              nullable: true
+            removePupilsPacificIslanderMale:
+              type: string
+            removeAllPupilsPacificIslanderMale:
+              type: string
+            setPupilsPacificIslanderTotal:
+              type: string
+              nullable: true
+            removePupilsPacificIslanderTotal:
+              type: string
+            removeAllPupilsPacificIslanderTotal:
+              type: string
+            setPupilsPacificIslanderPercent:
+              type: string
+              nullable: true
+            removePupilsPacificIslanderPercent:
+              type: string
+            removeAllPupilsPacificIslanderPercent:
+              type: string
+            setPupilsMultiRacialFemale:
+              type: string
+              nullable: true
+            removePupilsMultiRacialFemale:
+              type: string
+            removeAllPupilsMultiRacialFemale:
+              type: string
+            setPupilsMultiRacialMale:
+              type: string
+              nullable: true
+            removePupilsMultiRacialMale:
+              type: string
+            removeAllPupilsMultiRacialMale:
+              type: string
+            setPupilsMultiRacialTotal:
+              type: string
+              nullable: true
+            removePupilsMultiRacialTotal:
+              type: string
+            removeAllPupilsMultiRacialTotal:
+              type: string
+            setPupilsMultiRacialPercent:
+              type: string
+              nullable: true
+            removePupilsMultiRacialPercent:
+              type: string
+            removeAllPupilsMultiRacialPercent:
+              type: string
+            setDelinquentComplaintsTotal:
+              type: string
+              nullable: true
+            removeDelinquentComplaintsTotal:
+              type: string
+            removeAllDelinquentComplaintsTotal:
+              type: string
+            setDelinquentComplaintsAtSchool:
+              type: string
+              nullable: true
+            removeDelinquentComplaintsAtSchool:
+              type: string
+            removeAllDelinquentComplaintsAtSchool:
+              type: string
+            setDelinquentComplaintsAtSchoolPercent:
+              type: string
+              nullable: true
+            removeDelinquentComplaintsAtSchoolPercent:
+              type: string
+            removeAllDelinquentComplaintsAtSchoolPercent:
+              type: string
+            setStateName:
+              type: string
+              nullable: true
+            removeStateName:
+              type: string
+            removeAllStateName:
+              type: string
+            setStateAbbreviation:
+              type: string
+              nullable: true
+            removeStateAbbreviation:
+              type: string
+            removeAllStateAbbreviation:
+              type: string
+            setCountyName:
+              type: string
+              nullable: true
+            removeCountyName:
+              type: string
+            removeAllCountyName:
+              type: string
+            setCountyCompleteName:
+              type: string
+              nullable: true
+            removeCountyCompleteName:
+              type: string
+            removeAllCountyCompleteName:
+              type: string
+    SearchReportCardResponse:
+      allOf:
+        - $ref: "#/components/schemas/SearchClusterResponse"
+        - type: array
+          items:
+            type: object
+            properties:
+              reportCardKey:
+                type: string
+              reportCardStartYear:
+                type: string
+              reportCardEndYear:
+                type: string
+              countyKey:
+                type: string
+              pupilsTotal:
+                type: string
+              pupilsIndianFemale:
+                type: string
+              pupilsIndianMale:
+                type: string
+              pupilsIndianTotal:
+                type: string
+              pupilsIndianPercent:
+                type: string
+              pupilsAsianFemale:
+                type: string
+              pupilsAsianMale:
+                type: string
+              pupilsAsianTotal:
+                type: string
+              pupilsAsianPercent:
+                type: string
+              pupilsHispanicFemale:
+                type: string
+              pupilsHispanicMale:
+                type: string
+              pupilsHispanicTotal:
+                type: string
+              pupilsHispanicPercent:
+                type: string
+              pupilsBlackFemale:
+                type: string
+              pupilsBlackMale:
+                type: string
+              pupilsBlackTotal:
+                type: string
+              pupilsBlackPercent:
+                type: string
+              pupilsWhiteFemale:
+                type: string
+              pupilsWhiteMale:
+                type: string
+              pupilsWhiteTotal:
+                type: string
+              pupilsWhitePercent:
+                type: string
+              pupilsPacificIslanderFemale:
+                type: string
+              pupilsPacificIslanderMale:
+                type: string
+              pupilsPacificIslanderTotal:
+                type: string
+              pupilsPacificIslanderPercent:
+                type: string
+              pupilsMultiRacialFemale:
+                type: string
+              pupilsMultiRacialMale:
+                type: string
+              pupilsMultiRacialTotal:
+                type: string
+              pupilsMultiRacialPercent:
+                type: string
+              delinquentComplaintsTotal:
+                type: string
+              delinquentComplaintsAtSchool:
+                type: string
+              delinquentComplaintsAtSchoolPercent:
+                type: string
+              stateName:
+                type: string
+              stateAbbreviation:
+                type: string
+              countyName:
+                type: string
+              countyCompleteName:
+                type: string
+    PUTCopyReportCardRequest:
+      allOf:
+        - type: object
+          properties:
+            reportCardKey:
+              type: string
+            reportCardStartYear:
+              type: string
+            reportCardEndYear:
+              type: string
+            countyKey:
+              type: string
+            pupilsTotal:
+              type: string
+            pupilsIndianFemale:
+              type: string
+            pupilsIndianMale:
+              type: string
+            pupilsIndianTotal:
+              type: string
+            pupilsIndianPercent:
+              type: string
+            pupilsAsianFemale:
+              type: string
+            pupilsAsianMale:
+              type: string
+            pupilsAsianTotal:
+              type: string
+            pupilsAsianPercent:
+              type: string
+            pupilsHispanicFemale:
+              type: string
+            pupilsHispanicMale:
+              type: string
+            pupilsHispanicTotal:
+              type: string
+            pupilsHispanicPercent:
+              type: string
+            pupilsBlackFemale:
+              type: string
+            pupilsBlackMale:
+              type: string
+            pupilsBlackTotal:
+              type: string
+            pupilsBlackPercent:
+              type: string
+            pupilsWhiteFemale:
+              type: string
+            pupilsWhiteMale:
+              type: string
+            pupilsWhiteTotal:
+              type: string
+            pupilsWhitePercent:
+              type: string
+            pupilsPacificIslanderFemale:
+              type: string
+            pupilsPacificIslanderMale:
+              type: string
+            pupilsPacificIslanderTotal:
+              type: string
+            pupilsPacificIslanderPercent:
+              type: string
+            pupilsMultiRacialFemale:
+              type: string
+            pupilsMultiRacialMale:
+              type: string
+            pupilsMultiRacialTotal:
+              type: string
+            pupilsMultiRacialPercent:
+              type: string
+            delinquentComplaintsTotal:
+              type: string
+            delinquentComplaintsAtSchool:
+              type: string
+            delinquentComplaintsAtSchoolPercent:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyName:
+              type: string
+            countyCompleteName:
+              type: string
+    PUTCopyReportCardResponse:
+      allOf:
+        - type: object
+          properties:
+            reportCardKey:
+              type: string
+            reportCardStartYear:
+              type: string
+            reportCardEndYear:
+              type: string
+            countyKey:
+              type: string
+            pupilsTotal:
+              type: string
+            pupilsIndianFemale:
+              type: string
+            pupilsIndianMale:
+              type: string
+            pupilsIndianTotal:
+              type: string
+            pupilsIndianPercent:
+              type: string
+            pupilsAsianFemale:
+              type: string
+            pupilsAsianMale:
+              type: string
+            pupilsAsianTotal:
+              type: string
+            pupilsAsianPercent:
+              type: string
+            pupilsHispanicFemale:
+              type: string
+            pupilsHispanicMale:
+              type: string
+            pupilsHispanicTotal:
+              type: string
+            pupilsHispanicPercent:
+              type: string
+            pupilsBlackFemale:
+              type: string
+            pupilsBlackMale:
+              type: string
+            pupilsBlackTotal:
+              type: string
+            pupilsBlackPercent:
+              type: string
+            pupilsWhiteFemale:
+              type: string
+            pupilsWhiteMale:
+              type: string
+            pupilsWhiteTotal:
+              type: string
+            pupilsWhitePercent:
+              type: string
+            pupilsPacificIslanderFemale:
+              type: string
+            pupilsPacificIslanderMale:
+              type: string
+            pupilsPacificIslanderTotal:
+              type: string
+            pupilsPacificIslanderPercent:
+              type: string
+            pupilsMultiRacialFemale:
+              type: string
+            pupilsMultiRacialMale:
+              type: string
+            pupilsMultiRacialTotal:
+              type: string
+            pupilsMultiRacialPercent:
+              type: string
+            delinquentComplaintsTotal:
+              type: string
+            delinquentComplaintsAtSchool:
+              type: string
+            delinquentComplaintsAtSchoolPercent:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyName:
+              type: string
+            countyCompleteName:
+              type: string
+    PUTImportReportCardRequest:
+      allOf:
+        - type: object
+          properties:
+            reportCardKey:
+              type: string
+            reportCardStartYear:
+              type: string
+            reportCardEndYear:
+              type: string
+            countyKey:
+              type: string
+            pupilsTotal:
+              type: string
+            pupilsIndianFemale:
+              type: string
+            pupilsIndianMale:
+              type: string
+            pupilsIndianTotal:
+              type: string
+            pupilsIndianPercent:
+              type: string
+            pupilsAsianFemale:
+              type: string
+            pupilsAsianMale:
+              type: string
+            pupilsAsianTotal:
+              type: string
+            pupilsAsianPercent:
+              type: string
+            pupilsHispanicFemale:
+              type: string
+            pupilsHispanicMale:
+              type: string
+            pupilsHispanicTotal:
+              type: string
+            pupilsHispanicPercent:
+              type: string
+            pupilsBlackFemale:
+              type: string
+            pupilsBlackMale:
+              type: string
+            pupilsBlackTotal:
+              type: string
+            pupilsBlackPercent:
+              type: string
+            pupilsWhiteFemale:
+              type: string
+            pupilsWhiteMale:
+              type: string
+            pupilsWhiteTotal:
+              type: string
+            pupilsWhitePercent:
+              type: string
+            pupilsPacificIslanderFemale:
+              type: string
+            pupilsPacificIslanderMale:
+              type: string
+            pupilsPacificIslanderTotal:
+              type: string
+            pupilsPacificIslanderPercent:
+              type: string
+            pupilsMultiRacialFemale:
+              type: string
+            pupilsMultiRacialMale:
+              type: string
+            pupilsMultiRacialTotal:
+              type: string
+            pupilsMultiRacialPercent:
+              type: string
+            delinquentComplaintsTotal:
+              type: string
+            delinquentComplaintsAtSchool:
+              type: string
+            delinquentComplaintsAtSchoolPercent:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyName:
+              type: string
+            countyCompleteName:
+              type: string
+    PUTImportReportCardResponse:
+      allOf:
+        - type: object
+          properties:
+            reportCardKey:
+              type: string
+            reportCardStartYear:
+              type: string
+            reportCardEndYear:
+              type: string
+            countyKey:
+              type: string
+            pupilsTotal:
+              type: string
+            pupilsIndianFemale:
+              type: string
+            pupilsIndianMale:
+              type: string
+            pupilsIndianTotal:
+              type: string
+            pupilsIndianPercent:
+              type: string
+            pupilsAsianFemale:
+              type: string
+            pupilsAsianMale:
+              type: string
+            pupilsAsianTotal:
+              type: string
+            pupilsAsianPercent:
+              type: string
+            pupilsHispanicFemale:
+              type: string
+            pupilsHispanicMale:
+              type: string
+            pupilsHispanicTotal:
+              type: string
+            pupilsHispanicPercent:
+              type: string
+            pupilsBlackFemale:
+              type: string
+            pupilsBlackMale:
+              type: string
+            pupilsBlackTotal:
+              type: string
+            pupilsBlackPercent:
+              type: string
+            pupilsWhiteFemale:
+              type: string
+            pupilsWhiteMale:
+              type: string
+            pupilsWhiteTotal:
+              type: string
+            pupilsWhitePercent:
+              type: string
+            pupilsPacificIslanderFemale:
+              type: string
+            pupilsPacificIslanderMale:
+              type: string
+            pupilsPacificIslanderTotal:
+              type: string
+            pupilsPacificIslanderPercent:
+              type: string
+            pupilsMultiRacialFemale:
+              type: string
+            pupilsMultiRacialMale:
+              type: string
+            pupilsMultiRacialTotal:
+              type: string
+            pupilsMultiRacialPercent:
+              type: string
+            delinquentComplaintsTotal:
+              type: string
+            delinquentComplaintsAtSchool:
+              type: string
+            delinquentComplaintsAtSchoolPercent:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyName:
+              type: string
+            countyCompleteName:
+              type: string
+    PUTMergeReportCardRequest:
+      allOf:
+        - type: object
+          properties:
+            reportCardKey:
+              type: string
+            reportCardStartYear:
+              type: string
+            reportCardEndYear:
+              type: string
+            countyKey:
+              type: string
+            pupilsTotal:
+              type: string
+            pupilsIndianFemale:
+              type: string
+            pupilsIndianMale:
+              type: string
+            pupilsIndianTotal:
+              type: string
+            pupilsIndianPercent:
+              type: string
+            pupilsAsianFemale:
+              type: string
+            pupilsAsianMale:
+              type: string
+            pupilsAsianTotal:
+              type: string
+            pupilsAsianPercent:
+              type: string
+            pupilsHispanicFemale:
+              type: string
+            pupilsHispanicMale:
+              type: string
+            pupilsHispanicTotal:
+              type: string
+            pupilsHispanicPercent:
+              type: string
+            pupilsBlackFemale:
+              type: string
+            pupilsBlackMale:
+              type: string
+            pupilsBlackTotal:
+              type: string
+            pupilsBlackPercent:
+              type: string
+            pupilsWhiteFemale:
+              type: string
+            pupilsWhiteMale:
+              type: string
+            pupilsWhiteTotal:
+              type: string
+            pupilsWhitePercent:
+              type: string
+            pupilsPacificIslanderFemale:
+              type: string
+            pupilsPacificIslanderMale:
+              type: string
+            pupilsPacificIslanderTotal:
+              type: string
+            pupilsPacificIslanderPercent:
+              type: string
+            pupilsMultiRacialFemale:
+              type: string
+            pupilsMultiRacialMale:
+              type: string
+            pupilsMultiRacialTotal:
+              type: string
+            pupilsMultiRacialPercent:
+              type: string
+            delinquentComplaintsTotal:
+              type: string
+            delinquentComplaintsAtSchool:
+              type: string
+            delinquentComplaintsAtSchoolPercent:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyName:
+              type: string
+            countyCompleteName:
+              type: string
+    PUTMergeReportCardResponse:
+      allOf:
+        - type: object
+          properties:
+            reportCardKey:
+              type: string
+            reportCardStartYear:
+              type: string
+            reportCardEndYear:
+              type: string
+            countyKey:
+              type: string
+            pupilsTotal:
+              type: string
+            pupilsIndianFemale:
+              type: string
+            pupilsIndianMale:
+              type: string
+            pupilsIndianTotal:
+              type: string
+            pupilsIndianPercent:
+              type: string
+            pupilsAsianFemale:
+              type: string
+            pupilsAsianMale:
+              type: string
+            pupilsAsianTotal:
+              type: string
+            pupilsAsianPercent:
+              type: string
+            pupilsHispanicFemale:
+              type: string
+            pupilsHispanicMale:
+              type: string
+            pupilsHispanicTotal:
+              type: string
+            pupilsHispanicPercent:
+              type: string
+            pupilsBlackFemale:
+              type: string
+            pupilsBlackMale:
+              type: string
+            pupilsBlackTotal:
+              type: string
+            pupilsBlackPercent:
+              type: string
+            pupilsWhiteFemale:
+              type: string
+            pupilsWhiteMale:
+              type: string
+            pupilsWhiteTotal:
+              type: string
+            pupilsWhitePercent:
+              type: string
+            pupilsPacificIslanderFemale:
+              type: string
+            pupilsPacificIslanderMale:
+              type: string
+            pupilsPacificIslanderTotal:
+              type: string
+            pupilsPacificIslanderPercent:
+              type: string
+            pupilsMultiRacialFemale:
+              type: string
+            pupilsMultiRacialMale:
+              type: string
+            pupilsMultiRacialTotal:
+              type: string
+            pupilsMultiRacialPercent:
+              type: string
+            delinquentComplaintsTotal:
+              type: string
+            delinquentComplaintsAtSchool:
+              type: string
+            delinquentComplaintsAtSchoolPercent:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyName:
+              type: string
+            countyCompleteName:
+              type: string
+    GETReportCardResponse:
+      allOf:
+        - $ref: "#/components/schemas/GETClusterResponse"
+        - type: object
+          properties:
+            reportCardKey:
+              type: string
+            reportCardStartYear:
+              type: string
+            reportCardEndYear:
+              type: string
+            countyKey:
+              type: string
+            pupilsTotal:
+              type: string
+            pupilsIndianFemale:
+              type: string
+            pupilsIndianMale:
+              type: string
+            pupilsIndianTotal:
+              type: string
+            pupilsIndianPercent:
+              type: string
+            pupilsAsianFemale:
+              type: string
+            pupilsAsianMale:
+              type: string
+            pupilsAsianTotal:
+              type: string
+            pupilsAsianPercent:
+              type: string
+            pupilsHispanicFemale:
+              type: string
+            pupilsHispanicMale:
+              type: string
+            pupilsHispanicTotal:
+              type: string
+            pupilsHispanicPercent:
+              type: string
+            pupilsBlackFemale:
+              type: string
+            pupilsBlackMale:
+              type: string
+            pupilsBlackTotal:
+              type: string
+            pupilsBlackPercent:
+              type: string
+            pupilsWhiteFemale:
+              type: string
+            pupilsWhiteMale:
+              type: string
+            pupilsWhiteTotal:
+              type: string
+            pupilsWhitePercent:
+              type: string
+            pupilsPacificIslanderFemale:
+              type: string
+            pupilsPacificIslanderMale:
+              type: string
+            pupilsPacificIslanderTotal:
+              type: string
+            pupilsPacificIslanderPercent:
+              type: string
+            pupilsMultiRacialFemale:
+              type: string
+            pupilsMultiRacialMale:
+              type: string
+            pupilsMultiRacialTotal:
+              type: string
+            pupilsMultiRacialPercent:
+              type: string
+            delinquentComplaintsTotal:
+              type: string
+            delinquentComplaintsAtSchool:
+              type: string
+            delinquentComplaintsAtSchoolPercent:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyName:
+              type: string
+            countyCompleteName:
+              type: string
+    SearchPageReportCardResponse:
+      allOf:
+        - type: string
+    AdminSearchSiteCountyResponse:
+      allOf:
+        - type: array
+          items:
+            type: object
+            properties:
+              countyKey:
+                type: string
+              countyName:
+                type: string
+              stateKey:
+                type: string
+              reportCardKeys:
+                type: array
+                items:
+                  type: string
+              stateName:
+                type: string
+              stateAbbreviation:
+                type: string
+              countyCompleteName:
+                type: string
+    POSTSiteCountyRequest:
+      allOf:
+        - $ref: "#/components/schemas/POSTClusterRequest"
+        - type: object
+          properties:
+            countyKey:
+              type: string
+            countyName:
+              type: string
+            stateKey:
+              type: string
+            reportCardKeys:
+              type: array
+              items:
+                type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyCompleteName:
+              type: string
+    POSTSiteCountyResponse:
+      allOf:
+        - $ref: "#/components/schemas/POSTClusterResponse"
+        - type: object
+          properties:
+            countyKey:
+              type: string
+            countyName:
+              type: string
+            stateKey:
+              type: string
+            reportCardKeys:
+              type: array
+              items:
+                type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyCompleteName:
+              type: string
+    PATCHSiteCountyRequest:
+      allOf:
+        - $ref: "#/components/schemas/PATCHClusterRequest"
+        - type: object
+          properties:
+            setCountyKey:
+              type: string
+              nullable: true
+            removeCountyKey:
+              type: string
+            removeAllCountyKey:
+              type: string
+            setCountyName:
+              type: string
+              nullable: true
+            removeCountyName:
+              type: string
+            removeAllCountyName:
+              type: string
+            setStateKey:
+              type: string
+              nullable: true
+            removeStateKey:
+              type: string
+            removeAllStateKey:
+              type: string
+            setReportCardKeys:
+              type: array
+              nullable: true
+              items:
+                type: string
+            removeReportCardKeys:
+              type: string
+            removeAllReportCardKeys:
+              type: array
+              items:
+                type: string
+            addReportCardKeys:
+              type: string
+            addAllReportCardKeys:
+              type: array
+              items:
+                type: string
+            setStateName:
+              type: string
+              nullable: true
+            removeStateName:
+              type: string
+            removeAllStateName:
+              type: string
+            setStateAbbreviation:
+              type: string
+              nullable: true
+            removeStateAbbreviation:
+              type: string
+            removeAllStateAbbreviation:
+              type: string
+            setCountyCompleteName:
+              type: string
+              nullable: true
+            removeCountyCompleteName:
+              type: string
+            removeAllCountyCompleteName:
+              type: string
+    PATCHSiteCountyResponse:
+      allOf:
+        - $ref: "#/components/schemas/PATCHClusterResponse"
+        - type: object
+          properties:
+            setCountyKey:
+              type: string
+              nullable: true
+            removeCountyKey:
+              type: string
+            removeAllCountyKey:
+              type: string
+            setCountyName:
+              type: string
+              nullable: true
+            removeCountyName:
+              type: string
+            removeAllCountyName:
+              type: string
+            setStateKey:
+              type: string
+              nullable: true
+            removeStateKey:
+              type: string
+            removeAllStateKey:
+              type: string
+            setReportCardKeys:
+              type: array
+              nullable: true
+              items:
+                type: string
+            removeReportCardKeys:
+              type: string
+            removeAllReportCardKeys:
+              type: array
+              items:
+                type: string
+            addReportCardKeys:
+              type: string
+            addAllReportCardKeys:
+              type: array
+              items:
+                type: string
+            setStateName:
+              type: string
+              nullable: true
+            removeStateName:
+              type: string
+            removeAllStateName:
+              type: string
+            setStateAbbreviation:
+              type: string
+              nullable: true
+            removeStateAbbreviation:
+              type: string
+            removeAllStateAbbreviation:
+              type: string
+            setCountyCompleteName:
+              type: string
+              nullable: true
+            removeCountyCompleteName:
+              type: string
+            removeAllCountyCompleteName:
+              type: string
+    SearchSiteCountyResponse:
+      allOf:
+        - $ref: "#/components/schemas/SearchClusterResponse"
+        - type: array
+          items:
+            type: object
+            properties:
+              countyKey:
+                type: string
+              countyName:
+                type: string
+              stateKey:
+                type: string
+              reportCardKeys:
+                type: array
+                items:
+                  type: string
+              stateName:
+                type: string
+              stateAbbreviation:
+                type: string
+              countyCompleteName:
+                type: string
+    PUTCopySiteCountyRequest:
+      allOf:
+        - type: object
+          properties:
+            countyKey:
+              type: string
+            countyName:
+              type: string
+            stateKey:
+              type: string
+            reportCardKeys:
+              type: array
+              items:
+                type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyCompleteName:
+              type: string
+    PUTCopySiteCountyResponse:
+      allOf:
+        - type: object
+          properties:
+            countyKey:
+              type: string
+            countyName:
+              type: string
+            stateKey:
+              type: string
+            reportCardKeys:
+              type: array
+              items:
+                type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyCompleteName:
+              type: string
+    PUTImportSiteCountyRequest:
+      allOf:
+        - type: object
+          properties:
+            countyKey:
+              type: string
+            countyName:
+              type: string
+            stateKey:
+              type: string
+            reportCardKeys:
+              type: array
+              items:
+                type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyCompleteName:
+              type: string
+    PUTImportSiteCountyResponse:
+      allOf:
+        - type: object
+          properties:
+            countyKey:
+              type: string
+            countyName:
+              type: string
+            stateKey:
+              type: string
+            reportCardKeys:
+              type: array
+              items:
+                type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyCompleteName:
+              type: string
+    PUTMergeSiteCountyRequest:
+      allOf:
+        - type: object
+          properties:
+            countyKey:
+              type: string
+            countyName:
+              type: string
+            stateKey:
+              type: string
+            reportCardKeys:
+              type: array
+              items:
+                type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyCompleteName:
+              type: string
+    PUTMergeSiteCountyResponse:
+      allOf:
+        - type: object
+          properties:
+            countyKey:
+              type: string
+            countyName:
+              type: string
+            stateKey:
+              type: string
+            reportCardKeys:
+              type: array
+              items:
+                type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyCompleteName:
+              type: string
+    GETSiteCountyResponse:
+      allOf:
+        - $ref: "#/components/schemas/GETClusterResponse"
+        - type: object
+          properties:
+            countyKey:
+              type: string
+            countyName:
+              type: string
+            stateKey:
+              type: string
+            reportCardKeys:
+              type: array
+              items:
+                type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            countyCompleteName:
+              type: string
+    SearchPageSiteCountyResponse:
+      allOf:
+        - type: string
     ErrorResponse:
       required:
         - type

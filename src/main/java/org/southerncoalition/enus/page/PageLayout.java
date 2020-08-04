@@ -20,9 +20,12 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.solr.common.SolrDocument;
 import org.southerncoalition.enus.config.SiteConfig;
+import org.southerncoalition.enus.county.SiteCountyGenPage;
 import org.southerncoalition.enus.design.PageDesignGenPage;
 import org.southerncoalition.enus.html.part.HtmlPartGenPage;
+import org.southerncoalition.enus.reportcard.ReportCardGenPage;
 import org.southerncoalition.enus.request.SiteRequestEnUS;
+import org.southerncoalition.enus.state.SiteStateGenPage;
 import org.southerncoalition.enus.user.SiteUser;
 import org.southerncoalition.enus.wrap.Wrap;
 import org.southerncoalition.enus.writer.AllWriter;
@@ -243,18 +246,9 @@ public class PageLayout extends PageLayoutGen<Object> {
 		e("script").a("src", staticBaseUrl, "/js/sockjs.js").f().g("script");
 		e("script").a("src", staticBaseUrl, "/js/vertx-eventbus.js").f().g("script");
 		e("script").a("src", staticBaseUrl, "/js/enUS/SiteUserPage.js").f().g("script");
-		e("script").a("src", staticBaseUrl, "/js/enUS/SchoolPage.js").f().g("script");
-		e("script").a("src", staticBaseUrl, "/js/enUS/YearPage.js").f().g("script");
-		e("script").a("src", staticBaseUrl, "/js/enUS/SeasonPage.js").f().g("script");
-		e("script").a("src", staticBaseUrl, "/js/enUS/SessionPage.js").f().g("script");
-		e("script").a("src", staticBaseUrl, "/js/enUS/AgePage.js").f().g("script");
-		e("script").a("src", staticBaseUrl, "/js/enUS/BlockPage.js").f().g("script");
-		e("script").a("src", staticBaseUrl, "/js/enUS/EnrollmentPage.js").f().g("script");
-		e("script").a("src", staticBaseUrl, "/js/enUS/PaymentPage.js").f().g("script");
-		e("script").a("src", staticBaseUrl, "/js/enUS/MomPage.js").f().g("script");
-		e("script").a("src", staticBaseUrl, "/js/enUS/DadPage.js").f().g("script");
-		e("script").a("src", staticBaseUrl, "/js/enUS/GuardianPage.js").f().g("script");
-		e("script").a("src", staticBaseUrl, "/js/enUS/ChildPage.js").f().g("script");
+		e("script").a("src", staticBaseUrl, "/js/enUS/SiteStatePage.js").f().g("script");
+		e("script").a("src", staticBaseUrl, "/js/enUS/SiteCountyPage.js").f().g("script");
+		e("script").a("src", staticBaseUrl, "/js/enUS/ReportCardPage.js").f().g("script");
 		e("script").a("src", staticBaseUrl, "/js/moment.min.js").f().g("script");
 		e("script").a("src", staticBaseUrl, "/js/jqDatePicker.js").f().g("script");
 		e("script").a("src", staticBaseUrl, "/js/jquery.serialize-object.js").f().g("script");
@@ -271,9 +265,6 @@ public class PageLayout extends PageLayoutGen<Object> {
 		e("link").a("rel", "stylesheet").a("href", staticBaseUrl, "/css/w3.css").fg();
 		e("link").a("rel", "stylesheet").a("href", staticBaseUrl, "/css/site-enUS.css").fg();
 		e("link").a("rel", "stylesheet").a("href", staticBaseUrl, "/css/datePicker.css").fg();
-//		e("link").a("rel", "stylesheet").a("href", "https://www.w3schools.com/w3css/4/w3.css").fg();
-//		e("link").a("rel", "stylesheet").a("href", "/static/css/site-enUS.css").fg();
-//		e("link").a("rel", "stylesheet").a("href", "/static/css/datePicker.css").fg();
 		e("link").a("rel", "stylesheet").a("href", "https://fonts.googleapis.com/css?family=Khand").fg();
 //		e("link").a("rel", "stylesheet").a("href", "https://pro.fontawesome.com/releases/v5.9.0/css/all.css").a("integrity", "sha384-vlOMx0hKjUCl4WzuhIhSNZSm2yQCaf0mOU1hEDK/iztH3gU4v5NMmJln9273A6Jz").a("crossorigin", "anonymous").fg();
 	}
@@ -332,17 +323,17 @@ public class PageLayout extends PageLayoutGen<Object> {
 
 								e("footer").a("class", "w3-center w3-black w3-padding-48 w3-margin-top ").f();
 									e("div").f();
-										e("a").a("href", "https://github.com/computate/computate-scolaire").a("class", "w3-xlarge ").f();
+										e("a").a("href", "https://github.com/Southern-Coalition-Team-19/southerncoalition").a("class", "w3-xlarge ").f();
 											sx("This site is open source");
 										g("a");
 									g("div");
 									e("div").f();
-										e("a").a("href", "https://github.com/computate/computate-scolaire").a("class", "w3-large ").f();
+										e("a").a("href", "https://github.com/Southern-Coalition-Team-19/southerncoalition").a("class", "w3-large ").f();
 											sx("View the source code here");
 										g("a");
 									g("div");
 									e("div").a("class", "grow-30 w3-margin ").f();
-										e("a").a("href", "https://www.openshift.com/").a("target", "_blank").f();
+										e("a").a("href", "https://www.openshift.com/products/online/").a("target", "_blank").f();
 											e("span").a("class", "w3-large ").f();
 												sx("Powered by ");
 											g("span");
@@ -389,7 +380,7 @@ public class PageLayout extends PageLayoutGen<Object> {
 			e("div").a("class", "site-bar-item w3-bar-item ").f();
 				e("a").a("class", "").a("href", pageHomeUri).f();
 					e("span").a("class", "site-menu-item").f();
-						sx("Home");
+						sx("home");
 					g("span");
 				g("a");
 			g("div");
@@ -398,11 +389,41 @@ public class PageLayout extends PageLayoutGen<Object> {
 				e("div").a("class", "site-bar-item w3-bar-item ").f();
 					e("a").a("class", "w3-padding ").a("href", pageUserUri).f(); 
 						e("span").a("class", "site-menu-item").f();
-							sx("Login");
+							sx("login");
 						g("span");
 					g("a");
 				g("div");
 			}
+
+			{ e("div").a("class", "w3-dropdown-hover ").f();
+				{ e("div").a("class", "w3-button w3-hover-pale-blue ").f();
+						e("i").a("class", "far fa-globe-americas ").f().g("i");
+						sx("states");
+				} g("div");
+				{ e("div").a("class", "w3-dropdown-content w3-card-4 w3-padding ").f();
+					SiteStateGenPage.htmlSuggestedSiteStateGenPage(this, id, null);
+				} g("div");
+			} g("div");
+
+			{ e("div").a("class", "w3-dropdown-hover ").f();
+				{ e("div").a("class", "w3-button w3-hover-pale-yellow ").f();
+						e("i").a("class", "far fa-road ").f().g("i");
+						sx("counties");
+				} g("div");
+				{ e("div").a("class", "w3-dropdown-content w3-card-4 w3-padding ").f();
+					SiteCountyGenPage.htmlSuggestedSiteCountyGenPage(this, id, null);
+				} g("div");
+			} g("div");
+
+			{ e("div").a("class", "w3-dropdown-hover ").f();
+				{ e("div").a("class", "w3-button w3-hover-pale-green ").f();
+						e("i").a("class", "far fa-newspaper ").f().g("i");
+						sx("report cards");
+				} g("div");
+				{ e("div").a("class", "w3-dropdown-content w3-card-4 w3-padding ").f();
+					ReportCardGenPage.htmlSuggestedReportCardGenPage(this, id, null);
+				} g("div");
+			} g("div");
 
 			if(
 					CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES_ADMIN)
@@ -450,7 +471,7 @@ public class PageLayout extends PageLayoutGen<Object> {
 				e("a").a("class", "w3-padding ").a("href", pageUserUri).f(); 
 					e("span").a("class", "site-menu-item").f();
 						e("i").a("class", "far fa-sign-in-alt ").f().g("i");
-						sx("Login");
+						sx("login");
 					g("span");
 				g("a");
 			g("div");
@@ -504,7 +525,7 @@ public class PageLayout extends PageLayoutGen<Object> {
 				e("a").a("class", "w3-padding ").a("href", pageLogoutUri).f();
 					e("span").a("class", "site-menu-item").f();
 						e("i").a("class", "far fa-sign-out-alt ").f().g("i");
-						sx("Logout");
+						sx("logout");
 					g("span");
 				g("a");
 			g("div");

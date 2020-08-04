@@ -1,52 +1,53 @@
 package org.southerncoalition.enus.request;
 
 import java.util.Arrays;
+import org.apache.solr.common.SolrDocumentList;
+import org.apache.commons.lang3.StringUtils;
+import java.lang.Long;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+import java.util.Map;
+import io.vertx.core.json.JsonObject;
+import io.vertx.sqlclient.Transaction;
+import io.vertx.core.logging.Logger;
+import org.southerncoalition.enus.cluster.Cluster;
+import java.math.RoundingMode;
+import io.vertx.core.http.CaseInsensitiveHeaders;
+import org.southerncoalition.enus.writer.AllWriter;
+import java.math.MathContext;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import java.util.Objects;
+import java.util.List;
+import org.apache.solr.client.solrj.SolrQuery;
+import java.util.Optional;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import org.southerncoalition.enus.user.SiteUser;
+import org.southerncoalition.enus.context.SiteContextEnUS;
 import org.southerncoalition.enus.request.api.ApiRequest;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import org.southerncoalition.enus.config.SiteConfig;
-import org.apache.solr.common.SolrDocumentList;
 import java.util.HashMap;
-import org.apache.commons.lang3.StringUtils;
 import java.text.NumberFormat;
 import io.vertx.core.logging.LoggerFactory;
 import java.util.Stack;
 import java.util.ArrayList;
 import io.vertx.sqlclient.SqlConnection;
 import org.apache.commons.collections.CollectionUtils;
-import java.lang.Long;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
-import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.lang.Boolean;
-import io.vertx.core.json.JsonObject;
 import java.lang.String;
-import io.vertx.sqlclient.Transaction;
-import io.vertx.core.logging.Logger;
-import org.southerncoalition.enus.cluster.Cluster;
-import io.vertx.core.http.CaseInsensitiveHeaders;
 import org.southerncoalition.enus.wrap.Wrap;
-import org.southerncoalition.enus.writer.AllWriter;
-import java.math.MathContext;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import io.vertx.core.Vertx;
 import org.apache.commons.text.StringEscapeUtils;
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
-import com.fasterxml.jackson.annotation.JsonFormat;
 import org.southerncoalition.enus.request.SiteRequestEnUS;
-import java.util.Objects;
 import io.vertx.core.json.JsonArray;
 import org.apache.solr.common.SolrDocument;
-import java.util.List;
 import io.vertx.ext.web.api.OperationRequest;
-import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.commons.lang3.math.NumberUtils;
-import java.util.Optional;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import java.lang.Object;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import org.southerncoalition.enus.user.SiteUser;
-import org.southerncoalition.enus.context.SiteContextEnUS;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 
 /**	
@@ -1501,6 +1502,130 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		return requestPk == null ? "" : StringEscapeUtils.escapeHtml4(strRequestPk());
 	}
 
+	////////////////
+	// requestUri //
+	////////////////
+
+	/**	 The entity requestUri
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String requestUri;
+	@JsonIgnore
+	public Wrap<String> requestUriWrap = new Wrap<String>().p(this).c(String.class).var("requestUri").o(requestUri);
+
+	/**	<br/> The entity requestUri
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.request.SiteRequestEnUS&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:requestUri">Find the entity requestUri in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _requestUri(Wrap<String> c);
+
+	public String getRequestUri() {
+		return requestUri;
+	}
+
+	public void setRequestUri(String requestUri) {
+		this.requestUri = requestUri;
+		this.requestUriWrap.alreadyInitialized = true;
+	}
+	protected SiteRequestEnUS requestUriInit() {
+		if(!requestUriWrap.alreadyInitialized) {
+			_requestUri(requestUriWrap);
+			if(requestUri == null)
+				setRequestUri(requestUriWrap.o);
+		}
+		requestUriWrap.alreadyInitialized(true);
+		return (SiteRequestEnUS)this;
+	}
+
+	public String solrRequestUri() {
+		return requestUri;
+	}
+
+	public String strRequestUri() {
+		return requestUri == null ? "" : requestUri;
+	}
+
+	public String jsonRequestUri() {
+		return requestUri == null ? "" : requestUri;
+	}
+
+	public String nomAffichageRequestUri() {
+		return null;
+	}
+
+	public String htmTooltipRequestUri() {
+		return null;
+	}
+
+	public String htmRequestUri() {
+		return requestUri == null ? "" : StringEscapeUtils.escapeHtml4(strRequestUri());
+	}
+
+	///////////////////
+	// requestMethod //
+	///////////////////
+
+	/**	 The entity requestMethod
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String requestMethod;
+	@JsonIgnore
+	public Wrap<String> requestMethodWrap = new Wrap<String>().p(this).c(String.class).var("requestMethod").o(requestMethod);
+
+	/**	<br/> The entity requestMethod
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.request.SiteRequestEnUS&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:requestMethod">Find the entity requestMethod in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _requestMethod(Wrap<String> c);
+
+	public String getRequestMethod() {
+		return requestMethod;
+	}
+
+	public void setRequestMethod(String requestMethod) {
+		this.requestMethod = requestMethod;
+		this.requestMethodWrap.alreadyInitialized = true;
+	}
+	protected SiteRequestEnUS requestMethodInit() {
+		if(!requestMethodWrap.alreadyInitialized) {
+			_requestMethod(requestMethodWrap);
+			if(requestMethod == null)
+				setRequestMethod(requestMethodWrap.o);
+		}
+		requestMethodWrap.alreadyInitialized(true);
+		return (SiteRequestEnUS)this;
+	}
+
+	public String solrRequestMethod() {
+		return requestMethod;
+	}
+
+	public String strRequestMethod() {
+		return requestMethod == null ? "" : requestMethod;
+	}
+
+	public String jsonRequestMethod() {
+		return requestMethod == null ? "" : requestMethod;
+	}
+
+	public String nomAffichageRequestMethod() {
+		return null;
+	}
+
+	public String htmTooltipRequestMethod() {
+		return null;
+	}
+
+	public String htmRequestMethod() {
+		return requestMethod == null ? "" : StringEscapeUtils.escapeHtml4(strRequestMethod());
+	}
+
 	////////
 	// tx //
 	////////
@@ -1700,6 +1825,8 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		solrDocumentInit();
 		pageAdminInit();
 		requestPkInit();
+		requestUriInit();
+		requestMethodInit();
 		txInit();
 		sqlConnectionInit();
 		requestHeadersInit();
@@ -1803,6 +1930,10 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 				return oSiteRequestEnUS.pageAdmin;
 			case "requestPk":
 				return oSiteRequestEnUS.requestPk;
+			case "requestUri":
+				return oSiteRequestEnUS.requestUri;
+			case "requestMethod":
+				return oSiteRequestEnUS.requestMethod;
 			case "tx":
 				return oSiteRequestEnUS.tx;
 			case "sqlConnection":
