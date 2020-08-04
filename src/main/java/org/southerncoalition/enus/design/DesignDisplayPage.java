@@ -136,7 +136,7 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 		l.setC(SiteCounty.class);
 
 		Long countyKey = Optional.ofNullable(reportCardSearch.first()).map(ReportCard::getCountyKey).orElse(null);
-		if(pageDesignId.endsWith("-reportCard-form") && countyKey != null) {
+		if(pageDesignId != null && pageDesignId.endsWith("-reportCard-form") && countyKey != null) {
 			l.addFilterQuery("pk_indexed_long:" + countyKey);
 		} else {
 			for(String var : siteRequest_.getRequestVars().keySet()) {
@@ -151,7 +151,7 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 	}
 
 	protected void _county_(Wrap<SiteCounty> c) {
-		if(pageDesignId.endsWith("-reportCard-form")) {
+		if(pageDesignId != null && pageDesignId.endsWith("-reportCard-form")) {
 			if(countySearch.size() == 0) {
 				throw new RuntimeException("No county was found for the query: " + siteRequest_.getOperationRequest().getParams().getJsonObject("query").encode());
 			}
@@ -175,7 +175,7 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 		l.setC(SiteState.class);
 
 		Long stateKey = Optional.ofNullable(reportCardSearch.first()).map(ReportCard::getStateKey).orElse(null);
-		if(pageDesignId.endsWith("-reportCard-form") && stateKey != null) {
+		if(pageDesignId != null && pageDesignId.endsWith("-reportCard-form") && stateKey != null) {
 			l.addFilterQuery("pk_indexed_long:" + stateKey);
 		} else {
 			for(String var : siteRequest_.getRequestVars().keySet()) {
@@ -190,7 +190,7 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 	}
 
 	protected void _state_(Wrap<SiteState> c) {
-		if(pageDesignId.endsWith("-reportCard-form")) {
+		if(pageDesignId != null && pageDesignId.endsWith("-reportCard-form")) {
 			if(stateSearch.size() == 0) {
 				throw new RuntimeException("No state was found for the query: " + siteRequest_.getOperationRequest().getParams().getJsonObject("query").encode());
 			}
