@@ -385,16 +385,6 @@ public class PageLayout extends PageLayoutGen<Object> {
 				g("a");
 			g("div");
 
-			if(siteRequest_.getUserId() == null) {
-				e("div").a("class", "site-bar-item w3-bar-item ").f();
-					e("a").a("class", "w3-padding ").a("href", pageUserUri).f(); 
-						e("span").a("class", "site-menu-item").f();
-							sx("login");
-						g("span");
-					g("a");
-				g("div");
-			}
-
 			{ e("div").a("class", "w3-dropdown-hover ").f();
 				{ e("div").a("class", "w3-button w3-hover-pale-blue ").f();
 						e("i").a("class", "far fa-globe-americas ").f().g("i");
