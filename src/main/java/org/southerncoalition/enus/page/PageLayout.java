@@ -194,7 +194,7 @@ public class PageLayout extends PageLayoutGen<Object> {
 	}
 
 	protected void _pageHomeUri(Wrap<String> c) {
-		c.o("");
+		c.o("/");
 	}
 
 	protected void _pageSchoolUri(Wrap<String> c) {
