@@ -212,6 +212,8 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 				searchList.setStore(true);
 				searchList.setQuery("*:*");
 				searchList.setC(ReportCard.class);
+				searchList.addFilterQuery("deleted_indexed_boolean:false");
+				searchList.addFilterQuery("archived_indexed_boolean:false");
 				searchList.addFilterQuery("inheritPk_indexed_long:" + json.getString("pk"));
 				searchList.initDeepForClass(siteRequest2);
 
@@ -398,6 +400,8 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 				searchList.setStore(true);
 				searchList.setQuery("*:*");
 				searchList.setC(ReportCard.class);
+				searchList.addFilterQuery("deleted_indexed_boolean:false");
+				searchList.addFilterQuery("archived_indexed_boolean:false");
 				searchList.addFilterQuery("pk_indexed_long:" + json.getString("pk"));
 				searchList.initDeepForClass(siteRequest2);
 
@@ -1250,6 +1254,8 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 								searchList.setQuery("*:*");
 								searchList.setStore(true);
 								searchList.setC(SiteCounty.class);
+								searchList.addFilterQuery("deleted_indexed_boolean:false");
+								searchList.addFilterQuery("archived_indexed_boolean:false");
 								searchList.addFilterQuery((inheritPk ? "inheritPk" : "pk") + "_indexed_long:" + l);
 								searchList.initDeepSearchList(siteRequest);
 								Long l2 = Optional.ofNullable(searchList.getList().stream().findFirst().orElse(null)).map(a -> a.getPk()).orElse(null);
@@ -1892,6 +1898,8 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 								searchList.setQuery("*:*");
 								searchList.setStore(true);
 								searchList.setC(SiteCounty.class);
+								searchList.addFilterQuery("deleted_indexed_boolean:false");
+								searchList.addFilterQuery("archived_indexed_boolean:false");
 								searchList.addFilterQuery((inheritPk ? "inheritPk" : "pk") + "_indexed_long:" + l);
 								searchList.initDeepSearchList(siteRequest);
 								Long l2 = Optional.ofNullable(searchList.getList().stream().findFirst().orElse(null)).map(a -> a.getPk()).orElse(null);
@@ -1924,6 +1932,8 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 								searchList.setQuery("*:*");
 								searchList.setStore(true);
 								searchList.setC(SiteCounty.class);
+								searchList.addFilterQuery("deleted_indexed_boolean:false");
+								searchList.addFilterQuery("archived_indexed_boolean:false");
 								searchList.addFilterQuery((inheritPk ? "inheritPk" : "pk") + "_indexed_long:" + l);
 								searchList.initDeepSearchList(siteRequest);
 								Long l2 = Optional.ofNullable(searchList.getList().stream().findFirst().orElse(null)).map(a -> a.getPk()).orElse(null);

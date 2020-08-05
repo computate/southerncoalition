@@ -8,6 +8,7 @@ touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/
 touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/writer/AllWriter.java                                                                                 
 touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/writer/AllWriters.java                                                                                
 touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/writer/ApiWriter.java                                                                                 
+touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/html/design/PageDesign.java                                                                               
 touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/html/part/HtmlPart.java                                                                               
 touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/page/PageLayout.java
 touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/vertx/AppOpenApi3.java
