@@ -149,7 +149,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlRow: 5
 	 * HtmlCell: 3
 	 * DisplayName.enUS: Indian male
-	 */ 
+	 */  
 	protected void _pupilsIndianMale(Wrap<Integer> c) {
 	}
 
