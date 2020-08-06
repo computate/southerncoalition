@@ -76,7 +76,6 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 		l.setStore(true);
 		l.setQuery("*:*");
 		l.setC(ReportCard.class);
-		l.addFilterQuery("reportCardEndYear_indexed_int:" + reportCardEndYear);
 
 		l.addSort("stateName_indexed_int", ORDER.asc);
 		l.addSort("countyName_indexed_int", ORDER.asc);
