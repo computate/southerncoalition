@@ -2,11 +2,12 @@ package org.southerncoalition.enus.design;
 
 import java.time.LocalDate;
 import java.time.temporal.TemporalAdjusters;
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
-import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang3.ObjectUtils;
 import org.apache.solr.client.solrj.SolrQuery.ORDER;
 import org.apache.solr.client.solrj.util.ClientUtils;
 import org.southerncoalition.enus.county.SiteCounty;
@@ -75,59 +76,130 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 		l.setStore(true);
 		l.setQuery("*:*");
 		l.setC(ReportCard.class);
-		l.setRows(1000);
-
-		List<String> roles = Arrays.asList("SiteManager");
-		if(
-				!CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), roles)
-				&& !CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), roles)
-				) {
-			l.addFilterQuery(
-				"sessionId_indexed_string:" + ClientUtils.escapeQueryChars(Optional.ofNullable(siteRequest_.getSessionId()).orElse("-----"))
-						+ " OR userKeys_indexed_longs:" + Optional.ofNullable(siteRequest_.getUserKey()).orElse(0L)
-			);
-		}
+		l.addFilterQuery("reportCardEndYear_indexed_int:" + reportCardEndYear);
 
 		l.addSort("stateName_indexed_int", ORDER.asc);
 		l.addSort("countyName_indexed_int", ORDER.asc);
 		l.addSort("reportCardStartCounty_indexed_int", ORDER.desc);
+		l.addFacetField("reportCardStartYear_indexed_int");
 
-
+		Boolean filtered = false;
 		for(String var : siteRequest_.getRequestVars().keySet()) {
 			String val = siteRequest_.getRequestVars().get(var);
 			if(!"design".equals(var)) {
 				String varIndexed = ReportCard.varIndexedReportCard(var);
-				if(varIndexed != null)
+				if(varIndexed != null) {
+					filtered = true;
 					l.addFilterQuery(varIndexed + ":" + ClientUtils.escapeQueryChars(val));
+				}
 			}
+		}
+		if(filtered)
+			l.setRows(1000);
+		else
+			l.setRows(0);
+	}
+
+	protected void _reportCardStartYears(List<String> l) {
+		List<Integer> years = reportCardSearch.getQueryResponse().getFacetField("reportCardStartYear_indexed_int").getValues().stream().map(o -> Integer.parseInt(o.getName())).collect(Collectors.toList());
+		years.remove(reportCardStartYear);
+		Collections.sort(years);
+		for(Integer i = 0; i < years.size(); i++) {
+			Integer year = years.get(i);
+			if(i == (years.size() - 1) && years.size() > 1)
+				l.add(" and " + year);
+			else if(i > 0)
+				l.add(", " + year);
+			else
+				l.add(year.toString());
 		}
 	}
 
-	protected void _reportCard(Wrap<ReportCard> c) {
+	protected void _reportCardStartYearCurrent(Wrap<String> c) {
+	}
+
+	protected void _reportCard_(Wrap<ReportCard> c) {
 		if(reportCardSearch.size() == 1) {
 			c.o(reportCardSearch.get(0));
 		}
-		else {
-			ReportCard o = new ReportCard();
-			c.o(o);
-			o.setPk(0L);
-			o.setSiteRequest_(siteRequest_);
-		}
+//		else {
+//			ReportCard o = new ReportCard();
+//			c.o(o);
+//			o.setPk(0L);
+//			o.setSiteRequest_(siteRequest_);
+//		}
 	}
 
 	protected void _reportCards(Wrap<List<ReportCard>> c) {
 		Integer i = 0;
 		Integer size = reportCardSearch.size();
-		Long blockKeyBefore = null;
-		Long blockKeyCurrent = null;
-		String groupBefore = null;
-		String groupCurrent = null;
+		Long stateKeyBefore = null;
+		Long stateKeyCurrent = null;
+		Long countyKeyBefore = null;
+		Long countyKeyCurrent = null;
 		ReportCard reportCard = null;
 		List<ReportCard> reportCardReportCards = null;
 		Integer reportCardNumber = null;
 
 		reportCards = reportCardSearch.getList();
 		c.o(reportCards);
+		if(size > 0) {
+			reportCard = reportCards.get(i);
+			stateKeyCurrent = reportCard.getStateKey();
+			while(i < size) {
+				reportCard = reportCards.get(i);
+				stateKeyCurrent = reportCard.getStateKey();
+				countyKeyCurrent = reportCard.getCountyKey();
+				if(stateKeyCurrent == null || ObjectUtils.compare(stateKeyCurrent, stateKeyBefore) != 0) {
+					stateKeyBefore = reportCard.getStateKey();
+					reportCardCounties_ = reportCard.getReportCardCounties_();
+					reportCardStates_.add(reportCard);
+				}
+				while(i < size) {
+					reportCard = reportCards.get(i);
+					stateKeyCurrent = reportCard.getStateKey();
+					countyKeyCurrent = reportCard.getCountyKey();
+					if(countyKeyBefore == null || ObjectUtils.compare(countyKeyCurrent, countyKeyBefore) != 0) {
+						countyKeyBefore = reportCard.getCountyKey();
+						reportCardReportCards = reportCard.getReportCardReportCards_();
+						reportCardCounties_.add(reportCard);
+						reportCardNumber = 1;
+					}
+					reportCard.setReportCardKey(reportCard.getPk());
+					reportCard.setReportCardNumber_(reportCardNumber);
+					reportCardReportCards.add(reportCard);
+					reportCardNumber++;
+					i++;
+					if((i + 1) > size)
+						break;
+					reportCard = reportCards.get(i);
+					stateKeyCurrent = reportCard.getStateKey();
+					countyKeyCurrent = reportCard.getCountyKey();
+					if(ObjectUtils.compare(stateKeyCurrent, stateKeyBefore) != 0)
+						break;
+					if(ObjectUtils.compare(countyKeyCurrent, countyKeyBefore) != 0)
+						break;
+				}
+				reportCard.setReportCardKey(reportCard.getPk());
+				reportCard.setReportCardNumber_(reportCardNumber);
+				reportCardNumber++;
+			}
+		}
+	}
+
+	protected void _reportCardStates_(List<ReportCard> c) {
+	}
+
+	protected void _reportCardCounties_(Wrap<List<ReportCard>> c) {
+	}
+
+	protected void _reportCardState_(Wrap<ReportCard> c) {
+	}
+
+	protected void _reportCardCounty_(Wrap<ReportCard> c) {
+	}
+
+	protected void _reportCardReportCard_(Wrap<ReportCard> c) {
 	}
 
 	protected void _countySearch(SearchList<SiteCounty> l) {

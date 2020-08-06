@@ -652,6 +652,68 @@ public abstract class SiteCountyGen<DEV> extends Cluster {
 		} g("div");
 	}
 
+	/////////////
+	// stateId //
+	/////////////
+
+	/**	 The entity stateId
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String stateId;
+	@JsonIgnore
+	public Wrap<String> stateIdWrap = new Wrap<String>().p(this).c(String.class).var("stateId").o(stateId);
+
+	/**	<br/> The entity stateId
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.county.SiteCounty&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:stateId">Find the entity stateId in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _stateId(Wrap<String> c);
+
+	public String getStateId() {
+		return stateId;
+	}
+
+	public void setStateId(String stateId) {
+		this.stateId = stateId;
+		this.stateIdWrap.alreadyInitialized = true;
+	}
+	protected SiteCounty stateIdInit() {
+		if(!stateIdWrap.alreadyInitialized) {
+			_stateId(stateIdWrap);
+			if(stateId == null)
+				setStateId(stateIdWrap.o);
+		}
+		stateIdWrap.alreadyInitialized(true);
+		return (SiteCounty)this;
+	}
+
+	public String solrStateId() {
+		return stateId;
+	}
+
+	public String strStateId() {
+		return stateId == null ? "" : stateId;
+	}
+
+	public String jsonStateId() {
+		return stateId == null ? "" : stateId;
+	}
+
+	public String nomAffichageStateId() {
+		return null;
+	}
+
+	public String htmTooltipStateId() {
+		return null;
+	}
+
+	public String htmStateId() {
+		return stateId == null ? "" : StringEscapeUtils.escapeHtml4(strStateId());
+	}
+
 	///////////////
 	// stateName //
 	///////////////
@@ -865,6 +927,7 @@ public abstract class SiteCountyGen<DEV> extends Cluster {
 		state_Init();
 		stateKeyInit();
 		reportCardKeysInit();
+		stateIdInit();
 		stateNameInit();
 		stateAbbreviationInit();
 		countyCompleteNameInit();
@@ -920,6 +983,8 @@ public abstract class SiteCountyGen<DEV> extends Cluster {
 				return oSiteCounty.stateKey;
 			case "reportCardKeys":
 				return oSiteCounty.reportCardKeys;
+			case "stateId":
+				return oSiteCounty.stateId;
 			case "stateName":
 				return oSiteCounty.stateName;
 			case "stateAbbreviation":
@@ -1029,6 +1094,12 @@ public abstract class SiteCountyGen<DEV> extends Cluster {
 			if(reportCardKeys != null)
 				oSiteCounty.reportCardKeys.addAll(reportCardKeys);
 
+			if(saves.contains("stateId")) {
+				String stateId = (String)solrDocument.get("stateId_stored_string");
+				if(stateId != null)
+					oSiteCounty.setStateId(stateId);
+			}
+
 			if(saves.contains("stateName")) {
 				String stateName = (String)solrDocument.get("stateName_stored_string");
 				if(stateName != null)
@@ -1133,6 +1204,10 @@ public abstract class SiteCountyGen<DEV> extends Cluster {
 				document.addField("reportCardKeys_stored_longs", o);
 			}
 		}
+		if(stateId != null) {
+			document.addField("stateId_indexed_string", stateId);
+			document.addField("stateId_stored_string", stateId);
+		}
 		if(stateName != null) {
 			document.addField("stateName_indexed_string", stateName);
 			document.addField("stateName_stored_string", stateName);
@@ -1176,6 +1251,8 @@ public abstract class SiteCountyGen<DEV> extends Cluster {
 				return "stateKey_indexed_long";
 			case "reportCardKeys":
 				return "reportCardKeys_indexed_longs";
+			case "stateId":
+				return "stateId_indexed_string";
 			case "stateName":
 				return "stateName_indexed_string";
 			case "stateAbbreviation":
@@ -1227,6 +1304,10 @@ public abstract class SiteCountyGen<DEV> extends Cluster {
 		if(reportCardKeys != null)
 			oSiteCounty.reportCardKeys.addAll(reportCardKeys);
 
+		String stateId = (String)solrDocument.get("stateId_stored_string");
+		if(stateId != null)
+			oSiteCounty.setStateId(stateId);
+
 		String stateName = (String)solrDocument.get("stateName_stored_string");
 		if(stateName != null)
 			oSiteCounty.setStateName(stateName);
@@ -1259,6 +1340,8 @@ public abstract class SiteCountyGen<DEV> extends Cluster {
 				apiRequest.addVars("stateKey");
 			if(!Objects.equals(reportCardKeys, original.getReportCardKeys()))
 				apiRequest.addVars("reportCardKeys");
+			if(!Objects.equals(stateId, original.getStateId()))
+				apiRequest.addVars("stateId");
 			if(!Objects.equals(stateName, original.getStateName()))
 				apiRequest.addVars("stateName");
 			if(!Objects.equals(stateAbbreviation, original.getStateAbbreviation()))
@@ -1274,7 +1357,7 @@ public abstract class SiteCountyGen<DEV> extends Cluster {
 	//////////////
 
 	@Override public int hashCode() {
-		return Objects.hash(super.hashCode(), countyKey, countyName, stateKey, reportCardKeys, stateName, stateAbbreviation, countyCompleteName);
+		return Objects.hash(super.hashCode(), countyKey, countyName, stateKey, reportCardKeys, stateId, stateName, stateAbbreviation, countyCompleteName);
 	}
 
 	////////////
@@ -1292,6 +1375,7 @@ public abstract class SiteCountyGen<DEV> extends Cluster {
 				&& Objects.equals( countyName, that.countyName )
 				&& Objects.equals( stateKey, that.stateKey )
 				&& Objects.equals( reportCardKeys, that.reportCardKeys )
+				&& Objects.equals( stateId, that.stateId )
 				&& Objects.equals( stateName, that.stateName )
 				&& Objects.equals( stateAbbreviation, that.stateAbbreviation )
 				&& Objects.equals( countyCompleteName, that.countyCompleteName );
@@ -1309,6 +1393,7 @@ public abstract class SiteCountyGen<DEV> extends Cluster {
 		sb.append( ", countyName: \"" ).append(countyName).append( "\"" );
 		sb.append( ", stateKey: " ).append(stateKey);
 		sb.append( ", reportCardKeys: " ).append(reportCardKeys);
+		sb.append( ", stateId: \"" ).append(stateId).append( "\"" );
 		sb.append( ", stateName: \"" ).append(stateName).append( "\"" );
 		sb.append( ", stateAbbreviation: \"" ).append(stateAbbreviation).append( "\"" );
 		sb.append( ", countyCompleteName: \"" ).append(countyCompleteName).append( "\"" );

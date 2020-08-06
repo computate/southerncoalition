@@ -2,6 +2,8 @@ package org.southerncoalition.enus.reportcard;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.text.DecimalFormat;
+import java.util.List;
 
 import org.southerncoalition.enus.cluster.Cluster;
 import org.southerncoalition.enus.county.SiteCounty;
@@ -122,11 +124,15 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Indexed: true
 	 * Stored: true
 	 * Define: true
-	 * HtmlRow: 5
-	 * HtmlCell: 1
+	 * HtmlRow: 11
+	 * HtmlCell: 3
 	 * DisplayName.enUS: pupils total
 	 */ 
 	protected void _pupilsTotal(Wrap<Integer> c) {
+	}
+	@Override
+	public String strPupilsTotal() {
+		return pupilsTotal == null ? "" : new DecimalFormat("#,##0").format(pupilsTotal);
 	}
 
 	/**   
@@ -135,7 +141,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * Define: true
 	 * HtmlRow: 5
-	 * HtmlCell: 2
+	 * HtmlCell: 3
 	 * DisplayName.enUS: Indian female
 	 */ 
 	protected void _pupilsIndianFemale(Wrap<Integer> c) {
@@ -147,7 +153,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * Define: true
 	 * HtmlRow: 5
-	 * HtmlCell: 3
+	 * HtmlCell: 2
 	 * DisplayName.enUS: Indian male
 	 */  
 	protected void _pupilsIndianMale(Wrap<Integer> c) {
@@ -179,6 +185,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 				&& pupilsTotal != null && pupilsTotal > 0)
 			c.o(new BigDecimal(pupilsIndianFemale).add(new BigDecimal(pupilsIndianMale)).divide(new BigDecimal(pupilsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
+	@Override public String strPupilsIndianPercent() {
+		return pupilsIndianPercent == null ? "" : pupilsIndianPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
 
 	/**   
 	 * {@inheritDoc}
@@ -186,7 +195,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * Define: true
 	 * HtmlRow: 6
-	 * HtmlCell: 1
+	 * HtmlCell: 2
 	 * DisplayName.enUS: Asian female
 	 */ 
 	protected void _pupilsAsianFemale(Wrap<Integer> c) {
@@ -198,7 +207,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * Define: true
 	 * HtmlRow: 6
-	 * HtmlCell: 2
+	 * HtmlCell: 1
 	 * DisplayName.enUS: Asian male
 	 */ 
 	protected void _pupilsAsianMale(Wrap<Integer> c) {
@@ -230,6 +239,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 				&& pupilsTotal != null && pupilsTotal > 0)
 			c.o(new BigDecimal(pupilsAsianFemale).add(new BigDecimal(pupilsAsianMale)).divide(new BigDecimal(pupilsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
+	@Override public String strPupilsAsianPercent() {
+		return pupilsAsianPercent == null ? "" : pupilsAsianPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
 
 	/**   
 	 * {@inheritDoc}
@@ -237,7 +249,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * Define: true
 	 * HtmlRow: 7
-	 * HtmlCell: 1
+	 * HtmlCell: 2
 	 * DisplayName.enUS: Hispanic female
 	 */ 
 	protected void _pupilsHispanicFemale(Wrap<Integer> c) {
@@ -249,7 +261,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * Define: true
 	 * HtmlRow: 7
-	 * HtmlCell: 2
+	 * HtmlCell: 1
 	 * DisplayName.enUS: Hispanic male
 	 */ 
 	protected void _pupilsHispanicMale(Wrap<Integer> c) {
@@ -281,6 +293,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 				&& pupilsTotal != null && pupilsTotal > 0)
 			c.o(new BigDecimal(pupilsHispanicFemale).add(new BigDecimal(pupilsHispanicMale)).divide(new BigDecimal(pupilsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
+	@Override public String strPupilsHispanicPercent() {
+		return pupilsHispanicPercent == null ? "" : pupilsHispanicPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
 
 	/**   
 	 * {@inheritDoc}
@@ -288,7 +303,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * Define: true
 	 * HtmlRow: 8
-	 * HtmlCell: 1
+	 * HtmlCell: 2
 	 * DisplayName.enUS: Black female
 	 */ 
 	protected void _pupilsBlackFemale(Wrap<Integer> c) {
@@ -300,7 +315,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * Define: true
 	 * HtmlRow: 8
-	 * HtmlCell: 2
+	 * HtmlCell: 1
 	 * DisplayName.enUS: Black male
 	 */ 
 	protected void _pupilsBlackMale(Wrap<Integer> c) {
@@ -332,6 +347,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 				&& pupilsTotal != null && pupilsTotal > 0)
 			c.o(new BigDecimal(pupilsBlackFemale).add(new BigDecimal(pupilsBlackMale)).divide(new BigDecimal(pupilsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
+	@Override public String strPupilsBlackPercent() {
+		return pupilsBlackPercent == null ? "" : pupilsBlackPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
 
 	/**   
 	 * {@inheritDoc}
@@ -339,7 +357,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * Define: true
 	 * HtmlRow: 9
-	 * HtmlCell: 1
+	 * HtmlCell: 2
 	 * DisplayName.enUS: White female
 	 */ 
 	protected void _pupilsWhiteFemale(Wrap<Integer> c) {
@@ -351,7 +369,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * Define: true
 	 * HtmlRow: 9
-	 * HtmlCell: 2
+	 * HtmlCell: 1
 	 * DisplayName.enUS: White male
 	 */ 
 	protected void _pupilsWhiteMale(Wrap<Integer> c) {
@@ -383,6 +401,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 				&& pupilsTotal != null && pupilsTotal > 0)
 			c.o(new BigDecimal(pupilsWhiteFemale).add(new BigDecimal(pupilsWhiteMale)).divide(new BigDecimal(pupilsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
+	@Override public String strPupilsWhitePercent() {
+		return pupilsWhitePercent == null ? "" : pupilsWhitePercent.setScale(1, RoundingMode.CEILING).toString();
+	}
 
 	/**   
 	 * {@inheritDoc}
@@ -390,7 +411,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * Define: true
 	 * HtmlRow: 10
-	 * HtmlCell: 1
+	 * HtmlCell: 2
 	 * DisplayName.enUS: Pacific Islander female
 	 */ 
 	protected void _pupilsPacificIslanderFemale(Wrap<Integer> c) {
@@ -402,7 +423,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * Define: true
 	 * HtmlRow: 10
-	 * HtmlCell: 2
+	 * HtmlCell: 1
 	 * DisplayName.enUS: Pacific Islander male
 	 */ 
 	protected void _pupilsPacificIslanderMale(Wrap<Integer> c) {
@@ -434,6 +455,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 				&& pupilsTotal != null && pupilsTotal > 0)
 			c.o(new BigDecimal(pupilsPacificIslanderFemale).add(new BigDecimal(pupilsPacificIslanderMale)).divide(new BigDecimal(pupilsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
+	@Override public String strPupilsPacificIslanderPercent() {
+		return pupilsPacificIslanderPercent == null ? "" : pupilsPacificIslanderPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
 
 	/**   
 	 * {@inheritDoc}
@@ -441,7 +465,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * Define: true
 	 * HtmlRow: 11
-	 * HtmlCell: 1
+	 * HtmlCell: 2
 	 * DisplayName.enUS: Multi Racial female
 	 */ 
 	protected void _pupilsMultiRacialFemale(Wrap<Integer> c) {
@@ -453,7 +477,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * Define: true
 	 * HtmlRow: 11
-	 * HtmlCell: 2
+	 * HtmlCell: 1
 	 * DisplayName.enUS: Multi Racial male
 	 */ 
 	protected void _pupilsMultiRacialMale(Wrap<Integer> c) {
@@ -464,7 +488,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Indexed: true
 	 * Stored: true
 	 * HtmlRow: 11
-	 * HtmlCell: 3
+	 * HtmlCell: 4
 	 * DisplayName.enUS: Multi Racials total
 	 */ 
 	protected void _pupilsMultiRacialTotal(Wrap<Integer> c) {
@@ -477,13 +501,16 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Indexed: true
 	 * Stored: true
 	 * HtmlRow: 11
-	 * HtmlCell: 4
+	 * HtmlCell: 5
 	 * DisplayName.enUS: Multi Racials percent
 	 */ 
 	protected void _pupilsMultiRacialPercent(Wrap<BigDecimal> c) {
 		if(pupilsMultiRacialFemale != null  && pupilsMultiRacialMale != null
 				&& pupilsTotal != null && pupilsTotal > 0)
 			c.o(new BigDecimal(pupilsMultiRacialFemale).add(new BigDecimal(pupilsMultiRacialMale)).divide(new BigDecimal(pupilsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strPupilsMultiRacialPercent() {
+		return pupilsMultiRacialPercent == null ? "" : pupilsMultiRacialPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -523,6 +550,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 				&& delinquentComplaintsTotal != null && delinquentComplaintsTotal > 0)
 			c.o(new BigDecimal(delinquentComplaintsAtSchool).divide(new BigDecimal(delinquentComplaintsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
+	@Override public String strDelinquentComplaintsAtSchoolPercent() {
+		return delinquentComplaintsAtSchoolPercent == null ? "" : delinquentComplaintsAtSchoolPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
 
 	/**   
 	 * {@inheritDoc}
@@ -532,6 +562,26 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	protected void _stateKey(Wrap<Long> c) {
 		if(county_ != null)
 			c.o(county_.getStateKey());
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 */ 
+	protected void _stateId(Wrap<String> c) {
+		if(county_ != null)
+			c.o(county_.getStateId());
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 */ 
+	protected void _countyId(Wrap<String> c) {
+		if(county_ != null)
+			c.o(county_.getObjectId());
 	}
 
 	/**   
@@ -574,6 +624,26 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	protected void _countyCompleteName(Wrap<String> c) {
 		c.o(reportCardStartYear + "-" + reportCardEndYear + " report card in " + countyName + " county in " + stateName + " (" + stateAbbreviation + ")");
 	}
+
+	/**
+	 * {@inheritDoc}
+	 */ 
+	protected void _reportCardNumber_(Wrap<Integer> c) {}
+
+	/**
+	 * {@inheritDoc}
+	 */ 
+	protected void _reportCardStates_(List<ReportCard> l) {}
+
+	/**
+	 * {@inheritDoc}
+	 */ 
+	protected void _reportCardCounties_(List<ReportCard> l) {}
+
+	/**   
+	 * {@inheritDoc}
+	 */ 
+	protected void _reportCardReportCards_(List<ReportCard> l) {}
 
 	/**
 	 * {@inheritDoc}

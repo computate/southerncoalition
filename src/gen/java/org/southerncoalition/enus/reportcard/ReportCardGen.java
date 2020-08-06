@@ -39,6 +39,7 @@ import java.util.List;
 import org.southerncoalition.enus.county.SiteCounty;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.commons.lang3.math.NumberUtils;
+import org.southerncoalition.enus.reportcard.ReportCard;
 import java.util.Optional;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import org.apache.solr.client.solrj.util.ClientUtils;
@@ -4473,6 +4474,130 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return stateKey == null ? "" : StringEscapeUtils.escapeHtml4(strStateKey());
 	}
 
+	/////////////
+	// stateId //
+	/////////////
+
+	/**	 The entity stateId
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String stateId;
+	@JsonIgnore
+	public Wrap<String> stateIdWrap = new Wrap<String>().p(this).c(String.class).var("stateId").o(stateId);
+
+	/**	<br/> The entity stateId
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:stateId">Find the entity stateId in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _stateId(Wrap<String> c);
+
+	public String getStateId() {
+		return stateId;
+	}
+
+	public void setStateId(String stateId) {
+		this.stateId = stateId;
+		this.stateIdWrap.alreadyInitialized = true;
+	}
+	protected ReportCard stateIdInit() {
+		if(!stateIdWrap.alreadyInitialized) {
+			_stateId(stateIdWrap);
+			if(stateId == null)
+				setStateId(stateIdWrap.o);
+		}
+		stateIdWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public String solrStateId() {
+		return stateId;
+	}
+
+	public String strStateId() {
+		return stateId == null ? "" : stateId;
+	}
+
+	public String jsonStateId() {
+		return stateId == null ? "" : stateId;
+	}
+
+	public String nomAffichageStateId() {
+		return null;
+	}
+
+	public String htmTooltipStateId() {
+		return null;
+	}
+
+	public String htmStateId() {
+		return stateId == null ? "" : StringEscapeUtils.escapeHtml4(strStateId());
+	}
+
+	//////////////
+	// countyId //
+	//////////////
+
+	/**	 The entity countyId
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String countyId;
+	@JsonIgnore
+	public Wrap<String> countyIdWrap = new Wrap<String>().p(this).c(String.class).var("countyId").o(countyId);
+
+	/**	<br/> The entity countyId
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:countyId">Find the entity countyId in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _countyId(Wrap<String> c);
+
+	public String getCountyId() {
+		return countyId;
+	}
+
+	public void setCountyId(String countyId) {
+		this.countyId = countyId;
+		this.countyIdWrap.alreadyInitialized = true;
+	}
+	protected ReportCard countyIdInit() {
+		if(!countyIdWrap.alreadyInitialized) {
+			_countyId(countyIdWrap);
+			if(countyId == null)
+				setCountyId(countyIdWrap.o);
+		}
+		countyIdWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public String solrCountyId() {
+		return countyId;
+	}
+
+	public String strCountyId() {
+		return countyId == null ? "" : countyId;
+	}
+
+	public String jsonCountyId() {
+		return countyId == null ? "" : countyId;
+	}
+
+	public String nomAffichageCountyId() {
+		return null;
+	}
+
+	public String htmTooltipCountyId() {
+		return null;
+	}
+
+	public String htmCountyId() {
+		return countyId == null ? "" : StringEscapeUtils.escapeHtml4(strCountyId());
+	}
+
 	///////////////
 	// stateName //
 	///////////////
@@ -4721,6 +4846,216 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return countyCompleteName == null ? "" : StringEscapeUtils.escapeHtml4(strCountyCompleteName());
 	}
 
+	///////////////////////
+	// reportCardNumber_ //
+	///////////////////////
+
+	/**	 The entity reportCardNumber_
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Integer reportCardNumber_;
+	@JsonIgnore
+	public Wrap<Integer> reportCardNumber_Wrap = new Wrap<Integer>().p(this).c(Integer.class).var("reportCardNumber_").o(reportCardNumber_);
+
+	/**	<br/> The entity reportCardNumber_
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCardNumber_">Find the entity reportCardNumber_ in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _reportCardNumber_(Wrap<Integer> c);
+
+	public Integer getReportCardNumber_() {
+		return reportCardNumber_;
+	}
+
+	public void setReportCardNumber_(Integer reportCardNumber_) {
+		this.reportCardNumber_ = reportCardNumber_;
+		this.reportCardNumber_Wrap.alreadyInitialized = true;
+	}
+	public ReportCard setReportCardNumber_(String o) {
+		if(NumberUtils.isParsable(o))
+			this.reportCardNumber_ = Integer.parseInt(o);
+		this.reportCardNumber_Wrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard reportCardNumber_Init() {
+		if(!reportCardNumber_Wrap.alreadyInitialized) {
+			_reportCardNumber_(reportCardNumber_Wrap);
+			if(reportCardNumber_ == null)
+				setReportCardNumber_(reportCardNumber_Wrap.o);
+		}
+		reportCardNumber_Wrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Integer solrReportCardNumber_() {
+		return reportCardNumber_;
+	}
+
+	public String strReportCardNumber_() {
+		return reportCardNumber_ == null ? "" : reportCardNumber_.toString();
+	}
+
+	public String jsonReportCardNumber_() {
+		return reportCardNumber_ == null ? "" : reportCardNumber_.toString();
+	}
+
+	public String nomAffichageReportCardNumber_() {
+		return null;
+	}
+
+	public String htmTooltipReportCardNumber_() {
+		return null;
+	}
+
+	public String htmReportCardNumber_() {
+		return reportCardNumber_ == null ? "" : StringEscapeUtils.escapeHtml4(strReportCardNumber_());
+	}
+
+	///////////////////////
+	// reportCardStates_ //
+	///////////////////////
+
+	/**	 The entity reportCardStates_
+	 *	Il est construit avant d'être initialisé avec le constructeur par défaut List<ReportCard>(). 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected List<ReportCard> reportCardStates_ = new ArrayList<ReportCard>();
+	@JsonIgnore
+	public Wrap<List<ReportCard>> reportCardStates_Wrap = new Wrap<List<ReportCard>>().p(this).c(List.class).var("reportCardStates_").o(reportCardStates_);
+
+	/**	<br/> The entity reportCardStates_
+	 *  It is constructed before being initialized with the constructor by default List<ReportCard>(). 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCardStates_">Find the entity reportCardStates_ in Solr</a>
+	 * <br/>
+	 * @param reportCardStates_ is the entity already constructed. 
+	 **/
+	protected abstract void _reportCardStates_(List<ReportCard> l);
+
+	public List<ReportCard> getReportCardStates_() {
+		return reportCardStates_;
+	}
+
+	public void setReportCardStates_(List<ReportCard> reportCardStates_) {
+		this.reportCardStates_ = reportCardStates_;
+		this.reportCardStates_Wrap.alreadyInitialized = true;
+	}
+	public ReportCard addReportCardStates_(ReportCard...objets) {
+		for(ReportCard o : objets) {
+			addReportCardStates_(o);
+		}
+		return (ReportCard)this;
+	}
+	public ReportCard addReportCardStates_(ReportCard o) {
+		if(o != null && !reportCardStates_.contains(o))
+			this.reportCardStates_.add(o);
+		return (ReportCard)this;
+	}
+	protected ReportCard reportCardStates_Init() {
+		if(!reportCardStates_Wrap.alreadyInitialized) {
+			_reportCardStates_(reportCardStates_);
+		}
+		reportCardStates_Wrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	/////////////////////////
+	// reportCardCounties_ //
+	/////////////////////////
+
+	/**	 The entity reportCardCounties_
+	 *	Il est construit avant d'être initialisé avec le constructeur par défaut List<ReportCard>(). 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected List<ReportCard> reportCardCounties_ = new ArrayList<ReportCard>();
+	@JsonIgnore
+	public Wrap<List<ReportCard>> reportCardCounties_Wrap = new Wrap<List<ReportCard>>().p(this).c(List.class).var("reportCardCounties_").o(reportCardCounties_);
+
+	/**	<br/> The entity reportCardCounties_
+	 *  It is constructed before being initialized with the constructor by default List<ReportCard>(). 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCardCounties_">Find the entity reportCardCounties_ in Solr</a>
+	 * <br/>
+	 * @param reportCardCounties_ is the entity already constructed. 
+	 **/
+	protected abstract void _reportCardCounties_(List<ReportCard> l);
+
+	public List<ReportCard> getReportCardCounties_() {
+		return reportCardCounties_;
+	}
+
+	public void setReportCardCounties_(List<ReportCard> reportCardCounties_) {
+		this.reportCardCounties_ = reportCardCounties_;
+		this.reportCardCounties_Wrap.alreadyInitialized = true;
+	}
+	public ReportCard addReportCardCounties_(ReportCard...objets) {
+		for(ReportCard o : objets) {
+			addReportCardCounties_(o);
+		}
+		return (ReportCard)this;
+	}
+	public ReportCard addReportCardCounties_(ReportCard o) {
+		if(o != null && !reportCardCounties_.contains(o))
+			this.reportCardCounties_.add(o);
+		return (ReportCard)this;
+	}
+	protected ReportCard reportCardCounties_Init() {
+		if(!reportCardCounties_Wrap.alreadyInitialized) {
+			_reportCardCounties_(reportCardCounties_);
+		}
+		reportCardCounties_Wrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	////////////////////////////
+	// reportCardReportCards_ //
+	////////////////////////////
+
+	/**	 The entity reportCardReportCards_
+	 *	Il est construit avant d'être initialisé avec le constructeur par défaut List<ReportCard>(). 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected List<ReportCard> reportCardReportCards_ = new ArrayList<ReportCard>();
+	@JsonIgnore
+	public Wrap<List<ReportCard>> reportCardReportCards_Wrap = new Wrap<List<ReportCard>>().p(this).c(List.class).var("reportCardReportCards_").o(reportCardReportCards_);
+
+	/**	<br/> The entity reportCardReportCards_
+	 *  It is constructed before being initialized with the constructor by default List<ReportCard>(). 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCardReportCards_">Find the entity reportCardReportCards_ in Solr</a>
+	 * <br/>
+	 * @param reportCardReportCards_ is the entity already constructed. 
+	 **/
+	protected abstract void _reportCardReportCards_(List<ReportCard> l);
+
+	public List<ReportCard> getReportCardReportCards_() {
+		return reportCardReportCards_;
+	}
+
+	public void setReportCardReportCards_(List<ReportCard> reportCardReportCards_) {
+		this.reportCardReportCards_ = reportCardReportCards_;
+		this.reportCardReportCards_Wrap.alreadyInitialized = true;
+	}
+	public ReportCard addReportCardReportCards_(ReportCard...objets) {
+		for(ReportCard o : objets) {
+			addReportCardReportCards_(o);
+		}
+		return (ReportCard)this;
+	}
+	public ReportCard addReportCardReportCards_(ReportCard o) {
+		if(o != null && !reportCardReportCards_.contains(o))
+			this.reportCardReportCards_.add(o);
+		return (ReportCard)this;
+	}
+	protected ReportCard reportCardReportCards_Init() {
+		if(!reportCardReportCards_Wrap.alreadyInitialized) {
+			_reportCardReportCards_(reportCardReportCards_);
+		}
+		reportCardReportCards_Wrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
 	//////////////
 	// initDeep //
 	//////////////
@@ -4781,10 +5116,16 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		delinquentComplaintsAtSchoolInit();
 		delinquentComplaintsAtSchoolPercentInit();
 		stateKeyInit();
+		stateIdInit();
+		countyIdInit();
 		stateNameInit();
 		stateAbbreviationInit();
 		countyNameInit();
 		countyCompleteNameInit();
+		reportCardNumber_Init();
+		reportCardStates_Init();
+		reportCardCounties_Init();
+		reportCardReportCards_Init();
 	}
 
 	@Override public void initDeepForClass(SiteRequestEnUS siteRequest_) {
@@ -4903,6 +5244,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.delinquentComplaintsAtSchoolPercent;
 			case "stateKey":
 				return oReportCard.stateKey;
+			case "stateId":
+				return oReportCard.stateId;
+			case "countyId":
+				return oReportCard.countyId;
 			case "stateName":
 				return oReportCard.stateName;
 			case "stateAbbreviation":
@@ -4911,6 +5256,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.countyName;
 			case "countyCompleteName":
 				return oReportCard.countyCompleteName;
+			case "reportCardNumber_":
+				return oReportCard.reportCardNumber_;
+			case "reportCardStates_":
+				return oReportCard.reportCardStates_;
+			case "reportCardCounties_":
+				return oReportCard.reportCardCounties_;
+			case "reportCardReportCards_":
+				return oReportCard.reportCardReportCards_;
 			default:
 				return super.obtainCluster(var);
 		}
@@ -5294,6 +5647,18 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					oReportCard.setStateKey(stateKey);
 			}
 
+			if(saves.contains("stateId")) {
+				String stateId = (String)solrDocument.get("stateId_stored_string");
+				if(stateId != null)
+					oReportCard.setStateId(stateId);
+			}
+
+			if(saves.contains("countyId")) {
+				String countyId = (String)solrDocument.get("countyId_stored_string");
+				if(countyId != null)
+					oReportCard.setCountyId(countyId);
+			}
+
 			if(saves.contains("stateName")) {
 				String stateName = (String)solrDocument.get("stateName_stored_string");
 				if(stateName != null)
@@ -5532,6 +5897,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			document.addField("stateKey_indexed_long", stateKey);
 			document.addField("stateKey_stored_long", stateKey);
 		}
+		if(stateId != null) {
+			document.addField("stateId_indexed_string", stateId);
+			document.addField("stateId_stored_string", stateId);
+		}
+		if(countyId != null) {
+			document.addField("countyId_indexed_string", countyId);
+			document.addField("countyId_stored_string", countyId);
+		}
 		if(stateName != null) {
 			document.addField("stateName_indexed_string", stateName);
 			document.addField("stateName_stored_string", stateName);
@@ -5645,6 +6018,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return "delinquentComplaintsAtSchoolPercent_indexed_double";
 			case "stateKey":
 				return "stateKey_indexed_long";
+			case "stateId":
+				return "stateId_indexed_string";
+			case "countyId":
+				return "countyId_indexed_string";
 			case "stateName":
 				return "stateName_indexed_string";
 			case "stateAbbreviation":
@@ -5830,6 +6207,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(stateKey != null)
 			oReportCard.setStateKey(stateKey);
 
+		String stateId = (String)solrDocument.get("stateId_stored_string");
+		if(stateId != null)
+			oReportCard.setStateId(stateId);
+
+		String countyId = (String)solrDocument.get("countyId_stored_string");
+		if(countyId != null)
+			oReportCard.setCountyId(countyId);
+
 		String stateName = (String)solrDocument.get("stateName_stored_string");
 		if(stateName != null)
 			oReportCard.setStateName(stateName);
@@ -5932,6 +6317,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("delinquentComplaintsAtSchoolPercent");
 			if(!Objects.equals(stateKey, original.getStateKey()))
 				apiRequest.addVars("stateKey");
+			if(!Objects.equals(stateId, original.getStateId()))
+				apiRequest.addVars("stateId");
+			if(!Objects.equals(countyId, original.getCountyId()))
+				apiRequest.addVars("countyId");
 			if(!Objects.equals(stateName, original.getStateName()))
 				apiRequest.addVars("stateName");
 			if(!Objects.equals(stateAbbreviation, original.getStateAbbreviation()))
@@ -5949,7 +6338,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	//////////////
 
 	@Override public int hashCode() {
-		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, countyKey, pupilsTotal, pupilsIndianFemale, pupilsIndianMale, pupilsIndianTotal, pupilsIndianPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsHispanicFemale, pupilsHispanicMale, pupilsHispanicTotal, pupilsHispanicPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, stateKey, stateName, stateAbbreviation, countyName, countyCompleteName);
+		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, countyKey, pupilsTotal, pupilsIndianFemale, pupilsIndianMale, pupilsIndianTotal, pupilsIndianPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsHispanicFemale, pupilsHispanicMale, pupilsHispanicTotal, pupilsHispanicPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, stateKey, stateId, countyId, stateName, stateAbbreviation, countyName, countyCompleteName);
 	}
 
 	////////////
@@ -6000,6 +6389,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				&& Objects.equals( delinquentComplaintsAtSchool, that.delinquentComplaintsAtSchool )
 				&& Objects.equals( delinquentComplaintsAtSchoolPercent, that.delinquentComplaintsAtSchoolPercent )
 				&& Objects.equals( stateKey, that.stateKey )
+				&& Objects.equals( stateId, that.stateId )
+				&& Objects.equals( countyId, that.countyId )
 				&& Objects.equals( stateName, that.stateName )
 				&& Objects.equals( stateAbbreviation, that.stateAbbreviation )
 				&& Objects.equals( countyName, that.countyName )
@@ -6051,6 +6442,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		sb.append( ", delinquentComplaintsAtSchool: " ).append(delinquentComplaintsAtSchool);
 		sb.append( ", delinquentComplaintsAtSchoolPercent: " ).append(delinquentComplaintsAtSchoolPercent);
 		sb.append( ", stateKey: " ).append(stateKey);
+		sb.append( ", stateId: \"" ).append(stateId).append( "\"" );
+		sb.append( ", countyId: \"" ).append(countyId).append( "\"" );
 		sb.append( ", stateName: \"" ).append(stateName).append( "\"" );
 		sb.append( ", stateAbbreviation: \"" ).append(stateAbbreviation).append( "\"" );
 		sb.append( ", countyName: \"" ).append(countyName).append( "\"" );

@@ -325,43 +325,182 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		return (DesignDisplayPage)this;
 	}
 
-	////////////////
-	// reportCard //
-	////////////////
+	//////////////////////////
+	// reportCardStartYears //
+	//////////////////////////
 
-	/**	 The entity reportCard
+	/**	 The entity reportCardStartYears
+	 *	Il est construit avant d'être initialisé avec le constructeur par défaut List<String>(). 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected List<String> reportCardStartYears = new ArrayList<String>();
+	@JsonIgnore
+	public Wrap<List<String>> reportCardStartYearsWrap = new Wrap<List<String>>().p(this).c(List.class).var("reportCardStartYears").o(reportCardStartYears);
+
+	/**	<br/> The entity reportCardStartYears
+	 *  It is constructed before being initialized with the constructor by default List<String>(). 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCardStartYears">Find the entity reportCardStartYears in Solr</a>
+	 * <br/>
+	 * @param reportCardStartYears is the entity already constructed. 
+	 **/
+	protected abstract void _reportCardStartYears(List<String> l);
+
+	public List<String> getReportCardStartYears() {
+		return reportCardStartYears;
+	}
+
+	public void setReportCardStartYears(List<String> reportCardStartYears) {
+		this.reportCardStartYears = reportCardStartYears;
+		this.reportCardStartYearsWrap.alreadyInitialized = true;
+	}
+	public DesignDisplayPage addReportCardStartYears(String...objets) {
+		for(String o : objets) {
+			addReportCardStartYears(o);
+		}
+		return (DesignDisplayPage)this;
+	}
+	public DesignDisplayPage addReportCardStartYears(String o) {
+		if(o != null && !reportCardStartYears.contains(o))
+			this.reportCardStartYears.add(o);
+		return (DesignDisplayPage)this;
+	}
+	public DesignDisplayPage setReportCardStartYears(JsonArray objets) {
+		reportCardStartYears.clear();
+		for(int i = 0; i < objets.size(); i++) {
+			String o = objets.getString(i);
+			addReportCardStartYears(o);
+		}
+		return (DesignDisplayPage)this;
+	}
+	protected DesignDisplayPage reportCardStartYearsInit() {
+		if(!reportCardStartYearsWrap.alreadyInitialized) {
+			_reportCardStartYears(reportCardStartYears);
+		}
+		reportCardStartYearsWrap.alreadyInitialized(true);
+		return (DesignDisplayPage)this;
+	}
+
+	public List<String> solrReportCardStartYears() {
+		return reportCardStartYears;
+	}
+
+	public String strReportCardStartYears() {
+		return reportCardStartYears == null ? "" : reportCardStartYears.toString();
+	}
+
+	public String jsonReportCardStartYears() {
+		return reportCardStartYears == null ? "" : reportCardStartYears.toString();
+	}
+
+	public String nomAffichageReportCardStartYears() {
+		return null;
+	}
+
+	public String htmTooltipReportCardStartYears() {
+		return null;
+	}
+
+	public String htmReportCardStartYears() {
+		return reportCardStartYears == null ? "" : StringEscapeUtils.escapeHtml4(strReportCardStartYears());
+	}
+
+	////////////////////////////////
+	// reportCardStartYearCurrent //
+	////////////////////////////////
+
+	/**	 The entity reportCardStartYearCurrent
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonInclude(Include.NON_NULL)
-	protected ReportCard reportCard;
+	protected String reportCardStartYearCurrent;
 	@JsonIgnore
-	public Wrap<ReportCard> reportCardWrap = new Wrap<ReportCard>().p(this).c(ReportCard.class).var("reportCard").o(reportCard);
+	public Wrap<String> reportCardStartYearCurrentWrap = new Wrap<String>().p(this).c(String.class).var("reportCardStartYearCurrent").o(reportCardStartYearCurrent);
 
-	/**	<br/> The entity reportCard
+	/**	<br/> The entity reportCardStartYearCurrent
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCard">Find the entity reportCard in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCardStartYearCurrent">Find the entity reportCardStartYearCurrent in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _reportCard(Wrap<ReportCard> c);
+	protected abstract void _reportCardStartYearCurrent(Wrap<String> c);
 
-	public ReportCard getReportCard() {
-		return reportCard;
+	public String getReportCardStartYearCurrent() {
+		return reportCardStartYearCurrent;
 	}
 
-	public void setReportCard(ReportCard reportCard) {
-		this.reportCard = reportCard;
-		this.reportCardWrap.alreadyInitialized = true;
+	public void setReportCardStartYearCurrent(String reportCardStartYearCurrent) {
+		this.reportCardStartYearCurrent = reportCardStartYearCurrent;
+		this.reportCardStartYearCurrentWrap.alreadyInitialized = true;
 	}
-	protected DesignDisplayPage reportCardInit() {
-		if(!reportCardWrap.alreadyInitialized) {
-			_reportCard(reportCardWrap);
-			if(reportCard == null)
-				setReportCard(reportCardWrap.o);
+	protected DesignDisplayPage reportCardStartYearCurrentInit() {
+		if(!reportCardStartYearCurrentWrap.alreadyInitialized) {
+			_reportCardStartYearCurrent(reportCardStartYearCurrentWrap);
+			if(reportCardStartYearCurrent == null)
+				setReportCardStartYearCurrent(reportCardStartYearCurrentWrap.o);
 		}
-		if(reportCard != null)
-			reportCard.initDeepForClass(siteRequest_);
-		reportCardWrap.alreadyInitialized(true);
+		reportCardStartYearCurrentWrap.alreadyInitialized(true);
+		return (DesignDisplayPage)this;
+	}
+
+	public String solrReportCardStartYearCurrent() {
+		return reportCardStartYearCurrent;
+	}
+
+	public String strReportCardStartYearCurrent() {
+		return reportCardStartYearCurrent == null ? "" : reportCardStartYearCurrent;
+	}
+
+	public String jsonReportCardStartYearCurrent() {
+		return reportCardStartYearCurrent == null ? "" : reportCardStartYearCurrent;
+	}
+
+	public String nomAffichageReportCardStartYearCurrent() {
+		return null;
+	}
+
+	public String htmTooltipReportCardStartYearCurrent() {
+		return null;
+	}
+
+	public String htmReportCardStartYearCurrent() {
+		return reportCardStartYearCurrent == null ? "" : StringEscapeUtils.escapeHtml4(strReportCardStartYearCurrent());
+	}
+
+	/////////////////
+	// reportCard_ //
+	/////////////////
+
+	/**	 The entity reportCard_
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected ReportCard reportCard_;
+	@JsonIgnore
+	public Wrap<ReportCard> reportCard_Wrap = new Wrap<ReportCard>().p(this).c(ReportCard.class).var("reportCard_").o(reportCard_);
+
+	/**	<br/> The entity reportCard_
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCard_">Find the entity reportCard_ in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _reportCard_(Wrap<ReportCard> c);
+
+	public ReportCard getReportCard_() {
+		return reportCard_;
+	}
+
+	public void setReportCard_(ReportCard reportCard_) {
+		this.reportCard_ = reportCard_;
+		this.reportCard_Wrap.alreadyInitialized = true;
+	}
+	protected DesignDisplayPage reportCard_Init() {
+		if(!reportCard_Wrap.alreadyInitialized) {
+			_reportCard_(reportCard_Wrap);
+			if(reportCard_ == null)
+				setReportCard_(reportCard_Wrap.o);
+		}
+		reportCard_Wrap.alreadyInitialized(true);
 		return (DesignDisplayPage)this;
 	}
 
@@ -411,6 +550,216 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 				setReportCards(reportCardsWrap.o);
 		}
 		reportCardsWrap.alreadyInitialized(true);
+		return (DesignDisplayPage)this;
+	}
+
+	///////////////////////
+	// reportCardStates_ //
+	///////////////////////
+
+	/**	 The entity reportCardStates_
+	 *	Il est construit avant d'être initialisé avec le constructeur par défaut List<ReportCard>(). 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected List<ReportCard> reportCardStates_ = new ArrayList<ReportCard>();
+	@JsonIgnore
+	public Wrap<List<ReportCard>> reportCardStates_Wrap = new Wrap<List<ReportCard>>().p(this).c(List.class).var("reportCardStates_").o(reportCardStates_);
+
+	/**	<br/> The entity reportCardStates_
+	 *  It is constructed before being initialized with the constructor by default List<ReportCard>(). 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCardStates_">Find the entity reportCardStates_ in Solr</a>
+	 * <br/>
+	 * @param reportCardStates_ is the entity already constructed. 
+	 **/
+	protected abstract void _reportCardStates_(List<ReportCard> c);
+
+	public List<ReportCard> getReportCardStates_() {
+		return reportCardStates_;
+	}
+
+	public void setReportCardStates_(List<ReportCard> reportCardStates_) {
+		this.reportCardStates_ = reportCardStates_;
+		this.reportCardStates_Wrap.alreadyInitialized = true;
+	}
+	public DesignDisplayPage addReportCardStates_(ReportCard...objets) {
+		for(ReportCard o : objets) {
+			addReportCardStates_(o);
+		}
+		return (DesignDisplayPage)this;
+	}
+	public DesignDisplayPage addReportCardStates_(ReportCard o) {
+		if(o != null && !reportCardStates_.contains(o))
+			this.reportCardStates_.add(o);
+		return (DesignDisplayPage)this;
+	}
+	protected DesignDisplayPage reportCardStates_Init() {
+		if(!reportCardStates_Wrap.alreadyInitialized) {
+			_reportCardStates_(reportCardStates_);
+		}
+		reportCardStates_Wrap.alreadyInitialized(true);
+		return (DesignDisplayPage)this;
+	}
+
+	/////////////////////////
+	// reportCardCounties_ //
+	/////////////////////////
+
+	/**	 The entity reportCardCounties_
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected List<ReportCard> reportCardCounties_;
+	@JsonIgnore
+	public Wrap<List<ReportCard>> reportCardCounties_Wrap = new Wrap<List<ReportCard>>().p(this).c(List.class).var("reportCardCounties_").o(reportCardCounties_);
+
+	/**	<br/> The entity reportCardCounties_
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCardCounties_">Find the entity reportCardCounties_ in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _reportCardCounties_(Wrap<List<ReportCard>> c);
+
+	public List<ReportCard> getReportCardCounties_() {
+		return reportCardCounties_;
+	}
+
+	public void setReportCardCounties_(List<ReportCard> reportCardCounties_) {
+		this.reportCardCounties_ = reportCardCounties_;
+		this.reportCardCounties_Wrap.alreadyInitialized = true;
+	}
+	public DesignDisplayPage addReportCardCounties_(ReportCard...objets) {
+		for(ReportCard o : objets) {
+			addReportCardCounties_(o);
+		}
+		return (DesignDisplayPage)this;
+	}
+	public DesignDisplayPage addReportCardCounties_(ReportCard o) {
+		if(o != null && !reportCardCounties_.contains(o))
+			this.reportCardCounties_.add(o);
+		return (DesignDisplayPage)this;
+	}
+	protected DesignDisplayPage reportCardCounties_Init() {
+		if(!reportCardCounties_Wrap.alreadyInitialized) {
+			_reportCardCounties_(reportCardCounties_Wrap);
+			if(reportCardCounties_ == null)
+				setReportCardCounties_(reportCardCounties_Wrap.o);
+		}
+		reportCardCounties_Wrap.alreadyInitialized(true);
+		return (DesignDisplayPage)this;
+	}
+
+	//////////////////////
+	// reportCardState_ //
+	//////////////////////
+
+	/**	 The entity reportCardState_
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected ReportCard reportCardState_;
+	@JsonIgnore
+	public Wrap<ReportCard> reportCardState_Wrap = new Wrap<ReportCard>().p(this).c(ReportCard.class).var("reportCardState_").o(reportCardState_);
+
+	/**	<br/> The entity reportCardState_
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCardState_">Find the entity reportCardState_ in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _reportCardState_(Wrap<ReportCard> c);
+
+	public ReportCard getReportCardState_() {
+		return reportCardState_;
+	}
+
+	public void setReportCardState_(ReportCard reportCardState_) {
+		this.reportCardState_ = reportCardState_;
+		this.reportCardState_Wrap.alreadyInitialized = true;
+	}
+	protected DesignDisplayPage reportCardState_Init() {
+		if(!reportCardState_Wrap.alreadyInitialized) {
+			_reportCardState_(reportCardState_Wrap);
+			if(reportCardState_ == null)
+				setReportCardState_(reportCardState_Wrap.o);
+		}
+		reportCardState_Wrap.alreadyInitialized(true);
+		return (DesignDisplayPage)this;
+	}
+
+	///////////////////////
+	// reportCardCounty_ //
+	///////////////////////
+
+	/**	 The entity reportCardCounty_
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected ReportCard reportCardCounty_;
+	@JsonIgnore
+	public Wrap<ReportCard> reportCardCounty_Wrap = new Wrap<ReportCard>().p(this).c(ReportCard.class).var("reportCardCounty_").o(reportCardCounty_);
+
+	/**	<br/> The entity reportCardCounty_
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCardCounty_">Find the entity reportCardCounty_ in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _reportCardCounty_(Wrap<ReportCard> c);
+
+	public ReportCard getReportCardCounty_() {
+		return reportCardCounty_;
+	}
+
+	public void setReportCardCounty_(ReportCard reportCardCounty_) {
+		this.reportCardCounty_ = reportCardCounty_;
+		this.reportCardCounty_Wrap.alreadyInitialized = true;
+	}
+	protected DesignDisplayPage reportCardCounty_Init() {
+		if(!reportCardCounty_Wrap.alreadyInitialized) {
+			_reportCardCounty_(reportCardCounty_Wrap);
+			if(reportCardCounty_ == null)
+				setReportCardCounty_(reportCardCounty_Wrap.o);
+		}
+		reportCardCounty_Wrap.alreadyInitialized(true);
+		return (DesignDisplayPage)this;
+	}
+
+	///////////////////////////
+	// reportCardReportCard_ //
+	///////////////////////////
+
+	/**	 The entity reportCardReportCard_
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected ReportCard reportCardReportCard_;
+	@JsonIgnore
+	public Wrap<ReportCard> reportCardReportCard_Wrap = new Wrap<ReportCard>().p(this).c(ReportCard.class).var("reportCardReportCard_").o(reportCardReportCard_);
+
+	/**	<br/> The entity reportCardReportCard_
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCardReportCard_">Find the entity reportCardReportCard_ in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _reportCardReportCard_(Wrap<ReportCard> c);
+
+	public ReportCard getReportCardReportCard_() {
+		return reportCardReportCard_;
+	}
+
+	public void setReportCardReportCard_(ReportCard reportCardReportCard_) {
+		this.reportCardReportCard_ = reportCardReportCard_;
+		this.reportCardReportCard_Wrap.alreadyInitialized = true;
+	}
+	protected DesignDisplayPage reportCardReportCard_Init() {
+		if(!reportCardReportCard_Wrap.alreadyInitialized) {
+			_reportCardReportCard_(reportCardReportCard_Wrap);
+			if(reportCardReportCard_ == null)
+				setReportCardReportCard_(reportCardReportCard_Wrap.o);
+		}
+		reportCardReportCard_Wrap.alreadyInitialized(true);
 		return (DesignDisplayPage)this;
 	}
 
@@ -1062,8 +1411,15 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		reportCardStartYearInit();
 		reportCardEndYearInit();
 		reportCardSearchInit();
-		reportCardInit();
+		reportCardStartYearsInit();
+		reportCardStartYearCurrentInit();
+		reportCard_Init();
 		reportCardsInit();
+		reportCardStates_Init();
+		reportCardCounties_Init();
+		reportCardState_Init();
+		reportCardCounty_Init();
+		reportCardReportCard_Init();
 		countySearchInit();
 		county_Init();
 		countyKeyInit();
@@ -1092,8 +1448,6 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 			pageDesign.setSiteRequest_(siteRequest_);
 		if(reportCardSearch != null)
 			reportCardSearch.setSiteRequest_(siteRequest_);
-		if(reportCard != null)
-			reportCard.setSiteRequest_(siteRequest_);
 		if(countySearch != null)
 			countySearch.setSiteRequest_(siteRequest_);
 		if(stateSearch != null)
@@ -1136,10 +1490,24 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 				return oDesignDisplayPage.reportCardEndYear;
 			case "reportCardSearch":
 				return oDesignDisplayPage.reportCardSearch;
-			case "reportCard":
-				return oDesignDisplayPage.reportCard;
+			case "reportCardStartYears":
+				return oDesignDisplayPage.reportCardStartYears;
+			case "reportCardStartYearCurrent":
+				return oDesignDisplayPage.reportCardStartYearCurrent;
+			case "reportCard_":
+				return oDesignDisplayPage.reportCard_;
 			case "reportCards":
 				return oDesignDisplayPage.reportCards;
+			case "reportCardStates_":
+				return oDesignDisplayPage.reportCardStates_;
+			case "reportCardCounties_":
+				return oDesignDisplayPage.reportCardCounties_;
+			case "reportCardState_":
+				return oDesignDisplayPage.reportCardState_;
+			case "reportCardCounty_":
+				return oDesignDisplayPage.reportCardCounty_;
+			case "reportCardReportCard_":
+				return oDesignDisplayPage.reportCardReportCard_;
 			case "countySearch":
 				return oDesignDisplayPage.countySearch;
 			case "county_":

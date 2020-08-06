@@ -119,6 +119,16 @@ public class SiteCounty extends SiteCountyGen<Cluster> {
 	 * Indexed: true
 	 * Stored: true
 	 */ 
+	protected void _stateId(Wrap<String> c) {
+		if(state_ != null)
+			c.o(state_.getObjectId());
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 */ 
 	protected void _stateName(Wrap<String> c) {
 		if(state_ != null)
 			c.o(state_.getStateName());
