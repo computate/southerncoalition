@@ -3,6 +3,7 @@ package org.southerncoalition.enus.design;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.nio.charset.Charset;
 import java.time.LocalDate;
 import java.time.temporal.TemporalAdjusters;
 import java.util.Collections;
@@ -407,7 +408,7 @@ public class DesignPdfPage extends DesignPdfPageGen<DesignPdfGenPage> {
 
 			DocumentBuilder builder = fac.newDocumentBuilder();
 			builder.setEntityResolver(FSEntityResolver.instance());
-			Document doc = builder.parse(new ByteArrayInputStream(str.getBytes()));
+			Document doc = builder.parse(new ByteArrayInputStream(str.getBytes(Charset.forName("UTF-8"))));
 
 			ITextRenderer renderer = new ITextRenderer();
 			renderer.setDocument(doc, null);
