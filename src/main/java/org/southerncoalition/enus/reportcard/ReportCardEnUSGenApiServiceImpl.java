@@ -950,6 +950,71 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
+					case "teachersMale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "teachersMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.teachersMale failed", b.cause())));
+							});
+						}));
+						break;
+					case "teachersFemale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "teachersFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.teachersFemale failed", b.cause())));
+							});
+						}));
+						break;
+					case "teachersWhiteTotal":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "teachersWhiteTotal", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.teachersWhiteTotal failed", b.cause())));
+							});
+						}));
+						break;
+					case "teachersBlackTotal":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "teachersBlackTotal", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.teachersBlackTotal failed", b.cause())));
+							});
+						}));
+						break;
+					case "teachersOtherTotal":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "teachersOtherTotal", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.teachersOtherTotal failed", b.cause())));
+							});
+						}));
+						break;
 					case "delinquentComplaintsTotal":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
@@ -973,6 +1038,318 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 									a.handle(Future.succeededFuture());
 								else
 									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsAtSchool failed", b.cause())));
+							});
+						}));
+						break;
+					case "delinquentComplaintsAsian":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "delinquentComplaintsAsian", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsAsian failed", b.cause())));
+							});
+						}));
+						break;
+					case "delinquentComplaintsBlack":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "delinquentComplaintsBlack", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsBlack failed", b.cause())));
+							});
+						}));
+						break;
+					case "delinquentComplaintsHispanic":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "delinquentComplaintsHispanic", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsHispanic failed", b.cause())));
+							});
+						}));
+						break;
+					case "delinquentComplaintsMultiRacial":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "delinquentComplaintsMultiRacial", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsMultiRacial failed", b.cause())));
+							});
+						}));
+						break;
+					case "delinquentComplaintsIndian":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "delinquentComplaintsIndian", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsIndian failed", b.cause())));
+							});
+						}));
+						break;
+					case "delinquentComplaintsWhite":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "delinquentComplaintsWhite", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsWhite failed", b.cause())));
+							});
+						}));
+						break;
+					case "delinquentComplaintsPacificIslander":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "delinquentComplaintsPacificIslander", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsPacificIslander failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsTotal":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsTotal", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsTotal failed", b.cause())));
+							});
+						}));
+						break;
+					case "longTermSuspensionsTotal":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "longTermSuspensionsTotal", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.longTermSuspensionsTotal failed", b.cause())));
+							});
+						}));
+						break;
+					case "expulsionsTotal":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "expulsionsTotal", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.expulsionsTotal failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsAsianFemale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsAsianFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsAsianFemale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsAsianMale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsAsianMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsAsianMale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsBlackFemale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsBlackFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsBlackFemale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsBlackMale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsBlackMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsBlackMale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsHispanicFemale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsHispanicFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsHispanicFemale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsHispanicMale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsHispanicMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsHispanicMale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsIndianFemale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsIndianFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndianFemale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsIndianMale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsIndianMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndianMale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsMultiRacialFemale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsMultiRacialFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsMultiRacialFemale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsMultiRacialMale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsMultiRacialMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsMultiRacialMale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsPacificIslanderFemale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsPacificIslanderFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsPacificIslanderFemale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsPacificIslanderMale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsPacificIslanderMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsPacificIslanderMale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsWhiteFemale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsWhiteFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsWhiteFemale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsWhiteMale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsWhiteMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsWhiteMale failed", b.cause())));
 							});
 						}));
 						break;
@@ -1474,6 +1851,71 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
+					case "teachersMale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "teachersMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.teachersMale failed", b.cause())));
+							});
+						}));
+						break;
+					case "teachersFemale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "teachersFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.teachersFemale failed", b.cause())));
+							});
+						}));
+						break;
+					case "teachersWhiteTotal":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "teachersWhiteTotal", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.teachersWhiteTotal failed", b.cause())));
+							});
+						}));
+						break;
+					case "teachersBlackTotal":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "teachersBlackTotal", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.teachersBlackTotal failed", b.cause())));
+							});
+						}));
+						break;
+					case "teachersOtherTotal":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "teachersOtherTotal", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.teachersOtherTotal failed", b.cause())));
+							});
+						}));
+						break;
 					case "delinquentComplaintsTotal":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
@@ -1497,6 +1939,318 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 									a.handle(Future.succeededFuture());
 								else
 									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsAtSchool failed", b.cause())));
+							});
+						}));
+						break;
+					case "delinquentComplaintsAsian":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "delinquentComplaintsAsian", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsAsian failed", b.cause())));
+							});
+						}));
+						break;
+					case "delinquentComplaintsBlack":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "delinquentComplaintsBlack", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsBlack failed", b.cause())));
+							});
+						}));
+						break;
+					case "delinquentComplaintsHispanic":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "delinquentComplaintsHispanic", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsHispanic failed", b.cause())));
+							});
+						}));
+						break;
+					case "delinquentComplaintsMultiRacial":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "delinquentComplaintsMultiRacial", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsMultiRacial failed", b.cause())));
+							});
+						}));
+						break;
+					case "delinquentComplaintsIndian":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "delinquentComplaintsIndian", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsIndian failed", b.cause())));
+							});
+						}));
+						break;
+					case "delinquentComplaintsWhite":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "delinquentComplaintsWhite", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsWhite failed", b.cause())));
+							});
+						}));
+						break;
+					case "delinquentComplaintsPacificIslander":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "delinquentComplaintsPacificIslander", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsPacificIslander failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsTotal":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsTotal", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsTotal failed", b.cause())));
+							});
+						}));
+						break;
+					case "longTermSuspensionsTotal":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "longTermSuspensionsTotal", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.longTermSuspensionsTotal failed", b.cause())));
+							});
+						}));
+						break;
+					case "expulsionsTotal":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "expulsionsTotal", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.expulsionsTotal failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsAsianFemale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsAsianFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsAsianFemale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsAsianMale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsAsianMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsAsianMale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsBlackFemale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsBlackFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsBlackFemale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsBlackMale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsBlackMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsBlackMale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsHispanicFemale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsHispanicFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsHispanicFemale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsHispanicMale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsHispanicMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsHispanicMale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsIndianFemale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsIndianFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndianFemale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsIndianMale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsIndianMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndianMale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsMultiRacialFemale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsMultiRacialFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsMultiRacialFemale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsMultiRacialMale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsMultiRacialMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsMultiRacialMale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsPacificIslanderFemale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsPacificIslanderFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsPacificIslanderFemale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsPacificIslanderMale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsPacificIslanderMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsPacificIslanderMale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsWhiteFemale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsWhiteFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsWhiteFemale failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionsWhiteMale":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionsWhiteMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsWhiteMale failed", b.cause())));
 							});
 						}));
 						break;
@@ -2378,6 +3132,146 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							}));
 						}
 						break;
+					case "setTeachersMale":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "teachersMale")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.teachersMale failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setTeachersMale(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "teachersMale", o2.jsonTeachersMale())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.teachersMale failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setTeachersFemale":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "teachersFemale")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.teachersFemale failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setTeachersFemale(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "teachersFemale", o2.jsonTeachersFemale())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.teachersFemale failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setTeachersWhiteTotal":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "teachersWhiteTotal")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.teachersWhiteTotal failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setTeachersWhiteTotal(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "teachersWhiteTotal", o2.jsonTeachersWhiteTotal())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.teachersWhiteTotal failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setTeachersBlackTotal":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "teachersBlackTotal")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.teachersBlackTotal failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setTeachersBlackTotal(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "teachersBlackTotal", o2.jsonTeachersBlackTotal())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.teachersBlackTotal failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setTeachersOtherTotal":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "teachersOtherTotal")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.teachersOtherTotal failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setTeachersOtherTotal(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "teachersOtherTotal", o2.jsonTeachersOtherTotal())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.teachersOtherTotal failed", b.cause())));
+								});
+							}));
+						}
+						break;
 					case "setDelinquentComplaintsTotal":
 						if(jsonObject.getString(methodName) == null) {
 							futures.add(Future.future(a -> {
@@ -2430,6 +3324,678 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 										a.handle(Future.succeededFuture());
 									else
 										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsAtSchool failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setDelinquentComplaintsAsian":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "delinquentComplaintsAsian")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsAsian failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setDelinquentComplaintsAsian(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "delinquentComplaintsAsian", o2.jsonDelinquentComplaintsAsian())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsAsian failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setDelinquentComplaintsBlack":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "delinquentComplaintsBlack")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsBlack failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setDelinquentComplaintsBlack(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "delinquentComplaintsBlack", o2.jsonDelinquentComplaintsBlack())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsBlack failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setDelinquentComplaintsHispanic":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "delinquentComplaintsHispanic")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsHispanic failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setDelinquentComplaintsHispanic(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "delinquentComplaintsHispanic", o2.jsonDelinquentComplaintsHispanic())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsHispanic failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setDelinquentComplaintsMultiRacial":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "delinquentComplaintsMultiRacial")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsMultiRacial failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setDelinquentComplaintsMultiRacial(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "delinquentComplaintsMultiRacial", o2.jsonDelinquentComplaintsMultiRacial())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsMultiRacial failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setDelinquentComplaintsIndian":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "delinquentComplaintsIndian")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsIndian failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setDelinquentComplaintsIndian(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "delinquentComplaintsIndian", o2.jsonDelinquentComplaintsIndian())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsIndian failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setDelinquentComplaintsWhite":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "delinquentComplaintsWhite")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsWhite failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setDelinquentComplaintsWhite(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "delinquentComplaintsWhite", o2.jsonDelinquentComplaintsWhite())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsWhite failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setDelinquentComplaintsPacificIslander":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "delinquentComplaintsPacificIslander")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsPacificIslander failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setDelinquentComplaintsPacificIslander(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "delinquentComplaintsPacificIslander", o2.jsonDelinquentComplaintsPacificIslander())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsPacificIslander failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setShortTermSuspensionsTotal":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "shortTermSuspensionsTotal")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsTotal failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setShortTermSuspensionsTotal(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "shortTermSuspensionsTotal", o2.jsonShortTermSuspensionsTotal())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsTotal failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setLongTermSuspensionsTotal":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "longTermSuspensionsTotal")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.longTermSuspensionsTotal failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setLongTermSuspensionsTotal(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "longTermSuspensionsTotal", o2.jsonLongTermSuspensionsTotal())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.longTermSuspensionsTotal failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setExpulsionsTotal":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "expulsionsTotal")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.expulsionsTotal failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setExpulsionsTotal(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "expulsionsTotal", o2.jsonExpulsionsTotal())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.expulsionsTotal failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setShortTermSuspensionsAsianFemale":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "shortTermSuspensionsAsianFemale")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsAsianFemale failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setShortTermSuspensionsAsianFemale(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "shortTermSuspensionsAsianFemale", o2.jsonShortTermSuspensionsAsianFemale())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsAsianFemale failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setShortTermSuspensionsAsianMale":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "shortTermSuspensionsAsianMale")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsAsianMale failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setShortTermSuspensionsAsianMale(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "shortTermSuspensionsAsianMale", o2.jsonShortTermSuspensionsAsianMale())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsAsianMale failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setShortTermSuspensionsBlackFemale":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "shortTermSuspensionsBlackFemale")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsBlackFemale failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setShortTermSuspensionsBlackFemale(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "shortTermSuspensionsBlackFemale", o2.jsonShortTermSuspensionsBlackFemale())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsBlackFemale failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setShortTermSuspensionsBlackMale":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "shortTermSuspensionsBlackMale")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsBlackMale failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setShortTermSuspensionsBlackMale(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "shortTermSuspensionsBlackMale", o2.jsonShortTermSuspensionsBlackMale())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsBlackMale failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setShortTermSuspensionsHispanicFemale":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "shortTermSuspensionsHispanicFemale")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsHispanicFemale failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setShortTermSuspensionsHispanicFemale(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "shortTermSuspensionsHispanicFemale", o2.jsonShortTermSuspensionsHispanicFemale())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsHispanicFemale failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setShortTermSuspensionsHispanicMale":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "shortTermSuspensionsHispanicMale")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsHispanicMale failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setShortTermSuspensionsHispanicMale(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "shortTermSuspensionsHispanicMale", o2.jsonShortTermSuspensionsHispanicMale())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsHispanicMale failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setShortTermSuspensionsIndianFemale":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "shortTermSuspensionsIndianFemale")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndianFemale failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setShortTermSuspensionsIndianFemale(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "shortTermSuspensionsIndianFemale", o2.jsonShortTermSuspensionsIndianFemale())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndianFemale failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setShortTermSuspensionsIndianMale":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "shortTermSuspensionsIndianMale")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndianMale failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setShortTermSuspensionsIndianMale(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "shortTermSuspensionsIndianMale", o2.jsonShortTermSuspensionsIndianMale())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndianMale failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setShortTermSuspensionsMultiRacialFemale":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "shortTermSuspensionsMultiRacialFemale")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsMultiRacialFemale failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setShortTermSuspensionsMultiRacialFemale(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "shortTermSuspensionsMultiRacialFemale", o2.jsonShortTermSuspensionsMultiRacialFemale())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsMultiRacialFemale failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setShortTermSuspensionsMultiRacialMale":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "shortTermSuspensionsMultiRacialMale")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsMultiRacialMale failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setShortTermSuspensionsMultiRacialMale(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "shortTermSuspensionsMultiRacialMale", o2.jsonShortTermSuspensionsMultiRacialMale())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsMultiRacialMale failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setShortTermSuspensionsPacificIslanderFemale":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "shortTermSuspensionsPacificIslanderFemale")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsPacificIslanderFemale failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setShortTermSuspensionsPacificIslanderFemale(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "shortTermSuspensionsPacificIslanderFemale", o2.jsonShortTermSuspensionsPacificIslanderFemale())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsPacificIslanderFemale failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setShortTermSuspensionsPacificIslanderMale":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "shortTermSuspensionsPacificIslanderMale")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsPacificIslanderMale failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setShortTermSuspensionsPacificIslanderMale(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "shortTermSuspensionsPacificIslanderMale", o2.jsonShortTermSuspensionsPacificIslanderMale())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsPacificIslanderMale failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setShortTermSuspensionsWhiteFemale":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "shortTermSuspensionsWhiteFemale")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsWhiteFemale failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setShortTermSuspensionsWhiteFemale(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "shortTermSuspensionsWhiteFemale", o2.jsonShortTermSuspensionsWhiteFemale())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsWhiteFemale failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setShortTermSuspensionsWhiteMale":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "shortTermSuspensionsWhiteMale")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsWhiteMale failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setShortTermSuspensionsWhiteMale(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "shortTermSuspensionsWhiteMale", o2.jsonShortTermSuspensionsWhiteMale())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsWhiteMale failed", b.cause())));
 								});
 							}));
 						}

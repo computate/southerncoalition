@@ -80,43 +80,41 @@ public abstract class ReportCardGenPageGen<DEV> extends PageLayout {
 		return (ReportCardGenPage)this;
 	}
 
-	////////////////
-	// reportCard //
-	////////////////
+	/////////////////
+	// reportCard_ //
+	/////////////////
 
-	/**	 The entity reportCard
+	/**	 The entity reportCard_
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonInclude(Include.NON_NULL)
-	protected ReportCard reportCard;
+	protected ReportCard reportCard_;
 	@JsonIgnore
-	public Wrap<ReportCard> reportCardWrap = new Wrap<ReportCard>().p(this).c(ReportCard.class).var("reportCard").o(reportCard);
+	public Wrap<ReportCard> reportCard_Wrap = new Wrap<ReportCard>().p(this).c(ReportCard.class).var("reportCard_").o(reportCard_);
 
-	/**	<br/> The entity reportCard
+	/**	<br/> The entity reportCard_
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCardGenPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCard">Find the entity reportCard in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCardGenPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCard_">Find the entity reportCard_ in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _reportCard(Wrap<ReportCard> c);
+	protected abstract void _reportCard_(Wrap<ReportCard> c);
 
-	public ReportCard getReportCard() {
-		return reportCard;
+	public ReportCard getReportCard_() {
+		return reportCard_;
 	}
 
-	public void setReportCard(ReportCard reportCard) {
-		this.reportCard = reportCard;
-		this.reportCardWrap.alreadyInitialized = true;
+	public void setReportCard_(ReportCard reportCard_) {
+		this.reportCard_ = reportCard_;
+		this.reportCard_Wrap.alreadyInitialized = true;
 	}
-	protected ReportCardGenPage reportCardInit() {
-		if(!reportCardWrap.alreadyInitialized) {
-			_reportCard(reportCardWrap);
-			if(reportCard == null)
-				setReportCard(reportCardWrap.o);
+	protected ReportCardGenPage reportCard_Init() {
+		if(!reportCard_Wrap.alreadyInitialized) {
+			_reportCard_(reportCard_Wrap);
+			if(reportCard_ == null)
+				setReportCard_(reportCard_Wrap.o);
 		}
-		if(reportCard != null)
-			reportCard.initDeepForClass(siteRequest_);
-		reportCardWrap.alreadyInitialized(true);
+		reportCard_Wrap.alreadyInitialized(true);
 		return (ReportCardGenPage)this;
 	}
 
@@ -142,7 +140,7 @@ public abstract class ReportCardGenPageGen<DEV> extends PageLayout {
 
 	public void initReportCardGenPage() {
 		listReportCardInit();
-		reportCardInit();
+		reportCard_Init();
 	}
 
 	@Override public void initDeepForClass(SiteRequestEnUS siteRequest_) {
@@ -157,8 +155,6 @@ public abstract class ReportCardGenPageGen<DEV> extends PageLayout {
 			super.siteRequestPageLayout(siteRequest_);
 		if(listReportCard != null)
 			listReportCard.setSiteRequest_(siteRequest_);
-		if(reportCard != null)
-			reportCard.setSiteRequest_(siteRequest_);
 	}
 
 	public void siteRequestForClass(SiteRequestEnUS siteRequest_) {
@@ -187,8 +183,8 @@ public abstract class ReportCardGenPageGen<DEV> extends PageLayout {
 		switch(var) {
 			case "listReportCard":
 				return oReportCardGenPage.listReportCard;
-			case "reportCard":
-				return oReportCardGenPage.reportCard;
+			case "reportCard_":
+				return oReportCardGenPage.reportCard_;
 			default:
 				return super.obtainPageLayout(var);
 		}

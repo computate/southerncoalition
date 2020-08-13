@@ -606,9 +606,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer pupilsTotal;
+	protected Long pupilsTotal;
 	@JsonIgnore
-	public Wrap<Integer> pupilsTotalWrap = new Wrap<Integer>().p(this).c(Integer.class).var("pupilsTotal").o(pupilsTotal);
+	public Wrap<Long> pupilsTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsTotal").o(pupilsTotal);
 
 	/**	<br/> The entity pupilsTotal
 	 *  is defined as null before being initialized. 
@@ -616,19 +616,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsTotal(Wrap<Integer> c);
+	protected abstract void _pupilsTotal(Wrap<Long> c);
 
-	public Integer getPupilsTotal() {
+	public Long getPupilsTotal() {
 		return pupilsTotal;
 	}
 
-	public void setPupilsTotal(Integer pupilsTotal) {
+	public void setPupilsTotal(Long pupilsTotal) {
 		this.pupilsTotal = pupilsTotal;
 		this.pupilsTotalWrap.alreadyInitialized = true;
 	}
 	public ReportCard setPupilsTotal(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsTotal = Integer.parseInt(o);
+			this.pupilsTotal = Long.parseLong(o);
 		this.pupilsTotalWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -642,7 +642,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrPupilsTotal() {
+	public Long solrPupilsTotal() {
 		return pupilsTotal;
 	}
 
@@ -741,9 +741,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer pupilsIndianFemale;
+	protected Long pupilsIndianFemale;
 	@JsonIgnore
-	public Wrap<Integer> pupilsIndianFemaleWrap = new Wrap<Integer>().p(this).c(Integer.class).var("pupilsIndianFemale").o(pupilsIndianFemale);
+	public Wrap<Long> pupilsIndianFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsIndianFemale").o(pupilsIndianFemale);
 
 	/**	<br/> The entity pupilsIndianFemale
 	 *  is defined as null before being initialized. 
@@ -751,19 +751,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsIndianFemale(Wrap<Integer> c);
+	protected abstract void _pupilsIndianFemale(Wrap<Long> c);
 
-	public Integer getPupilsIndianFemale() {
+	public Long getPupilsIndianFemale() {
 		return pupilsIndianFemale;
 	}
 
-	public void setPupilsIndianFemale(Integer pupilsIndianFemale) {
+	public void setPupilsIndianFemale(Long pupilsIndianFemale) {
 		this.pupilsIndianFemale = pupilsIndianFemale;
 		this.pupilsIndianFemaleWrap.alreadyInitialized = true;
 	}
 	public ReportCard setPupilsIndianFemale(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsIndianFemale = Integer.parseInt(o);
+			this.pupilsIndianFemale = Long.parseLong(o);
 		this.pupilsIndianFemaleWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -777,7 +777,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrPupilsIndianFemale() {
+	public Long solrPupilsIndianFemale() {
 		return pupilsIndianFemale;
 	}
 
@@ -876,9 +876,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer pupilsIndianMale;
+	protected Long pupilsIndianMale;
 	@JsonIgnore
-	public Wrap<Integer> pupilsIndianMaleWrap = new Wrap<Integer>().p(this).c(Integer.class).var("pupilsIndianMale").o(pupilsIndianMale);
+	public Wrap<Long> pupilsIndianMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsIndianMale").o(pupilsIndianMale);
 
 	/**	<br/> The entity pupilsIndianMale
 	 *  is defined as null before being initialized. 
@@ -886,19 +886,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsIndianMale(Wrap<Integer> c);
+	protected abstract void _pupilsIndianMale(Wrap<Long> c);
 
-	public Integer getPupilsIndianMale() {
+	public Long getPupilsIndianMale() {
 		return pupilsIndianMale;
 	}
 
-	public void setPupilsIndianMale(Integer pupilsIndianMale) {
+	public void setPupilsIndianMale(Long pupilsIndianMale) {
 		this.pupilsIndianMale = pupilsIndianMale;
 		this.pupilsIndianMaleWrap.alreadyInitialized = true;
 	}
 	public ReportCard setPupilsIndianMale(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsIndianMale = Integer.parseInt(o);
+			this.pupilsIndianMale = Long.parseLong(o);
 		this.pupilsIndianMaleWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -912,7 +912,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrPupilsIndianMale() {
+	public Long solrPupilsIndianMale() {
 		return pupilsIndianMale;
 	}
 
@@ -1011,9 +1011,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer pupilsIndianTotal;
+	protected Long pupilsIndianTotal;
 	@JsonIgnore
-	public Wrap<Integer> pupilsIndianTotalWrap = new Wrap<Integer>().p(this).c(Integer.class).var("pupilsIndianTotal").o(pupilsIndianTotal);
+	public Wrap<Long> pupilsIndianTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsIndianTotal").o(pupilsIndianTotal);
 
 	/**	<br/> The entity pupilsIndianTotal
 	 *  is defined as null before being initialized. 
@@ -1021,19 +1021,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsIndianTotal(Wrap<Integer> c);
+	protected abstract void _pupilsIndianTotal(Wrap<Long> c);
 
-	public Integer getPupilsIndianTotal() {
+	public Long getPupilsIndianTotal() {
 		return pupilsIndianTotal;
 	}
 
-	public void setPupilsIndianTotal(Integer pupilsIndianTotal) {
+	public void setPupilsIndianTotal(Long pupilsIndianTotal) {
 		this.pupilsIndianTotal = pupilsIndianTotal;
 		this.pupilsIndianTotalWrap.alreadyInitialized = true;
 	}
 	public ReportCard setPupilsIndianTotal(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsIndianTotal = Integer.parseInt(o);
+			this.pupilsIndianTotal = Long.parseLong(o);
 		this.pupilsIndianTotalWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -1047,7 +1047,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrPupilsIndianTotal() {
+	public Long solrPupilsIndianTotal() {
 		return pupilsIndianTotal;
 	}
 
@@ -1212,9 +1212,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer pupilsAsianFemale;
+	protected Long pupilsAsianFemale;
 	@JsonIgnore
-	public Wrap<Integer> pupilsAsianFemaleWrap = new Wrap<Integer>().p(this).c(Integer.class).var("pupilsAsianFemale").o(pupilsAsianFemale);
+	public Wrap<Long> pupilsAsianFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsAsianFemale").o(pupilsAsianFemale);
 
 	/**	<br/> The entity pupilsAsianFemale
 	 *  is defined as null before being initialized. 
@@ -1222,19 +1222,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsAsianFemale(Wrap<Integer> c);
+	protected abstract void _pupilsAsianFemale(Wrap<Long> c);
 
-	public Integer getPupilsAsianFemale() {
+	public Long getPupilsAsianFemale() {
 		return pupilsAsianFemale;
 	}
 
-	public void setPupilsAsianFemale(Integer pupilsAsianFemale) {
+	public void setPupilsAsianFemale(Long pupilsAsianFemale) {
 		this.pupilsAsianFemale = pupilsAsianFemale;
 		this.pupilsAsianFemaleWrap.alreadyInitialized = true;
 	}
 	public ReportCard setPupilsAsianFemale(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsAsianFemale = Integer.parseInt(o);
+			this.pupilsAsianFemale = Long.parseLong(o);
 		this.pupilsAsianFemaleWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -1248,7 +1248,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrPupilsAsianFemale() {
+	public Long solrPupilsAsianFemale() {
 		return pupilsAsianFemale;
 	}
 
@@ -1347,9 +1347,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer pupilsAsianMale;
+	protected Long pupilsAsianMale;
 	@JsonIgnore
-	public Wrap<Integer> pupilsAsianMaleWrap = new Wrap<Integer>().p(this).c(Integer.class).var("pupilsAsianMale").o(pupilsAsianMale);
+	public Wrap<Long> pupilsAsianMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsAsianMale").o(pupilsAsianMale);
 
 	/**	<br/> The entity pupilsAsianMale
 	 *  is defined as null before being initialized. 
@@ -1357,19 +1357,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsAsianMale(Wrap<Integer> c);
+	protected abstract void _pupilsAsianMale(Wrap<Long> c);
 
-	public Integer getPupilsAsianMale() {
+	public Long getPupilsAsianMale() {
 		return pupilsAsianMale;
 	}
 
-	public void setPupilsAsianMale(Integer pupilsAsianMale) {
+	public void setPupilsAsianMale(Long pupilsAsianMale) {
 		this.pupilsAsianMale = pupilsAsianMale;
 		this.pupilsAsianMaleWrap.alreadyInitialized = true;
 	}
 	public ReportCard setPupilsAsianMale(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsAsianMale = Integer.parseInt(o);
+			this.pupilsAsianMale = Long.parseLong(o);
 		this.pupilsAsianMaleWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -1383,7 +1383,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrPupilsAsianMale() {
+	public Long solrPupilsAsianMale() {
 		return pupilsAsianMale;
 	}
 
@@ -1482,9 +1482,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer pupilsAsianTotal;
+	protected Long pupilsAsianTotal;
 	@JsonIgnore
-	public Wrap<Integer> pupilsAsianTotalWrap = new Wrap<Integer>().p(this).c(Integer.class).var("pupilsAsianTotal").o(pupilsAsianTotal);
+	public Wrap<Long> pupilsAsianTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsAsianTotal").o(pupilsAsianTotal);
 
 	/**	<br/> The entity pupilsAsianTotal
 	 *  is defined as null before being initialized. 
@@ -1492,19 +1492,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsAsianTotal(Wrap<Integer> c);
+	protected abstract void _pupilsAsianTotal(Wrap<Long> c);
 
-	public Integer getPupilsAsianTotal() {
+	public Long getPupilsAsianTotal() {
 		return pupilsAsianTotal;
 	}
 
-	public void setPupilsAsianTotal(Integer pupilsAsianTotal) {
+	public void setPupilsAsianTotal(Long pupilsAsianTotal) {
 		this.pupilsAsianTotal = pupilsAsianTotal;
 		this.pupilsAsianTotalWrap.alreadyInitialized = true;
 	}
 	public ReportCard setPupilsAsianTotal(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsAsianTotal = Integer.parseInt(o);
+			this.pupilsAsianTotal = Long.parseLong(o);
 		this.pupilsAsianTotalWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -1518,7 +1518,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrPupilsAsianTotal() {
+	public Long solrPupilsAsianTotal() {
 		return pupilsAsianTotal;
 	}
 
@@ -1683,9 +1683,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer pupilsHispanicFemale;
+	protected Long pupilsHispanicFemale;
 	@JsonIgnore
-	public Wrap<Integer> pupilsHispanicFemaleWrap = new Wrap<Integer>().p(this).c(Integer.class).var("pupilsHispanicFemale").o(pupilsHispanicFemale);
+	public Wrap<Long> pupilsHispanicFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsHispanicFemale").o(pupilsHispanicFemale);
 
 	/**	<br/> The entity pupilsHispanicFemale
 	 *  is defined as null before being initialized. 
@@ -1693,19 +1693,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsHispanicFemale(Wrap<Integer> c);
+	protected abstract void _pupilsHispanicFemale(Wrap<Long> c);
 
-	public Integer getPupilsHispanicFemale() {
+	public Long getPupilsHispanicFemale() {
 		return pupilsHispanicFemale;
 	}
 
-	public void setPupilsHispanicFemale(Integer pupilsHispanicFemale) {
+	public void setPupilsHispanicFemale(Long pupilsHispanicFemale) {
 		this.pupilsHispanicFemale = pupilsHispanicFemale;
 		this.pupilsHispanicFemaleWrap.alreadyInitialized = true;
 	}
 	public ReportCard setPupilsHispanicFemale(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsHispanicFemale = Integer.parseInt(o);
+			this.pupilsHispanicFemale = Long.parseLong(o);
 		this.pupilsHispanicFemaleWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -1719,7 +1719,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrPupilsHispanicFemale() {
+	public Long solrPupilsHispanicFemale() {
 		return pupilsHispanicFemale;
 	}
 
@@ -1818,9 +1818,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer pupilsHispanicMale;
+	protected Long pupilsHispanicMale;
 	@JsonIgnore
-	public Wrap<Integer> pupilsHispanicMaleWrap = new Wrap<Integer>().p(this).c(Integer.class).var("pupilsHispanicMale").o(pupilsHispanicMale);
+	public Wrap<Long> pupilsHispanicMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsHispanicMale").o(pupilsHispanicMale);
 
 	/**	<br/> The entity pupilsHispanicMale
 	 *  is defined as null before being initialized. 
@@ -1828,19 +1828,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsHispanicMale(Wrap<Integer> c);
+	protected abstract void _pupilsHispanicMale(Wrap<Long> c);
 
-	public Integer getPupilsHispanicMale() {
+	public Long getPupilsHispanicMale() {
 		return pupilsHispanicMale;
 	}
 
-	public void setPupilsHispanicMale(Integer pupilsHispanicMale) {
+	public void setPupilsHispanicMale(Long pupilsHispanicMale) {
 		this.pupilsHispanicMale = pupilsHispanicMale;
 		this.pupilsHispanicMaleWrap.alreadyInitialized = true;
 	}
 	public ReportCard setPupilsHispanicMale(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsHispanicMale = Integer.parseInt(o);
+			this.pupilsHispanicMale = Long.parseLong(o);
 		this.pupilsHispanicMaleWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -1854,7 +1854,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrPupilsHispanicMale() {
+	public Long solrPupilsHispanicMale() {
 		return pupilsHispanicMale;
 	}
 
@@ -1953,9 +1953,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer pupilsHispanicTotal;
+	protected Long pupilsHispanicTotal;
 	@JsonIgnore
-	public Wrap<Integer> pupilsHispanicTotalWrap = new Wrap<Integer>().p(this).c(Integer.class).var("pupilsHispanicTotal").o(pupilsHispanicTotal);
+	public Wrap<Long> pupilsHispanicTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsHispanicTotal").o(pupilsHispanicTotal);
 
 	/**	<br/> The entity pupilsHispanicTotal
 	 *  is defined as null before being initialized. 
@@ -1963,19 +1963,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsHispanicTotal(Wrap<Integer> c);
+	protected abstract void _pupilsHispanicTotal(Wrap<Long> c);
 
-	public Integer getPupilsHispanicTotal() {
+	public Long getPupilsHispanicTotal() {
 		return pupilsHispanicTotal;
 	}
 
-	public void setPupilsHispanicTotal(Integer pupilsHispanicTotal) {
+	public void setPupilsHispanicTotal(Long pupilsHispanicTotal) {
 		this.pupilsHispanicTotal = pupilsHispanicTotal;
 		this.pupilsHispanicTotalWrap.alreadyInitialized = true;
 	}
 	public ReportCard setPupilsHispanicTotal(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsHispanicTotal = Integer.parseInt(o);
+			this.pupilsHispanicTotal = Long.parseLong(o);
 		this.pupilsHispanicTotalWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -1989,7 +1989,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrPupilsHispanicTotal() {
+	public Long solrPupilsHispanicTotal() {
 		return pupilsHispanicTotal;
 	}
 
@@ -2154,9 +2154,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer pupilsBlackFemale;
+	protected Long pupilsBlackFemale;
 	@JsonIgnore
-	public Wrap<Integer> pupilsBlackFemaleWrap = new Wrap<Integer>().p(this).c(Integer.class).var("pupilsBlackFemale").o(pupilsBlackFemale);
+	public Wrap<Long> pupilsBlackFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsBlackFemale").o(pupilsBlackFemale);
 
 	/**	<br/> The entity pupilsBlackFemale
 	 *  is defined as null before being initialized. 
@@ -2164,19 +2164,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsBlackFemale(Wrap<Integer> c);
+	protected abstract void _pupilsBlackFemale(Wrap<Long> c);
 
-	public Integer getPupilsBlackFemale() {
+	public Long getPupilsBlackFemale() {
 		return pupilsBlackFemale;
 	}
 
-	public void setPupilsBlackFemale(Integer pupilsBlackFemale) {
+	public void setPupilsBlackFemale(Long pupilsBlackFemale) {
 		this.pupilsBlackFemale = pupilsBlackFemale;
 		this.pupilsBlackFemaleWrap.alreadyInitialized = true;
 	}
 	public ReportCard setPupilsBlackFemale(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsBlackFemale = Integer.parseInt(o);
+			this.pupilsBlackFemale = Long.parseLong(o);
 		this.pupilsBlackFemaleWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -2190,7 +2190,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrPupilsBlackFemale() {
+	public Long solrPupilsBlackFemale() {
 		return pupilsBlackFemale;
 	}
 
@@ -2289,9 +2289,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer pupilsBlackMale;
+	protected Long pupilsBlackMale;
 	@JsonIgnore
-	public Wrap<Integer> pupilsBlackMaleWrap = new Wrap<Integer>().p(this).c(Integer.class).var("pupilsBlackMale").o(pupilsBlackMale);
+	public Wrap<Long> pupilsBlackMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsBlackMale").o(pupilsBlackMale);
 
 	/**	<br/> The entity pupilsBlackMale
 	 *  is defined as null before being initialized. 
@@ -2299,19 +2299,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsBlackMale(Wrap<Integer> c);
+	protected abstract void _pupilsBlackMale(Wrap<Long> c);
 
-	public Integer getPupilsBlackMale() {
+	public Long getPupilsBlackMale() {
 		return pupilsBlackMale;
 	}
 
-	public void setPupilsBlackMale(Integer pupilsBlackMale) {
+	public void setPupilsBlackMale(Long pupilsBlackMale) {
 		this.pupilsBlackMale = pupilsBlackMale;
 		this.pupilsBlackMaleWrap.alreadyInitialized = true;
 	}
 	public ReportCard setPupilsBlackMale(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsBlackMale = Integer.parseInt(o);
+			this.pupilsBlackMale = Long.parseLong(o);
 		this.pupilsBlackMaleWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -2325,7 +2325,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrPupilsBlackMale() {
+	public Long solrPupilsBlackMale() {
 		return pupilsBlackMale;
 	}
 
@@ -2424,9 +2424,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer pupilsBlackTotal;
+	protected Long pupilsBlackTotal;
 	@JsonIgnore
-	public Wrap<Integer> pupilsBlackTotalWrap = new Wrap<Integer>().p(this).c(Integer.class).var("pupilsBlackTotal").o(pupilsBlackTotal);
+	public Wrap<Long> pupilsBlackTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsBlackTotal").o(pupilsBlackTotal);
 
 	/**	<br/> The entity pupilsBlackTotal
 	 *  is defined as null before being initialized. 
@@ -2434,19 +2434,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsBlackTotal(Wrap<Integer> c);
+	protected abstract void _pupilsBlackTotal(Wrap<Long> c);
 
-	public Integer getPupilsBlackTotal() {
+	public Long getPupilsBlackTotal() {
 		return pupilsBlackTotal;
 	}
 
-	public void setPupilsBlackTotal(Integer pupilsBlackTotal) {
+	public void setPupilsBlackTotal(Long pupilsBlackTotal) {
 		this.pupilsBlackTotal = pupilsBlackTotal;
 		this.pupilsBlackTotalWrap.alreadyInitialized = true;
 	}
 	public ReportCard setPupilsBlackTotal(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsBlackTotal = Integer.parseInt(o);
+			this.pupilsBlackTotal = Long.parseLong(o);
 		this.pupilsBlackTotalWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -2460,7 +2460,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrPupilsBlackTotal() {
+	public Long solrPupilsBlackTotal() {
 		return pupilsBlackTotal;
 	}
 
@@ -2625,9 +2625,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer pupilsWhiteFemale;
+	protected Long pupilsWhiteFemale;
 	@JsonIgnore
-	public Wrap<Integer> pupilsWhiteFemaleWrap = new Wrap<Integer>().p(this).c(Integer.class).var("pupilsWhiteFemale").o(pupilsWhiteFemale);
+	public Wrap<Long> pupilsWhiteFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsWhiteFemale").o(pupilsWhiteFemale);
 
 	/**	<br/> The entity pupilsWhiteFemale
 	 *  is defined as null before being initialized. 
@@ -2635,19 +2635,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsWhiteFemale(Wrap<Integer> c);
+	protected abstract void _pupilsWhiteFemale(Wrap<Long> c);
 
-	public Integer getPupilsWhiteFemale() {
+	public Long getPupilsWhiteFemale() {
 		return pupilsWhiteFemale;
 	}
 
-	public void setPupilsWhiteFemale(Integer pupilsWhiteFemale) {
+	public void setPupilsWhiteFemale(Long pupilsWhiteFemale) {
 		this.pupilsWhiteFemale = pupilsWhiteFemale;
 		this.pupilsWhiteFemaleWrap.alreadyInitialized = true;
 	}
 	public ReportCard setPupilsWhiteFemale(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsWhiteFemale = Integer.parseInt(o);
+			this.pupilsWhiteFemale = Long.parseLong(o);
 		this.pupilsWhiteFemaleWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -2661,7 +2661,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrPupilsWhiteFemale() {
+	public Long solrPupilsWhiteFemale() {
 		return pupilsWhiteFemale;
 	}
 
@@ -2760,9 +2760,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer pupilsWhiteMale;
+	protected Long pupilsWhiteMale;
 	@JsonIgnore
-	public Wrap<Integer> pupilsWhiteMaleWrap = new Wrap<Integer>().p(this).c(Integer.class).var("pupilsWhiteMale").o(pupilsWhiteMale);
+	public Wrap<Long> pupilsWhiteMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsWhiteMale").o(pupilsWhiteMale);
 
 	/**	<br/> The entity pupilsWhiteMale
 	 *  is defined as null before being initialized. 
@@ -2770,19 +2770,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsWhiteMale(Wrap<Integer> c);
+	protected abstract void _pupilsWhiteMale(Wrap<Long> c);
 
-	public Integer getPupilsWhiteMale() {
+	public Long getPupilsWhiteMale() {
 		return pupilsWhiteMale;
 	}
 
-	public void setPupilsWhiteMale(Integer pupilsWhiteMale) {
+	public void setPupilsWhiteMale(Long pupilsWhiteMale) {
 		this.pupilsWhiteMale = pupilsWhiteMale;
 		this.pupilsWhiteMaleWrap.alreadyInitialized = true;
 	}
 	public ReportCard setPupilsWhiteMale(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsWhiteMale = Integer.parseInt(o);
+			this.pupilsWhiteMale = Long.parseLong(o);
 		this.pupilsWhiteMaleWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -2796,7 +2796,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrPupilsWhiteMale() {
+	public Long solrPupilsWhiteMale() {
 		return pupilsWhiteMale;
 	}
 
@@ -2895,9 +2895,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer pupilsWhiteTotal;
+	protected Long pupilsWhiteTotal;
 	@JsonIgnore
-	public Wrap<Integer> pupilsWhiteTotalWrap = new Wrap<Integer>().p(this).c(Integer.class).var("pupilsWhiteTotal").o(pupilsWhiteTotal);
+	public Wrap<Long> pupilsWhiteTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsWhiteTotal").o(pupilsWhiteTotal);
 
 	/**	<br/> The entity pupilsWhiteTotal
 	 *  is defined as null before being initialized. 
@@ -2905,19 +2905,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsWhiteTotal(Wrap<Integer> c);
+	protected abstract void _pupilsWhiteTotal(Wrap<Long> c);
 
-	public Integer getPupilsWhiteTotal() {
+	public Long getPupilsWhiteTotal() {
 		return pupilsWhiteTotal;
 	}
 
-	public void setPupilsWhiteTotal(Integer pupilsWhiteTotal) {
+	public void setPupilsWhiteTotal(Long pupilsWhiteTotal) {
 		this.pupilsWhiteTotal = pupilsWhiteTotal;
 		this.pupilsWhiteTotalWrap.alreadyInitialized = true;
 	}
 	public ReportCard setPupilsWhiteTotal(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsWhiteTotal = Integer.parseInt(o);
+			this.pupilsWhiteTotal = Long.parseLong(o);
 		this.pupilsWhiteTotalWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -2931,7 +2931,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrPupilsWhiteTotal() {
+	public Long solrPupilsWhiteTotal() {
 		return pupilsWhiteTotal;
 	}
 
@@ -3096,9 +3096,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer pupilsPacificIslanderFemale;
+	protected Long pupilsPacificIslanderFemale;
 	@JsonIgnore
-	public Wrap<Integer> pupilsPacificIslanderFemaleWrap = new Wrap<Integer>().p(this).c(Integer.class).var("pupilsPacificIslanderFemale").o(pupilsPacificIslanderFemale);
+	public Wrap<Long> pupilsPacificIslanderFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsPacificIslanderFemale").o(pupilsPacificIslanderFemale);
 
 	/**	<br/> The entity pupilsPacificIslanderFemale
 	 *  is defined as null before being initialized. 
@@ -3106,19 +3106,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsPacificIslanderFemale(Wrap<Integer> c);
+	protected abstract void _pupilsPacificIslanderFemale(Wrap<Long> c);
 
-	public Integer getPupilsPacificIslanderFemale() {
+	public Long getPupilsPacificIslanderFemale() {
 		return pupilsPacificIslanderFemale;
 	}
 
-	public void setPupilsPacificIslanderFemale(Integer pupilsPacificIslanderFemale) {
+	public void setPupilsPacificIslanderFemale(Long pupilsPacificIslanderFemale) {
 		this.pupilsPacificIslanderFemale = pupilsPacificIslanderFemale;
 		this.pupilsPacificIslanderFemaleWrap.alreadyInitialized = true;
 	}
 	public ReportCard setPupilsPacificIslanderFemale(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsPacificIslanderFemale = Integer.parseInt(o);
+			this.pupilsPacificIslanderFemale = Long.parseLong(o);
 		this.pupilsPacificIslanderFemaleWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -3132,7 +3132,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrPupilsPacificIslanderFemale() {
+	public Long solrPupilsPacificIslanderFemale() {
 		return pupilsPacificIslanderFemale;
 	}
 
@@ -3231,9 +3231,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer pupilsPacificIslanderMale;
+	protected Long pupilsPacificIslanderMale;
 	@JsonIgnore
-	public Wrap<Integer> pupilsPacificIslanderMaleWrap = new Wrap<Integer>().p(this).c(Integer.class).var("pupilsPacificIslanderMale").o(pupilsPacificIslanderMale);
+	public Wrap<Long> pupilsPacificIslanderMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsPacificIslanderMale").o(pupilsPacificIslanderMale);
 
 	/**	<br/> The entity pupilsPacificIslanderMale
 	 *  is defined as null before being initialized. 
@@ -3241,19 +3241,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsPacificIslanderMale(Wrap<Integer> c);
+	protected abstract void _pupilsPacificIslanderMale(Wrap<Long> c);
 
-	public Integer getPupilsPacificIslanderMale() {
+	public Long getPupilsPacificIslanderMale() {
 		return pupilsPacificIslanderMale;
 	}
 
-	public void setPupilsPacificIslanderMale(Integer pupilsPacificIslanderMale) {
+	public void setPupilsPacificIslanderMale(Long pupilsPacificIslanderMale) {
 		this.pupilsPacificIslanderMale = pupilsPacificIslanderMale;
 		this.pupilsPacificIslanderMaleWrap.alreadyInitialized = true;
 	}
 	public ReportCard setPupilsPacificIslanderMale(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsPacificIslanderMale = Integer.parseInt(o);
+			this.pupilsPacificIslanderMale = Long.parseLong(o);
 		this.pupilsPacificIslanderMaleWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -3267,7 +3267,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrPupilsPacificIslanderMale() {
+	public Long solrPupilsPacificIslanderMale() {
 		return pupilsPacificIslanderMale;
 	}
 
@@ -3366,9 +3366,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer pupilsPacificIslanderTotal;
+	protected Long pupilsPacificIslanderTotal;
 	@JsonIgnore
-	public Wrap<Integer> pupilsPacificIslanderTotalWrap = new Wrap<Integer>().p(this).c(Integer.class).var("pupilsPacificIslanderTotal").o(pupilsPacificIslanderTotal);
+	public Wrap<Long> pupilsPacificIslanderTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsPacificIslanderTotal").o(pupilsPacificIslanderTotal);
 
 	/**	<br/> The entity pupilsPacificIslanderTotal
 	 *  is defined as null before being initialized. 
@@ -3376,19 +3376,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsPacificIslanderTotal(Wrap<Integer> c);
+	protected abstract void _pupilsPacificIslanderTotal(Wrap<Long> c);
 
-	public Integer getPupilsPacificIslanderTotal() {
+	public Long getPupilsPacificIslanderTotal() {
 		return pupilsPacificIslanderTotal;
 	}
 
-	public void setPupilsPacificIslanderTotal(Integer pupilsPacificIslanderTotal) {
+	public void setPupilsPacificIslanderTotal(Long pupilsPacificIslanderTotal) {
 		this.pupilsPacificIslanderTotal = pupilsPacificIslanderTotal;
 		this.pupilsPacificIslanderTotalWrap.alreadyInitialized = true;
 	}
 	public ReportCard setPupilsPacificIslanderTotal(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsPacificIslanderTotal = Integer.parseInt(o);
+			this.pupilsPacificIslanderTotal = Long.parseLong(o);
 		this.pupilsPacificIslanderTotalWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -3402,7 +3402,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrPupilsPacificIslanderTotal() {
+	public Long solrPupilsPacificIslanderTotal() {
 		return pupilsPacificIslanderTotal;
 	}
 
@@ -3567,9 +3567,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer pupilsMultiRacialFemale;
+	protected Long pupilsMultiRacialFemale;
 	@JsonIgnore
-	public Wrap<Integer> pupilsMultiRacialFemaleWrap = new Wrap<Integer>().p(this).c(Integer.class).var("pupilsMultiRacialFemale").o(pupilsMultiRacialFemale);
+	public Wrap<Long> pupilsMultiRacialFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsMultiRacialFemale").o(pupilsMultiRacialFemale);
 
 	/**	<br/> The entity pupilsMultiRacialFemale
 	 *  is defined as null before being initialized. 
@@ -3577,19 +3577,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsMultiRacialFemale(Wrap<Integer> c);
+	protected abstract void _pupilsMultiRacialFemale(Wrap<Long> c);
 
-	public Integer getPupilsMultiRacialFemale() {
+	public Long getPupilsMultiRacialFemale() {
 		return pupilsMultiRacialFemale;
 	}
 
-	public void setPupilsMultiRacialFemale(Integer pupilsMultiRacialFemale) {
+	public void setPupilsMultiRacialFemale(Long pupilsMultiRacialFemale) {
 		this.pupilsMultiRacialFemale = pupilsMultiRacialFemale;
 		this.pupilsMultiRacialFemaleWrap.alreadyInitialized = true;
 	}
 	public ReportCard setPupilsMultiRacialFemale(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsMultiRacialFemale = Integer.parseInt(o);
+			this.pupilsMultiRacialFemale = Long.parseLong(o);
 		this.pupilsMultiRacialFemaleWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -3603,7 +3603,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrPupilsMultiRacialFemale() {
+	public Long solrPupilsMultiRacialFemale() {
 		return pupilsMultiRacialFemale;
 	}
 
@@ -3702,9 +3702,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer pupilsMultiRacialMale;
+	protected Long pupilsMultiRacialMale;
 	@JsonIgnore
-	public Wrap<Integer> pupilsMultiRacialMaleWrap = new Wrap<Integer>().p(this).c(Integer.class).var("pupilsMultiRacialMale").o(pupilsMultiRacialMale);
+	public Wrap<Long> pupilsMultiRacialMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsMultiRacialMale").o(pupilsMultiRacialMale);
 
 	/**	<br/> The entity pupilsMultiRacialMale
 	 *  is defined as null before being initialized. 
@@ -3712,19 +3712,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsMultiRacialMale(Wrap<Integer> c);
+	protected abstract void _pupilsMultiRacialMale(Wrap<Long> c);
 
-	public Integer getPupilsMultiRacialMale() {
+	public Long getPupilsMultiRacialMale() {
 		return pupilsMultiRacialMale;
 	}
 
-	public void setPupilsMultiRacialMale(Integer pupilsMultiRacialMale) {
+	public void setPupilsMultiRacialMale(Long pupilsMultiRacialMale) {
 		this.pupilsMultiRacialMale = pupilsMultiRacialMale;
 		this.pupilsMultiRacialMaleWrap.alreadyInitialized = true;
 	}
 	public ReportCard setPupilsMultiRacialMale(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsMultiRacialMale = Integer.parseInt(o);
+			this.pupilsMultiRacialMale = Long.parseLong(o);
 		this.pupilsMultiRacialMaleWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -3738,7 +3738,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrPupilsMultiRacialMale() {
+	public Long solrPupilsMultiRacialMale() {
 		return pupilsMultiRacialMale;
 	}
 
@@ -3837,9 +3837,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer pupilsMultiRacialTotal;
+	protected Long pupilsMultiRacialTotal;
 	@JsonIgnore
-	public Wrap<Integer> pupilsMultiRacialTotalWrap = new Wrap<Integer>().p(this).c(Integer.class).var("pupilsMultiRacialTotal").o(pupilsMultiRacialTotal);
+	public Wrap<Long> pupilsMultiRacialTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsMultiRacialTotal").o(pupilsMultiRacialTotal);
 
 	/**	<br/> The entity pupilsMultiRacialTotal
 	 *  is defined as null before being initialized. 
@@ -3847,19 +3847,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsMultiRacialTotal(Wrap<Integer> c);
+	protected abstract void _pupilsMultiRacialTotal(Wrap<Long> c);
 
-	public Integer getPupilsMultiRacialTotal() {
+	public Long getPupilsMultiRacialTotal() {
 		return pupilsMultiRacialTotal;
 	}
 
-	public void setPupilsMultiRacialTotal(Integer pupilsMultiRacialTotal) {
+	public void setPupilsMultiRacialTotal(Long pupilsMultiRacialTotal) {
 		this.pupilsMultiRacialTotal = pupilsMultiRacialTotal;
 		this.pupilsMultiRacialTotalWrap.alreadyInitialized = true;
 	}
 	public ReportCard setPupilsMultiRacialTotal(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsMultiRacialTotal = Integer.parseInt(o);
+			this.pupilsMultiRacialTotal = Long.parseLong(o);
 		this.pupilsMultiRacialTotalWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -3873,7 +3873,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrPupilsMultiRacialTotal() {
+	public Long solrPupilsMultiRacialTotal() {
 		return pupilsMultiRacialTotal;
 	}
 
@@ -4029,6 +4029,1094 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
+	//////////////////
+	// teachersMale //
+	//////////////////
+
+	/**	 The entity teachersMale
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long teachersMale;
+	@JsonIgnore
+	public Wrap<Long> teachersMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("teachersMale").o(teachersMale);
+
+	/**	<br/> The entity teachersMale
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:teachersMale">Find the entity teachersMale in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _teachersMale(Wrap<Long> c);
+
+	public Long getTeachersMale() {
+		return teachersMale;
+	}
+
+	public void setTeachersMale(Long teachersMale) {
+		this.teachersMale = teachersMale;
+		this.teachersMaleWrap.alreadyInitialized = true;
+	}
+	public ReportCard setTeachersMale(String o) {
+		if(NumberUtils.isParsable(o))
+			this.teachersMale = Long.parseLong(o);
+		this.teachersMaleWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard teachersMaleInit() {
+		if(!teachersMaleWrap.alreadyInitialized) {
+			_teachersMale(teachersMaleWrap);
+			if(teachersMale == null)
+				setTeachersMale(teachersMaleWrap.o);
+		}
+		teachersMaleWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrTeachersMale() {
+		return teachersMale;
+	}
+
+	public String strTeachersMale() {
+		return teachersMale == null ? "" : teachersMale.toString();
+	}
+
+	public String jsonTeachersMale() {
+		return teachersMale == null ? "" : teachersMale.toString();
+	}
+
+	public String nomAffichageTeachersMale() {
+		return "male teachers total";
+	}
+
+	public String htmTooltipTeachersMale() {
+		return null;
+	}
+
+	public String htmTeachersMale() {
+		return teachersMale == null ? "" : StringEscapeUtils.escapeHtml4(strTeachersMale());
+	}
+
+	public void inputTeachersMale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "male teachers total")
+				.a("id", classApiMethodMethod, "_teachersMale");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setTeachersMale classReportCard inputReportCard", pk, "TeachersMale w3-input w3-border ");
+					a("name", "setTeachersMale");
+				} else {
+					a("class", "valueTeachersMale w3-input w3-border classReportCard inputReportCard", pk, "TeachersMale w3-input w3-border ");
+					a("name", "teachersMale");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setTeachersMale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_teachersMale')); }, function() { addError($('#", classApiMethodMethod, "_teachersMale')); }); ");
+				}
+				a("value", strTeachersMale())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "TeachersMale ").f().sx(htmTeachersMale()).g("span");
+		}
+	}
+
+	public void htmTeachersMale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardTeachersMale").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_teachersMale").a("class", "").f().sx("male teachers total").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputTeachersMale(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_teachersMale')); $('#", classApiMethodMethod, "_teachersMale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setTeachersMale', null, function() { addGlow($('#", classApiMethodMethod, "_teachersMale')); }, function() { addError($('#", classApiMethodMethod, "_teachersMale')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	////////////////////
+	// teachersFemale //
+	////////////////////
+
+	/**	 The entity teachersFemale
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long teachersFemale;
+	@JsonIgnore
+	public Wrap<Long> teachersFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("teachersFemale").o(teachersFemale);
+
+	/**	<br/> The entity teachersFemale
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:teachersFemale">Find the entity teachersFemale in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _teachersFemale(Wrap<Long> c);
+
+	public Long getTeachersFemale() {
+		return teachersFemale;
+	}
+
+	public void setTeachersFemale(Long teachersFemale) {
+		this.teachersFemale = teachersFemale;
+		this.teachersFemaleWrap.alreadyInitialized = true;
+	}
+	public ReportCard setTeachersFemale(String o) {
+		if(NumberUtils.isParsable(o))
+			this.teachersFemale = Long.parseLong(o);
+		this.teachersFemaleWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard teachersFemaleInit() {
+		if(!teachersFemaleWrap.alreadyInitialized) {
+			_teachersFemale(teachersFemaleWrap);
+			if(teachersFemale == null)
+				setTeachersFemale(teachersFemaleWrap.o);
+		}
+		teachersFemaleWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrTeachersFemale() {
+		return teachersFemale;
+	}
+
+	public String strTeachersFemale() {
+		return teachersFemale == null ? "" : teachersFemale.toString();
+	}
+
+	public String jsonTeachersFemale() {
+		return teachersFemale == null ? "" : teachersFemale.toString();
+	}
+
+	public String nomAffichageTeachersFemale() {
+		return "female teachers total";
+	}
+
+	public String htmTooltipTeachersFemale() {
+		return null;
+	}
+
+	public String htmTeachersFemale() {
+		return teachersFemale == null ? "" : StringEscapeUtils.escapeHtml4(strTeachersFemale());
+	}
+
+	public void inputTeachersFemale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "female teachers total")
+				.a("id", classApiMethodMethod, "_teachersFemale");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setTeachersFemale classReportCard inputReportCard", pk, "TeachersFemale w3-input w3-border ");
+					a("name", "setTeachersFemale");
+				} else {
+					a("class", "valueTeachersFemale w3-input w3-border classReportCard inputReportCard", pk, "TeachersFemale w3-input w3-border ");
+					a("name", "teachersFemale");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setTeachersFemale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_teachersFemale')); }, function() { addError($('#", classApiMethodMethod, "_teachersFemale')); }); ");
+				}
+				a("value", strTeachersFemale())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "TeachersFemale ").f().sx(htmTeachersFemale()).g("span");
+		}
+	}
+
+	public void htmTeachersFemale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardTeachersFemale").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_teachersFemale").a("class", "").f().sx("female teachers total").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputTeachersFemale(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_teachersFemale')); $('#", classApiMethodMethod, "_teachersFemale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setTeachersFemale', null, function() { addGlow($('#", classApiMethodMethod, "_teachersFemale')); }, function() { addError($('#", classApiMethodMethod, "_teachersFemale')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	///////////////////
+	// teachersTotal //
+	///////////////////
+
+	/**	 The entity teachersTotal
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long teachersTotal;
+	@JsonIgnore
+	public Wrap<Long> teachersTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("teachersTotal").o(teachersTotal);
+
+	/**	<br/> The entity teachersTotal
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:teachersTotal">Find the entity teachersTotal in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _teachersTotal(Wrap<Long> c);
+
+	public Long getTeachersTotal() {
+		return teachersTotal;
+	}
+
+	public void setTeachersTotal(Long teachersTotal) {
+		this.teachersTotal = teachersTotal;
+		this.teachersTotalWrap.alreadyInitialized = true;
+	}
+	public ReportCard setTeachersTotal(String o) {
+		if(NumberUtils.isParsable(o))
+			this.teachersTotal = Long.parseLong(o);
+		this.teachersTotalWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard teachersTotalInit() {
+		if(!teachersTotalWrap.alreadyInitialized) {
+			_teachersTotal(teachersTotalWrap);
+			if(teachersTotal == null)
+				setTeachersTotal(teachersTotalWrap.o);
+		}
+		teachersTotalWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrTeachersTotal() {
+		return teachersTotal;
+	}
+
+	public String strTeachersTotal() {
+		return teachersTotal == null ? "" : teachersTotal.toString();
+	}
+
+	public String jsonTeachersTotal() {
+		return teachersTotal == null ? "" : teachersTotal.toString();
+	}
+
+	public String nomAffichageTeachersTotal() {
+		return "teachers total";
+	}
+
+	public String htmTooltipTeachersTotal() {
+		return null;
+	}
+
+	public String htmTeachersTotal() {
+		return teachersTotal == null ? "" : StringEscapeUtils.escapeHtml4(strTeachersTotal());
+	}
+
+	public void inputTeachersTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmTeachersTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("teachers total").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "TeachersTotal ").f().sx(strTeachersTotal()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	////////////////////////
+	// teachersWhiteTotal //
+	////////////////////////
+
+	/**	 The entity teachersWhiteTotal
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long teachersWhiteTotal;
+	@JsonIgnore
+	public Wrap<Long> teachersWhiteTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("teachersWhiteTotal").o(teachersWhiteTotal);
+
+	/**	<br/> The entity teachersWhiteTotal
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:teachersWhiteTotal">Find the entity teachersWhiteTotal in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _teachersWhiteTotal(Wrap<Long> c);
+
+	public Long getTeachersWhiteTotal() {
+		return teachersWhiteTotal;
+	}
+
+	public void setTeachersWhiteTotal(Long teachersWhiteTotal) {
+		this.teachersWhiteTotal = teachersWhiteTotal;
+		this.teachersWhiteTotalWrap.alreadyInitialized = true;
+	}
+	public ReportCard setTeachersWhiteTotal(String o) {
+		if(NumberUtils.isParsable(o))
+			this.teachersWhiteTotal = Long.parseLong(o);
+		this.teachersWhiteTotalWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard teachersWhiteTotalInit() {
+		if(!teachersWhiteTotalWrap.alreadyInitialized) {
+			_teachersWhiteTotal(teachersWhiteTotalWrap);
+			if(teachersWhiteTotal == null)
+				setTeachersWhiteTotal(teachersWhiteTotalWrap.o);
+		}
+		teachersWhiteTotalWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrTeachersWhiteTotal() {
+		return teachersWhiteTotal;
+	}
+
+	public String strTeachersWhiteTotal() {
+		return teachersWhiteTotal == null ? "" : teachersWhiteTotal.toString();
+	}
+
+	public String jsonTeachersWhiteTotal() {
+		return teachersWhiteTotal == null ? "" : teachersWhiteTotal.toString();
+	}
+
+	public String nomAffichageTeachersWhiteTotal() {
+		return "White teachers";
+	}
+
+	public String htmTooltipTeachersWhiteTotal() {
+		return null;
+	}
+
+	public String htmTeachersWhiteTotal() {
+		return teachersWhiteTotal == null ? "" : StringEscapeUtils.escapeHtml4(strTeachersWhiteTotal());
+	}
+
+	public void inputTeachersWhiteTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "White teachers")
+				.a("id", classApiMethodMethod, "_teachersWhiteTotal");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setTeachersWhiteTotal classReportCard inputReportCard", pk, "TeachersWhiteTotal w3-input w3-border ");
+					a("name", "setTeachersWhiteTotal");
+				} else {
+					a("class", "valueTeachersWhiteTotal w3-input w3-border classReportCard inputReportCard", pk, "TeachersWhiteTotal w3-input w3-border ");
+					a("name", "teachersWhiteTotal");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setTeachersWhiteTotal', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_teachersWhiteTotal')); }, function() { addError($('#", classApiMethodMethod, "_teachersWhiteTotal')); }); ");
+				}
+				a("value", strTeachersWhiteTotal())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "TeachersWhiteTotal ").f().sx(htmTeachersWhiteTotal()).g("span");
+		}
+	}
+
+	public void htmTeachersWhiteTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardTeachersWhiteTotal").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_teachersWhiteTotal").a("class", "").f().sx("White teachers").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputTeachersWhiteTotal(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_teachersWhiteTotal')); $('#", classApiMethodMethod, "_teachersWhiteTotal').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setTeachersWhiteTotal', null, function() { addGlow($('#", classApiMethodMethod, "_teachersWhiteTotal')); }, function() { addError($('#", classApiMethodMethod, "_teachersWhiteTotal')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	//////////////////////////
+	// teachersWhitePercent //
+	//////////////////////////
+
+	/**	 The entity teachersWhitePercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal teachersWhitePercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> teachersWhitePercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("teachersWhitePercent").o(teachersWhitePercent);
+
+	/**	<br/> The entity teachersWhitePercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:teachersWhitePercent">Find the entity teachersWhitePercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _teachersWhitePercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getTeachersWhitePercent() {
+		return teachersWhitePercent;
+	}
+
+	public void setTeachersWhitePercent(BigDecimal teachersWhitePercent) {
+		this.teachersWhitePercent = teachersWhitePercent;
+		this.teachersWhitePercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setTeachersWhitePercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.teachersWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.teachersWhitePercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setTeachersWhitePercent(Double o) {
+			this.teachersWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.teachersWhitePercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setTeachersWhitePercent(Integer o) {
+			this.teachersWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.teachersWhitePercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard teachersWhitePercentInit() {
+		if(!teachersWhitePercentWrap.alreadyInitialized) {
+			_teachersWhitePercent(teachersWhitePercentWrap);
+			if(teachersWhitePercent == null)
+				setTeachersWhitePercent(teachersWhitePercentWrap.o);
+		}
+		teachersWhitePercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrTeachersWhitePercent() {
+		return teachersWhitePercent == null ? null : teachersWhitePercent.doubleValue();
+	}
+
+	public String strTeachersWhitePercent() {
+		return teachersWhitePercent == null ? "" : teachersWhitePercent.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonTeachersWhitePercent() {
+		return teachersWhitePercent == null ? "" : teachersWhitePercent.toString();
+	}
+
+	public String nomAffichageTeachersWhitePercent() {
+		return "White teachers percent";
+	}
+
+	public String htmTooltipTeachersWhitePercent() {
+		return null;
+	}
+
+	public String htmTeachersWhitePercent() {
+		return teachersWhitePercent == null ? "" : StringEscapeUtils.escapeHtml4(strTeachersWhitePercent());
+	}
+
+	public void inputTeachersWhitePercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmTeachersWhitePercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("White teachers percent").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "TeachersWhitePercent ").f().sx(strTeachersWhitePercent()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	////////////////////////
+	// teachersBlackTotal //
+	////////////////////////
+
+	/**	 The entity teachersBlackTotal
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long teachersBlackTotal;
+	@JsonIgnore
+	public Wrap<Long> teachersBlackTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("teachersBlackTotal").o(teachersBlackTotal);
+
+	/**	<br/> The entity teachersBlackTotal
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:teachersBlackTotal">Find the entity teachersBlackTotal in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _teachersBlackTotal(Wrap<Long> c);
+
+	public Long getTeachersBlackTotal() {
+		return teachersBlackTotal;
+	}
+
+	public void setTeachersBlackTotal(Long teachersBlackTotal) {
+		this.teachersBlackTotal = teachersBlackTotal;
+		this.teachersBlackTotalWrap.alreadyInitialized = true;
+	}
+	public ReportCard setTeachersBlackTotal(String o) {
+		if(NumberUtils.isParsable(o))
+			this.teachersBlackTotal = Long.parseLong(o);
+		this.teachersBlackTotalWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard teachersBlackTotalInit() {
+		if(!teachersBlackTotalWrap.alreadyInitialized) {
+			_teachersBlackTotal(teachersBlackTotalWrap);
+			if(teachersBlackTotal == null)
+				setTeachersBlackTotal(teachersBlackTotalWrap.o);
+		}
+		teachersBlackTotalWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrTeachersBlackTotal() {
+		return teachersBlackTotal;
+	}
+
+	public String strTeachersBlackTotal() {
+		return teachersBlackTotal == null ? "" : teachersBlackTotal.toString();
+	}
+
+	public String jsonTeachersBlackTotal() {
+		return teachersBlackTotal == null ? "" : teachersBlackTotal.toString();
+	}
+
+	public String nomAffichageTeachersBlackTotal() {
+		return "Black teachers";
+	}
+
+	public String htmTooltipTeachersBlackTotal() {
+		return null;
+	}
+
+	public String htmTeachersBlackTotal() {
+		return teachersBlackTotal == null ? "" : StringEscapeUtils.escapeHtml4(strTeachersBlackTotal());
+	}
+
+	public void inputTeachersBlackTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "Black teachers")
+				.a("id", classApiMethodMethod, "_teachersBlackTotal");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setTeachersBlackTotal classReportCard inputReportCard", pk, "TeachersBlackTotal w3-input w3-border ");
+					a("name", "setTeachersBlackTotal");
+				} else {
+					a("class", "valueTeachersBlackTotal w3-input w3-border classReportCard inputReportCard", pk, "TeachersBlackTotal w3-input w3-border ");
+					a("name", "teachersBlackTotal");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setTeachersBlackTotal', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_teachersBlackTotal')); }, function() { addError($('#", classApiMethodMethod, "_teachersBlackTotal')); }); ");
+				}
+				a("value", strTeachersBlackTotal())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "TeachersBlackTotal ").f().sx(htmTeachersBlackTotal()).g("span");
+		}
+	}
+
+	public void htmTeachersBlackTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardTeachersBlackTotal").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_teachersBlackTotal").a("class", "").f().sx("Black teachers").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputTeachersBlackTotal(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_teachersBlackTotal')); $('#", classApiMethodMethod, "_teachersBlackTotal').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setTeachersBlackTotal', null, function() { addGlow($('#", classApiMethodMethod, "_teachersBlackTotal')); }, function() { addError($('#", classApiMethodMethod, "_teachersBlackTotal')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	//////////////////////////
+	// teachersBlackPercent //
+	//////////////////////////
+
+	/**	 The entity teachersBlackPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal teachersBlackPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> teachersBlackPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("teachersBlackPercent").o(teachersBlackPercent);
+
+	/**	<br/> The entity teachersBlackPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:teachersBlackPercent">Find the entity teachersBlackPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _teachersBlackPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getTeachersBlackPercent() {
+		return teachersBlackPercent;
+	}
+
+	public void setTeachersBlackPercent(BigDecimal teachersBlackPercent) {
+		this.teachersBlackPercent = teachersBlackPercent;
+		this.teachersBlackPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setTeachersBlackPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.teachersBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.teachersBlackPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setTeachersBlackPercent(Double o) {
+			this.teachersBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.teachersBlackPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setTeachersBlackPercent(Integer o) {
+			this.teachersBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.teachersBlackPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard teachersBlackPercentInit() {
+		if(!teachersBlackPercentWrap.alreadyInitialized) {
+			_teachersBlackPercent(teachersBlackPercentWrap);
+			if(teachersBlackPercent == null)
+				setTeachersBlackPercent(teachersBlackPercentWrap.o);
+		}
+		teachersBlackPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrTeachersBlackPercent() {
+		return teachersBlackPercent == null ? null : teachersBlackPercent.doubleValue();
+	}
+
+	public String strTeachersBlackPercent() {
+		return teachersBlackPercent == null ? "" : teachersBlackPercent.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonTeachersBlackPercent() {
+		return teachersBlackPercent == null ? "" : teachersBlackPercent.toString();
+	}
+
+	public String nomAffichageTeachersBlackPercent() {
+		return "Black teachers percent";
+	}
+
+	public String htmTooltipTeachersBlackPercent() {
+		return null;
+	}
+
+	public String htmTeachersBlackPercent() {
+		return teachersBlackPercent == null ? "" : StringEscapeUtils.escapeHtml4(strTeachersBlackPercent());
+	}
+
+	public void inputTeachersBlackPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmTeachersBlackPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("Black teachers percent").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "TeachersBlackPercent ").f().sx(strTeachersBlackPercent()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	////////////////////////
+	// teachersOtherTotal //
+	////////////////////////
+
+	/**	 The entity teachersOtherTotal
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long teachersOtherTotal;
+	@JsonIgnore
+	public Wrap<Long> teachersOtherTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("teachersOtherTotal").o(teachersOtherTotal);
+
+	/**	<br/> The entity teachersOtherTotal
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:teachersOtherTotal">Find the entity teachersOtherTotal in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _teachersOtherTotal(Wrap<Long> c);
+
+	public Long getTeachersOtherTotal() {
+		return teachersOtherTotal;
+	}
+
+	public void setTeachersOtherTotal(Long teachersOtherTotal) {
+		this.teachersOtherTotal = teachersOtherTotal;
+		this.teachersOtherTotalWrap.alreadyInitialized = true;
+	}
+	public ReportCard setTeachersOtherTotal(String o) {
+		if(NumberUtils.isParsable(o))
+			this.teachersOtherTotal = Long.parseLong(o);
+		this.teachersOtherTotalWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard teachersOtherTotalInit() {
+		if(!teachersOtherTotalWrap.alreadyInitialized) {
+			_teachersOtherTotal(teachersOtherTotalWrap);
+			if(teachersOtherTotal == null)
+				setTeachersOtherTotal(teachersOtherTotalWrap.o);
+		}
+		teachersOtherTotalWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrTeachersOtherTotal() {
+		return teachersOtherTotal;
+	}
+
+	public String strTeachersOtherTotal() {
+		return teachersOtherTotal == null ? "" : teachersOtherTotal.toString();
+	}
+
+	public String jsonTeachersOtherTotal() {
+		return teachersOtherTotal == null ? "" : teachersOtherTotal.toString();
+	}
+
+	public String nomAffichageTeachersOtherTotal() {
+		return "Other teachers";
+	}
+
+	public String htmTooltipTeachersOtherTotal() {
+		return null;
+	}
+
+	public String htmTeachersOtherTotal() {
+		return teachersOtherTotal == null ? "" : StringEscapeUtils.escapeHtml4(strTeachersOtherTotal());
+	}
+
+	public void inputTeachersOtherTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "Other teachers")
+				.a("id", classApiMethodMethod, "_teachersOtherTotal");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setTeachersOtherTotal classReportCard inputReportCard", pk, "TeachersOtherTotal w3-input w3-border ");
+					a("name", "setTeachersOtherTotal");
+				} else {
+					a("class", "valueTeachersOtherTotal w3-input w3-border classReportCard inputReportCard", pk, "TeachersOtherTotal w3-input w3-border ");
+					a("name", "teachersOtherTotal");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setTeachersOtherTotal', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_teachersOtherTotal')); }, function() { addError($('#", classApiMethodMethod, "_teachersOtherTotal')); }); ");
+				}
+				a("value", strTeachersOtherTotal())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "TeachersOtherTotal ").f().sx(htmTeachersOtherTotal()).g("span");
+		}
+	}
+
+	public void htmTeachersOtherTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardTeachersOtherTotal").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_teachersOtherTotal").a("class", "").f().sx("Other teachers").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputTeachersOtherTotal(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_teachersOtherTotal')); $('#", classApiMethodMethod, "_teachersOtherTotal').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setTeachersOtherTotal', null, function() { addGlow($('#", classApiMethodMethod, "_teachersOtherTotal')); }, function() { addError($('#", classApiMethodMethod, "_teachersOtherTotal')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	//////////////////////////
+	// teachersOtherPercent //
+	//////////////////////////
+
+	/**	 The entity teachersOtherPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal teachersOtherPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> teachersOtherPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("teachersOtherPercent").o(teachersOtherPercent);
+
+	/**	<br/> The entity teachersOtherPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:teachersOtherPercent">Find the entity teachersOtherPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _teachersOtherPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getTeachersOtherPercent() {
+		return teachersOtherPercent;
+	}
+
+	public void setTeachersOtherPercent(BigDecimal teachersOtherPercent) {
+		this.teachersOtherPercent = teachersOtherPercent;
+		this.teachersOtherPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setTeachersOtherPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.teachersOtherPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.teachersOtherPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setTeachersOtherPercent(Double o) {
+			this.teachersOtherPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.teachersOtherPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setTeachersOtherPercent(Integer o) {
+			this.teachersOtherPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.teachersOtherPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard teachersOtherPercentInit() {
+		if(!teachersOtherPercentWrap.alreadyInitialized) {
+			_teachersOtherPercent(teachersOtherPercentWrap);
+			if(teachersOtherPercent == null)
+				setTeachersOtherPercent(teachersOtherPercentWrap.o);
+		}
+		teachersOtherPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrTeachersOtherPercent() {
+		return teachersOtherPercent == null ? null : teachersOtherPercent.doubleValue();
+	}
+
+	public String strTeachersOtherPercent() {
+		return teachersOtherPercent == null ? "" : teachersOtherPercent.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonTeachersOtherPercent() {
+		return teachersOtherPercent == null ? "" : teachersOtherPercent.toString();
+	}
+
+	public String nomAffichageTeachersOtherPercent() {
+		return "Others percent";
+	}
+
+	public String htmTooltipTeachersOtherPercent() {
+		return null;
+	}
+
+	public String htmTeachersOtherPercent() {
+		return teachersOtherPercent == null ? "" : StringEscapeUtils.escapeHtml4(strTeachersOtherPercent());
+	}
+
+	public void inputTeachersOtherPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmTeachersOtherPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("Others percent").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "TeachersOtherPercent ").f().sx(strTeachersOtherPercent()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
 	///////////////////////////////
 	// delinquentComplaintsTotal //
 	///////////////////////////////
@@ -4038,9 +5126,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer delinquentComplaintsTotal;
+	protected Long delinquentComplaintsTotal;
 	@JsonIgnore
-	public Wrap<Integer> delinquentComplaintsTotalWrap = new Wrap<Integer>().p(this).c(Integer.class).var("delinquentComplaintsTotal").o(delinquentComplaintsTotal);
+	public Wrap<Long> delinquentComplaintsTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("delinquentComplaintsTotal").o(delinquentComplaintsTotal);
 
 	/**	<br/> The entity delinquentComplaintsTotal
 	 *  is defined as null before being initialized. 
@@ -4048,19 +5136,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _delinquentComplaintsTotal(Wrap<Integer> c);
+	protected abstract void _delinquentComplaintsTotal(Wrap<Long> c);
 
-	public Integer getDelinquentComplaintsTotal() {
+	public Long getDelinquentComplaintsTotal() {
 		return delinquentComplaintsTotal;
 	}
 
-	public void setDelinquentComplaintsTotal(Integer delinquentComplaintsTotal) {
+	public void setDelinquentComplaintsTotal(Long delinquentComplaintsTotal) {
 		this.delinquentComplaintsTotal = delinquentComplaintsTotal;
 		this.delinquentComplaintsTotalWrap.alreadyInitialized = true;
 	}
 	public ReportCard setDelinquentComplaintsTotal(String o) {
 		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsTotal = Integer.parseInt(o);
+			this.delinquentComplaintsTotal = Long.parseLong(o);
 		this.delinquentComplaintsTotalWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -4074,7 +5162,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrDelinquentComplaintsTotal() {
+	public Long solrDelinquentComplaintsTotal() {
 		return delinquentComplaintsTotal;
 	}
 
@@ -4173,9 +5261,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Integer delinquentComplaintsAtSchool;
+	protected Long delinquentComplaintsAtSchool;
 	@JsonIgnore
-	public Wrap<Integer> delinquentComplaintsAtSchoolWrap = new Wrap<Integer>().p(this).c(Integer.class).var("delinquentComplaintsAtSchool").o(delinquentComplaintsAtSchool);
+	public Wrap<Long> delinquentComplaintsAtSchoolWrap = new Wrap<Long>().p(this).c(Long.class).var("delinquentComplaintsAtSchool").o(delinquentComplaintsAtSchool);
 
 	/**	<br/> The entity delinquentComplaintsAtSchool
 	 *  is defined as null before being initialized. 
@@ -4183,19 +5271,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _delinquentComplaintsAtSchool(Wrap<Integer> c);
+	protected abstract void _delinquentComplaintsAtSchool(Wrap<Long> c);
 
-	public Integer getDelinquentComplaintsAtSchool() {
+	public Long getDelinquentComplaintsAtSchool() {
 		return delinquentComplaintsAtSchool;
 	}
 
-	public void setDelinquentComplaintsAtSchool(Integer delinquentComplaintsAtSchool) {
+	public void setDelinquentComplaintsAtSchool(Long delinquentComplaintsAtSchool) {
 		this.delinquentComplaintsAtSchool = delinquentComplaintsAtSchool;
 		this.delinquentComplaintsAtSchoolWrap.alreadyInitialized = true;
 	}
 	public ReportCard setDelinquentComplaintsAtSchool(String o) {
 		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsAtSchool = Integer.parseInt(o);
+			this.delinquentComplaintsAtSchool = Long.parseLong(o);
 		this.delinquentComplaintsAtSchoolWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -4209,7 +5297,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
-	public Integer solrDelinquentComplaintsAtSchool() {
+	public Long solrDelinquentComplaintsAtSchool() {
 		return delinquentComplaintsAtSchool;
 	}
 
@@ -4396,6 +5484,6137 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 							{ e("div").a("class", "w3-cell ").f();
 								{ e("div").a("class", "w3-rest ").f();
 									e("span").a("class", "varReportCard", pk, "DelinquentComplaintsAtSchoolPercent ").f().sx(strDelinquentComplaintsAtSchoolPercent()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	///////////////////////////////
+	// delinquentComplaintsAsian //
+	///////////////////////////////
+
+	/**	 The entity delinquentComplaintsAsian
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long delinquentComplaintsAsian;
+	@JsonIgnore
+	public Wrap<Long> delinquentComplaintsAsianWrap = new Wrap<Long>().p(this).c(Long.class).var("delinquentComplaintsAsian").o(delinquentComplaintsAsian);
+
+	/**	<br/> The entity delinquentComplaintsAsian
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:delinquentComplaintsAsian">Find the entity delinquentComplaintsAsian in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _delinquentComplaintsAsian(Wrap<Long> c);
+
+	public Long getDelinquentComplaintsAsian() {
+		return delinquentComplaintsAsian;
+	}
+
+	public void setDelinquentComplaintsAsian(Long delinquentComplaintsAsian) {
+		this.delinquentComplaintsAsian = delinquentComplaintsAsian;
+		this.delinquentComplaintsAsianWrap.alreadyInitialized = true;
+	}
+	public ReportCard setDelinquentComplaintsAsian(String o) {
+		if(NumberUtils.isParsable(o))
+			this.delinquentComplaintsAsian = Long.parseLong(o);
+		this.delinquentComplaintsAsianWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard delinquentComplaintsAsianInit() {
+		if(!delinquentComplaintsAsianWrap.alreadyInitialized) {
+			_delinquentComplaintsAsian(delinquentComplaintsAsianWrap);
+			if(delinquentComplaintsAsian == null)
+				setDelinquentComplaintsAsian(delinquentComplaintsAsianWrap.o);
+		}
+		delinquentComplaintsAsianWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrDelinquentComplaintsAsian() {
+		return delinquentComplaintsAsian;
+	}
+
+	public String strDelinquentComplaintsAsian() {
+		return delinquentComplaintsAsian == null ? "" : delinquentComplaintsAsian.toString();
+	}
+
+	public String jsonDelinquentComplaintsAsian() {
+		return delinquentComplaintsAsian == null ? "" : delinquentComplaintsAsian.toString();
+	}
+
+	public String nomAffichageDelinquentComplaintsAsian() {
+		return "Asian complaints";
+	}
+
+	public String htmTooltipDelinquentComplaintsAsian() {
+		return null;
+	}
+
+	public String htmDelinquentComplaintsAsian() {
+		return delinquentComplaintsAsian == null ? "" : StringEscapeUtils.escapeHtml4(strDelinquentComplaintsAsian());
+	}
+
+	public void inputDelinquentComplaintsAsian(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "Asian complaints")
+				.a("id", classApiMethodMethod, "_delinquentComplaintsAsian");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setDelinquentComplaintsAsian classReportCard inputReportCard", pk, "DelinquentComplaintsAsian w3-input w3-border ");
+					a("name", "setDelinquentComplaintsAsian");
+				} else {
+					a("class", "valueDelinquentComplaintsAsian w3-input w3-border classReportCard inputReportCard", pk, "DelinquentComplaintsAsian w3-input w3-border ");
+					a("name", "delinquentComplaintsAsian");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setDelinquentComplaintsAsian', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_delinquentComplaintsAsian')); }, function() { addError($('#", classApiMethodMethod, "_delinquentComplaintsAsian')); }); ");
+				}
+				a("value", strDelinquentComplaintsAsian())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "DelinquentComplaintsAsian ").f().sx(htmDelinquentComplaintsAsian()).g("span");
+		}
+	}
+
+	public void htmDelinquentComplaintsAsian(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardDelinquentComplaintsAsian").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_delinquentComplaintsAsian").a("class", "").f().sx("Asian complaints").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputDelinquentComplaintsAsian(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_delinquentComplaintsAsian')); $('#", classApiMethodMethod, "_delinquentComplaintsAsian').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setDelinquentComplaintsAsian', null, function() { addGlow($('#", classApiMethodMethod, "_delinquentComplaintsAsian')); }, function() { addError($('#", classApiMethodMethod, "_delinquentComplaintsAsian')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	//////////////////////////////////////
+	// delinquentComplaintsAsianPercent //
+	//////////////////////////////////////
+
+	/**	 The entity delinquentComplaintsAsianPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal delinquentComplaintsAsianPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> delinquentComplaintsAsianPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("delinquentComplaintsAsianPercent").o(delinquentComplaintsAsianPercent);
+
+	/**	<br/> The entity delinquentComplaintsAsianPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:delinquentComplaintsAsianPercent">Find the entity delinquentComplaintsAsianPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _delinquentComplaintsAsianPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getDelinquentComplaintsAsianPercent() {
+		return delinquentComplaintsAsianPercent;
+	}
+
+	public void setDelinquentComplaintsAsianPercent(BigDecimal delinquentComplaintsAsianPercent) {
+		this.delinquentComplaintsAsianPercent = delinquentComplaintsAsianPercent;
+		this.delinquentComplaintsAsianPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setDelinquentComplaintsAsianPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.delinquentComplaintsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.delinquentComplaintsAsianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setDelinquentComplaintsAsianPercent(Double o) {
+			this.delinquentComplaintsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.delinquentComplaintsAsianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setDelinquentComplaintsAsianPercent(Integer o) {
+			this.delinquentComplaintsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.delinquentComplaintsAsianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard delinquentComplaintsAsianPercentInit() {
+		if(!delinquentComplaintsAsianPercentWrap.alreadyInitialized) {
+			_delinquentComplaintsAsianPercent(delinquentComplaintsAsianPercentWrap);
+			if(delinquentComplaintsAsianPercent == null)
+				setDelinquentComplaintsAsianPercent(delinquentComplaintsAsianPercentWrap.o);
+		}
+		delinquentComplaintsAsianPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrDelinquentComplaintsAsianPercent() {
+		return delinquentComplaintsAsianPercent == null ? null : delinquentComplaintsAsianPercent.doubleValue();
+	}
+
+	public String strDelinquentComplaintsAsianPercent() {
+		return delinquentComplaintsAsianPercent == null ? "" : delinquentComplaintsAsianPercent.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonDelinquentComplaintsAsianPercent() {
+		return delinquentComplaintsAsianPercent == null ? "" : delinquentComplaintsAsianPercent.toString();
+	}
+
+	public String nomAffichageDelinquentComplaintsAsianPercent() {
+		return "Asian complaints percent";
+	}
+
+	public String htmTooltipDelinquentComplaintsAsianPercent() {
+		return null;
+	}
+
+	public String htmDelinquentComplaintsAsianPercent() {
+		return delinquentComplaintsAsianPercent == null ? "" : StringEscapeUtils.escapeHtml4(strDelinquentComplaintsAsianPercent());
+	}
+
+	public void inputDelinquentComplaintsAsianPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmDelinquentComplaintsAsianPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("Asian complaints percent").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "DelinquentComplaintsAsianPercent ").f().sx(strDelinquentComplaintsAsianPercent()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	///////////////////////////////
+	// delinquentComplaintsBlack //
+	///////////////////////////////
+
+	/**	 The entity delinquentComplaintsBlack
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long delinquentComplaintsBlack;
+	@JsonIgnore
+	public Wrap<Long> delinquentComplaintsBlackWrap = new Wrap<Long>().p(this).c(Long.class).var("delinquentComplaintsBlack").o(delinquentComplaintsBlack);
+
+	/**	<br/> The entity delinquentComplaintsBlack
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:delinquentComplaintsBlack">Find the entity delinquentComplaintsBlack in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _delinquentComplaintsBlack(Wrap<Long> c);
+
+	public Long getDelinquentComplaintsBlack() {
+		return delinquentComplaintsBlack;
+	}
+
+	public void setDelinquentComplaintsBlack(Long delinquentComplaintsBlack) {
+		this.delinquentComplaintsBlack = delinquentComplaintsBlack;
+		this.delinquentComplaintsBlackWrap.alreadyInitialized = true;
+	}
+	public ReportCard setDelinquentComplaintsBlack(String o) {
+		if(NumberUtils.isParsable(o))
+			this.delinquentComplaintsBlack = Long.parseLong(o);
+		this.delinquentComplaintsBlackWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard delinquentComplaintsBlackInit() {
+		if(!delinquentComplaintsBlackWrap.alreadyInitialized) {
+			_delinquentComplaintsBlack(delinquentComplaintsBlackWrap);
+			if(delinquentComplaintsBlack == null)
+				setDelinquentComplaintsBlack(delinquentComplaintsBlackWrap.o);
+		}
+		delinquentComplaintsBlackWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrDelinquentComplaintsBlack() {
+		return delinquentComplaintsBlack;
+	}
+
+	public String strDelinquentComplaintsBlack() {
+		return delinquentComplaintsBlack == null ? "" : delinquentComplaintsBlack.toString();
+	}
+
+	public String jsonDelinquentComplaintsBlack() {
+		return delinquentComplaintsBlack == null ? "" : delinquentComplaintsBlack.toString();
+	}
+
+	public String nomAffichageDelinquentComplaintsBlack() {
+		return "Black complaints";
+	}
+
+	public String htmTooltipDelinquentComplaintsBlack() {
+		return null;
+	}
+
+	public String htmDelinquentComplaintsBlack() {
+		return delinquentComplaintsBlack == null ? "" : StringEscapeUtils.escapeHtml4(strDelinquentComplaintsBlack());
+	}
+
+	public void inputDelinquentComplaintsBlack(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "Black complaints")
+				.a("id", classApiMethodMethod, "_delinquentComplaintsBlack");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setDelinquentComplaintsBlack classReportCard inputReportCard", pk, "DelinquentComplaintsBlack w3-input w3-border ");
+					a("name", "setDelinquentComplaintsBlack");
+				} else {
+					a("class", "valueDelinquentComplaintsBlack w3-input w3-border classReportCard inputReportCard", pk, "DelinquentComplaintsBlack w3-input w3-border ");
+					a("name", "delinquentComplaintsBlack");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setDelinquentComplaintsBlack', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_delinquentComplaintsBlack')); }, function() { addError($('#", classApiMethodMethod, "_delinquentComplaintsBlack')); }); ");
+				}
+				a("value", strDelinquentComplaintsBlack())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "DelinquentComplaintsBlack ").f().sx(htmDelinquentComplaintsBlack()).g("span");
+		}
+	}
+
+	public void htmDelinquentComplaintsBlack(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardDelinquentComplaintsBlack").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_delinquentComplaintsBlack").a("class", "").f().sx("Black complaints").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputDelinquentComplaintsBlack(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_delinquentComplaintsBlack')); $('#", classApiMethodMethod, "_delinquentComplaintsBlack').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setDelinquentComplaintsBlack', null, function() { addGlow($('#", classApiMethodMethod, "_delinquentComplaintsBlack')); }, function() { addError($('#", classApiMethodMethod, "_delinquentComplaintsBlack')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	//////////////////////////////////////
+	// delinquentComplaintsBlackPercent //
+	//////////////////////////////////////
+
+	/**	 The entity delinquentComplaintsBlackPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal delinquentComplaintsBlackPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> delinquentComplaintsBlackPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("delinquentComplaintsBlackPercent").o(delinquentComplaintsBlackPercent);
+
+	/**	<br/> The entity delinquentComplaintsBlackPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:delinquentComplaintsBlackPercent">Find the entity delinquentComplaintsBlackPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _delinquentComplaintsBlackPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getDelinquentComplaintsBlackPercent() {
+		return delinquentComplaintsBlackPercent;
+	}
+
+	public void setDelinquentComplaintsBlackPercent(BigDecimal delinquentComplaintsBlackPercent) {
+		this.delinquentComplaintsBlackPercent = delinquentComplaintsBlackPercent;
+		this.delinquentComplaintsBlackPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setDelinquentComplaintsBlackPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.delinquentComplaintsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.delinquentComplaintsBlackPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setDelinquentComplaintsBlackPercent(Double o) {
+			this.delinquentComplaintsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.delinquentComplaintsBlackPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setDelinquentComplaintsBlackPercent(Integer o) {
+			this.delinquentComplaintsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.delinquentComplaintsBlackPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard delinquentComplaintsBlackPercentInit() {
+		if(!delinquentComplaintsBlackPercentWrap.alreadyInitialized) {
+			_delinquentComplaintsBlackPercent(delinquentComplaintsBlackPercentWrap);
+			if(delinquentComplaintsBlackPercent == null)
+				setDelinquentComplaintsBlackPercent(delinquentComplaintsBlackPercentWrap.o);
+		}
+		delinquentComplaintsBlackPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrDelinquentComplaintsBlackPercent() {
+		return delinquentComplaintsBlackPercent == null ? null : delinquentComplaintsBlackPercent.doubleValue();
+	}
+
+	public String strDelinquentComplaintsBlackPercent() {
+		return delinquentComplaintsBlackPercent == null ? "" : delinquentComplaintsBlackPercent.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonDelinquentComplaintsBlackPercent() {
+		return delinquentComplaintsBlackPercent == null ? "" : delinquentComplaintsBlackPercent.toString();
+	}
+
+	public String nomAffichageDelinquentComplaintsBlackPercent() {
+		return "Black complaints percent";
+	}
+
+	public String htmTooltipDelinquentComplaintsBlackPercent() {
+		return null;
+	}
+
+	public String htmDelinquentComplaintsBlackPercent() {
+		return delinquentComplaintsBlackPercent == null ? "" : StringEscapeUtils.escapeHtml4(strDelinquentComplaintsBlackPercent());
+	}
+
+	public void inputDelinquentComplaintsBlackPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmDelinquentComplaintsBlackPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("Black complaints percent").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "DelinquentComplaintsBlackPercent ").f().sx(strDelinquentComplaintsBlackPercent()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	//////////////////////////////////
+	// delinquentComplaintsHispanic //
+	//////////////////////////////////
+
+	/**	 The entity delinquentComplaintsHispanic
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long delinquentComplaintsHispanic;
+	@JsonIgnore
+	public Wrap<Long> delinquentComplaintsHispanicWrap = new Wrap<Long>().p(this).c(Long.class).var("delinquentComplaintsHispanic").o(delinquentComplaintsHispanic);
+
+	/**	<br/> The entity delinquentComplaintsHispanic
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:delinquentComplaintsHispanic">Find the entity delinquentComplaintsHispanic in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _delinquentComplaintsHispanic(Wrap<Long> c);
+
+	public Long getDelinquentComplaintsHispanic() {
+		return delinquentComplaintsHispanic;
+	}
+
+	public void setDelinquentComplaintsHispanic(Long delinquentComplaintsHispanic) {
+		this.delinquentComplaintsHispanic = delinquentComplaintsHispanic;
+		this.delinquentComplaintsHispanicWrap.alreadyInitialized = true;
+	}
+	public ReportCard setDelinquentComplaintsHispanic(String o) {
+		if(NumberUtils.isParsable(o))
+			this.delinquentComplaintsHispanic = Long.parseLong(o);
+		this.delinquentComplaintsHispanicWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard delinquentComplaintsHispanicInit() {
+		if(!delinquentComplaintsHispanicWrap.alreadyInitialized) {
+			_delinquentComplaintsHispanic(delinquentComplaintsHispanicWrap);
+			if(delinquentComplaintsHispanic == null)
+				setDelinquentComplaintsHispanic(delinquentComplaintsHispanicWrap.o);
+		}
+		delinquentComplaintsHispanicWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrDelinquentComplaintsHispanic() {
+		return delinquentComplaintsHispanic;
+	}
+
+	public String strDelinquentComplaintsHispanic() {
+		return delinquentComplaintsHispanic == null ? "" : delinquentComplaintsHispanic.toString();
+	}
+
+	public String jsonDelinquentComplaintsHispanic() {
+		return delinquentComplaintsHispanic == null ? "" : delinquentComplaintsHispanic.toString();
+	}
+
+	public String nomAffichageDelinquentComplaintsHispanic() {
+		return "Hispanic complaints";
+	}
+
+	public String htmTooltipDelinquentComplaintsHispanic() {
+		return null;
+	}
+
+	public String htmDelinquentComplaintsHispanic() {
+		return delinquentComplaintsHispanic == null ? "" : StringEscapeUtils.escapeHtml4(strDelinquentComplaintsHispanic());
+	}
+
+	public void inputDelinquentComplaintsHispanic(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "Hispanic complaints")
+				.a("id", classApiMethodMethod, "_delinquentComplaintsHispanic");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setDelinquentComplaintsHispanic classReportCard inputReportCard", pk, "DelinquentComplaintsHispanic w3-input w3-border ");
+					a("name", "setDelinquentComplaintsHispanic");
+				} else {
+					a("class", "valueDelinquentComplaintsHispanic w3-input w3-border classReportCard inputReportCard", pk, "DelinquentComplaintsHispanic w3-input w3-border ");
+					a("name", "delinquentComplaintsHispanic");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setDelinquentComplaintsHispanic', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_delinquentComplaintsHispanic')); }, function() { addError($('#", classApiMethodMethod, "_delinquentComplaintsHispanic')); }); ");
+				}
+				a("value", strDelinquentComplaintsHispanic())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "DelinquentComplaintsHispanic ").f().sx(htmDelinquentComplaintsHispanic()).g("span");
+		}
+	}
+
+	public void htmDelinquentComplaintsHispanic(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardDelinquentComplaintsHispanic").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_delinquentComplaintsHispanic").a("class", "").f().sx("Hispanic complaints").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputDelinquentComplaintsHispanic(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_delinquentComplaintsHispanic')); $('#", classApiMethodMethod, "_delinquentComplaintsHispanic').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setDelinquentComplaintsHispanic', null, function() { addGlow($('#", classApiMethodMethod, "_delinquentComplaintsHispanic')); }, function() { addError($('#", classApiMethodMethod, "_delinquentComplaintsHispanic')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	/////////////////////////////////////////
+	// delinquentComplaintsHispanicPercent //
+	/////////////////////////////////////////
+
+	/**	 The entity delinquentComplaintsHispanicPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal delinquentComplaintsHispanicPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> delinquentComplaintsHispanicPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("delinquentComplaintsHispanicPercent").o(delinquentComplaintsHispanicPercent);
+
+	/**	<br/> The entity delinquentComplaintsHispanicPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:delinquentComplaintsHispanicPercent">Find the entity delinquentComplaintsHispanicPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _delinquentComplaintsHispanicPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getDelinquentComplaintsHispanicPercent() {
+		return delinquentComplaintsHispanicPercent;
+	}
+
+	public void setDelinquentComplaintsHispanicPercent(BigDecimal delinquentComplaintsHispanicPercent) {
+		this.delinquentComplaintsHispanicPercent = delinquentComplaintsHispanicPercent;
+		this.delinquentComplaintsHispanicPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setDelinquentComplaintsHispanicPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.delinquentComplaintsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.delinquentComplaintsHispanicPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setDelinquentComplaintsHispanicPercent(Double o) {
+			this.delinquentComplaintsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.delinquentComplaintsHispanicPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setDelinquentComplaintsHispanicPercent(Integer o) {
+			this.delinquentComplaintsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.delinquentComplaintsHispanicPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard delinquentComplaintsHispanicPercentInit() {
+		if(!delinquentComplaintsHispanicPercentWrap.alreadyInitialized) {
+			_delinquentComplaintsHispanicPercent(delinquentComplaintsHispanicPercentWrap);
+			if(delinquentComplaintsHispanicPercent == null)
+				setDelinquentComplaintsHispanicPercent(delinquentComplaintsHispanicPercentWrap.o);
+		}
+		delinquentComplaintsHispanicPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrDelinquentComplaintsHispanicPercent() {
+		return delinquentComplaintsHispanicPercent == null ? null : delinquentComplaintsHispanicPercent.doubleValue();
+	}
+
+	public String strDelinquentComplaintsHispanicPercent() {
+		return delinquentComplaintsHispanicPercent == null ? "" : delinquentComplaintsHispanicPercent.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonDelinquentComplaintsHispanicPercent() {
+		return delinquentComplaintsHispanicPercent == null ? "" : delinquentComplaintsHispanicPercent.toString();
+	}
+
+	public String nomAffichageDelinquentComplaintsHispanicPercent() {
+		return "Hispanic complaints percent";
+	}
+
+	public String htmTooltipDelinquentComplaintsHispanicPercent() {
+		return null;
+	}
+
+	public String htmDelinquentComplaintsHispanicPercent() {
+		return delinquentComplaintsHispanicPercent == null ? "" : StringEscapeUtils.escapeHtml4(strDelinquentComplaintsHispanicPercent());
+	}
+
+	public void inputDelinquentComplaintsHispanicPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmDelinquentComplaintsHispanicPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("Hispanic complaints percent").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "DelinquentComplaintsHispanicPercent ").f().sx(strDelinquentComplaintsHispanicPercent()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	/////////////////////////////////////
+	// delinquentComplaintsMultiRacial //
+	/////////////////////////////////////
+
+	/**	 The entity delinquentComplaintsMultiRacial
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long delinquentComplaintsMultiRacial;
+	@JsonIgnore
+	public Wrap<Long> delinquentComplaintsMultiRacialWrap = new Wrap<Long>().p(this).c(Long.class).var("delinquentComplaintsMultiRacial").o(delinquentComplaintsMultiRacial);
+
+	/**	<br/> The entity delinquentComplaintsMultiRacial
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:delinquentComplaintsMultiRacial">Find the entity delinquentComplaintsMultiRacial in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _delinquentComplaintsMultiRacial(Wrap<Long> c);
+
+	public Long getDelinquentComplaintsMultiRacial() {
+		return delinquentComplaintsMultiRacial;
+	}
+
+	public void setDelinquentComplaintsMultiRacial(Long delinquentComplaintsMultiRacial) {
+		this.delinquentComplaintsMultiRacial = delinquentComplaintsMultiRacial;
+		this.delinquentComplaintsMultiRacialWrap.alreadyInitialized = true;
+	}
+	public ReportCard setDelinquentComplaintsMultiRacial(String o) {
+		if(NumberUtils.isParsable(o))
+			this.delinquentComplaintsMultiRacial = Long.parseLong(o);
+		this.delinquentComplaintsMultiRacialWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard delinquentComplaintsMultiRacialInit() {
+		if(!delinquentComplaintsMultiRacialWrap.alreadyInitialized) {
+			_delinquentComplaintsMultiRacial(delinquentComplaintsMultiRacialWrap);
+			if(delinquentComplaintsMultiRacial == null)
+				setDelinquentComplaintsMultiRacial(delinquentComplaintsMultiRacialWrap.o);
+		}
+		delinquentComplaintsMultiRacialWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrDelinquentComplaintsMultiRacial() {
+		return delinquentComplaintsMultiRacial;
+	}
+
+	public String strDelinquentComplaintsMultiRacial() {
+		return delinquentComplaintsMultiRacial == null ? "" : delinquentComplaintsMultiRacial.toString();
+	}
+
+	public String jsonDelinquentComplaintsMultiRacial() {
+		return delinquentComplaintsMultiRacial == null ? "" : delinquentComplaintsMultiRacial.toString();
+	}
+
+	public String nomAffichageDelinquentComplaintsMultiRacial() {
+		return "Multi Racial complaints";
+	}
+
+	public String htmTooltipDelinquentComplaintsMultiRacial() {
+		return null;
+	}
+
+	public String htmDelinquentComplaintsMultiRacial() {
+		return delinquentComplaintsMultiRacial == null ? "" : StringEscapeUtils.escapeHtml4(strDelinquentComplaintsMultiRacial());
+	}
+
+	public void inputDelinquentComplaintsMultiRacial(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "Multi Racial complaints")
+				.a("id", classApiMethodMethod, "_delinquentComplaintsMultiRacial");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setDelinquentComplaintsMultiRacial classReportCard inputReportCard", pk, "DelinquentComplaintsMultiRacial w3-input w3-border ");
+					a("name", "setDelinquentComplaintsMultiRacial");
+				} else {
+					a("class", "valueDelinquentComplaintsMultiRacial w3-input w3-border classReportCard inputReportCard", pk, "DelinquentComplaintsMultiRacial w3-input w3-border ");
+					a("name", "delinquentComplaintsMultiRacial");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setDelinquentComplaintsMultiRacial', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_delinquentComplaintsMultiRacial')); }, function() { addError($('#", classApiMethodMethod, "_delinquentComplaintsMultiRacial')); }); ");
+				}
+				a("value", strDelinquentComplaintsMultiRacial())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "DelinquentComplaintsMultiRacial ").f().sx(htmDelinquentComplaintsMultiRacial()).g("span");
+		}
+	}
+
+	public void htmDelinquentComplaintsMultiRacial(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardDelinquentComplaintsMultiRacial").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_delinquentComplaintsMultiRacial").a("class", "").f().sx("Multi Racial complaints").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputDelinquentComplaintsMultiRacial(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_delinquentComplaintsMultiRacial')); $('#", classApiMethodMethod, "_delinquentComplaintsMultiRacial').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setDelinquentComplaintsMultiRacial', null, function() { addGlow($('#", classApiMethodMethod, "_delinquentComplaintsMultiRacial')); }, function() { addError($('#", classApiMethodMethod, "_delinquentComplaintsMultiRacial')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	////////////////////////////////////////////
+	// delinquentComplaintsMultiRacialPercent //
+	////////////////////////////////////////////
+
+	/**	 The entity delinquentComplaintsMultiRacialPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal delinquentComplaintsMultiRacialPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> delinquentComplaintsMultiRacialPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("delinquentComplaintsMultiRacialPercent").o(delinquentComplaintsMultiRacialPercent);
+
+	/**	<br/> The entity delinquentComplaintsMultiRacialPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:delinquentComplaintsMultiRacialPercent">Find the entity delinquentComplaintsMultiRacialPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _delinquentComplaintsMultiRacialPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getDelinquentComplaintsMultiRacialPercent() {
+		return delinquentComplaintsMultiRacialPercent;
+	}
+
+	public void setDelinquentComplaintsMultiRacialPercent(BigDecimal delinquentComplaintsMultiRacialPercent) {
+		this.delinquentComplaintsMultiRacialPercent = delinquentComplaintsMultiRacialPercent;
+		this.delinquentComplaintsMultiRacialPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setDelinquentComplaintsMultiRacialPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.delinquentComplaintsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.delinquentComplaintsMultiRacialPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setDelinquentComplaintsMultiRacialPercent(Double o) {
+			this.delinquentComplaintsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.delinquentComplaintsMultiRacialPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setDelinquentComplaintsMultiRacialPercent(Integer o) {
+			this.delinquentComplaintsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.delinquentComplaintsMultiRacialPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard delinquentComplaintsMultiRacialPercentInit() {
+		if(!delinquentComplaintsMultiRacialPercentWrap.alreadyInitialized) {
+			_delinquentComplaintsMultiRacialPercent(delinquentComplaintsMultiRacialPercentWrap);
+			if(delinquentComplaintsMultiRacialPercent == null)
+				setDelinquentComplaintsMultiRacialPercent(delinquentComplaintsMultiRacialPercentWrap.o);
+		}
+		delinquentComplaintsMultiRacialPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrDelinquentComplaintsMultiRacialPercent() {
+		return delinquentComplaintsMultiRacialPercent == null ? null : delinquentComplaintsMultiRacialPercent.doubleValue();
+	}
+
+	public String strDelinquentComplaintsMultiRacialPercent() {
+		return delinquentComplaintsMultiRacialPercent == null ? "" : delinquentComplaintsMultiRacialPercent.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonDelinquentComplaintsMultiRacialPercent() {
+		return delinquentComplaintsMultiRacialPercent == null ? "" : delinquentComplaintsMultiRacialPercent.toString();
+	}
+
+	public String nomAffichageDelinquentComplaintsMultiRacialPercent() {
+		return "Multi Racial complaints percent";
+	}
+
+	public String htmTooltipDelinquentComplaintsMultiRacialPercent() {
+		return null;
+	}
+
+	public String htmDelinquentComplaintsMultiRacialPercent() {
+		return delinquentComplaintsMultiRacialPercent == null ? "" : StringEscapeUtils.escapeHtml4(strDelinquentComplaintsMultiRacialPercent());
+	}
+
+	public void inputDelinquentComplaintsMultiRacialPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmDelinquentComplaintsMultiRacialPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("Multi Racial complaints percent").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "DelinquentComplaintsMultiRacialPercent ").f().sx(strDelinquentComplaintsMultiRacialPercent()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	////////////////////////////////
+	// delinquentComplaintsIndian //
+	////////////////////////////////
+
+	/**	 The entity delinquentComplaintsIndian
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long delinquentComplaintsIndian;
+	@JsonIgnore
+	public Wrap<Long> delinquentComplaintsIndianWrap = new Wrap<Long>().p(this).c(Long.class).var("delinquentComplaintsIndian").o(delinquentComplaintsIndian);
+
+	/**	<br/> The entity delinquentComplaintsIndian
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:delinquentComplaintsIndian">Find the entity delinquentComplaintsIndian in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _delinquentComplaintsIndian(Wrap<Long> c);
+
+	public Long getDelinquentComplaintsIndian() {
+		return delinquentComplaintsIndian;
+	}
+
+	public void setDelinquentComplaintsIndian(Long delinquentComplaintsIndian) {
+		this.delinquentComplaintsIndian = delinquentComplaintsIndian;
+		this.delinquentComplaintsIndianWrap.alreadyInitialized = true;
+	}
+	public ReportCard setDelinquentComplaintsIndian(String o) {
+		if(NumberUtils.isParsable(o))
+			this.delinquentComplaintsIndian = Long.parseLong(o);
+		this.delinquentComplaintsIndianWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard delinquentComplaintsIndianInit() {
+		if(!delinquentComplaintsIndianWrap.alreadyInitialized) {
+			_delinquentComplaintsIndian(delinquentComplaintsIndianWrap);
+			if(delinquentComplaintsIndian == null)
+				setDelinquentComplaintsIndian(delinquentComplaintsIndianWrap.o);
+		}
+		delinquentComplaintsIndianWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrDelinquentComplaintsIndian() {
+		return delinquentComplaintsIndian;
+	}
+
+	public String strDelinquentComplaintsIndian() {
+		return delinquentComplaintsIndian == null ? "" : delinquentComplaintsIndian.toString();
+	}
+
+	public String jsonDelinquentComplaintsIndian() {
+		return delinquentComplaintsIndian == null ? "" : delinquentComplaintsIndian.toString();
+	}
+
+	public String nomAffichageDelinquentComplaintsIndian() {
+		return "Indian complaints";
+	}
+
+	public String htmTooltipDelinquentComplaintsIndian() {
+		return null;
+	}
+
+	public String htmDelinquentComplaintsIndian() {
+		return delinquentComplaintsIndian == null ? "" : StringEscapeUtils.escapeHtml4(strDelinquentComplaintsIndian());
+	}
+
+	public void inputDelinquentComplaintsIndian(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "Indian complaints")
+				.a("id", classApiMethodMethod, "_delinquentComplaintsIndian");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setDelinquentComplaintsIndian classReportCard inputReportCard", pk, "DelinquentComplaintsIndian w3-input w3-border ");
+					a("name", "setDelinquentComplaintsIndian");
+				} else {
+					a("class", "valueDelinquentComplaintsIndian w3-input w3-border classReportCard inputReportCard", pk, "DelinquentComplaintsIndian w3-input w3-border ");
+					a("name", "delinquentComplaintsIndian");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setDelinquentComplaintsIndian', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_delinquentComplaintsIndian')); }, function() { addError($('#", classApiMethodMethod, "_delinquentComplaintsIndian')); }); ");
+				}
+				a("value", strDelinquentComplaintsIndian())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "DelinquentComplaintsIndian ").f().sx(htmDelinquentComplaintsIndian()).g("span");
+		}
+	}
+
+	public void htmDelinquentComplaintsIndian(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardDelinquentComplaintsIndian").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_delinquentComplaintsIndian").a("class", "").f().sx("Indian complaints").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputDelinquentComplaintsIndian(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_delinquentComplaintsIndian')); $('#", classApiMethodMethod, "_delinquentComplaintsIndian').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setDelinquentComplaintsIndian', null, function() { addGlow($('#", classApiMethodMethod, "_delinquentComplaintsIndian')); }, function() { addError($('#", classApiMethodMethod, "_delinquentComplaintsIndian')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	///////////////////////////////////////
+	// delinquentComplaintsIndianPercent //
+	///////////////////////////////////////
+
+	/**	 The entity delinquentComplaintsIndianPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal delinquentComplaintsIndianPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> delinquentComplaintsIndianPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("delinquentComplaintsIndianPercent").o(delinquentComplaintsIndianPercent);
+
+	/**	<br/> The entity delinquentComplaintsIndianPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:delinquentComplaintsIndianPercent">Find the entity delinquentComplaintsIndianPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _delinquentComplaintsIndianPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getDelinquentComplaintsIndianPercent() {
+		return delinquentComplaintsIndianPercent;
+	}
+
+	public void setDelinquentComplaintsIndianPercent(BigDecimal delinquentComplaintsIndianPercent) {
+		this.delinquentComplaintsIndianPercent = delinquentComplaintsIndianPercent;
+		this.delinquentComplaintsIndianPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setDelinquentComplaintsIndianPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.delinquentComplaintsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.delinquentComplaintsIndianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setDelinquentComplaintsIndianPercent(Double o) {
+			this.delinquentComplaintsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.delinquentComplaintsIndianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setDelinquentComplaintsIndianPercent(Integer o) {
+			this.delinquentComplaintsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.delinquentComplaintsIndianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard delinquentComplaintsIndianPercentInit() {
+		if(!delinquentComplaintsIndianPercentWrap.alreadyInitialized) {
+			_delinquentComplaintsIndianPercent(delinquentComplaintsIndianPercentWrap);
+			if(delinquentComplaintsIndianPercent == null)
+				setDelinquentComplaintsIndianPercent(delinquentComplaintsIndianPercentWrap.o);
+		}
+		delinquentComplaintsIndianPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrDelinquentComplaintsIndianPercent() {
+		return delinquentComplaintsIndianPercent == null ? null : delinquentComplaintsIndianPercent.doubleValue();
+	}
+
+	public String strDelinquentComplaintsIndianPercent() {
+		return delinquentComplaintsIndianPercent == null ? "" : delinquentComplaintsIndianPercent.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonDelinquentComplaintsIndianPercent() {
+		return delinquentComplaintsIndianPercent == null ? "" : delinquentComplaintsIndianPercent.toString();
+	}
+
+	public String nomAffichageDelinquentComplaintsIndianPercent() {
+		return "Indian complaints percent";
+	}
+
+	public String htmTooltipDelinquentComplaintsIndianPercent() {
+		return null;
+	}
+
+	public String htmDelinquentComplaintsIndianPercent() {
+		return delinquentComplaintsIndianPercent == null ? "" : StringEscapeUtils.escapeHtml4(strDelinquentComplaintsIndianPercent());
+	}
+
+	public void inputDelinquentComplaintsIndianPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmDelinquentComplaintsIndianPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("Indian complaints percent").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "DelinquentComplaintsIndianPercent ").f().sx(strDelinquentComplaintsIndianPercent()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	///////////////////////////////
+	// delinquentComplaintsWhite //
+	///////////////////////////////
+
+	/**	 The entity delinquentComplaintsWhite
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long delinquentComplaintsWhite;
+	@JsonIgnore
+	public Wrap<Long> delinquentComplaintsWhiteWrap = new Wrap<Long>().p(this).c(Long.class).var("delinquentComplaintsWhite").o(delinquentComplaintsWhite);
+
+	/**	<br/> The entity delinquentComplaintsWhite
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:delinquentComplaintsWhite">Find the entity delinquentComplaintsWhite in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _delinquentComplaintsWhite(Wrap<Long> c);
+
+	public Long getDelinquentComplaintsWhite() {
+		return delinquentComplaintsWhite;
+	}
+
+	public void setDelinquentComplaintsWhite(Long delinquentComplaintsWhite) {
+		this.delinquentComplaintsWhite = delinquentComplaintsWhite;
+		this.delinquentComplaintsWhiteWrap.alreadyInitialized = true;
+	}
+	public ReportCard setDelinquentComplaintsWhite(String o) {
+		if(NumberUtils.isParsable(o))
+			this.delinquentComplaintsWhite = Long.parseLong(o);
+		this.delinquentComplaintsWhiteWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard delinquentComplaintsWhiteInit() {
+		if(!delinquentComplaintsWhiteWrap.alreadyInitialized) {
+			_delinquentComplaintsWhite(delinquentComplaintsWhiteWrap);
+			if(delinquentComplaintsWhite == null)
+				setDelinquentComplaintsWhite(delinquentComplaintsWhiteWrap.o);
+		}
+		delinquentComplaintsWhiteWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrDelinquentComplaintsWhite() {
+		return delinquentComplaintsWhite;
+	}
+
+	public String strDelinquentComplaintsWhite() {
+		return delinquentComplaintsWhite == null ? "" : delinquentComplaintsWhite.toString();
+	}
+
+	public String jsonDelinquentComplaintsWhite() {
+		return delinquentComplaintsWhite == null ? "" : delinquentComplaintsWhite.toString();
+	}
+
+	public String nomAffichageDelinquentComplaintsWhite() {
+		return "White complaints";
+	}
+
+	public String htmTooltipDelinquentComplaintsWhite() {
+		return null;
+	}
+
+	public String htmDelinquentComplaintsWhite() {
+		return delinquentComplaintsWhite == null ? "" : StringEscapeUtils.escapeHtml4(strDelinquentComplaintsWhite());
+	}
+
+	public void inputDelinquentComplaintsWhite(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "White complaints")
+				.a("id", classApiMethodMethod, "_delinquentComplaintsWhite");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setDelinquentComplaintsWhite classReportCard inputReportCard", pk, "DelinquentComplaintsWhite w3-input w3-border ");
+					a("name", "setDelinquentComplaintsWhite");
+				} else {
+					a("class", "valueDelinquentComplaintsWhite w3-input w3-border classReportCard inputReportCard", pk, "DelinquentComplaintsWhite w3-input w3-border ");
+					a("name", "delinquentComplaintsWhite");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setDelinquentComplaintsWhite', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_delinquentComplaintsWhite')); }, function() { addError($('#", classApiMethodMethod, "_delinquentComplaintsWhite')); }); ");
+				}
+				a("value", strDelinquentComplaintsWhite())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "DelinquentComplaintsWhite ").f().sx(htmDelinquentComplaintsWhite()).g("span");
+		}
+	}
+
+	public void htmDelinquentComplaintsWhite(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardDelinquentComplaintsWhite").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_delinquentComplaintsWhite").a("class", "").f().sx("White complaints").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputDelinquentComplaintsWhite(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_delinquentComplaintsWhite')); $('#", classApiMethodMethod, "_delinquentComplaintsWhite').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setDelinquentComplaintsWhite', null, function() { addGlow($('#", classApiMethodMethod, "_delinquentComplaintsWhite')); }, function() { addError($('#", classApiMethodMethod, "_delinquentComplaintsWhite')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	//////////////////////////////////////
+	// delinquentComplaintsWhitePercent //
+	//////////////////////////////////////
+
+	/**	 The entity delinquentComplaintsWhitePercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal delinquentComplaintsWhitePercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> delinquentComplaintsWhitePercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("delinquentComplaintsWhitePercent").o(delinquentComplaintsWhitePercent);
+
+	/**	<br/> The entity delinquentComplaintsWhitePercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:delinquentComplaintsWhitePercent">Find the entity delinquentComplaintsWhitePercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _delinquentComplaintsWhitePercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getDelinquentComplaintsWhitePercent() {
+		return delinquentComplaintsWhitePercent;
+	}
+
+	public void setDelinquentComplaintsWhitePercent(BigDecimal delinquentComplaintsWhitePercent) {
+		this.delinquentComplaintsWhitePercent = delinquentComplaintsWhitePercent;
+		this.delinquentComplaintsWhitePercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setDelinquentComplaintsWhitePercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.delinquentComplaintsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.delinquentComplaintsWhitePercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setDelinquentComplaintsWhitePercent(Double o) {
+			this.delinquentComplaintsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.delinquentComplaintsWhitePercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setDelinquentComplaintsWhitePercent(Integer o) {
+			this.delinquentComplaintsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.delinquentComplaintsWhitePercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard delinquentComplaintsWhitePercentInit() {
+		if(!delinquentComplaintsWhitePercentWrap.alreadyInitialized) {
+			_delinquentComplaintsWhitePercent(delinquentComplaintsWhitePercentWrap);
+			if(delinquentComplaintsWhitePercent == null)
+				setDelinquentComplaintsWhitePercent(delinquentComplaintsWhitePercentWrap.o);
+		}
+		delinquentComplaintsWhitePercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrDelinquentComplaintsWhitePercent() {
+		return delinquentComplaintsWhitePercent == null ? null : delinquentComplaintsWhitePercent.doubleValue();
+	}
+
+	public String strDelinquentComplaintsWhitePercent() {
+		return delinquentComplaintsWhitePercent == null ? "" : delinquentComplaintsWhitePercent.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonDelinquentComplaintsWhitePercent() {
+		return delinquentComplaintsWhitePercent == null ? "" : delinquentComplaintsWhitePercent.toString();
+	}
+
+	public String nomAffichageDelinquentComplaintsWhitePercent() {
+		return "White complaints percent";
+	}
+
+	public String htmTooltipDelinquentComplaintsWhitePercent() {
+		return null;
+	}
+
+	public String htmDelinquentComplaintsWhitePercent() {
+		return delinquentComplaintsWhitePercent == null ? "" : StringEscapeUtils.escapeHtml4(strDelinquentComplaintsWhitePercent());
+	}
+
+	public void inputDelinquentComplaintsWhitePercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmDelinquentComplaintsWhitePercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("White complaints percent").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "DelinquentComplaintsWhitePercent ").f().sx(strDelinquentComplaintsWhitePercent()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	/////////////////////////////////////////
+	// delinquentComplaintsPacificIslander //
+	/////////////////////////////////////////
+
+	/**	 The entity delinquentComplaintsPacificIslander
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long delinquentComplaintsPacificIslander;
+	@JsonIgnore
+	public Wrap<Long> delinquentComplaintsPacificIslanderWrap = new Wrap<Long>().p(this).c(Long.class).var("delinquentComplaintsPacificIslander").o(delinquentComplaintsPacificIslander);
+
+	/**	<br/> The entity delinquentComplaintsPacificIslander
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:delinquentComplaintsPacificIslander">Find the entity delinquentComplaintsPacificIslander in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _delinquentComplaintsPacificIslander(Wrap<Long> c);
+
+	public Long getDelinquentComplaintsPacificIslander() {
+		return delinquentComplaintsPacificIslander;
+	}
+
+	public void setDelinquentComplaintsPacificIslander(Long delinquentComplaintsPacificIslander) {
+		this.delinquentComplaintsPacificIslander = delinquentComplaintsPacificIslander;
+		this.delinquentComplaintsPacificIslanderWrap.alreadyInitialized = true;
+	}
+	public ReportCard setDelinquentComplaintsPacificIslander(String o) {
+		if(NumberUtils.isParsable(o))
+			this.delinquentComplaintsPacificIslander = Long.parseLong(o);
+		this.delinquentComplaintsPacificIslanderWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard delinquentComplaintsPacificIslanderInit() {
+		if(!delinquentComplaintsPacificIslanderWrap.alreadyInitialized) {
+			_delinquentComplaintsPacificIslander(delinquentComplaintsPacificIslanderWrap);
+			if(delinquentComplaintsPacificIslander == null)
+				setDelinquentComplaintsPacificIslander(delinquentComplaintsPacificIslanderWrap.o);
+		}
+		delinquentComplaintsPacificIslanderWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrDelinquentComplaintsPacificIslander() {
+		return delinquentComplaintsPacificIslander;
+	}
+
+	public String strDelinquentComplaintsPacificIslander() {
+		return delinquentComplaintsPacificIslander == null ? "" : delinquentComplaintsPacificIslander.toString();
+	}
+
+	public String jsonDelinquentComplaintsPacificIslander() {
+		return delinquentComplaintsPacificIslander == null ? "" : delinquentComplaintsPacificIslander.toString();
+	}
+
+	public String nomAffichageDelinquentComplaintsPacificIslander() {
+		return "Pacific Islander complaints";
+	}
+
+	public String htmTooltipDelinquentComplaintsPacificIslander() {
+		return null;
+	}
+
+	public String htmDelinquentComplaintsPacificIslander() {
+		return delinquentComplaintsPacificIslander == null ? "" : StringEscapeUtils.escapeHtml4(strDelinquentComplaintsPacificIslander());
+	}
+
+	public void inputDelinquentComplaintsPacificIslander(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "Pacific Islander complaints")
+				.a("id", classApiMethodMethod, "_delinquentComplaintsPacificIslander");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setDelinquentComplaintsPacificIslander classReportCard inputReportCard", pk, "DelinquentComplaintsPacificIslander w3-input w3-border ");
+					a("name", "setDelinquentComplaintsPacificIslander");
+				} else {
+					a("class", "valueDelinquentComplaintsPacificIslander w3-input w3-border classReportCard inputReportCard", pk, "DelinquentComplaintsPacificIslander w3-input w3-border ");
+					a("name", "delinquentComplaintsPacificIslander");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setDelinquentComplaintsPacificIslander', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_delinquentComplaintsPacificIslander')); }, function() { addError($('#", classApiMethodMethod, "_delinquentComplaintsPacificIslander')); }); ");
+				}
+				a("value", strDelinquentComplaintsPacificIslander())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "DelinquentComplaintsPacificIslander ").f().sx(htmDelinquentComplaintsPacificIslander()).g("span");
+		}
+	}
+
+	public void htmDelinquentComplaintsPacificIslander(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardDelinquentComplaintsPacificIslander").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_delinquentComplaintsPacificIslander").a("class", "").f().sx("Pacific Islander complaints").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputDelinquentComplaintsPacificIslander(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_delinquentComplaintsPacificIslander')); $('#", classApiMethodMethod, "_delinquentComplaintsPacificIslander').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setDelinquentComplaintsPacificIslander', null, function() { addGlow($('#", classApiMethodMethod, "_delinquentComplaintsPacificIslander')); }, function() { addError($('#", classApiMethodMethod, "_delinquentComplaintsPacificIslander')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	////////////////////////////////////////////////
+	// delinquentComplaintsPacificIslanderPercent //
+	////////////////////////////////////////////////
+
+	/**	 The entity delinquentComplaintsPacificIslanderPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal delinquentComplaintsPacificIslanderPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> delinquentComplaintsPacificIslanderPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("delinquentComplaintsPacificIslanderPercent").o(delinquentComplaintsPacificIslanderPercent);
+
+	/**	<br/> The entity delinquentComplaintsPacificIslanderPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:delinquentComplaintsPacificIslanderPercent">Find the entity delinquentComplaintsPacificIslanderPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _delinquentComplaintsPacificIslanderPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getDelinquentComplaintsPacificIslanderPercent() {
+		return delinquentComplaintsPacificIslanderPercent;
+	}
+
+	public void setDelinquentComplaintsPacificIslanderPercent(BigDecimal delinquentComplaintsPacificIslanderPercent) {
+		this.delinquentComplaintsPacificIslanderPercent = delinquentComplaintsPacificIslanderPercent;
+		this.delinquentComplaintsPacificIslanderPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setDelinquentComplaintsPacificIslanderPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.delinquentComplaintsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.delinquentComplaintsPacificIslanderPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setDelinquentComplaintsPacificIslanderPercent(Double o) {
+			this.delinquentComplaintsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.delinquentComplaintsPacificIslanderPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setDelinquentComplaintsPacificIslanderPercent(Integer o) {
+			this.delinquentComplaintsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.delinquentComplaintsPacificIslanderPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard delinquentComplaintsPacificIslanderPercentInit() {
+		if(!delinquentComplaintsPacificIslanderPercentWrap.alreadyInitialized) {
+			_delinquentComplaintsPacificIslanderPercent(delinquentComplaintsPacificIslanderPercentWrap);
+			if(delinquentComplaintsPacificIslanderPercent == null)
+				setDelinquentComplaintsPacificIslanderPercent(delinquentComplaintsPacificIslanderPercentWrap.o);
+		}
+		delinquentComplaintsPacificIslanderPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrDelinquentComplaintsPacificIslanderPercent() {
+		return delinquentComplaintsPacificIslanderPercent == null ? null : delinquentComplaintsPacificIslanderPercent.doubleValue();
+	}
+
+	public String strDelinquentComplaintsPacificIslanderPercent() {
+		return delinquentComplaintsPacificIslanderPercent == null ? "" : delinquentComplaintsPacificIslanderPercent.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonDelinquentComplaintsPacificIslanderPercent() {
+		return delinquentComplaintsPacificIslanderPercent == null ? "" : delinquentComplaintsPacificIslanderPercent.toString();
+	}
+
+	public String nomAffichageDelinquentComplaintsPacificIslanderPercent() {
+		return "Pacific Islander complaints percent";
+	}
+
+	public String htmTooltipDelinquentComplaintsPacificIslanderPercent() {
+		return null;
+	}
+
+	public String htmDelinquentComplaintsPacificIslanderPercent() {
+		return delinquentComplaintsPacificIslanderPercent == null ? "" : StringEscapeUtils.escapeHtml4(strDelinquentComplaintsPacificIslanderPercent());
+	}
+
+	public void inputDelinquentComplaintsPacificIslanderPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmDelinquentComplaintsPacificIslanderPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("Pacific Islander complaints percent").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "DelinquentComplaintsPacificIslanderPercent ").f().sx(strDelinquentComplaintsPacificIslanderPercent()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	///////////////////////////////
+	// shortTermSuspensionsTotal //
+	///////////////////////////////
+
+	/**	 The entity shortTermSuspensionsTotal
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionsTotal;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionsTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsTotal").o(shortTermSuspensionsTotal);
+
+	/**	<br/> The entity shortTermSuspensionsTotal
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsTotal">Find the entity shortTermSuspensionsTotal in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsTotal(Wrap<Long> c);
+
+	public Long getShortTermSuspensionsTotal() {
+		return shortTermSuspensionsTotal;
+	}
+
+	public void setShortTermSuspensionsTotal(Long shortTermSuspensionsTotal) {
+		this.shortTermSuspensionsTotal = shortTermSuspensionsTotal;
+		this.shortTermSuspensionsTotalWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsTotal(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsTotal = Long.parseLong(o);
+		this.shortTermSuspensionsTotalWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsTotalInit() {
+		if(!shortTermSuspensionsTotalWrap.alreadyInitialized) {
+			_shortTermSuspensionsTotal(shortTermSuspensionsTotalWrap);
+			if(shortTermSuspensionsTotal == null)
+				setShortTermSuspensionsTotal(shortTermSuspensionsTotalWrap.o);
+		}
+		shortTermSuspensionsTotalWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionsTotal() {
+		return shortTermSuspensionsTotal;
+	}
+
+	public String strShortTermSuspensionsTotal() {
+		return shortTermSuspensionsTotal == null ? "" : shortTermSuspensionsTotal.toString();
+	}
+
+	public String jsonShortTermSuspensionsTotal() {
+		return shortTermSuspensionsTotal == null ? "" : shortTermSuspensionsTotal.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsTotal() {
+		return "short-term suspensions total";
+	}
+
+	public String htmTooltipShortTermSuspensionsTotal() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsTotal() {
+		return shortTermSuspensionsTotal == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsTotal());
+	}
+
+	public void inputShortTermSuspensionsTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "short-term suspensions total")
+				.a("id", classApiMethodMethod, "_shortTermSuspensionsTotal");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setShortTermSuspensionsTotal classReportCard inputReportCard", pk, "ShortTermSuspensionsTotal w3-input w3-border ");
+					a("name", "setShortTermSuspensionsTotal");
+				} else {
+					a("class", "valueShortTermSuspensionsTotal w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsTotal w3-input w3-border ");
+					a("name", "shortTermSuspensionsTotal");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsTotal', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsTotal')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsTotal')); }); ");
+				}
+				a("value", strShortTermSuspensionsTotal())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsTotal ").f().sx(htmShortTermSuspensionsTotal()).g("span");
+		}
+	}
+
+	public void htmShortTermSuspensionsTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsTotal").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsTotal").a("class", "").f().sx("short-term suspensions total").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputShortTermSuspensionsTotal(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsTotal')); $('#", classApiMethodMethod, "_shortTermSuspensionsTotal').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsTotal', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsTotal')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsTotal')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	//////////////////////////////
+	// longTermSuspensionsTotal //
+	//////////////////////////////
+
+	/**	 The entity longTermSuspensionsTotal
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long longTermSuspensionsTotal;
+	@JsonIgnore
+	public Wrap<Long> longTermSuspensionsTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("longTermSuspensionsTotal").o(longTermSuspensionsTotal);
+
+	/**	<br/> The entity longTermSuspensionsTotal
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:longTermSuspensionsTotal">Find the entity longTermSuspensionsTotal in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _longTermSuspensionsTotal(Wrap<Long> c);
+
+	public Long getLongTermSuspensionsTotal() {
+		return longTermSuspensionsTotal;
+	}
+
+	public void setLongTermSuspensionsTotal(Long longTermSuspensionsTotal) {
+		this.longTermSuspensionsTotal = longTermSuspensionsTotal;
+		this.longTermSuspensionsTotalWrap.alreadyInitialized = true;
+	}
+	public ReportCard setLongTermSuspensionsTotal(String o) {
+		if(NumberUtils.isParsable(o))
+			this.longTermSuspensionsTotal = Long.parseLong(o);
+		this.longTermSuspensionsTotalWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard longTermSuspensionsTotalInit() {
+		if(!longTermSuspensionsTotalWrap.alreadyInitialized) {
+			_longTermSuspensionsTotal(longTermSuspensionsTotalWrap);
+			if(longTermSuspensionsTotal == null)
+				setLongTermSuspensionsTotal(longTermSuspensionsTotalWrap.o);
+		}
+		longTermSuspensionsTotalWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrLongTermSuspensionsTotal() {
+		return longTermSuspensionsTotal;
+	}
+
+	public String strLongTermSuspensionsTotal() {
+		return longTermSuspensionsTotal == null ? "" : longTermSuspensionsTotal.toString();
+	}
+
+	public String jsonLongTermSuspensionsTotal() {
+		return longTermSuspensionsTotal == null ? "" : longTermSuspensionsTotal.toString();
+	}
+
+	public String nomAffichageLongTermSuspensionsTotal() {
+		return "long-term suspensions total";
+	}
+
+	public String htmTooltipLongTermSuspensionsTotal() {
+		return null;
+	}
+
+	public String htmLongTermSuspensionsTotal() {
+		return longTermSuspensionsTotal == null ? "" : StringEscapeUtils.escapeHtml4(strLongTermSuspensionsTotal());
+	}
+
+	public void inputLongTermSuspensionsTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "long-term suspensions total")
+				.a("id", classApiMethodMethod, "_longTermSuspensionsTotal");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setLongTermSuspensionsTotal classReportCard inputReportCard", pk, "LongTermSuspensionsTotal w3-input w3-border ");
+					a("name", "setLongTermSuspensionsTotal");
+				} else {
+					a("class", "valueLongTermSuspensionsTotal w3-input w3-border classReportCard inputReportCard", pk, "LongTermSuspensionsTotal w3-input w3-border ");
+					a("name", "longTermSuspensionsTotal");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setLongTermSuspensionsTotal', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_longTermSuspensionsTotal')); }, function() { addError($('#", classApiMethodMethod, "_longTermSuspensionsTotal')); }); ");
+				}
+				a("value", strLongTermSuspensionsTotal())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "LongTermSuspensionsTotal ").f().sx(htmLongTermSuspensionsTotal()).g("span");
+		}
+	}
+
+	public void htmLongTermSuspensionsTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardLongTermSuspensionsTotal").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_longTermSuspensionsTotal").a("class", "").f().sx("long-term suspensions total").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputLongTermSuspensionsTotal(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_longTermSuspensionsTotal')); $('#", classApiMethodMethod, "_longTermSuspensionsTotal').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setLongTermSuspensionsTotal', null, function() { addGlow($('#", classApiMethodMethod, "_longTermSuspensionsTotal')); }, function() { addError($('#", classApiMethodMethod, "_longTermSuspensionsTotal')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	/////////////////////
+	// expulsionsTotal //
+	/////////////////////
+
+	/**	 The entity expulsionsTotal
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long expulsionsTotal;
+	@JsonIgnore
+	public Wrap<Long> expulsionsTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("expulsionsTotal").o(expulsionsTotal);
+
+	/**	<br/> The entity expulsionsTotal
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:expulsionsTotal">Find the entity expulsionsTotal in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _expulsionsTotal(Wrap<Long> c);
+
+	public Long getExpulsionsTotal() {
+		return expulsionsTotal;
+	}
+
+	public void setExpulsionsTotal(Long expulsionsTotal) {
+		this.expulsionsTotal = expulsionsTotal;
+		this.expulsionsTotalWrap.alreadyInitialized = true;
+	}
+	public ReportCard setExpulsionsTotal(String o) {
+		if(NumberUtils.isParsable(o))
+			this.expulsionsTotal = Long.parseLong(o);
+		this.expulsionsTotalWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard expulsionsTotalInit() {
+		if(!expulsionsTotalWrap.alreadyInitialized) {
+			_expulsionsTotal(expulsionsTotalWrap);
+			if(expulsionsTotal == null)
+				setExpulsionsTotal(expulsionsTotalWrap.o);
+		}
+		expulsionsTotalWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrExpulsionsTotal() {
+		return expulsionsTotal;
+	}
+
+	public String strExpulsionsTotal() {
+		return expulsionsTotal == null ? "" : expulsionsTotal.toString();
+	}
+
+	public String jsonExpulsionsTotal() {
+		return expulsionsTotal == null ? "" : expulsionsTotal.toString();
+	}
+
+	public String nomAffichageExpulsionsTotal() {
+		return "expulsions total";
+	}
+
+	public String htmTooltipExpulsionsTotal() {
+		return null;
+	}
+
+	public String htmExpulsionsTotal() {
+		return expulsionsTotal == null ? "" : StringEscapeUtils.escapeHtml4(strExpulsionsTotal());
+	}
+
+	public void inputExpulsionsTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "expulsions total")
+				.a("id", classApiMethodMethod, "_expulsionsTotal");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setExpulsionsTotal classReportCard inputReportCard", pk, "ExpulsionsTotal w3-input w3-border ");
+					a("name", "setExpulsionsTotal");
+				} else {
+					a("class", "valueExpulsionsTotal w3-input w3-border classReportCard inputReportCard", pk, "ExpulsionsTotal w3-input w3-border ");
+					a("name", "expulsionsTotal");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExpulsionsTotal', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_expulsionsTotal')); }, function() { addError($('#", classApiMethodMethod, "_expulsionsTotal')); }); ");
+				}
+				a("value", strExpulsionsTotal())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ExpulsionsTotal ").f().sx(htmExpulsionsTotal()).g("span");
+		}
+	}
+
+	public void htmExpulsionsTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExpulsionsTotal").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_expulsionsTotal").a("class", "").f().sx("expulsions total").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputExpulsionsTotal(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_expulsionsTotal')); $('#", classApiMethodMethod, "_expulsionsTotal').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExpulsionsTotal', null, function() { addGlow($('#", classApiMethodMethod, "_expulsionsTotal')); }, function() { addError($('#", classApiMethodMethod, "_expulsionsTotal')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	/////////////////////////////////////
+	// shortTermSuspensionsAsianFemale //
+	/////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsAsianFemale
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionsAsianFemale;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionsAsianFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsAsianFemale").o(shortTermSuspensionsAsianFemale);
+
+	/**	<br/> The entity shortTermSuspensionsAsianFemale
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsAsianFemale">Find the entity shortTermSuspensionsAsianFemale in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsAsianFemale(Wrap<Long> c);
+
+	public Long getShortTermSuspensionsAsianFemale() {
+		return shortTermSuspensionsAsianFemale;
+	}
+
+	public void setShortTermSuspensionsAsianFemale(Long shortTermSuspensionsAsianFemale) {
+		this.shortTermSuspensionsAsianFemale = shortTermSuspensionsAsianFemale;
+		this.shortTermSuspensionsAsianFemaleWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsAsianFemale(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsAsianFemale = Long.parseLong(o);
+		this.shortTermSuspensionsAsianFemaleWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsAsianFemaleInit() {
+		if(!shortTermSuspensionsAsianFemaleWrap.alreadyInitialized) {
+			_shortTermSuspensionsAsianFemale(shortTermSuspensionsAsianFemaleWrap);
+			if(shortTermSuspensionsAsianFemale == null)
+				setShortTermSuspensionsAsianFemale(shortTermSuspensionsAsianFemaleWrap.o);
+		}
+		shortTermSuspensionsAsianFemaleWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionsAsianFemale() {
+		return shortTermSuspensionsAsianFemale;
+	}
+
+	public String strShortTermSuspensionsAsianFemale() {
+		return shortTermSuspensionsAsianFemale == null ? "" : shortTermSuspensionsAsianFemale.toString();
+	}
+
+	public String jsonShortTermSuspensionsAsianFemale() {
+		return shortTermSuspensionsAsianFemale == null ? "" : shortTermSuspensionsAsianFemale.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsAsianFemale() {
+		return "short-term suspensions Asian female";
+	}
+
+	public String htmTooltipShortTermSuspensionsAsianFemale() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsAsianFemale() {
+		return shortTermSuspensionsAsianFemale == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsAsianFemale());
+	}
+
+	public void inputShortTermSuspensionsAsianFemale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "short-term suspensions Asian female")
+				.a("id", classApiMethodMethod, "_shortTermSuspensionsAsianFemale");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setShortTermSuspensionsAsianFemale classReportCard inputReportCard", pk, "ShortTermSuspensionsAsianFemale w3-input w3-border ");
+					a("name", "setShortTermSuspensionsAsianFemale");
+				} else {
+					a("class", "valueShortTermSuspensionsAsianFemale w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsAsianFemale w3-input w3-border ");
+					a("name", "shortTermSuspensionsAsianFemale");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsAsianFemale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsAsianFemale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsAsianFemale')); }); ");
+				}
+				a("value", strShortTermSuspensionsAsianFemale())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsAsianFemale ").f().sx(htmShortTermSuspensionsAsianFemale()).g("span");
+		}
+	}
+
+	public void htmShortTermSuspensionsAsianFemale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsAsianFemale").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsAsianFemale").a("class", "").f().sx("short-term suspensions Asian female").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputShortTermSuspensionsAsianFemale(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsAsianFemale')); $('#", classApiMethodMethod, "_shortTermSuspensionsAsianFemale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsAsianFemale', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsAsianFemale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsAsianFemale')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	///////////////////////////////////
+	// shortTermSuspensionsAsianMale //
+	///////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsAsianMale
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionsAsianMale;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionsAsianMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsAsianMale").o(shortTermSuspensionsAsianMale);
+
+	/**	<br/> The entity shortTermSuspensionsAsianMale
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsAsianMale">Find the entity shortTermSuspensionsAsianMale in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsAsianMale(Wrap<Long> c);
+
+	public Long getShortTermSuspensionsAsianMale() {
+		return shortTermSuspensionsAsianMale;
+	}
+
+	public void setShortTermSuspensionsAsianMale(Long shortTermSuspensionsAsianMale) {
+		this.shortTermSuspensionsAsianMale = shortTermSuspensionsAsianMale;
+		this.shortTermSuspensionsAsianMaleWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsAsianMale(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsAsianMale = Long.parseLong(o);
+		this.shortTermSuspensionsAsianMaleWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsAsianMaleInit() {
+		if(!shortTermSuspensionsAsianMaleWrap.alreadyInitialized) {
+			_shortTermSuspensionsAsianMale(shortTermSuspensionsAsianMaleWrap);
+			if(shortTermSuspensionsAsianMale == null)
+				setShortTermSuspensionsAsianMale(shortTermSuspensionsAsianMaleWrap.o);
+		}
+		shortTermSuspensionsAsianMaleWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionsAsianMale() {
+		return shortTermSuspensionsAsianMale;
+	}
+
+	public String strShortTermSuspensionsAsianMale() {
+		return shortTermSuspensionsAsianMale == null ? "" : shortTermSuspensionsAsianMale.toString();
+	}
+
+	public String jsonShortTermSuspensionsAsianMale() {
+		return shortTermSuspensionsAsianMale == null ? "" : shortTermSuspensionsAsianMale.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsAsianMale() {
+		return "short-term suspensions Asian male";
+	}
+
+	public String htmTooltipShortTermSuspensionsAsianMale() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsAsianMale() {
+		return shortTermSuspensionsAsianMale == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsAsianMale());
+	}
+
+	public void inputShortTermSuspensionsAsianMale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "short-term suspensions Asian male")
+				.a("id", classApiMethodMethod, "_shortTermSuspensionsAsianMale");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setShortTermSuspensionsAsianMale classReportCard inputReportCard", pk, "ShortTermSuspensionsAsianMale w3-input w3-border ");
+					a("name", "setShortTermSuspensionsAsianMale");
+				} else {
+					a("class", "valueShortTermSuspensionsAsianMale w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsAsianMale w3-input w3-border ");
+					a("name", "shortTermSuspensionsAsianMale");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsAsianMale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsAsianMale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsAsianMale')); }); ");
+				}
+				a("value", strShortTermSuspensionsAsianMale())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsAsianMale ").f().sx(htmShortTermSuspensionsAsianMale()).g("span");
+		}
+	}
+
+	public void htmShortTermSuspensionsAsianMale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsAsianMale").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsAsianMale").a("class", "").f().sx("short-term suspensions Asian male").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputShortTermSuspensionsAsianMale(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsAsianMale')); $('#", classApiMethodMethod, "_shortTermSuspensionsAsianMale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsAsianMale', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsAsianMale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsAsianMale')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	////////////////////////////////////
+	// shortTermSuspensionsAsianTotal //
+	////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsAsianTotal
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionsAsianTotal;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionsAsianTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsAsianTotal").o(shortTermSuspensionsAsianTotal);
+
+	/**	<br/> The entity shortTermSuspensionsAsianTotal
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsAsianTotal">Find the entity shortTermSuspensionsAsianTotal in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsAsianTotal(Wrap<Long> c);
+
+	public Long getShortTermSuspensionsAsianTotal() {
+		return shortTermSuspensionsAsianTotal;
+	}
+
+	public void setShortTermSuspensionsAsianTotal(Long shortTermSuspensionsAsianTotal) {
+		this.shortTermSuspensionsAsianTotal = shortTermSuspensionsAsianTotal;
+		this.shortTermSuspensionsAsianTotalWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsAsianTotal(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsAsianTotal = Long.parseLong(o);
+		this.shortTermSuspensionsAsianTotalWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsAsianTotalInit() {
+		if(!shortTermSuspensionsAsianTotalWrap.alreadyInitialized) {
+			_shortTermSuspensionsAsianTotal(shortTermSuspensionsAsianTotalWrap);
+			if(shortTermSuspensionsAsianTotal == null)
+				setShortTermSuspensionsAsianTotal(shortTermSuspensionsAsianTotalWrap.o);
+		}
+		shortTermSuspensionsAsianTotalWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionsAsianTotal() {
+		return shortTermSuspensionsAsianTotal;
+	}
+
+	public String strShortTermSuspensionsAsianTotal() {
+		return shortTermSuspensionsAsianTotal == null ? "" : shortTermSuspensionsAsianTotal.toString();
+	}
+
+	public String jsonShortTermSuspensionsAsianTotal() {
+		return shortTermSuspensionsAsianTotal == null ? "" : shortTermSuspensionsAsianTotal.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsAsianTotal() {
+		return "short-term suspensions Asians total";
+	}
+
+	public String htmTooltipShortTermSuspensionsAsianTotal() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsAsianTotal() {
+		return shortTermSuspensionsAsianTotal == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsAsianTotal());
+	}
+
+	public void inputShortTermSuspensionsAsianTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmShortTermSuspensionsAsianTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("short-term suspensions Asians total").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsAsianTotal ").f().sx(strShortTermSuspensionsAsianTotal()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	//////////////////////////////////////
+	// shortTermSuspensionsAsianPercent //
+	//////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsAsianPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal shortTermSuspensionsAsianPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> shortTermSuspensionsAsianPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsAsianPercent").o(shortTermSuspensionsAsianPercent);
+
+	/**	<br/> The entity shortTermSuspensionsAsianPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsAsianPercent">Find the entity shortTermSuspensionsAsianPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsAsianPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getShortTermSuspensionsAsianPercent() {
+		return shortTermSuspensionsAsianPercent;
+	}
+
+	public void setShortTermSuspensionsAsianPercent(BigDecimal shortTermSuspensionsAsianPercent) {
+		this.shortTermSuspensionsAsianPercent = shortTermSuspensionsAsianPercent;
+		this.shortTermSuspensionsAsianPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsAsianPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsAsianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsAsianPercent(Double o) {
+			this.shortTermSuspensionsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsAsianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsAsianPercent(Integer o) {
+			this.shortTermSuspensionsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsAsianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsAsianPercentInit() {
+		if(!shortTermSuspensionsAsianPercentWrap.alreadyInitialized) {
+			_shortTermSuspensionsAsianPercent(shortTermSuspensionsAsianPercentWrap);
+			if(shortTermSuspensionsAsianPercent == null)
+				setShortTermSuspensionsAsianPercent(shortTermSuspensionsAsianPercentWrap.o);
+		}
+		shortTermSuspensionsAsianPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrShortTermSuspensionsAsianPercent() {
+		return shortTermSuspensionsAsianPercent == null ? null : shortTermSuspensionsAsianPercent.doubleValue();
+	}
+
+	public String strShortTermSuspensionsAsianPercent() {
+		return shortTermSuspensionsAsianPercent == null ? "" : shortTermSuspensionsAsianPercent.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonShortTermSuspensionsAsianPercent() {
+		return shortTermSuspensionsAsianPercent == null ? "" : shortTermSuspensionsAsianPercent.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsAsianPercent() {
+		return "short-term suspensions Asians percent";
+	}
+
+	public String htmTooltipShortTermSuspensionsAsianPercent() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsAsianPercent() {
+		return shortTermSuspensionsAsianPercent == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsAsianPercent());
+	}
+
+	public void inputShortTermSuspensionsAsianPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmShortTermSuspensionsAsianPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("short-term suspensions Asians percent").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsAsianPercent ").f().sx(strShortTermSuspensionsAsianPercent()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	///////////////////////////////////
+	// shortTermSuspensionsAsianRate //
+	///////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsAsianRate
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal shortTermSuspensionsAsianRate;
+	@JsonIgnore
+	public Wrap<BigDecimal> shortTermSuspensionsAsianRateWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsAsianRate").o(shortTermSuspensionsAsianRate);
+
+	/**	<br/> The entity shortTermSuspensionsAsianRate
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsAsianRate">Find the entity shortTermSuspensionsAsianRate in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsAsianRate(Wrap<BigDecimal> c);
+
+	public BigDecimal getShortTermSuspensionsAsianRate() {
+		return shortTermSuspensionsAsianRate;
+	}
+
+	public void setShortTermSuspensionsAsianRate(BigDecimal shortTermSuspensionsAsianRate) {
+		this.shortTermSuspensionsAsianRate = shortTermSuspensionsAsianRate;
+		this.shortTermSuspensionsAsianRateWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsAsianRate(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsAsianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsAsianRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsAsianRate(Double o) {
+			this.shortTermSuspensionsAsianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsAsianRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsAsianRate(Integer o) {
+			this.shortTermSuspensionsAsianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsAsianRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsAsianRateInit() {
+		if(!shortTermSuspensionsAsianRateWrap.alreadyInitialized) {
+			_shortTermSuspensionsAsianRate(shortTermSuspensionsAsianRateWrap);
+			if(shortTermSuspensionsAsianRate == null)
+				setShortTermSuspensionsAsianRate(shortTermSuspensionsAsianRateWrap.o);
+		}
+		shortTermSuspensionsAsianRateWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrShortTermSuspensionsAsianRate() {
+		return shortTermSuspensionsAsianRate == null ? null : shortTermSuspensionsAsianRate.doubleValue();
+	}
+
+	public String strShortTermSuspensionsAsianRate() {
+		return shortTermSuspensionsAsianRate == null ? "" : shortTermSuspensionsAsianRate.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonShortTermSuspensionsAsianRate() {
+		return shortTermSuspensionsAsianRate == null ? "" : shortTermSuspensionsAsianRate.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsAsianRate() {
+		return "short-term suspensions Asians rate";
+	}
+
+	public String htmTooltipShortTermSuspensionsAsianRate() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsAsianRate() {
+		return shortTermSuspensionsAsianRate == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsAsianRate());
+	}
+
+	public void inputShortTermSuspensionsAsianRate(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmShortTermSuspensionsAsianRate(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("short-term suspensions Asians rate").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsAsianRate ").f().sx(strShortTermSuspensionsAsianRate()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	/////////////////////////////////////
+	// shortTermSuspensionsBlackFemale //
+	/////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsBlackFemale
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionsBlackFemale;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionsBlackFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsBlackFemale").o(shortTermSuspensionsBlackFemale);
+
+	/**	<br/> The entity shortTermSuspensionsBlackFemale
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsBlackFemale">Find the entity shortTermSuspensionsBlackFemale in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsBlackFemale(Wrap<Long> c);
+
+	public Long getShortTermSuspensionsBlackFemale() {
+		return shortTermSuspensionsBlackFemale;
+	}
+
+	public void setShortTermSuspensionsBlackFemale(Long shortTermSuspensionsBlackFemale) {
+		this.shortTermSuspensionsBlackFemale = shortTermSuspensionsBlackFemale;
+		this.shortTermSuspensionsBlackFemaleWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsBlackFemale(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsBlackFemale = Long.parseLong(o);
+		this.shortTermSuspensionsBlackFemaleWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsBlackFemaleInit() {
+		if(!shortTermSuspensionsBlackFemaleWrap.alreadyInitialized) {
+			_shortTermSuspensionsBlackFemale(shortTermSuspensionsBlackFemaleWrap);
+			if(shortTermSuspensionsBlackFemale == null)
+				setShortTermSuspensionsBlackFemale(shortTermSuspensionsBlackFemaleWrap.o);
+		}
+		shortTermSuspensionsBlackFemaleWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionsBlackFemale() {
+		return shortTermSuspensionsBlackFemale;
+	}
+
+	public String strShortTermSuspensionsBlackFemale() {
+		return shortTermSuspensionsBlackFemale == null ? "" : shortTermSuspensionsBlackFemale.toString();
+	}
+
+	public String jsonShortTermSuspensionsBlackFemale() {
+		return shortTermSuspensionsBlackFemale == null ? "" : shortTermSuspensionsBlackFemale.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsBlackFemale() {
+		return "short-term suspensions Black female";
+	}
+
+	public String htmTooltipShortTermSuspensionsBlackFemale() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsBlackFemale() {
+		return shortTermSuspensionsBlackFemale == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsBlackFemale());
+	}
+
+	public void inputShortTermSuspensionsBlackFemale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "short-term suspensions Black female")
+				.a("id", classApiMethodMethod, "_shortTermSuspensionsBlackFemale");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setShortTermSuspensionsBlackFemale classReportCard inputReportCard", pk, "ShortTermSuspensionsBlackFemale w3-input w3-border ");
+					a("name", "setShortTermSuspensionsBlackFemale");
+				} else {
+					a("class", "valueShortTermSuspensionsBlackFemale w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsBlackFemale w3-input w3-border ");
+					a("name", "shortTermSuspensionsBlackFemale");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsBlackFemale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsBlackFemale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsBlackFemale')); }); ");
+				}
+				a("value", strShortTermSuspensionsBlackFemale())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsBlackFemale ").f().sx(htmShortTermSuspensionsBlackFemale()).g("span");
+		}
+	}
+
+	public void htmShortTermSuspensionsBlackFemale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsBlackFemale").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsBlackFemale").a("class", "").f().sx("short-term suspensions Black female").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputShortTermSuspensionsBlackFemale(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsBlackFemale')); $('#", classApiMethodMethod, "_shortTermSuspensionsBlackFemale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsBlackFemale', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsBlackFemale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsBlackFemale')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	///////////////////////////////////
+	// shortTermSuspensionsBlackMale //
+	///////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsBlackMale
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionsBlackMale;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionsBlackMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsBlackMale").o(shortTermSuspensionsBlackMale);
+
+	/**	<br/> The entity shortTermSuspensionsBlackMale
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsBlackMale">Find the entity shortTermSuspensionsBlackMale in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsBlackMale(Wrap<Long> c);
+
+	public Long getShortTermSuspensionsBlackMale() {
+		return shortTermSuspensionsBlackMale;
+	}
+
+	public void setShortTermSuspensionsBlackMale(Long shortTermSuspensionsBlackMale) {
+		this.shortTermSuspensionsBlackMale = shortTermSuspensionsBlackMale;
+		this.shortTermSuspensionsBlackMaleWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsBlackMale(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsBlackMale = Long.parseLong(o);
+		this.shortTermSuspensionsBlackMaleWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsBlackMaleInit() {
+		if(!shortTermSuspensionsBlackMaleWrap.alreadyInitialized) {
+			_shortTermSuspensionsBlackMale(shortTermSuspensionsBlackMaleWrap);
+			if(shortTermSuspensionsBlackMale == null)
+				setShortTermSuspensionsBlackMale(shortTermSuspensionsBlackMaleWrap.o);
+		}
+		shortTermSuspensionsBlackMaleWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionsBlackMale() {
+		return shortTermSuspensionsBlackMale;
+	}
+
+	public String strShortTermSuspensionsBlackMale() {
+		return shortTermSuspensionsBlackMale == null ? "" : shortTermSuspensionsBlackMale.toString();
+	}
+
+	public String jsonShortTermSuspensionsBlackMale() {
+		return shortTermSuspensionsBlackMale == null ? "" : shortTermSuspensionsBlackMale.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsBlackMale() {
+		return "short-term suspensions Black male";
+	}
+
+	public String htmTooltipShortTermSuspensionsBlackMale() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsBlackMale() {
+		return shortTermSuspensionsBlackMale == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsBlackMale());
+	}
+
+	public void inputShortTermSuspensionsBlackMale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "short-term suspensions Black male")
+				.a("id", classApiMethodMethod, "_shortTermSuspensionsBlackMale");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setShortTermSuspensionsBlackMale classReportCard inputReportCard", pk, "ShortTermSuspensionsBlackMale w3-input w3-border ");
+					a("name", "setShortTermSuspensionsBlackMale");
+				} else {
+					a("class", "valueShortTermSuspensionsBlackMale w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsBlackMale w3-input w3-border ");
+					a("name", "shortTermSuspensionsBlackMale");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsBlackMale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsBlackMale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsBlackMale')); }); ");
+				}
+				a("value", strShortTermSuspensionsBlackMale())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsBlackMale ").f().sx(htmShortTermSuspensionsBlackMale()).g("span");
+		}
+	}
+
+	public void htmShortTermSuspensionsBlackMale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsBlackMale").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsBlackMale").a("class", "").f().sx("short-term suspensions Black male").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputShortTermSuspensionsBlackMale(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsBlackMale')); $('#", classApiMethodMethod, "_shortTermSuspensionsBlackMale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsBlackMale', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsBlackMale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsBlackMale')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	////////////////////////////////////
+	// shortTermSuspensionsBlackTotal //
+	////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsBlackTotal
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionsBlackTotal;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionsBlackTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsBlackTotal").o(shortTermSuspensionsBlackTotal);
+
+	/**	<br/> The entity shortTermSuspensionsBlackTotal
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsBlackTotal">Find the entity shortTermSuspensionsBlackTotal in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsBlackTotal(Wrap<Long> c);
+
+	public Long getShortTermSuspensionsBlackTotal() {
+		return shortTermSuspensionsBlackTotal;
+	}
+
+	public void setShortTermSuspensionsBlackTotal(Long shortTermSuspensionsBlackTotal) {
+		this.shortTermSuspensionsBlackTotal = shortTermSuspensionsBlackTotal;
+		this.shortTermSuspensionsBlackTotalWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsBlackTotal(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsBlackTotal = Long.parseLong(o);
+		this.shortTermSuspensionsBlackTotalWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsBlackTotalInit() {
+		if(!shortTermSuspensionsBlackTotalWrap.alreadyInitialized) {
+			_shortTermSuspensionsBlackTotal(shortTermSuspensionsBlackTotalWrap);
+			if(shortTermSuspensionsBlackTotal == null)
+				setShortTermSuspensionsBlackTotal(shortTermSuspensionsBlackTotalWrap.o);
+		}
+		shortTermSuspensionsBlackTotalWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionsBlackTotal() {
+		return shortTermSuspensionsBlackTotal;
+	}
+
+	public String strShortTermSuspensionsBlackTotal() {
+		return shortTermSuspensionsBlackTotal == null ? "" : shortTermSuspensionsBlackTotal.toString();
+	}
+
+	public String jsonShortTermSuspensionsBlackTotal() {
+		return shortTermSuspensionsBlackTotal == null ? "" : shortTermSuspensionsBlackTotal.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsBlackTotal() {
+		return "short-term suspensions Blacks total";
+	}
+
+	public String htmTooltipShortTermSuspensionsBlackTotal() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsBlackTotal() {
+		return shortTermSuspensionsBlackTotal == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsBlackTotal());
+	}
+
+	public void inputShortTermSuspensionsBlackTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmShortTermSuspensionsBlackTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("short-term suspensions Blacks total").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsBlackTotal ").f().sx(strShortTermSuspensionsBlackTotal()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	//////////////////////////////////////
+	// shortTermSuspensionsBlackPercent //
+	//////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsBlackPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal shortTermSuspensionsBlackPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> shortTermSuspensionsBlackPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsBlackPercent").o(shortTermSuspensionsBlackPercent);
+
+	/**	<br/> The entity shortTermSuspensionsBlackPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsBlackPercent">Find the entity shortTermSuspensionsBlackPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsBlackPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getShortTermSuspensionsBlackPercent() {
+		return shortTermSuspensionsBlackPercent;
+	}
+
+	public void setShortTermSuspensionsBlackPercent(BigDecimal shortTermSuspensionsBlackPercent) {
+		this.shortTermSuspensionsBlackPercent = shortTermSuspensionsBlackPercent;
+		this.shortTermSuspensionsBlackPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsBlackPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsBlackPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsBlackPercent(Double o) {
+			this.shortTermSuspensionsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsBlackPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsBlackPercent(Integer o) {
+			this.shortTermSuspensionsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsBlackPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsBlackPercentInit() {
+		if(!shortTermSuspensionsBlackPercentWrap.alreadyInitialized) {
+			_shortTermSuspensionsBlackPercent(shortTermSuspensionsBlackPercentWrap);
+			if(shortTermSuspensionsBlackPercent == null)
+				setShortTermSuspensionsBlackPercent(shortTermSuspensionsBlackPercentWrap.o);
+		}
+		shortTermSuspensionsBlackPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrShortTermSuspensionsBlackPercent() {
+		return shortTermSuspensionsBlackPercent == null ? null : shortTermSuspensionsBlackPercent.doubleValue();
+	}
+
+	public String strShortTermSuspensionsBlackPercent() {
+		return shortTermSuspensionsBlackPercent == null ? "" : shortTermSuspensionsBlackPercent.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonShortTermSuspensionsBlackPercent() {
+		return shortTermSuspensionsBlackPercent == null ? "" : shortTermSuspensionsBlackPercent.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsBlackPercent() {
+		return "short-term suspensions Blacks percent";
+	}
+
+	public String htmTooltipShortTermSuspensionsBlackPercent() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsBlackPercent() {
+		return shortTermSuspensionsBlackPercent == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsBlackPercent());
+	}
+
+	public void inputShortTermSuspensionsBlackPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmShortTermSuspensionsBlackPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("short-term suspensions Blacks percent").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsBlackPercent ").f().sx(strShortTermSuspensionsBlackPercent()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	///////////////////////////////////
+	// shortTermSuspensionsBlackRate //
+	///////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsBlackRate
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal shortTermSuspensionsBlackRate;
+	@JsonIgnore
+	public Wrap<BigDecimal> shortTermSuspensionsBlackRateWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsBlackRate").o(shortTermSuspensionsBlackRate);
+
+	/**	<br/> The entity shortTermSuspensionsBlackRate
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsBlackRate">Find the entity shortTermSuspensionsBlackRate in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsBlackRate(Wrap<BigDecimal> c);
+
+	public BigDecimal getShortTermSuspensionsBlackRate() {
+		return shortTermSuspensionsBlackRate;
+	}
+
+	public void setShortTermSuspensionsBlackRate(BigDecimal shortTermSuspensionsBlackRate) {
+		this.shortTermSuspensionsBlackRate = shortTermSuspensionsBlackRate;
+		this.shortTermSuspensionsBlackRateWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsBlackRate(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsBlackRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsBlackRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsBlackRate(Double o) {
+			this.shortTermSuspensionsBlackRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsBlackRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsBlackRate(Integer o) {
+			this.shortTermSuspensionsBlackRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsBlackRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsBlackRateInit() {
+		if(!shortTermSuspensionsBlackRateWrap.alreadyInitialized) {
+			_shortTermSuspensionsBlackRate(shortTermSuspensionsBlackRateWrap);
+			if(shortTermSuspensionsBlackRate == null)
+				setShortTermSuspensionsBlackRate(shortTermSuspensionsBlackRateWrap.o);
+		}
+		shortTermSuspensionsBlackRateWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrShortTermSuspensionsBlackRate() {
+		return shortTermSuspensionsBlackRate == null ? null : shortTermSuspensionsBlackRate.doubleValue();
+	}
+
+	public String strShortTermSuspensionsBlackRate() {
+		return shortTermSuspensionsBlackRate == null ? "" : shortTermSuspensionsBlackRate.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonShortTermSuspensionsBlackRate() {
+		return shortTermSuspensionsBlackRate == null ? "" : shortTermSuspensionsBlackRate.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsBlackRate() {
+		return "short-term suspensions Blacks rate";
+	}
+
+	public String htmTooltipShortTermSuspensionsBlackRate() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsBlackRate() {
+		return shortTermSuspensionsBlackRate == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsBlackRate());
+	}
+
+	public void inputShortTermSuspensionsBlackRate(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmShortTermSuspensionsBlackRate(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("short-term suspensions Blacks rate").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsBlackRate ").f().sx(strShortTermSuspensionsBlackRate()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	////////////////////////////////////////
+	// shortTermSuspensionsHispanicFemale //
+	////////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsHispanicFemale
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionsHispanicFemale;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionsHispanicFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsHispanicFemale").o(shortTermSuspensionsHispanicFemale);
+
+	/**	<br/> The entity shortTermSuspensionsHispanicFemale
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsHispanicFemale">Find the entity shortTermSuspensionsHispanicFemale in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsHispanicFemale(Wrap<Long> c);
+
+	public Long getShortTermSuspensionsHispanicFemale() {
+		return shortTermSuspensionsHispanicFemale;
+	}
+
+	public void setShortTermSuspensionsHispanicFemale(Long shortTermSuspensionsHispanicFemale) {
+		this.shortTermSuspensionsHispanicFemale = shortTermSuspensionsHispanicFemale;
+		this.shortTermSuspensionsHispanicFemaleWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsHispanicFemale(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsHispanicFemale = Long.parseLong(o);
+		this.shortTermSuspensionsHispanicFemaleWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsHispanicFemaleInit() {
+		if(!shortTermSuspensionsHispanicFemaleWrap.alreadyInitialized) {
+			_shortTermSuspensionsHispanicFemale(shortTermSuspensionsHispanicFemaleWrap);
+			if(shortTermSuspensionsHispanicFemale == null)
+				setShortTermSuspensionsHispanicFemale(shortTermSuspensionsHispanicFemaleWrap.o);
+		}
+		shortTermSuspensionsHispanicFemaleWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionsHispanicFemale() {
+		return shortTermSuspensionsHispanicFemale;
+	}
+
+	public String strShortTermSuspensionsHispanicFemale() {
+		return shortTermSuspensionsHispanicFemale == null ? "" : shortTermSuspensionsHispanicFemale.toString();
+	}
+
+	public String jsonShortTermSuspensionsHispanicFemale() {
+		return shortTermSuspensionsHispanicFemale == null ? "" : shortTermSuspensionsHispanicFemale.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsHispanicFemale() {
+		return "short-term suspensions Hispanic female";
+	}
+
+	public String htmTooltipShortTermSuspensionsHispanicFemale() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsHispanicFemale() {
+		return shortTermSuspensionsHispanicFemale == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsHispanicFemale());
+	}
+
+	public void inputShortTermSuspensionsHispanicFemale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "short-term suspensions Hispanic female")
+				.a("id", classApiMethodMethod, "_shortTermSuspensionsHispanicFemale");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setShortTermSuspensionsHispanicFemale classReportCard inputReportCard", pk, "ShortTermSuspensionsHispanicFemale w3-input w3-border ");
+					a("name", "setShortTermSuspensionsHispanicFemale");
+				} else {
+					a("class", "valueShortTermSuspensionsHispanicFemale w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsHispanicFemale w3-input w3-border ");
+					a("name", "shortTermSuspensionsHispanicFemale");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsHispanicFemale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsHispanicFemale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsHispanicFemale')); }); ");
+				}
+				a("value", strShortTermSuspensionsHispanicFemale())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsHispanicFemale ").f().sx(htmShortTermSuspensionsHispanicFemale()).g("span");
+		}
+	}
+
+	public void htmShortTermSuspensionsHispanicFemale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsHispanicFemale").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsHispanicFemale").a("class", "").f().sx("short-term suspensions Hispanic female").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputShortTermSuspensionsHispanicFemale(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsHispanicFemale')); $('#", classApiMethodMethod, "_shortTermSuspensionsHispanicFemale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsHispanicFemale', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsHispanicFemale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsHispanicFemale')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	//////////////////////////////////////
+	// shortTermSuspensionsHispanicMale //
+	//////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsHispanicMale
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionsHispanicMale;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionsHispanicMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsHispanicMale").o(shortTermSuspensionsHispanicMale);
+
+	/**	<br/> The entity shortTermSuspensionsHispanicMale
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsHispanicMale">Find the entity shortTermSuspensionsHispanicMale in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsHispanicMale(Wrap<Long> c);
+
+	public Long getShortTermSuspensionsHispanicMale() {
+		return shortTermSuspensionsHispanicMale;
+	}
+
+	public void setShortTermSuspensionsHispanicMale(Long shortTermSuspensionsHispanicMale) {
+		this.shortTermSuspensionsHispanicMale = shortTermSuspensionsHispanicMale;
+		this.shortTermSuspensionsHispanicMaleWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsHispanicMale(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsHispanicMale = Long.parseLong(o);
+		this.shortTermSuspensionsHispanicMaleWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsHispanicMaleInit() {
+		if(!shortTermSuspensionsHispanicMaleWrap.alreadyInitialized) {
+			_shortTermSuspensionsHispanicMale(shortTermSuspensionsHispanicMaleWrap);
+			if(shortTermSuspensionsHispanicMale == null)
+				setShortTermSuspensionsHispanicMale(shortTermSuspensionsHispanicMaleWrap.o);
+		}
+		shortTermSuspensionsHispanicMaleWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionsHispanicMale() {
+		return shortTermSuspensionsHispanicMale;
+	}
+
+	public String strShortTermSuspensionsHispanicMale() {
+		return shortTermSuspensionsHispanicMale == null ? "" : shortTermSuspensionsHispanicMale.toString();
+	}
+
+	public String jsonShortTermSuspensionsHispanicMale() {
+		return shortTermSuspensionsHispanicMale == null ? "" : shortTermSuspensionsHispanicMale.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsHispanicMale() {
+		return "short-term suspensions Hispanic male";
+	}
+
+	public String htmTooltipShortTermSuspensionsHispanicMale() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsHispanicMale() {
+		return shortTermSuspensionsHispanicMale == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsHispanicMale());
+	}
+
+	public void inputShortTermSuspensionsHispanicMale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "short-term suspensions Hispanic male")
+				.a("id", classApiMethodMethod, "_shortTermSuspensionsHispanicMale");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setShortTermSuspensionsHispanicMale classReportCard inputReportCard", pk, "ShortTermSuspensionsHispanicMale w3-input w3-border ");
+					a("name", "setShortTermSuspensionsHispanicMale");
+				} else {
+					a("class", "valueShortTermSuspensionsHispanicMale w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsHispanicMale w3-input w3-border ");
+					a("name", "shortTermSuspensionsHispanicMale");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsHispanicMale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsHispanicMale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsHispanicMale')); }); ");
+				}
+				a("value", strShortTermSuspensionsHispanicMale())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsHispanicMale ").f().sx(htmShortTermSuspensionsHispanicMale()).g("span");
+		}
+	}
+
+	public void htmShortTermSuspensionsHispanicMale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsHispanicMale").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsHispanicMale").a("class", "").f().sx("short-term suspensions Hispanic male").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputShortTermSuspensionsHispanicMale(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsHispanicMale')); $('#", classApiMethodMethod, "_shortTermSuspensionsHispanicMale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsHispanicMale', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsHispanicMale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsHispanicMale')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	///////////////////////////////////////
+	// shortTermSuspensionsHispanicTotal //
+	///////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsHispanicTotal
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionsHispanicTotal;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionsHispanicTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsHispanicTotal").o(shortTermSuspensionsHispanicTotal);
+
+	/**	<br/> The entity shortTermSuspensionsHispanicTotal
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsHispanicTotal">Find the entity shortTermSuspensionsHispanicTotal in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsHispanicTotal(Wrap<Long> c);
+
+	public Long getShortTermSuspensionsHispanicTotal() {
+		return shortTermSuspensionsHispanicTotal;
+	}
+
+	public void setShortTermSuspensionsHispanicTotal(Long shortTermSuspensionsHispanicTotal) {
+		this.shortTermSuspensionsHispanicTotal = shortTermSuspensionsHispanicTotal;
+		this.shortTermSuspensionsHispanicTotalWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsHispanicTotal(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsHispanicTotal = Long.parseLong(o);
+		this.shortTermSuspensionsHispanicTotalWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsHispanicTotalInit() {
+		if(!shortTermSuspensionsHispanicTotalWrap.alreadyInitialized) {
+			_shortTermSuspensionsHispanicTotal(shortTermSuspensionsHispanicTotalWrap);
+			if(shortTermSuspensionsHispanicTotal == null)
+				setShortTermSuspensionsHispanicTotal(shortTermSuspensionsHispanicTotalWrap.o);
+		}
+		shortTermSuspensionsHispanicTotalWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionsHispanicTotal() {
+		return shortTermSuspensionsHispanicTotal;
+	}
+
+	public String strShortTermSuspensionsHispanicTotal() {
+		return shortTermSuspensionsHispanicTotal == null ? "" : shortTermSuspensionsHispanicTotal.toString();
+	}
+
+	public String jsonShortTermSuspensionsHispanicTotal() {
+		return shortTermSuspensionsHispanicTotal == null ? "" : shortTermSuspensionsHispanicTotal.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsHispanicTotal() {
+		return "short-term suspensions Hispanics total";
+	}
+
+	public String htmTooltipShortTermSuspensionsHispanicTotal() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsHispanicTotal() {
+		return shortTermSuspensionsHispanicTotal == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsHispanicTotal());
+	}
+
+	public void inputShortTermSuspensionsHispanicTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmShortTermSuspensionsHispanicTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("short-term suspensions Hispanics total").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsHispanicTotal ").f().sx(strShortTermSuspensionsHispanicTotal()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	/////////////////////////////////////////
+	// shortTermSuspensionsHispanicPercent //
+	/////////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsHispanicPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal shortTermSuspensionsHispanicPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> shortTermSuspensionsHispanicPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsHispanicPercent").o(shortTermSuspensionsHispanicPercent);
+
+	/**	<br/> The entity shortTermSuspensionsHispanicPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsHispanicPercent">Find the entity shortTermSuspensionsHispanicPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsHispanicPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getShortTermSuspensionsHispanicPercent() {
+		return shortTermSuspensionsHispanicPercent;
+	}
+
+	public void setShortTermSuspensionsHispanicPercent(BigDecimal shortTermSuspensionsHispanicPercent) {
+		this.shortTermSuspensionsHispanicPercent = shortTermSuspensionsHispanicPercent;
+		this.shortTermSuspensionsHispanicPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsHispanicPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsHispanicPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsHispanicPercent(Double o) {
+			this.shortTermSuspensionsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsHispanicPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsHispanicPercent(Integer o) {
+			this.shortTermSuspensionsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsHispanicPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsHispanicPercentInit() {
+		if(!shortTermSuspensionsHispanicPercentWrap.alreadyInitialized) {
+			_shortTermSuspensionsHispanicPercent(shortTermSuspensionsHispanicPercentWrap);
+			if(shortTermSuspensionsHispanicPercent == null)
+				setShortTermSuspensionsHispanicPercent(shortTermSuspensionsHispanicPercentWrap.o);
+		}
+		shortTermSuspensionsHispanicPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrShortTermSuspensionsHispanicPercent() {
+		return shortTermSuspensionsHispanicPercent == null ? null : shortTermSuspensionsHispanicPercent.doubleValue();
+	}
+
+	public String strShortTermSuspensionsHispanicPercent() {
+		return shortTermSuspensionsHispanicPercent == null ? "" : shortTermSuspensionsHispanicPercent.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonShortTermSuspensionsHispanicPercent() {
+		return shortTermSuspensionsHispanicPercent == null ? "" : shortTermSuspensionsHispanicPercent.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsHispanicPercent() {
+		return "short-term suspensions Hispanics percent";
+	}
+
+	public String htmTooltipShortTermSuspensionsHispanicPercent() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsHispanicPercent() {
+		return shortTermSuspensionsHispanicPercent == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsHispanicPercent());
+	}
+
+	public void inputShortTermSuspensionsHispanicPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmShortTermSuspensionsHispanicPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("short-term suspensions Hispanics percent").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsHispanicPercent ").f().sx(strShortTermSuspensionsHispanicPercent()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	//////////////////////////////////////
+	// shortTermSuspensionsHispanicRate //
+	//////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsHispanicRate
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal shortTermSuspensionsHispanicRate;
+	@JsonIgnore
+	public Wrap<BigDecimal> shortTermSuspensionsHispanicRateWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsHispanicRate").o(shortTermSuspensionsHispanicRate);
+
+	/**	<br/> The entity shortTermSuspensionsHispanicRate
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsHispanicRate">Find the entity shortTermSuspensionsHispanicRate in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsHispanicRate(Wrap<BigDecimal> c);
+
+	public BigDecimal getShortTermSuspensionsHispanicRate() {
+		return shortTermSuspensionsHispanicRate;
+	}
+
+	public void setShortTermSuspensionsHispanicRate(BigDecimal shortTermSuspensionsHispanicRate) {
+		this.shortTermSuspensionsHispanicRate = shortTermSuspensionsHispanicRate;
+		this.shortTermSuspensionsHispanicRateWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsHispanicRate(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsHispanicRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsHispanicRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsHispanicRate(Double o) {
+			this.shortTermSuspensionsHispanicRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsHispanicRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsHispanicRate(Integer o) {
+			this.shortTermSuspensionsHispanicRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsHispanicRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsHispanicRateInit() {
+		if(!shortTermSuspensionsHispanicRateWrap.alreadyInitialized) {
+			_shortTermSuspensionsHispanicRate(shortTermSuspensionsHispanicRateWrap);
+			if(shortTermSuspensionsHispanicRate == null)
+				setShortTermSuspensionsHispanicRate(shortTermSuspensionsHispanicRateWrap.o);
+		}
+		shortTermSuspensionsHispanicRateWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrShortTermSuspensionsHispanicRate() {
+		return shortTermSuspensionsHispanicRate == null ? null : shortTermSuspensionsHispanicRate.doubleValue();
+	}
+
+	public String strShortTermSuspensionsHispanicRate() {
+		return shortTermSuspensionsHispanicRate == null ? "" : shortTermSuspensionsHispanicRate.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonShortTermSuspensionsHispanicRate() {
+		return shortTermSuspensionsHispanicRate == null ? "" : shortTermSuspensionsHispanicRate.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsHispanicRate() {
+		return "short-term suspensions Hispanics rate";
+	}
+
+	public String htmTooltipShortTermSuspensionsHispanicRate() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsHispanicRate() {
+		return shortTermSuspensionsHispanicRate == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsHispanicRate());
+	}
+
+	public void inputShortTermSuspensionsHispanicRate(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmShortTermSuspensionsHispanicRate(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("short-term suspensions Hispanics rate").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsHispanicRate ").f().sx(strShortTermSuspensionsHispanicRate()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	//////////////////////////////////////
+	// shortTermSuspensionsIndianFemale //
+	//////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsIndianFemale
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionsIndianFemale;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionsIndianFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsIndianFemale").o(shortTermSuspensionsIndianFemale);
+
+	/**	<br/> The entity shortTermSuspensionsIndianFemale
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsIndianFemale">Find the entity shortTermSuspensionsIndianFemale in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsIndianFemale(Wrap<Long> c);
+
+	public Long getShortTermSuspensionsIndianFemale() {
+		return shortTermSuspensionsIndianFemale;
+	}
+
+	public void setShortTermSuspensionsIndianFemale(Long shortTermSuspensionsIndianFemale) {
+		this.shortTermSuspensionsIndianFemale = shortTermSuspensionsIndianFemale;
+		this.shortTermSuspensionsIndianFemaleWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsIndianFemale(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsIndianFemale = Long.parseLong(o);
+		this.shortTermSuspensionsIndianFemaleWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsIndianFemaleInit() {
+		if(!shortTermSuspensionsIndianFemaleWrap.alreadyInitialized) {
+			_shortTermSuspensionsIndianFemale(shortTermSuspensionsIndianFemaleWrap);
+			if(shortTermSuspensionsIndianFemale == null)
+				setShortTermSuspensionsIndianFemale(shortTermSuspensionsIndianFemaleWrap.o);
+		}
+		shortTermSuspensionsIndianFemaleWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionsIndianFemale() {
+		return shortTermSuspensionsIndianFemale;
+	}
+
+	public String strShortTermSuspensionsIndianFemale() {
+		return shortTermSuspensionsIndianFemale == null ? "" : shortTermSuspensionsIndianFemale.toString();
+	}
+
+	public String jsonShortTermSuspensionsIndianFemale() {
+		return shortTermSuspensionsIndianFemale == null ? "" : shortTermSuspensionsIndianFemale.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsIndianFemale() {
+		return "short-term suspensions Indian female";
+	}
+
+	public String htmTooltipShortTermSuspensionsIndianFemale() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsIndianFemale() {
+		return shortTermSuspensionsIndianFemale == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsIndianFemale());
+	}
+
+	public void inputShortTermSuspensionsIndianFemale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "short-term suspensions Indian female")
+				.a("id", classApiMethodMethod, "_shortTermSuspensionsIndianFemale");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setShortTermSuspensionsIndianFemale classReportCard inputReportCard", pk, "ShortTermSuspensionsIndianFemale w3-input w3-border ");
+					a("name", "setShortTermSuspensionsIndianFemale");
+				} else {
+					a("class", "valueShortTermSuspensionsIndianFemale w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsIndianFemale w3-input w3-border ");
+					a("name", "shortTermSuspensionsIndianFemale");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsIndianFemale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsIndianFemale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsIndianFemale')); }); ");
+				}
+				a("value", strShortTermSuspensionsIndianFemale())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsIndianFemale ").f().sx(htmShortTermSuspensionsIndianFemale()).g("span");
+		}
+	}
+
+	public void htmShortTermSuspensionsIndianFemale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsIndianFemale").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsIndianFemale").a("class", "").f().sx("short-term suspensions Indian female").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputShortTermSuspensionsIndianFemale(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsIndianFemale')); $('#", classApiMethodMethod, "_shortTermSuspensionsIndianFemale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsIndianFemale', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsIndianFemale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsIndianFemale')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	////////////////////////////////////
+	// shortTermSuspensionsIndianMale //
+	////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsIndianMale
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionsIndianMale;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionsIndianMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsIndianMale").o(shortTermSuspensionsIndianMale);
+
+	/**	<br/> The entity shortTermSuspensionsIndianMale
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsIndianMale">Find the entity shortTermSuspensionsIndianMale in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsIndianMale(Wrap<Long> c);
+
+	public Long getShortTermSuspensionsIndianMale() {
+		return shortTermSuspensionsIndianMale;
+	}
+
+	public void setShortTermSuspensionsIndianMale(Long shortTermSuspensionsIndianMale) {
+		this.shortTermSuspensionsIndianMale = shortTermSuspensionsIndianMale;
+		this.shortTermSuspensionsIndianMaleWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsIndianMale(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsIndianMale = Long.parseLong(o);
+		this.shortTermSuspensionsIndianMaleWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsIndianMaleInit() {
+		if(!shortTermSuspensionsIndianMaleWrap.alreadyInitialized) {
+			_shortTermSuspensionsIndianMale(shortTermSuspensionsIndianMaleWrap);
+			if(shortTermSuspensionsIndianMale == null)
+				setShortTermSuspensionsIndianMale(shortTermSuspensionsIndianMaleWrap.o);
+		}
+		shortTermSuspensionsIndianMaleWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionsIndianMale() {
+		return shortTermSuspensionsIndianMale;
+	}
+
+	public String strShortTermSuspensionsIndianMale() {
+		return shortTermSuspensionsIndianMale == null ? "" : shortTermSuspensionsIndianMale.toString();
+	}
+
+	public String jsonShortTermSuspensionsIndianMale() {
+		return shortTermSuspensionsIndianMale == null ? "" : shortTermSuspensionsIndianMale.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsIndianMale() {
+		return "short-term suspensions Indian male";
+	}
+
+	public String htmTooltipShortTermSuspensionsIndianMale() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsIndianMale() {
+		return shortTermSuspensionsIndianMale == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsIndianMale());
+	}
+
+	public void inputShortTermSuspensionsIndianMale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "short-term suspensions Indian male")
+				.a("id", classApiMethodMethod, "_shortTermSuspensionsIndianMale");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setShortTermSuspensionsIndianMale classReportCard inputReportCard", pk, "ShortTermSuspensionsIndianMale w3-input w3-border ");
+					a("name", "setShortTermSuspensionsIndianMale");
+				} else {
+					a("class", "valueShortTermSuspensionsIndianMale w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsIndianMale w3-input w3-border ");
+					a("name", "shortTermSuspensionsIndianMale");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsIndianMale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsIndianMale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsIndianMale')); }); ");
+				}
+				a("value", strShortTermSuspensionsIndianMale())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsIndianMale ").f().sx(htmShortTermSuspensionsIndianMale()).g("span");
+		}
+	}
+
+	public void htmShortTermSuspensionsIndianMale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsIndianMale").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsIndianMale").a("class", "").f().sx("short-term suspensions Indian male").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputShortTermSuspensionsIndianMale(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsIndianMale')); $('#", classApiMethodMethod, "_shortTermSuspensionsIndianMale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsIndianMale', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsIndianMale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsIndianMale')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	/////////////////////////////////////
+	// shortTermSuspensionsIndianTotal //
+	/////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsIndianTotal
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionsIndianTotal;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionsIndianTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsIndianTotal").o(shortTermSuspensionsIndianTotal);
+
+	/**	<br/> The entity shortTermSuspensionsIndianTotal
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsIndianTotal">Find the entity shortTermSuspensionsIndianTotal in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsIndianTotal(Wrap<Long> c);
+
+	public Long getShortTermSuspensionsIndianTotal() {
+		return shortTermSuspensionsIndianTotal;
+	}
+
+	public void setShortTermSuspensionsIndianTotal(Long shortTermSuspensionsIndianTotal) {
+		this.shortTermSuspensionsIndianTotal = shortTermSuspensionsIndianTotal;
+		this.shortTermSuspensionsIndianTotalWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsIndianTotal(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsIndianTotal = Long.parseLong(o);
+		this.shortTermSuspensionsIndianTotalWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsIndianTotalInit() {
+		if(!shortTermSuspensionsIndianTotalWrap.alreadyInitialized) {
+			_shortTermSuspensionsIndianTotal(shortTermSuspensionsIndianTotalWrap);
+			if(shortTermSuspensionsIndianTotal == null)
+				setShortTermSuspensionsIndianTotal(shortTermSuspensionsIndianTotalWrap.o);
+		}
+		shortTermSuspensionsIndianTotalWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionsIndianTotal() {
+		return shortTermSuspensionsIndianTotal;
+	}
+
+	public String strShortTermSuspensionsIndianTotal() {
+		return shortTermSuspensionsIndianTotal == null ? "" : shortTermSuspensionsIndianTotal.toString();
+	}
+
+	public String jsonShortTermSuspensionsIndianTotal() {
+		return shortTermSuspensionsIndianTotal == null ? "" : shortTermSuspensionsIndianTotal.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsIndianTotal() {
+		return "short-term suspensions Indians total";
+	}
+
+	public String htmTooltipShortTermSuspensionsIndianTotal() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsIndianTotal() {
+		return shortTermSuspensionsIndianTotal == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsIndianTotal());
+	}
+
+	public void inputShortTermSuspensionsIndianTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmShortTermSuspensionsIndianTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("short-term suspensions Indians total").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsIndianTotal ").f().sx(strShortTermSuspensionsIndianTotal()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	///////////////////////////////////////
+	// shortTermSuspensionsIndianPercent //
+	///////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsIndianPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal shortTermSuspensionsIndianPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> shortTermSuspensionsIndianPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsIndianPercent").o(shortTermSuspensionsIndianPercent);
+
+	/**	<br/> The entity shortTermSuspensionsIndianPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsIndianPercent">Find the entity shortTermSuspensionsIndianPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsIndianPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getShortTermSuspensionsIndianPercent() {
+		return shortTermSuspensionsIndianPercent;
+	}
+
+	public void setShortTermSuspensionsIndianPercent(BigDecimal shortTermSuspensionsIndianPercent) {
+		this.shortTermSuspensionsIndianPercent = shortTermSuspensionsIndianPercent;
+		this.shortTermSuspensionsIndianPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsIndianPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsIndianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsIndianPercent(Double o) {
+			this.shortTermSuspensionsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsIndianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsIndianPercent(Integer o) {
+			this.shortTermSuspensionsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsIndianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsIndianPercentInit() {
+		if(!shortTermSuspensionsIndianPercentWrap.alreadyInitialized) {
+			_shortTermSuspensionsIndianPercent(shortTermSuspensionsIndianPercentWrap);
+			if(shortTermSuspensionsIndianPercent == null)
+				setShortTermSuspensionsIndianPercent(shortTermSuspensionsIndianPercentWrap.o);
+		}
+		shortTermSuspensionsIndianPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrShortTermSuspensionsIndianPercent() {
+		return shortTermSuspensionsIndianPercent == null ? null : shortTermSuspensionsIndianPercent.doubleValue();
+	}
+
+	public String strShortTermSuspensionsIndianPercent() {
+		return shortTermSuspensionsIndianPercent == null ? "" : shortTermSuspensionsIndianPercent.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonShortTermSuspensionsIndianPercent() {
+		return shortTermSuspensionsIndianPercent == null ? "" : shortTermSuspensionsIndianPercent.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsIndianPercent() {
+		return "short-term suspensions Indians percent";
+	}
+
+	public String htmTooltipShortTermSuspensionsIndianPercent() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsIndianPercent() {
+		return shortTermSuspensionsIndianPercent == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsIndianPercent());
+	}
+
+	public void inputShortTermSuspensionsIndianPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmShortTermSuspensionsIndianPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("short-term suspensions Indians percent").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsIndianPercent ").f().sx(strShortTermSuspensionsIndianPercent()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	////////////////////////////////////
+	// shortTermSuspensionsIndianRate //
+	////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsIndianRate
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal shortTermSuspensionsIndianRate;
+	@JsonIgnore
+	public Wrap<BigDecimal> shortTermSuspensionsIndianRateWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsIndianRate").o(shortTermSuspensionsIndianRate);
+
+	/**	<br/> The entity shortTermSuspensionsIndianRate
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsIndianRate">Find the entity shortTermSuspensionsIndianRate in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsIndianRate(Wrap<BigDecimal> c);
+
+	public BigDecimal getShortTermSuspensionsIndianRate() {
+		return shortTermSuspensionsIndianRate;
+	}
+
+	public void setShortTermSuspensionsIndianRate(BigDecimal shortTermSuspensionsIndianRate) {
+		this.shortTermSuspensionsIndianRate = shortTermSuspensionsIndianRate;
+		this.shortTermSuspensionsIndianRateWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsIndianRate(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsIndianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsIndianRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsIndianRate(Double o) {
+			this.shortTermSuspensionsIndianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsIndianRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsIndianRate(Integer o) {
+			this.shortTermSuspensionsIndianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsIndianRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsIndianRateInit() {
+		if(!shortTermSuspensionsIndianRateWrap.alreadyInitialized) {
+			_shortTermSuspensionsIndianRate(shortTermSuspensionsIndianRateWrap);
+			if(shortTermSuspensionsIndianRate == null)
+				setShortTermSuspensionsIndianRate(shortTermSuspensionsIndianRateWrap.o);
+		}
+		shortTermSuspensionsIndianRateWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrShortTermSuspensionsIndianRate() {
+		return shortTermSuspensionsIndianRate == null ? null : shortTermSuspensionsIndianRate.doubleValue();
+	}
+
+	public String strShortTermSuspensionsIndianRate() {
+		return shortTermSuspensionsIndianRate == null ? "" : shortTermSuspensionsIndianRate.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonShortTermSuspensionsIndianRate() {
+		return shortTermSuspensionsIndianRate == null ? "" : shortTermSuspensionsIndianRate.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsIndianRate() {
+		return "short-term suspensions Indians rate";
+	}
+
+	public String htmTooltipShortTermSuspensionsIndianRate() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsIndianRate() {
+		return shortTermSuspensionsIndianRate == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsIndianRate());
+	}
+
+	public void inputShortTermSuspensionsIndianRate(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmShortTermSuspensionsIndianRate(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("short-term suspensions Indians rate").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsIndianRate ").f().sx(strShortTermSuspensionsIndianRate()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	///////////////////////////////////////////
+	// shortTermSuspensionsMultiRacialFemale //
+	///////////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsMultiRacialFemale
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionsMultiRacialFemale;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionsMultiRacialFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsMultiRacialFemale").o(shortTermSuspensionsMultiRacialFemale);
+
+	/**	<br/> The entity shortTermSuspensionsMultiRacialFemale
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsMultiRacialFemale">Find the entity shortTermSuspensionsMultiRacialFemale in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsMultiRacialFemale(Wrap<Long> c);
+
+	public Long getShortTermSuspensionsMultiRacialFemale() {
+		return shortTermSuspensionsMultiRacialFemale;
+	}
+
+	public void setShortTermSuspensionsMultiRacialFemale(Long shortTermSuspensionsMultiRacialFemale) {
+		this.shortTermSuspensionsMultiRacialFemale = shortTermSuspensionsMultiRacialFemale;
+		this.shortTermSuspensionsMultiRacialFemaleWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsMultiRacialFemale(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsMultiRacialFemale = Long.parseLong(o);
+		this.shortTermSuspensionsMultiRacialFemaleWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsMultiRacialFemaleInit() {
+		if(!shortTermSuspensionsMultiRacialFemaleWrap.alreadyInitialized) {
+			_shortTermSuspensionsMultiRacialFemale(shortTermSuspensionsMultiRacialFemaleWrap);
+			if(shortTermSuspensionsMultiRacialFemale == null)
+				setShortTermSuspensionsMultiRacialFemale(shortTermSuspensionsMultiRacialFemaleWrap.o);
+		}
+		shortTermSuspensionsMultiRacialFemaleWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionsMultiRacialFemale() {
+		return shortTermSuspensionsMultiRacialFemale;
+	}
+
+	public String strShortTermSuspensionsMultiRacialFemale() {
+		return shortTermSuspensionsMultiRacialFemale == null ? "" : shortTermSuspensionsMultiRacialFemale.toString();
+	}
+
+	public String jsonShortTermSuspensionsMultiRacialFemale() {
+		return shortTermSuspensionsMultiRacialFemale == null ? "" : shortTermSuspensionsMultiRacialFemale.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsMultiRacialFemale() {
+		return "short-term suspensions Multi Racial female";
+	}
+
+	public String htmTooltipShortTermSuspensionsMultiRacialFemale() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsMultiRacialFemale() {
+		return shortTermSuspensionsMultiRacialFemale == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsMultiRacialFemale());
+	}
+
+	public void inputShortTermSuspensionsMultiRacialFemale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "short-term suspensions Multi Racial female")
+				.a("id", classApiMethodMethod, "_shortTermSuspensionsMultiRacialFemale");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setShortTermSuspensionsMultiRacialFemale classReportCard inputReportCard", pk, "ShortTermSuspensionsMultiRacialFemale w3-input w3-border ");
+					a("name", "setShortTermSuspensionsMultiRacialFemale");
+				} else {
+					a("class", "valueShortTermSuspensionsMultiRacialFemale w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsMultiRacialFemale w3-input w3-border ");
+					a("name", "shortTermSuspensionsMultiRacialFemale");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsMultiRacialFemale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsMultiRacialFemale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsMultiRacialFemale')); }); ");
+				}
+				a("value", strShortTermSuspensionsMultiRacialFemale())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsMultiRacialFemale ").f().sx(htmShortTermSuspensionsMultiRacialFemale()).g("span");
+		}
+	}
+
+	public void htmShortTermSuspensionsMultiRacialFemale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsMultiRacialFemale").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsMultiRacialFemale").a("class", "").f().sx("short-term suspensions Multi Racial female").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputShortTermSuspensionsMultiRacialFemale(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsMultiRacialFemale')); $('#", classApiMethodMethod, "_shortTermSuspensionsMultiRacialFemale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsMultiRacialFemale', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsMultiRacialFemale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsMultiRacialFemale')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	/////////////////////////////////////////
+	// shortTermSuspensionsMultiRacialMale //
+	/////////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsMultiRacialMale
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionsMultiRacialMale;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionsMultiRacialMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsMultiRacialMale").o(shortTermSuspensionsMultiRacialMale);
+
+	/**	<br/> The entity shortTermSuspensionsMultiRacialMale
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsMultiRacialMale">Find the entity shortTermSuspensionsMultiRacialMale in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsMultiRacialMale(Wrap<Long> c);
+
+	public Long getShortTermSuspensionsMultiRacialMale() {
+		return shortTermSuspensionsMultiRacialMale;
+	}
+
+	public void setShortTermSuspensionsMultiRacialMale(Long shortTermSuspensionsMultiRacialMale) {
+		this.shortTermSuspensionsMultiRacialMale = shortTermSuspensionsMultiRacialMale;
+		this.shortTermSuspensionsMultiRacialMaleWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsMultiRacialMale(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsMultiRacialMale = Long.parseLong(o);
+		this.shortTermSuspensionsMultiRacialMaleWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsMultiRacialMaleInit() {
+		if(!shortTermSuspensionsMultiRacialMaleWrap.alreadyInitialized) {
+			_shortTermSuspensionsMultiRacialMale(shortTermSuspensionsMultiRacialMaleWrap);
+			if(shortTermSuspensionsMultiRacialMale == null)
+				setShortTermSuspensionsMultiRacialMale(shortTermSuspensionsMultiRacialMaleWrap.o);
+		}
+		shortTermSuspensionsMultiRacialMaleWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionsMultiRacialMale() {
+		return shortTermSuspensionsMultiRacialMale;
+	}
+
+	public String strShortTermSuspensionsMultiRacialMale() {
+		return shortTermSuspensionsMultiRacialMale == null ? "" : shortTermSuspensionsMultiRacialMale.toString();
+	}
+
+	public String jsonShortTermSuspensionsMultiRacialMale() {
+		return shortTermSuspensionsMultiRacialMale == null ? "" : shortTermSuspensionsMultiRacialMale.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsMultiRacialMale() {
+		return "short-term suspensions Multi Racial male";
+	}
+
+	public String htmTooltipShortTermSuspensionsMultiRacialMale() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsMultiRacialMale() {
+		return shortTermSuspensionsMultiRacialMale == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsMultiRacialMale());
+	}
+
+	public void inputShortTermSuspensionsMultiRacialMale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "short-term suspensions Multi Racial male")
+				.a("id", classApiMethodMethod, "_shortTermSuspensionsMultiRacialMale");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setShortTermSuspensionsMultiRacialMale classReportCard inputReportCard", pk, "ShortTermSuspensionsMultiRacialMale w3-input w3-border ");
+					a("name", "setShortTermSuspensionsMultiRacialMale");
+				} else {
+					a("class", "valueShortTermSuspensionsMultiRacialMale w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsMultiRacialMale w3-input w3-border ");
+					a("name", "shortTermSuspensionsMultiRacialMale");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsMultiRacialMale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsMultiRacialMale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsMultiRacialMale')); }); ");
+				}
+				a("value", strShortTermSuspensionsMultiRacialMale())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsMultiRacialMale ").f().sx(htmShortTermSuspensionsMultiRacialMale()).g("span");
+		}
+	}
+
+	public void htmShortTermSuspensionsMultiRacialMale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsMultiRacialMale").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsMultiRacialMale").a("class", "").f().sx("short-term suspensions Multi Racial male").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputShortTermSuspensionsMultiRacialMale(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsMultiRacialMale')); $('#", classApiMethodMethod, "_shortTermSuspensionsMultiRacialMale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsMultiRacialMale', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsMultiRacialMale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsMultiRacialMale')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	//////////////////////////////////////////
+	// shortTermSuspensionsMultiRacialTotal //
+	//////////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsMultiRacialTotal
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionsMultiRacialTotal;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionsMultiRacialTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsMultiRacialTotal").o(shortTermSuspensionsMultiRacialTotal);
+
+	/**	<br/> The entity shortTermSuspensionsMultiRacialTotal
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsMultiRacialTotal">Find the entity shortTermSuspensionsMultiRacialTotal in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsMultiRacialTotal(Wrap<Long> c);
+
+	public Long getShortTermSuspensionsMultiRacialTotal() {
+		return shortTermSuspensionsMultiRacialTotal;
+	}
+
+	public void setShortTermSuspensionsMultiRacialTotal(Long shortTermSuspensionsMultiRacialTotal) {
+		this.shortTermSuspensionsMultiRacialTotal = shortTermSuspensionsMultiRacialTotal;
+		this.shortTermSuspensionsMultiRacialTotalWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsMultiRacialTotal(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsMultiRacialTotal = Long.parseLong(o);
+		this.shortTermSuspensionsMultiRacialTotalWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsMultiRacialTotalInit() {
+		if(!shortTermSuspensionsMultiRacialTotalWrap.alreadyInitialized) {
+			_shortTermSuspensionsMultiRacialTotal(shortTermSuspensionsMultiRacialTotalWrap);
+			if(shortTermSuspensionsMultiRacialTotal == null)
+				setShortTermSuspensionsMultiRacialTotal(shortTermSuspensionsMultiRacialTotalWrap.o);
+		}
+		shortTermSuspensionsMultiRacialTotalWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionsMultiRacialTotal() {
+		return shortTermSuspensionsMultiRacialTotal;
+	}
+
+	public String strShortTermSuspensionsMultiRacialTotal() {
+		return shortTermSuspensionsMultiRacialTotal == null ? "" : shortTermSuspensionsMultiRacialTotal.toString();
+	}
+
+	public String jsonShortTermSuspensionsMultiRacialTotal() {
+		return shortTermSuspensionsMultiRacialTotal == null ? "" : shortTermSuspensionsMultiRacialTotal.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsMultiRacialTotal() {
+		return "short-term suspensions Multi Racials total";
+	}
+
+	public String htmTooltipShortTermSuspensionsMultiRacialTotal() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsMultiRacialTotal() {
+		return shortTermSuspensionsMultiRacialTotal == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsMultiRacialTotal());
+	}
+
+	public void inputShortTermSuspensionsMultiRacialTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmShortTermSuspensionsMultiRacialTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("short-term suspensions Multi Racials total").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsMultiRacialTotal ").f().sx(strShortTermSuspensionsMultiRacialTotal()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	////////////////////////////////////////////
+	// shortTermSuspensionsMultiRacialPercent //
+	////////////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsMultiRacialPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal shortTermSuspensionsMultiRacialPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> shortTermSuspensionsMultiRacialPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsMultiRacialPercent").o(shortTermSuspensionsMultiRacialPercent);
+
+	/**	<br/> The entity shortTermSuspensionsMultiRacialPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsMultiRacialPercent">Find the entity shortTermSuspensionsMultiRacialPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsMultiRacialPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getShortTermSuspensionsMultiRacialPercent() {
+		return shortTermSuspensionsMultiRacialPercent;
+	}
+
+	public void setShortTermSuspensionsMultiRacialPercent(BigDecimal shortTermSuspensionsMultiRacialPercent) {
+		this.shortTermSuspensionsMultiRacialPercent = shortTermSuspensionsMultiRacialPercent;
+		this.shortTermSuspensionsMultiRacialPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsMultiRacialPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsMultiRacialPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsMultiRacialPercent(Double o) {
+			this.shortTermSuspensionsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsMultiRacialPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsMultiRacialPercent(Integer o) {
+			this.shortTermSuspensionsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsMultiRacialPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsMultiRacialPercentInit() {
+		if(!shortTermSuspensionsMultiRacialPercentWrap.alreadyInitialized) {
+			_shortTermSuspensionsMultiRacialPercent(shortTermSuspensionsMultiRacialPercentWrap);
+			if(shortTermSuspensionsMultiRacialPercent == null)
+				setShortTermSuspensionsMultiRacialPercent(shortTermSuspensionsMultiRacialPercentWrap.o);
+		}
+		shortTermSuspensionsMultiRacialPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrShortTermSuspensionsMultiRacialPercent() {
+		return shortTermSuspensionsMultiRacialPercent == null ? null : shortTermSuspensionsMultiRacialPercent.doubleValue();
+	}
+
+	public String strShortTermSuspensionsMultiRacialPercent() {
+		return shortTermSuspensionsMultiRacialPercent == null ? "" : shortTermSuspensionsMultiRacialPercent.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonShortTermSuspensionsMultiRacialPercent() {
+		return shortTermSuspensionsMultiRacialPercent == null ? "" : shortTermSuspensionsMultiRacialPercent.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsMultiRacialPercent() {
+		return "short-term suspensions Multi Racials percent";
+	}
+
+	public String htmTooltipShortTermSuspensionsMultiRacialPercent() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsMultiRacialPercent() {
+		return shortTermSuspensionsMultiRacialPercent == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsMultiRacialPercent());
+	}
+
+	public void inputShortTermSuspensionsMultiRacialPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmShortTermSuspensionsMultiRacialPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("short-term suspensions Multi Racials percent").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsMultiRacialPercent ").f().sx(strShortTermSuspensionsMultiRacialPercent()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	/////////////////////////////////////////
+	// shortTermSuspensionsMultiRacialRate //
+	/////////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsMultiRacialRate
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal shortTermSuspensionsMultiRacialRate;
+	@JsonIgnore
+	public Wrap<BigDecimal> shortTermSuspensionsMultiRacialRateWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsMultiRacialRate").o(shortTermSuspensionsMultiRacialRate);
+
+	/**	<br/> The entity shortTermSuspensionsMultiRacialRate
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsMultiRacialRate">Find the entity shortTermSuspensionsMultiRacialRate in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsMultiRacialRate(Wrap<BigDecimal> c);
+
+	public BigDecimal getShortTermSuspensionsMultiRacialRate() {
+		return shortTermSuspensionsMultiRacialRate;
+	}
+
+	public void setShortTermSuspensionsMultiRacialRate(BigDecimal shortTermSuspensionsMultiRacialRate) {
+		this.shortTermSuspensionsMultiRacialRate = shortTermSuspensionsMultiRacialRate;
+		this.shortTermSuspensionsMultiRacialRateWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsMultiRacialRate(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsMultiRacialRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsMultiRacialRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsMultiRacialRate(Double o) {
+			this.shortTermSuspensionsMultiRacialRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsMultiRacialRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsMultiRacialRate(Integer o) {
+			this.shortTermSuspensionsMultiRacialRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsMultiRacialRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsMultiRacialRateInit() {
+		if(!shortTermSuspensionsMultiRacialRateWrap.alreadyInitialized) {
+			_shortTermSuspensionsMultiRacialRate(shortTermSuspensionsMultiRacialRateWrap);
+			if(shortTermSuspensionsMultiRacialRate == null)
+				setShortTermSuspensionsMultiRacialRate(shortTermSuspensionsMultiRacialRateWrap.o);
+		}
+		shortTermSuspensionsMultiRacialRateWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrShortTermSuspensionsMultiRacialRate() {
+		return shortTermSuspensionsMultiRacialRate == null ? null : shortTermSuspensionsMultiRacialRate.doubleValue();
+	}
+
+	public String strShortTermSuspensionsMultiRacialRate() {
+		return shortTermSuspensionsMultiRacialRate == null ? "" : shortTermSuspensionsMultiRacialRate.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonShortTermSuspensionsMultiRacialRate() {
+		return shortTermSuspensionsMultiRacialRate == null ? "" : shortTermSuspensionsMultiRacialRate.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsMultiRacialRate() {
+		return "short-term suspensions Multi Racials rate";
+	}
+
+	public String htmTooltipShortTermSuspensionsMultiRacialRate() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsMultiRacialRate() {
+		return shortTermSuspensionsMultiRacialRate == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsMultiRacialRate());
+	}
+
+	public void inputShortTermSuspensionsMultiRacialRate(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmShortTermSuspensionsMultiRacialRate(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("short-term suspensions Multi Racials rate").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsMultiRacialRate ").f().sx(strShortTermSuspensionsMultiRacialRate()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	///////////////////////////////////////////////
+	// shortTermSuspensionsPacificIslanderFemale //
+	///////////////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsPacificIslanderFemale
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionsPacificIslanderFemale;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionsPacificIslanderFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsPacificIslanderFemale").o(shortTermSuspensionsPacificIslanderFemale);
+
+	/**	<br/> The entity shortTermSuspensionsPacificIslanderFemale
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsPacificIslanderFemale">Find the entity shortTermSuspensionsPacificIslanderFemale in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsPacificIslanderFemale(Wrap<Long> c);
+
+	public Long getShortTermSuspensionsPacificIslanderFemale() {
+		return shortTermSuspensionsPacificIslanderFemale;
+	}
+
+	public void setShortTermSuspensionsPacificIslanderFemale(Long shortTermSuspensionsPacificIslanderFemale) {
+		this.shortTermSuspensionsPacificIslanderFemale = shortTermSuspensionsPacificIslanderFemale;
+		this.shortTermSuspensionsPacificIslanderFemaleWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsPacificIslanderFemale(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsPacificIslanderFemale = Long.parseLong(o);
+		this.shortTermSuspensionsPacificIslanderFemaleWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsPacificIslanderFemaleInit() {
+		if(!shortTermSuspensionsPacificIslanderFemaleWrap.alreadyInitialized) {
+			_shortTermSuspensionsPacificIslanderFemale(shortTermSuspensionsPacificIslanderFemaleWrap);
+			if(shortTermSuspensionsPacificIslanderFemale == null)
+				setShortTermSuspensionsPacificIslanderFemale(shortTermSuspensionsPacificIslanderFemaleWrap.o);
+		}
+		shortTermSuspensionsPacificIslanderFemaleWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionsPacificIslanderFemale() {
+		return shortTermSuspensionsPacificIslanderFemale;
+	}
+
+	public String strShortTermSuspensionsPacificIslanderFemale() {
+		return shortTermSuspensionsPacificIslanderFemale == null ? "" : shortTermSuspensionsPacificIslanderFemale.toString();
+	}
+
+	public String jsonShortTermSuspensionsPacificIslanderFemale() {
+		return shortTermSuspensionsPacificIslanderFemale == null ? "" : shortTermSuspensionsPacificIslanderFemale.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsPacificIslanderFemale() {
+		return "short-term suspensions Pacific Islander female";
+	}
+
+	public String htmTooltipShortTermSuspensionsPacificIslanderFemale() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsPacificIslanderFemale() {
+		return shortTermSuspensionsPacificIslanderFemale == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsPacificIslanderFemale());
+	}
+
+	public void inputShortTermSuspensionsPacificIslanderFemale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "short-term suspensions Pacific Islander female")
+				.a("id", classApiMethodMethod, "_shortTermSuspensionsPacificIslanderFemale");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setShortTermSuspensionsPacificIslanderFemale classReportCard inputReportCard", pk, "ShortTermSuspensionsPacificIslanderFemale w3-input w3-border ");
+					a("name", "setShortTermSuspensionsPacificIslanderFemale");
+				} else {
+					a("class", "valueShortTermSuspensionsPacificIslanderFemale w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsPacificIslanderFemale w3-input w3-border ");
+					a("name", "shortTermSuspensionsPacificIslanderFemale");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsPacificIslanderFemale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsPacificIslanderFemale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsPacificIslanderFemale')); }); ");
+				}
+				a("value", strShortTermSuspensionsPacificIslanderFemale())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsPacificIslanderFemale ").f().sx(htmShortTermSuspensionsPacificIslanderFemale()).g("span");
+		}
+	}
+
+	public void htmShortTermSuspensionsPacificIslanderFemale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsPacificIslanderFemale").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsPacificIslanderFemale").a("class", "").f().sx("short-term suspensions Pacific Islander female").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputShortTermSuspensionsPacificIslanderFemale(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsPacificIslanderFemale')); $('#", classApiMethodMethod, "_shortTermSuspensionsPacificIslanderFemale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsPacificIslanderFemale', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsPacificIslanderFemale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsPacificIslanderFemale')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	/////////////////////////////////////////////
+	// shortTermSuspensionsPacificIslanderMale //
+	/////////////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsPacificIslanderMale
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionsPacificIslanderMale;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionsPacificIslanderMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsPacificIslanderMale").o(shortTermSuspensionsPacificIslanderMale);
+
+	/**	<br/> The entity shortTermSuspensionsPacificIslanderMale
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsPacificIslanderMale">Find the entity shortTermSuspensionsPacificIslanderMale in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsPacificIslanderMale(Wrap<Long> c);
+
+	public Long getShortTermSuspensionsPacificIslanderMale() {
+		return shortTermSuspensionsPacificIslanderMale;
+	}
+
+	public void setShortTermSuspensionsPacificIslanderMale(Long shortTermSuspensionsPacificIslanderMale) {
+		this.shortTermSuspensionsPacificIslanderMale = shortTermSuspensionsPacificIslanderMale;
+		this.shortTermSuspensionsPacificIslanderMaleWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsPacificIslanderMale(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsPacificIslanderMale = Long.parseLong(o);
+		this.shortTermSuspensionsPacificIslanderMaleWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsPacificIslanderMaleInit() {
+		if(!shortTermSuspensionsPacificIslanderMaleWrap.alreadyInitialized) {
+			_shortTermSuspensionsPacificIslanderMale(shortTermSuspensionsPacificIslanderMaleWrap);
+			if(shortTermSuspensionsPacificIslanderMale == null)
+				setShortTermSuspensionsPacificIslanderMale(shortTermSuspensionsPacificIslanderMaleWrap.o);
+		}
+		shortTermSuspensionsPacificIslanderMaleWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionsPacificIslanderMale() {
+		return shortTermSuspensionsPacificIslanderMale;
+	}
+
+	public String strShortTermSuspensionsPacificIslanderMale() {
+		return shortTermSuspensionsPacificIslanderMale == null ? "" : shortTermSuspensionsPacificIslanderMale.toString();
+	}
+
+	public String jsonShortTermSuspensionsPacificIslanderMale() {
+		return shortTermSuspensionsPacificIslanderMale == null ? "" : shortTermSuspensionsPacificIslanderMale.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsPacificIslanderMale() {
+		return "short-term suspensions Pacific Islander male";
+	}
+
+	public String htmTooltipShortTermSuspensionsPacificIslanderMale() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsPacificIslanderMale() {
+		return shortTermSuspensionsPacificIslanderMale == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsPacificIslanderMale());
+	}
+
+	public void inputShortTermSuspensionsPacificIslanderMale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "short-term suspensions Pacific Islander male")
+				.a("id", classApiMethodMethod, "_shortTermSuspensionsPacificIslanderMale");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setShortTermSuspensionsPacificIslanderMale classReportCard inputReportCard", pk, "ShortTermSuspensionsPacificIslanderMale w3-input w3-border ");
+					a("name", "setShortTermSuspensionsPacificIslanderMale");
+				} else {
+					a("class", "valueShortTermSuspensionsPacificIslanderMale w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsPacificIslanderMale w3-input w3-border ");
+					a("name", "shortTermSuspensionsPacificIslanderMale");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsPacificIslanderMale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsPacificIslanderMale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsPacificIslanderMale')); }); ");
+				}
+				a("value", strShortTermSuspensionsPacificIslanderMale())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsPacificIslanderMale ").f().sx(htmShortTermSuspensionsPacificIslanderMale()).g("span");
+		}
+	}
+
+	public void htmShortTermSuspensionsPacificIslanderMale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsPacificIslanderMale").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsPacificIslanderMale").a("class", "").f().sx("short-term suspensions Pacific Islander male").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputShortTermSuspensionsPacificIslanderMale(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsPacificIslanderMale')); $('#", classApiMethodMethod, "_shortTermSuspensionsPacificIslanderMale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsPacificIslanderMale', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsPacificIslanderMale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsPacificIslanderMale')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	//////////////////////////////////////////////
+	// shortTermSuspensionsPacificIslanderTotal //
+	//////////////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsPacificIslanderTotal
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionsPacificIslanderTotal;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionsPacificIslanderTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsPacificIslanderTotal").o(shortTermSuspensionsPacificIslanderTotal);
+
+	/**	<br/> The entity shortTermSuspensionsPacificIslanderTotal
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsPacificIslanderTotal">Find the entity shortTermSuspensionsPacificIslanderTotal in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsPacificIslanderTotal(Wrap<Long> c);
+
+	public Long getShortTermSuspensionsPacificIslanderTotal() {
+		return shortTermSuspensionsPacificIslanderTotal;
+	}
+
+	public void setShortTermSuspensionsPacificIslanderTotal(Long shortTermSuspensionsPacificIslanderTotal) {
+		this.shortTermSuspensionsPacificIslanderTotal = shortTermSuspensionsPacificIslanderTotal;
+		this.shortTermSuspensionsPacificIslanderTotalWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsPacificIslanderTotal(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsPacificIslanderTotal = Long.parseLong(o);
+		this.shortTermSuspensionsPacificIslanderTotalWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsPacificIslanderTotalInit() {
+		if(!shortTermSuspensionsPacificIslanderTotalWrap.alreadyInitialized) {
+			_shortTermSuspensionsPacificIslanderTotal(shortTermSuspensionsPacificIslanderTotalWrap);
+			if(shortTermSuspensionsPacificIslanderTotal == null)
+				setShortTermSuspensionsPacificIslanderTotal(shortTermSuspensionsPacificIslanderTotalWrap.o);
+		}
+		shortTermSuspensionsPacificIslanderTotalWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionsPacificIslanderTotal() {
+		return shortTermSuspensionsPacificIslanderTotal;
+	}
+
+	public String strShortTermSuspensionsPacificIslanderTotal() {
+		return shortTermSuspensionsPacificIslanderTotal == null ? "" : shortTermSuspensionsPacificIslanderTotal.toString();
+	}
+
+	public String jsonShortTermSuspensionsPacificIslanderTotal() {
+		return shortTermSuspensionsPacificIslanderTotal == null ? "" : shortTermSuspensionsPacificIslanderTotal.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsPacificIslanderTotal() {
+		return "short-term suspensions Pacific Islanders total";
+	}
+
+	public String htmTooltipShortTermSuspensionsPacificIslanderTotal() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsPacificIslanderTotal() {
+		return shortTermSuspensionsPacificIslanderTotal == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsPacificIslanderTotal());
+	}
+
+	public void inputShortTermSuspensionsPacificIslanderTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmShortTermSuspensionsPacificIslanderTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("short-term suspensions Pacific Islanders total").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsPacificIslanderTotal ").f().sx(strShortTermSuspensionsPacificIslanderTotal()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	////////////////////////////////////////////////
+	// shortTermSuspensionsPacificIslanderPercent //
+	////////////////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsPacificIslanderPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal shortTermSuspensionsPacificIslanderPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> shortTermSuspensionsPacificIslanderPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsPacificIslanderPercent").o(shortTermSuspensionsPacificIslanderPercent);
+
+	/**	<br/> The entity shortTermSuspensionsPacificIslanderPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsPacificIslanderPercent">Find the entity shortTermSuspensionsPacificIslanderPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsPacificIslanderPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getShortTermSuspensionsPacificIslanderPercent() {
+		return shortTermSuspensionsPacificIslanderPercent;
+	}
+
+	public void setShortTermSuspensionsPacificIslanderPercent(BigDecimal shortTermSuspensionsPacificIslanderPercent) {
+		this.shortTermSuspensionsPacificIslanderPercent = shortTermSuspensionsPacificIslanderPercent;
+		this.shortTermSuspensionsPacificIslanderPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsPacificIslanderPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsPacificIslanderPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsPacificIslanderPercent(Double o) {
+			this.shortTermSuspensionsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsPacificIslanderPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsPacificIslanderPercent(Integer o) {
+			this.shortTermSuspensionsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsPacificIslanderPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsPacificIslanderPercentInit() {
+		if(!shortTermSuspensionsPacificIslanderPercentWrap.alreadyInitialized) {
+			_shortTermSuspensionsPacificIslanderPercent(shortTermSuspensionsPacificIslanderPercentWrap);
+			if(shortTermSuspensionsPacificIslanderPercent == null)
+				setShortTermSuspensionsPacificIslanderPercent(shortTermSuspensionsPacificIslanderPercentWrap.o);
+		}
+		shortTermSuspensionsPacificIslanderPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrShortTermSuspensionsPacificIslanderPercent() {
+		return shortTermSuspensionsPacificIslanderPercent == null ? null : shortTermSuspensionsPacificIslanderPercent.doubleValue();
+	}
+
+	public String strShortTermSuspensionsPacificIslanderPercent() {
+		return shortTermSuspensionsPacificIslanderPercent == null ? "" : shortTermSuspensionsPacificIslanderPercent.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonShortTermSuspensionsPacificIslanderPercent() {
+		return shortTermSuspensionsPacificIslanderPercent == null ? "" : shortTermSuspensionsPacificIslanderPercent.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsPacificIslanderPercent() {
+		return "short-term suspensions Pacific Islanders percent";
+	}
+
+	public String htmTooltipShortTermSuspensionsPacificIslanderPercent() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsPacificIslanderPercent() {
+		return shortTermSuspensionsPacificIslanderPercent == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsPacificIslanderPercent());
+	}
+
+	public void inputShortTermSuspensionsPacificIslanderPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmShortTermSuspensionsPacificIslanderPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("short-term suspensions Pacific Islanders percent").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsPacificIslanderPercent ").f().sx(strShortTermSuspensionsPacificIslanderPercent()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	/////////////////////////////////////////////
+	// shortTermSuspensionsPacificIslanderRate //
+	/////////////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsPacificIslanderRate
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal shortTermSuspensionsPacificIslanderRate;
+	@JsonIgnore
+	public Wrap<BigDecimal> shortTermSuspensionsPacificIslanderRateWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsPacificIslanderRate").o(shortTermSuspensionsPacificIslanderRate);
+
+	/**	<br/> The entity shortTermSuspensionsPacificIslanderRate
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsPacificIslanderRate">Find the entity shortTermSuspensionsPacificIslanderRate in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsPacificIslanderRate(Wrap<BigDecimal> c);
+
+	public BigDecimal getShortTermSuspensionsPacificIslanderRate() {
+		return shortTermSuspensionsPacificIslanderRate;
+	}
+
+	public void setShortTermSuspensionsPacificIslanderRate(BigDecimal shortTermSuspensionsPacificIslanderRate) {
+		this.shortTermSuspensionsPacificIslanderRate = shortTermSuspensionsPacificIslanderRate;
+		this.shortTermSuspensionsPacificIslanderRateWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsPacificIslanderRate(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsPacificIslanderRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsPacificIslanderRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsPacificIslanderRate(Double o) {
+			this.shortTermSuspensionsPacificIslanderRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsPacificIslanderRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsPacificIslanderRate(Integer o) {
+			this.shortTermSuspensionsPacificIslanderRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsPacificIslanderRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsPacificIslanderRateInit() {
+		if(!shortTermSuspensionsPacificIslanderRateWrap.alreadyInitialized) {
+			_shortTermSuspensionsPacificIslanderRate(shortTermSuspensionsPacificIslanderRateWrap);
+			if(shortTermSuspensionsPacificIslanderRate == null)
+				setShortTermSuspensionsPacificIslanderRate(shortTermSuspensionsPacificIslanderRateWrap.o);
+		}
+		shortTermSuspensionsPacificIslanderRateWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrShortTermSuspensionsPacificIslanderRate() {
+		return shortTermSuspensionsPacificIslanderRate == null ? null : shortTermSuspensionsPacificIslanderRate.doubleValue();
+	}
+
+	public String strShortTermSuspensionsPacificIslanderRate() {
+		return shortTermSuspensionsPacificIslanderRate == null ? "" : shortTermSuspensionsPacificIslanderRate.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonShortTermSuspensionsPacificIslanderRate() {
+		return shortTermSuspensionsPacificIslanderRate == null ? "" : shortTermSuspensionsPacificIslanderRate.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsPacificIslanderRate() {
+		return "short-term suspensions Pacific Islanders rate";
+	}
+
+	public String htmTooltipShortTermSuspensionsPacificIslanderRate() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsPacificIslanderRate() {
+		return shortTermSuspensionsPacificIslanderRate == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsPacificIslanderRate());
+	}
+
+	public void inputShortTermSuspensionsPacificIslanderRate(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmShortTermSuspensionsPacificIslanderRate(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("short-term suspensions Pacific Islanders rate").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsPacificIslanderRate ").f().sx(strShortTermSuspensionsPacificIslanderRate()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	/////////////////////////////////////
+	// shortTermSuspensionsWhiteFemale //
+	/////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsWhiteFemale
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionsWhiteFemale;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionsWhiteFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsWhiteFemale").o(shortTermSuspensionsWhiteFemale);
+
+	/**	<br/> The entity shortTermSuspensionsWhiteFemale
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsWhiteFemale">Find the entity shortTermSuspensionsWhiteFemale in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsWhiteFemale(Wrap<Long> c);
+
+	public Long getShortTermSuspensionsWhiteFemale() {
+		return shortTermSuspensionsWhiteFemale;
+	}
+
+	public void setShortTermSuspensionsWhiteFemale(Long shortTermSuspensionsWhiteFemale) {
+		this.shortTermSuspensionsWhiteFemale = shortTermSuspensionsWhiteFemale;
+		this.shortTermSuspensionsWhiteFemaleWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsWhiteFemale(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsWhiteFemale = Long.parseLong(o);
+		this.shortTermSuspensionsWhiteFemaleWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsWhiteFemaleInit() {
+		if(!shortTermSuspensionsWhiteFemaleWrap.alreadyInitialized) {
+			_shortTermSuspensionsWhiteFemale(shortTermSuspensionsWhiteFemaleWrap);
+			if(shortTermSuspensionsWhiteFemale == null)
+				setShortTermSuspensionsWhiteFemale(shortTermSuspensionsWhiteFemaleWrap.o);
+		}
+		shortTermSuspensionsWhiteFemaleWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionsWhiteFemale() {
+		return shortTermSuspensionsWhiteFemale;
+	}
+
+	public String strShortTermSuspensionsWhiteFemale() {
+		return shortTermSuspensionsWhiteFemale == null ? "" : shortTermSuspensionsWhiteFemale.toString();
+	}
+
+	public String jsonShortTermSuspensionsWhiteFemale() {
+		return shortTermSuspensionsWhiteFemale == null ? "" : shortTermSuspensionsWhiteFemale.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsWhiteFemale() {
+		return "short-term suspensions White female";
+	}
+
+	public String htmTooltipShortTermSuspensionsWhiteFemale() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsWhiteFemale() {
+		return shortTermSuspensionsWhiteFemale == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsWhiteFemale());
+	}
+
+	public void inputShortTermSuspensionsWhiteFemale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "short-term suspensions White female")
+				.a("id", classApiMethodMethod, "_shortTermSuspensionsWhiteFemale");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setShortTermSuspensionsWhiteFemale classReportCard inputReportCard", pk, "ShortTermSuspensionsWhiteFemale w3-input w3-border ");
+					a("name", "setShortTermSuspensionsWhiteFemale");
+				} else {
+					a("class", "valueShortTermSuspensionsWhiteFemale w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsWhiteFemale w3-input w3-border ");
+					a("name", "shortTermSuspensionsWhiteFemale");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsWhiteFemale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsWhiteFemale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsWhiteFemale')); }); ");
+				}
+				a("value", strShortTermSuspensionsWhiteFemale())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsWhiteFemale ").f().sx(htmShortTermSuspensionsWhiteFemale()).g("span");
+		}
+	}
+
+	public void htmShortTermSuspensionsWhiteFemale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsWhiteFemale").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsWhiteFemale").a("class", "").f().sx("short-term suspensions White female").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputShortTermSuspensionsWhiteFemale(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsWhiteFemale')); $('#", classApiMethodMethod, "_shortTermSuspensionsWhiteFemale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsWhiteFemale', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsWhiteFemale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsWhiteFemale')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	///////////////////////////////////
+	// shortTermSuspensionsWhiteMale //
+	///////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsWhiteMale
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionsWhiteMale;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionsWhiteMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsWhiteMale").o(shortTermSuspensionsWhiteMale);
+
+	/**	<br/> The entity shortTermSuspensionsWhiteMale
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsWhiteMale">Find the entity shortTermSuspensionsWhiteMale in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsWhiteMale(Wrap<Long> c);
+
+	public Long getShortTermSuspensionsWhiteMale() {
+		return shortTermSuspensionsWhiteMale;
+	}
+
+	public void setShortTermSuspensionsWhiteMale(Long shortTermSuspensionsWhiteMale) {
+		this.shortTermSuspensionsWhiteMale = shortTermSuspensionsWhiteMale;
+		this.shortTermSuspensionsWhiteMaleWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsWhiteMale(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsWhiteMale = Long.parseLong(o);
+		this.shortTermSuspensionsWhiteMaleWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsWhiteMaleInit() {
+		if(!shortTermSuspensionsWhiteMaleWrap.alreadyInitialized) {
+			_shortTermSuspensionsWhiteMale(shortTermSuspensionsWhiteMaleWrap);
+			if(shortTermSuspensionsWhiteMale == null)
+				setShortTermSuspensionsWhiteMale(shortTermSuspensionsWhiteMaleWrap.o);
+		}
+		shortTermSuspensionsWhiteMaleWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionsWhiteMale() {
+		return shortTermSuspensionsWhiteMale;
+	}
+
+	public String strShortTermSuspensionsWhiteMale() {
+		return shortTermSuspensionsWhiteMale == null ? "" : shortTermSuspensionsWhiteMale.toString();
+	}
+
+	public String jsonShortTermSuspensionsWhiteMale() {
+		return shortTermSuspensionsWhiteMale == null ? "" : shortTermSuspensionsWhiteMale.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsWhiteMale() {
+		return "short-term suspensions White male";
+	}
+
+	public String htmTooltipShortTermSuspensionsWhiteMale() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsWhiteMale() {
+		return shortTermSuspensionsWhiteMale == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsWhiteMale());
+	}
+
+	public void inputShortTermSuspensionsWhiteMale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "short-term suspensions White male")
+				.a("id", classApiMethodMethod, "_shortTermSuspensionsWhiteMale");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setShortTermSuspensionsWhiteMale classReportCard inputReportCard", pk, "ShortTermSuspensionsWhiteMale w3-input w3-border ");
+					a("name", "setShortTermSuspensionsWhiteMale");
+				} else {
+					a("class", "valueShortTermSuspensionsWhiteMale w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsWhiteMale w3-input w3-border ");
+					a("name", "shortTermSuspensionsWhiteMale");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsWhiteMale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsWhiteMale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsWhiteMale')); }); ");
+				}
+				a("value", strShortTermSuspensionsWhiteMale())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsWhiteMale ").f().sx(htmShortTermSuspensionsWhiteMale()).g("span");
+		}
+	}
+
+	public void htmShortTermSuspensionsWhiteMale(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsWhiteMale").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsWhiteMale").a("class", "").f().sx("short-term suspensions White male").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputShortTermSuspensionsWhiteMale(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsWhiteMale')); $('#", classApiMethodMethod, "_shortTermSuspensionsWhiteMale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsWhiteMale', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsWhiteMale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsWhiteMale')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	////////////////////////////////////
+	// shortTermSuspensionsWhiteTotal //
+	////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsWhiteTotal
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionsWhiteTotal;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionsWhiteTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsWhiteTotal").o(shortTermSuspensionsWhiteTotal);
+
+	/**	<br/> The entity shortTermSuspensionsWhiteTotal
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsWhiteTotal">Find the entity shortTermSuspensionsWhiteTotal in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsWhiteTotal(Wrap<Long> c);
+
+	public Long getShortTermSuspensionsWhiteTotal() {
+		return shortTermSuspensionsWhiteTotal;
+	}
+
+	public void setShortTermSuspensionsWhiteTotal(Long shortTermSuspensionsWhiteTotal) {
+		this.shortTermSuspensionsWhiteTotal = shortTermSuspensionsWhiteTotal;
+		this.shortTermSuspensionsWhiteTotalWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsWhiteTotal(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsWhiteTotal = Long.parseLong(o);
+		this.shortTermSuspensionsWhiteTotalWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsWhiteTotalInit() {
+		if(!shortTermSuspensionsWhiteTotalWrap.alreadyInitialized) {
+			_shortTermSuspensionsWhiteTotal(shortTermSuspensionsWhiteTotalWrap);
+			if(shortTermSuspensionsWhiteTotal == null)
+				setShortTermSuspensionsWhiteTotal(shortTermSuspensionsWhiteTotalWrap.o);
+		}
+		shortTermSuspensionsWhiteTotalWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionsWhiteTotal() {
+		return shortTermSuspensionsWhiteTotal;
+	}
+
+	public String strShortTermSuspensionsWhiteTotal() {
+		return shortTermSuspensionsWhiteTotal == null ? "" : shortTermSuspensionsWhiteTotal.toString();
+	}
+
+	public String jsonShortTermSuspensionsWhiteTotal() {
+		return shortTermSuspensionsWhiteTotal == null ? "" : shortTermSuspensionsWhiteTotal.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsWhiteTotal() {
+		return "short-term suspensions Whites total";
+	}
+
+	public String htmTooltipShortTermSuspensionsWhiteTotal() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsWhiteTotal() {
+		return shortTermSuspensionsWhiteTotal == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsWhiteTotal());
+	}
+
+	public void inputShortTermSuspensionsWhiteTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmShortTermSuspensionsWhiteTotal(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("short-term suspensions Whites total").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsWhiteTotal ").f().sx(strShortTermSuspensionsWhiteTotal()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	//////////////////////////////////////
+	// shortTermSuspensionsWhitePercent //
+	//////////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsWhitePercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal shortTermSuspensionsWhitePercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> shortTermSuspensionsWhitePercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsWhitePercent").o(shortTermSuspensionsWhitePercent);
+
+	/**	<br/> The entity shortTermSuspensionsWhitePercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsWhitePercent">Find the entity shortTermSuspensionsWhitePercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsWhitePercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getShortTermSuspensionsWhitePercent() {
+		return shortTermSuspensionsWhitePercent;
+	}
+
+	public void setShortTermSuspensionsWhitePercent(BigDecimal shortTermSuspensionsWhitePercent) {
+		this.shortTermSuspensionsWhitePercent = shortTermSuspensionsWhitePercent;
+		this.shortTermSuspensionsWhitePercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsWhitePercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsWhitePercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsWhitePercent(Double o) {
+			this.shortTermSuspensionsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsWhitePercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsWhitePercent(Integer o) {
+			this.shortTermSuspensionsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsWhitePercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsWhitePercentInit() {
+		if(!shortTermSuspensionsWhitePercentWrap.alreadyInitialized) {
+			_shortTermSuspensionsWhitePercent(shortTermSuspensionsWhitePercentWrap);
+			if(shortTermSuspensionsWhitePercent == null)
+				setShortTermSuspensionsWhitePercent(shortTermSuspensionsWhitePercentWrap.o);
+		}
+		shortTermSuspensionsWhitePercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrShortTermSuspensionsWhitePercent() {
+		return shortTermSuspensionsWhitePercent == null ? null : shortTermSuspensionsWhitePercent.doubleValue();
+	}
+
+	public String strShortTermSuspensionsWhitePercent() {
+		return shortTermSuspensionsWhitePercent == null ? "" : shortTermSuspensionsWhitePercent.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonShortTermSuspensionsWhitePercent() {
+		return shortTermSuspensionsWhitePercent == null ? "" : shortTermSuspensionsWhitePercent.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsWhitePercent() {
+		return "short-term suspensions Whites percent";
+	}
+
+	public String htmTooltipShortTermSuspensionsWhitePercent() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsWhitePercent() {
+		return shortTermSuspensionsWhitePercent == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsWhitePercent());
+	}
+
+	public void inputShortTermSuspensionsWhitePercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmShortTermSuspensionsWhitePercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("short-term suspensions Whites percent").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsWhitePercent ").f().sx(strShortTermSuspensionsWhitePercent()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
+	///////////////////////////////////
+	// shortTermSuspensionsWhiteRate //
+	///////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsWhiteRate
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal shortTermSuspensionsWhiteRate;
+	@JsonIgnore
+	public Wrap<BigDecimal> shortTermSuspensionsWhiteRateWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsWhiteRate").o(shortTermSuspensionsWhiteRate);
+
+	/**	<br/> The entity shortTermSuspensionsWhiteRate
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsWhiteRate">Find the entity shortTermSuspensionsWhiteRate in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsWhiteRate(Wrap<BigDecimal> c);
+
+	public BigDecimal getShortTermSuspensionsWhiteRate() {
+		return shortTermSuspensionsWhiteRate;
+	}
+
+	public void setShortTermSuspensionsWhiteRate(BigDecimal shortTermSuspensionsWhiteRate) {
+		this.shortTermSuspensionsWhiteRate = shortTermSuspensionsWhiteRate;
+		this.shortTermSuspensionsWhiteRateWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsWhiteRate(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsWhiteRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsWhiteRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsWhiteRate(Double o) {
+			this.shortTermSuspensionsWhiteRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsWhiteRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsWhiteRate(Integer o) {
+			this.shortTermSuspensionsWhiteRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsWhiteRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsWhiteRateInit() {
+		if(!shortTermSuspensionsWhiteRateWrap.alreadyInitialized) {
+			_shortTermSuspensionsWhiteRate(shortTermSuspensionsWhiteRateWrap);
+			if(shortTermSuspensionsWhiteRate == null)
+				setShortTermSuspensionsWhiteRate(shortTermSuspensionsWhiteRateWrap.o);
+		}
+		shortTermSuspensionsWhiteRateWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrShortTermSuspensionsWhiteRate() {
+		return shortTermSuspensionsWhiteRate == null ? null : shortTermSuspensionsWhiteRate.doubleValue();
+	}
+
+	public String strShortTermSuspensionsWhiteRate() {
+		return shortTermSuspensionsWhiteRate == null ? "" : shortTermSuspensionsWhiteRate.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonShortTermSuspensionsWhiteRate() {
+		return shortTermSuspensionsWhiteRate == null ? "" : shortTermSuspensionsWhiteRate.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsWhiteRate() {
+		return "short-term suspensions Whites rate";
+	}
+
+	public String htmTooltipShortTermSuspensionsWhiteRate() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsWhiteRate() {
+		return shortTermSuspensionsWhiteRate == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsWhiteRate());
+	}
+
+	public void inputShortTermSuspensionsWhiteRate(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmShortTermSuspensionsWhiteRate(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("short-term suspensions Whites rate").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsWhiteRate ").f().sx(strShortTermSuspensionsWhiteRate()).g("span");
 								} g("div");
 							} g("div");
 						} g("div");
@@ -5112,9 +12331,70 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		pupilsMultiRacialMaleInit();
 		pupilsMultiRacialTotalInit();
 		pupilsMultiRacialPercentInit();
+		teachersMaleInit();
+		teachersFemaleInit();
+		teachersTotalInit();
+		teachersWhiteTotalInit();
+		teachersWhitePercentInit();
+		teachersBlackTotalInit();
+		teachersBlackPercentInit();
+		teachersOtherTotalInit();
+		teachersOtherPercentInit();
 		delinquentComplaintsTotalInit();
 		delinquentComplaintsAtSchoolInit();
 		delinquentComplaintsAtSchoolPercentInit();
+		delinquentComplaintsAsianInit();
+		delinquentComplaintsAsianPercentInit();
+		delinquentComplaintsBlackInit();
+		delinquentComplaintsBlackPercentInit();
+		delinquentComplaintsHispanicInit();
+		delinquentComplaintsHispanicPercentInit();
+		delinquentComplaintsMultiRacialInit();
+		delinquentComplaintsMultiRacialPercentInit();
+		delinquentComplaintsIndianInit();
+		delinquentComplaintsIndianPercentInit();
+		delinquentComplaintsWhiteInit();
+		delinquentComplaintsWhitePercentInit();
+		delinquentComplaintsPacificIslanderInit();
+		delinquentComplaintsPacificIslanderPercentInit();
+		shortTermSuspensionsTotalInit();
+		longTermSuspensionsTotalInit();
+		expulsionsTotalInit();
+		shortTermSuspensionsAsianFemaleInit();
+		shortTermSuspensionsAsianMaleInit();
+		shortTermSuspensionsAsianTotalInit();
+		shortTermSuspensionsAsianPercentInit();
+		shortTermSuspensionsAsianRateInit();
+		shortTermSuspensionsBlackFemaleInit();
+		shortTermSuspensionsBlackMaleInit();
+		shortTermSuspensionsBlackTotalInit();
+		shortTermSuspensionsBlackPercentInit();
+		shortTermSuspensionsBlackRateInit();
+		shortTermSuspensionsHispanicFemaleInit();
+		shortTermSuspensionsHispanicMaleInit();
+		shortTermSuspensionsHispanicTotalInit();
+		shortTermSuspensionsHispanicPercentInit();
+		shortTermSuspensionsHispanicRateInit();
+		shortTermSuspensionsIndianFemaleInit();
+		shortTermSuspensionsIndianMaleInit();
+		shortTermSuspensionsIndianTotalInit();
+		shortTermSuspensionsIndianPercentInit();
+		shortTermSuspensionsIndianRateInit();
+		shortTermSuspensionsMultiRacialFemaleInit();
+		shortTermSuspensionsMultiRacialMaleInit();
+		shortTermSuspensionsMultiRacialTotalInit();
+		shortTermSuspensionsMultiRacialPercentInit();
+		shortTermSuspensionsMultiRacialRateInit();
+		shortTermSuspensionsPacificIslanderFemaleInit();
+		shortTermSuspensionsPacificIslanderMaleInit();
+		shortTermSuspensionsPacificIslanderTotalInit();
+		shortTermSuspensionsPacificIslanderPercentInit();
+		shortTermSuspensionsPacificIslanderRateInit();
+		shortTermSuspensionsWhiteFemaleInit();
+		shortTermSuspensionsWhiteMaleInit();
+		shortTermSuspensionsWhiteTotalInit();
+		shortTermSuspensionsWhitePercentInit();
+		shortTermSuspensionsWhiteRateInit();
 		stateKeyInit();
 		stateIdInit();
 		countyIdInit();
@@ -5236,12 +12516,134 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.pupilsMultiRacialTotal;
 			case "pupilsMultiRacialPercent":
 				return oReportCard.pupilsMultiRacialPercent;
+			case "teachersMale":
+				return oReportCard.teachersMale;
+			case "teachersFemale":
+				return oReportCard.teachersFemale;
+			case "teachersTotal":
+				return oReportCard.teachersTotal;
+			case "teachersWhiteTotal":
+				return oReportCard.teachersWhiteTotal;
+			case "teachersWhitePercent":
+				return oReportCard.teachersWhitePercent;
+			case "teachersBlackTotal":
+				return oReportCard.teachersBlackTotal;
+			case "teachersBlackPercent":
+				return oReportCard.teachersBlackPercent;
+			case "teachersOtherTotal":
+				return oReportCard.teachersOtherTotal;
+			case "teachersOtherPercent":
+				return oReportCard.teachersOtherPercent;
 			case "delinquentComplaintsTotal":
 				return oReportCard.delinquentComplaintsTotal;
 			case "delinquentComplaintsAtSchool":
 				return oReportCard.delinquentComplaintsAtSchool;
 			case "delinquentComplaintsAtSchoolPercent":
 				return oReportCard.delinquentComplaintsAtSchoolPercent;
+			case "delinquentComplaintsAsian":
+				return oReportCard.delinquentComplaintsAsian;
+			case "delinquentComplaintsAsianPercent":
+				return oReportCard.delinquentComplaintsAsianPercent;
+			case "delinquentComplaintsBlack":
+				return oReportCard.delinquentComplaintsBlack;
+			case "delinquentComplaintsBlackPercent":
+				return oReportCard.delinquentComplaintsBlackPercent;
+			case "delinquentComplaintsHispanic":
+				return oReportCard.delinquentComplaintsHispanic;
+			case "delinquentComplaintsHispanicPercent":
+				return oReportCard.delinquentComplaintsHispanicPercent;
+			case "delinquentComplaintsMultiRacial":
+				return oReportCard.delinquentComplaintsMultiRacial;
+			case "delinquentComplaintsMultiRacialPercent":
+				return oReportCard.delinquentComplaintsMultiRacialPercent;
+			case "delinquentComplaintsIndian":
+				return oReportCard.delinquentComplaintsIndian;
+			case "delinquentComplaintsIndianPercent":
+				return oReportCard.delinquentComplaintsIndianPercent;
+			case "delinquentComplaintsWhite":
+				return oReportCard.delinquentComplaintsWhite;
+			case "delinquentComplaintsWhitePercent":
+				return oReportCard.delinquentComplaintsWhitePercent;
+			case "delinquentComplaintsPacificIslander":
+				return oReportCard.delinquentComplaintsPacificIslander;
+			case "delinquentComplaintsPacificIslanderPercent":
+				return oReportCard.delinquentComplaintsPacificIslanderPercent;
+			case "shortTermSuspensionsTotal":
+				return oReportCard.shortTermSuspensionsTotal;
+			case "longTermSuspensionsTotal":
+				return oReportCard.longTermSuspensionsTotal;
+			case "expulsionsTotal":
+				return oReportCard.expulsionsTotal;
+			case "shortTermSuspensionsAsianFemale":
+				return oReportCard.shortTermSuspensionsAsianFemale;
+			case "shortTermSuspensionsAsianMale":
+				return oReportCard.shortTermSuspensionsAsianMale;
+			case "shortTermSuspensionsAsianTotal":
+				return oReportCard.shortTermSuspensionsAsianTotal;
+			case "shortTermSuspensionsAsianPercent":
+				return oReportCard.shortTermSuspensionsAsianPercent;
+			case "shortTermSuspensionsAsianRate":
+				return oReportCard.shortTermSuspensionsAsianRate;
+			case "shortTermSuspensionsBlackFemale":
+				return oReportCard.shortTermSuspensionsBlackFemale;
+			case "shortTermSuspensionsBlackMale":
+				return oReportCard.shortTermSuspensionsBlackMale;
+			case "shortTermSuspensionsBlackTotal":
+				return oReportCard.shortTermSuspensionsBlackTotal;
+			case "shortTermSuspensionsBlackPercent":
+				return oReportCard.shortTermSuspensionsBlackPercent;
+			case "shortTermSuspensionsBlackRate":
+				return oReportCard.shortTermSuspensionsBlackRate;
+			case "shortTermSuspensionsHispanicFemale":
+				return oReportCard.shortTermSuspensionsHispanicFemale;
+			case "shortTermSuspensionsHispanicMale":
+				return oReportCard.shortTermSuspensionsHispanicMale;
+			case "shortTermSuspensionsHispanicTotal":
+				return oReportCard.shortTermSuspensionsHispanicTotal;
+			case "shortTermSuspensionsHispanicPercent":
+				return oReportCard.shortTermSuspensionsHispanicPercent;
+			case "shortTermSuspensionsHispanicRate":
+				return oReportCard.shortTermSuspensionsHispanicRate;
+			case "shortTermSuspensionsIndianFemale":
+				return oReportCard.shortTermSuspensionsIndianFemale;
+			case "shortTermSuspensionsIndianMale":
+				return oReportCard.shortTermSuspensionsIndianMale;
+			case "shortTermSuspensionsIndianTotal":
+				return oReportCard.shortTermSuspensionsIndianTotal;
+			case "shortTermSuspensionsIndianPercent":
+				return oReportCard.shortTermSuspensionsIndianPercent;
+			case "shortTermSuspensionsIndianRate":
+				return oReportCard.shortTermSuspensionsIndianRate;
+			case "shortTermSuspensionsMultiRacialFemale":
+				return oReportCard.shortTermSuspensionsMultiRacialFemale;
+			case "shortTermSuspensionsMultiRacialMale":
+				return oReportCard.shortTermSuspensionsMultiRacialMale;
+			case "shortTermSuspensionsMultiRacialTotal":
+				return oReportCard.shortTermSuspensionsMultiRacialTotal;
+			case "shortTermSuspensionsMultiRacialPercent":
+				return oReportCard.shortTermSuspensionsMultiRacialPercent;
+			case "shortTermSuspensionsMultiRacialRate":
+				return oReportCard.shortTermSuspensionsMultiRacialRate;
+			case "shortTermSuspensionsPacificIslanderFemale":
+				return oReportCard.shortTermSuspensionsPacificIslanderFemale;
+			case "shortTermSuspensionsPacificIslanderMale":
+				return oReportCard.shortTermSuspensionsPacificIslanderMale;
+			case "shortTermSuspensionsPacificIslanderTotal":
+				return oReportCard.shortTermSuspensionsPacificIslanderTotal;
+			case "shortTermSuspensionsPacificIslanderPercent":
+				return oReportCard.shortTermSuspensionsPacificIslanderPercent;
+			case "shortTermSuspensionsPacificIslanderRate":
+				return oReportCard.shortTermSuspensionsPacificIslanderRate;
+			case "shortTermSuspensionsWhiteFemale":
+				return oReportCard.shortTermSuspensionsWhiteFemale;
+			case "shortTermSuspensionsWhiteMale":
+				return oReportCard.shortTermSuspensionsWhiteMale;
+			case "shortTermSuspensionsWhiteTotal":
+				return oReportCard.shortTermSuspensionsWhiteTotal;
+			case "shortTermSuspensionsWhitePercent":
+				return oReportCard.shortTermSuspensionsWhitePercent;
+			case "shortTermSuspensionsWhiteRate":
+				return oReportCard.shortTermSuspensionsWhiteRate;
 			case "stateKey":
 				return oReportCard.stateKey;
 			case "stateId":
@@ -5400,6 +12802,31 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					setPupilsMultiRacialMale(val);
 				saves.add(var);
 				return val;
+			case "teachersMale":
+				if(val != null)
+					setTeachersMale(val);
+				saves.add(var);
+				return val;
+			case "teachersFemale":
+				if(val != null)
+					setTeachersFemale(val);
+				saves.add(var);
+				return val;
+			case "teachersWhiteTotal":
+				if(val != null)
+					setTeachersWhiteTotal(val);
+				saves.add(var);
+				return val;
+			case "teachersBlackTotal":
+				if(val != null)
+					setTeachersBlackTotal(val);
+				saves.add(var);
+				return val;
+			case "teachersOtherTotal":
+				if(val != null)
+					setTeachersOtherTotal(val);
+				saves.add(var);
+				return val;
 			case "delinquentComplaintsTotal":
 				if(val != null)
 					setDelinquentComplaintsTotal(val);
@@ -5408,6 +12835,126 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			case "delinquentComplaintsAtSchool":
 				if(val != null)
 					setDelinquentComplaintsAtSchool(val);
+				saves.add(var);
+				return val;
+			case "delinquentComplaintsAsian":
+				if(val != null)
+					setDelinquentComplaintsAsian(val);
+				saves.add(var);
+				return val;
+			case "delinquentComplaintsBlack":
+				if(val != null)
+					setDelinquentComplaintsBlack(val);
+				saves.add(var);
+				return val;
+			case "delinquentComplaintsHispanic":
+				if(val != null)
+					setDelinquentComplaintsHispanic(val);
+				saves.add(var);
+				return val;
+			case "delinquentComplaintsMultiRacial":
+				if(val != null)
+					setDelinquentComplaintsMultiRacial(val);
+				saves.add(var);
+				return val;
+			case "delinquentComplaintsIndian":
+				if(val != null)
+					setDelinquentComplaintsIndian(val);
+				saves.add(var);
+				return val;
+			case "delinquentComplaintsWhite":
+				if(val != null)
+					setDelinquentComplaintsWhite(val);
+				saves.add(var);
+				return val;
+			case "delinquentComplaintsPacificIslander":
+				if(val != null)
+					setDelinquentComplaintsPacificIslander(val);
+				saves.add(var);
+				return val;
+			case "shortTermSuspensionsTotal":
+				if(val != null)
+					setShortTermSuspensionsTotal(val);
+				saves.add(var);
+				return val;
+			case "longTermSuspensionsTotal":
+				if(val != null)
+					setLongTermSuspensionsTotal(val);
+				saves.add(var);
+				return val;
+			case "expulsionsTotal":
+				if(val != null)
+					setExpulsionsTotal(val);
+				saves.add(var);
+				return val;
+			case "shortTermSuspensionsAsianFemale":
+				if(val != null)
+					setShortTermSuspensionsAsianFemale(val);
+				saves.add(var);
+				return val;
+			case "shortTermSuspensionsAsianMale":
+				if(val != null)
+					setShortTermSuspensionsAsianMale(val);
+				saves.add(var);
+				return val;
+			case "shortTermSuspensionsBlackFemale":
+				if(val != null)
+					setShortTermSuspensionsBlackFemale(val);
+				saves.add(var);
+				return val;
+			case "shortTermSuspensionsBlackMale":
+				if(val != null)
+					setShortTermSuspensionsBlackMale(val);
+				saves.add(var);
+				return val;
+			case "shortTermSuspensionsHispanicFemale":
+				if(val != null)
+					setShortTermSuspensionsHispanicFemale(val);
+				saves.add(var);
+				return val;
+			case "shortTermSuspensionsHispanicMale":
+				if(val != null)
+					setShortTermSuspensionsHispanicMale(val);
+				saves.add(var);
+				return val;
+			case "shortTermSuspensionsIndianFemale":
+				if(val != null)
+					setShortTermSuspensionsIndianFemale(val);
+				saves.add(var);
+				return val;
+			case "shortTermSuspensionsIndianMale":
+				if(val != null)
+					setShortTermSuspensionsIndianMale(val);
+				saves.add(var);
+				return val;
+			case "shortTermSuspensionsMultiRacialFemale":
+				if(val != null)
+					setShortTermSuspensionsMultiRacialFemale(val);
+				saves.add(var);
+				return val;
+			case "shortTermSuspensionsMultiRacialMale":
+				if(val != null)
+					setShortTermSuspensionsMultiRacialMale(val);
+				saves.add(var);
+				return val;
+			case "shortTermSuspensionsPacificIslanderFemale":
+				if(val != null)
+					setShortTermSuspensionsPacificIslanderFemale(val);
+				saves.add(var);
+				return val;
+			case "shortTermSuspensionsPacificIslanderMale":
+				if(val != null)
+					setShortTermSuspensionsPacificIslanderMale(val);
+				saves.add(var);
+				return val;
+			case "shortTermSuspensionsWhiteFemale":
+				if(val != null)
+					setShortTermSuspensionsWhiteFemale(val);
+				saves.add(var);
+				return val;
+			case "shortTermSuspensionsWhiteMale":
+				if(val != null)
+					setShortTermSuspensionsWhiteMale(val);
 				saves.add(var);
 				return val;
 			default:
@@ -5450,25 +12997,25 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				oReportCard.setCountyKey(countyKey);
 
 			if(saves.contains("pupilsTotal")) {
-				Integer pupilsTotal = (Integer)solrDocument.get("pupilsTotal_stored_int");
+				Long pupilsTotal = (Long)solrDocument.get("pupilsTotal_stored_long");
 				if(pupilsTotal != null)
 					oReportCard.setPupilsTotal(pupilsTotal);
 			}
 
 			if(saves.contains("pupilsIndianFemale")) {
-				Integer pupilsIndianFemale = (Integer)solrDocument.get("pupilsIndianFemale_stored_int");
+				Long pupilsIndianFemale = (Long)solrDocument.get("pupilsIndianFemale_stored_long");
 				if(pupilsIndianFemale != null)
 					oReportCard.setPupilsIndianFemale(pupilsIndianFemale);
 			}
 
 			if(saves.contains("pupilsIndianMale")) {
-				Integer pupilsIndianMale = (Integer)solrDocument.get("pupilsIndianMale_stored_int");
+				Long pupilsIndianMale = (Long)solrDocument.get("pupilsIndianMale_stored_long");
 				if(pupilsIndianMale != null)
 					oReportCard.setPupilsIndianMale(pupilsIndianMale);
 			}
 
 			if(saves.contains("pupilsIndianTotal")) {
-				Integer pupilsIndianTotal = (Integer)solrDocument.get("pupilsIndianTotal_stored_int");
+				Long pupilsIndianTotal = (Long)solrDocument.get("pupilsIndianTotal_stored_long");
 				if(pupilsIndianTotal != null)
 					oReportCard.setPupilsIndianTotal(pupilsIndianTotal);
 			}
@@ -5480,19 +13027,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			}
 
 			if(saves.contains("pupilsAsianFemale")) {
-				Integer pupilsAsianFemale = (Integer)solrDocument.get("pupilsAsianFemale_stored_int");
+				Long pupilsAsianFemale = (Long)solrDocument.get("pupilsAsianFemale_stored_long");
 				if(pupilsAsianFemale != null)
 					oReportCard.setPupilsAsianFemale(pupilsAsianFemale);
 			}
 
 			if(saves.contains("pupilsAsianMale")) {
-				Integer pupilsAsianMale = (Integer)solrDocument.get("pupilsAsianMale_stored_int");
+				Long pupilsAsianMale = (Long)solrDocument.get("pupilsAsianMale_stored_long");
 				if(pupilsAsianMale != null)
 					oReportCard.setPupilsAsianMale(pupilsAsianMale);
 			}
 
 			if(saves.contains("pupilsAsianTotal")) {
-				Integer pupilsAsianTotal = (Integer)solrDocument.get("pupilsAsianTotal_stored_int");
+				Long pupilsAsianTotal = (Long)solrDocument.get("pupilsAsianTotal_stored_long");
 				if(pupilsAsianTotal != null)
 					oReportCard.setPupilsAsianTotal(pupilsAsianTotal);
 			}
@@ -5504,19 +13051,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			}
 
 			if(saves.contains("pupilsHispanicFemale")) {
-				Integer pupilsHispanicFemale = (Integer)solrDocument.get("pupilsHispanicFemale_stored_int");
+				Long pupilsHispanicFemale = (Long)solrDocument.get("pupilsHispanicFemale_stored_long");
 				if(pupilsHispanicFemale != null)
 					oReportCard.setPupilsHispanicFemale(pupilsHispanicFemale);
 			}
 
 			if(saves.contains("pupilsHispanicMale")) {
-				Integer pupilsHispanicMale = (Integer)solrDocument.get("pupilsHispanicMale_stored_int");
+				Long pupilsHispanicMale = (Long)solrDocument.get("pupilsHispanicMale_stored_long");
 				if(pupilsHispanicMale != null)
 					oReportCard.setPupilsHispanicMale(pupilsHispanicMale);
 			}
 
 			if(saves.contains("pupilsHispanicTotal")) {
-				Integer pupilsHispanicTotal = (Integer)solrDocument.get("pupilsHispanicTotal_stored_int");
+				Long pupilsHispanicTotal = (Long)solrDocument.get("pupilsHispanicTotal_stored_long");
 				if(pupilsHispanicTotal != null)
 					oReportCard.setPupilsHispanicTotal(pupilsHispanicTotal);
 			}
@@ -5528,19 +13075,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			}
 
 			if(saves.contains("pupilsBlackFemale")) {
-				Integer pupilsBlackFemale = (Integer)solrDocument.get("pupilsBlackFemale_stored_int");
+				Long pupilsBlackFemale = (Long)solrDocument.get("pupilsBlackFemale_stored_long");
 				if(pupilsBlackFemale != null)
 					oReportCard.setPupilsBlackFemale(pupilsBlackFemale);
 			}
 
 			if(saves.contains("pupilsBlackMale")) {
-				Integer pupilsBlackMale = (Integer)solrDocument.get("pupilsBlackMale_stored_int");
+				Long pupilsBlackMale = (Long)solrDocument.get("pupilsBlackMale_stored_long");
 				if(pupilsBlackMale != null)
 					oReportCard.setPupilsBlackMale(pupilsBlackMale);
 			}
 
 			if(saves.contains("pupilsBlackTotal")) {
-				Integer pupilsBlackTotal = (Integer)solrDocument.get("pupilsBlackTotal_stored_int");
+				Long pupilsBlackTotal = (Long)solrDocument.get("pupilsBlackTotal_stored_long");
 				if(pupilsBlackTotal != null)
 					oReportCard.setPupilsBlackTotal(pupilsBlackTotal);
 			}
@@ -5552,19 +13099,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			}
 
 			if(saves.contains("pupilsWhiteFemale")) {
-				Integer pupilsWhiteFemale = (Integer)solrDocument.get("pupilsWhiteFemale_stored_int");
+				Long pupilsWhiteFemale = (Long)solrDocument.get("pupilsWhiteFemale_stored_long");
 				if(pupilsWhiteFemale != null)
 					oReportCard.setPupilsWhiteFemale(pupilsWhiteFemale);
 			}
 
 			if(saves.contains("pupilsWhiteMale")) {
-				Integer pupilsWhiteMale = (Integer)solrDocument.get("pupilsWhiteMale_stored_int");
+				Long pupilsWhiteMale = (Long)solrDocument.get("pupilsWhiteMale_stored_long");
 				if(pupilsWhiteMale != null)
 					oReportCard.setPupilsWhiteMale(pupilsWhiteMale);
 			}
 
 			if(saves.contains("pupilsWhiteTotal")) {
-				Integer pupilsWhiteTotal = (Integer)solrDocument.get("pupilsWhiteTotal_stored_int");
+				Long pupilsWhiteTotal = (Long)solrDocument.get("pupilsWhiteTotal_stored_long");
 				if(pupilsWhiteTotal != null)
 					oReportCard.setPupilsWhiteTotal(pupilsWhiteTotal);
 			}
@@ -5576,19 +13123,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			}
 
 			if(saves.contains("pupilsPacificIslanderFemale")) {
-				Integer pupilsPacificIslanderFemale = (Integer)solrDocument.get("pupilsPacificIslanderFemale_stored_int");
+				Long pupilsPacificIslanderFemale = (Long)solrDocument.get("pupilsPacificIslanderFemale_stored_long");
 				if(pupilsPacificIslanderFemale != null)
 					oReportCard.setPupilsPacificIslanderFemale(pupilsPacificIslanderFemale);
 			}
 
 			if(saves.contains("pupilsPacificIslanderMale")) {
-				Integer pupilsPacificIslanderMale = (Integer)solrDocument.get("pupilsPacificIslanderMale_stored_int");
+				Long pupilsPacificIslanderMale = (Long)solrDocument.get("pupilsPacificIslanderMale_stored_long");
 				if(pupilsPacificIslanderMale != null)
 					oReportCard.setPupilsPacificIslanderMale(pupilsPacificIslanderMale);
 			}
 
 			if(saves.contains("pupilsPacificIslanderTotal")) {
-				Integer pupilsPacificIslanderTotal = (Integer)solrDocument.get("pupilsPacificIslanderTotal_stored_int");
+				Long pupilsPacificIslanderTotal = (Long)solrDocument.get("pupilsPacificIslanderTotal_stored_long");
 				if(pupilsPacificIslanderTotal != null)
 					oReportCard.setPupilsPacificIslanderTotal(pupilsPacificIslanderTotal);
 			}
@@ -5600,19 +13147,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			}
 
 			if(saves.contains("pupilsMultiRacialFemale")) {
-				Integer pupilsMultiRacialFemale = (Integer)solrDocument.get("pupilsMultiRacialFemale_stored_int");
+				Long pupilsMultiRacialFemale = (Long)solrDocument.get("pupilsMultiRacialFemale_stored_long");
 				if(pupilsMultiRacialFemale != null)
 					oReportCard.setPupilsMultiRacialFemale(pupilsMultiRacialFemale);
 			}
 
 			if(saves.contains("pupilsMultiRacialMale")) {
-				Integer pupilsMultiRacialMale = (Integer)solrDocument.get("pupilsMultiRacialMale_stored_int");
+				Long pupilsMultiRacialMale = (Long)solrDocument.get("pupilsMultiRacialMale_stored_long");
 				if(pupilsMultiRacialMale != null)
 					oReportCard.setPupilsMultiRacialMale(pupilsMultiRacialMale);
 			}
 
 			if(saves.contains("pupilsMultiRacialTotal")) {
-				Integer pupilsMultiRacialTotal = (Integer)solrDocument.get("pupilsMultiRacialTotal_stored_int");
+				Long pupilsMultiRacialTotal = (Long)solrDocument.get("pupilsMultiRacialTotal_stored_long");
 				if(pupilsMultiRacialTotal != null)
 					oReportCard.setPupilsMultiRacialTotal(pupilsMultiRacialTotal);
 			}
@@ -5623,14 +13170,68 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					oReportCard.setPupilsMultiRacialPercent(pupilsMultiRacialPercent);
 			}
 
+			if(saves.contains("teachersMale")) {
+				Long teachersMale = (Long)solrDocument.get("teachersMale_stored_long");
+				if(teachersMale != null)
+					oReportCard.setTeachersMale(teachersMale);
+			}
+
+			if(saves.contains("teachersFemale")) {
+				Long teachersFemale = (Long)solrDocument.get("teachersFemale_stored_long");
+				if(teachersFemale != null)
+					oReportCard.setTeachersFemale(teachersFemale);
+			}
+
+			if(saves.contains("teachersTotal")) {
+				Long teachersTotal = (Long)solrDocument.get("teachersTotal_stored_long");
+				if(teachersTotal != null)
+					oReportCard.setTeachersTotal(teachersTotal);
+			}
+
+			if(saves.contains("teachersWhiteTotal")) {
+				Long teachersWhiteTotal = (Long)solrDocument.get("teachersWhiteTotal_stored_long");
+				if(teachersWhiteTotal != null)
+					oReportCard.setTeachersWhiteTotal(teachersWhiteTotal);
+			}
+
+			if(saves.contains("teachersWhitePercent")) {
+				Double teachersWhitePercent = (Double)solrDocument.get("teachersWhitePercent_stored_double");
+				if(teachersWhitePercent != null)
+					oReportCard.setTeachersWhitePercent(teachersWhitePercent);
+			}
+
+			if(saves.contains("teachersBlackTotal")) {
+				Long teachersBlackTotal = (Long)solrDocument.get("teachersBlackTotal_stored_long");
+				if(teachersBlackTotal != null)
+					oReportCard.setTeachersBlackTotal(teachersBlackTotal);
+			}
+
+			if(saves.contains("teachersBlackPercent")) {
+				Double teachersBlackPercent = (Double)solrDocument.get("teachersBlackPercent_stored_double");
+				if(teachersBlackPercent != null)
+					oReportCard.setTeachersBlackPercent(teachersBlackPercent);
+			}
+
+			if(saves.contains("teachersOtherTotal")) {
+				Long teachersOtherTotal = (Long)solrDocument.get("teachersOtherTotal_stored_long");
+				if(teachersOtherTotal != null)
+					oReportCard.setTeachersOtherTotal(teachersOtherTotal);
+			}
+
+			if(saves.contains("teachersOtherPercent")) {
+				Double teachersOtherPercent = (Double)solrDocument.get("teachersOtherPercent_stored_double");
+				if(teachersOtherPercent != null)
+					oReportCard.setTeachersOtherPercent(teachersOtherPercent);
+			}
+
 			if(saves.contains("delinquentComplaintsTotal")) {
-				Integer delinquentComplaintsTotal = (Integer)solrDocument.get("delinquentComplaintsTotal_stored_int");
+				Long delinquentComplaintsTotal = (Long)solrDocument.get("delinquentComplaintsTotal_stored_long");
 				if(delinquentComplaintsTotal != null)
 					oReportCard.setDelinquentComplaintsTotal(delinquentComplaintsTotal);
 			}
 
 			if(saves.contains("delinquentComplaintsAtSchool")) {
-				Integer delinquentComplaintsAtSchool = (Integer)solrDocument.get("delinquentComplaintsAtSchool_stored_int");
+				Long delinquentComplaintsAtSchool = (Long)solrDocument.get("delinquentComplaintsAtSchool_stored_long");
 				if(delinquentComplaintsAtSchool != null)
 					oReportCard.setDelinquentComplaintsAtSchool(delinquentComplaintsAtSchool);
 			}
@@ -5639,6 +13240,318 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				Double delinquentComplaintsAtSchoolPercent = (Double)solrDocument.get("delinquentComplaintsAtSchoolPercent_stored_double");
 				if(delinquentComplaintsAtSchoolPercent != null)
 					oReportCard.setDelinquentComplaintsAtSchoolPercent(delinquentComplaintsAtSchoolPercent);
+			}
+
+			if(saves.contains("delinquentComplaintsAsian")) {
+				Long delinquentComplaintsAsian = (Long)solrDocument.get("delinquentComplaintsAsian_stored_long");
+				if(delinquentComplaintsAsian != null)
+					oReportCard.setDelinquentComplaintsAsian(delinquentComplaintsAsian);
+			}
+
+			if(saves.contains("delinquentComplaintsAsianPercent")) {
+				Double delinquentComplaintsAsianPercent = (Double)solrDocument.get("delinquentComplaintsAsianPercent_stored_double");
+				if(delinquentComplaintsAsianPercent != null)
+					oReportCard.setDelinquentComplaintsAsianPercent(delinquentComplaintsAsianPercent);
+			}
+
+			if(saves.contains("delinquentComplaintsBlack")) {
+				Long delinquentComplaintsBlack = (Long)solrDocument.get("delinquentComplaintsBlack_stored_long");
+				if(delinquentComplaintsBlack != null)
+					oReportCard.setDelinquentComplaintsBlack(delinquentComplaintsBlack);
+			}
+
+			if(saves.contains("delinquentComplaintsBlackPercent")) {
+				Double delinquentComplaintsBlackPercent = (Double)solrDocument.get("delinquentComplaintsBlackPercent_stored_double");
+				if(delinquentComplaintsBlackPercent != null)
+					oReportCard.setDelinquentComplaintsBlackPercent(delinquentComplaintsBlackPercent);
+			}
+
+			if(saves.contains("delinquentComplaintsHispanic")) {
+				Long delinquentComplaintsHispanic = (Long)solrDocument.get("delinquentComplaintsHispanic_stored_long");
+				if(delinquentComplaintsHispanic != null)
+					oReportCard.setDelinquentComplaintsHispanic(delinquentComplaintsHispanic);
+			}
+
+			if(saves.contains("delinquentComplaintsHispanicPercent")) {
+				Double delinquentComplaintsHispanicPercent = (Double)solrDocument.get("delinquentComplaintsHispanicPercent_stored_double");
+				if(delinquentComplaintsHispanicPercent != null)
+					oReportCard.setDelinquentComplaintsHispanicPercent(delinquentComplaintsHispanicPercent);
+			}
+
+			if(saves.contains("delinquentComplaintsMultiRacial")) {
+				Long delinquentComplaintsMultiRacial = (Long)solrDocument.get("delinquentComplaintsMultiRacial_stored_long");
+				if(delinquentComplaintsMultiRacial != null)
+					oReportCard.setDelinquentComplaintsMultiRacial(delinquentComplaintsMultiRacial);
+			}
+
+			if(saves.contains("delinquentComplaintsMultiRacialPercent")) {
+				Double delinquentComplaintsMultiRacialPercent = (Double)solrDocument.get("delinquentComplaintsMultiRacialPercent_stored_double");
+				if(delinquentComplaintsMultiRacialPercent != null)
+					oReportCard.setDelinquentComplaintsMultiRacialPercent(delinquentComplaintsMultiRacialPercent);
+			}
+
+			if(saves.contains("delinquentComplaintsIndian")) {
+				Long delinquentComplaintsIndian = (Long)solrDocument.get("delinquentComplaintsIndian_stored_long");
+				if(delinquentComplaintsIndian != null)
+					oReportCard.setDelinquentComplaintsIndian(delinquentComplaintsIndian);
+			}
+
+			if(saves.contains("delinquentComplaintsIndianPercent")) {
+				Double delinquentComplaintsIndianPercent = (Double)solrDocument.get("delinquentComplaintsIndianPercent_stored_double");
+				if(delinquentComplaintsIndianPercent != null)
+					oReportCard.setDelinquentComplaintsIndianPercent(delinquentComplaintsIndianPercent);
+			}
+
+			if(saves.contains("delinquentComplaintsWhite")) {
+				Long delinquentComplaintsWhite = (Long)solrDocument.get("delinquentComplaintsWhite_stored_long");
+				if(delinquentComplaintsWhite != null)
+					oReportCard.setDelinquentComplaintsWhite(delinquentComplaintsWhite);
+			}
+
+			if(saves.contains("delinquentComplaintsWhitePercent")) {
+				Double delinquentComplaintsWhitePercent = (Double)solrDocument.get("delinquentComplaintsWhitePercent_stored_double");
+				if(delinquentComplaintsWhitePercent != null)
+					oReportCard.setDelinquentComplaintsWhitePercent(delinquentComplaintsWhitePercent);
+			}
+
+			if(saves.contains("delinquentComplaintsPacificIslander")) {
+				Long delinquentComplaintsPacificIslander = (Long)solrDocument.get("delinquentComplaintsPacificIslander_stored_long");
+				if(delinquentComplaintsPacificIslander != null)
+					oReportCard.setDelinquentComplaintsPacificIslander(delinquentComplaintsPacificIslander);
+			}
+
+			if(saves.contains("delinquentComplaintsPacificIslanderPercent")) {
+				Double delinquentComplaintsPacificIslanderPercent = (Double)solrDocument.get("delinquentComplaintsPacificIslanderPercent_stored_double");
+				if(delinquentComplaintsPacificIslanderPercent != null)
+					oReportCard.setDelinquentComplaintsPacificIslanderPercent(delinquentComplaintsPacificIslanderPercent);
+			}
+
+			if(saves.contains("shortTermSuspensionsTotal")) {
+				Long shortTermSuspensionsTotal = (Long)solrDocument.get("shortTermSuspensionsTotal_stored_long");
+				if(shortTermSuspensionsTotal != null)
+					oReportCard.setShortTermSuspensionsTotal(shortTermSuspensionsTotal);
+			}
+
+			if(saves.contains("longTermSuspensionsTotal")) {
+				Long longTermSuspensionsTotal = (Long)solrDocument.get("longTermSuspensionsTotal_stored_long");
+				if(longTermSuspensionsTotal != null)
+					oReportCard.setLongTermSuspensionsTotal(longTermSuspensionsTotal);
+			}
+
+			if(saves.contains("expulsionsTotal")) {
+				Long expulsionsTotal = (Long)solrDocument.get("expulsionsTotal_stored_long");
+				if(expulsionsTotal != null)
+					oReportCard.setExpulsionsTotal(expulsionsTotal);
+			}
+
+			if(saves.contains("shortTermSuspensionsAsianFemale")) {
+				Long shortTermSuspensionsAsianFemale = (Long)solrDocument.get("shortTermSuspensionsAsianFemale_stored_long");
+				if(shortTermSuspensionsAsianFemale != null)
+					oReportCard.setShortTermSuspensionsAsianFemale(shortTermSuspensionsAsianFemale);
+			}
+
+			if(saves.contains("shortTermSuspensionsAsianMale")) {
+				Long shortTermSuspensionsAsianMale = (Long)solrDocument.get("shortTermSuspensionsAsianMale_stored_long");
+				if(shortTermSuspensionsAsianMale != null)
+					oReportCard.setShortTermSuspensionsAsianMale(shortTermSuspensionsAsianMale);
+			}
+
+			if(saves.contains("shortTermSuspensionsAsianTotal")) {
+				Long shortTermSuspensionsAsianTotal = (Long)solrDocument.get("shortTermSuspensionsAsianTotal_stored_long");
+				if(shortTermSuspensionsAsianTotal != null)
+					oReportCard.setShortTermSuspensionsAsianTotal(shortTermSuspensionsAsianTotal);
+			}
+
+			if(saves.contains("shortTermSuspensionsAsianPercent")) {
+				Double shortTermSuspensionsAsianPercent = (Double)solrDocument.get("shortTermSuspensionsAsianPercent_stored_double");
+				if(shortTermSuspensionsAsianPercent != null)
+					oReportCard.setShortTermSuspensionsAsianPercent(shortTermSuspensionsAsianPercent);
+			}
+
+			if(saves.contains("shortTermSuspensionsAsianRate")) {
+				Double shortTermSuspensionsAsianRate = (Double)solrDocument.get("shortTermSuspensionsAsianRate_stored_double");
+				if(shortTermSuspensionsAsianRate != null)
+					oReportCard.setShortTermSuspensionsAsianRate(shortTermSuspensionsAsianRate);
+			}
+
+			if(saves.contains("shortTermSuspensionsBlackFemale")) {
+				Long shortTermSuspensionsBlackFemale = (Long)solrDocument.get("shortTermSuspensionsBlackFemale_stored_long");
+				if(shortTermSuspensionsBlackFemale != null)
+					oReportCard.setShortTermSuspensionsBlackFemale(shortTermSuspensionsBlackFemale);
+			}
+
+			if(saves.contains("shortTermSuspensionsBlackMale")) {
+				Long shortTermSuspensionsBlackMale = (Long)solrDocument.get("shortTermSuspensionsBlackMale_stored_long");
+				if(shortTermSuspensionsBlackMale != null)
+					oReportCard.setShortTermSuspensionsBlackMale(shortTermSuspensionsBlackMale);
+			}
+
+			if(saves.contains("shortTermSuspensionsBlackTotal")) {
+				Long shortTermSuspensionsBlackTotal = (Long)solrDocument.get("shortTermSuspensionsBlackTotal_stored_long");
+				if(shortTermSuspensionsBlackTotal != null)
+					oReportCard.setShortTermSuspensionsBlackTotal(shortTermSuspensionsBlackTotal);
+			}
+
+			if(saves.contains("shortTermSuspensionsBlackPercent")) {
+				Double shortTermSuspensionsBlackPercent = (Double)solrDocument.get("shortTermSuspensionsBlackPercent_stored_double");
+				if(shortTermSuspensionsBlackPercent != null)
+					oReportCard.setShortTermSuspensionsBlackPercent(shortTermSuspensionsBlackPercent);
+			}
+
+			if(saves.contains("shortTermSuspensionsBlackRate")) {
+				Double shortTermSuspensionsBlackRate = (Double)solrDocument.get("shortTermSuspensionsBlackRate_stored_double");
+				if(shortTermSuspensionsBlackRate != null)
+					oReportCard.setShortTermSuspensionsBlackRate(shortTermSuspensionsBlackRate);
+			}
+
+			if(saves.contains("shortTermSuspensionsHispanicFemale")) {
+				Long shortTermSuspensionsHispanicFemale = (Long)solrDocument.get("shortTermSuspensionsHispanicFemale_stored_long");
+				if(shortTermSuspensionsHispanicFemale != null)
+					oReportCard.setShortTermSuspensionsHispanicFemale(shortTermSuspensionsHispanicFemale);
+			}
+
+			if(saves.contains("shortTermSuspensionsHispanicMale")) {
+				Long shortTermSuspensionsHispanicMale = (Long)solrDocument.get("shortTermSuspensionsHispanicMale_stored_long");
+				if(shortTermSuspensionsHispanicMale != null)
+					oReportCard.setShortTermSuspensionsHispanicMale(shortTermSuspensionsHispanicMale);
+			}
+
+			if(saves.contains("shortTermSuspensionsHispanicTotal")) {
+				Long shortTermSuspensionsHispanicTotal = (Long)solrDocument.get("shortTermSuspensionsHispanicTotal_stored_long");
+				if(shortTermSuspensionsHispanicTotal != null)
+					oReportCard.setShortTermSuspensionsHispanicTotal(shortTermSuspensionsHispanicTotal);
+			}
+
+			if(saves.contains("shortTermSuspensionsHispanicPercent")) {
+				Double shortTermSuspensionsHispanicPercent = (Double)solrDocument.get("shortTermSuspensionsHispanicPercent_stored_double");
+				if(shortTermSuspensionsHispanicPercent != null)
+					oReportCard.setShortTermSuspensionsHispanicPercent(shortTermSuspensionsHispanicPercent);
+			}
+
+			if(saves.contains("shortTermSuspensionsHispanicRate")) {
+				Double shortTermSuspensionsHispanicRate = (Double)solrDocument.get("shortTermSuspensionsHispanicRate_stored_double");
+				if(shortTermSuspensionsHispanicRate != null)
+					oReportCard.setShortTermSuspensionsHispanicRate(shortTermSuspensionsHispanicRate);
+			}
+
+			if(saves.contains("shortTermSuspensionsIndianFemale")) {
+				Long shortTermSuspensionsIndianFemale = (Long)solrDocument.get("shortTermSuspensionsIndianFemale_stored_long");
+				if(shortTermSuspensionsIndianFemale != null)
+					oReportCard.setShortTermSuspensionsIndianFemale(shortTermSuspensionsIndianFemale);
+			}
+
+			if(saves.contains("shortTermSuspensionsIndianMale")) {
+				Long shortTermSuspensionsIndianMale = (Long)solrDocument.get("shortTermSuspensionsIndianMale_stored_long");
+				if(shortTermSuspensionsIndianMale != null)
+					oReportCard.setShortTermSuspensionsIndianMale(shortTermSuspensionsIndianMale);
+			}
+
+			if(saves.contains("shortTermSuspensionsIndianTotal")) {
+				Long shortTermSuspensionsIndianTotal = (Long)solrDocument.get("shortTermSuspensionsIndianTotal_stored_long");
+				if(shortTermSuspensionsIndianTotal != null)
+					oReportCard.setShortTermSuspensionsIndianTotal(shortTermSuspensionsIndianTotal);
+			}
+
+			if(saves.contains("shortTermSuspensionsIndianPercent")) {
+				Double shortTermSuspensionsIndianPercent = (Double)solrDocument.get("shortTermSuspensionsIndianPercent_stored_double");
+				if(shortTermSuspensionsIndianPercent != null)
+					oReportCard.setShortTermSuspensionsIndianPercent(shortTermSuspensionsIndianPercent);
+			}
+
+			if(saves.contains("shortTermSuspensionsIndianRate")) {
+				Double shortTermSuspensionsIndianRate = (Double)solrDocument.get("shortTermSuspensionsIndianRate_stored_double");
+				if(shortTermSuspensionsIndianRate != null)
+					oReportCard.setShortTermSuspensionsIndianRate(shortTermSuspensionsIndianRate);
+			}
+
+			if(saves.contains("shortTermSuspensionsMultiRacialFemale")) {
+				Long shortTermSuspensionsMultiRacialFemale = (Long)solrDocument.get("shortTermSuspensionsMultiRacialFemale_stored_long");
+				if(shortTermSuspensionsMultiRacialFemale != null)
+					oReportCard.setShortTermSuspensionsMultiRacialFemale(shortTermSuspensionsMultiRacialFemale);
+			}
+
+			if(saves.contains("shortTermSuspensionsMultiRacialMale")) {
+				Long shortTermSuspensionsMultiRacialMale = (Long)solrDocument.get("shortTermSuspensionsMultiRacialMale_stored_long");
+				if(shortTermSuspensionsMultiRacialMale != null)
+					oReportCard.setShortTermSuspensionsMultiRacialMale(shortTermSuspensionsMultiRacialMale);
+			}
+
+			if(saves.contains("shortTermSuspensionsMultiRacialTotal")) {
+				Long shortTermSuspensionsMultiRacialTotal = (Long)solrDocument.get("shortTermSuspensionsMultiRacialTotal_stored_long");
+				if(shortTermSuspensionsMultiRacialTotal != null)
+					oReportCard.setShortTermSuspensionsMultiRacialTotal(shortTermSuspensionsMultiRacialTotal);
+			}
+
+			if(saves.contains("shortTermSuspensionsMultiRacialPercent")) {
+				Double shortTermSuspensionsMultiRacialPercent = (Double)solrDocument.get("shortTermSuspensionsMultiRacialPercent_stored_double");
+				if(shortTermSuspensionsMultiRacialPercent != null)
+					oReportCard.setShortTermSuspensionsMultiRacialPercent(shortTermSuspensionsMultiRacialPercent);
+			}
+
+			if(saves.contains("shortTermSuspensionsMultiRacialRate")) {
+				Double shortTermSuspensionsMultiRacialRate = (Double)solrDocument.get("shortTermSuspensionsMultiRacialRate_stored_double");
+				if(shortTermSuspensionsMultiRacialRate != null)
+					oReportCard.setShortTermSuspensionsMultiRacialRate(shortTermSuspensionsMultiRacialRate);
+			}
+
+			if(saves.contains("shortTermSuspensionsPacificIslanderFemale")) {
+				Long shortTermSuspensionsPacificIslanderFemale = (Long)solrDocument.get("shortTermSuspensionsPacificIslanderFemale_stored_long");
+				if(shortTermSuspensionsPacificIslanderFemale != null)
+					oReportCard.setShortTermSuspensionsPacificIslanderFemale(shortTermSuspensionsPacificIslanderFemale);
+			}
+
+			if(saves.contains("shortTermSuspensionsPacificIslanderMale")) {
+				Long shortTermSuspensionsPacificIslanderMale = (Long)solrDocument.get("shortTermSuspensionsPacificIslanderMale_stored_long");
+				if(shortTermSuspensionsPacificIslanderMale != null)
+					oReportCard.setShortTermSuspensionsPacificIslanderMale(shortTermSuspensionsPacificIslanderMale);
+			}
+
+			if(saves.contains("shortTermSuspensionsPacificIslanderTotal")) {
+				Long shortTermSuspensionsPacificIslanderTotal = (Long)solrDocument.get("shortTermSuspensionsPacificIslanderTotal_stored_long");
+				if(shortTermSuspensionsPacificIslanderTotal != null)
+					oReportCard.setShortTermSuspensionsPacificIslanderTotal(shortTermSuspensionsPacificIslanderTotal);
+			}
+
+			if(saves.contains("shortTermSuspensionsPacificIslanderPercent")) {
+				Double shortTermSuspensionsPacificIslanderPercent = (Double)solrDocument.get("shortTermSuspensionsPacificIslanderPercent_stored_double");
+				if(shortTermSuspensionsPacificIslanderPercent != null)
+					oReportCard.setShortTermSuspensionsPacificIslanderPercent(shortTermSuspensionsPacificIslanderPercent);
+			}
+
+			if(saves.contains("shortTermSuspensionsPacificIslanderRate")) {
+				Double shortTermSuspensionsPacificIslanderRate = (Double)solrDocument.get("shortTermSuspensionsPacificIslanderRate_stored_double");
+				if(shortTermSuspensionsPacificIslanderRate != null)
+					oReportCard.setShortTermSuspensionsPacificIslanderRate(shortTermSuspensionsPacificIslanderRate);
+			}
+
+			if(saves.contains("shortTermSuspensionsWhiteFemale")) {
+				Long shortTermSuspensionsWhiteFemale = (Long)solrDocument.get("shortTermSuspensionsWhiteFemale_stored_long");
+				if(shortTermSuspensionsWhiteFemale != null)
+					oReportCard.setShortTermSuspensionsWhiteFemale(shortTermSuspensionsWhiteFemale);
+			}
+
+			if(saves.contains("shortTermSuspensionsWhiteMale")) {
+				Long shortTermSuspensionsWhiteMale = (Long)solrDocument.get("shortTermSuspensionsWhiteMale_stored_long");
+				if(shortTermSuspensionsWhiteMale != null)
+					oReportCard.setShortTermSuspensionsWhiteMale(shortTermSuspensionsWhiteMale);
+			}
+
+			if(saves.contains("shortTermSuspensionsWhiteTotal")) {
+				Long shortTermSuspensionsWhiteTotal = (Long)solrDocument.get("shortTermSuspensionsWhiteTotal_stored_long");
+				if(shortTermSuspensionsWhiteTotal != null)
+					oReportCard.setShortTermSuspensionsWhiteTotal(shortTermSuspensionsWhiteTotal);
+			}
+
+			if(saves.contains("shortTermSuspensionsWhitePercent")) {
+				Double shortTermSuspensionsWhitePercent = (Double)solrDocument.get("shortTermSuspensionsWhitePercent_stored_double");
+				if(shortTermSuspensionsWhitePercent != null)
+					oReportCard.setShortTermSuspensionsWhitePercent(shortTermSuspensionsWhitePercent);
+			}
+
+			if(saves.contains("shortTermSuspensionsWhiteRate")) {
+				Double shortTermSuspensionsWhiteRate = (Double)solrDocument.get("shortTermSuspensionsWhiteRate_stored_double");
+				if(shortTermSuspensionsWhiteRate != null)
+					oReportCard.setShortTermSuspensionsWhiteRate(shortTermSuspensionsWhiteRate);
 			}
 
 			if(saves.contains("stateKey")) {
@@ -5766,132 +13679,376 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			document.addField("countyKey_stored_long", countyKey);
 		}
 		if(pupilsTotal != null) {
-			document.addField("pupilsTotal_indexed_int", pupilsTotal);
-			document.addField("pupilsTotal_stored_int", pupilsTotal);
+			document.addField("pupilsTotal_indexed_long", pupilsTotal);
+			document.addField("pupilsTotal_stored_long", pupilsTotal);
 		}
 		if(pupilsIndianFemale != null) {
-			document.addField("pupilsIndianFemale_indexed_int", pupilsIndianFemale);
-			document.addField("pupilsIndianFemale_stored_int", pupilsIndianFemale);
+			document.addField("pupilsIndianFemale_indexed_long", pupilsIndianFemale);
+			document.addField("pupilsIndianFemale_stored_long", pupilsIndianFemale);
 		}
 		if(pupilsIndianMale != null) {
-			document.addField("pupilsIndianMale_indexed_int", pupilsIndianMale);
-			document.addField("pupilsIndianMale_stored_int", pupilsIndianMale);
+			document.addField("pupilsIndianMale_indexed_long", pupilsIndianMale);
+			document.addField("pupilsIndianMale_stored_long", pupilsIndianMale);
 		}
 		if(pupilsIndianTotal != null) {
-			document.addField("pupilsIndianTotal_indexed_int", pupilsIndianTotal);
-			document.addField("pupilsIndianTotal_stored_int", pupilsIndianTotal);
+			document.addField("pupilsIndianTotal_indexed_long", pupilsIndianTotal);
+			document.addField("pupilsIndianTotal_stored_long", pupilsIndianTotal);
 		}
 		if(pupilsIndianPercent != null) {
 			document.addField("pupilsIndianPercent_indexed_double", pupilsIndianPercent.doubleValue());
 			document.addField("pupilsIndianPercent_stored_double", pupilsIndianPercent.doubleValue());
 		}
 		if(pupilsAsianFemale != null) {
-			document.addField("pupilsAsianFemale_indexed_int", pupilsAsianFemale);
-			document.addField("pupilsAsianFemale_stored_int", pupilsAsianFemale);
+			document.addField("pupilsAsianFemale_indexed_long", pupilsAsianFemale);
+			document.addField("pupilsAsianFemale_stored_long", pupilsAsianFemale);
 		}
 		if(pupilsAsianMale != null) {
-			document.addField("pupilsAsianMale_indexed_int", pupilsAsianMale);
-			document.addField("pupilsAsianMale_stored_int", pupilsAsianMale);
+			document.addField("pupilsAsianMale_indexed_long", pupilsAsianMale);
+			document.addField("pupilsAsianMale_stored_long", pupilsAsianMale);
 		}
 		if(pupilsAsianTotal != null) {
-			document.addField("pupilsAsianTotal_indexed_int", pupilsAsianTotal);
-			document.addField("pupilsAsianTotal_stored_int", pupilsAsianTotal);
+			document.addField("pupilsAsianTotal_indexed_long", pupilsAsianTotal);
+			document.addField("pupilsAsianTotal_stored_long", pupilsAsianTotal);
 		}
 		if(pupilsAsianPercent != null) {
 			document.addField("pupilsAsianPercent_indexed_double", pupilsAsianPercent.doubleValue());
 			document.addField("pupilsAsianPercent_stored_double", pupilsAsianPercent.doubleValue());
 		}
 		if(pupilsHispanicFemale != null) {
-			document.addField("pupilsHispanicFemale_indexed_int", pupilsHispanicFemale);
-			document.addField("pupilsHispanicFemale_stored_int", pupilsHispanicFemale);
+			document.addField("pupilsHispanicFemale_indexed_long", pupilsHispanicFemale);
+			document.addField("pupilsHispanicFemale_stored_long", pupilsHispanicFemale);
 		}
 		if(pupilsHispanicMale != null) {
-			document.addField("pupilsHispanicMale_indexed_int", pupilsHispanicMale);
-			document.addField("pupilsHispanicMale_stored_int", pupilsHispanicMale);
+			document.addField("pupilsHispanicMale_indexed_long", pupilsHispanicMale);
+			document.addField("pupilsHispanicMale_stored_long", pupilsHispanicMale);
 		}
 		if(pupilsHispanicTotal != null) {
-			document.addField("pupilsHispanicTotal_indexed_int", pupilsHispanicTotal);
-			document.addField("pupilsHispanicTotal_stored_int", pupilsHispanicTotal);
+			document.addField("pupilsHispanicTotal_indexed_long", pupilsHispanicTotal);
+			document.addField("pupilsHispanicTotal_stored_long", pupilsHispanicTotal);
 		}
 		if(pupilsHispanicPercent != null) {
 			document.addField("pupilsHispanicPercent_indexed_double", pupilsHispanicPercent.doubleValue());
 			document.addField("pupilsHispanicPercent_stored_double", pupilsHispanicPercent.doubleValue());
 		}
 		if(pupilsBlackFemale != null) {
-			document.addField("pupilsBlackFemale_indexed_int", pupilsBlackFemale);
-			document.addField("pupilsBlackFemale_stored_int", pupilsBlackFemale);
+			document.addField("pupilsBlackFemale_indexed_long", pupilsBlackFemale);
+			document.addField("pupilsBlackFemale_stored_long", pupilsBlackFemale);
 		}
 		if(pupilsBlackMale != null) {
-			document.addField("pupilsBlackMale_indexed_int", pupilsBlackMale);
-			document.addField("pupilsBlackMale_stored_int", pupilsBlackMale);
+			document.addField("pupilsBlackMale_indexed_long", pupilsBlackMale);
+			document.addField("pupilsBlackMale_stored_long", pupilsBlackMale);
 		}
 		if(pupilsBlackTotal != null) {
-			document.addField("pupilsBlackTotal_indexed_int", pupilsBlackTotal);
-			document.addField("pupilsBlackTotal_stored_int", pupilsBlackTotal);
+			document.addField("pupilsBlackTotal_indexed_long", pupilsBlackTotal);
+			document.addField("pupilsBlackTotal_stored_long", pupilsBlackTotal);
 		}
 		if(pupilsBlackPercent != null) {
 			document.addField("pupilsBlackPercent_indexed_double", pupilsBlackPercent.doubleValue());
 			document.addField("pupilsBlackPercent_stored_double", pupilsBlackPercent.doubleValue());
 		}
 		if(pupilsWhiteFemale != null) {
-			document.addField("pupilsWhiteFemale_indexed_int", pupilsWhiteFemale);
-			document.addField("pupilsWhiteFemale_stored_int", pupilsWhiteFemale);
+			document.addField("pupilsWhiteFemale_indexed_long", pupilsWhiteFemale);
+			document.addField("pupilsWhiteFemale_stored_long", pupilsWhiteFemale);
 		}
 		if(pupilsWhiteMale != null) {
-			document.addField("pupilsWhiteMale_indexed_int", pupilsWhiteMale);
-			document.addField("pupilsWhiteMale_stored_int", pupilsWhiteMale);
+			document.addField("pupilsWhiteMale_indexed_long", pupilsWhiteMale);
+			document.addField("pupilsWhiteMale_stored_long", pupilsWhiteMale);
 		}
 		if(pupilsWhiteTotal != null) {
-			document.addField("pupilsWhiteTotal_indexed_int", pupilsWhiteTotal);
-			document.addField("pupilsWhiteTotal_stored_int", pupilsWhiteTotal);
+			document.addField("pupilsWhiteTotal_indexed_long", pupilsWhiteTotal);
+			document.addField("pupilsWhiteTotal_stored_long", pupilsWhiteTotal);
 		}
 		if(pupilsWhitePercent != null) {
 			document.addField("pupilsWhitePercent_indexed_double", pupilsWhitePercent.doubleValue());
 			document.addField("pupilsWhitePercent_stored_double", pupilsWhitePercent.doubleValue());
 		}
 		if(pupilsPacificIslanderFemale != null) {
-			document.addField("pupilsPacificIslanderFemale_indexed_int", pupilsPacificIslanderFemale);
-			document.addField("pupilsPacificIslanderFemale_stored_int", pupilsPacificIslanderFemale);
+			document.addField("pupilsPacificIslanderFemale_indexed_long", pupilsPacificIslanderFemale);
+			document.addField("pupilsPacificIslanderFemale_stored_long", pupilsPacificIslanderFemale);
 		}
 		if(pupilsPacificIslanderMale != null) {
-			document.addField("pupilsPacificIslanderMale_indexed_int", pupilsPacificIslanderMale);
-			document.addField("pupilsPacificIslanderMale_stored_int", pupilsPacificIslanderMale);
+			document.addField("pupilsPacificIslanderMale_indexed_long", pupilsPacificIslanderMale);
+			document.addField("pupilsPacificIslanderMale_stored_long", pupilsPacificIslanderMale);
 		}
 		if(pupilsPacificIslanderTotal != null) {
-			document.addField("pupilsPacificIslanderTotal_indexed_int", pupilsPacificIslanderTotal);
-			document.addField("pupilsPacificIslanderTotal_stored_int", pupilsPacificIslanderTotal);
+			document.addField("pupilsPacificIslanderTotal_indexed_long", pupilsPacificIslanderTotal);
+			document.addField("pupilsPacificIslanderTotal_stored_long", pupilsPacificIslanderTotal);
 		}
 		if(pupilsPacificIslanderPercent != null) {
 			document.addField("pupilsPacificIslanderPercent_indexed_double", pupilsPacificIslanderPercent.doubleValue());
 			document.addField("pupilsPacificIslanderPercent_stored_double", pupilsPacificIslanderPercent.doubleValue());
 		}
 		if(pupilsMultiRacialFemale != null) {
-			document.addField("pupilsMultiRacialFemale_indexed_int", pupilsMultiRacialFemale);
-			document.addField("pupilsMultiRacialFemale_stored_int", pupilsMultiRacialFemale);
+			document.addField("pupilsMultiRacialFemale_indexed_long", pupilsMultiRacialFemale);
+			document.addField("pupilsMultiRacialFemale_stored_long", pupilsMultiRacialFemale);
 		}
 		if(pupilsMultiRacialMale != null) {
-			document.addField("pupilsMultiRacialMale_indexed_int", pupilsMultiRacialMale);
-			document.addField("pupilsMultiRacialMale_stored_int", pupilsMultiRacialMale);
+			document.addField("pupilsMultiRacialMale_indexed_long", pupilsMultiRacialMale);
+			document.addField("pupilsMultiRacialMale_stored_long", pupilsMultiRacialMale);
 		}
 		if(pupilsMultiRacialTotal != null) {
-			document.addField("pupilsMultiRacialTotal_indexed_int", pupilsMultiRacialTotal);
-			document.addField("pupilsMultiRacialTotal_stored_int", pupilsMultiRacialTotal);
+			document.addField("pupilsMultiRacialTotal_indexed_long", pupilsMultiRacialTotal);
+			document.addField("pupilsMultiRacialTotal_stored_long", pupilsMultiRacialTotal);
 		}
 		if(pupilsMultiRacialPercent != null) {
 			document.addField("pupilsMultiRacialPercent_indexed_double", pupilsMultiRacialPercent.doubleValue());
 			document.addField("pupilsMultiRacialPercent_stored_double", pupilsMultiRacialPercent.doubleValue());
 		}
+		if(teachersMale != null) {
+			document.addField("teachersMale_indexed_long", teachersMale);
+			document.addField("teachersMale_stored_long", teachersMale);
+		}
+		if(teachersFemale != null) {
+			document.addField("teachersFemale_indexed_long", teachersFemale);
+			document.addField("teachersFemale_stored_long", teachersFemale);
+		}
+		if(teachersTotal != null) {
+			document.addField("teachersTotal_indexed_long", teachersTotal);
+			document.addField("teachersTotal_stored_long", teachersTotal);
+		}
+		if(teachersWhiteTotal != null) {
+			document.addField("teachersWhiteTotal_indexed_long", teachersWhiteTotal);
+			document.addField("teachersWhiteTotal_stored_long", teachersWhiteTotal);
+		}
+		if(teachersWhitePercent != null) {
+			document.addField("teachersWhitePercent_indexed_double", teachersWhitePercent.doubleValue());
+			document.addField("teachersWhitePercent_stored_double", teachersWhitePercent.doubleValue());
+		}
+		if(teachersBlackTotal != null) {
+			document.addField("teachersBlackTotal_indexed_long", teachersBlackTotal);
+			document.addField("teachersBlackTotal_stored_long", teachersBlackTotal);
+		}
+		if(teachersBlackPercent != null) {
+			document.addField("teachersBlackPercent_indexed_double", teachersBlackPercent.doubleValue());
+			document.addField("teachersBlackPercent_stored_double", teachersBlackPercent.doubleValue());
+		}
+		if(teachersOtherTotal != null) {
+			document.addField("teachersOtherTotal_indexed_long", teachersOtherTotal);
+			document.addField("teachersOtherTotal_stored_long", teachersOtherTotal);
+		}
+		if(teachersOtherPercent != null) {
+			document.addField("teachersOtherPercent_indexed_double", teachersOtherPercent.doubleValue());
+			document.addField("teachersOtherPercent_stored_double", teachersOtherPercent.doubleValue());
+		}
 		if(delinquentComplaintsTotal != null) {
-			document.addField("delinquentComplaintsTotal_indexed_int", delinquentComplaintsTotal);
-			document.addField("delinquentComplaintsTotal_stored_int", delinquentComplaintsTotal);
+			document.addField("delinquentComplaintsTotal_indexed_long", delinquentComplaintsTotal);
+			document.addField("delinquentComplaintsTotal_stored_long", delinquentComplaintsTotal);
 		}
 		if(delinquentComplaintsAtSchool != null) {
-			document.addField("delinquentComplaintsAtSchool_indexed_int", delinquentComplaintsAtSchool);
-			document.addField("delinquentComplaintsAtSchool_stored_int", delinquentComplaintsAtSchool);
+			document.addField("delinquentComplaintsAtSchool_indexed_long", delinquentComplaintsAtSchool);
+			document.addField("delinquentComplaintsAtSchool_stored_long", delinquentComplaintsAtSchool);
 		}
 		if(delinquentComplaintsAtSchoolPercent != null) {
 			document.addField("delinquentComplaintsAtSchoolPercent_indexed_double", delinquentComplaintsAtSchoolPercent.doubleValue());
 			document.addField("delinquentComplaintsAtSchoolPercent_stored_double", delinquentComplaintsAtSchoolPercent.doubleValue());
+		}
+		if(delinquentComplaintsAsian != null) {
+			document.addField("delinquentComplaintsAsian_indexed_long", delinquentComplaintsAsian);
+			document.addField("delinquentComplaintsAsian_stored_long", delinquentComplaintsAsian);
+		}
+		if(delinquentComplaintsAsianPercent != null) {
+			document.addField("delinquentComplaintsAsianPercent_indexed_double", delinquentComplaintsAsianPercent.doubleValue());
+			document.addField("delinquentComplaintsAsianPercent_stored_double", delinquentComplaintsAsianPercent.doubleValue());
+		}
+		if(delinquentComplaintsBlack != null) {
+			document.addField("delinquentComplaintsBlack_indexed_long", delinquentComplaintsBlack);
+			document.addField("delinquentComplaintsBlack_stored_long", delinquentComplaintsBlack);
+		}
+		if(delinquentComplaintsBlackPercent != null) {
+			document.addField("delinquentComplaintsBlackPercent_indexed_double", delinquentComplaintsBlackPercent.doubleValue());
+			document.addField("delinquentComplaintsBlackPercent_stored_double", delinquentComplaintsBlackPercent.doubleValue());
+		}
+		if(delinquentComplaintsHispanic != null) {
+			document.addField("delinquentComplaintsHispanic_indexed_long", delinquentComplaintsHispanic);
+			document.addField("delinquentComplaintsHispanic_stored_long", delinquentComplaintsHispanic);
+		}
+		if(delinquentComplaintsHispanicPercent != null) {
+			document.addField("delinquentComplaintsHispanicPercent_indexed_double", delinquentComplaintsHispanicPercent.doubleValue());
+			document.addField("delinquentComplaintsHispanicPercent_stored_double", delinquentComplaintsHispanicPercent.doubleValue());
+		}
+		if(delinquentComplaintsMultiRacial != null) {
+			document.addField("delinquentComplaintsMultiRacial_indexed_long", delinquentComplaintsMultiRacial);
+			document.addField("delinquentComplaintsMultiRacial_stored_long", delinquentComplaintsMultiRacial);
+		}
+		if(delinquentComplaintsMultiRacialPercent != null) {
+			document.addField("delinquentComplaintsMultiRacialPercent_indexed_double", delinquentComplaintsMultiRacialPercent.doubleValue());
+			document.addField("delinquentComplaintsMultiRacialPercent_stored_double", delinquentComplaintsMultiRacialPercent.doubleValue());
+		}
+		if(delinquentComplaintsIndian != null) {
+			document.addField("delinquentComplaintsIndian_indexed_long", delinquentComplaintsIndian);
+			document.addField("delinquentComplaintsIndian_stored_long", delinquentComplaintsIndian);
+		}
+		if(delinquentComplaintsIndianPercent != null) {
+			document.addField("delinquentComplaintsIndianPercent_indexed_double", delinquentComplaintsIndianPercent.doubleValue());
+			document.addField("delinquentComplaintsIndianPercent_stored_double", delinquentComplaintsIndianPercent.doubleValue());
+		}
+		if(delinquentComplaintsWhite != null) {
+			document.addField("delinquentComplaintsWhite_indexed_long", delinquentComplaintsWhite);
+			document.addField("delinquentComplaintsWhite_stored_long", delinquentComplaintsWhite);
+		}
+		if(delinquentComplaintsWhitePercent != null) {
+			document.addField("delinquentComplaintsWhitePercent_indexed_double", delinquentComplaintsWhitePercent.doubleValue());
+			document.addField("delinquentComplaintsWhitePercent_stored_double", delinquentComplaintsWhitePercent.doubleValue());
+		}
+		if(delinquentComplaintsPacificIslander != null) {
+			document.addField("delinquentComplaintsPacificIslander_indexed_long", delinquentComplaintsPacificIslander);
+			document.addField("delinquentComplaintsPacificIslander_stored_long", delinquentComplaintsPacificIslander);
+		}
+		if(delinquentComplaintsPacificIslanderPercent != null) {
+			document.addField("delinquentComplaintsPacificIslanderPercent_indexed_double", delinquentComplaintsPacificIslanderPercent.doubleValue());
+			document.addField("delinquentComplaintsPacificIslanderPercent_stored_double", delinquentComplaintsPacificIslanderPercent.doubleValue());
+		}
+		if(shortTermSuspensionsTotal != null) {
+			document.addField("shortTermSuspensionsTotal_indexed_long", shortTermSuspensionsTotal);
+			document.addField("shortTermSuspensionsTotal_stored_long", shortTermSuspensionsTotal);
+		}
+		if(longTermSuspensionsTotal != null) {
+			document.addField("longTermSuspensionsTotal_indexed_long", longTermSuspensionsTotal);
+			document.addField("longTermSuspensionsTotal_stored_long", longTermSuspensionsTotal);
+		}
+		if(expulsionsTotal != null) {
+			document.addField("expulsionsTotal_indexed_long", expulsionsTotal);
+			document.addField("expulsionsTotal_stored_long", expulsionsTotal);
+		}
+		if(shortTermSuspensionsAsianFemale != null) {
+			document.addField("shortTermSuspensionsAsianFemale_indexed_long", shortTermSuspensionsAsianFemale);
+			document.addField("shortTermSuspensionsAsianFemale_stored_long", shortTermSuspensionsAsianFemale);
+		}
+		if(shortTermSuspensionsAsianMale != null) {
+			document.addField("shortTermSuspensionsAsianMale_indexed_long", shortTermSuspensionsAsianMale);
+			document.addField("shortTermSuspensionsAsianMale_stored_long", shortTermSuspensionsAsianMale);
+		}
+		if(shortTermSuspensionsAsianTotal != null) {
+			document.addField("shortTermSuspensionsAsianTotal_indexed_long", shortTermSuspensionsAsianTotal);
+			document.addField("shortTermSuspensionsAsianTotal_stored_long", shortTermSuspensionsAsianTotal);
+		}
+		if(shortTermSuspensionsAsianPercent != null) {
+			document.addField("shortTermSuspensionsAsianPercent_indexed_double", shortTermSuspensionsAsianPercent.doubleValue());
+			document.addField("shortTermSuspensionsAsianPercent_stored_double", shortTermSuspensionsAsianPercent.doubleValue());
+		}
+		if(shortTermSuspensionsAsianRate != null) {
+			document.addField("shortTermSuspensionsAsianRate_indexed_double", shortTermSuspensionsAsianRate.doubleValue());
+			document.addField("shortTermSuspensionsAsianRate_stored_double", shortTermSuspensionsAsianRate.doubleValue());
+		}
+		if(shortTermSuspensionsBlackFemale != null) {
+			document.addField("shortTermSuspensionsBlackFemale_indexed_long", shortTermSuspensionsBlackFemale);
+			document.addField("shortTermSuspensionsBlackFemale_stored_long", shortTermSuspensionsBlackFemale);
+		}
+		if(shortTermSuspensionsBlackMale != null) {
+			document.addField("shortTermSuspensionsBlackMale_indexed_long", shortTermSuspensionsBlackMale);
+			document.addField("shortTermSuspensionsBlackMale_stored_long", shortTermSuspensionsBlackMale);
+		}
+		if(shortTermSuspensionsBlackTotal != null) {
+			document.addField("shortTermSuspensionsBlackTotal_indexed_long", shortTermSuspensionsBlackTotal);
+			document.addField("shortTermSuspensionsBlackTotal_stored_long", shortTermSuspensionsBlackTotal);
+		}
+		if(shortTermSuspensionsBlackPercent != null) {
+			document.addField("shortTermSuspensionsBlackPercent_indexed_double", shortTermSuspensionsBlackPercent.doubleValue());
+			document.addField("shortTermSuspensionsBlackPercent_stored_double", shortTermSuspensionsBlackPercent.doubleValue());
+		}
+		if(shortTermSuspensionsBlackRate != null) {
+			document.addField("shortTermSuspensionsBlackRate_indexed_double", shortTermSuspensionsBlackRate.doubleValue());
+			document.addField("shortTermSuspensionsBlackRate_stored_double", shortTermSuspensionsBlackRate.doubleValue());
+		}
+		if(shortTermSuspensionsHispanicFemale != null) {
+			document.addField("shortTermSuspensionsHispanicFemale_indexed_long", shortTermSuspensionsHispanicFemale);
+			document.addField("shortTermSuspensionsHispanicFemale_stored_long", shortTermSuspensionsHispanicFemale);
+		}
+		if(shortTermSuspensionsHispanicMale != null) {
+			document.addField("shortTermSuspensionsHispanicMale_indexed_long", shortTermSuspensionsHispanicMale);
+			document.addField("shortTermSuspensionsHispanicMale_stored_long", shortTermSuspensionsHispanicMale);
+		}
+		if(shortTermSuspensionsHispanicTotal != null) {
+			document.addField("shortTermSuspensionsHispanicTotal_indexed_long", shortTermSuspensionsHispanicTotal);
+			document.addField("shortTermSuspensionsHispanicTotal_stored_long", shortTermSuspensionsHispanicTotal);
+		}
+		if(shortTermSuspensionsHispanicPercent != null) {
+			document.addField("shortTermSuspensionsHispanicPercent_indexed_double", shortTermSuspensionsHispanicPercent.doubleValue());
+			document.addField("shortTermSuspensionsHispanicPercent_stored_double", shortTermSuspensionsHispanicPercent.doubleValue());
+		}
+		if(shortTermSuspensionsHispanicRate != null) {
+			document.addField("shortTermSuspensionsHispanicRate_indexed_double", shortTermSuspensionsHispanicRate.doubleValue());
+			document.addField("shortTermSuspensionsHispanicRate_stored_double", shortTermSuspensionsHispanicRate.doubleValue());
+		}
+		if(shortTermSuspensionsIndianFemale != null) {
+			document.addField("shortTermSuspensionsIndianFemale_indexed_long", shortTermSuspensionsIndianFemale);
+			document.addField("shortTermSuspensionsIndianFemale_stored_long", shortTermSuspensionsIndianFemale);
+		}
+		if(shortTermSuspensionsIndianMale != null) {
+			document.addField("shortTermSuspensionsIndianMale_indexed_long", shortTermSuspensionsIndianMale);
+			document.addField("shortTermSuspensionsIndianMale_stored_long", shortTermSuspensionsIndianMale);
+		}
+		if(shortTermSuspensionsIndianTotal != null) {
+			document.addField("shortTermSuspensionsIndianTotal_indexed_long", shortTermSuspensionsIndianTotal);
+			document.addField("shortTermSuspensionsIndianTotal_stored_long", shortTermSuspensionsIndianTotal);
+		}
+		if(shortTermSuspensionsIndianPercent != null) {
+			document.addField("shortTermSuspensionsIndianPercent_indexed_double", shortTermSuspensionsIndianPercent.doubleValue());
+			document.addField("shortTermSuspensionsIndianPercent_stored_double", shortTermSuspensionsIndianPercent.doubleValue());
+		}
+		if(shortTermSuspensionsIndianRate != null) {
+			document.addField("shortTermSuspensionsIndianRate_indexed_double", shortTermSuspensionsIndianRate.doubleValue());
+			document.addField("shortTermSuspensionsIndianRate_stored_double", shortTermSuspensionsIndianRate.doubleValue());
+		}
+		if(shortTermSuspensionsMultiRacialFemale != null) {
+			document.addField("shortTermSuspensionsMultiRacialFemale_indexed_long", shortTermSuspensionsMultiRacialFemale);
+			document.addField("shortTermSuspensionsMultiRacialFemale_stored_long", shortTermSuspensionsMultiRacialFemale);
+		}
+		if(shortTermSuspensionsMultiRacialMale != null) {
+			document.addField("shortTermSuspensionsMultiRacialMale_indexed_long", shortTermSuspensionsMultiRacialMale);
+			document.addField("shortTermSuspensionsMultiRacialMale_stored_long", shortTermSuspensionsMultiRacialMale);
+		}
+		if(shortTermSuspensionsMultiRacialTotal != null) {
+			document.addField("shortTermSuspensionsMultiRacialTotal_indexed_long", shortTermSuspensionsMultiRacialTotal);
+			document.addField("shortTermSuspensionsMultiRacialTotal_stored_long", shortTermSuspensionsMultiRacialTotal);
+		}
+		if(shortTermSuspensionsMultiRacialPercent != null) {
+			document.addField("shortTermSuspensionsMultiRacialPercent_indexed_double", shortTermSuspensionsMultiRacialPercent.doubleValue());
+			document.addField("shortTermSuspensionsMultiRacialPercent_stored_double", shortTermSuspensionsMultiRacialPercent.doubleValue());
+		}
+		if(shortTermSuspensionsMultiRacialRate != null) {
+			document.addField("shortTermSuspensionsMultiRacialRate_indexed_double", shortTermSuspensionsMultiRacialRate.doubleValue());
+			document.addField("shortTermSuspensionsMultiRacialRate_stored_double", shortTermSuspensionsMultiRacialRate.doubleValue());
+		}
+		if(shortTermSuspensionsPacificIslanderFemale != null) {
+			document.addField("shortTermSuspensionsPacificIslanderFemale_indexed_long", shortTermSuspensionsPacificIslanderFemale);
+			document.addField("shortTermSuspensionsPacificIslanderFemale_stored_long", shortTermSuspensionsPacificIslanderFemale);
+		}
+		if(shortTermSuspensionsPacificIslanderMale != null) {
+			document.addField("shortTermSuspensionsPacificIslanderMale_indexed_long", shortTermSuspensionsPacificIslanderMale);
+			document.addField("shortTermSuspensionsPacificIslanderMale_stored_long", shortTermSuspensionsPacificIslanderMale);
+		}
+		if(shortTermSuspensionsPacificIslanderTotal != null) {
+			document.addField("shortTermSuspensionsPacificIslanderTotal_indexed_long", shortTermSuspensionsPacificIslanderTotal);
+			document.addField("shortTermSuspensionsPacificIslanderTotal_stored_long", shortTermSuspensionsPacificIslanderTotal);
+		}
+		if(shortTermSuspensionsPacificIslanderPercent != null) {
+			document.addField("shortTermSuspensionsPacificIslanderPercent_indexed_double", shortTermSuspensionsPacificIslanderPercent.doubleValue());
+			document.addField("shortTermSuspensionsPacificIslanderPercent_stored_double", shortTermSuspensionsPacificIslanderPercent.doubleValue());
+		}
+		if(shortTermSuspensionsPacificIslanderRate != null) {
+			document.addField("shortTermSuspensionsPacificIslanderRate_indexed_double", shortTermSuspensionsPacificIslanderRate.doubleValue());
+			document.addField("shortTermSuspensionsPacificIslanderRate_stored_double", shortTermSuspensionsPacificIslanderRate.doubleValue());
+		}
+		if(shortTermSuspensionsWhiteFemale != null) {
+			document.addField("shortTermSuspensionsWhiteFemale_indexed_long", shortTermSuspensionsWhiteFemale);
+			document.addField("shortTermSuspensionsWhiteFemale_stored_long", shortTermSuspensionsWhiteFemale);
+		}
+		if(shortTermSuspensionsWhiteMale != null) {
+			document.addField("shortTermSuspensionsWhiteMale_indexed_long", shortTermSuspensionsWhiteMale);
+			document.addField("shortTermSuspensionsWhiteMale_stored_long", shortTermSuspensionsWhiteMale);
+		}
+		if(shortTermSuspensionsWhiteTotal != null) {
+			document.addField("shortTermSuspensionsWhiteTotal_indexed_long", shortTermSuspensionsWhiteTotal);
+			document.addField("shortTermSuspensionsWhiteTotal_stored_long", shortTermSuspensionsWhiteTotal);
+		}
+		if(shortTermSuspensionsWhitePercent != null) {
+			document.addField("shortTermSuspensionsWhitePercent_indexed_double", shortTermSuspensionsWhitePercent.doubleValue());
+			document.addField("shortTermSuspensionsWhitePercent_stored_double", shortTermSuspensionsWhitePercent.doubleValue());
+		}
+		if(shortTermSuspensionsWhiteRate != null) {
+			document.addField("shortTermSuspensionsWhiteRate_indexed_double", shortTermSuspensionsWhiteRate.doubleValue());
+			document.addField("shortTermSuspensionsWhiteRate_stored_double", shortTermSuspensionsWhiteRate.doubleValue());
 		}
 		if(stateKey != null) {
 			document.addField("stateKey_indexed_long", stateKey);
@@ -5953,69 +14110,191 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			case "countyKey":
 				return "countyKey_indexed_long";
 			case "pupilsTotal":
-				return "pupilsTotal_indexed_int";
+				return "pupilsTotal_indexed_long";
 			case "pupilsIndianFemale":
-				return "pupilsIndianFemale_indexed_int";
+				return "pupilsIndianFemale_indexed_long";
 			case "pupilsIndianMale":
-				return "pupilsIndianMale_indexed_int";
+				return "pupilsIndianMale_indexed_long";
 			case "pupilsIndianTotal":
-				return "pupilsIndianTotal_indexed_int";
+				return "pupilsIndianTotal_indexed_long";
 			case "pupilsIndianPercent":
 				return "pupilsIndianPercent_indexed_double";
 			case "pupilsAsianFemale":
-				return "pupilsAsianFemale_indexed_int";
+				return "pupilsAsianFemale_indexed_long";
 			case "pupilsAsianMale":
-				return "pupilsAsianMale_indexed_int";
+				return "pupilsAsianMale_indexed_long";
 			case "pupilsAsianTotal":
-				return "pupilsAsianTotal_indexed_int";
+				return "pupilsAsianTotal_indexed_long";
 			case "pupilsAsianPercent":
 				return "pupilsAsianPercent_indexed_double";
 			case "pupilsHispanicFemale":
-				return "pupilsHispanicFemale_indexed_int";
+				return "pupilsHispanicFemale_indexed_long";
 			case "pupilsHispanicMale":
-				return "pupilsHispanicMale_indexed_int";
+				return "pupilsHispanicMale_indexed_long";
 			case "pupilsHispanicTotal":
-				return "pupilsHispanicTotal_indexed_int";
+				return "pupilsHispanicTotal_indexed_long";
 			case "pupilsHispanicPercent":
 				return "pupilsHispanicPercent_indexed_double";
 			case "pupilsBlackFemale":
-				return "pupilsBlackFemale_indexed_int";
+				return "pupilsBlackFemale_indexed_long";
 			case "pupilsBlackMale":
-				return "pupilsBlackMale_indexed_int";
+				return "pupilsBlackMale_indexed_long";
 			case "pupilsBlackTotal":
-				return "pupilsBlackTotal_indexed_int";
+				return "pupilsBlackTotal_indexed_long";
 			case "pupilsBlackPercent":
 				return "pupilsBlackPercent_indexed_double";
 			case "pupilsWhiteFemale":
-				return "pupilsWhiteFemale_indexed_int";
+				return "pupilsWhiteFemale_indexed_long";
 			case "pupilsWhiteMale":
-				return "pupilsWhiteMale_indexed_int";
+				return "pupilsWhiteMale_indexed_long";
 			case "pupilsWhiteTotal":
-				return "pupilsWhiteTotal_indexed_int";
+				return "pupilsWhiteTotal_indexed_long";
 			case "pupilsWhitePercent":
 				return "pupilsWhitePercent_indexed_double";
 			case "pupilsPacificIslanderFemale":
-				return "pupilsPacificIslanderFemale_indexed_int";
+				return "pupilsPacificIslanderFemale_indexed_long";
 			case "pupilsPacificIslanderMale":
-				return "pupilsPacificIslanderMale_indexed_int";
+				return "pupilsPacificIslanderMale_indexed_long";
 			case "pupilsPacificIslanderTotal":
-				return "pupilsPacificIslanderTotal_indexed_int";
+				return "pupilsPacificIslanderTotal_indexed_long";
 			case "pupilsPacificIslanderPercent":
 				return "pupilsPacificIslanderPercent_indexed_double";
 			case "pupilsMultiRacialFemale":
-				return "pupilsMultiRacialFemale_indexed_int";
+				return "pupilsMultiRacialFemale_indexed_long";
 			case "pupilsMultiRacialMale":
-				return "pupilsMultiRacialMale_indexed_int";
+				return "pupilsMultiRacialMale_indexed_long";
 			case "pupilsMultiRacialTotal":
-				return "pupilsMultiRacialTotal_indexed_int";
+				return "pupilsMultiRacialTotal_indexed_long";
 			case "pupilsMultiRacialPercent":
 				return "pupilsMultiRacialPercent_indexed_double";
+			case "teachersMale":
+				return "teachersMale_indexed_long";
+			case "teachersFemale":
+				return "teachersFemale_indexed_long";
+			case "teachersTotal":
+				return "teachersTotal_indexed_long";
+			case "teachersWhiteTotal":
+				return "teachersWhiteTotal_indexed_long";
+			case "teachersWhitePercent":
+				return "teachersWhitePercent_indexed_double";
+			case "teachersBlackTotal":
+				return "teachersBlackTotal_indexed_long";
+			case "teachersBlackPercent":
+				return "teachersBlackPercent_indexed_double";
+			case "teachersOtherTotal":
+				return "teachersOtherTotal_indexed_long";
+			case "teachersOtherPercent":
+				return "teachersOtherPercent_indexed_double";
 			case "delinquentComplaintsTotal":
-				return "delinquentComplaintsTotal_indexed_int";
+				return "delinquentComplaintsTotal_indexed_long";
 			case "delinquentComplaintsAtSchool":
-				return "delinquentComplaintsAtSchool_indexed_int";
+				return "delinquentComplaintsAtSchool_indexed_long";
 			case "delinquentComplaintsAtSchoolPercent":
 				return "delinquentComplaintsAtSchoolPercent_indexed_double";
+			case "delinquentComplaintsAsian":
+				return "delinquentComplaintsAsian_indexed_long";
+			case "delinquentComplaintsAsianPercent":
+				return "delinquentComplaintsAsianPercent_indexed_double";
+			case "delinquentComplaintsBlack":
+				return "delinquentComplaintsBlack_indexed_long";
+			case "delinquentComplaintsBlackPercent":
+				return "delinquentComplaintsBlackPercent_indexed_double";
+			case "delinquentComplaintsHispanic":
+				return "delinquentComplaintsHispanic_indexed_long";
+			case "delinquentComplaintsHispanicPercent":
+				return "delinquentComplaintsHispanicPercent_indexed_double";
+			case "delinquentComplaintsMultiRacial":
+				return "delinquentComplaintsMultiRacial_indexed_long";
+			case "delinquentComplaintsMultiRacialPercent":
+				return "delinquentComplaintsMultiRacialPercent_indexed_double";
+			case "delinquentComplaintsIndian":
+				return "delinquentComplaintsIndian_indexed_long";
+			case "delinquentComplaintsIndianPercent":
+				return "delinquentComplaintsIndianPercent_indexed_double";
+			case "delinquentComplaintsWhite":
+				return "delinquentComplaintsWhite_indexed_long";
+			case "delinquentComplaintsWhitePercent":
+				return "delinquentComplaintsWhitePercent_indexed_double";
+			case "delinquentComplaintsPacificIslander":
+				return "delinquentComplaintsPacificIslander_indexed_long";
+			case "delinquentComplaintsPacificIslanderPercent":
+				return "delinquentComplaintsPacificIslanderPercent_indexed_double";
+			case "shortTermSuspensionsTotal":
+				return "shortTermSuspensionsTotal_indexed_long";
+			case "longTermSuspensionsTotal":
+				return "longTermSuspensionsTotal_indexed_long";
+			case "expulsionsTotal":
+				return "expulsionsTotal_indexed_long";
+			case "shortTermSuspensionsAsianFemale":
+				return "shortTermSuspensionsAsianFemale_indexed_long";
+			case "shortTermSuspensionsAsianMale":
+				return "shortTermSuspensionsAsianMale_indexed_long";
+			case "shortTermSuspensionsAsianTotal":
+				return "shortTermSuspensionsAsianTotal_indexed_long";
+			case "shortTermSuspensionsAsianPercent":
+				return "shortTermSuspensionsAsianPercent_indexed_double";
+			case "shortTermSuspensionsAsianRate":
+				return "shortTermSuspensionsAsianRate_indexed_double";
+			case "shortTermSuspensionsBlackFemale":
+				return "shortTermSuspensionsBlackFemale_indexed_long";
+			case "shortTermSuspensionsBlackMale":
+				return "shortTermSuspensionsBlackMale_indexed_long";
+			case "shortTermSuspensionsBlackTotal":
+				return "shortTermSuspensionsBlackTotal_indexed_long";
+			case "shortTermSuspensionsBlackPercent":
+				return "shortTermSuspensionsBlackPercent_indexed_double";
+			case "shortTermSuspensionsBlackRate":
+				return "shortTermSuspensionsBlackRate_indexed_double";
+			case "shortTermSuspensionsHispanicFemale":
+				return "shortTermSuspensionsHispanicFemale_indexed_long";
+			case "shortTermSuspensionsHispanicMale":
+				return "shortTermSuspensionsHispanicMale_indexed_long";
+			case "shortTermSuspensionsHispanicTotal":
+				return "shortTermSuspensionsHispanicTotal_indexed_long";
+			case "shortTermSuspensionsHispanicPercent":
+				return "shortTermSuspensionsHispanicPercent_indexed_double";
+			case "shortTermSuspensionsHispanicRate":
+				return "shortTermSuspensionsHispanicRate_indexed_double";
+			case "shortTermSuspensionsIndianFemale":
+				return "shortTermSuspensionsIndianFemale_indexed_long";
+			case "shortTermSuspensionsIndianMale":
+				return "shortTermSuspensionsIndianMale_indexed_long";
+			case "shortTermSuspensionsIndianTotal":
+				return "shortTermSuspensionsIndianTotal_indexed_long";
+			case "shortTermSuspensionsIndianPercent":
+				return "shortTermSuspensionsIndianPercent_indexed_double";
+			case "shortTermSuspensionsIndianRate":
+				return "shortTermSuspensionsIndianRate_indexed_double";
+			case "shortTermSuspensionsMultiRacialFemale":
+				return "shortTermSuspensionsMultiRacialFemale_indexed_long";
+			case "shortTermSuspensionsMultiRacialMale":
+				return "shortTermSuspensionsMultiRacialMale_indexed_long";
+			case "shortTermSuspensionsMultiRacialTotal":
+				return "shortTermSuspensionsMultiRacialTotal_indexed_long";
+			case "shortTermSuspensionsMultiRacialPercent":
+				return "shortTermSuspensionsMultiRacialPercent_indexed_double";
+			case "shortTermSuspensionsMultiRacialRate":
+				return "shortTermSuspensionsMultiRacialRate_indexed_double";
+			case "shortTermSuspensionsPacificIslanderFemale":
+				return "shortTermSuspensionsPacificIslanderFemale_indexed_long";
+			case "shortTermSuspensionsPacificIslanderMale":
+				return "shortTermSuspensionsPacificIslanderMale_indexed_long";
+			case "shortTermSuspensionsPacificIslanderTotal":
+				return "shortTermSuspensionsPacificIslanderTotal_indexed_long";
+			case "shortTermSuspensionsPacificIslanderPercent":
+				return "shortTermSuspensionsPacificIslanderPercent_indexed_double";
+			case "shortTermSuspensionsPacificIslanderRate":
+				return "shortTermSuspensionsPacificIslanderRate_indexed_double";
+			case "shortTermSuspensionsWhiteFemale":
+				return "shortTermSuspensionsWhiteFemale_indexed_long";
+			case "shortTermSuspensionsWhiteMale":
+				return "shortTermSuspensionsWhiteMale_indexed_long";
+			case "shortTermSuspensionsWhiteTotal":
+				return "shortTermSuspensionsWhiteTotal_indexed_long";
+			case "shortTermSuspensionsWhitePercent":
+				return "shortTermSuspensionsWhitePercent_indexed_double";
+			case "shortTermSuspensionsWhiteRate":
+				return "shortTermSuspensionsWhiteRate_indexed_double";
 			case "stateKey":
 				return "stateKey_indexed_long";
 			case "stateId":
@@ -6075,19 +14354,19 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(countyKey != null)
 			oReportCard.setCountyKey(countyKey);
 
-		Integer pupilsTotal = (Integer)solrDocument.get("pupilsTotal_stored_int");
+		Long pupilsTotal = (Long)solrDocument.get("pupilsTotal_stored_long");
 		if(pupilsTotal != null)
 			oReportCard.setPupilsTotal(pupilsTotal);
 
-		Integer pupilsIndianFemale = (Integer)solrDocument.get("pupilsIndianFemale_stored_int");
+		Long pupilsIndianFemale = (Long)solrDocument.get("pupilsIndianFemale_stored_long");
 		if(pupilsIndianFemale != null)
 			oReportCard.setPupilsIndianFemale(pupilsIndianFemale);
 
-		Integer pupilsIndianMale = (Integer)solrDocument.get("pupilsIndianMale_stored_int");
+		Long pupilsIndianMale = (Long)solrDocument.get("pupilsIndianMale_stored_long");
 		if(pupilsIndianMale != null)
 			oReportCard.setPupilsIndianMale(pupilsIndianMale);
 
-		Integer pupilsIndianTotal = (Integer)solrDocument.get("pupilsIndianTotal_stored_int");
+		Long pupilsIndianTotal = (Long)solrDocument.get("pupilsIndianTotal_stored_long");
 		if(pupilsIndianTotal != null)
 			oReportCard.setPupilsIndianTotal(pupilsIndianTotal);
 
@@ -6095,15 +14374,15 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(pupilsIndianPercent != null)
 			oReportCard.setPupilsIndianPercent(pupilsIndianPercent);
 
-		Integer pupilsAsianFemale = (Integer)solrDocument.get("pupilsAsianFemale_stored_int");
+		Long pupilsAsianFemale = (Long)solrDocument.get("pupilsAsianFemale_stored_long");
 		if(pupilsAsianFemale != null)
 			oReportCard.setPupilsAsianFemale(pupilsAsianFemale);
 
-		Integer pupilsAsianMale = (Integer)solrDocument.get("pupilsAsianMale_stored_int");
+		Long pupilsAsianMale = (Long)solrDocument.get("pupilsAsianMale_stored_long");
 		if(pupilsAsianMale != null)
 			oReportCard.setPupilsAsianMale(pupilsAsianMale);
 
-		Integer pupilsAsianTotal = (Integer)solrDocument.get("pupilsAsianTotal_stored_int");
+		Long pupilsAsianTotal = (Long)solrDocument.get("pupilsAsianTotal_stored_long");
 		if(pupilsAsianTotal != null)
 			oReportCard.setPupilsAsianTotal(pupilsAsianTotal);
 
@@ -6111,15 +14390,15 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(pupilsAsianPercent != null)
 			oReportCard.setPupilsAsianPercent(pupilsAsianPercent);
 
-		Integer pupilsHispanicFemale = (Integer)solrDocument.get("pupilsHispanicFemale_stored_int");
+		Long pupilsHispanicFemale = (Long)solrDocument.get("pupilsHispanicFemale_stored_long");
 		if(pupilsHispanicFemale != null)
 			oReportCard.setPupilsHispanicFemale(pupilsHispanicFemale);
 
-		Integer pupilsHispanicMale = (Integer)solrDocument.get("pupilsHispanicMale_stored_int");
+		Long pupilsHispanicMale = (Long)solrDocument.get("pupilsHispanicMale_stored_long");
 		if(pupilsHispanicMale != null)
 			oReportCard.setPupilsHispanicMale(pupilsHispanicMale);
 
-		Integer pupilsHispanicTotal = (Integer)solrDocument.get("pupilsHispanicTotal_stored_int");
+		Long pupilsHispanicTotal = (Long)solrDocument.get("pupilsHispanicTotal_stored_long");
 		if(pupilsHispanicTotal != null)
 			oReportCard.setPupilsHispanicTotal(pupilsHispanicTotal);
 
@@ -6127,15 +14406,15 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(pupilsHispanicPercent != null)
 			oReportCard.setPupilsHispanicPercent(pupilsHispanicPercent);
 
-		Integer pupilsBlackFemale = (Integer)solrDocument.get("pupilsBlackFemale_stored_int");
+		Long pupilsBlackFemale = (Long)solrDocument.get("pupilsBlackFemale_stored_long");
 		if(pupilsBlackFemale != null)
 			oReportCard.setPupilsBlackFemale(pupilsBlackFemale);
 
-		Integer pupilsBlackMale = (Integer)solrDocument.get("pupilsBlackMale_stored_int");
+		Long pupilsBlackMale = (Long)solrDocument.get("pupilsBlackMale_stored_long");
 		if(pupilsBlackMale != null)
 			oReportCard.setPupilsBlackMale(pupilsBlackMale);
 
-		Integer pupilsBlackTotal = (Integer)solrDocument.get("pupilsBlackTotal_stored_int");
+		Long pupilsBlackTotal = (Long)solrDocument.get("pupilsBlackTotal_stored_long");
 		if(pupilsBlackTotal != null)
 			oReportCard.setPupilsBlackTotal(pupilsBlackTotal);
 
@@ -6143,15 +14422,15 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(pupilsBlackPercent != null)
 			oReportCard.setPupilsBlackPercent(pupilsBlackPercent);
 
-		Integer pupilsWhiteFemale = (Integer)solrDocument.get("pupilsWhiteFemale_stored_int");
+		Long pupilsWhiteFemale = (Long)solrDocument.get("pupilsWhiteFemale_stored_long");
 		if(pupilsWhiteFemale != null)
 			oReportCard.setPupilsWhiteFemale(pupilsWhiteFemale);
 
-		Integer pupilsWhiteMale = (Integer)solrDocument.get("pupilsWhiteMale_stored_int");
+		Long pupilsWhiteMale = (Long)solrDocument.get("pupilsWhiteMale_stored_long");
 		if(pupilsWhiteMale != null)
 			oReportCard.setPupilsWhiteMale(pupilsWhiteMale);
 
-		Integer pupilsWhiteTotal = (Integer)solrDocument.get("pupilsWhiteTotal_stored_int");
+		Long pupilsWhiteTotal = (Long)solrDocument.get("pupilsWhiteTotal_stored_long");
 		if(pupilsWhiteTotal != null)
 			oReportCard.setPupilsWhiteTotal(pupilsWhiteTotal);
 
@@ -6159,15 +14438,15 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(pupilsWhitePercent != null)
 			oReportCard.setPupilsWhitePercent(pupilsWhitePercent);
 
-		Integer pupilsPacificIslanderFemale = (Integer)solrDocument.get("pupilsPacificIslanderFemale_stored_int");
+		Long pupilsPacificIslanderFemale = (Long)solrDocument.get("pupilsPacificIslanderFemale_stored_long");
 		if(pupilsPacificIslanderFemale != null)
 			oReportCard.setPupilsPacificIslanderFemale(pupilsPacificIslanderFemale);
 
-		Integer pupilsPacificIslanderMale = (Integer)solrDocument.get("pupilsPacificIslanderMale_stored_int");
+		Long pupilsPacificIslanderMale = (Long)solrDocument.get("pupilsPacificIslanderMale_stored_long");
 		if(pupilsPacificIslanderMale != null)
 			oReportCard.setPupilsPacificIslanderMale(pupilsPacificIslanderMale);
 
-		Integer pupilsPacificIslanderTotal = (Integer)solrDocument.get("pupilsPacificIslanderTotal_stored_int");
+		Long pupilsPacificIslanderTotal = (Long)solrDocument.get("pupilsPacificIslanderTotal_stored_long");
 		if(pupilsPacificIslanderTotal != null)
 			oReportCard.setPupilsPacificIslanderTotal(pupilsPacificIslanderTotal);
 
@@ -6175,15 +14454,15 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(pupilsPacificIslanderPercent != null)
 			oReportCard.setPupilsPacificIslanderPercent(pupilsPacificIslanderPercent);
 
-		Integer pupilsMultiRacialFemale = (Integer)solrDocument.get("pupilsMultiRacialFemale_stored_int");
+		Long pupilsMultiRacialFemale = (Long)solrDocument.get("pupilsMultiRacialFemale_stored_long");
 		if(pupilsMultiRacialFemale != null)
 			oReportCard.setPupilsMultiRacialFemale(pupilsMultiRacialFemale);
 
-		Integer pupilsMultiRacialMale = (Integer)solrDocument.get("pupilsMultiRacialMale_stored_int");
+		Long pupilsMultiRacialMale = (Long)solrDocument.get("pupilsMultiRacialMale_stored_long");
 		if(pupilsMultiRacialMale != null)
 			oReportCard.setPupilsMultiRacialMale(pupilsMultiRacialMale);
 
-		Integer pupilsMultiRacialTotal = (Integer)solrDocument.get("pupilsMultiRacialTotal_stored_int");
+		Long pupilsMultiRacialTotal = (Long)solrDocument.get("pupilsMultiRacialTotal_stored_long");
 		if(pupilsMultiRacialTotal != null)
 			oReportCard.setPupilsMultiRacialTotal(pupilsMultiRacialTotal);
 
@@ -6191,17 +14470,261 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(pupilsMultiRacialPercent != null)
 			oReportCard.setPupilsMultiRacialPercent(pupilsMultiRacialPercent);
 
-		Integer delinquentComplaintsTotal = (Integer)solrDocument.get("delinquentComplaintsTotal_stored_int");
+		Long teachersMale = (Long)solrDocument.get("teachersMale_stored_long");
+		if(teachersMale != null)
+			oReportCard.setTeachersMale(teachersMale);
+
+		Long teachersFemale = (Long)solrDocument.get("teachersFemale_stored_long");
+		if(teachersFemale != null)
+			oReportCard.setTeachersFemale(teachersFemale);
+
+		Long teachersTotal = (Long)solrDocument.get("teachersTotal_stored_long");
+		if(teachersTotal != null)
+			oReportCard.setTeachersTotal(teachersTotal);
+
+		Long teachersWhiteTotal = (Long)solrDocument.get("teachersWhiteTotal_stored_long");
+		if(teachersWhiteTotal != null)
+			oReportCard.setTeachersWhiteTotal(teachersWhiteTotal);
+
+		Double teachersWhitePercent = (Double)solrDocument.get("teachersWhitePercent_stored_double");
+		if(teachersWhitePercent != null)
+			oReportCard.setTeachersWhitePercent(teachersWhitePercent);
+
+		Long teachersBlackTotal = (Long)solrDocument.get("teachersBlackTotal_stored_long");
+		if(teachersBlackTotal != null)
+			oReportCard.setTeachersBlackTotal(teachersBlackTotal);
+
+		Double teachersBlackPercent = (Double)solrDocument.get("teachersBlackPercent_stored_double");
+		if(teachersBlackPercent != null)
+			oReportCard.setTeachersBlackPercent(teachersBlackPercent);
+
+		Long teachersOtherTotal = (Long)solrDocument.get("teachersOtherTotal_stored_long");
+		if(teachersOtherTotal != null)
+			oReportCard.setTeachersOtherTotal(teachersOtherTotal);
+
+		Double teachersOtherPercent = (Double)solrDocument.get("teachersOtherPercent_stored_double");
+		if(teachersOtherPercent != null)
+			oReportCard.setTeachersOtherPercent(teachersOtherPercent);
+
+		Long delinquentComplaintsTotal = (Long)solrDocument.get("delinquentComplaintsTotal_stored_long");
 		if(delinquentComplaintsTotal != null)
 			oReportCard.setDelinquentComplaintsTotal(delinquentComplaintsTotal);
 
-		Integer delinquentComplaintsAtSchool = (Integer)solrDocument.get("delinquentComplaintsAtSchool_stored_int");
+		Long delinquentComplaintsAtSchool = (Long)solrDocument.get("delinquentComplaintsAtSchool_stored_long");
 		if(delinquentComplaintsAtSchool != null)
 			oReportCard.setDelinquentComplaintsAtSchool(delinquentComplaintsAtSchool);
 
 		Double delinquentComplaintsAtSchoolPercent = (Double)solrDocument.get("delinquentComplaintsAtSchoolPercent_stored_double");
 		if(delinquentComplaintsAtSchoolPercent != null)
 			oReportCard.setDelinquentComplaintsAtSchoolPercent(delinquentComplaintsAtSchoolPercent);
+
+		Long delinquentComplaintsAsian = (Long)solrDocument.get("delinquentComplaintsAsian_stored_long");
+		if(delinquentComplaintsAsian != null)
+			oReportCard.setDelinquentComplaintsAsian(delinquentComplaintsAsian);
+
+		Double delinquentComplaintsAsianPercent = (Double)solrDocument.get("delinquentComplaintsAsianPercent_stored_double");
+		if(delinquentComplaintsAsianPercent != null)
+			oReportCard.setDelinquentComplaintsAsianPercent(delinquentComplaintsAsianPercent);
+
+		Long delinquentComplaintsBlack = (Long)solrDocument.get("delinquentComplaintsBlack_stored_long");
+		if(delinquentComplaintsBlack != null)
+			oReportCard.setDelinquentComplaintsBlack(delinquentComplaintsBlack);
+
+		Double delinquentComplaintsBlackPercent = (Double)solrDocument.get("delinquentComplaintsBlackPercent_stored_double");
+		if(delinquentComplaintsBlackPercent != null)
+			oReportCard.setDelinquentComplaintsBlackPercent(delinquentComplaintsBlackPercent);
+
+		Long delinquentComplaintsHispanic = (Long)solrDocument.get("delinquentComplaintsHispanic_stored_long");
+		if(delinquentComplaintsHispanic != null)
+			oReportCard.setDelinquentComplaintsHispanic(delinquentComplaintsHispanic);
+
+		Double delinquentComplaintsHispanicPercent = (Double)solrDocument.get("delinquentComplaintsHispanicPercent_stored_double");
+		if(delinquentComplaintsHispanicPercent != null)
+			oReportCard.setDelinquentComplaintsHispanicPercent(delinquentComplaintsHispanicPercent);
+
+		Long delinquentComplaintsMultiRacial = (Long)solrDocument.get("delinquentComplaintsMultiRacial_stored_long");
+		if(delinquentComplaintsMultiRacial != null)
+			oReportCard.setDelinquentComplaintsMultiRacial(delinquentComplaintsMultiRacial);
+
+		Double delinquentComplaintsMultiRacialPercent = (Double)solrDocument.get("delinquentComplaintsMultiRacialPercent_stored_double");
+		if(delinquentComplaintsMultiRacialPercent != null)
+			oReportCard.setDelinquentComplaintsMultiRacialPercent(delinquentComplaintsMultiRacialPercent);
+
+		Long delinquentComplaintsIndian = (Long)solrDocument.get("delinquentComplaintsIndian_stored_long");
+		if(delinquentComplaintsIndian != null)
+			oReportCard.setDelinquentComplaintsIndian(delinquentComplaintsIndian);
+
+		Double delinquentComplaintsIndianPercent = (Double)solrDocument.get("delinquentComplaintsIndianPercent_stored_double");
+		if(delinquentComplaintsIndianPercent != null)
+			oReportCard.setDelinquentComplaintsIndianPercent(delinquentComplaintsIndianPercent);
+
+		Long delinquentComplaintsWhite = (Long)solrDocument.get("delinquentComplaintsWhite_stored_long");
+		if(delinquentComplaintsWhite != null)
+			oReportCard.setDelinquentComplaintsWhite(delinquentComplaintsWhite);
+
+		Double delinquentComplaintsWhitePercent = (Double)solrDocument.get("delinquentComplaintsWhitePercent_stored_double");
+		if(delinquentComplaintsWhitePercent != null)
+			oReportCard.setDelinquentComplaintsWhitePercent(delinquentComplaintsWhitePercent);
+
+		Long delinquentComplaintsPacificIslander = (Long)solrDocument.get("delinquentComplaintsPacificIslander_stored_long");
+		if(delinquentComplaintsPacificIslander != null)
+			oReportCard.setDelinquentComplaintsPacificIslander(delinquentComplaintsPacificIslander);
+
+		Double delinquentComplaintsPacificIslanderPercent = (Double)solrDocument.get("delinquentComplaintsPacificIslanderPercent_stored_double");
+		if(delinquentComplaintsPacificIslanderPercent != null)
+			oReportCard.setDelinquentComplaintsPacificIslanderPercent(delinquentComplaintsPacificIslanderPercent);
+
+		Long shortTermSuspensionsTotal = (Long)solrDocument.get("shortTermSuspensionsTotal_stored_long");
+		if(shortTermSuspensionsTotal != null)
+			oReportCard.setShortTermSuspensionsTotal(shortTermSuspensionsTotal);
+
+		Long longTermSuspensionsTotal = (Long)solrDocument.get("longTermSuspensionsTotal_stored_long");
+		if(longTermSuspensionsTotal != null)
+			oReportCard.setLongTermSuspensionsTotal(longTermSuspensionsTotal);
+
+		Long expulsionsTotal = (Long)solrDocument.get("expulsionsTotal_stored_long");
+		if(expulsionsTotal != null)
+			oReportCard.setExpulsionsTotal(expulsionsTotal);
+
+		Long shortTermSuspensionsAsianFemale = (Long)solrDocument.get("shortTermSuspensionsAsianFemale_stored_long");
+		if(shortTermSuspensionsAsianFemale != null)
+			oReportCard.setShortTermSuspensionsAsianFemale(shortTermSuspensionsAsianFemale);
+
+		Long shortTermSuspensionsAsianMale = (Long)solrDocument.get("shortTermSuspensionsAsianMale_stored_long");
+		if(shortTermSuspensionsAsianMale != null)
+			oReportCard.setShortTermSuspensionsAsianMale(shortTermSuspensionsAsianMale);
+
+		Long shortTermSuspensionsAsianTotal = (Long)solrDocument.get("shortTermSuspensionsAsianTotal_stored_long");
+		if(shortTermSuspensionsAsianTotal != null)
+			oReportCard.setShortTermSuspensionsAsianTotal(shortTermSuspensionsAsianTotal);
+
+		Double shortTermSuspensionsAsianPercent = (Double)solrDocument.get("shortTermSuspensionsAsianPercent_stored_double");
+		if(shortTermSuspensionsAsianPercent != null)
+			oReportCard.setShortTermSuspensionsAsianPercent(shortTermSuspensionsAsianPercent);
+
+		Double shortTermSuspensionsAsianRate = (Double)solrDocument.get("shortTermSuspensionsAsianRate_stored_double");
+		if(shortTermSuspensionsAsianRate != null)
+			oReportCard.setShortTermSuspensionsAsianRate(shortTermSuspensionsAsianRate);
+
+		Long shortTermSuspensionsBlackFemale = (Long)solrDocument.get("shortTermSuspensionsBlackFemale_stored_long");
+		if(shortTermSuspensionsBlackFemale != null)
+			oReportCard.setShortTermSuspensionsBlackFemale(shortTermSuspensionsBlackFemale);
+
+		Long shortTermSuspensionsBlackMale = (Long)solrDocument.get("shortTermSuspensionsBlackMale_stored_long");
+		if(shortTermSuspensionsBlackMale != null)
+			oReportCard.setShortTermSuspensionsBlackMale(shortTermSuspensionsBlackMale);
+
+		Long shortTermSuspensionsBlackTotal = (Long)solrDocument.get("shortTermSuspensionsBlackTotal_stored_long");
+		if(shortTermSuspensionsBlackTotal != null)
+			oReportCard.setShortTermSuspensionsBlackTotal(shortTermSuspensionsBlackTotal);
+
+		Double shortTermSuspensionsBlackPercent = (Double)solrDocument.get("shortTermSuspensionsBlackPercent_stored_double");
+		if(shortTermSuspensionsBlackPercent != null)
+			oReportCard.setShortTermSuspensionsBlackPercent(shortTermSuspensionsBlackPercent);
+
+		Double shortTermSuspensionsBlackRate = (Double)solrDocument.get("shortTermSuspensionsBlackRate_stored_double");
+		if(shortTermSuspensionsBlackRate != null)
+			oReportCard.setShortTermSuspensionsBlackRate(shortTermSuspensionsBlackRate);
+
+		Long shortTermSuspensionsHispanicFemale = (Long)solrDocument.get("shortTermSuspensionsHispanicFemale_stored_long");
+		if(shortTermSuspensionsHispanicFemale != null)
+			oReportCard.setShortTermSuspensionsHispanicFemale(shortTermSuspensionsHispanicFemale);
+
+		Long shortTermSuspensionsHispanicMale = (Long)solrDocument.get("shortTermSuspensionsHispanicMale_stored_long");
+		if(shortTermSuspensionsHispanicMale != null)
+			oReportCard.setShortTermSuspensionsHispanicMale(shortTermSuspensionsHispanicMale);
+
+		Long shortTermSuspensionsHispanicTotal = (Long)solrDocument.get("shortTermSuspensionsHispanicTotal_stored_long");
+		if(shortTermSuspensionsHispanicTotal != null)
+			oReportCard.setShortTermSuspensionsHispanicTotal(shortTermSuspensionsHispanicTotal);
+
+		Double shortTermSuspensionsHispanicPercent = (Double)solrDocument.get("shortTermSuspensionsHispanicPercent_stored_double");
+		if(shortTermSuspensionsHispanicPercent != null)
+			oReportCard.setShortTermSuspensionsHispanicPercent(shortTermSuspensionsHispanicPercent);
+
+		Double shortTermSuspensionsHispanicRate = (Double)solrDocument.get("shortTermSuspensionsHispanicRate_stored_double");
+		if(shortTermSuspensionsHispanicRate != null)
+			oReportCard.setShortTermSuspensionsHispanicRate(shortTermSuspensionsHispanicRate);
+
+		Long shortTermSuspensionsIndianFemale = (Long)solrDocument.get("shortTermSuspensionsIndianFemale_stored_long");
+		if(shortTermSuspensionsIndianFemale != null)
+			oReportCard.setShortTermSuspensionsIndianFemale(shortTermSuspensionsIndianFemale);
+
+		Long shortTermSuspensionsIndianMale = (Long)solrDocument.get("shortTermSuspensionsIndianMale_stored_long");
+		if(shortTermSuspensionsIndianMale != null)
+			oReportCard.setShortTermSuspensionsIndianMale(shortTermSuspensionsIndianMale);
+
+		Long shortTermSuspensionsIndianTotal = (Long)solrDocument.get("shortTermSuspensionsIndianTotal_stored_long");
+		if(shortTermSuspensionsIndianTotal != null)
+			oReportCard.setShortTermSuspensionsIndianTotal(shortTermSuspensionsIndianTotal);
+
+		Double shortTermSuspensionsIndianPercent = (Double)solrDocument.get("shortTermSuspensionsIndianPercent_stored_double");
+		if(shortTermSuspensionsIndianPercent != null)
+			oReportCard.setShortTermSuspensionsIndianPercent(shortTermSuspensionsIndianPercent);
+
+		Double shortTermSuspensionsIndianRate = (Double)solrDocument.get("shortTermSuspensionsIndianRate_stored_double");
+		if(shortTermSuspensionsIndianRate != null)
+			oReportCard.setShortTermSuspensionsIndianRate(shortTermSuspensionsIndianRate);
+
+		Long shortTermSuspensionsMultiRacialFemale = (Long)solrDocument.get("shortTermSuspensionsMultiRacialFemale_stored_long");
+		if(shortTermSuspensionsMultiRacialFemale != null)
+			oReportCard.setShortTermSuspensionsMultiRacialFemale(shortTermSuspensionsMultiRacialFemale);
+
+		Long shortTermSuspensionsMultiRacialMale = (Long)solrDocument.get("shortTermSuspensionsMultiRacialMale_stored_long");
+		if(shortTermSuspensionsMultiRacialMale != null)
+			oReportCard.setShortTermSuspensionsMultiRacialMale(shortTermSuspensionsMultiRacialMale);
+
+		Long shortTermSuspensionsMultiRacialTotal = (Long)solrDocument.get("shortTermSuspensionsMultiRacialTotal_stored_long");
+		if(shortTermSuspensionsMultiRacialTotal != null)
+			oReportCard.setShortTermSuspensionsMultiRacialTotal(shortTermSuspensionsMultiRacialTotal);
+
+		Double shortTermSuspensionsMultiRacialPercent = (Double)solrDocument.get("shortTermSuspensionsMultiRacialPercent_stored_double");
+		if(shortTermSuspensionsMultiRacialPercent != null)
+			oReportCard.setShortTermSuspensionsMultiRacialPercent(shortTermSuspensionsMultiRacialPercent);
+
+		Double shortTermSuspensionsMultiRacialRate = (Double)solrDocument.get("shortTermSuspensionsMultiRacialRate_stored_double");
+		if(shortTermSuspensionsMultiRacialRate != null)
+			oReportCard.setShortTermSuspensionsMultiRacialRate(shortTermSuspensionsMultiRacialRate);
+
+		Long shortTermSuspensionsPacificIslanderFemale = (Long)solrDocument.get("shortTermSuspensionsPacificIslanderFemale_stored_long");
+		if(shortTermSuspensionsPacificIslanderFemale != null)
+			oReportCard.setShortTermSuspensionsPacificIslanderFemale(shortTermSuspensionsPacificIslanderFemale);
+
+		Long shortTermSuspensionsPacificIslanderMale = (Long)solrDocument.get("shortTermSuspensionsPacificIslanderMale_stored_long");
+		if(shortTermSuspensionsPacificIslanderMale != null)
+			oReportCard.setShortTermSuspensionsPacificIslanderMale(shortTermSuspensionsPacificIslanderMale);
+
+		Long shortTermSuspensionsPacificIslanderTotal = (Long)solrDocument.get("shortTermSuspensionsPacificIslanderTotal_stored_long");
+		if(shortTermSuspensionsPacificIslanderTotal != null)
+			oReportCard.setShortTermSuspensionsPacificIslanderTotal(shortTermSuspensionsPacificIslanderTotal);
+
+		Double shortTermSuspensionsPacificIslanderPercent = (Double)solrDocument.get("shortTermSuspensionsPacificIslanderPercent_stored_double");
+		if(shortTermSuspensionsPacificIslanderPercent != null)
+			oReportCard.setShortTermSuspensionsPacificIslanderPercent(shortTermSuspensionsPacificIslanderPercent);
+
+		Double shortTermSuspensionsPacificIslanderRate = (Double)solrDocument.get("shortTermSuspensionsPacificIslanderRate_stored_double");
+		if(shortTermSuspensionsPacificIslanderRate != null)
+			oReportCard.setShortTermSuspensionsPacificIslanderRate(shortTermSuspensionsPacificIslanderRate);
+
+		Long shortTermSuspensionsWhiteFemale = (Long)solrDocument.get("shortTermSuspensionsWhiteFemale_stored_long");
+		if(shortTermSuspensionsWhiteFemale != null)
+			oReportCard.setShortTermSuspensionsWhiteFemale(shortTermSuspensionsWhiteFemale);
+
+		Long shortTermSuspensionsWhiteMale = (Long)solrDocument.get("shortTermSuspensionsWhiteMale_stored_long");
+		if(shortTermSuspensionsWhiteMale != null)
+			oReportCard.setShortTermSuspensionsWhiteMale(shortTermSuspensionsWhiteMale);
+
+		Long shortTermSuspensionsWhiteTotal = (Long)solrDocument.get("shortTermSuspensionsWhiteTotal_stored_long");
+		if(shortTermSuspensionsWhiteTotal != null)
+			oReportCard.setShortTermSuspensionsWhiteTotal(shortTermSuspensionsWhiteTotal);
+
+		Double shortTermSuspensionsWhitePercent = (Double)solrDocument.get("shortTermSuspensionsWhitePercent_stored_double");
+		if(shortTermSuspensionsWhitePercent != null)
+			oReportCard.setShortTermSuspensionsWhitePercent(shortTermSuspensionsWhitePercent);
+
+		Double shortTermSuspensionsWhiteRate = (Double)solrDocument.get("shortTermSuspensionsWhiteRate_stored_double");
+		if(shortTermSuspensionsWhiteRate != null)
+			oReportCard.setShortTermSuspensionsWhiteRate(shortTermSuspensionsWhiteRate);
 
 		Long stateKey = (Long)solrDocument.get("stateKey_stored_long");
 		if(stateKey != null)
@@ -6309,12 +14832,134 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("pupilsMultiRacialTotal");
 			if(!Objects.equals(pupilsMultiRacialPercent, original.getPupilsMultiRacialPercent()))
 				apiRequest.addVars("pupilsMultiRacialPercent");
+			if(!Objects.equals(teachersMale, original.getTeachersMale()))
+				apiRequest.addVars("teachersMale");
+			if(!Objects.equals(teachersFemale, original.getTeachersFemale()))
+				apiRequest.addVars("teachersFemale");
+			if(!Objects.equals(teachersTotal, original.getTeachersTotal()))
+				apiRequest.addVars("teachersTotal");
+			if(!Objects.equals(teachersWhiteTotal, original.getTeachersWhiteTotal()))
+				apiRequest.addVars("teachersWhiteTotal");
+			if(!Objects.equals(teachersWhitePercent, original.getTeachersWhitePercent()))
+				apiRequest.addVars("teachersWhitePercent");
+			if(!Objects.equals(teachersBlackTotal, original.getTeachersBlackTotal()))
+				apiRequest.addVars("teachersBlackTotal");
+			if(!Objects.equals(teachersBlackPercent, original.getTeachersBlackPercent()))
+				apiRequest.addVars("teachersBlackPercent");
+			if(!Objects.equals(teachersOtherTotal, original.getTeachersOtherTotal()))
+				apiRequest.addVars("teachersOtherTotal");
+			if(!Objects.equals(teachersOtherPercent, original.getTeachersOtherPercent()))
+				apiRequest.addVars("teachersOtherPercent");
 			if(!Objects.equals(delinquentComplaintsTotal, original.getDelinquentComplaintsTotal()))
 				apiRequest.addVars("delinquentComplaintsTotal");
 			if(!Objects.equals(delinquentComplaintsAtSchool, original.getDelinquentComplaintsAtSchool()))
 				apiRequest.addVars("delinquentComplaintsAtSchool");
 			if(!Objects.equals(delinquentComplaintsAtSchoolPercent, original.getDelinquentComplaintsAtSchoolPercent()))
 				apiRequest.addVars("delinquentComplaintsAtSchoolPercent");
+			if(!Objects.equals(delinquentComplaintsAsian, original.getDelinquentComplaintsAsian()))
+				apiRequest.addVars("delinquentComplaintsAsian");
+			if(!Objects.equals(delinquentComplaintsAsianPercent, original.getDelinquentComplaintsAsianPercent()))
+				apiRequest.addVars("delinquentComplaintsAsianPercent");
+			if(!Objects.equals(delinquentComplaintsBlack, original.getDelinquentComplaintsBlack()))
+				apiRequest.addVars("delinquentComplaintsBlack");
+			if(!Objects.equals(delinquentComplaintsBlackPercent, original.getDelinquentComplaintsBlackPercent()))
+				apiRequest.addVars("delinquentComplaintsBlackPercent");
+			if(!Objects.equals(delinquentComplaintsHispanic, original.getDelinquentComplaintsHispanic()))
+				apiRequest.addVars("delinquentComplaintsHispanic");
+			if(!Objects.equals(delinquentComplaintsHispanicPercent, original.getDelinquentComplaintsHispanicPercent()))
+				apiRequest.addVars("delinquentComplaintsHispanicPercent");
+			if(!Objects.equals(delinquentComplaintsMultiRacial, original.getDelinquentComplaintsMultiRacial()))
+				apiRequest.addVars("delinquentComplaintsMultiRacial");
+			if(!Objects.equals(delinquentComplaintsMultiRacialPercent, original.getDelinquentComplaintsMultiRacialPercent()))
+				apiRequest.addVars("delinquentComplaintsMultiRacialPercent");
+			if(!Objects.equals(delinquentComplaintsIndian, original.getDelinquentComplaintsIndian()))
+				apiRequest.addVars("delinquentComplaintsIndian");
+			if(!Objects.equals(delinquentComplaintsIndianPercent, original.getDelinquentComplaintsIndianPercent()))
+				apiRequest.addVars("delinquentComplaintsIndianPercent");
+			if(!Objects.equals(delinquentComplaintsWhite, original.getDelinquentComplaintsWhite()))
+				apiRequest.addVars("delinquentComplaintsWhite");
+			if(!Objects.equals(delinquentComplaintsWhitePercent, original.getDelinquentComplaintsWhitePercent()))
+				apiRequest.addVars("delinquentComplaintsWhitePercent");
+			if(!Objects.equals(delinquentComplaintsPacificIslander, original.getDelinquentComplaintsPacificIslander()))
+				apiRequest.addVars("delinquentComplaintsPacificIslander");
+			if(!Objects.equals(delinquentComplaintsPacificIslanderPercent, original.getDelinquentComplaintsPacificIslanderPercent()))
+				apiRequest.addVars("delinquentComplaintsPacificIslanderPercent");
+			if(!Objects.equals(shortTermSuspensionsTotal, original.getShortTermSuspensionsTotal()))
+				apiRequest.addVars("shortTermSuspensionsTotal");
+			if(!Objects.equals(longTermSuspensionsTotal, original.getLongTermSuspensionsTotal()))
+				apiRequest.addVars("longTermSuspensionsTotal");
+			if(!Objects.equals(expulsionsTotal, original.getExpulsionsTotal()))
+				apiRequest.addVars("expulsionsTotal");
+			if(!Objects.equals(shortTermSuspensionsAsianFemale, original.getShortTermSuspensionsAsianFemale()))
+				apiRequest.addVars("shortTermSuspensionsAsianFemale");
+			if(!Objects.equals(shortTermSuspensionsAsianMale, original.getShortTermSuspensionsAsianMale()))
+				apiRequest.addVars("shortTermSuspensionsAsianMale");
+			if(!Objects.equals(shortTermSuspensionsAsianTotal, original.getShortTermSuspensionsAsianTotal()))
+				apiRequest.addVars("shortTermSuspensionsAsianTotal");
+			if(!Objects.equals(shortTermSuspensionsAsianPercent, original.getShortTermSuspensionsAsianPercent()))
+				apiRequest.addVars("shortTermSuspensionsAsianPercent");
+			if(!Objects.equals(shortTermSuspensionsAsianRate, original.getShortTermSuspensionsAsianRate()))
+				apiRequest.addVars("shortTermSuspensionsAsianRate");
+			if(!Objects.equals(shortTermSuspensionsBlackFemale, original.getShortTermSuspensionsBlackFemale()))
+				apiRequest.addVars("shortTermSuspensionsBlackFemale");
+			if(!Objects.equals(shortTermSuspensionsBlackMale, original.getShortTermSuspensionsBlackMale()))
+				apiRequest.addVars("shortTermSuspensionsBlackMale");
+			if(!Objects.equals(shortTermSuspensionsBlackTotal, original.getShortTermSuspensionsBlackTotal()))
+				apiRequest.addVars("shortTermSuspensionsBlackTotal");
+			if(!Objects.equals(shortTermSuspensionsBlackPercent, original.getShortTermSuspensionsBlackPercent()))
+				apiRequest.addVars("shortTermSuspensionsBlackPercent");
+			if(!Objects.equals(shortTermSuspensionsBlackRate, original.getShortTermSuspensionsBlackRate()))
+				apiRequest.addVars("shortTermSuspensionsBlackRate");
+			if(!Objects.equals(shortTermSuspensionsHispanicFemale, original.getShortTermSuspensionsHispanicFemale()))
+				apiRequest.addVars("shortTermSuspensionsHispanicFemale");
+			if(!Objects.equals(shortTermSuspensionsHispanicMale, original.getShortTermSuspensionsHispanicMale()))
+				apiRequest.addVars("shortTermSuspensionsHispanicMale");
+			if(!Objects.equals(shortTermSuspensionsHispanicTotal, original.getShortTermSuspensionsHispanicTotal()))
+				apiRequest.addVars("shortTermSuspensionsHispanicTotal");
+			if(!Objects.equals(shortTermSuspensionsHispanicPercent, original.getShortTermSuspensionsHispanicPercent()))
+				apiRequest.addVars("shortTermSuspensionsHispanicPercent");
+			if(!Objects.equals(shortTermSuspensionsHispanicRate, original.getShortTermSuspensionsHispanicRate()))
+				apiRequest.addVars("shortTermSuspensionsHispanicRate");
+			if(!Objects.equals(shortTermSuspensionsIndianFemale, original.getShortTermSuspensionsIndianFemale()))
+				apiRequest.addVars("shortTermSuspensionsIndianFemale");
+			if(!Objects.equals(shortTermSuspensionsIndianMale, original.getShortTermSuspensionsIndianMale()))
+				apiRequest.addVars("shortTermSuspensionsIndianMale");
+			if(!Objects.equals(shortTermSuspensionsIndianTotal, original.getShortTermSuspensionsIndianTotal()))
+				apiRequest.addVars("shortTermSuspensionsIndianTotal");
+			if(!Objects.equals(shortTermSuspensionsIndianPercent, original.getShortTermSuspensionsIndianPercent()))
+				apiRequest.addVars("shortTermSuspensionsIndianPercent");
+			if(!Objects.equals(shortTermSuspensionsIndianRate, original.getShortTermSuspensionsIndianRate()))
+				apiRequest.addVars("shortTermSuspensionsIndianRate");
+			if(!Objects.equals(shortTermSuspensionsMultiRacialFemale, original.getShortTermSuspensionsMultiRacialFemale()))
+				apiRequest.addVars("shortTermSuspensionsMultiRacialFemale");
+			if(!Objects.equals(shortTermSuspensionsMultiRacialMale, original.getShortTermSuspensionsMultiRacialMale()))
+				apiRequest.addVars("shortTermSuspensionsMultiRacialMale");
+			if(!Objects.equals(shortTermSuspensionsMultiRacialTotal, original.getShortTermSuspensionsMultiRacialTotal()))
+				apiRequest.addVars("shortTermSuspensionsMultiRacialTotal");
+			if(!Objects.equals(shortTermSuspensionsMultiRacialPercent, original.getShortTermSuspensionsMultiRacialPercent()))
+				apiRequest.addVars("shortTermSuspensionsMultiRacialPercent");
+			if(!Objects.equals(shortTermSuspensionsMultiRacialRate, original.getShortTermSuspensionsMultiRacialRate()))
+				apiRequest.addVars("shortTermSuspensionsMultiRacialRate");
+			if(!Objects.equals(shortTermSuspensionsPacificIslanderFemale, original.getShortTermSuspensionsPacificIslanderFemale()))
+				apiRequest.addVars("shortTermSuspensionsPacificIslanderFemale");
+			if(!Objects.equals(shortTermSuspensionsPacificIslanderMale, original.getShortTermSuspensionsPacificIslanderMale()))
+				apiRequest.addVars("shortTermSuspensionsPacificIslanderMale");
+			if(!Objects.equals(shortTermSuspensionsPacificIslanderTotal, original.getShortTermSuspensionsPacificIslanderTotal()))
+				apiRequest.addVars("shortTermSuspensionsPacificIslanderTotal");
+			if(!Objects.equals(shortTermSuspensionsPacificIslanderPercent, original.getShortTermSuspensionsPacificIslanderPercent()))
+				apiRequest.addVars("shortTermSuspensionsPacificIslanderPercent");
+			if(!Objects.equals(shortTermSuspensionsPacificIslanderRate, original.getShortTermSuspensionsPacificIslanderRate()))
+				apiRequest.addVars("shortTermSuspensionsPacificIslanderRate");
+			if(!Objects.equals(shortTermSuspensionsWhiteFemale, original.getShortTermSuspensionsWhiteFemale()))
+				apiRequest.addVars("shortTermSuspensionsWhiteFemale");
+			if(!Objects.equals(shortTermSuspensionsWhiteMale, original.getShortTermSuspensionsWhiteMale()))
+				apiRequest.addVars("shortTermSuspensionsWhiteMale");
+			if(!Objects.equals(shortTermSuspensionsWhiteTotal, original.getShortTermSuspensionsWhiteTotal()))
+				apiRequest.addVars("shortTermSuspensionsWhiteTotal");
+			if(!Objects.equals(shortTermSuspensionsWhitePercent, original.getShortTermSuspensionsWhitePercent()))
+				apiRequest.addVars("shortTermSuspensionsWhitePercent");
+			if(!Objects.equals(shortTermSuspensionsWhiteRate, original.getShortTermSuspensionsWhiteRate()))
+				apiRequest.addVars("shortTermSuspensionsWhiteRate");
 			if(!Objects.equals(stateKey, original.getStateKey()))
 				apiRequest.addVars("stateKey");
 			if(!Objects.equals(stateId, original.getStateId()))
@@ -6338,7 +14983,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	//////////////
 
 	@Override public int hashCode() {
-		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, countyKey, pupilsTotal, pupilsIndianFemale, pupilsIndianMale, pupilsIndianTotal, pupilsIndianPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsHispanicFemale, pupilsHispanicMale, pupilsHispanicTotal, pupilsHispanicPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, stateKey, stateId, countyId, stateName, stateAbbreviation, countyName, countyCompleteName);
+		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, countyKey, pupilsTotal, pupilsIndianFemale, pupilsIndianMale, pupilsIndianTotal, pupilsIndianPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsHispanicFemale, pupilsHispanicMale, pupilsHispanicTotal, pupilsHispanicPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, teachersMale, teachersFemale, teachersTotal, teachersWhiteTotal, teachersWhitePercent, teachersBlackTotal, teachersBlackPercent, teachersOtherTotal, teachersOtherPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, delinquentComplaintsAsian, delinquentComplaintsAsianPercent, delinquentComplaintsBlack, delinquentComplaintsBlackPercent, delinquentComplaintsHispanic, delinquentComplaintsHispanicPercent, delinquentComplaintsMultiRacial, delinquentComplaintsMultiRacialPercent, delinquentComplaintsIndian, delinquentComplaintsIndianPercent, delinquentComplaintsWhite, delinquentComplaintsWhitePercent, delinquentComplaintsPacificIslander, delinquentComplaintsPacificIslanderPercent, shortTermSuspensionsTotal, longTermSuspensionsTotal, expulsionsTotal, shortTermSuspensionsAsianFemale, shortTermSuspensionsAsianMale, shortTermSuspensionsAsianTotal, shortTermSuspensionsAsianPercent, shortTermSuspensionsAsianRate, shortTermSuspensionsBlackFemale, shortTermSuspensionsBlackMale, shortTermSuspensionsBlackTotal, shortTermSuspensionsBlackPercent, shortTermSuspensionsBlackRate, shortTermSuspensionsHispanicFemale, shortTermSuspensionsHispanicMale, shortTermSuspensionsHispanicTotal, shortTermSuspensionsHispanicPercent, shortTermSuspensionsHispanicRate, shortTermSuspensionsIndianFemale, shortTermSuspensionsIndianMale, shortTermSuspensionsIndianTotal, shortTermSuspensionsIndianPercent, shortTermSuspensionsIndianRate, shortTermSuspensionsMultiRacialFemale, shortTermSuspensionsMultiRacialMale, shortTermSuspensionsMultiRacialTotal, shortTermSuspensionsMultiRacialPercent, shortTermSuspensionsMultiRacialRate, shortTermSuspensionsPacificIslanderFemale, shortTermSuspensionsPacificIslanderMale, shortTermSuspensionsPacificIslanderTotal, shortTermSuspensionsPacificIslanderPercent, shortTermSuspensionsPacificIslanderRate, shortTermSuspensionsWhiteFemale, shortTermSuspensionsWhiteMale, shortTermSuspensionsWhiteTotal, shortTermSuspensionsWhitePercent, shortTermSuspensionsWhiteRate, stateKey, stateId, countyId, stateName, stateAbbreviation, countyName, countyCompleteName);
 	}
 
 	////////////
@@ -6385,9 +15030,70 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				&& Objects.equals( pupilsMultiRacialMale, that.pupilsMultiRacialMale )
 				&& Objects.equals( pupilsMultiRacialTotal, that.pupilsMultiRacialTotal )
 				&& Objects.equals( pupilsMultiRacialPercent, that.pupilsMultiRacialPercent )
+				&& Objects.equals( teachersMale, that.teachersMale )
+				&& Objects.equals( teachersFemale, that.teachersFemale )
+				&& Objects.equals( teachersTotal, that.teachersTotal )
+				&& Objects.equals( teachersWhiteTotal, that.teachersWhiteTotal )
+				&& Objects.equals( teachersWhitePercent, that.teachersWhitePercent )
+				&& Objects.equals( teachersBlackTotal, that.teachersBlackTotal )
+				&& Objects.equals( teachersBlackPercent, that.teachersBlackPercent )
+				&& Objects.equals( teachersOtherTotal, that.teachersOtherTotal )
+				&& Objects.equals( teachersOtherPercent, that.teachersOtherPercent )
 				&& Objects.equals( delinquentComplaintsTotal, that.delinquentComplaintsTotal )
 				&& Objects.equals( delinquentComplaintsAtSchool, that.delinquentComplaintsAtSchool )
 				&& Objects.equals( delinquentComplaintsAtSchoolPercent, that.delinquentComplaintsAtSchoolPercent )
+				&& Objects.equals( delinquentComplaintsAsian, that.delinquentComplaintsAsian )
+				&& Objects.equals( delinquentComplaintsAsianPercent, that.delinquentComplaintsAsianPercent )
+				&& Objects.equals( delinquentComplaintsBlack, that.delinquentComplaintsBlack )
+				&& Objects.equals( delinquentComplaintsBlackPercent, that.delinquentComplaintsBlackPercent )
+				&& Objects.equals( delinquentComplaintsHispanic, that.delinquentComplaintsHispanic )
+				&& Objects.equals( delinquentComplaintsHispanicPercent, that.delinquentComplaintsHispanicPercent )
+				&& Objects.equals( delinquentComplaintsMultiRacial, that.delinquentComplaintsMultiRacial )
+				&& Objects.equals( delinquentComplaintsMultiRacialPercent, that.delinquentComplaintsMultiRacialPercent )
+				&& Objects.equals( delinquentComplaintsIndian, that.delinquentComplaintsIndian )
+				&& Objects.equals( delinquentComplaintsIndianPercent, that.delinquentComplaintsIndianPercent )
+				&& Objects.equals( delinquentComplaintsWhite, that.delinquentComplaintsWhite )
+				&& Objects.equals( delinquentComplaintsWhitePercent, that.delinquentComplaintsWhitePercent )
+				&& Objects.equals( delinquentComplaintsPacificIslander, that.delinquentComplaintsPacificIslander )
+				&& Objects.equals( delinquentComplaintsPacificIslanderPercent, that.delinquentComplaintsPacificIslanderPercent )
+				&& Objects.equals( shortTermSuspensionsTotal, that.shortTermSuspensionsTotal )
+				&& Objects.equals( longTermSuspensionsTotal, that.longTermSuspensionsTotal )
+				&& Objects.equals( expulsionsTotal, that.expulsionsTotal )
+				&& Objects.equals( shortTermSuspensionsAsianFemale, that.shortTermSuspensionsAsianFemale )
+				&& Objects.equals( shortTermSuspensionsAsianMale, that.shortTermSuspensionsAsianMale )
+				&& Objects.equals( shortTermSuspensionsAsianTotal, that.shortTermSuspensionsAsianTotal )
+				&& Objects.equals( shortTermSuspensionsAsianPercent, that.shortTermSuspensionsAsianPercent )
+				&& Objects.equals( shortTermSuspensionsAsianRate, that.shortTermSuspensionsAsianRate )
+				&& Objects.equals( shortTermSuspensionsBlackFemale, that.shortTermSuspensionsBlackFemale )
+				&& Objects.equals( shortTermSuspensionsBlackMale, that.shortTermSuspensionsBlackMale )
+				&& Objects.equals( shortTermSuspensionsBlackTotal, that.shortTermSuspensionsBlackTotal )
+				&& Objects.equals( shortTermSuspensionsBlackPercent, that.shortTermSuspensionsBlackPercent )
+				&& Objects.equals( shortTermSuspensionsBlackRate, that.shortTermSuspensionsBlackRate )
+				&& Objects.equals( shortTermSuspensionsHispanicFemale, that.shortTermSuspensionsHispanicFemale )
+				&& Objects.equals( shortTermSuspensionsHispanicMale, that.shortTermSuspensionsHispanicMale )
+				&& Objects.equals( shortTermSuspensionsHispanicTotal, that.shortTermSuspensionsHispanicTotal )
+				&& Objects.equals( shortTermSuspensionsHispanicPercent, that.shortTermSuspensionsHispanicPercent )
+				&& Objects.equals( shortTermSuspensionsHispanicRate, that.shortTermSuspensionsHispanicRate )
+				&& Objects.equals( shortTermSuspensionsIndianFemale, that.shortTermSuspensionsIndianFemale )
+				&& Objects.equals( shortTermSuspensionsIndianMale, that.shortTermSuspensionsIndianMale )
+				&& Objects.equals( shortTermSuspensionsIndianTotal, that.shortTermSuspensionsIndianTotal )
+				&& Objects.equals( shortTermSuspensionsIndianPercent, that.shortTermSuspensionsIndianPercent )
+				&& Objects.equals( shortTermSuspensionsIndianRate, that.shortTermSuspensionsIndianRate )
+				&& Objects.equals( shortTermSuspensionsMultiRacialFemale, that.shortTermSuspensionsMultiRacialFemale )
+				&& Objects.equals( shortTermSuspensionsMultiRacialMale, that.shortTermSuspensionsMultiRacialMale )
+				&& Objects.equals( shortTermSuspensionsMultiRacialTotal, that.shortTermSuspensionsMultiRacialTotal )
+				&& Objects.equals( shortTermSuspensionsMultiRacialPercent, that.shortTermSuspensionsMultiRacialPercent )
+				&& Objects.equals( shortTermSuspensionsMultiRacialRate, that.shortTermSuspensionsMultiRacialRate )
+				&& Objects.equals( shortTermSuspensionsPacificIslanderFemale, that.shortTermSuspensionsPacificIslanderFemale )
+				&& Objects.equals( shortTermSuspensionsPacificIslanderMale, that.shortTermSuspensionsPacificIslanderMale )
+				&& Objects.equals( shortTermSuspensionsPacificIslanderTotal, that.shortTermSuspensionsPacificIslanderTotal )
+				&& Objects.equals( shortTermSuspensionsPacificIslanderPercent, that.shortTermSuspensionsPacificIslanderPercent )
+				&& Objects.equals( shortTermSuspensionsPacificIslanderRate, that.shortTermSuspensionsPacificIslanderRate )
+				&& Objects.equals( shortTermSuspensionsWhiteFemale, that.shortTermSuspensionsWhiteFemale )
+				&& Objects.equals( shortTermSuspensionsWhiteMale, that.shortTermSuspensionsWhiteMale )
+				&& Objects.equals( shortTermSuspensionsWhiteTotal, that.shortTermSuspensionsWhiteTotal )
+				&& Objects.equals( shortTermSuspensionsWhitePercent, that.shortTermSuspensionsWhitePercent )
+				&& Objects.equals( shortTermSuspensionsWhiteRate, that.shortTermSuspensionsWhiteRate )
 				&& Objects.equals( stateKey, that.stateKey )
 				&& Objects.equals( stateId, that.stateId )
 				&& Objects.equals( countyId, that.countyId )
@@ -6438,9 +15144,70 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		sb.append( ", pupilsMultiRacialMale: " ).append(pupilsMultiRacialMale);
 		sb.append( ", pupilsMultiRacialTotal: " ).append(pupilsMultiRacialTotal);
 		sb.append( ", pupilsMultiRacialPercent: " ).append(pupilsMultiRacialPercent);
+		sb.append( ", teachersMale: " ).append(teachersMale);
+		sb.append( ", teachersFemale: " ).append(teachersFemale);
+		sb.append( ", teachersTotal: " ).append(teachersTotal);
+		sb.append( ", teachersWhiteTotal: " ).append(teachersWhiteTotal);
+		sb.append( ", teachersWhitePercent: " ).append(teachersWhitePercent);
+		sb.append( ", teachersBlackTotal: " ).append(teachersBlackTotal);
+		sb.append( ", teachersBlackPercent: " ).append(teachersBlackPercent);
+		sb.append( ", teachersOtherTotal: " ).append(teachersOtherTotal);
+		sb.append( ", teachersOtherPercent: " ).append(teachersOtherPercent);
 		sb.append( ", delinquentComplaintsTotal: " ).append(delinquentComplaintsTotal);
 		sb.append( ", delinquentComplaintsAtSchool: " ).append(delinquentComplaintsAtSchool);
 		sb.append( ", delinquentComplaintsAtSchoolPercent: " ).append(delinquentComplaintsAtSchoolPercent);
+		sb.append( ", delinquentComplaintsAsian: " ).append(delinquentComplaintsAsian);
+		sb.append( ", delinquentComplaintsAsianPercent: " ).append(delinquentComplaintsAsianPercent);
+		sb.append( ", delinquentComplaintsBlack: " ).append(delinquentComplaintsBlack);
+		sb.append( ", delinquentComplaintsBlackPercent: " ).append(delinquentComplaintsBlackPercent);
+		sb.append( ", delinquentComplaintsHispanic: " ).append(delinquentComplaintsHispanic);
+		sb.append( ", delinquentComplaintsHispanicPercent: " ).append(delinquentComplaintsHispanicPercent);
+		sb.append( ", delinquentComplaintsMultiRacial: " ).append(delinquentComplaintsMultiRacial);
+		sb.append( ", delinquentComplaintsMultiRacialPercent: " ).append(delinquentComplaintsMultiRacialPercent);
+		sb.append( ", delinquentComplaintsIndian: " ).append(delinquentComplaintsIndian);
+		sb.append( ", delinquentComplaintsIndianPercent: " ).append(delinquentComplaintsIndianPercent);
+		sb.append( ", delinquentComplaintsWhite: " ).append(delinquentComplaintsWhite);
+		sb.append( ", delinquentComplaintsWhitePercent: " ).append(delinquentComplaintsWhitePercent);
+		sb.append( ", delinquentComplaintsPacificIslander: " ).append(delinquentComplaintsPacificIslander);
+		sb.append( ", delinquentComplaintsPacificIslanderPercent: " ).append(delinquentComplaintsPacificIslanderPercent);
+		sb.append( ", shortTermSuspensionsTotal: " ).append(shortTermSuspensionsTotal);
+		sb.append( ", longTermSuspensionsTotal: " ).append(longTermSuspensionsTotal);
+		sb.append( ", expulsionsTotal: " ).append(expulsionsTotal);
+		sb.append( ", shortTermSuspensionsAsianFemale: " ).append(shortTermSuspensionsAsianFemale);
+		sb.append( ", shortTermSuspensionsAsianMale: " ).append(shortTermSuspensionsAsianMale);
+		sb.append( ", shortTermSuspensionsAsianTotal: " ).append(shortTermSuspensionsAsianTotal);
+		sb.append( ", shortTermSuspensionsAsianPercent: " ).append(shortTermSuspensionsAsianPercent);
+		sb.append( ", shortTermSuspensionsAsianRate: " ).append(shortTermSuspensionsAsianRate);
+		sb.append( ", shortTermSuspensionsBlackFemale: " ).append(shortTermSuspensionsBlackFemale);
+		sb.append( ", shortTermSuspensionsBlackMale: " ).append(shortTermSuspensionsBlackMale);
+		sb.append( ", shortTermSuspensionsBlackTotal: " ).append(shortTermSuspensionsBlackTotal);
+		sb.append( ", shortTermSuspensionsBlackPercent: " ).append(shortTermSuspensionsBlackPercent);
+		sb.append( ", shortTermSuspensionsBlackRate: " ).append(shortTermSuspensionsBlackRate);
+		sb.append( ", shortTermSuspensionsHispanicFemale: " ).append(shortTermSuspensionsHispanicFemale);
+		sb.append( ", shortTermSuspensionsHispanicMale: " ).append(shortTermSuspensionsHispanicMale);
+		sb.append( ", shortTermSuspensionsHispanicTotal: " ).append(shortTermSuspensionsHispanicTotal);
+		sb.append( ", shortTermSuspensionsHispanicPercent: " ).append(shortTermSuspensionsHispanicPercent);
+		sb.append( ", shortTermSuspensionsHispanicRate: " ).append(shortTermSuspensionsHispanicRate);
+		sb.append( ", shortTermSuspensionsIndianFemale: " ).append(shortTermSuspensionsIndianFemale);
+		sb.append( ", shortTermSuspensionsIndianMale: " ).append(shortTermSuspensionsIndianMale);
+		sb.append( ", shortTermSuspensionsIndianTotal: " ).append(shortTermSuspensionsIndianTotal);
+		sb.append( ", shortTermSuspensionsIndianPercent: " ).append(shortTermSuspensionsIndianPercent);
+		sb.append( ", shortTermSuspensionsIndianRate: " ).append(shortTermSuspensionsIndianRate);
+		sb.append( ", shortTermSuspensionsMultiRacialFemale: " ).append(shortTermSuspensionsMultiRacialFemale);
+		sb.append( ", shortTermSuspensionsMultiRacialMale: " ).append(shortTermSuspensionsMultiRacialMale);
+		sb.append( ", shortTermSuspensionsMultiRacialTotal: " ).append(shortTermSuspensionsMultiRacialTotal);
+		sb.append( ", shortTermSuspensionsMultiRacialPercent: " ).append(shortTermSuspensionsMultiRacialPercent);
+		sb.append( ", shortTermSuspensionsMultiRacialRate: " ).append(shortTermSuspensionsMultiRacialRate);
+		sb.append( ", shortTermSuspensionsPacificIslanderFemale: " ).append(shortTermSuspensionsPacificIslanderFemale);
+		sb.append( ", shortTermSuspensionsPacificIslanderMale: " ).append(shortTermSuspensionsPacificIslanderMale);
+		sb.append( ", shortTermSuspensionsPacificIslanderTotal: " ).append(shortTermSuspensionsPacificIslanderTotal);
+		sb.append( ", shortTermSuspensionsPacificIslanderPercent: " ).append(shortTermSuspensionsPacificIslanderPercent);
+		sb.append( ", shortTermSuspensionsPacificIslanderRate: " ).append(shortTermSuspensionsPacificIslanderRate);
+		sb.append( ", shortTermSuspensionsWhiteFemale: " ).append(shortTermSuspensionsWhiteFemale);
+		sb.append( ", shortTermSuspensionsWhiteMale: " ).append(shortTermSuspensionsWhiteMale);
+		sb.append( ", shortTermSuspensionsWhiteTotal: " ).append(shortTermSuspensionsWhiteTotal);
+		sb.append( ", shortTermSuspensionsWhitePercent: " ).append(shortTermSuspensionsWhitePercent);
+		sb.append( ", shortTermSuspensionsWhiteRate: " ).append(shortTermSuspensionsWhiteRate);
 		sb.append( ", stateKey: " ).append(stateKey);
 		sb.append( ", stateId: \"" ).append(stateId).append( "\"" );
 		sb.append( ", countyId: \"" ).append(countyId).append( "\"" );

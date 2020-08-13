@@ -52,7 +52,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 	protected void _listReportCard(Wrap<SearchList<ReportCard>> c) {
 	}
 
-	protected void _reportCard(Wrap<ReportCard> c) {
+	protected void _reportCard_(Wrap<ReportCard> c) {
 		if(listReportCard != null && listReportCard.size() == 1)
 			c.o(listReportCard.get(0));
 	}
@@ -62,8 +62,8 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 	}
 
 	@Override protected void _pageH2(Wrap<String> c) {
-		if(reportCard != null && reportCard.getCountyCompleteName() != null)
-			c.o(reportCard.getCountyCompleteName());
+		if(reportCard_ != null && reportCard_.getCountyCompleteName() != null)
+			c.o(reportCard_.getCountyCompleteName());
 	}
 
 	@Override protected void _pageH3(Wrap<String> c) {
@@ -71,9 +71,9 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 	}
 
 	@Override protected void _pageTitle(Wrap<String> c) {
-		if(reportCard != null && reportCard.getCountyCompleteName() != null)
-			c.o(reportCard.getCountyCompleteName());
-		else if(reportCard != null)
+		if(reportCard_ != null && reportCard_.getCountyCompleteName() != null)
+			c.o(reportCard_.getCountyCompleteName());
+		else if(reportCard_ != null)
 			c.o("report cards");
 		else if(listReportCard == null || listReportCard.size() == 0)
 			c.o("no report card found");
@@ -194,14 +194,101 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmPupilsMultiRacialMale("Page");
 			o.htmPupilsMultiRacialFemale("Page");
-			o.htmPupilsTotal("Page");
 			o.htmPupilsMultiRacialTotal("Page");
 			o.htmPupilsMultiRacialPercent("Page");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmPupilsTotal("Page");
+			o.htmTeachersMale("Page");
+			o.htmTeachersFemale("Page");
+			o.htmTeachersTotal("Page");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmTeachersWhiteTotal("Page");
+			o.htmTeachersWhitePercent("Page");
+			o.htmTeachersBlackTotal("Page");
+			o.htmTeachersBlackPercent("Page");
+			o.htmTeachersOtherTotal("Page");
+			o.htmTeachersOtherPercent("Page");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmDelinquentComplaintsTotal("Page");
 			o.htmDelinquentComplaintsAtSchool("Page");
 			o.htmDelinquentComplaintsAtSchoolPercent("Page");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmDelinquentComplaintsAsian("Page");
+			o.htmDelinquentComplaintsAsianPercent("Page");
+			o.htmDelinquentComplaintsBlack("Page");
+			o.htmDelinquentComplaintsBlackPercent("Page");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmDelinquentComplaintsHispanic("Page");
+			o.htmDelinquentComplaintsHispanicPercent("Page");
+			o.htmDelinquentComplaintsMultiRacial("Page");
+			o.htmDelinquentComplaintsMultiRacialPercent("Page");
+			o.htmDelinquentComplaintsIndian("Page");
+			o.htmDelinquentComplaintsIndianPercent("Page");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmDelinquentComplaintsWhite("Page");
+			o.htmDelinquentComplaintsWhitePercent("Page");
+			o.htmDelinquentComplaintsPacificIslander("Page");
+			o.htmDelinquentComplaintsPacificIslanderPercent("Page");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsTotal("Page");
+			o.htmLongTermSuspensionsTotal("Page");
+			o.htmExpulsionsTotal("Page");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsAsianFemale("Page");
+			o.htmShortTermSuspensionsAsianMale("Page");
+			o.htmShortTermSuspensionsAsianTotal("Page");
+			o.htmShortTermSuspensionsAsianPercent("Page");
+			o.htmShortTermSuspensionsAsianRate("Page");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsBlackFemale("Page");
+			o.htmShortTermSuspensionsBlackMale("Page");
+			o.htmShortTermSuspensionsBlackTotal("Page");
+			o.htmShortTermSuspensionsBlackPercent("Page");
+			o.htmShortTermSuspensionsBlackRate("Page");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsHispanicFemale("Page");
+			o.htmShortTermSuspensionsHispanicMale("Page");
+			o.htmShortTermSuspensionsHispanicTotal("Page");
+			o.htmShortTermSuspensionsHispanicPercent("Page");
+			o.htmShortTermSuspensionsHispanicRate("Page");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsIndianFemale("Page");
+			o.htmShortTermSuspensionsIndianMale("Page");
+			o.htmShortTermSuspensionsIndianTotal("Page");
+			o.htmShortTermSuspensionsIndianPercent("Page");
+			o.htmShortTermSuspensionsIndianRate("Page");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsMultiRacialFemale("Page");
+			o.htmShortTermSuspensionsMultiRacialMale("Page");
+			o.htmShortTermSuspensionsMultiRacialTotal("Page");
+			o.htmShortTermSuspensionsMultiRacialPercent("Page");
+			o.htmShortTermSuspensionsMultiRacialRate("Page");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsPacificIslanderFemale("Page");
+			o.htmShortTermSuspensionsPacificIslanderMale("Page");
+			o.htmShortTermSuspensionsPacificIslanderTotal("Page");
+			o.htmShortTermSuspensionsPacificIslanderPercent("Page");
+			o.htmShortTermSuspensionsPacificIslanderRate("Page");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsWhiteFemale("Page");
+			o.htmShortTermSuspensionsWhiteMale("Page");
+			o.htmShortTermSuspensionsWhiteTotal("Page");
+			o.htmShortTermSuspensionsWhitePercent("Page");
+			o.htmShortTermSuspensionsWhiteRate("Page");
 		} g("div");
 	}
 
@@ -262,14 +349,101 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmPupilsMultiRacialMale("POST");
 			o.htmPupilsMultiRacialFemale("POST");
-			o.htmPupilsTotal("POST");
 			o.htmPupilsMultiRacialTotal("POST");
 			o.htmPupilsMultiRacialPercent("POST");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmPupilsTotal("POST");
+			o.htmTeachersMale("POST");
+			o.htmTeachersFemale("POST");
+			o.htmTeachersTotal("POST");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmTeachersWhiteTotal("POST");
+			o.htmTeachersWhitePercent("POST");
+			o.htmTeachersBlackTotal("POST");
+			o.htmTeachersBlackPercent("POST");
+			o.htmTeachersOtherTotal("POST");
+			o.htmTeachersOtherPercent("POST");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmDelinquentComplaintsTotal("POST");
 			o.htmDelinquentComplaintsAtSchool("POST");
 			o.htmDelinquentComplaintsAtSchoolPercent("POST");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmDelinquentComplaintsAsian("POST");
+			o.htmDelinquentComplaintsAsianPercent("POST");
+			o.htmDelinquentComplaintsBlack("POST");
+			o.htmDelinquentComplaintsBlackPercent("POST");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmDelinquentComplaintsHispanic("POST");
+			o.htmDelinquentComplaintsHispanicPercent("POST");
+			o.htmDelinquentComplaintsMultiRacial("POST");
+			o.htmDelinquentComplaintsMultiRacialPercent("POST");
+			o.htmDelinquentComplaintsIndian("POST");
+			o.htmDelinquentComplaintsIndianPercent("POST");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmDelinquentComplaintsWhite("POST");
+			o.htmDelinquentComplaintsWhitePercent("POST");
+			o.htmDelinquentComplaintsPacificIslander("POST");
+			o.htmDelinquentComplaintsPacificIslanderPercent("POST");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsTotal("POST");
+			o.htmLongTermSuspensionsTotal("POST");
+			o.htmExpulsionsTotal("POST");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsAsianFemale("POST");
+			o.htmShortTermSuspensionsAsianMale("POST");
+			o.htmShortTermSuspensionsAsianTotal("POST");
+			o.htmShortTermSuspensionsAsianPercent("POST");
+			o.htmShortTermSuspensionsAsianRate("POST");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsBlackFemale("POST");
+			o.htmShortTermSuspensionsBlackMale("POST");
+			o.htmShortTermSuspensionsBlackTotal("POST");
+			o.htmShortTermSuspensionsBlackPercent("POST");
+			o.htmShortTermSuspensionsBlackRate("POST");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsHispanicFemale("POST");
+			o.htmShortTermSuspensionsHispanicMale("POST");
+			o.htmShortTermSuspensionsHispanicTotal("POST");
+			o.htmShortTermSuspensionsHispanicPercent("POST");
+			o.htmShortTermSuspensionsHispanicRate("POST");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsIndianFemale("POST");
+			o.htmShortTermSuspensionsIndianMale("POST");
+			o.htmShortTermSuspensionsIndianTotal("POST");
+			o.htmShortTermSuspensionsIndianPercent("POST");
+			o.htmShortTermSuspensionsIndianRate("POST");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsMultiRacialFemale("POST");
+			o.htmShortTermSuspensionsMultiRacialMale("POST");
+			o.htmShortTermSuspensionsMultiRacialTotal("POST");
+			o.htmShortTermSuspensionsMultiRacialPercent("POST");
+			o.htmShortTermSuspensionsMultiRacialRate("POST");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsPacificIslanderFemale("POST");
+			o.htmShortTermSuspensionsPacificIslanderMale("POST");
+			o.htmShortTermSuspensionsPacificIslanderTotal("POST");
+			o.htmShortTermSuspensionsPacificIslanderPercent("POST");
+			o.htmShortTermSuspensionsPacificIslanderRate("POST");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsWhiteFemale("POST");
+			o.htmShortTermSuspensionsWhiteMale("POST");
+			o.htmShortTermSuspensionsWhiteTotal("POST");
+			o.htmShortTermSuspensionsWhitePercent("POST");
+			o.htmShortTermSuspensionsWhiteRate("POST");
 		} g("div");
 	}
 
@@ -339,11 +513,66 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmPupilsMultiRacialMale("PUTCopy");
 			o.htmPupilsMultiRacialFemale("PUTCopy");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmPupilsTotal("PUTCopy");
+			o.htmTeachersMale("PUTCopy");
+			o.htmTeachersFemale("PUTCopy");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmTeachersWhiteTotal("PUTCopy");
+			o.htmTeachersBlackTotal("PUTCopy");
+			o.htmTeachersOtherTotal("PUTCopy");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmDelinquentComplaintsTotal("PUTCopy");
 			o.htmDelinquentComplaintsAtSchool("PUTCopy");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmDelinquentComplaintsAsian("PUTCopy");
+			o.htmDelinquentComplaintsBlack("PUTCopy");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmDelinquentComplaintsHispanic("PUTCopy");
+			o.htmDelinquentComplaintsMultiRacial("PUTCopy");
+			o.htmDelinquentComplaintsIndian("PUTCopy");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmDelinquentComplaintsWhite("PUTCopy");
+			o.htmDelinquentComplaintsPacificIslander("PUTCopy");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsTotal("PUTCopy");
+			o.htmLongTermSuspensionsTotal("PUTCopy");
+			o.htmExpulsionsTotal("PUTCopy");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsAsianFemale("PUTCopy");
+			o.htmShortTermSuspensionsAsianMale("PUTCopy");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsBlackFemale("PUTCopy");
+			o.htmShortTermSuspensionsBlackMale("PUTCopy");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsHispanicFemale("PUTCopy");
+			o.htmShortTermSuspensionsHispanicMale("PUTCopy");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsIndianFemale("PUTCopy");
+			o.htmShortTermSuspensionsIndianMale("PUTCopy");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsMultiRacialFemale("PUTCopy");
+			o.htmShortTermSuspensionsMultiRacialMale("PUTCopy");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsPacificIslanderFemale("PUTCopy");
+			o.htmShortTermSuspensionsPacificIslanderMale("PUTCopy");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsWhiteFemale("PUTCopy");
+			o.htmShortTermSuspensionsWhiteMale("PUTCopy");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmInheritPk("PUTCopy");
@@ -394,11 +623,66 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmPupilsMultiRacialMale("PATCH");
 			o.htmPupilsMultiRacialFemale("PATCH");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmPupilsTotal("PATCH");
+			o.htmTeachersMale("PATCH");
+			o.htmTeachersFemale("PATCH");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmTeachersWhiteTotal("PATCH");
+			o.htmTeachersBlackTotal("PATCH");
+			o.htmTeachersOtherTotal("PATCH");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmDelinquentComplaintsTotal("PATCH");
 			o.htmDelinquentComplaintsAtSchool("PATCH");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmDelinquentComplaintsAsian("PATCH");
+			o.htmDelinquentComplaintsBlack("PATCH");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmDelinquentComplaintsHispanic("PATCH");
+			o.htmDelinquentComplaintsMultiRacial("PATCH");
+			o.htmDelinquentComplaintsIndian("PATCH");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmDelinquentComplaintsWhite("PATCH");
+			o.htmDelinquentComplaintsPacificIslander("PATCH");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsTotal("PATCH");
+			o.htmLongTermSuspensionsTotal("PATCH");
+			o.htmExpulsionsTotal("PATCH");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsAsianFemale("PATCH");
+			o.htmShortTermSuspensionsAsianMale("PATCH");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsBlackFemale("PATCH");
+			o.htmShortTermSuspensionsBlackMale("PATCH");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsHispanicFemale("PATCH");
+			o.htmShortTermSuspensionsHispanicMale("PATCH");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsIndianFemale("PATCH");
+			o.htmShortTermSuspensionsIndianMale("PATCH");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsMultiRacialFemale("PATCH");
+			o.htmShortTermSuspensionsMultiRacialMale("PATCH");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsPacificIslanderFemale("PATCH");
+			o.htmShortTermSuspensionsPacificIslanderMale("PATCH");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsWhiteFemale("PATCH");
+			o.htmShortTermSuspensionsWhiteMale("PATCH");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmInheritPk("PATCH");
@@ -464,14 +748,101 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmPupilsMultiRacialMale("Search");
 			o.htmPupilsMultiRacialFemale("Search");
-			o.htmPupilsTotal("Search");
 			o.htmPupilsMultiRacialTotal("Search");
 			o.htmPupilsMultiRacialPercent("Search");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmPupilsTotal("Search");
+			o.htmTeachersMale("Search");
+			o.htmTeachersFemale("Search");
+			o.htmTeachersTotal("Search");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmTeachersWhiteTotal("Search");
+			o.htmTeachersWhitePercent("Search");
+			o.htmTeachersBlackTotal("Search");
+			o.htmTeachersBlackPercent("Search");
+			o.htmTeachersOtherTotal("Search");
+			o.htmTeachersOtherPercent("Search");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmDelinquentComplaintsTotal("Search");
 			o.htmDelinquentComplaintsAtSchool("Search");
 			o.htmDelinquentComplaintsAtSchoolPercent("Search");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmDelinquentComplaintsAsian("Search");
+			o.htmDelinquentComplaintsAsianPercent("Search");
+			o.htmDelinquentComplaintsBlack("Search");
+			o.htmDelinquentComplaintsBlackPercent("Search");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmDelinquentComplaintsHispanic("Search");
+			o.htmDelinquentComplaintsHispanicPercent("Search");
+			o.htmDelinquentComplaintsMultiRacial("Search");
+			o.htmDelinquentComplaintsMultiRacialPercent("Search");
+			o.htmDelinquentComplaintsIndian("Search");
+			o.htmDelinquentComplaintsIndianPercent("Search");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmDelinquentComplaintsWhite("Search");
+			o.htmDelinquentComplaintsWhitePercent("Search");
+			o.htmDelinquentComplaintsPacificIslander("Search");
+			o.htmDelinquentComplaintsPacificIslanderPercent("Search");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsTotal("Search");
+			o.htmLongTermSuspensionsTotal("Search");
+			o.htmExpulsionsTotal("Search");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsAsianFemale("Search");
+			o.htmShortTermSuspensionsAsianMale("Search");
+			o.htmShortTermSuspensionsAsianTotal("Search");
+			o.htmShortTermSuspensionsAsianPercent("Search");
+			o.htmShortTermSuspensionsAsianRate("Search");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsBlackFemale("Search");
+			o.htmShortTermSuspensionsBlackMale("Search");
+			o.htmShortTermSuspensionsBlackTotal("Search");
+			o.htmShortTermSuspensionsBlackPercent("Search");
+			o.htmShortTermSuspensionsBlackRate("Search");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsHispanicFemale("Search");
+			o.htmShortTermSuspensionsHispanicMale("Search");
+			o.htmShortTermSuspensionsHispanicTotal("Search");
+			o.htmShortTermSuspensionsHispanicPercent("Search");
+			o.htmShortTermSuspensionsHispanicRate("Search");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsIndianFemale("Search");
+			o.htmShortTermSuspensionsIndianMale("Search");
+			o.htmShortTermSuspensionsIndianTotal("Search");
+			o.htmShortTermSuspensionsIndianPercent("Search");
+			o.htmShortTermSuspensionsIndianRate("Search");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsMultiRacialFemale("Search");
+			o.htmShortTermSuspensionsMultiRacialMale("Search");
+			o.htmShortTermSuspensionsMultiRacialTotal("Search");
+			o.htmShortTermSuspensionsMultiRacialPercent("Search");
+			o.htmShortTermSuspensionsMultiRacialRate("Search");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsPacificIslanderFemale("Search");
+			o.htmShortTermSuspensionsPacificIslanderMale("Search");
+			o.htmShortTermSuspensionsPacificIslanderTotal("Search");
+			o.htmShortTermSuspensionsPacificIslanderPercent("Search");
+			o.htmShortTermSuspensionsPacificIslanderRate("Search");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionsWhiteFemale("Search");
+			o.htmShortTermSuspensionsWhiteMale("Search");
+			o.htmShortTermSuspensionsWhiteTotal("Search");
+			o.htmShortTermSuspensionsWhitePercent("Search");
+			o.htmShortTermSuspensionsWhiteRate("Search");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmInheritPk("Search");
@@ -853,7 +1224,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 							} g("div");
 							e("button")
 								.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-margin w3-pale-green ")
-								.a("onclick", "putcopyReportCard($('#putcopyReportCardForm'), ", reportCard == null ? "null" : reportCard.getPk(), "); ")
+								.a("onclick", "putcopyReportCard($('#putcopyReportCardForm'), ", reportCard_ == null ? "null" : reportCard_.getPk(), "); ")
 								.f().sx("Duplicate report cards")
 							.g("button");
 
@@ -921,7 +1292,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 							} g("form");
 							e("button")
 								.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-margin w3-pale-green ")
-								.a("onclick", "patchReportCard(null, $('#patchReportCardFormValues'), ", Optional.ofNullable(reportCard).map(ReportCard::getPk).map(a -> a.toString()).orElse("null"), ", function() {}, function() {}); ")
+								.a("onclick", "patchReportCard(null, $('#patchReportCardFormValues'), ", Optional.ofNullable(reportCard_).map(ReportCard::getPk).map(a -> a.toString()).orElse("null"), ", function() {}, function() {}); ")
 								.f().sx("Modify report cards")
 							.g("button");
 

@@ -43,7 +43,6 @@ import org.southerncoalition.enus.wrap.Wrap;
  * IconName: newspaper
  * NameVar.enUS: reportCard
  * 
- * Role.frFR: SiteAdmin
  * Role.enUS: SiteAdmin
  * PublicRead: true
  * 
@@ -119,16 +118,20 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	protected void _countyKey(Wrap<Long> c) {
 	}
 
+	////////////////////////////////////////////////////////
+	// http://apps.schools.nc.gov/ords/f?p=145:15:::NO::: //
+	////////////////////////////////////////////////////////
+
 	/**   
 	 * {@inheritDoc}
 	 * Indexed: true
 	 * Stored: true
 	 * Define: true
-	 * HtmlRow: 11
-	 * HtmlCell: 3
+	 * HtmlRow: 12
+	 * HtmlCell: 1
 	 * DisplayName.enUS: pupils total
 	 */ 
-	protected void _pupilsTotal(Wrap<Integer> c) {
+	protected void _pupilsTotal(Wrap<Long> c) {
 	}
 	@Override
 	public String strPupilsTotal() {
@@ -144,7 +147,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 3
 	 * DisplayName.enUS: Indian female
 	 */ 
-	protected void _pupilsIndianFemale(Wrap<Integer> c) {
+	protected void _pupilsIndianFemale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -156,7 +159,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 2
 	 * DisplayName.enUS: Indian male
 	 */  
-	protected void _pupilsIndianMale(Wrap<Integer> c) {
+	protected void _pupilsIndianMale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -167,7 +170,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 4
 	 * DisplayName.enUS: Indians total
 	 */ 
-	protected void _pupilsIndianTotal(Wrap<Integer> c) {
+	protected void _pupilsIndianTotal(Wrap<Long> c) {
 		if(pupilsIndianFemale != null  && pupilsIndianMale != null)
 			c.o(pupilsIndianFemale + pupilsIndianMale);
 	}
@@ -198,7 +201,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 2
 	 * DisplayName.enUS: Asian female
 	 */ 
-	protected void _pupilsAsianFemale(Wrap<Integer> c) {
+	protected void _pupilsAsianFemale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -210,7 +213,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 1
 	 * DisplayName.enUS: Asian male
 	 */ 
-	protected void _pupilsAsianMale(Wrap<Integer> c) {
+	protected void _pupilsAsianMale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -221,7 +224,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 3
 	 * DisplayName.enUS: Asians total
 	 */ 
-	protected void _pupilsAsianTotal(Wrap<Integer> c) {
+	protected void _pupilsAsianTotal(Wrap<Long> c) {
 		if(pupilsAsianFemale != null  && pupilsAsianMale != null)
 			c.o(pupilsAsianFemale + pupilsAsianMale);
 	}
@@ -252,7 +255,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 2
 	 * DisplayName.enUS: Hispanic female
 	 */ 
-	protected void _pupilsHispanicFemale(Wrap<Integer> c) {
+	protected void _pupilsHispanicFemale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -264,7 +267,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 1
 	 * DisplayName.enUS: Hispanic male
 	 */ 
-	protected void _pupilsHispanicMale(Wrap<Integer> c) {
+	protected void _pupilsHispanicMale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -275,7 +278,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 3
 	 * DisplayName.enUS: Hispanics total
 	 */ 
-	protected void _pupilsHispanicTotal(Wrap<Integer> c) {
+	protected void _pupilsHispanicTotal(Wrap<Long> c) {
 		if(pupilsHispanicFemale != null  && pupilsHispanicMale != null)
 			c.o(pupilsHispanicFemale + pupilsHispanicMale);
 	}
@@ -306,7 +309,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 2
 	 * DisplayName.enUS: Black female
 	 */ 
-	protected void _pupilsBlackFemale(Wrap<Integer> c) {
+	protected void _pupilsBlackFemale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -318,7 +321,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 1
 	 * DisplayName.enUS: Black male
 	 */ 
-	protected void _pupilsBlackMale(Wrap<Integer> c) {
+	protected void _pupilsBlackMale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -329,7 +332,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 3
 	 * DisplayName.enUS: Blacks total
 	 */ 
-	protected void _pupilsBlackTotal(Wrap<Integer> c) {
+	protected void _pupilsBlackTotal(Wrap<Long> c) {
 		if(pupilsBlackFemale != null  && pupilsBlackMale != null)
 			c.o(pupilsBlackFemale + pupilsBlackMale);
 	}
@@ -360,7 +363,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 2
 	 * DisplayName.enUS: White female
 	 */ 
-	protected void _pupilsWhiteFemale(Wrap<Integer> c) {
+	protected void _pupilsWhiteFemale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -372,7 +375,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 1
 	 * DisplayName.enUS: White male
 	 */ 
-	protected void _pupilsWhiteMale(Wrap<Integer> c) {
+	protected void _pupilsWhiteMale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -383,7 +386,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 3
 	 * DisplayName.enUS: Whites total
 	 */ 
-	protected void _pupilsWhiteTotal(Wrap<Integer> c) {
+	protected void _pupilsWhiteTotal(Wrap<Long> c) {
 		if(pupilsWhiteFemale != null  && pupilsWhiteMale != null)
 			c.o(pupilsWhiteFemale + pupilsWhiteMale);
 	}
@@ -414,7 +417,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 2
 	 * DisplayName.enUS: Pacific Islander female
 	 */ 
-	protected void _pupilsPacificIslanderFemale(Wrap<Integer> c) {
+	protected void _pupilsPacificIslanderFemale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -426,7 +429,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 1
 	 * DisplayName.enUS: Pacific Islander male
 	 */ 
-	protected void _pupilsPacificIslanderMale(Wrap<Integer> c) {
+	protected void _pupilsPacificIslanderMale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -437,7 +440,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 3
 	 * DisplayName.enUS: Pacific Islanders total
 	 */ 
-	protected void _pupilsPacificIslanderTotal(Wrap<Integer> c) {
+	protected void _pupilsPacificIslanderTotal(Wrap<Long> c) {
 		if(pupilsPacificIslanderFemale != null  && pupilsPacificIslanderMale != null)
 			c.o(pupilsPacificIslanderFemale + pupilsPacificIslanderMale);
 	}
@@ -468,7 +471,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 2
 	 * DisplayName.enUS: Multi Racial female
 	 */ 
-	protected void _pupilsMultiRacialFemale(Wrap<Integer> c) {
+	protected void _pupilsMultiRacialFemale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -480,7 +483,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 1
 	 * DisplayName.enUS: Multi Racial male
 	 */ 
-	protected void _pupilsMultiRacialMale(Wrap<Integer> c) {
+	protected void _pupilsMultiRacialMale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -491,7 +494,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 4
 	 * DisplayName.enUS: Multi Racials total
 	 */ 
-	protected void _pupilsMultiRacialTotal(Wrap<Integer> c) {
+	protected void _pupilsMultiRacialTotal(Wrap<Long> c) {
 		if(pupilsMultiRacialFemale != null  && pupilsMultiRacialMale != null)
 			c.o(pupilsMultiRacialFemale + pupilsMultiRacialMale);
 	}
@@ -513,17 +516,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 		return pupilsMultiRacialPercent == null ? "" : pupilsMultiRacialPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
-	/**   
-	 * {@inheritDoc}
-	 * Indexed: true
-	 * Stored: true
-	 * Define: true
-	 * HtmlRow: 12
-	 * HtmlCell: 1
-	 * DisplayName.enUS: delinquent complaints total
-	 */ 
-	protected void _delinquentComplaintsTotal(Wrap<Integer> c) {
-	}
+	/////////////////////////////////////////////////////////
+	// http://apps.schools.nc.gov/ords/f?p=145:109:::NO::: //
+	/////////////////////////////////////////////////////////
 
 	/**   
 	 * {@inheritDoc}
@@ -532,9 +527,21 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 12
 	 * HtmlCell: 2
-	 * DisplayName.enUS: delinquent complaints at school
+	 * DisplayName.enUS: male teachers total
 	 */ 
-	protected void _delinquentComplaintsAtSchool(Wrap<Integer> c) {
+	protected void _teachersMale(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 12
+	 * HtmlCell: 3
+	 * DisplayName.enUS: female teachers total
+	 */ 
+	protected void _teachersFemale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -542,6 +549,138 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Indexed: true
 	 * Stored: true
 	 * HtmlRow: 12
+	 * HtmlCell: 4
+	 * DisplayName.enUS: teachers total
+	 */ 
+	protected void _teachersTotal(Wrap<Long> c) {
+		if(teachersFemale != null  && teachersMale != null)
+			c.o(teachersFemale + teachersMale);
+	}
+	@Override
+	public String strTeachersTotal() {
+		return teachersTotal == null ? "" : new DecimalFormat("#,##0").format(teachersTotal);
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 13
+	 * HtmlCell: 2
+	 * DisplayName.enUS: White teachers
+	 */ 
+	protected void _teachersWhiteTotal(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 13
+	 * HtmlCell: 3
+	 * DisplayName.enUS: White teachers percent
+	 */ 
+	protected void _teachersWhitePercent(Wrap<BigDecimal> c) {
+		if(teachersWhiteTotal != null
+				&& teachersTotal != null && teachersTotal > 0)
+			c.o(new BigDecimal(teachersWhiteTotal).divide(new BigDecimal(teachersTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strTeachersWhitePercent() {
+		return teachersWhitePercent == null ? "" : teachersWhitePercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 13
+	 * HtmlCell: 4
+	 * DisplayName.enUS: Black teachers
+	 */ 
+	protected void _teachersBlackTotal(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 13
+	 * HtmlCell: 5
+	 * DisplayName.enUS: Black teachers percent
+	 */ 
+	protected void _teachersBlackPercent(Wrap<BigDecimal> c) {
+		if(teachersBlackTotal != null
+				&& teachersTotal != null && teachersTotal > 0)
+			c.o(new BigDecimal(teachersBlackTotal).divide(new BigDecimal(teachersTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strTeachersBlackPercent() {
+		return teachersBlackPercent == null ? "" : teachersBlackPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 13
+	 * HtmlCell: 6
+	 * DisplayName.enUS: Other teachers
+	 */ 
+	protected void _teachersOtherTotal(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 13
+	 * HtmlCell: 7
+	 * DisplayName.enUS: Others percent
+	 */ 
+	protected void _teachersOtherPercent(Wrap<BigDecimal> c) {
+		if(teachersOtherTotal != null
+				&& teachersTotal != null && teachersTotal > 0)
+			c.o(new BigDecimal(teachersOtherTotal).divide(new BigDecimal(teachersTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strTeachersOtherPercent() {
+		return teachersOtherPercent == null ? "" : teachersOtherPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	////////////////////////////////////////////////////////////////////////////////
+	// https://www.nccourts.gov/programs/school-justice-partnership/sjp-resources //
+	////////////////////////////////////////////////////////////////////////////////
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 14
+	 * HtmlCell: 1
+	 * DisplayName.enUS: delinquent complaints total
+	 */ 
+	protected void _delinquentComplaintsTotal(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 14
+	 * HtmlCell: 2
+	 * DisplayName.enUS: delinquent complaints at school
+	 */ 
+	protected void _delinquentComplaintsAtSchool(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 14
 	 * HtmlCell: 3
 	 * DisplayName.enUS: delinquent complaints at school percent
 	 */ 
@@ -552,6 +691,754 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	}
 	@Override public String strDelinquentComplaintsAtSchoolPercent() {
 		return delinquentComplaintsAtSchoolPercent == null ? "" : delinquentComplaintsAtSchoolPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 15
+	 * HtmlCell: 3
+	 * DisplayName.enUS: Asian complaints
+	 */ 
+	protected void _delinquentComplaintsAsian(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 15
+	 * HtmlCell: 4
+	 * DisplayName.enUS: Asian complaints percent
+	 */ 
+	protected void _delinquentComplaintsAsianPercent(Wrap<BigDecimal> c) {
+		if(delinquentComplaintsAsian != null 
+				&& delinquentComplaintsTotal != null && delinquentComplaintsTotal > 0)
+			c.o(new BigDecimal(delinquentComplaintsAsian).divide(new BigDecimal(delinquentComplaintsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strDelinquentComplaintsAsianPercent() {
+		return delinquentComplaintsAsianPercent == null ? "" : delinquentComplaintsAsianPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 15
+	 * HtmlCell: 5
+	 * DisplayName.enUS: Black complaints
+	 */ 
+	protected void _delinquentComplaintsBlack(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 15
+	 * HtmlCell: 6
+	 * DisplayName.enUS: Black complaints percent
+	 */ 
+	protected void _delinquentComplaintsBlackPercent(Wrap<BigDecimal> c) {
+		if(delinquentComplaintsBlack != null 
+				&& delinquentComplaintsTotal != null && delinquentComplaintsTotal > 0)
+			c.o(new BigDecimal(delinquentComplaintsBlack).divide(new BigDecimal(delinquentComplaintsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strDelinquentComplaintsBlackPercent() {
+		return delinquentComplaintsBlackPercent == null ? "" : delinquentComplaintsBlackPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 16
+	 * HtmlCell: 1
+	 * DisplayName.enUS: Hispanic complaints
+	 */ 
+	protected void _delinquentComplaintsHispanic(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 16
+	 * HtmlCell: 2
+	 * DisplayName.enUS: Hispanic complaints percent
+	 */ 
+	protected void _delinquentComplaintsHispanicPercent(Wrap<BigDecimal> c) {
+		if(delinquentComplaintsHispanic != null 
+				&& delinquentComplaintsTotal != null && delinquentComplaintsTotal > 0)
+			c.o(new BigDecimal(delinquentComplaintsHispanic).divide(new BigDecimal(delinquentComplaintsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strDelinquentComplaintsHispanicPercent() {
+		return delinquentComplaintsHispanicPercent == null ? "" : delinquentComplaintsHispanicPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 16
+	 * HtmlCell: 3
+	 * DisplayName.enUS: Multi Racial complaints
+	 */ 
+	protected void _delinquentComplaintsMultiRacial(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 16
+	 * HtmlCell: 4
+	 * DisplayName.enUS: Multi Racial complaints percent
+	 */ 
+	protected void _delinquentComplaintsMultiRacialPercent(Wrap<BigDecimal> c) {
+		if(delinquentComplaintsMultiRacial != null 
+				&& delinquentComplaintsTotal != null && delinquentComplaintsTotal > 0)
+			c.o(new BigDecimal(delinquentComplaintsMultiRacial).divide(new BigDecimal(delinquentComplaintsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strDelinquentComplaintsMultiRacialPercent() {
+		return delinquentComplaintsMultiRacialPercent == null ? "" : delinquentComplaintsMultiRacialPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 16
+	 * HtmlCell: 5
+	 * DisplayName.enUS: Indian complaints
+	 */ 
+	protected void _delinquentComplaintsIndian(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 16
+	 * HtmlCell: 6
+	 * DisplayName.enUS: Indian complaints percent
+	 */ 
+	protected void _delinquentComplaintsIndianPercent(Wrap<BigDecimal> c) {
+		if(delinquentComplaintsIndian != null 
+				&& delinquentComplaintsTotal != null && delinquentComplaintsTotal > 0)
+			c.o(new BigDecimal(delinquentComplaintsIndian).divide(new BigDecimal(delinquentComplaintsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strDelinquentComplaintsIndianPercent() {
+		return delinquentComplaintsIndianPercent == null ? "" : delinquentComplaintsIndianPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 17
+	 * HtmlCell: 1
+	 * DisplayName.enUS: White complaints
+	 */ 
+	protected void _delinquentComplaintsWhite(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 17
+	 * HtmlCell: 2
+	 * DisplayName.enUS: White complaints percent
+	 */ 
+	protected void _delinquentComplaintsWhitePercent(Wrap<BigDecimal> c) {
+		if(delinquentComplaintsWhite != null 
+				&& delinquentComplaintsTotal != null && delinquentComplaintsTotal > 0)
+			c.o(new BigDecimal(delinquentComplaintsWhite).divide(new BigDecimal(delinquentComplaintsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strDelinquentComplaintsWhitePercent() {
+		return delinquentComplaintsWhitePercent == null ? "" : delinquentComplaintsWhitePercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 17
+	 * HtmlCell: 3
+	 * DisplayName.enUS: Pacific Islander complaints
+	 */ 
+	protected void _delinquentComplaintsPacificIslander(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 17
+	 * HtmlCell: 4
+	 * DisplayName.enUS: Pacific Islander complaints percent
+	 */ 
+	protected void _delinquentComplaintsPacificIslanderPercent(Wrap<BigDecimal> c) {
+		if(delinquentComplaintsPacificIslander != null 
+				&& delinquentComplaintsTotal != null && delinquentComplaintsTotal > 0)
+			c.o(new BigDecimal(delinquentComplaintsPacificIslander).divide(new BigDecimal(delinquentComplaintsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strDelinquentComplaintsPacificIslanderPercent() {
+		return delinquentComplaintsPacificIslanderPercent == null ? "" : delinquentComplaintsPacificIslanderPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	// https://www.dpi.nc.gov/data-reports/dropout-and-discipline-data/discipline-alp-and-dropout-annual-reports //
+	///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 18
+	 * HtmlCell: 1
+	 * DisplayName.enUS: short-term suspensions total
+	 */ 
+	protected void _shortTermSuspensionsTotal(Wrap<Long> c) {
+	}
+	@Override
+	public String strShortTermSuspensionsTotal() {
+		return shortTermSuspensionsTotal == null ? "" : new DecimalFormat("#,##0").format(shortTermSuspensionsTotal);
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 18
+	 * HtmlCell: 2
+	 * DisplayName.enUS: long-term suspensions total
+	 */ 
+	protected void _longTermSuspensionsTotal(Wrap<Long> c) {
+	}
+	@Override
+	public String strLongTermSuspensionsTotal() {
+		return longTermSuspensionsTotal == null ? "" : new DecimalFormat("#,##0").format(longTermSuspensionsTotal);
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 18
+	 * HtmlCell: 3
+	 * DisplayName.enUS: expulsions total
+	 */ 
+	protected void _expulsionsTotal(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 19
+	 * HtmlCell: 1
+	 * DisplayName.enUS: short-term suspensions Asian female
+	 */ 
+	protected void _shortTermSuspensionsAsianFemale(Wrap<Long> c) {
+	}
+
+	/**  
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 19
+	 * HtmlCell: 2
+	 * DisplayName.enUS: short-term suspensions Asian male
+	 */ 
+	protected void _shortTermSuspensionsAsianMale(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 19
+	 * HtmlCell: 3
+	 * DisplayName.enUS: short-term suspensions Asians total
+	 */ 
+	protected void _shortTermSuspensionsAsianTotal(Wrap<Long> c) {
+		if(shortTermSuspensionsAsianFemale != null  && shortTermSuspensionsAsianMale != null)
+			c.o(shortTermSuspensionsAsianFemale + shortTermSuspensionsAsianMale);
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 19
+	 * HtmlCell: 4
+	 * DisplayName.enUS: short-term suspensions Asians percent
+	 */ 
+	protected void _shortTermSuspensionsAsianPercent(Wrap<BigDecimal> c) {
+		if(shortTermSuspensionsAsianFemale != null  && shortTermSuspensionsAsianMale != null
+				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsAsianFemale).add(new BigDecimal(shortTermSuspensionsAsianMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strShortTermSuspensionsAsianPercent() {
+		return shortTermSuspensionsAsianPercent == null ? "" : shortTermSuspensionsAsianPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 19
+	 * HtmlCell: 5
+	 * DisplayName.enUS: short-term suspensions Asians rate
+	 */ 
+	protected void _shortTermSuspensionsAsianRate(Wrap<BigDecimal> c) {
+		if(shortTermSuspensionsAsianFemale != null  && shortTermSuspensionsAsianMale != null
+				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsAsianFemale).add(new BigDecimal(shortTermSuspensionsAsianMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strShortTermSuspensionsAsianRate() {
+		return shortTermSuspensionsAsianPercent == null ? "" : shortTermSuspensionsAsianPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 20
+	 * HtmlCell: 1
+	 * DisplayName.enUS: short-term suspensions Black female
+	 */ 
+	protected void _shortTermSuspensionsBlackFemale(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 20
+	 * HtmlCell: 2
+	 * DisplayName.enUS: short-term suspensions Black male
+	 */ 
+	protected void _shortTermSuspensionsBlackMale(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 20
+	 * HtmlCell: 3
+	 * DisplayName.enUS: short-term suspensions Blacks total
+	 */ 
+	protected void _shortTermSuspensionsBlackTotal(Wrap<Long> c) {
+		if(shortTermSuspensionsBlackFemale != null  && shortTermSuspensionsBlackMale != null)
+			c.o(shortTermSuspensionsBlackFemale + shortTermSuspensionsBlackMale);
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 20
+	 * HtmlCell: 4
+	 * DisplayName.enUS: short-term suspensions Blacks percent
+	 */ 
+	protected void _shortTermSuspensionsBlackPercent(Wrap<BigDecimal> c) {
+		if(shortTermSuspensionsBlackFemale != null  && shortTermSuspensionsBlackMale != null
+				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsBlackFemale).add(new BigDecimal(shortTermSuspensionsBlackMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strShortTermSuspensionsBlackPercent() {
+		return shortTermSuspensionsBlackPercent == null ? "" : shortTermSuspensionsBlackPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 20
+	 * HtmlCell: 5
+	 * DisplayName.enUS: short-term suspensions Blacks rate
+	 */ 
+	protected void _shortTermSuspensionsBlackRate(Wrap<BigDecimal> c) {
+		if(shortTermSuspensionsBlackFemale != null  && shortTermSuspensionsBlackMale != null
+				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsBlackFemale).add(new BigDecimal(shortTermSuspensionsBlackMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strShortTermSuspensionsBlackRate() {
+		return shortTermSuspensionsBlackPercent == null ? "" : shortTermSuspensionsBlackPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 21
+	 * HtmlCell: 1
+	 * DisplayName.enUS: short-term suspensions Hispanic female
+	 */ 
+	protected void _shortTermSuspensionsHispanicFemale(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 21
+	 * HtmlCell: 2
+	 * DisplayName.enUS: short-term suspensions Hispanic male
+	 */ 
+	protected void _shortTermSuspensionsHispanicMale(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 21
+	 * HtmlCell: 3
+	 * DisplayName.enUS: short-term suspensions Hispanics total
+	 */ 
+	protected void _shortTermSuspensionsHispanicTotal(Wrap<Long> c) {
+		if(shortTermSuspensionsHispanicFemale != null  && shortTermSuspensionsHispanicMale != null)
+			c.o(shortTermSuspensionsHispanicFemale + shortTermSuspensionsHispanicMale);
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 21
+	 * HtmlCell: 4
+	 * DisplayName.enUS: short-term suspensions Hispanics percent
+	 */ 
+	protected void _shortTermSuspensionsHispanicPercent(Wrap<BigDecimal> c) {
+		if(shortTermSuspensionsHispanicFemale != null  && shortTermSuspensionsHispanicMale != null
+				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsHispanicFemale).add(new BigDecimal(shortTermSuspensionsHispanicMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strShortTermSuspensionsHispanicPercent() {
+		return shortTermSuspensionsHispanicPercent == null ? "" : shortTermSuspensionsHispanicPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 21
+	 * HtmlCell: 5
+	 * DisplayName.enUS: short-term suspensions Hispanics rate
+	 */ 
+	protected void _shortTermSuspensionsHispanicRate(Wrap<BigDecimal> c) {
+		if(shortTermSuspensionsHispanicFemale != null  && shortTermSuspensionsHispanicMale != null
+				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsHispanicFemale).add(new BigDecimal(shortTermSuspensionsHispanicMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strShortTermSuspensionsHispanicRate() {
+		return shortTermSuspensionsHispanicPercent == null ? "" : shortTermSuspensionsHispanicPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 22
+	 * HtmlCell: 1
+	 * DisplayName.enUS: short-term suspensions Indian female
+	 */ 
+	protected void _shortTermSuspensionsIndianFemale(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 22
+	 * HtmlCell: 2
+	 * DisplayName.enUS: short-term suspensions Indian male
+	 */  
+	protected void _shortTermSuspensionsIndianMale(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 22
+	 * HtmlCell: 3
+	 * DisplayName.enUS: short-term suspensions Indians total
+	 */ 
+	protected void _shortTermSuspensionsIndianTotal(Wrap<Long> c) {
+		if(shortTermSuspensionsIndianFemale != null  && shortTermSuspensionsIndianMale != null)
+			c.o(shortTermSuspensionsIndianFemale + shortTermSuspensionsIndianMale);
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 22
+	 * HtmlCell: 4
+	 * DisplayName.enUS: short-term suspensions Indians percent
+	 */ 
+	protected void _shortTermSuspensionsIndianPercent(Wrap<BigDecimal> c) {
+		if(shortTermSuspensionsIndianFemale != null  && shortTermSuspensionsIndianMale != null
+				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsIndianFemale).add(new BigDecimal(shortTermSuspensionsIndianMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strShortTermSuspensionsIndianPercent() {
+		return shortTermSuspensionsIndianPercent == null ? "" : shortTermSuspensionsIndianPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 22
+	 * HtmlCell: 5
+	 * DisplayName.enUS: short-term suspensions Indians rate
+	 */ 
+	protected void _shortTermSuspensionsIndianRate(Wrap<BigDecimal> c) {
+		if(shortTermSuspensionsIndianFemale != null  && shortTermSuspensionsIndianMale != null
+				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsIndianFemale).add(new BigDecimal(shortTermSuspensionsIndianMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strShortTermSuspensionsIndianRate() {
+		return shortTermSuspensionsIndianPercent == null ? "" : shortTermSuspensionsIndianPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 23
+	 * HtmlCell: 1
+	 * DisplayName.enUS: short-term suspensions Multi Racial female
+	 */ 
+	protected void _shortTermSuspensionsMultiRacialFemale(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 23
+	 * HtmlCell: 2
+	 * DisplayName.enUS: short-term suspensions Multi Racial male
+	 */ 
+	protected void _shortTermSuspensionsMultiRacialMale(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 23
+	 * HtmlCell: 3
+	 * DisplayName.enUS: short-term suspensions Multi Racials total
+	 */ 
+	protected void _shortTermSuspensionsMultiRacialTotal(Wrap<Long> c) {
+		if(shortTermSuspensionsMultiRacialFemale != null  && shortTermSuspensionsMultiRacialMale != null)
+			c.o(shortTermSuspensionsMultiRacialFemale + shortTermSuspensionsMultiRacialMale);
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 23
+	 * HtmlCell: 4
+	 * DisplayName.enUS: short-term suspensions Multi Racials percent
+	 */ 
+	protected void _shortTermSuspensionsMultiRacialPercent(Wrap<BigDecimal> c) {
+		if(shortTermSuspensionsMultiRacialFemale != null  && shortTermSuspensionsMultiRacialMale != null
+				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsMultiRacialFemale).add(new BigDecimal(shortTermSuspensionsMultiRacialMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strShortTermSuspensionsMultiRacialPercent() {
+		return shortTermSuspensionsMultiRacialPercent == null ? "" : shortTermSuspensionsMultiRacialPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 23
+	 * HtmlCell: 5
+	 * DisplayName.enUS: short-term suspensions Multi Racials rate
+	 */ 
+	protected void _shortTermSuspensionsMultiRacialRate(Wrap<BigDecimal> c) {
+		if(shortTermSuspensionsMultiRacialFemale != null  && shortTermSuspensionsMultiRacialMale != null
+				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsMultiRacialFemale).add(new BigDecimal(shortTermSuspensionsMultiRacialMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strShortTermSuspensionsMultiRacialRate() {
+		return shortTermSuspensionsMultiRacialPercent == null ? "" : shortTermSuspensionsMultiRacialPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 24
+	 * HtmlCell: 1
+	 * DisplayName.enUS: short-term suspensions Pacific Islander female
+	 */ 
+	protected void _shortTermSuspensionsPacificIslanderFemale(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 24
+	 * HtmlCell: 2
+	 * DisplayName.enUS: short-term suspensions Pacific Islander male
+	 */ 
+	protected void _shortTermSuspensionsPacificIslanderMale(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 24
+	 * HtmlCell: 3
+	 * DisplayName.enUS: short-term suspensions Pacific Islanders total
+	 */ 
+	protected void _shortTermSuspensionsPacificIslanderTotal(Wrap<Long> c) {
+		if(shortTermSuspensionsPacificIslanderFemale != null  && shortTermSuspensionsPacificIslanderMale != null)
+			c.o(shortTermSuspensionsPacificIslanderFemale + shortTermSuspensionsPacificIslanderMale);
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 24
+	 * HtmlCell: 4
+	 * DisplayName.enUS: short-term suspensions Pacific Islanders percent
+	 */ 
+	protected void _shortTermSuspensionsPacificIslanderPercent(Wrap<BigDecimal> c) {
+		if(shortTermSuspensionsPacificIslanderFemale != null  && shortTermSuspensionsPacificIslanderMale != null
+				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsPacificIslanderFemale).add(new BigDecimal(shortTermSuspensionsPacificIslanderMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strShortTermSuspensionsPacificIslanderPercent() {
+		return shortTermSuspensionsPacificIslanderPercent == null ? "" : shortTermSuspensionsPacificIslanderPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 24
+	 * HtmlCell: 5
+	 * DisplayName.enUS: short-term suspensions Pacific Islanders rate
+	 */ 
+	protected void _shortTermSuspensionsPacificIslanderRate(Wrap<BigDecimal> c) {
+		if(shortTermSuspensionsPacificIslanderFemale != null  && shortTermSuspensionsPacificIslanderMale != null
+				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsPacificIslanderFemale).add(new BigDecimal(shortTermSuspensionsPacificIslanderMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strShortTermSuspensionsPacificIslanderRate() {
+		return shortTermSuspensionsPacificIslanderPercent == null ? "" : shortTermSuspensionsPacificIslanderPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 25
+	 * HtmlCell: 1
+	 * DisplayName.enUS: short-term suspensions White female
+	 */ 
+	protected void _shortTermSuspensionsWhiteFemale(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 25
+	 * HtmlCell: 2
+	 * DisplayName.enUS: short-term suspensions White male
+	 */ 
+	protected void _shortTermSuspensionsWhiteMale(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 25
+	 * HtmlCell: 3
+	 * DisplayName.enUS: short-term suspensions Whites total
+	 */ 
+	protected void _shortTermSuspensionsWhiteTotal(Wrap<Long> c) {
+		if(shortTermSuspensionsWhiteFemale != null  && shortTermSuspensionsWhiteMale != null)
+			c.o(shortTermSuspensionsWhiteFemale + shortTermSuspensionsWhiteMale);
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 25
+	 * HtmlCell: 4
+	 * DisplayName.enUS: short-term suspensions Whites percent
+	 */ 
+	protected void _shortTermSuspensionsWhitePercent(Wrap<BigDecimal> c) {
+		if(shortTermSuspensionsWhiteFemale != null  && shortTermSuspensionsWhiteMale != null
+				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsWhiteFemale).add(new BigDecimal(shortTermSuspensionsWhiteMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strShortTermSuspensionsWhitePercent() {
+		return shortTermSuspensionsWhitePercent == null ? "" : shortTermSuspensionsWhitePercent.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 25
+	 * HtmlCell: 5
+	 * DisplayName.enUS: short-term suspensions Whites rate
+	 */ 
+	protected void _shortTermSuspensionsWhiteRate(Wrap<BigDecimal> c) {
+		if(shortTermSuspensionsWhiteFemale != null  && shortTermSuspensionsWhiteMale != null
+				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsWhiteFemale).add(new BigDecimal(shortTermSuspensionsWhiteMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strShortTermSuspensionsWhiteRate() {
+		return shortTermSuspensionsWhitePercent == null ? "" : shortTermSuspensionsWhitePercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
