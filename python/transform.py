@@ -17,7 +17,7 @@ df = pd.read_html(str(soup), keep_default_na=False, header=0)
 df = df[0].rename(columns={"Year": "reportCardStartYear","____LEA Name____" : "agency", "INDIAN Male" : "pupilsIndianMale", "INDIAN Female" : "pupilsIndianFemale", "ASIAN Male" : "pupilsAsianMale", "ASIAN Female" : "pupilsAsianFemale", "HISPANIC Male" : "pupilsHispanicMale", "HISPANIC Female" : "pupilsHispanicFemale", "BLACK Male" : "pupilsBlackMale", "BLACK Female" : "pupilsBlackFemale", "WHITE Male" : "pupilsWhiteMale", "WHITE Female" : "pupilsWhiteFemale", "PACIFIC ISLAND\u00a0 Male" : "pupilsPacificIslanderMale", "PACIFIC ISLAND\u00a0 Female" : "pupilsPacificIslanderFemale", "TWO OR MORE Male" : "pupilsMultiRacialMale", "TWO OR MOREFemale" : "pupilsMultiRacialFemale"})
 df.insert(1, "pk", df["reportCardStartYear"]+df["LEA"] )
 
-saves_array = [ "pupilsIndianFemale", "reportCardStartYear", "pupilsPacificIslanderMale", "pupilsWhiteFemale", "inheritPk", "pupilsHispanicFemale", "pupilsAsianFemale", "pupilsHispanicMale", "pupilsBlackMale", "userId", "pupilsMultiRacialMale", "pupilsIndianMale", "pupilsWhiteMale", "pupilsMultiRacialFemale", "pupilsBlackFemale", "pupilsTotal", "pupilsAsianMale", "pupilsPacificIslanderFemale", "countyKey" ]
+saves_array = [ "pupilsIndianFemale", "reportCardStartYear", "pupilsPacificIslanderMale", "pupilsWhiteFemale", "inheritPk", "pupilsHispanicFemale", "pupilsAsianFemale", "pupilsHispanicMale", "pupilsBlackMale", "userId", "pupilsMultiRacialMale", "pupilsIndianMale", "pupilsWhiteMale", "pupilsMultiRacialFemale", "pupilsBlackFemale", "pupilsTotal", "pupilsAsianMale", "pupilsPacificIslanderFemale", "agencyKey" ]
 
 
 results = df.to_json( orient='index')
