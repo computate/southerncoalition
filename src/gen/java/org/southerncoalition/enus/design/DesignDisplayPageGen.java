@@ -330,46 +330,38 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 	//////////////////////////
 
 	/**	 The entity reportCardStartYears
-	 *	Il est construit avant d'être initialisé avec le constructeur par défaut List<String>(). 
+	 *	Il est construit avant d'être initialisé avec le constructeur par défaut List<ReportCard>(). 
 	 */
 	@JsonInclude(Include.NON_NULL)
-	protected List<String> reportCardStartYears = new ArrayList<String>();
+	protected List<ReportCard> reportCardStartYears = new ArrayList<ReportCard>();
 	@JsonIgnore
-	public Wrap<List<String>> reportCardStartYearsWrap = new Wrap<List<String>>().p(this).c(List.class).var("reportCardStartYears").o(reportCardStartYears);
+	public Wrap<List<ReportCard>> reportCardStartYearsWrap = new Wrap<List<ReportCard>>().p(this).c(List.class).var("reportCardStartYears").o(reportCardStartYears);
 
 	/**	<br/> The entity reportCardStartYears
-	 *  It is constructed before being initialized with the constructor by default List<String>(). 
+	 *  It is constructed before being initialized with the constructor by default List<ReportCard>(). 
 	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCardStartYears">Find the entity reportCardStartYears in Solr</a>
 	 * <br/>
 	 * @param reportCardStartYears is the entity already constructed. 
 	 **/
-	protected abstract void _reportCardStartYears(List<String> l);
+	protected abstract void _reportCardStartYears(List<ReportCard> l);
 
-	public List<String> getReportCardStartYears() {
+	public List<ReportCard> getReportCardStartYears() {
 		return reportCardStartYears;
 	}
 
-	public void setReportCardStartYears(List<String> reportCardStartYears) {
+	public void setReportCardStartYears(List<ReportCard> reportCardStartYears) {
 		this.reportCardStartYears = reportCardStartYears;
 		this.reportCardStartYearsWrap.alreadyInitialized = true;
 	}
-	public DesignDisplayPage addReportCardStartYears(String...objets) {
-		for(String o : objets) {
+	public DesignDisplayPage addReportCardStartYears(ReportCard...objets) {
+		for(ReportCard o : objets) {
 			addReportCardStartYears(o);
 		}
 		return (DesignDisplayPage)this;
 	}
-	public DesignDisplayPage addReportCardStartYears(String o) {
+	public DesignDisplayPage addReportCardStartYears(ReportCard o) {
 		if(o != null && !reportCardStartYears.contains(o))
 			this.reportCardStartYears.add(o);
-		return (DesignDisplayPage)this;
-	}
-	public DesignDisplayPage setReportCardStartYears(JsonArray objets) {
-		reportCardStartYears.clear();
-		for(int i = 0; i < objets.size(); i++) {
-			String o = objets.getString(i);
-			addReportCardStartYears(o);
-		}
 		return (DesignDisplayPage)this;
 	}
 	protected DesignDisplayPage reportCardStartYearsInit() {
@@ -380,30 +372,6 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		return (DesignDisplayPage)this;
 	}
 
-	public List<String> solrReportCardStartYears() {
-		return reportCardStartYears;
-	}
-
-	public String strReportCardStartYears() {
-		return reportCardStartYears == null ? "" : reportCardStartYears.toString();
-	}
-
-	public String jsonReportCardStartYears() {
-		return reportCardStartYears == null ? "" : reportCardStartYears.toString();
-	}
-
-	public String nomAffichageReportCardStartYears() {
-		return null;
-	}
-
-	public String htmTooltipReportCardStartYears() {
-		return null;
-	}
-
-	public String htmReportCardStartYears() {
-		return reportCardStartYears == null ? "" : StringEscapeUtils.escapeHtml4(strReportCardStartYears());
-	}
-
 	////////////////////////////////
 	// reportCardStartYearCurrent //
 	////////////////////////////////
@@ -412,9 +380,9 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonInclude(Include.NON_NULL)
-	protected String reportCardStartYearCurrent;
+	protected ReportCard reportCardStartYearCurrent;
 	@JsonIgnore
-	public Wrap<String> reportCardStartYearCurrentWrap = new Wrap<String>().p(this).c(String.class).var("reportCardStartYearCurrent").o(reportCardStartYearCurrent);
+	public Wrap<ReportCard> reportCardStartYearCurrentWrap = new Wrap<ReportCard>().p(this).c(ReportCard.class).var("reportCardStartYearCurrent").o(reportCardStartYearCurrent);
 
 	/**	<br/> The entity reportCardStartYearCurrent
 	 *  is defined as null before being initialized. 
@@ -422,13 +390,13 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _reportCardStartYearCurrent(Wrap<String> c);
+	protected abstract void _reportCardStartYearCurrent(Wrap<ReportCard> c);
 
-	public String getReportCardStartYearCurrent() {
+	public ReportCard getReportCardStartYearCurrent() {
 		return reportCardStartYearCurrent;
 	}
 
-	public void setReportCardStartYearCurrent(String reportCardStartYearCurrent) {
+	public void setReportCardStartYearCurrent(ReportCard reportCardStartYearCurrent) {
 		this.reportCardStartYearCurrent = reportCardStartYearCurrent;
 		this.reportCardStartYearCurrentWrap.alreadyInitialized = true;
 	}
@@ -438,32 +406,10 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 			if(reportCardStartYearCurrent == null)
 				setReportCardStartYearCurrent(reportCardStartYearCurrentWrap.o);
 		}
+		if(reportCardStartYearCurrent != null)
+			reportCardStartYearCurrent.initDeepForClass(siteRequest_);
 		reportCardStartYearCurrentWrap.alreadyInitialized(true);
 		return (DesignDisplayPage)this;
-	}
-
-	public String solrReportCardStartYearCurrent() {
-		return reportCardStartYearCurrent;
-	}
-
-	public String strReportCardStartYearCurrent() {
-		return reportCardStartYearCurrent == null ? "" : reportCardStartYearCurrent;
-	}
-
-	public String jsonReportCardStartYearCurrent() {
-		return reportCardStartYearCurrent == null ? "" : reportCardStartYearCurrent;
-	}
-
-	public String nomAffichageReportCardStartYearCurrent() {
-		return null;
-	}
-
-	public String htmTooltipReportCardStartYearCurrent() {
-		return null;
-	}
-
-	public String htmReportCardStartYearCurrent() {
-		return reportCardStartYearCurrent == null ? "" : StringEscapeUtils.escapeHtml4(strReportCardStartYearCurrent());
 	}
 
 	/////////////////
@@ -1448,6 +1394,8 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 			pageDesign.setSiteRequest_(siteRequest_);
 		if(reportCardSearch != null)
 			reportCardSearch.setSiteRequest_(siteRequest_);
+		if(reportCardStartYearCurrent != null)
+			reportCardStartYearCurrent.setSiteRequest_(siteRequest_);
 		if(agencySearch != null)
 			agencySearch.setSiteRequest_(siteRequest_);
 		if(stateSearch != null)

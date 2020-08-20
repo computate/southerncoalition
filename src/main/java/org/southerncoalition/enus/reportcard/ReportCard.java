@@ -76,6 +76,12 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	protected void _reportCardStartYear(Wrap<Integer> c) {
 	}
 
+	/**    
+	 * {@inheritDoc}
+	 */ 
+	protected void _reportCardStartYearStr(Wrap<String> c) {
+	}
+
 	/**   
 	 * {@inheritDoc}
 	 * Indexed: true

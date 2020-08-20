@@ -99,22 +99,25 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 			l.setRows(0);
 	}
 
-	protected void _reportCardStartYears(List<String> l) {
+	protected void _reportCardStartYears(List<ReportCard> l) {
 		List<Integer> years = reportCardSearch.getQueryResponse().getFacetField("reportCardStartYear_indexed_int").getValues().stream().map(o -> Integer.parseInt(o.getName())).collect(Collectors.toList());
 		years.remove(reportCardStartYear);
 		Collections.sort(years);
 		for(Integer i = 0; i < years.size(); i++) {
+			ReportCard reportCard = new ReportCard();
 			Integer year = years.get(i);
+			reportCard.setReportCardStartYear(year);
+			l.add(reportCard);
 			if(i == (years.size() - 1) && years.size() > 1)
-				l.add(" and " + year);
+				reportCard.setReportCardStartYearStr(" and " + year);
 			else if(i > 0)
-				l.add(", " + year);
+				reportCard.setReportCardStartYearStr(", " + year);
 			else
-				l.add(year.toString());
+				reportCard.setReportCardStartYearStr(year.toString());
 		}
 	}
 
-	protected void _reportCardStartYearCurrent(Wrap<String> c) {
+	protected void _reportCardStartYearCurrent(Wrap<ReportCard> c) {
 	}
 
 	protected void _reportCard_(Wrap<ReportCard> c) {

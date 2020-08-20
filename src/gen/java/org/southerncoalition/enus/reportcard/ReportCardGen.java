@@ -285,6 +285,68 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
+	////////////////////////////
+	// reportCardStartYearStr //
+	////////////////////////////
+
+	/**	 The entity reportCardStartYearStr
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String reportCardStartYearStr;
+	@JsonIgnore
+	public Wrap<String> reportCardStartYearStrWrap = new Wrap<String>().p(this).c(String.class).var("reportCardStartYearStr").o(reportCardStartYearStr);
+
+	/**	<br/> The entity reportCardStartYearStr
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCardStartYearStr">Find the entity reportCardStartYearStr in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _reportCardStartYearStr(Wrap<String> c);
+
+	public String getReportCardStartYearStr() {
+		return reportCardStartYearStr;
+	}
+
+	public void setReportCardStartYearStr(String reportCardStartYearStr) {
+		this.reportCardStartYearStr = reportCardStartYearStr;
+		this.reportCardStartYearStrWrap.alreadyInitialized = true;
+	}
+	protected ReportCard reportCardStartYearStrInit() {
+		if(!reportCardStartYearStrWrap.alreadyInitialized) {
+			_reportCardStartYearStr(reportCardStartYearStrWrap);
+			if(reportCardStartYearStr == null)
+				setReportCardStartYearStr(reportCardStartYearStrWrap.o);
+		}
+		reportCardStartYearStrWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public String solrReportCardStartYearStr() {
+		return reportCardStartYearStr;
+	}
+
+	public String strReportCardStartYearStr() {
+		return reportCardStartYearStr == null ? "" : reportCardStartYearStr;
+	}
+
+	public String jsonReportCardStartYearStr() {
+		return reportCardStartYearStr == null ? "" : reportCardStartYearStr;
+	}
+
+	public String nomAffichageReportCardStartYearStr() {
+		return null;
+	}
+
+	public String htmTooltipReportCardStartYearStr() {
+		return null;
+	}
+
+	public String htmReportCardStartYearStr() {
+		return reportCardStartYearStr == null ? "" : StringEscapeUtils.escapeHtml4(strReportCardStartYearStr());
+	}
+
 	///////////////////////
 	// reportCardEndYear //
 	///////////////////////
@@ -12298,6 +12360,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public void initReportCard() {
 		reportCardKeyInit();
 		reportCardStartYearInit();
+		reportCardStartYearStrInit();
 		reportCardEndYearInit();
 		agencySearchInit();
 		agency_Init();
@@ -12450,6 +12513,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.reportCardKey;
 			case "reportCardStartYear":
 				return oReportCard.reportCardStartYear;
+			case "reportCardStartYearStr":
+				return oReportCard.reportCardStartYearStr;
 			case "reportCardEndYear":
 				return oReportCard.reportCardEndYear;
 			case "agencySearch":
