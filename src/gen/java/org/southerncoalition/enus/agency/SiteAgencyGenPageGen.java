@@ -1,9 +1,10 @@
-package org.southerncoalition.enus.county;
+package org.southerncoalition.enus.agency;
 
 import java.util.Arrays;
 import org.southerncoalition.enus.request.api.ApiRequest;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import org.southerncoalition.enus.search.SearchList;
+import org.southerncoalition.enus.agency.SiteAgency;
 import java.util.HashMap;
 import org.apache.commons.lang3.StringUtils;
 import java.text.NumberFormat;
@@ -26,7 +27,6 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import org.southerncoalition.enus.request.SiteRequestEnUS;
 import java.util.Objects;
 import io.vertx.core.json.JsonArray;
-import org.southerncoalition.enus.county.SiteCounty;
 import org.apache.commons.lang3.math.NumberUtils;
 import java.util.Optional;
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -34,135 +34,131 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 
 /**	
- * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstClasse_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.county.SiteCountyGenPage&fq=classeEtendGen_indexed_boolean:true">Find the class  in Solr. </a>
+ * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstClasse_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.agency.SiteAgencyGenPage&fq=classeEtendGen_indexed_boolean:true">Find the class  in Solr. </a>
  * <br/>
  **/
-public abstract class SiteCountyGenPageGen<DEV> extends PageLayout {
-	protected static final Logger LOGGER = LoggerFactory.getLogger(SiteCountyGenPage.class);
+public abstract class SiteAgencyGenPageGen<DEV> extends PageLayout {
+	protected static final Logger LOGGER = LoggerFactory.getLogger(SiteAgencyGenPage.class);
 
 	////////////////////
-	// listSiteCounty //
+	// listSiteAgency //
 	////////////////////
 
-	/**	 The entity listSiteCounty
+	/**	 The entity listSiteAgency
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonInclude(Include.NON_NULL)
-	protected SearchList<SiteCounty> listSiteCounty;
+	protected SearchList<SiteAgency> listSiteAgency;
 	@JsonIgnore
-	public Wrap<SearchList<SiteCounty>> listSiteCountyWrap = new Wrap<SearchList<SiteCounty>>().p(this).c(SearchList.class).var("listSiteCounty").o(listSiteCounty);
+	public Wrap<SearchList<SiteAgency>> listSiteAgencyWrap = new Wrap<SearchList<SiteAgency>>().p(this).c(SearchList.class).var("listSiteAgency").o(listSiteAgency);
 
-	/**	<br/> The entity listSiteCounty
+	/**	<br/> The entity listSiteAgency
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.county.SiteCountyGenPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:listSiteCounty">Find the entity listSiteCounty in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.agency.SiteAgencyGenPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:listSiteAgency">Find the entity listSiteAgency in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _listSiteCounty(Wrap<SearchList<SiteCounty>> c);
+	protected abstract void _listSiteAgency(Wrap<SearchList<SiteAgency>> c);
 
-	public SearchList<SiteCounty> getListSiteCounty() {
-		return listSiteCounty;
+	public SearchList<SiteAgency> getListSiteAgency() {
+		return listSiteAgency;
 	}
 
-	public void setListSiteCounty(SearchList<SiteCounty> listSiteCounty) {
-		this.listSiteCounty = listSiteCounty;
-		this.listSiteCountyWrap.alreadyInitialized = true;
+	public void setListSiteAgency(SearchList<SiteAgency> listSiteAgency) {
+		this.listSiteAgency = listSiteAgency;
+		this.listSiteAgencyWrap.alreadyInitialized = true;
 	}
-	protected SiteCountyGenPage listSiteCountyInit() {
-		if(!listSiteCountyWrap.alreadyInitialized) {
-			_listSiteCounty(listSiteCountyWrap);
-			if(listSiteCounty == null)
-				setListSiteCounty(listSiteCountyWrap.o);
+	protected SiteAgencyGenPage listSiteAgencyInit() {
+		if(!listSiteAgencyWrap.alreadyInitialized) {
+			_listSiteAgency(listSiteAgencyWrap);
+			if(listSiteAgency == null)
+				setListSiteAgency(listSiteAgencyWrap.o);
 		}
-		if(listSiteCounty != null)
-			listSiteCounty.initDeepForClass(siteRequest_);
-		listSiteCountyWrap.alreadyInitialized(true);
-		return (SiteCountyGenPage)this;
+		if(listSiteAgency != null)
+			listSiteAgency.initDeepForClass(siteRequest_);
+		listSiteAgencyWrap.alreadyInitialized(true);
+		return (SiteAgencyGenPage)this;
 	}
 
-	////////////////
-	// siteCounty //
-	////////////////
+	/////////////////
+	// siteAgency_ //
+	/////////////////
 
-	/**	 The entity siteCounty
+	/**	 The entity siteAgency_
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonInclude(Include.NON_NULL)
-	protected SiteCounty siteCounty;
+	protected SiteAgency siteAgency_;
 	@JsonIgnore
-	public Wrap<SiteCounty> siteCountyWrap = new Wrap<SiteCounty>().p(this).c(SiteCounty.class).var("siteCounty").o(siteCounty);
+	public Wrap<SiteAgency> siteAgency_Wrap = new Wrap<SiteAgency>().p(this).c(SiteAgency.class).var("siteAgency_").o(siteAgency_);
 
-	/**	<br/> The entity siteCounty
+	/**	<br/> The entity siteAgency_
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.county.SiteCountyGenPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:siteCounty">Find the entity siteCounty in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.agency.SiteAgencyGenPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:siteAgency_">Find the entity siteAgency_ in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _siteCounty(Wrap<SiteCounty> c);
+	protected abstract void _siteAgency_(Wrap<SiteAgency> c);
 
-	public SiteCounty getSiteCounty() {
-		return siteCounty;
+	public SiteAgency getSiteAgency_() {
+		return siteAgency_;
 	}
 
-	public void setSiteCounty(SiteCounty siteCounty) {
-		this.siteCounty = siteCounty;
-		this.siteCountyWrap.alreadyInitialized = true;
+	public void setSiteAgency_(SiteAgency siteAgency_) {
+		this.siteAgency_ = siteAgency_;
+		this.siteAgency_Wrap.alreadyInitialized = true;
 	}
-	protected SiteCountyGenPage siteCountyInit() {
-		if(!siteCountyWrap.alreadyInitialized) {
-			_siteCounty(siteCountyWrap);
-			if(siteCounty == null)
-				setSiteCounty(siteCountyWrap.o);
+	protected SiteAgencyGenPage siteAgency_Init() {
+		if(!siteAgency_Wrap.alreadyInitialized) {
+			_siteAgency_(siteAgency_Wrap);
+			if(siteAgency_ == null)
+				setSiteAgency_(siteAgency_Wrap.o);
 		}
-		if(siteCounty != null)
-			siteCounty.initDeepForClass(siteRequest_);
-		siteCountyWrap.alreadyInitialized(true);
-		return (SiteCountyGenPage)this;
+		siteAgency_Wrap.alreadyInitialized(true);
+		return (SiteAgencyGenPage)this;
 	}
 
 	//////////////
 	// initDeep //
 	//////////////
 
-	protected boolean alreadyInitializedSiteCountyGenPage = false;
+	protected boolean alreadyInitializedSiteAgencyGenPage = false;
 
-	public SiteCountyGenPage initDeepSiteCountyGenPage(SiteRequestEnUS siteRequest_) {
+	public SiteAgencyGenPage initDeepSiteAgencyGenPage(SiteRequestEnUS siteRequest_) {
 		setSiteRequest_(siteRequest_);
-		if(!alreadyInitializedSiteCountyGenPage) {
-			alreadyInitializedSiteCountyGenPage = true;
-			initDeepSiteCountyGenPage();
+		if(!alreadyInitializedSiteAgencyGenPage) {
+			alreadyInitializedSiteAgencyGenPage = true;
+			initDeepSiteAgencyGenPage();
 		}
-		return (SiteCountyGenPage)this;
+		return (SiteAgencyGenPage)this;
 	}
 
-	public void initDeepSiteCountyGenPage() {
-		initSiteCountyGenPage();
+	public void initDeepSiteAgencyGenPage() {
+		initSiteAgencyGenPage();
 		super.initDeepPageLayout(siteRequest_);
 	}
 
-	public void initSiteCountyGenPage() {
-		listSiteCountyInit();
-		siteCountyInit();
+	public void initSiteAgencyGenPage() {
+		listSiteAgencyInit();
+		siteAgency_Init();
 	}
 
 	@Override public void initDeepForClass(SiteRequestEnUS siteRequest_) {
-		initDeepSiteCountyGenPage(siteRequest_);
+		initDeepSiteAgencyGenPage(siteRequest_);
 	}
 
 	/////////////////
 	// siteRequest //
 	/////////////////
 
-	public void siteRequestSiteCountyGenPage(SiteRequestEnUS siteRequest_) {
+	public void siteRequestSiteAgencyGenPage(SiteRequestEnUS siteRequest_) {
 			super.siteRequestPageLayout(siteRequest_);
-		if(listSiteCounty != null)
-			listSiteCounty.setSiteRequest_(siteRequest_);
-		if(siteCounty != null)
-			siteCounty.setSiteRequest_(siteRequest_);
+		if(listSiteAgency != null)
+			listSiteAgency.setSiteRequest_(siteRequest_);
 	}
 
 	public void siteRequestForClass(SiteRequestEnUS siteRequest_) {
-		siteRequestSiteCountyGenPage(siteRequest_);
+		siteRequestSiteAgencyGenPage(siteRequest_);
 	}
 
 	/////////////
@@ -174,7 +170,7 @@ public abstract class SiteCountyGenPageGen<DEV> extends PageLayout {
 		Object o = null;
 		for(String v : vars) {
 			if(o == null)
-				o = obtainSiteCountyGenPage(v);
+				o = obtainSiteAgencyGenPage(v);
 			else if(o instanceof Cluster) {
 				Cluster cluster = (Cluster)o;
 				o = cluster.obtainForClass(v);
@@ -182,13 +178,13 @@ public abstract class SiteCountyGenPageGen<DEV> extends PageLayout {
 		}
 		return o;
 	}
-	public Object obtainSiteCountyGenPage(String var) {
-		SiteCountyGenPage oSiteCountyGenPage = (SiteCountyGenPage)this;
+	public Object obtainSiteAgencyGenPage(String var) {
+		SiteAgencyGenPage oSiteAgencyGenPage = (SiteAgencyGenPage)this;
 		switch(var) {
-			case "listSiteCounty":
-				return oSiteCountyGenPage.listSiteCounty;
-			case "siteCounty":
-				return oSiteCountyGenPage.siteCounty;
+			case "listSiteAgency":
+				return oSiteAgencyGenPage.listSiteAgency;
+			case "siteAgency_":
+				return oSiteAgencyGenPage.siteAgency_;
 			default:
 				return super.obtainPageLayout(var);
 		}
@@ -203,7 +199,7 @@ public abstract class SiteCountyGenPageGen<DEV> extends PageLayout {
 		Object o = null;
 		for(String v : vars) {
 			if(o == null)
-				o = attributeSiteCountyGenPage(v, val);
+				o = attributeSiteAgencyGenPage(v, val);
 			else if(o instanceof Cluster) {
 				Cluster cluster = (Cluster)o;
 				o = cluster.attributeForClass(v, val);
@@ -211,8 +207,8 @@ public abstract class SiteCountyGenPageGen<DEV> extends PageLayout {
 		}
 		return o != null;
 	}
-	public Object attributeSiteCountyGenPage(String var, Object val) {
-		SiteCountyGenPage oSiteCountyGenPage = (SiteCountyGenPage)this;
+	public Object attributeSiteAgencyGenPage(String var, Object val) {
+		SiteAgencyGenPage oSiteAgencyGenPage = (SiteAgencyGenPage)this;
 		switch(var) {
 			default:
 				return super.attributePageLayout(var, val);
@@ -229,7 +225,7 @@ public abstract class SiteCountyGenPageGen<DEV> extends PageLayout {
 		if(val != null) {
 			for(String v : vars) {
 				if(o == null)
-					o = defineSiteCountyGenPage(v, val);
+					o = defineSiteAgencyGenPage(v, val);
 				else if(o instanceof Cluster) {
 					Cluster cluster = (Cluster)o;
 					o = cluster.defineForClass(v, val);
@@ -238,7 +234,7 @@ public abstract class SiteCountyGenPageGen<DEV> extends PageLayout {
 		}
 		return o != null;
 	}
-	public Object defineSiteCountyGenPage(String var, String val) {
+	public Object defineSiteAgencyGenPage(String var, String val) {
 		switch(var) {
 			default:
 				return super.definePageLayout(var, val);
@@ -250,11 +246,11 @@ public abstract class SiteCountyGenPageGen<DEV> extends PageLayout {
 	/////////////////
 
 	@Override public void htmlScripts() {
-		htmlScriptsSiteCountyGenPage();
+		htmlScriptsSiteAgencyGenPage();
 		super.htmlScripts();
 	}
 
-	public void htmlScriptsSiteCountyGenPage() {
+	public void htmlScriptsSiteAgencyGenPage() {
 	}
 
 	////////////////
@@ -262,11 +258,11 @@ public abstract class SiteCountyGenPageGen<DEV> extends PageLayout {
 	////////////////
 
 	@Override public void htmlScript() {
-		htmlScriptSiteCountyGenPage();
+		htmlScriptSiteAgencyGenPage();
 		super.htmlScript();
 	}
 
-	public void htmlScriptSiteCountyGenPage() {
+	public void htmlScriptSiteAgencyGenPage() {
 	}
 
 	//////////////
@@ -274,11 +270,11 @@ public abstract class SiteCountyGenPageGen<DEV> extends PageLayout {
 	//////////////
 
 	@Override public void htmlBody() {
-		htmlBodySiteCountyGenPage();
+		htmlBodySiteAgencyGenPage();
 		super.htmlBody();
 	}
 
-	public void htmlBodySiteCountyGenPage() {
+	public void htmlBodySiteAgencyGenPage() {
 	}
 
 	//////////
@@ -286,11 +282,11 @@ public abstract class SiteCountyGenPageGen<DEV> extends PageLayout {
 	//////////
 
 	@Override public void html() {
-		htmlSiteCountyGenPage();
+		htmlSiteAgencyGenPage();
 		super.html();
 	}
 
-	public void htmlSiteCountyGenPage() {
+	public void htmlSiteAgencyGenPage() {
 	}
 
 	//////////////
@@ -298,11 +294,11 @@ public abstract class SiteCountyGenPageGen<DEV> extends PageLayout {
 	//////////////
 
 	@Override public void htmlMeta() {
-		htmlMetaSiteCountyGenPage();
+		htmlMetaSiteAgencyGenPage();
 		super.htmlMeta();
 	}
 
-	public void htmlMetaSiteCountyGenPage() {
+	public void htmlMetaSiteAgencyGenPage() {
 	}
 
 	////////////////
@@ -310,11 +306,11 @@ public abstract class SiteCountyGenPageGen<DEV> extends PageLayout {
 	////////////////
 
 	@Override public void htmlStyles() {
-		htmlStylesSiteCountyGenPage();
+		htmlStylesSiteAgencyGenPage();
 		super.htmlStyles();
 	}
 
-	public void htmlStylesSiteCountyGenPage() {
+	public void htmlStylesSiteAgencyGenPage() {
 	}
 
 	///////////////
@@ -322,22 +318,22 @@ public abstract class SiteCountyGenPageGen<DEV> extends PageLayout {
 	///////////////
 
 	@Override public void htmlStyle() {
-		htmlStyleSiteCountyGenPage();
+		htmlStyleSiteAgencyGenPage();
 		super.htmlStyle();
 	}
 
-	public void htmlStyleSiteCountyGenPage() {
+	public void htmlStyleSiteAgencyGenPage() {
 	}
 
 	//////////////////
 	// apiRequest //
 	//////////////////
 
-	public void apiRequestSiteCountyGenPage() {
+	public void apiRequestSiteAgencyGenPage() {
 		ApiRequest apiRequest = Optional.ofNullable(siteRequest_).map(SiteRequestEnUS::getApiRequest_).orElse(null);
 		Object o = Optional.ofNullable(apiRequest).map(ApiRequest::getOriginal).orElse(null);
-		if(o != null && o instanceof SiteCountyGenPage) {
-			SiteCountyGenPage original = (SiteCountyGenPage)o;
+		if(o != null && o instanceof SiteAgencyGenPage) {
+			SiteAgencyGenPage original = (SiteAgencyGenPage)o;
 			super.apiRequestPageLayout();
 		}
 	}
@@ -357,9 +353,9 @@ public abstract class SiteCountyGenPageGen<DEV> extends PageLayout {
 	@Override public boolean equals(Object o) {
 		if(this == o)
 			return true;
-		if(!(o instanceof SiteCountyGenPage))
+		if(!(o instanceof SiteAgencyGenPage))
 			return false;
-		SiteCountyGenPage that = (SiteCountyGenPage)o;
+		SiteAgencyGenPage that = (SiteAgencyGenPage)o;
 		return super.equals(o);
 	}
 
@@ -370,7 +366,7 @@ public abstract class SiteCountyGenPageGen<DEV> extends PageLayout {
 	@Override public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString() + "\n");
-		sb.append("SiteCountyGenPage { ");
+		sb.append("SiteAgencyGenPage { ");
 		sb.append(" }");
 		return sb.toString();
 	}

@@ -1,4 +1,4 @@
-package org.southerncoalition.enus.county;
+package org.southerncoalition.enus.agency;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ import org.southerncoalition.enus.wrap.Wrap;
  * Saved: true
  * 
  * ApiTag.enUS: State
- * ApiUri.enUS: /api/county
+ * ApiUri.enUS: /api/agency
  * 
  * ApiMethod.enUS: PUTImport
  * ApiMethod.enUS: PUTMerge
@@ -26,38 +26,38 @@ import org.southerncoalition.enus.wrap.Wrap;
  * ApiMethod.enUS: Search
  * 
  * ApiMethod.enUS: AdminSearch
- * ApiUriAdminSearch.enUS: /api/admin/county
+ * ApiUriAdminSearch.enUS: /api/admin/agency
  * RoleUtilisateurAdminSearch.enUS: true
  * 
  * ApiMethod.enUS: SearchPage
- * PageSearchPage.enUS: SiteCountyPage
+ * PageSearchPage.enUS: SiteAgencyPage
  * PageSuperSearchPage.enUS: ClusterPage
- * ApiUriSearchPage.enUS: /county
+ * ApiUriSearchPage.enUS: /agency
  * 
- * AName.enUS: a county
+ * AName.enUS: a agency
  * Color: pale-yellow
  * IconGroup: regular
  * IconName: road
- * NameVar.enUS: county
- * NamePlural.enUS: counties
+ * NameVar.enUS: agency
+ * NamePlural.enUS: agencies
  * 
  * Role.frFR: SiteAdmin
  * Role.enUS: SiteAdmin
  * PublicRead: true
  * 
- * Sort.asc: countyName
+ * Sort.asc: agencyName
  * 
  * Lines: 100
  **/   
-public class SiteCounty extends SiteCountyGen<Cluster> {
+public class SiteAgency extends SiteAgencyGen<Cluster> {
 
 	/**
 	 * {@inheritDoc}
 	 * Indexed: true
 	 * Stored: true
-	 * Description.enUS: The primary key of the county in the database. 
+	 * Description.enUS: The primary key of the agency in the database. 
 	 */            
-	protected void _countyKey(Wrap<Long> c) {
+	protected void _agencyKey(Wrap<Long> c) {
 		c.o(pk);
 	}
 
@@ -70,7 +70,7 @@ public class SiteCounty extends SiteCountyGen<Cluster> {
 	 * HtmlCell: 1
 	 * DisplayName.enUS: name
 	 */ 
-	protected void _countyName(Wrap<String> c) {
+	protected void _agencyName(Wrap<String> c) {
 	}
 
 	/**
@@ -79,7 +79,7 @@ public class SiteCounty extends SiteCountyGen<Cluster> {
 	 */
 	protected void _stateSearch(SearchList<SiteState> l) {
 		l.setQuery("*:*");
-		l.addFilterQuery("countyKeys_indexed_longs:" + pk);
+		l.addFilterQuery("agencyKeys_indexed_longs:" + pk);
 		l.setC(SiteState.class);
 		l.setStore(true);
 	}
@@ -94,7 +94,7 @@ public class SiteCounty extends SiteCountyGen<Cluster> {
 	 * {@inheritDoc}
 	 * Indexed: true
 	 * Stored: true
-	 * Attribute: SiteState.countyKeys
+	 * Attribute: SiteState.agencyKeys
 	 * HtmlRow: 4
 	 * HtmlCell: 1
 	 * DisplayName.enUS: state
@@ -106,7 +106,7 @@ public class SiteCounty extends SiteCountyGen<Cluster> {
 	 * {@inheritDoc}
 	 * Indexed: true
 	 * Stored: true
-	 * Attribute: ReportCard.countyKey
+	 * Attribute: ReportCard.agencyKey
 	 * HtmlRow: 4
 	 * HtmlCell: 2
 	 * DisplayName.enUS: report cards
@@ -151,14 +151,14 @@ public class SiteCounty extends SiteCountyGen<Cluster> {
 	 * VarH2: true
 	 * VarTitle: true
 	 */ 
-	protected void _countyCompleteName(Wrap<String> c) {
-		c.o(countyName + " county in " + stateName + " (" + stateAbbreviation + ")");
+	protected void _agencyCompleteName(Wrap<String> c) {
+		c.o(agencyName + " agency in " + stateName + " (" + stateAbbreviation + ")");
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override() protected void  _objectTitle(Wrap<String> c) {
-		c.o(countyName + " county in " + stateName + " (" + stateAbbreviation + ")");
+		c.o(agencyName + " agency in " + stateName + " (" + stateAbbreviation + ")");
 	}
 }

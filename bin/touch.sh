@@ -20,5 +20,5 @@ touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/
 touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/user/SiteUser.java
 touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/cluster/Cluster.java
 touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/state/SiteState.java
-touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/county/SiteCounty.java
+touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/agency/SiteAgency.java
 touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/reportcard/ReportCard.java

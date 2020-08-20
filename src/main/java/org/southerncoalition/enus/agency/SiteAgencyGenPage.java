@@ -1,4 +1,4 @@
-package org.southerncoalition.enus.county;
+package org.southerncoalition.enus.agency;
 
 import org.southerncoalition.enus.page.PageLayout;
 import org.southerncoalition.enus.config.SiteConfig;
@@ -40,7 +40,7 @@ import org.apache.solr.client.solrj.SolrQuery.SortClause;
 /**
  * Translate: false
  **/
-public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
+public class SiteAgencyGenPage extends SiteAgencyGenPageGen<PageLayout> {
 
 	public static final List<String> ROLES = Arrays.asList("SiteAdmin");
 	public static final List<String> ROLE_READS = Arrays.asList("");
@@ -49,21 +49,21 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 	 * {@inheritDoc}
 	 * 
 	 **/
-	protected void _listSiteCounty(Wrap<SearchList<SiteCounty>> c) {
+	protected void _listSiteAgency(Wrap<SearchList<SiteAgency>> c) {
 	}
 
-	protected void _siteCounty(Wrap<SiteCounty> c) {
-		if(listSiteCounty != null && listSiteCounty.size() == 1)
-			c.o(listSiteCounty.get(0));
+	protected void _siteAgency_(Wrap<SiteAgency> c) {
+		if(listSiteAgency != null && listSiteAgency.size() == 1)
+			c.o(listSiteAgency.get(0));
 	}
 
 	@Override protected void _pageH1(Wrap<String> c) {
-			c.o("counties");
+			c.o("agencies");
 	}
 
 	@Override protected void _pageH2(Wrap<String> c) {
-		if(siteCounty != null && siteCounty.getCountyCompleteName() != null)
-			c.o(siteCounty.getCountyCompleteName());
+		if(siteAgency_ != null && siteAgency_.getAgencyCompleteName() != null)
+			c.o(siteAgency_.getAgencyCompleteName());
 	}
 
 	@Override protected void _pageH3(Wrap<String> c) {
@@ -71,22 +71,22 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 	}
 
 	@Override protected void _pageTitle(Wrap<String> c) {
-		if(siteCounty != null && siteCounty.getCountyCompleteName() != null)
-			c.o(siteCounty.getCountyCompleteName());
-		else if(siteCounty != null)
-			c.o("counties");
-		else if(listSiteCounty == null || listSiteCounty.size() == 0)
-			c.o("no county found");
+		if(siteAgency_ != null && siteAgency_.getAgencyCompleteName() != null)
+			c.o(siteAgency_.getAgencyCompleteName());
+		else if(siteAgency_ != null)
+			c.o("agencies");
+		else if(listSiteAgency == null || listSiteAgency.size() == 0)
+			c.o("no agency found");
 		else
-			c.o("counties");
+			c.o("agencies");
 	}
 
 	@Override protected void _pageUri(Wrap<String> c) {
-		c.o("/county");
+		c.o("/agency");
 	}
 
 	@Override protected void _pageImageUri(Wrap<String> c) {
-			c.o("/png/county-999.png");
+			c.o("/png/agency-999.png");
 	}
 
 	@Override protected void _contextIconGroup(Wrap<String> c) {
@@ -97,18 +97,18 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 			c.o("road");
 	}
 
-	@Override public void initDeepSiteCountyGenPage() {
-		initSiteCountyGenPage();
+	@Override public void initDeepSiteAgencyGenPage() {
+		initSiteAgencyGenPage();
 		super.initDeepPageLayout();
 	}
 
-	@Override public void htmlScriptsSiteCountyGenPage() {
-		e("script").a("src", staticBaseUrl, "/js/enUS/SiteCountyPage.js").f().g("script");
+	@Override public void htmlScriptsSiteAgencyGenPage() {
+		e("script").a("src", staticBaseUrl, "/js/enUS/SiteAgencyPage.js").f().g("script");
 		e("script").a("src", staticBaseUrl, "/js/enUS/SiteStatePage.js").f().g("script");
 		e("script").a("src", staticBaseUrl, "/js/enUS/ReportCardPage.js").f().g("script");
 	}
 
-	@Override public void htmlScriptSiteCountyGenPage() {
+	@Override public void htmlScriptSiteAgencyGenPage() {
 		l("$(document).ready(function() {");
 		tl(1, "document.onkeydown = function(evt) {");
 		tl(2, "evt = evt || window.event;");
@@ -129,24 +129,24 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
 				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
 				) {
-			tl(2, "suggestSiteCountyStateKey([{'name':'fq','value':'countyKeys:' + pk}], $('#listSiteCountyStateKey_Page'), pk, true); ");
+			tl(2, "suggestSiteAgencyStateKey([{'name':'fq','value':'agencyKeys:' + pk}], $('#listSiteAgencyStateKey_Page'), pk, true); ");
 		} else {
-			tl(2, "suggestSiteCountyStateKey([{'name':'fq','value':'countyKeys:' + pk}], $('#listSiteCountyStateKey_Page'), pk, false); ");
+			tl(2, "suggestSiteAgencyStateKey([{'name':'fq','value':'agencyKeys:' + pk}], $('#listSiteAgencyStateKey_Page'), pk, false); ");
 		}
 		if(
 				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
 				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
 				) {
-			tl(2, "suggestSiteCountyReportCardKeys([{'name':'fq','value':'countyKey:' + pk}], $('#listSiteCountyReportCardKeys_Page'), pk, true); ");
+			tl(2, "suggestSiteAgencyReportCardKeys([{'name':'fq','value':'agencyKey:' + pk}], $('#listSiteAgencyReportCardKeys_Page'), pk, true); ");
 		} else {
-			tl(2, "suggestSiteCountyReportCardKeys([{'name':'fq','value':'countyKey:' + pk}], $('#listSiteCountyReportCardKeys_Page'), pk, false); ");
+			tl(2, "suggestSiteAgencyReportCardKeys([{'name':'fq','value':'agencyKey:' + pk}], $('#listSiteAgencyReportCardKeys_Page'), pk, false); ");
 		}
 		tl(1, "}");
-		tl(1, "websocketSiteCounty(websocketSiteCountyInner);");
+		tl(1, "websocketSiteAgency(websocketSiteAgencyInner);");
 		l("});");
 	}
 
-	public void htmlFormPageSiteCounty(SiteCounty o) {
+	public void htmlFormPageSiteAgency(SiteAgency o) {
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmPk("Page");
 			o.htmCreated("Page");
@@ -158,7 +158,7 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 			o.htmDeleted("Page");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
-			o.htmCountyName("Page");
+			o.htmAgencyName("Page");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmStateKey("Page");
@@ -166,7 +166,7 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 		} g("div");
 	}
 
-	public void htmlFormPOSTSiteCounty(SiteCounty o) {
+	public void htmlFormPOSTSiteAgency(SiteAgency o) {
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmPk("POST");
 			o.htmCreated("POST");
@@ -178,7 +178,7 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 			o.htmDeleted("POST");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
-			o.htmCountyName("POST");
+			o.htmAgencyName("POST");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmStateKey("POST");
@@ -186,7 +186,7 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 		} g("div");
 	}
 
-	public void htmlFormPUTImportSiteCounty(SiteCounty o) {
+	public void htmlFormPUTImportSiteAgency(SiteAgency o) {
 		{ e("div").a("class", "w3-cell-row ").f();
 			e("textarea")
 				.a("class", "PUTImport_list w3-input w3-border ")
@@ -198,7 +198,7 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 		} g("div");
 	}
 
-	public void htmlFormPUTMergeSiteCounty(SiteCounty o) {
+	public void htmlFormPUTMergeSiteAgency(SiteAgency o) {
 		{ e("div").a("class", "w3-cell-row ").f();
 			e("textarea")
 				.a("class", "PUTMerge_list w3-input w3-border ")
@@ -210,7 +210,7 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 		} g("div");
 	}
 
-	public void htmlFormPUTCopySiteCounty(SiteCounty o) {
+	public void htmlFormPUTCopySiteAgency(SiteAgency o) {
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmCreated("PUTCopy");
 			o.htmModified("PUTCopy");
@@ -220,7 +220,7 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 			o.htmDeleted("PUTCopy");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
-			o.htmCountyName("PUTCopy");
+			o.htmAgencyName("PUTCopy");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmStateKey("PUTCopy");
@@ -233,7 +233,7 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 		} g("div");
 	}
 
-	public void htmlFormPATCHSiteCounty(SiteCounty o) {
+	public void htmlFormPATCHSiteAgency(SiteAgency o) {
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmCreated("PATCH");
 			o.htmModified("PATCH");
@@ -243,7 +243,7 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 			o.htmDeleted("PATCH");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
-			o.htmCountyName("PATCH");
+			o.htmAgencyName("PATCH");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmStateKey("PATCH");
@@ -256,7 +256,7 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 		} g("div");
 	}
 
-	public void htmlFormSearchSiteCounty(SiteCounty o) {
+	public void htmlFormSearchSiteAgency(SiteAgency o) {
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmPk("Search");
 			o.htmCreated("Search");
@@ -268,7 +268,7 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 			o.htmDeleted("Search");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
-			o.htmCountyName("Search");
+			o.htmAgencyName("Search");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmStateKey("Search");
@@ -282,17 +282,17 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 		} g("div");
 	}
 
-	@Override public void htmlBodySiteCountyGenPage() {
+	@Override public void htmlBodySiteAgencyGenPage() {
 
 		OperationRequest operationRequest = siteRequest_.getOperationRequest();
 		JsonObject params = operationRequest.getParams();
-		if(listSiteCounty == null || listSiteCounty.size() == 0) {
+		if(listSiteAgency == null || listSiteAgency.size() == 0) {
 
 			{ e("h1").f();
-				{ e("a").a("href", "/county").a("class", "w3-bar-item w3-btn w3-center w3-block w3-pale-yellow w3-hover-pale-yellow ").f();
+				{ e("a").a("href", "/agency").a("class", "w3-bar-item w3-btn w3-center w3-block w3-pale-yellow w3-hover-pale-yellow ").f();
 					if(contextIconCssClasses != null)
 						e("i").a("class", contextIconCssClasses + " site-menu-icon ").f().g("i");
-					e("span").a("class", " ").f().sx("counties").g("span");
+					e("span").a("class", " ").f().sx("agencies").g("span");
 				} g("a");
 			} g("h1");
 			e("div").a("class", "w3-padding-16 w3-card-4 w3-light-grey ").f();
@@ -300,15 +300,15 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 				{ e("span").a("class", "w3-bar-item w3-padding w3-center w3-block w3-pale-yellow ").f();
 					if(contextIconCssClasses != null)
 						e("i").a("class", contextIconCssClasses + " site-menu-icon ").f().g("i");
-					e("span").a("class", " ").f().sx("no county found").g("span");
+					e("span").a("class", " ").f().sx("no agency found").g("span");
 				} g("span");
 			} g("h2");
-		} else if(listSiteCounty != null && listSiteCounty.size() == 1 && params.getJsonObject("query").getString("q").equals("*:*")) {
-			SiteCounty o = listSiteCounty.get(0);
+		} else if(listSiteAgency != null && listSiteAgency.size() == 1 && params.getJsonObject("query").getString("q").equals("*:*")) {
+			SiteAgency o = listSiteAgency.get(0);
 			siteRequest_.setRequestPk(o.getPk());
 			if(StringUtils.isNotEmpty(pageH1)) {
 				{ e("h1").f();
-					{ e("a").a("href", "/county").a("class", "w3-bar-item w3-btn w3-center w3-block w3-pale-yellow w3-hover-pale-yellow ").f();
+					{ e("a").a("href", "/agency").a("class", "w3-bar-item w3-btn w3-center w3-block w3-pale-yellow w3-hover-pale-yellow ").f();
 						if(contextIconCssClasses != null)
 							e("i").a("class", contextIconCssClasses + " site-menu-icon ").f().g("i");
 						e("span").a("class", " ").f().sx(pageH1).g("span");
@@ -333,7 +333,7 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 		} else {
 
 			{ e("h1").f();
-				{ e("a").a("href", "/county").a("class", "w3-bar-item w3-btn w3-center w3-block w3-pale-yellow w3-hover-pale-yellow ").f();
+				{ e("a").a("href", "/agency").a("class", "w3-bar-item w3-btn w3-center w3-block w3-pale-yellow w3-hover-pale-yellow ").f();
 					if(contextIconCssClasses != null)
 						e("i").a("class", contextIconCssClasses + " site-menu-icon ").f().g("i");
 					e("span").a("class", " ").f().sx(pageH1).g("span");
@@ -342,7 +342,7 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 			e("div").a("class", "").f();
 				{ e("div").f();
 					JsonObject queryParams = Optional.ofNullable(operationRequest).map(OperationRequest::getParams).map(or -> or.getJsonObject("query")).orElse(new JsonObject());
-					Long num = listSiteCounty.getQueryResponse().getResults().getNumFound();
+					Long num = listSiteAgency.getQueryResponse().getResults().getNumFound();
 					String q = "*:*";
 					String query1 = "objectText";
 					String query2 = "";
@@ -370,15 +370,15 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 						}
 					}
 
-					Integer rows1 = Optional.ofNullable(listSiteCounty).map(l -> l.getRows()).orElse(10);
-					Integer start1 = Optional.ofNullable(listSiteCounty).map(l -> l.getStart()).orElse(1);
+					Integer rows1 = Optional.ofNullable(listSiteAgency).map(l -> l.getRows()).orElse(10);
+					Integer start1 = Optional.ofNullable(listSiteAgency).map(l -> l.getStart()).orElse(1);
 					Integer start2 = start1 - rows1;
 					Integer start3 = start1 + rows1;
 					Integer rows2 = rows1 / 2;
 					Integer rows3 = rows1 * 2;
 					start2 = start2 < 0 ? 0 : start2;
 					StringBuilder fqs = new StringBuilder();
-					for(String fq : Optional.ofNullable(listSiteCounty).map(l -> l.getFilterQueries()).orElse(new String[0])) {
+					for(String fq : Optional.ofNullable(listSiteAgency).map(l -> l.getFilterQueries()).orElse(new String[0])) {
 						if(!StringUtils.contains(fq, "(")) {
 							String fq1 = StringUtils.substringBefore(fq, "_");
 							String fq2 = StringUtils.substringAfter(fq, ":");
@@ -387,14 +387,14 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 						}
 					}
 					StringBuilder sorts = new StringBuilder();
-					for(SortClause sort : Optional.ofNullable(listSiteCounty).map(l -> l.getSorts()).orElse(Arrays.asList())) {
+					for(SortClause sort : Optional.ofNullable(listSiteAgency).map(l -> l.getSorts()).orElse(Arrays.asList())) {
 						sorts.append("&sort=").append(StringUtils.substringBefore(sort.getItem(), "_")).append(" ").append(sort.getOrder().name());
 					}
 
 					if(start1 == 0) {
 						e("i").a("class", "fas fa-arrow-square-left w3-opacity ").f().g("i");
 					} else {
-						{ e("a").a("href", "/county?q=", query, fqs, sorts, "&start=", start2, "&rows=", rows1).f();
+						{ e("a").a("href", "/agency?q=", query, fqs, sorts, "&start=", start2, "&rows=", rows1).f();
 							e("i").a("class", "fas fa-arrow-square-left ").f().g("i");
 						} g("a");
 					}
@@ -402,34 +402,34 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 					if(rows1 <= 1) {
 						e("i").a("class", "fas fa-minus-square w3-opacity ").f().g("i");
 					} else {
-						{ e("a").a("href", "/county?q=", query, fqs, sorts, "&start=", start1, "&rows=", rows2).f();
+						{ e("a").a("href", "/agency?q=", query, fqs, sorts, "&start=", start1, "&rows=", rows2).f();
 							e("i").a("class", "fas fa-minus-square ").f().g("i");
 						} g("a");
 					}
 
-					{ e("a").a("href", "/county?q=", query, fqs, sorts, "&start=", start1, "&rows=", rows3).f();
+					{ e("a").a("href", "/agency?q=", query, fqs, sorts, "&start=", start1, "&rows=", rows3).f();
 						e("i").a("class", "fas fa-plus-square ").f().g("i");
 					} g("a");
 
 					if(start3 >= num) {
 						e("i").a("class", "fas fa-arrow-square-right w3-opacity ").f().g("i");
 					} else {
-						{ e("a").a("href", "/county?q=", query, fqs, sorts, "&start=", start3, "&rows=", rows1).f();
+						{ e("a").a("href", "/agency?q=", query, fqs, sorts, "&start=", start3, "&rows=", rows1).f();
 							e("i").a("class", "fas fa-arrow-square-right ").f().g("i");
 						} g("a");
 					}
 						e("span").f().sx((start1 + 1), " - ", (start1 + rows1), " of ", num).g("span");
 				} g("div");
-				table1SiteCountyGenPage();
+				table1SiteAgencyGenPage();
 		}
 
-		if(listSiteCounty != null && listSiteCounty.size() == 1 && params.getJsonObject("query").getString("q").equals("*:*")) {
-			SiteCounty o = listSiteCounty.first();
+		if(listSiteAgency != null && listSiteAgency.size() == 1 && params.getJsonObject("query").getString("q").equals("*:*")) {
+			SiteAgency o = listSiteAgency.first();
 
 			{ e("div").a("class", "").f();
 
 				if(o.getPk() != null) {
-					{ e("form").a("action", "").a("id", "SiteCountyForm").a("style", "display: inline-block; width: 100%; ").a("onsubmit", "event.preventDefault(); return false; ").f();
+					{ e("form").a("action", "").a("id", "SiteAgencyForm").a("style", "display: inline-block; width: 100%; ").a("onsubmit", "event.preventDefault(); return false; ").f();
 						e("input")
 						.a("name", "pk")
 						.a("class", "valuePk")
@@ -441,35 +441,35 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 						.a("type", "hidden")
 						.fg();
 					} g("form");
-					htmlFormPageSiteCounty(o);
+					htmlFormPageSiteAgency(o);
 				}
 
 			} g("div");
 
 		}
-		htmlBodyFormsSiteCountyGenPage();
+		htmlBodyFormsSiteAgencyGenPage();
 		g("div");
 	}
 
-	public void table1SiteCountyGenPage() {
+	public void table1SiteAgencyGenPage() {
 		{ e("table").a("class", "w3-table w3-bordered w3-striped w3-border w3-hoverable ").f();
-			table2SiteCountyGenPage();
+			table2SiteAgencyGenPage();
 		} g("table");
 	}
 
-	public void table2SiteCountyGenPage() {
-		thead1SiteCountyGenPage();
-		tbody1SiteCountyGenPage();
-		tfoot1SiteCountyGenPage();
+	public void table2SiteAgencyGenPage() {
+		thead1SiteAgencyGenPage();
+		tbody1SiteAgencyGenPage();
+		tfoot1SiteAgencyGenPage();
 	}
 
-	public void thead1SiteCountyGenPage() {
+	public void thead1SiteAgencyGenPage() {
 		{ e("thead").a("class", "w3-pale-yellow w3-hover-pale-yellow ").f();
-			thead2SiteCountyGenPage();
+			thead2SiteAgencyGenPage();
 		} g("thead");
 	}
 
-	public void thead2SiteCountyGenPage() {
+	public void thead2SiteAgencyGenPage() {
 			{ e("tr").f();
 			if(getColumnCreated()) {
 				e("th").f().sx("created").g("th");
@@ -480,19 +480,19 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 			} g("tr");
 	}
 
-	public void tbody1SiteCountyGenPage() {
+	public void tbody1SiteAgencyGenPage() {
 		{ e("tbody").f();
-			tbody2SiteCountyGenPage();
+			tbody2SiteAgencyGenPage();
 		} g("tbody");
 	}
 
-	public void tbody2SiteCountyGenPage() {
-		Map<String, Map<String, List<String>>> highlighting = listSiteCounty.getQueryResponse().getHighlighting();
-		for(int i = 0; i < listSiteCounty.size(); i++) {
-			SiteCounty o = listSiteCounty.getList().get(i);
+	public void tbody2SiteAgencyGenPage() {
+		Map<String, Map<String, List<String>>> highlighting = listSiteAgency.getQueryResponse().getHighlighting();
+		for(int i = 0; i < listSiteAgency.size(); i++) {
+			SiteAgency o = listSiteAgency.getList().get(i);
 			Map<String, List<String>> highlights = highlighting == null ? null : highlighting.get(o.getId());
 			List<String> highlightList = highlights == null ? null : highlights.get(highlights.keySet().stream().findFirst().orElse(null));
-			String uri = "/county/" + o.getPk();
+			String uri = "/agency/" + o.getPk();
 			{ e("tr").f();
 				if(getColumnCreated()) {
 					{ e("td").f();
@@ -517,15 +517,15 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 		}
 	}
 
-	public void tfoot1SiteCountyGenPage() {
+	public void tfoot1SiteAgencyGenPage() {
 		{ e("tfoot").a("class", "w3-pale-yellow w3-hover-pale-yellow ").f();
-			tfoot2SiteCountyGenPage();
+			tfoot2SiteAgencyGenPage();
 		} g("tfoot");
 	}
 
-	public void tfoot2SiteCountyGenPage() {
+	public void tfoot2SiteAgencyGenPage() {
 		{ e("tr").f();
-			SimpleOrderedMap facets = (SimpleOrderedMap)Optional.ofNullable(listSiteCounty.getQueryResponse()).map(QueryResponse::getResponse).map(r -> r.get("facets")).orElse(new SimpleOrderedMap());
+			SimpleOrderedMap facets = (SimpleOrderedMap)Optional.ofNullable(listSiteAgency.getQueryResponse()).map(QueryResponse::getResponse).map(r -> r.get("facets")).orElse(new SimpleOrderedMap());
 			if(getColumnCreated()) {
 				e("td").f();
 				g("td");
@@ -545,49 +545,49 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 		return true;
 	}
 
-	public void htmlBodyFormsSiteCountyGenPage() {
+	public void htmlBodyFormsSiteAgencyGenPage() {
 		if(
 				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
 				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
 				) {
 			e("div").a("class", "w3-margin-top ").f();
 
-			if(listSiteCounty != null && listSiteCounty.size() == 1) {
+			if(listSiteAgency != null && listSiteAgency.size() == 1) {
 				{ e("button")
 					.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-pale-yellow ")
-						.a("id", "refreshThisSiteCountyGenPage")
-						.a("onclick", "patchSiteCountyVals( [ {name: 'fq', value: 'pk:' + " + siteRequest_.getRequestPk() + " } ], {}, function() { addGlow($('#refreshThisSiteCountyGenPage')); }, function() { addError($('#refreshThisSiteCountyGenPage')); }); return false; ").f();
+						.a("id", "refreshThisSiteAgencyGenPage")
+						.a("onclick", "patchSiteAgencyVals( [ {name: 'fq', value: 'pk:' + " + siteRequest_.getRequestPk() + " } ], {}, function() { addGlow($('#refreshThisSiteAgencyGenPage')); }, function() { addError($('#refreshThisSiteAgencyGenPage')); }); return false; ").f();
 						e("i").a("class", "fas fa-sync-alt ").f().g("i");
-					sx("refresh this county");
+					sx("refresh this agency");
 				} g("button");
 			}
 
 			{ e("button")
 				.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-pale-yellow ")
-				.a("onclick", "$('#putimportSiteCountyModal').show(); ")
+				.a("onclick", "$('#putimportSiteAgencyModal').show(); ")
 				.f();
 				e("i").a("class", "fas fa-file-import ").f().g("i");
-				sx("Import counties");
+				sx("Import agencies");
 			} g("button");
-			{ e("div").a("id", "putimportSiteCountyModal").a("class", "w3-modal w3-padding-32 ").f();
+			{ e("div").a("id", "putimportSiteAgencyModal").a("class", "w3-modal w3-padding-32 ").f();
 				{ e("div").a("class", "w3-modal-content ").f();
 					{ e("div").a("class", "w3-card-4 ").f();
 						{ e("header").a("class", "w3-container w3-pale-yellow ").f();
-							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#putimportSiteCountyModal').hide(); ").f().sx("×").g("span");
-							e("h2").a("class", "w3-padding ").f().sx("Import counties").g("h2");
+							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#putimportSiteAgencyModal').hide(); ").f().sx("×").g("span");
+							e("h2").a("class", "w3-padding ").f().sx("Import agencies").g("h2");
 						} g("header");
 						{ e("div").a("class", "w3-container ").f();
-							SiteCounty o = new SiteCounty();
+							SiteAgency o = new SiteAgency();
 							o.setSiteRequest_(siteRequest_);
 
 							// Form PUT
-							{ e("div").a("id", "putimportSiteCountyForm").f();
-								htmlFormPUTImportSiteCounty(o);
+							{ e("div").a("id", "putimportSiteAgencyForm").f();
+								htmlFormPUTImportSiteAgency(o);
 							} g("div");
 							e("button")
 								.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-margin w3-pale-yellow ")
-								.a("onclick", "putimportSiteCounty($('#putimportSiteCountyForm')); ")
-								.f().sx("Import counties")
+								.a("onclick", "putimportSiteAgency($('#putimportSiteAgencyForm')); ")
+								.f().sx("Import agencies")
 							.g("button");
 
 						} g("div");
@@ -598,30 +598,30 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 
 			{ e("button")
 				.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-pale-yellow ")
-				.a("onclick", "$('#putmergeSiteCountyModal').show(); ")
+				.a("onclick", "$('#putmergeSiteAgencyModal').show(); ")
 				.f();
 				e("i").a("class", "fas fa-code-merge ").f().g("i");
-				sx("Merge counties");
+				sx("Merge agencies");
 			} g("button");
-			{ e("div").a("id", "putmergeSiteCountyModal").a("class", "w3-modal w3-padding-32 ").f();
+			{ e("div").a("id", "putmergeSiteAgencyModal").a("class", "w3-modal w3-padding-32 ").f();
 				{ e("div").a("class", "w3-modal-content ").f();
 					{ e("div").a("class", "w3-card-4 ").f();
 						{ e("header").a("class", "w3-container w3-pale-yellow ").f();
-							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#putmergeSiteCountyModal').hide(); ").f().sx("×").g("span");
-							e("h2").a("class", "w3-padding ").f().sx("Merge counties").g("h2");
+							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#putmergeSiteAgencyModal').hide(); ").f().sx("×").g("span");
+							e("h2").a("class", "w3-padding ").f().sx("Merge agencies").g("h2");
 						} g("header");
 						{ e("div").a("class", "w3-container ").f();
-							SiteCounty o = new SiteCounty();
+							SiteAgency o = new SiteAgency();
 							o.setSiteRequest_(siteRequest_);
 
 							// Form PUT
-							{ e("div").a("id", "putmergeSiteCountyForm").f();
-								htmlFormPUTMergeSiteCounty(o);
+							{ e("div").a("id", "putmergeSiteAgencyForm").f();
+								htmlFormPUTMergeSiteAgency(o);
 							} g("div");
 							e("button")
 								.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-margin w3-pale-yellow ")
-								.a("onclick", "putmergeSiteCounty($('#putmergeSiteCountyForm')); ")
-								.f().sx("Merge counties")
+								.a("onclick", "putmergeSiteAgency($('#putmergeSiteAgencyForm')); ")
+								.f().sx("Merge agencies")
 							.g("button");
 
 						} g("div");
@@ -632,30 +632,30 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 
 			{ e("button")
 				.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-pale-yellow ")
-				.a("onclick", "$('#putcopySiteCountyModal').show(); ")
+				.a("onclick", "$('#putcopySiteAgencyModal').show(); ")
 				.f();
 				e("i").a("class", "fas fa-copy ").f().g("i");
-				sx("Duplicate counties");
+				sx("Duplicate agencies");
 			} g("button");
-			{ e("div").a("id", "putcopySiteCountyModal").a("class", "w3-modal w3-padding-32 ").f();
+			{ e("div").a("id", "putcopySiteAgencyModal").a("class", "w3-modal w3-padding-32 ").f();
 				{ e("div").a("class", "w3-modal-content ").f();
 					{ e("div").a("class", "w3-card-4 ").f();
 						{ e("header").a("class", "w3-container w3-pale-yellow ").f();
-							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#putcopySiteCountyModal').hide(); ").f().sx("×").g("span");
-							e("h2").a("class", "w3-padding ").f().sx("Duplicate counties").g("h2");
+							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#putcopySiteAgencyModal').hide(); ").f().sx("×").g("span");
+							e("h2").a("class", "w3-padding ").f().sx("Duplicate agencies").g("h2");
 						} g("header");
 						{ e("div").a("class", "w3-container ").f();
-							SiteCounty o = new SiteCounty();
+							SiteAgency o = new SiteAgency();
 							o.setSiteRequest_(siteRequest_);
 
 							// Form PUT
-							{ e("div").a("id", "putcopySiteCountyForm").f();
-								htmlFormPUTCopySiteCounty(o);
+							{ e("div").a("id", "putcopySiteAgencyForm").f();
+								htmlFormPUTCopySiteAgency(o);
 							} g("div");
 							e("button")
 								.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-margin w3-pale-yellow ")
-								.a("onclick", "putcopySiteCounty($('#putcopySiteCountyForm'), ", siteCounty == null ? "null" : siteCounty.getPk(), "); ")
-								.f().sx("Duplicate counties")
+								.a("onclick", "putcopySiteAgency($('#putcopySiteAgencyForm'), ", siteAgency_ == null ? "null" : siteAgency_.getPk(), "); ")
+								.f().sx("Duplicate agencies")
 							.g("button");
 
 						} g("div");
@@ -666,30 +666,30 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 
 			{ e("button")
 				.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-pale-yellow ")
-				.a("onclick", "$('#postSiteCountyModal').show(); ")
+				.a("onclick", "$('#postSiteAgencyModal').show(); ")
 				.f();
 				e("i").a("class", "fas fa-file-plus ").f().g("i");
-				sx("Create a county");
+				sx("Create a agency");
 			} g("button");
-			{ e("div").a("id", "postSiteCountyModal").a("class", "w3-modal w3-padding-32 ").f();
+			{ e("div").a("id", "postSiteAgencyModal").a("class", "w3-modal w3-padding-32 ").f();
 				{ e("div").a("class", "w3-modal-content ").f();
 					{ e("div").a("class", "w3-card-4 ").f();
 						{ e("header").a("class", "w3-container w3-pale-yellow ").f();
-							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#postSiteCountyModal').hide(); ").f().sx("×").g("span");
-							e("h2").a("class", "w3-padding ").f().sx("Create a county").g("h2");
+							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#postSiteAgencyModal').hide(); ").f().sx("×").g("span");
+							e("h2").a("class", "w3-padding ").f().sx("Create a agency").g("h2");
 						} g("header");
 						{ e("div").a("class", "w3-container ").f();
-							SiteCounty o = new SiteCounty();
+							SiteAgency o = new SiteAgency();
 							o.setSiteRequest_(siteRequest_);
 
 							// Form POST
-							{ e("div").a("id", "postSiteCountyForm").f();
-								htmlFormPOSTSiteCounty(o);
+							{ e("div").a("id", "postSiteAgencyForm").f();
+								htmlFormPOSTSiteAgency(o);
 							} g("div");
 							e("button")
 								.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-margin w3-pale-yellow ")
-								.a("onclick", "postSiteCounty($('#postSiteCountyForm')); ")
-								.f().sx("Create a county")
+								.a("onclick", "postSiteAgency($('#postSiteAgencyForm')); ")
+								.f().sx("Create a agency")
 							.g("button");
 
 						} g("div");
@@ -700,30 +700,30 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 
 			{ e("button")
 				.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-pale-yellow ")
-				.a("onclick", "$('#patchSiteCountyModal').show(); ")
+				.a("onclick", "$('#patchSiteAgencyModal').show(); ")
 				.f();
 				e("i").a("class", "fas fa-edit ").f().g("i");
-				sx("Modify counties");
+				sx("Modify agencies");
 			} g("button");
-			{ e("div").a("id", "patchSiteCountyModal").a("class", "w3-modal w3-padding-32 ").f();
+			{ e("div").a("id", "patchSiteAgencyModal").a("class", "w3-modal w3-padding-32 ").f();
 				{ e("div").a("class", "w3-modal-content ").f();
 					{ e("div").a("class", "w3-card-4 ").f();
 						{ e("header").a("class", "w3-container w3-pale-yellow ").f();
-							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#patchSiteCountyModal').hide(); ").f().sx("×").g("span");
-							e("h2").a("class", "w3-padding ").f().sx("Modify counties").g("h2");
+							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#patchSiteAgencyModal').hide(); ").f().sx("×").g("span");
+							e("h2").a("class", "w3-padding ").f().sx("Modify agencies").g("h2");
 						} g("header");
 						{ e("div").a("class", "w3-container ").f();
-							SiteCounty o = new SiteCounty();
+							SiteAgency o = new SiteAgency();
 							o.setSiteRequest_(siteRequest_);
 
 							// FormValues PATCH
-							{ e("form").a("action", "").a("id", "patchSiteCountyFormValues").a("onsubmit", "event.preventDefault(); return false; ").f();
-								htmlFormPATCHSiteCounty(o);
+							{ e("form").a("action", "").a("id", "patchSiteAgencyFormValues").a("onsubmit", "event.preventDefault(); return false; ").f();
+								htmlFormPATCHSiteAgency(o);
 							} g("form");
 							e("button")
 								.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-margin w3-pale-yellow ")
-								.a("onclick", "patchSiteCounty(null, $('#patchSiteCountyFormValues'), ", Optional.ofNullable(siteCounty).map(SiteCounty::getPk).map(a -> a.toString()).orElse("null"), ", function() {}, function() {}); ")
-								.f().sx("Modify counties")
+								.a("onclick", "patchSiteAgency(null, $('#patchSiteAgencyFormValues'), ", Optional.ofNullable(siteAgency_).map(SiteAgency::getPk).map(a -> a.toString()).orElse("null"), ", function() {}, function() {}); ")
+								.f().sx("Modify agencies")
 							.g("button");
 
 						} g("div");
@@ -733,12 +733,12 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 
 			g("div");
 		}
-		htmlSuggestedSiteCountyGenPage(this, null, listSiteCounty);
+		htmlSuggestedSiteAgencyGenPage(this, null, listSiteAgency);
 	}
 
 	/**
 	**/
-	public static void htmlSuggestedSiteCountyGenPage(PageLayout p, String id, SearchList<SiteCounty> listSiteCounty) {
+	public static void htmlSuggestedSiteAgencyGenPage(PageLayout p, String id, SearchList<SiteAgency> listSiteAgency) {
 		SiteRequestEnUS siteRequest_ = p.getSiteRequest_();
 		try {
 			OperationRequest operationRequest = siteRequest_.getOperationRequest();
@@ -768,15 +768,15 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 				}
 			}
 
-			Integer rows1 = Optional.ofNullable(listSiteCounty).map(l -> l.getRows()).orElse(10);
-			Integer start1 = Optional.ofNullable(listSiteCounty).map(l -> l.getStart()).orElse(1);
+			Integer rows1 = Optional.ofNullable(listSiteAgency).map(l -> l.getRows()).orElse(10);
+			Integer start1 = Optional.ofNullable(listSiteAgency).map(l -> l.getStart()).orElse(1);
 			Integer start2 = start1 - rows1;
 			Integer start3 = start1 + rows1;
 			Integer rows2 = rows1 / 2;
 			Integer rows3 = rows1 * 2;
 			start2 = start2 < 0 ? 0 : start2;
 			StringBuilder fqs = new StringBuilder();
-			for(String fq : Optional.ofNullable(listSiteCounty).map(l -> l.getFilterQueries()).orElse(new String[0])) {
+			for(String fq : Optional.ofNullable(listSiteAgency).map(l -> l.getFilterQueries()).orElse(new String[0])) {
 				if(!StringUtils.contains(fq, "(")) {
 					String fq1 = StringUtils.substringBefore(fq, "_");
 					String fq2 = StringUtils.substringAfter(fq, ":");
@@ -785,25 +785,25 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 				}
 			}
 			StringBuilder sorts = new StringBuilder();
-			for(SortClause sort : Optional.ofNullable(listSiteCounty).map(l -> l.getSorts()).orElse(Arrays.asList())) {
+			for(SortClause sort : Optional.ofNullable(listSiteAgency).map(l -> l.getSorts()).orElse(Arrays.asList())) {
 				sorts.append("&sort=").append(StringUtils.substringBefore(sort.getItem(), "_")).append(" ").append(sort.getOrder().name());
 			}
 
 			if(
-					CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), SiteCountyGenPage.ROLES)
-					|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), SiteCountyGenPage.ROLES)
+					CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), SiteAgencyGenPage.ROLES)
+					|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), SiteAgencyGenPage.ROLES)
 					) {
 					{ p.e("div").a("class", "").f();
-						{ p.e("button").a("id", "refreshAllSiteCountyGenPage", id).a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-pale-yellow ").a("onclick", "patchSiteCountyVals([], {}, function() { addGlow($('#refreshAllSiteCountyGenPage", id, "')); }, function() { addError($('#refreshAllSiteCountyGenPage", id, "')); }); ").f();
+						{ p.e("button").a("id", "refreshAllSiteAgencyGenPage", id).a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-pale-yellow ").a("onclick", "patchSiteAgencyVals([], {}, function() { addGlow($('#refreshAllSiteAgencyGenPage", id, "')); }, function() { addError($('#refreshAllSiteAgencyGenPage", id, "')); }); ").f();
 							p.e("i").a("class", "fas fa-sync-alt ").f().g("i");
-							p.sx("refresh all the counties");
+							p.sx("refresh all the agencies");
 						} p.g("button");
 					} p.g("div");
 			}
 			{ p.e("div").a("class", "w3-cell-row ").f();
 				{ p.e("div").a("class", "w3-cell ").f();
 					{ p.e("span").f();
-						p.sx("search counties: ");
+						p.sx("search agencies: ");
 					} p.g("span");
 				} p.g("div");
 			} p.g("div");
@@ -811,18 +811,18 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 
 				p.e("input")
 					.a("type", "text")
-					.a("class", "suggestSiteCounty w3-input w3-border w3-bar-item ")
-					.a("name", "suggestSiteCounty")
-					.a("id", "suggestSiteCounty", id)
+					.a("class", "suggestSiteAgency w3-input w3-border w3-bar-item ")
+					.a("name", "suggestSiteAgency")
+					.a("id", "suggestSiteAgency", id)
 					.a("autocomplete", "off")
-					.a("oninput", "suggestSiteCountyObjectSuggest( [ { 'name': 'q', 'value': 'objectSuggest:' + $(this).val() }, { 'name': 'rows', 'value': '10' }, { 'name': 'fl', 'value': 'pk,pageUrlPk,countyCompleteName' } ], $('#suggestListSiteCounty", id, "'), ", p.getSiteRequest_().getRequestPk(), "); ")
-					.a("onkeyup", "if (event.keyCode === 13) { event.preventDefault(); window.location.href = '/county?q=", query1, ":' + encodeURIComponent(this.value) + '", fqs, sorts, "&start=", start2, "&rows=", rows1, "'; }"); 
-				if(listSiteCounty != null)
+					.a("oninput", "suggestSiteAgencyObjectSuggest( [ { 'name': 'q', 'value': 'objectSuggest:' + $(this).val() }, { 'name': 'rows', 'value': '10' }, { 'name': 'fl', 'value': 'pk,pageUrlPk,agencyCompleteName' } ], $('#suggestListSiteAgency", id, "'), ", p.getSiteRequest_().getRequestPk(), "); ")
+					.a("onkeyup", "if (event.keyCode === 13) { event.preventDefault(); window.location.href = '/agency?q=", query1, ":' + encodeURIComponent(this.value) + '", fqs, sorts, "&start=", start2, "&rows=", rows1, "'; }"); 
+				if(listSiteAgency != null)
 					p.a("value", query2);
 				p.fg();
 				{ p.e("button")
 					.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-yellow ")
-					.a("onclick", "window.location.href = '/county?q=", query1, ":' + encodeURIComponent(this.previousElementSibling.value) + '", fqs, sorts, "&start=", start2, "&rows=", rows1, "'; ") 
+					.a("onclick", "window.location.href = '/agency?q=", query1, ":' + encodeURIComponent(this.previousElementSibling.value) + '", fqs, sorts, "&start=", start2, "&rows=", rows1, "'; ") 
 					.f();
 					p.e("i").a("class", "fas fa-search ").f().g("i");
 				} p.g("button");
@@ -830,14 +830,14 @@ public class SiteCountyGenPage extends SiteCountyGenPageGen<PageLayout> {
 			} p.g("div");
 			{ p.e("div").a("class", "w3-cell-row ").f();
 				{ p.e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
-					{ p.e("ul").a("class", "w3-ul w3-hoverable ").a("id", "suggestListSiteCounty", id).f();
+					{ p.e("ul").a("class", "w3-ul w3-hoverable ").a("id", "suggestListSiteAgency", id).f();
 					} p.g("ul");
 				} p.g("div");
 			} p.g("div");
 			{ p.e("div").a("class", "").f();
-				{ p.e("a").a("href", "/county").a("class", "").f();
+				{ p.e("a").a("href", "/agency").a("class", "").f();
 					p.e("i").a("class", "far fa-road ").f().g("i");
-					p.sx("see all the counties");
+					p.sx("see all the agencies");
 				} p.g("a");
 			} p.g("div");
 		} catch(Exception e) {

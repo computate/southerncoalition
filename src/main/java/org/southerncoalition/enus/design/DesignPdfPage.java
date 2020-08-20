@@ -19,7 +19,7 @@ import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.solr.client.solrj.SolrQuery.ORDER;
 import org.apache.solr.client.solrj.util.ClientUtils;
-import org.southerncoalition.enus.county.SiteCounty;
+import org.southerncoalition.enus.agency.SiteAgency;
 import org.southerncoalition.enus.html.part.HtmlPart;
 import org.southerncoalition.enus.reportcard.ReportCard;
 import org.southerncoalition.enus.search.SearchList;
@@ -116,8 +116,8 @@ public class DesignPdfPage extends DesignPdfPageGen<DesignPdfGenPage> {
 		l.addFilterQuery("reportCardEndYear_indexed_int:" + reportCardEndYear);
 
 		l.addSort("stateName_indexed_int", ORDER.asc);
-		l.addSort("countyName_indexed_int", ORDER.asc);
-		l.addSort("reportCardStartCounty_indexed_int", ORDER.desc);
+		l.addSort("agencyName_indexed_int", ORDER.asc);
+		l.addSort("reportCardStartAgency_indexed_int", ORDER.desc);
 		l.addFacetField("reportCardStartYear_indexed_int");
 
 		Boolean filtered = false;
@@ -172,8 +172,8 @@ public class DesignPdfPage extends DesignPdfPageGen<DesignPdfGenPage> {
 		Integer size = reportCardSearch.size();
 		Long stateKeyBefore = null;
 		Long stateKeyCurrent = null;
-		Long countyKeyBefore = null;
-		Long countyKeyCurrent = null;
+		Long agencyKeyBefore = null;
+		Long agencyKeyCurrent = null;
 		ReportCard reportCard = null;
 		List<ReportCard> reportCardReportCards = null;
 		Integer reportCardNumber = null;
@@ -186,20 +186,20 @@ public class DesignPdfPage extends DesignPdfPageGen<DesignPdfGenPage> {
 			while(i < size) {
 				reportCard = reportCards.get(i);
 				stateKeyCurrent = reportCard.getStateKey();
-				countyKeyCurrent = reportCard.getCountyKey();
+				agencyKeyCurrent = reportCard.getAgencyKey();
 				if(stateKeyCurrent == null || ObjectUtils.compare(stateKeyCurrent, stateKeyBefore) != 0) {
 					stateKeyBefore = reportCard.getStateKey();
-					reportCardCounties_ = reportCard.getReportCardCounties_();
+					reportCardAgencies_ = reportCard.getReportCardAgencies_();
 					reportCardStates_.add(reportCard);
 				}
 				while(i < size) {
 					reportCard = reportCards.get(i);
 					stateKeyCurrent = reportCard.getStateKey();
-					countyKeyCurrent = reportCard.getCountyKey();
-					if(countyKeyBefore == null || ObjectUtils.compare(countyKeyCurrent, countyKeyBefore) != 0) {
-						countyKeyBefore = reportCard.getCountyKey();
+					agencyKeyCurrent = reportCard.getAgencyKey();
+					if(agencyKeyBefore == null || ObjectUtils.compare(agencyKeyCurrent, agencyKeyBefore) != 0) {
+						agencyKeyBefore = reportCard.getAgencyKey();
 						reportCardReportCards = reportCard.getReportCardReportCards_();
-						reportCardCounties_.add(reportCard);
+						reportCardAgencies_.add(reportCard);
 						reportCardNumber = 1;
 					}
 					reportCard.setReportCardKey(reportCard.getPk());
@@ -211,10 +211,10 @@ public class DesignPdfPage extends DesignPdfPageGen<DesignPdfGenPage> {
 						break;
 					reportCard = reportCards.get(i);
 					stateKeyCurrent = reportCard.getStateKey();
-					countyKeyCurrent = reportCard.getCountyKey();
+					agencyKeyCurrent = reportCard.getAgencyKey();
 					if(ObjectUtils.compare(stateKeyCurrent, stateKeyBefore) != 0)
 						break;
-					if(ObjectUtils.compare(countyKeyCurrent, countyKeyBefore) != 0)
+					if(ObjectUtils.compare(agencyKeyCurrent, agencyKeyBefore) != 0)
 						break;
 				}
 				reportCard.setReportCardKey(reportCard.getPk());
@@ -227,31 +227,31 @@ public class DesignPdfPage extends DesignPdfPageGen<DesignPdfGenPage> {
 	protected void _reportCardStates_(List<ReportCard> c) {
 	}
 
-	protected void _reportCardCounties_(Wrap<List<ReportCard>> c) {
+	protected void _reportCardAgencies_(Wrap<List<ReportCard>> c) {
 	}
 
 	protected void _reportCardState_(Wrap<ReportCard> c) {
 	}
 
-	protected void _reportCardCounty_(Wrap<ReportCard> c) {
+	protected void _reportCardAgency_(Wrap<ReportCard> c) {
 	}
 
 	protected void _reportCardReportCard_(Wrap<ReportCard> c) {
 	}
 
-	protected void _countySearch(SearchList<SiteCounty> l) {
+	protected void _agencySearch(SearchList<SiteAgency> l) {
 		l.setStore(true);
 		l.setQuery("*:*");
-		l.setC(SiteCounty.class);
+		l.setC(SiteAgency.class);
 
-		Long countyKey = Optional.ofNullable(reportCardSearch.first()).map(ReportCard::getCountyKey).orElse(null);
-		if(pageDesignId != null && pageDesignId.endsWith("-reportCard-form") && countyKey != null) {
-			l.addFilterQuery("pk_indexed_long:" + countyKey);
+		Long agencyKey = Optional.ofNullable(reportCardSearch.first()).map(ReportCard::getAgencyKey).orElse(null);
+		if(pageDesignId != null && pageDesignId.endsWith("-reportCard-form") && agencyKey != null) {
+			l.addFilterQuery("pk_indexed_long:" + agencyKey);
 		} else {
 			for(String var : siteRequest_.getRequestVars().keySet()) {
 				String val = siteRequest_.getRequestVars().get(var);
 				if(!"design".equals(var)) {
-					String varIndexed = SiteCounty.varIndexedSiteCounty(var);
+					String varIndexed = SiteAgency.varIndexedSiteAgency(var);
 					if(varIndexed != null)
 						l.addFilterQuery(varIndexed + ":" + ClientUtils.escapeQueryChars(val));
 				}
@@ -259,23 +259,23 @@ public class DesignPdfPage extends DesignPdfPageGen<DesignPdfGenPage> {
 		}
 	}
 
-	protected void _county_(Wrap<SiteCounty> c) {
+	protected void _agency_(Wrap<SiteAgency> c) {
 		if(pageDesignId != null && pageDesignId.endsWith("-reportCard-form")) {
-			if(countySearch.size() == 0) {
-				throw new RuntimeException("No county was found for the query: " + siteRequest_.getOperationRequest().getParams().getJsonObject("query").encode());
+			if(agencySearch.size() == 0) {
+				throw new RuntimeException("No agency was found for the query: " + siteRequest_.getOperationRequest().getParams().getJsonObject("query").encode());
 			}
-			else if(countySearch.size() == 1) {
-				c.o(countySearch.get(0));
+			else if(agencySearch.size() == 1) {
+				c.o(agencySearch.get(0));
 			}
 			else  {
-				throw new RuntimeException("More than one county was found for the query: " + siteRequest_.getOperationRequest().getParams().getJsonObject("query").encode());
+				throw new RuntimeException("More than one agency was found for the query: " + siteRequest_.getOperationRequest().getParams().getJsonObject("query").encode());
 			}
 		}
 	}
 
-	protected void _countyKey(Wrap<Long> c) {
-		if(county_ != null)
-			c.o(county_.getPk());
+	protected void _agencyKey(Wrap<Long> c) {
+		if(agency_ != null)
+			c.o(agency_.getPk());
 	}
 
 	protected void _stateSearch(SearchList<SiteState> l) {
@@ -337,13 +337,13 @@ public class DesignPdfPage extends DesignPdfPageGen<DesignPdfGenPage> {
 	}
 
 	protected void _stateKey(Wrap<Long> c) {
-		if(county_ != null)
-			c.o(county_.getStateKey());
+		if(agency_ != null)
+			c.o(agency_.getStateKey());
 	}
 
 	protected void _stateName(Wrap<String> c) {
-		if(county_ != null)
-			c.o(county_.getStateName());
+		if(agency_ != null)
+			c.o(agency_.getStateName());
 	}
 
 	/**

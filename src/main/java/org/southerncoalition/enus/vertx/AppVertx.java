@@ -15,7 +15,7 @@ import org.apache.solr.client.solrj.response.QueryResponse;
 import org.southerncoalition.enus.cluster.ClusterEnUSGenApiService;
 import org.southerncoalition.enus.config.SiteConfig;
 import org.southerncoalition.enus.context.SiteContextEnUS;
-import org.southerncoalition.enus.county.SiteCountyEnUSGenApiService;
+import org.southerncoalition.enus.agency.SiteAgencyEnUSGenApiService;
 import org.southerncoalition.enus.design.PageDesignEnUSGenApiService;
 import org.southerncoalition.enus.html.part.HtmlPartEnUSGenApiService;
 import org.southerncoalition.enus.java.LocalDateSerializer;
@@ -563,7 +563,7 @@ public class AppVertx extends AppVertxGen<AbstractVerticle> {
 		PageDesignEnUSGenApiService.registerService(siteContextEnUS, vertx);
 		HtmlPartEnUSGenApiService.registerService(siteContextEnUS, vertx);
 		SiteStateEnUSGenApiService.registerService(siteContextEnUS, vertx);
-		SiteCountyEnUSGenApiService.registerService(siteContextEnUS, vertx);
+		SiteAgencyEnUSGenApiService.registerService(siteContextEnUS, vertx);
 		ReportCardEnUSGenApiService.registerService(siteContextEnUS, vertx);
 
 		Router siteRouter = siteContextEnUS.getRouter();

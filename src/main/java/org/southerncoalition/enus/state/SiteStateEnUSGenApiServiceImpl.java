@@ -1,7 +1,7 @@
 package org.southerncoalition.enus.state;
 
-import org.southerncoalition.enus.county.SiteCountyEnUSGenApiServiceImpl;
-import org.southerncoalition.enus.county.SiteCounty;
+import org.southerncoalition.enus.agency.SiteAgencyEnUSGenApiServiceImpl;
+import org.southerncoalition.enus.agency.SiteAgency;
 import org.southerncoalition.enus.config.SiteConfig;
 import org.southerncoalition.enus.request.SiteRequestEnUS;
 import org.southerncoalition.enus.context.SiteContextEnUS;
@@ -752,22 +752,22 @@ public class SiteStateEnUSGenApiServiceImpl implements SiteStateEnUSGenApiServic
 							});
 						}));
 						break;
-					case "countyKeys":
+					case "agencyKeys":
 						for(Long l : jsonObject.getJsonArray(entityVar).stream().map(a -> Long.parseLong((String)a)).collect(Collectors.toList())) {
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_addA
-										, Tuple.of(pk, "countyKeys", l, "stateKey")
+										, Tuple.of(pk, "agencyKeys", l, "stateKey")
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value SiteState.countyKeys failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value SiteState.agencyKeys failed", b.cause())));
 								});
 							}));
 							if(!pks.contains(l)) {
 								pks.add(l);
-								classes.add("SiteCounty");
+								classes.add("SiteAgency");
 							}
 						}
 						break;
@@ -1054,13 +1054,13 @@ public class SiteStateEnUSGenApiServiceImpl implements SiteStateEnUSGenApiServic
 							});
 						}));
 						break;
-					case "countyKeys":
+					case "agencyKeys":
 						for(Long l : jsonObject.getJsonArray(entityVar).stream().map(a -> Long.parseLong((String)a)).collect(Collectors.toList())) {
 							if(l != null) {
-								SearchList<SiteCounty> searchList = new SearchList<SiteCounty>();
+								SearchList<SiteAgency> searchList = new SearchList<SiteAgency>();
 								searchList.setQuery("*:*");
 								searchList.setStore(true);
-								searchList.setC(SiteCounty.class);
+								searchList.setC(SiteAgency.class);
 								searchList.addFilterQuery("deleted_indexed_boolean:false");
 								searchList.addFilterQuery("archived_indexed_boolean:false");
 								searchList.addFilterQuery((inheritPk ? "inheritPk" : "pk") + "_indexed_long:" + l);
@@ -1069,18 +1069,18 @@ public class SiteStateEnUSGenApiServiceImpl implements SiteStateEnUSGenApiServic
 								if(l2 != null) {
 									futures.add(Future.future(a -> {
 										tx.preparedQuery(SiteContextEnUS.SQL_addA
-												, Tuple.of(pk, "countyKeys", l2, "stateKey")
+												, Tuple.of(pk, "agencyKeys", l2, "stateKey")
 												, b
 										-> {
 											if(b.succeeded())
 												a.handle(Future.succeededFuture());
 											else
-												a.handle(Future.failedFuture(new Exception("value SiteState.countyKeys failed", b.cause())));
+												a.handle(Future.failedFuture(new Exception("value SiteState.agencyKeys failed", b.cause())));
 										});
 									}));
 									if(!pks.contains(l2)) {
 										pks.add(l2);
-										classes.add("SiteCounty");
+										classes.add("SiteAgency");
 									}
 								}
 							}
@@ -1504,159 +1504,159 @@ public class SiteStateEnUSGenApiServiceImpl implements SiteStateEnUSGenApiServic
 							}));
 						}
 						break;
-					case "addCountyKeys":
+					case "addAgencyKeys":
 						{
 							Long l = Long.parseLong(jsonObject.getString(methodName));
 							if(l != null) {
-								SearchList<SiteCounty> searchList = new SearchList<SiteCounty>();
+								SearchList<SiteAgency> searchList = new SearchList<SiteAgency>();
 								searchList.setQuery("*:*");
 								searchList.setStore(true);
-								searchList.setC(SiteCounty.class);
+								searchList.setC(SiteAgency.class);
 								searchList.addFilterQuery("deleted_indexed_boolean:false");
 								searchList.addFilterQuery("archived_indexed_boolean:false");
 								searchList.addFilterQuery((inheritPk ? "inheritPk" : "pk") + "_indexed_long:" + l);
 								searchList.initDeepSearchList(siteRequest);
 								Long l2 = Optional.ofNullable(searchList.getList().stream().findFirst().orElse(null)).map(a -> a.getPk()).orElse(null);
-								if(l2 != null && !o.getCountyKeys().contains(l2)) {
+								if(l2 != null && !o.getAgencyKeys().contains(l2)) {
 									futures.add(Future.future(a -> {
 										tx.preparedQuery(SiteContextEnUS.SQL_addA
-												, Tuple.of(pk, "countyKeys", l2, "stateKey")
+												, Tuple.of(pk, "agencyKeys", l2, "stateKey")
 												, b
 										-> {
 											if(b.succeeded())
 												a.handle(Future.succeededFuture());
 											else
-												a.handle(Future.failedFuture(new Exception("value SiteState.countyKeys failed", b.cause())));
+												a.handle(Future.failedFuture(new Exception("value SiteState.agencyKeys failed", b.cause())));
 										});
 									}));
 									if(!pks.contains(l2)) {
 										pks.add(l2);
-										classes.add("SiteCounty");
+										classes.add("SiteAgency");
 									}
 								}
 							}
 						}
 						break;
-					case "addAllCountyKeys":
-						JsonArray addAllCountyKeysValues = jsonObject.getJsonArray(methodName);
-						if(addAllCountyKeysValues != null) {
-							for(Integer i = 0; i <  addAllCountyKeysValues.size(); i++) {
-								Long l = Long.parseLong(addAllCountyKeysValues.getString(i));
+					case "addAllAgencyKeys":
+						JsonArray addAllAgencyKeysValues = jsonObject.getJsonArray(methodName);
+						if(addAllAgencyKeysValues != null) {
+							for(Integer i = 0; i <  addAllAgencyKeysValues.size(); i++) {
+								Long l = Long.parseLong(addAllAgencyKeysValues.getString(i));
 								if(l != null) {
-									SearchList<SiteCounty> searchList = new SearchList<SiteCounty>();
+									SearchList<SiteAgency> searchList = new SearchList<SiteAgency>();
 									searchList.setQuery("*:*");
 									searchList.setStore(true);
-									searchList.setC(SiteCounty.class);
+									searchList.setC(SiteAgency.class);
 									searchList.addFilterQuery("deleted_indexed_boolean:false");
 									searchList.addFilterQuery("archived_indexed_boolean:false");
 									searchList.addFilterQuery((inheritPk ? "inheritPk" : "pk") + "_indexed_long:" + l);
 									searchList.initDeepSearchList(siteRequest);
 									Long l2 = Optional.ofNullable(searchList.getList().stream().findFirst().orElse(null)).map(a -> a.getPk()).orElse(null);
-									if(l2 != null && !o.getCountyKeys().contains(l2)) {
+									if(l2 != null && !o.getAgencyKeys().contains(l2)) {
 									futures.add(Future.future(a -> {
 										tx.preparedQuery(SiteContextEnUS.SQL_addA
-												, Tuple.of(pk, "countyKeys", l2, "stateKey")
+												, Tuple.of(pk, "agencyKeys", l2, "stateKey")
 												, b
 										-> {
 											if(b.succeeded())
 												a.handle(Future.succeededFuture());
 											else
-												a.handle(Future.failedFuture(new Exception("value SiteState.countyKeys failed", b.cause())));
+												a.handle(Future.failedFuture(new Exception("value SiteState.agencyKeys failed", b.cause())));
 										});
 									}));
 										if(!pks.contains(l2)) {
 											pks.add(l2);
-											classes.add("SiteCounty");
+											classes.add("SiteAgency");
 										}
 									}
 								}
 							}
 						}
 						break;
-					case "setCountyKeys":
-						JsonArray setCountyKeysValues = jsonObject.getJsonArray(methodName);
-						JsonArray setCountyKeysValues2 = new JsonArray();
-						if(setCountyKeysValues != null) {
-							for(Integer i = 0; i <  setCountyKeysValues.size(); i++) {
-								Long l = Long.parseLong(setCountyKeysValues.getString(i));
+					case "setAgencyKeys":
+						JsonArray setAgencyKeysValues = jsonObject.getJsonArray(methodName);
+						JsonArray setAgencyKeysValues2 = new JsonArray();
+						if(setAgencyKeysValues != null) {
+							for(Integer i = 0; i <  setAgencyKeysValues.size(); i++) {
+								Long l = Long.parseLong(setAgencyKeysValues.getString(i));
 								if(l != null) {
-									SearchList<SiteCounty> searchList = new SearchList<SiteCounty>();
+									SearchList<SiteAgency> searchList = new SearchList<SiteAgency>();
 									searchList.setQuery("*:*");
 									searchList.setStore(true);
-									searchList.setC(SiteCounty.class);
+									searchList.setC(SiteAgency.class);
 									searchList.addFilterQuery("deleted_indexed_boolean:false");
 									searchList.addFilterQuery("archived_indexed_boolean:false");
 									searchList.addFilterQuery((inheritPk ? "inheritPk" : "pk") + "_indexed_long:" + l);
 									searchList.initDeepSearchList(siteRequest);
 									Long l2 = Optional.ofNullable(searchList.getList().stream().findFirst().orElse(null)).map(a -> a.getPk()).orElse(null);
 									if(l2 != null)
-										setCountyKeysValues2.add(l2);
-									if(l2 != null && !o.getCountyKeys().contains(l2)) {
+										setAgencyKeysValues2.add(l2);
+									if(l2 != null && !o.getAgencyKeys().contains(l2)) {
 									futures.add(Future.future(a -> {
 										tx.preparedQuery(SiteContextEnUS.SQL_addA
-												, Tuple.of(pk, "countyKeys", l2, "stateKey")
+												, Tuple.of(pk, "agencyKeys", l2, "stateKey")
 												, b
 										-> {
 											if(b.succeeded())
 												a.handle(Future.succeededFuture());
 											else
-												a.handle(Future.failedFuture(new Exception("value SiteState.countyKeys failed", b.cause())));
+												a.handle(Future.failedFuture(new Exception("value SiteState.agencyKeys failed", b.cause())));
 										});
 									}));
 										if(!pks.contains(l2)) {
 											pks.add(l2);
-											classes.add("SiteCounty");
+											classes.add("SiteAgency");
 										}
 									}
 								}
 							}
 						}
-						if(o.getCountyKeys() != null) {
-							for(Long l :  o.getCountyKeys()) {
-								if(l != null && (setCountyKeysValues2 == null || !setCountyKeysValues2.contains(l))) {
+						if(o.getAgencyKeys() != null) {
+							for(Long l :  o.getAgencyKeys()) {
+								if(l != null && (setAgencyKeysValues2 == null || !setAgencyKeysValues2.contains(l))) {
 									futures.add(Future.future(a -> {
 										tx.preparedQuery(SiteContextEnUS.SQL_removeA
-												, Tuple.of(pk, "countyKeys", l, "stateKey")
+												, Tuple.of(pk, "agencyKeys", l, "stateKey")
 												, b
 										-> {
 											if(b.succeeded())
 												a.handle(Future.succeededFuture());
 											else
-												a.handle(Future.failedFuture(new Exception("value SiteState.countyKeys failed", b.cause())));
+												a.handle(Future.failedFuture(new Exception("value SiteState.agencyKeys failed", b.cause())));
 										});
 									}));
 								}
 							}
 						}
 						break;
-					case "removeCountyKeys":
+					case "removeAgencyKeys":
 						{
 							Long l = Long.parseLong(jsonObject.getString(methodName));
 							if(l != null) {
-								SearchList<SiteCounty> searchList = new SearchList<SiteCounty>();
+								SearchList<SiteAgency> searchList = new SearchList<SiteAgency>();
 								searchList.setQuery("*:*");
 								searchList.setStore(true);
-								searchList.setC(SiteCounty.class);
+								searchList.setC(SiteAgency.class);
 								searchList.addFilterQuery("deleted_indexed_boolean:false");
 								searchList.addFilterQuery("archived_indexed_boolean:false");
 								searchList.addFilterQuery((inheritPk ? "inheritPk" : "pk") + "_indexed_long:" + l);
 								searchList.initDeepSearchList(siteRequest);
 								Long l2 = Optional.ofNullable(searchList.getList().stream().findFirst().orElse(null)).map(a -> a.getPk()).orElse(null);
-								if(l2 != null && o.getCountyKeys().contains(l2)) {
+								if(l2 != null && o.getAgencyKeys().contains(l2)) {
 									futures.add(Future.future(a -> {
 										tx.preparedQuery(SiteContextEnUS.SQL_removeA
-												, Tuple.of(pk, "countyKeys", l2, "stateKey")
+												, Tuple.of(pk, "agencyKeys", l2, "stateKey")
 												, b
 										-> {
 											if(b.succeeded())
 												a.handle(Future.succeededFuture());
 											else
-												a.handle(Future.failedFuture(new Exception("value SiteState.countyKeys failed", b.cause())));
+												a.handle(Future.failedFuture(new Exception("value SiteState.agencyKeys failed", b.cause())));
 										});
 									}));
 									if(!pks.contains(l2)) {
 										pks.add(l2);
-										classes.add("SiteCounty");
+										classes.add("SiteAgency");
 									}
 								}
 							}
@@ -2810,7 +2810,7 @@ public class SiteStateEnUSGenApiServiceImpl implements SiteStateEnUSGenApiServic
 				searchList.setQuery("*:*");
 				searchList.setC(SiteState.class);
 				searchList.addFilterQuery("modified_indexed_date:[" + DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").format(ZonedDateTime.ofInstant(siteRequest.getApiRequest_().getCreated().toInstant(), ZoneId.of("UTC"))) + " TO *]");
-				searchList.add("json.facet", "{countyKeys:{terms:{field:countyKeys_indexed_longs, limit:1000}}}");
+				searchList.add("json.facet", "{agencyKeys:{terms:{field:agencyKeys_indexed_longs, limit:1000}}}");
 				searchList.setRows(1000);
 				searchList.initDeepSearchList(siteRequest);
 				List<Future> futures = new ArrayList<>();
@@ -2819,18 +2819,18 @@ public class SiteStateEnUSGenApiServiceImpl implements SiteStateEnUSGenApiServic
 					Long pk2 = pks.get(i);
 					String classSimpleName2 = classes.get(i);
 
-					if("SiteCounty".equals(classSimpleName2) && pk2 != null) {
-						SearchList<SiteCounty> searchList2 = new SearchList<SiteCounty>();
+					if("SiteAgency".equals(classSimpleName2) && pk2 != null) {
+						SearchList<SiteAgency> searchList2 = new SearchList<SiteAgency>();
 						searchList2.setStore(true);
 						searchList2.setQuery("*:*");
-						searchList2.setC(SiteCounty.class);
+						searchList2.setC(SiteAgency.class);
 						searchList2.addFilterQuery("pk_indexed_long:" + pk2);
 						searchList2.setRows(1);
 						searchList2.initDeepSearchList(siteRequest);
-						SiteCounty o2 = searchList2.getList().stream().findFirst().orElse(null);
+						SiteAgency o2 = searchList2.getList().stream().findFirst().orElse(null);
 
 						if(o2 != null) {
-							SiteCountyEnUSGenApiServiceImpl service = new SiteCountyEnUSGenApiServiceImpl(siteRequest.getSiteContext_());
+							SiteAgencyEnUSGenApiServiceImpl service = new SiteAgencyEnUSGenApiServiceImpl(siteRequest.getSiteContext_());
 							SiteRequestEnUS siteRequest2 = generateSiteRequestEnUSForSiteState(siteContext, siteRequest.getOperationRequest(), new JsonObject());
 							ApiRequest apiRequest2 = new ApiRequest();
 							apiRequest2.setRows(1);
@@ -2838,15 +2838,15 @@ public class SiteStateEnUSGenApiServiceImpl implements SiteStateEnUSGenApiServic
 							apiRequest2.setNumPATCH(0L);
 							apiRequest2.initDeepApiRequest(siteRequest2);
 							siteRequest2.setApiRequest_(apiRequest2);
-							siteRequest2.getVertx().eventBus().publish("websocketSiteCounty", JsonObject.mapFrom(apiRequest2).toString());
+							siteRequest2.getVertx().eventBus().publish("websocketSiteAgency", JsonObject.mapFrom(apiRequest2).toString());
 
 							o2.setPk(pk2);
 							o2.setSiteRequest_(siteRequest2);
 							futures.add(
-								service.patchSiteCountyFuture(o2, false, a -> {
+								service.patchSiteAgencyFuture(o2, false, a -> {
 									if(a.succeeded()) {
 									} else {
-										LOGGER.info(String.format("SiteCounty %s failed. ", pk2));
+										LOGGER.info(String.format("SiteAgency %s failed. ", pk2));
 										eventHandler.handle(Future.failedFuture(a.cause()));
 									}
 								})

@@ -52,7 +52,7 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 	protected void _listSiteState(Wrap<SearchList<SiteState>> c) {
 	}
 
-	protected void _siteState(Wrap<SiteState> c) {
+	protected void _siteState_(Wrap<SiteState> c) {
 		if(listSiteState != null && listSiteState.size() == 1)
 			c.o(listSiteState.get(0));
 	}
@@ -62,8 +62,8 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 	}
 
 	@Override protected void _pageH2(Wrap<String> c) {
-		if(siteState != null && siteState.getCountyCompleteName() != null)
-			c.o(siteState.getCountyCompleteName());
+		if(siteState_ != null && siteState_.getAgencyCompleteName() != null)
+			c.o(siteState_.getAgencyCompleteName());
 	}
 
 	@Override protected void _pageH3(Wrap<String> c) {
@@ -71,9 +71,9 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 	}
 
 	@Override protected void _pageTitle(Wrap<String> c) {
-		if(siteState != null && siteState.getCountyCompleteName() != null)
-			c.o(siteState.getCountyCompleteName());
-		else if(siteState != null)
+		if(siteState_ != null && siteState_.getAgencyCompleteName() != null)
+			c.o(siteState_.getAgencyCompleteName());
+		else if(siteState_ != null)
 			c.o("states");
 		else if(listSiteState == null || listSiteState.size() == 0)
 			c.o("no state found");
@@ -104,7 +104,7 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 
 	@Override public void htmlScriptsSiteStateGenPage() {
 		e("script").a("src", staticBaseUrl, "/js/enUS/SiteStatePage.js").f().g("script");
-		e("script").a("src", staticBaseUrl, "/js/enUS/SiteCountyPage.js").f().g("script");
+		e("script").a("src", staticBaseUrl, "/js/enUS/SiteAgencyPage.js").f().g("script");
 	}
 
 	@Override public void htmlScriptSiteStateGenPage() {
@@ -128,9 +128,9 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
 				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
 				) {
-			tl(2, "suggestSiteStateCountyKeys([{'name':'fq','value':'stateKey:' + pk}], $('#listSiteStateCountyKeys_Page'), pk, true); ");
+			tl(2, "suggestSiteStateAgencyKeys([{'name':'fq','value':'stateKey:' + pk}], $('#listSiteStateAgencyKeys_Page'), pk, true); ");
 		} else {
-			tl(2, "suggestSiteStateCountyKeys([{'name':'fq','value':'stateKey:' + pk}], $('#listSiteStateCountyKeys_Page'), pk, false); ");
+			tl(2, "suggestSiteStateAgencyKeys([{'name':'fq','value':'stateKey:' + pk}], $('#listSiteStateAgencyKeys_Page'), pk, false); ");
 		}
 		tl(1, "}");
 		tl(1, "websocketSiteState(websocketSiteStateInner);");
@@ -153,7 +153,7 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 			o.htmStateAbbreviation("Page");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
-			o.htmCountyKeys("Page");
+			o.htmAgencyKeys("Page");
 		} g("div");
 	}
 
@@ -173,7 +173,7 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 			o.htmStateAbbreviation("POST");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
-			o.htmCountyKeys("POST");
+			o.htmAgencyKeys("POST");
 		} g("div");
 	}
 
@@ -215,7 +215,7 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 			o.htmStateAbbreviation("PUTCopy");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
-			o.htmCountyKeys("PUTCopy");
+			o.htmAgencyKeys("PUTCopy");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmInheritPk("PUTCopy");
@@ -238,7 +238,7 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 			o.htmStateAbbreviation("PATCH");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
-			o.htmCountyKeys("PATCH");
+			o.htmAgencyKeys("PATCH");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmInheritPk("PATCH");
@@ -263,7 +263,7 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 			o.htmStateAbbreviation("Search");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
-			o.htmCountyKeys("Search");
+			o.htmAgencyKeys("Search");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmInheritPk("Search");
@@ -645,7 +645,7 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 							} g("div");
 							e("button")
 								.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-margin w3-pale-blue ")
-								.a("onclick", "putcopySiteState($('#putcopySiteStateForm'), ", siteState == null ? "null" : siteState.getPk(), "); ")
+								.a("onclick", "putcopySiteState($('#putcopySiteStateForm'), ", siteState_ == null ? "null" : siteState_.getPk(), "); ")
 								.f().sx("Duplicate states")
 							.g("button");
 
@@ -713,7 +713,7 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 							} g("form");
 							e("button")
 								.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-margin w3-pale-blue ")
-								.a("onclick", "patchSiteState(null, $('#patchSiteStateFormValues'), ", Optional.ofNullable(siteState).map(SiteState::getPk).map(a -> a.toString()).orElse("null"), ", function() {}, function() {}); ")
+								.a("onclick", "patchSiteState(null, $('#patchSiteStateFormValues'), ", Optional.ofNullable(siteState_).map(SiteState::getPk).map(a -> a.toString()).orElse("null"), ", function() {}, function() {}); ")
 								.f().sx("Modify states")
 							.g("button");
 
@@ -806,7 +806,7 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 					.a("name", "suggestSiteState")
 					.a("id", "suggestSiteState", id)
 					.a("autocomplete", "off")
-					.a("oninput", "suggestSiteStateObjectSuggest( [ { 'name': 'q', 'value': 'objectSuggest:' + $(this).val() }, { 'name': 'rows', 'value': '10' }, { 'name': 'fl', 'value': 'pk,pageUrlPk,countyCompleteName' } ], $('#suggestListSiteState", id, "'), ", p.getSiteRequest_().getRequestPk(), "); ")
+					.a("oninput", "suggestSiteStateObjectSuggest( [ { 'name': 'q', 'value': 'objectSuggest:' + $(this).val() }, { 'name': 'rows', 'value': '10' }, { 'name': 'fl', 'value': 'pk,pageUrlPk,agencyCompleteName' } ], $('#suggestListSiteState", id, "'), ", p.getSiteRequest_().getRequestPk(), "); ")
 					.a("onkeyup", "if (event.keyCode === 13) { event.preventDefault(); window.location.href = '/state?q=", query1, ":' + encodeURIComponent(this.value) + '", fqs, sorts, "&start=", start2, "&rows=", rows1, "'; }"); 
 				if(listSiteState != null)
 					p.a("value", query2);

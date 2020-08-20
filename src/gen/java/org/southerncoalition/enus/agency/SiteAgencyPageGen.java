@@ -1,4 +1,4 @@
-package org.southerncoalition.enus.county;
+package org.southerncoalition.enus.agency;
 
 import java.util.Arrays;
 import org.southerncoalition.enus.request.api.ApiRequest;
@@ -8,11 +8,11 @@ import org.apache.commons.lang3.StringUtils;
 import java.text.NumberFormat;
 import io.vertx.core.logging.LoggerFactory;
 import java.util.ArrayList;
-import org.southerncoalition.enus.county.SiteCountyGenPage;
 import org.apache.commons.collections.CollectionUtils;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.southerncoalition.enus.agency.SiteAgencyGenPage;
 import io.vertx.core.logging.Logger;
 import org.southerncoalition.enus.cluster.Cluster;
 import java.math.RoundingMode;
@@ -32,49 +32,49 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 
 /**	
- * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstClasse_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.county.SiteCountyPage&fq=classeEtendGen_indexed_boolean:true">Find the class  in Solr. </a>
+ * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstClasse_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.agency.SiteAgencyPage&fq=classeEtendGen_indexed_boolean:true">Find the class  in Solr. </a>
  * <br/>
  **/
-public abstract class SiteCountyPageGen<DEV> extends SiteCountyGenPage {
-	protected static final Logger LOGGER = LoggerFactory.getLogger(SiteCountyPage.class);
+public abstract class SiteAgencyPageGen<DEV> extends SiteAgencyGenPage {
+	protected static final Logger LOGGER = LoggerFactory.getLogger(SiteAgencyPage.class);
 
 	//////////////
 	// initDeep //
 	//////////////
 
-	protected boolean alreadyInitializedSiteCountyPage = false;
+	protected boolean alreadyInitializedSiteAgencyPage = false;
 
-	public SiteCountyPage initDeepSiteCountyPage(SiteRequestEnUS siteRequest_) {
+	public SiteAgencyPage initDeepSiteAgencyPage(SiteRequestEnUS siteRequest_) {
 		setSiteRequest_(siteRequest_);
-		if(!alreadyInitializedSiteCountyPage) {
-			alreadyInitializedSiteCountyPage = true;
-			initDeepSiteCountyPage();
+		if(!alreadyInitializedSiteAgencyPage) {
+			alreadyInitializedSiteAgencyPage = true;
+			initDeepSiteAgencyPage();
 		}
-		return (SiteCountyPage)this;
+		return (SiteAgencyPage)this;
 	}
 
-	public void initDeepSiteCountyPage() {
-		initSiteCountyPage();
-		super.initDeepSiteCountyGenPage(siteRequest_);
+	public void initDeepSiteAgencyPage() {
+		initSiteAgencyPage();
+		super.initDeepSiteAgencyGenPage(siteRequest_);
 	}
 
-	public void initSiteCountyPage() {
+	public void initSiteAgencyPage() {
 	}
 
 	@Override public void initDeepForClass(SiteRequestEnUS siteRequest_) {
-		initDeepSiteCountyPage(siteRequest_);
+		initDeepSiteAgencyPage(siteRequest_);
 	}
 
 	/////////////////
 	// siteRequest //
 	/////////////////
 
-	public void siteRequestSiteCountyPage(SiteRequestEnUS siteRequest_) {
-			super.siteRequestSiteCountyGenPage(siteRequest_);
+	public void siteRequestSiteAgencyPage(SiteRequestEnUS siteRequest_) {
+			super.siteRequestSiteAgencyGenPage(siteRequest_);
 	}
 
 	public void siteRequestForClass(SiteRequestEnUS siteRequest_) {
-		siteRequestSiteCountyPage(siteRequest_);
+		siteRequestSiteAgencyPage(siteRequest_);
 	}
 
 	/////////////
@@ -86,7 +86,7 @@ public abstract class SiteCountyPageGen<DEV> extends SiteCountyGenPage {
 		Object o = null;
 		for(String v : vars) {
 			if(o == null)
-				o = obtainSiteCountyPage(v);
+				o = obtainSiteAgencyPage(v);
 			else if(o instanceof Cluster) {
 				Cluster cluster = (Cluster)o;
 				o = cluster.obtainForClass(v);
@@ -94,11 +94,11 @@ public abstract class SiteCountyPageGen<DEV> extends SiteCountyGenPage {
 		}
 		return o;
 	}
-	public Object obtainSiteCountyPage(String var) {
-		SiteCountyPage oSiteCountyPage = (SiteCountyPage)this;
+	public Object obtainSiteAgencyPage(String var) {
+		SiteAgencyPage oSiteAgencyPage = (SiteAgencyPage)this;
 		switch(var) {
 			default:
-				return super.obtainSiteCountyGenPage(var);
+				return super.obtainSiteAgencyGenPage(var);
 		}
 	}
 
@@ -111,7 +111,7 @@ public abstract class SiteCountyPageGen<DEV> extends SiteCountyGenPage {
 		Object o = null;
 		for(String v : vars) {
 			if(o == null)
-				o = attributeSiteCountyPage(v, val);
+				o = attributeSiteAgencyPage(v, val);
 			else if(o instanceof Cluster) {
 				Cluster cluster = (Cluster)o;
 				o = cluster.attributeForClass(v, val);
@@ -119,11 +119,11 @@ public abstract class SiteCountyPageGen<DEV> extends SiteCountyGenPage {
 		}
 		return o != null;
 	}
-	public Object attributeSiteCountyPage(String var, Object val) {
-		SiteCountyPage oSiteCountyPage = (SiteCountyPage)this;
+	public Object attributeSiteAgencyPage(String var, Object val) {
+		SiteAgencyPage oSiteAgencyPage = (SiteAgencyPage)this;
 		switch(var) {
 			default:
-				return super.attributeSiteCountyGenPage(var, val);
+				return super.attributeSiteAgencyGenPage(var, val);
 		}
 	}
 
@@ -137,7 +137,7 @@ public abstract class SiteCountyPageGen<DEV> extends SiteCountyGenPage {
 		if(val != null) {
 			for(String v : vars) {
 				if(o == null)
-					o = defineSiteCountyPage(v, val);
+					o = defineSiteAgencyPage(v, val);
 				else if(o instanceof Cluster) {
 					Cluster cluster = (Cluster)o;
 					o = cluster.defineForClass(v, val);
@@ -146,10 +146,10 @@ public abstract class SiteCountyPageGen<DEV> extends SiteCountyGenPage {
 		}
 		return o != null;
 	}
-	public Object defineSiteCountyPage(String var, String val) {
+	public Object defineSiteAgencyPage(String var, String val) {
 		switch(var) {
 			default:
-				return super.defineSiteCountyGenPage(var, val);
+				return super.defineSiteAgencyGenPage(var, val);
 		}
 	}
 
@@ -158,11 +158,11 @@ public abstract class SiteCountyPageGen<DEV> extends SiteCountyGenPage {
 	/////////////////
 
 	@Override public void htmlScripts() {
-		htmlScriptsSiteCountyPage();
+		htmlScriptsSiteAgencyPage();
 		super.htmlScripts();
 	}
 
-	public void htmlScriptsSiteCountyPage() {
+	public void htmlScriptsSiteAgencyPage() {
 	}
 
 	////////////////
@@ -170,11 +170,11 @@ public abstract class SiteCountyPageGen<DEV> extends SiteCountyGenPage {
 	////////////////
 
 	@Override public void htmlScript() {
-		htmlScriptSiteCountyPage();
+		htmlScriptSiteAgencyPage();
 		super.htmlScript();
 	}
 
-	public void htmlScriptSiteCountyPage() {
+	public void htmlScriptSiteAgencyPage() {
 	}
 
 	//////////////
@@ -182,11 +182,11 @@ public abstract class SiteCountyPageGen<DEV> extends SiteCountyGenPage {
 	//////////////
 
 	@Override public void htmlBody() {
-		htmlBodySiteCountyPage();
+		htmlBodySiteAgencyPage();
 		super.htmlBody();
 	}
 
-	public void htmlBodySiteCountyPage() {
+	public void htmlBodySiteAgencyPage() {
 	}
 
 	//////////
@@ -194,11 +194,11 @@ public abstract class SiteCountyPageGen<DEV> extends SiteCountyGenPage {
 	//////////
 
 	@Override public void html() {
-		htmlSiteCountyPage();
+		htmlSiteAgencyPage();
 		super.html();
 	}
 
-	public void htmlSiteCountyPage() {
+	public void htmlSiteAgencyPage() {
 	}
 
 	//////////////
@@ -206,11 +206,11 @@ public abstract class SiteCountyPageGen<DEV> extends SiteCountyGenPage {
 	//////////////
 
 	@Override public void htmlMeta() {
-		htmlMetaSiteCountyPage();
+		htmlMetaSiteAgencyPage();
 		super.htmlMeta();
 	}
 
-	public void htmlMetaSiteCountyPage() {
+	public void htmlMetaSiteAgencyPage() {
 	}
 
 	////////////////
@@ -218,11 +218,11 @@ public abstract class SiteCountyPageGen<DEV> extends SiteCountyGenPage {
 	////////////////
 
 	@Override public void htmlStyles() {
-		htmlStylesSiteCountyPage();
+		htmlStylesSiteAgencyPage();
 		super.htmlStyles();
 	}
 
-	public void htmlStylesSiteCountyPage() {
+	public void htmlStylesSiteAgencyPage() {
 	}
 
 	///////////////
@@ -230,23 +230,23 @@ public abstract class SiteCountyPageGen<DEV> extends SiteCountyGenPage {
 	///////////////
 
 	@Override public void htmlStyle() {
-		htmlStyleSiteCountyPage();
+		htmlStyleSiteAgencyPage();
 		super.htmlStyle();
 	}
 
-	public void htmlStyleSiteCountyPage() {
+	public void htmlStyleSiteAgencyPage() {
 	}
 
 	//////////////////
 	// apiRequest //
 	//////////////////
 
-	public void apiRequestSiteCountyPage() {
+	public void apiRequestSiteAgencyPage() {
 		ApiRequest apiRequest = Optional.ofNullable(siteRequest_).map(SiteRequestEnUS::getApiRequest_).orElse(null);
 		Object o = Optional.ofNullable(apiRequest).map(ApiRequest::getOriginal).orElse(null);
-		if(o != null && o instanceof SiteCountyPage) {
-			SiteCountyPage original = (SiteCountyPage)o;
-			super.apiRequestSiteCountyGenPage();
+		if(o != null && o instanceof SiteAgencyPage) {
+			SiteAgencyPage original = (SiteAgencyPage)o;
+			super.apiRequestSiteAgencyGenPage();
 		}
 	}
 
@@ -265,9 +265,9 @@ public abstract class SiteCountyPageGen<DEV> extends SiteCountyGenPage {
 	@Override public boolean equals(Object o) {
 		if(this == o)
 			return true;
-		if(!(o instanceof SiteCountyPage))
+		if(!(o instanceof SiteAgencyPage))
 			return false;
-		SiteCountyPage that = (SiteCountyPage)o;
+		SiteAgencyPage that = (SiteAgencyPage)o;
 		return super.equals(o);
 	}
 
@@ -278,7 +278,7 @@ public abstract class SiteCountyPageGen<DEV> extends SiteCountyGenPage {
 	@Override public String toString() {
 		StringBuilder sb = new StringBuilder();
 		sb.append(super.toString() + "\n");
-		sb.append("SiteCountyPage { ");
+		sb.append("SiteAgencyPage { ");
 		sb.append(" }");
 		return sb.toString();
 	}

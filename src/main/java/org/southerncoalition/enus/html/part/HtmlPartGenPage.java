@@ -52,7 +52,7 @@ public class HtmlPartGenPage extends HtmlPartGenPageGen<PageLayout> {
 	protected void _listHtmlPart(Wrap<SearchList<HtmlPart>> c) {
 	}
 
-	protected void _htmlPart(Wrap<HtmlPart> c) {
+	protected void _htmlPart_(Wrap<HtmlPart> c) {
 		if(listHtmlPart != null && listHtmlPart.size() == 1)
 			c.o(listHtmlPart.get(0));
 	}
@@ -70,9 +70,9 @@ public class HtmlPartGenPage extends HtmlPartGenPageGen<PageLayout> {
 	}
 
 	@Override protected void _pageTitle(Wrap<String> c) {
-		if(htmlPart != null && htmlPart.getObjectTitle() != null)
-			c.o(htmlPart.getObjectTitle());
-		else if(htmlPart != null)
+		if(htmlPart_ != null && htmlPart_.getObjectTitle() != null)
+			c.o(htmlPart_.getObjectTitle());
+		else if(htmlPart_ != null)
 			c.o("HTML parts");
 		else if(listHtmlPart == null || listHtmlPart.size() == 0)
 			c.o("no HTML part found");
@@ -869,7 +869,7 @@ public class HtmlPartGenPage extends HtmlPartGenPageGen<PageLayout> {
 							} g("div");
 							e("button")
 								.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-margin w3-khaki ")
-								.a("onclick", "putcopyHtmlPart($('#putcopyHtmlPartForm'), ", htmlPart == null ? "null" : htmlPart.getPk(), "); ")
+								.a("onclick", "putcopyHtmlPart($('#putcopyHtmlPartForm'), ", htmlPart_ == null ? "null" : htmlPart_.getPk(), "); ")
 								.f().sx("Duplicate HTML parts")
 							.g("button");
 
@@ -903,7 +903,7 @@ public class HtmlPartGenPage extends HtmlPartGenPageGen<PageLayout> {
 							} g("form");
 							e("button")
 								.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-margin w3-khaki ")
-								.a("onclick", "patchHtmlPart(null, $('#patchHtmlPartFormValues'), ", Optional.ofNullable(htmlPart).map(HtmlPart::getPk).map(a -> a.toString()).orElse("null"), ", function() {}, function() {}); ")
+								.a("onclick", "patchHtmlPart(null, $('#patchHtmlPartFormValues'), ", Optional.ofNullable(htmlPart_).map(HtmlPart::getPk).map(a -> a.toString()).orElse("null"), ", function() {}, function() {}); ")
 								.f().sx("Modify HTML parts")
 							.g("button");
 

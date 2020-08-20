@@ -1,4 +1,4 @@
-package org.southerncoalition.enus.county;
+package org.southerncoalition.enus.agency;
 
 import org.southerncoalition.enus.state.SiteStateEnUSGenApiServiceImpl;
 import org.southerncoalition.enus.state.SiteState;
@@ -91,27 +91,27 @@ import org.southerncoalition.enus.writer.AllWriter;
 /**
  * Translate: false
  **/
-public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiService {
+public class SiteAgencyEnUSGenApiServiceImpl implements SiteAgencyEnUSGenApiService {
 
-	protected static final Logger LOGGER = LoggerFactory.getLogger(SiteCountyEnUSGenApiServiceImpl.class);
+	protected static final Logger LOGGER = LoggerFactory.getLogger(SiteAgencyEnUSGenApiServiceImpl.class);
 
-	protected static final String SERVICE_ADDRESS = "SiteCountyEnUSApiServiceImpl";
+	protected static final String SERVICE_ADDRESS = "SiteAgencyEnUSApiServiceImpl";
 
 	protected SiteContextEnUS siteContext;
 
-	public SiteCountyEnUSGenApiServiceImpl(SiteContextEnUS siteContext) {
+	public SiteAgencyEnUSGenApiServiceImpl(SiteContextEnUS siteContext) {
 		this.siteContext = siteContext;
 	}
 
 	// PUTImport //
 
 	@Override
-	public void putimportSiteCounty(JsonObject body, OperationRequest operationRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
-		SiteRequestEnUS siteRequest = generateSiteRequestEnUSForSiteCounty(siteContext, operationRequest, body);
-		siteRequest.setRequestUri("/api/county/import");
+	public void putimportSiteAgency(JsonObject body, OperationRequest operationRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+		SiteRequestEnUS siteRequest = generateSiteRequestEnUSForSiteAgency(siteContext, operationRequest, body);
+		siteRequest.setRequestUri("/api/agency/import");
 		siteRequest.setRequestMethod("PUTImport");
 		try {
-			LOGGER.info(String.format("putimportSiteCounty started. "));
+			LOGGER.info(String.format("putimportSiteAgency started. "));
 
 			List<String> roles = Arrays.asList("SiteAdmin");
 			if(
@@ -130,9 +130,9 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 				));
 			} else {
 
-				userSiteCounty(siteRequest, b -> {
+				userSiteAgency(siteRequest, b -> {
 					if(b.succeeded()) {
-						putimportSiteCountyResponse(siteRequest, c -> {
+						putimportSiteAgencyResponse(siteRequest, c -> {
 							if(c.succeeded()) {
 								eventHandler.handle(Future.succeededFuture(c.result()));
 								WorkerExecutor workerExecutor = siteContext.getWorkerExecutor();
@@ -146,56 +146,56 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 											apiRequest.setNumPATCH(0L);
 											apiRequest.initDeepApiRequest(siteRequest);
 											siteRequest.setApiRequest_(apiRequest);
-											siteRequest.getVertx().eventBus().publish("websocketSiteCounty", JsonObject.mapFrom(apiRequest).toString());
-											varsSiteCounty(siteRequest, d -> {
+											siteRequest.getVertx().eventBus().publish("websocketSiteAgency", JsonObject.mapFrom(apiRequest).toString());
+											varsSiteAgency(siteRequest, d -> {
 												if(d.succeeded()) {
-													listPUTImportSiteCounty(apiRequest, siteRequest, e -> {
+													listPUTImportSiteAgency(apiRequest, siteRequest, e -> {
 														if(e.succeeded()) {
-															putimportSiteCountyResponse(siteRequest, f -> {
+															putimportSiteAgencyResponse(siteRequest, f -> {
 																if(e.succeeded()) {
-																	LOGGER.info(String.format("putimportSiteCounty succeeded. "));
+																	LOGGER.info(String.format("putimportSiteAgency succeeded. "));
 																	blockingCodeHandler.handle(Future.succeededFuture(e.result()));
 																} else {
-																	LOGGER.error(String.format("putimportSiteCounty failed. ", f.cause()));
-																	errorSiteCounty(siteRequest, null, f);
+																	LOGGER.error(String.format("putimportSiteAgency failed. ", f.cause()));
+																	errorSiteAgency(siteRequest, null, f);
 																}
 															});
 														} else {
-															LOGGER.error(String.format("putimportSiteCounty failed. ", e.cause()));
-															errorSiteCounty(siteRequest, null, e);
+															LOGGER.error(String.format("putimportSiteAgency failed. ", e.cause()));
+															errorSiteAgency(siteRequest, null, e);
 														}
 													});
 												} else {
-													LOGGER.error(String.format("putimportSiteCounty failed. ", d.cause()));
-													errorSiteCounty(siteRequest, null, d);
+													LOGGER.error(String.format("putimportSiteAgency failed. ", d.cause()));
+													errorSiteAgency(siteRequest, null, d);
 												}
 											});
 										} catch(Exception ex) {
-											LOGGER.error(String.format("putimportSiteCounty failed. ", ex));
-											errorSiteCounty(siteRequest, null, Future.failedFuture(ex));
+											LOGGER.error(String.format("putimportSiteAgency failed. ", ex));
+											errorSiteAgency(siteRequest, null, Future.failedFuture(ex));
 										}
 									}, resultHandler -> {
 									}
 								);
 							} else {
-								LOGGER.error(String.format("putimportSiteCounty failed. ", c.cause()));
-								errorSiteCounty(siteRequest, eventHandler, c);
+								LOGGER.error(String.format("putimportSiteAgency failed. ", c.cause()));
+								errorSiteAgency(siteRequest, eventHandler, c);
 							}
 						});
 					} else {
-						LOGGER.error(String.format("putimportSiteCounty failed. ", b.cause()));
-						errorSiteCounty(siteRequest, eventHandler, b);
+						LOGGER.error(String.format("putimportSiteAgency failed. ", b.cause()));
+						errorSiteAgency(siteRequest, eventHandler, b);
 					}
 				});
 			}
 		} catch(Exception ex) {
-			LOGGER.error(String.format("putimportSiteCounty failed. ", ex));
-			errorSiteCounty(siteRequest, eventHandler, Future.failedFuture(ex));
+			LOGGER.error(String.format("putimportSiteAgency failed. ", ex));
+			errorSiteAgency(siteRequest, eventHandler, Future.failedFuture(ex));
 		}
 	}
 
 
-	public void listPUTImportSiteCounty(ApiRequest apiRequest, SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void listPUTImportSiteAgency(ApiRequest apiRequest, SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		List<Future> futures = new ArrayList<>();
 		JsonArray jsonArray = Optional.ofNullable(siteRequest.getJsonObject()).map(o -> o.getJsonArray("list")).orElse(new JsonArray());
 		try {
@@ -206,21 +206,21 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 
 				json.put("created", json.getValue("created"));
 
-				SiteRequestEnUS siteRequest2 = generateSiteRequestEnUSForSiteCounty(siteContext, siteRequest.getOperationRequest(), json);
+				SiteRequestEnUS siteRequest2 = generateSiteRequestEnUSForSiteAgency(siteContext, siteRequest.getOperationRequest(), json);
 				siteRequest2.setApiRequest_(apiRequest);
 				siteRequest2.setRequestVars(siteRequest.getRequestVars());
 
-				SearchList<SiteCounty> searchList = new SearchList<SiteCounty>();
+				SearchList<SiteAgency> searchList = new SearchList<SiteAgency>();
 				searchList.setStore(true);
 				searchList.setQuery("*:*");
-				searchList.setC(SiteCounty.class);
+				searchList.setC(SiteAgency.class);
 				searchList.addFilterQuery("deleted_indexed_boolean:false");
 				searchList.addFilterQuery("archived_indexed_boolean:false");
 				searchList.addFilterQuery("inheritPk_indexed_long:" + json.getString("pk"));
 				searchList.initDeepForClass(siteRequest2);
 
 				if(searchList.size() == 1) {
-					SiteCounty o = searchList.getList().stream().findFirst().orElse(null);
+					SiteAgency o = searchList.getList().stream().findFirst().orElse(null);
 					JsonObject json2 = new JsonObject();
 					for(String f : json.fieldNames()) {
 						json2.put("set" + StringUtils.capitalize(f), json.getValue(f));
@@ -232,22 +232,22 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 						}
 						siteRequest2.setJsonObject(json2);
 						futures.add(
-							patchSiteCountyFuture(o, true, a -> {
+							patchSiteAgencyFuture(o, true, a -> {
 								if(a.succeeded()) {
 								} else {
-									LOGGER.error(String.format("listPUTImportSiteCounty failed. ", a.cause()));
-									errorSiteCounty(siteRequest2, eventHandler, a);
+									LOGGER.error(String.format("listPUTImportSiteAgency failed. ", a.cause()));
+									errorSiteAgency(siteRequest2, eventHandler, a);
 								}
 							})
 						);
 					}
 				} else {
 					futures.add(
-						postSiteCountyFuture(siteRequest2, true, a -> {
+						postSiteAgencyFuture(siteRequest2, true, a -> {
 							if(a.succeeded()) {
 							} else {
-								LOGGER.error(String.format("listPUTImportSiteCounty failed. ", a.cause()));
-								errorSiteCounty(siteRequest2, eventHandler, a);
+								LOGGER.error(String.format("listPUTImportSiteAgency failed. ", a.cause()));
+								errorSiteAgency(siteRequest2, eventHandler, a);
 							}
 						})
 					);
@@ -256,39 +256,39 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 			CompositeFuture.all(futures).setHandler( a -> {
 				if(a.succeeded()) {
 					apiRequest.setNumPATCH(apiRequest.getNumPATCH() + 1);
-					response200PUTImportSiteCounty(siteRequest, eventHandler);
+					response200PUTImportSiteAgency(siteRequest, eventHandler);
 				} else {
-					LOGGER.error(String.format("listPUTImportSiteCounty failed. ", a.cause()));
-					errorSiteCounty(apiRequest.getSiteRequest_(), eventHandler, a);
+					LOGGER.error(String.format("listPUTImportSiteAgency failed. ", a.cause()));
+					errorSiteAgency(apiRequest.getSiteRequest_(), eventHandler, a);
 				}
 			});
 		} catch(Exception ex) {
-			LOGGER.error(String.format("listPUTImportSiteCounty failed. ", ex));
-			errorSiteCounty(siteRequest, null, Future.failedFuture(ex));
+			LOGGER.error(String.format("listPUTImportSiteAgency failed. ", ex));
+			errorSiteAgency(siteRequest, null, Future.failedFuture(ex));
 		}
 	}
 
-	public void putimportSiteCountyResponse(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void putimportSiteAgencyResponse(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
-			response200PUTImportSiteCounty(siteRequest, a -> {
+			response200PUTImportSiteAgency(siteRequest, a -> {
 				if(a.succeeded()) {
 					eventHandler.handle(Future.succeededFuture(a.result()));
 				} else {
-					LOGGER.error(String.format("putimportSiteCountyResponse failed. ", a.cause()));
-					errorSiteCounty(siteRequest, eventHandler, a);
+					LOGGER.error(String.format("putimportSiteAgencyResponse failed. ", a.cause()));
+					errorSiteAgency(siteRequest, eventHandler, a);
 				}
 			});
 		} catch(Exception ex) {
-			LOGGER.error(String.format("putimportSiteCountyResponse failed. ", ex));
-			errorSiteCounty(siteRequest, null, Future.failedFuture(ex));
+			LOGGER.error(String.format("putimportSiteAgencyResponse failed. ", ex));
+			errorSiteAgency(siteRequest, null, Future.failedFuture(ex));
 		}
 	}
-	public void response200PUTImportSiteCounty(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void response200PUTImportSiteAgency(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
 			JsonObject json = new JsonObject();
 			eventHandler.handle(Future.succeededFuture(OperationResponse.completedWithJson(Buffer.buffer(Optional.ofNullable(json).orElse(new JsonObject()).encodePrettily()))));
 		} catch(Exception e) {
-			LOGGER.error(String.format("response200PUTImportSiteCounty failed. ", e));
+			LOGGER.error(String.format("response200PUTImportSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
@@ -296,12 +296,12 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 	// PUTMerge //
 
 	@Override
-	public void putmergeSiteCounty(JsonObject body, OperationRequest operationRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
-		SiteRequestEnUS siteRequest = generateSiteRequestEnUSForSiteCounty(siteContext, operationRequest, body);
-		siteRequest.setRequestUri("/api/county/merge");
+	public void putmergeSiteAgency(JsonObject body, OperationRequest operationRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+		SiteRequestEnUS siteRequest = generateSiteRequestEnUSForSiteAgency(siteContext, operationRequest, body);
+		siteRequest.setRequestUri("/api/agency/merge");
 		siteRequest.setRequestMethod("PUTMerge");
 		try {
-			LOGGER.info(String.format("putmergeSiteCounty started. "));
+			LOGGER.info(String.format("putmergeSiteAgency started. "));
 
 			List<String> roles = Arrays.asList("SiteAdmin");
 			if(
@@ -320,9 +320,9 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 				));
 			} else {
 
-				userSiteCounty(siteRequest, b -> {
+				userSiteAgency(siteRequest, b -> {
 					if(b.succeeded()) {
-						putmergeSiteCountyResponse(siteRequest, c -> {
+						putmergeSiteAgencyResponse(siteRequest, c -> {
 							if(c.succeeded()) {
 								eventHandler.handle(Future.succeededFuture(c.result()));
 								WorkerExecutor workerExecutor = siteContext.getWorkerExecutor();
@@ -336,56 +336,56 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 											apiRequest.setNumPATCH(0L);
 											apiRequest.initDeepApiRequest(siteRequest);
 											siteRequest.setApiRequest_(apiRequest);
-											siteRequest.getVertx().eventBus().publish("websocketSiteCounty", JsonObject.mapFrom(apiRequest).toString());
-											varsSiteCounty(siteRequest, d -> {
+											siteRequest.getVertx().eventBus().publish("websocketSiteAgency", JsonObject.mapFrom(apiRequest).toString());
+											varsSiteAgency(siteRequest, d -> {
 												if(d.succeeded()) {
-													listPUTMergeSiteCounty(apiRequest, siteRequest, e -> {
+													listPUTMergeSiteAgency(apiRequest, siteRequest, e -> {
 														if(e.succeeded()) {
-															putmergeSiteCountyResponse(siteRequest, f -> {
+															putmergeSiteAgencyResponse(siteRequest, f -> {
 																if(e.succeeded()) {
-																	LOGGER.info(String.format("putmergeSiteCounty succeeded. "));
+																	LOGGER.info(String.format("putmergeSiteAgency succeeded. "));
 																	blockingCodeHandler.handle(Future.succeededFuture(e.result()));
 																} else {
-																	LOGGER.error(String.format("putmergeSiteCounty failed. ", f.cause()));
-																	errorSiteCounty(siteRequest, null, f);
+																	LOGGER.error(String.format("putmergeSiteAgency failed. ", f.cause()));
+																	errorSiteAgency(siteRequest, null, f);
 																}
 															});
 														} else {
-															LOGGER.error(String.format("putmergeSiteCounty failed. ", e.cause()));
-															errorSiteCounty(siteRequest, null, e);
+															LOGGER.error(String.format("putmergeSiteAgency failed. ", e.cause()));
+															errorSiteAgency(siteRequest, null, e);
 														}
 													});
 												} else {
-													LOGGER.error(String.format("putmergeSiteCounty failed. ", d.cause()));
-													errorSiteCounty(siteRequest, null, d);
+													LOGGER.error(String.format("putmergeSiteAgency failed. ", d.cause()));
+													errorSiteAgency(siteRequest, null, d);
 												}
 											});
 										} catch(Exception ex) {
-											LOGGER.error(String.format("putmergeSiteCounty failed. ", ex));
-											errorSiteCounty(siteRequest, null, Future.failedFuture(ex));
+											LOGGER.error(String.format("putmergeSiteAgency failed. ", ex));
+											errorSiteAgency(siteRequest, null, Future.failedFuture(ex));
 										}
 									}, resultHandler -> {
 									}
 								);
 							} else {
-								LOGGER.error(String.format("putmergeSiteCounty failed. ", c.cause()));
-								errorSiteCounty(siteRequest, eventHandler, c);
+								LOGGER.error(String.format("putmergeSiteAgency failed. ", c.cause()));
+								errorSiteAgency(siteRequest, eventHandler, c);
 							}
 						});
 					} else {
-						LOGGER.error(String.format("putmergeSiteCounty failed. ", b.cause()));
-						errorSiteCounty(siteRequest, eventHandler, b);
+						LOGGER.error(String.format("putmergeSiteAgency failed. ", b.cause()));
+						errorSiteAgency(siteRequest, eventHandler, b);
 					}
 				});
 			}
 		} catch(Exception ex) {
-			LOGGER.error(String.format("putmergeSiteCounty failed. ", ex));
-			errorSiteCounty(siteRequest, eventHandler, Future.failedFuture(ex));
+			LOGGER.error(String.format("putmergeSiteAgency failed. ", ex));
+			errorSiteAgency(siteRequest, eventHandler, Future.failedFuture(ex));
 		}
 	}
 
 
-	public void listPUTMergeSiteCounty(ApiRequest apiRequest, SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void listPUTMergeSiteAgency(ApiRequest apiRequest, SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		List<Future> futures = new ArrayList<>();
 		JsonArray jsonArray = Optional.ofNullable(siteRequest.getJsonObject()).map(o -> o.getJsonArray("list")).orElse(new JsonArray());
 		try {
@@ -394,21 +394,21 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 
 				json.put("inheritPk", json.getValue("pk"));
 
-				SiteRequestEnUS siteRequest2 = generateSiteRequestEnUSForSiteCounty(siteContext, siteRequest.getOperationRequest(), json);
+				SiteRequestEnUS siteRequest2 = generateSiteRequestEnUSForSiteAgency(siteContext, siteRequest.getOperationRequest(), json);
 				siteRequest2.setApiRequest_(apiRequest);
 				siteRequest2.setRequestVars(siteRequest.getRequestVars());
 
-				SearchList<SiteCounty> searchList = new SearchList<SiteCounty>();
+				SearchList<SiteAgency> searchList = new SearchList<SiteAgency>();
 				searchList.setStore(true);
 				searchList.setQuery("*:*");
-				searchList.setC(SiteCounty.class);
+				searchList.setC(SiteAgency.class);
 				searchList.addFilterQuery("deleted_indexed_boolean:false");
 				searchList.addFilterQuery("archived_indexed_boolean:false");
 				searchList.addFilterQuery("pk_indexed_long:" + json.getString("pk"));
 				searchList.initDeepForClass(siteRequest2);
 
 				if(searchList.size() == 1) {
-					SiteCounty o = searchList.getList().stream().findFirst().orElse(null);
+					SiteAgency o = searchList.getList().stream().findFirst().orElse(null);
 					JsonObject json2 = new JsonObject();
 					for(String f : json.fieldNames()) {
 						json2.put("set" + StringUtils.capitalize(f), json.getValue(f));
@@ -420,22 +420,22 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 						}
 						siteRequest2.setJsonObject(json2);
 						futures.add(
-							patchSiteCountyFuture(o, false, a -> {
+							patchSiteAgencyFuture(o, false, a -> {
 								if(a.succeeded()) {
 								} else {
-									LOGGER.error(String.format("listPUTMergeSiteCounty failed. ", a.cause()));
-									errorSiteCounty(siteRequest2, eventHandler, a);
+									LOGGER.error(String.format("listPUTMergeSiteAgency failed. ", a.cause()));
+									errorSiteAgency(siteRequest2, eventHandler, a);
 								}
 							})
 						);
 					}
 				} else {
 					futures.add(
-						postSiteCountyFuture(siteRequest2, false, a -> {
+						postSiteAgencyFuture(siteRequest2, false, a -> {
 							if(a.succeeded()) {
 							} else {
-								LOGGER.error(String.format("listPUTMergeSiteCounty failed. ", a.cause()));
-								errorSiteCounty(siteRequest2, eventHandler, a);
+								LOGGER.error(String.format("listPUTMergeSiteAgency failed. ", a.cause()));
+								errorSiteAgency(siteRequest2, eventHandler, a);
 							}
 						})
 					);
@@ -444,39 +444,39 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 			CompositeFuture.all(futures).setHandler( a -> {
 				if(a.succeeded()) {
 					apiRequest.setNumPATCH(apiRequest.getNumPATCH() + 1);
-					response200PUTMergeSiteCounty(siteRequest, eventHandler);
+					response200PUTMergeSiteAgency(siteRequest, eventHandler);
 				} else {
-					LOGGER.error(String.format("listPUTMergeSiteCounty failed. ", a.cause()));
-					errorSiteCounty(apiRequest.getSiteRequest_(), eventHandler, a);
+					LOGGER.error(String.format("listPUTMergeSiteAgency failed. ", a.cause()));
+					errorSiteAgency(apiRequest.getSiteRequest_(), eventHandler, a);
 				}
 			});
 		} catch(Exception ex) {
-			LOGGER.error(String.format("listPUTMergeSiteCounty failed. ", ex));
-			errorSiteCounty(siteRequest, null, Future.failedFuture(ex));
+			LOGGER.error(String.format("listPUTMergeSiteAgency failed. ", ex));
+			errorSiteAgency(siteRequest, null, Future.failedFuture(ex));
 		}
 	}
 
-	public void putmergeSiteCountyResponse(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void putmergeSiteAgencyResponse(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
-			response200PUTMergeSiteCounty(siteRequest, a -> {
+			response200PUTMergeSiteAgency(siteRequest, a -> {
 				if(a.succeeded()) {
 					eventHandler.handle(Future.succeededFuture(a.result()));
 				} else {
-					LOGGER.error(String.format("putmergeSiteCountyResponse failed. ", a.cause()));
-					errorSiteCounty(siteRequest, eventHandler, a);
+					LOGGER.error(String.format("putmergeSiteAgencyResponse failed. ", a.cause()));
+					errorSiteAgency(siteRequest, eventHandler, a);
 				}
 			});
 		} catch(Exception ex) {
-			LOGGER.error(String.format("putmergeSiteCountyResponse failed. ", ex));
-			errorSiteCounty(siteRequest, null, Future.failedFuture(ex));
+			LOGGER.error(String.format("putmergeSiteAgencyResponse failed. ", ex));
+			errorSiteAgency(siteRequest, null, Future.failedFuture(ex));
 		}
 	}
-	public void response200PUTMergeSiteCounty(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void response200PUTMergeSiteAgency(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
 			JsonObject json = new JsonObject();
 			eventHandler.handle(Future.succeededFuture(OperationResponse.completedWithJson(Buffer.buffer(Optional.ofNullable(json).orElse(new JsonObject()).encodePrettily()))));
 		} catch(Exception e) {
-			LOGGER.error(String.format("response200PUTMergeSiteCounty failed. ", e));
+			LOGGER.error(String.format("response200PUTMergeSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
@@ -484,12 +484,12 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 	// PUTCopy //
 
 	@Override
-	public void putcopySiteCounty(JsonObject body, OperationRequest operationRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
-		SiteRequestEnUS siteRequest = generateSiteRequestEnUSForSiteCounty(siteContext, operationRequest, body);
-		siteRequest.setRequestUri("/api/county/copy");
+	public void putcopySiteAgency(JsonObject body, OperationRequest operationRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+		SiteRequestEnUS siteRequest = generateSiteRequestEnUSForSiteAgency(siteContext, operationRequest, body);
+		siteRequest.setRequestUri("/api/agency/copy");
 		siteRequest.setRequestMethod("PUTCopy");
 		try {
-			LOGGER.info(String.format("putcopySiteCounty started. "));
+			LOGGER.info(String.format("putcopySiteAgency started. "));
 
 			List<String> roles = Arrays.asList("SiteAdmin");
 			if(
@@ -508,110 +508,110 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 				));
 			} else {
 
-				userSiteCounty(siteRequest, b -> {
+				userSiteAgency(siteRequest, b -> {
 					if(b.succeeded()) {
-						putcopySiteCountyResponse(siteRequest, c -> {
+						putcopySiteAgencyResponse(siteRequest, c -> {
 							if(c.succeeded()) {
 								eventHandler.handle(Future.succeededFuture(c.result()));
 								WorkerExecutor workerExecutor = siteContext.getWorkerExecutor();
 								workerExecutor.executeBlocking(
 									blockingCodeHandler -> {
 										try {
-											aSearchSiteCounty(siteRequest, false, true, "/api/county/copy", "PUTCopy", d -> {
+											aSearchSiteAgency(siteRequest, false, true, "/api/agency/copy", "PUTCopy", d -> {
 												if(d.succeeded()) {
-													SearchList<SiteCounty> listSiteCounty = d.result();
+													SearchList<SiteAgency> listSiteAgency = d.result();
 													ApiRequest apiRequest = new ApiRequest();
-													apiRequest.setRows(listSiteCounty.getRows());
-													apiRequest.setNumFound(listSiteCounty.getQueryResponse().getResults().getNumFound());
+													apiRequest.setRows(listSiteAgency.getRows());
+													apiRequest.setNumFound(listSiteAgency.getQueryResponse().getResults().getNumFound());
 													apiRequest.setNumPATCH(0L);
 													apiRequest.initDeepApiRequest(siteRequest);
 													siteRequest.setApiRequest_(apiRequest);
-													siteRequest.getVertx().eventBus().publish("websocketSiteCounty", JsonObject.mapFrom(apiRequest).toString());
+													siteRequest.getVertx().eventBus().publish("websocketSiteAgency", JsonObject.mapFrom(apiRequest).toString());
 													try {
-														listPUTCopySiteCounty(apiRequest, listSiteCounty, e -> {
+														listPUTCopySiteAgency(apiRequest, listSiteAgency, e -> {
 															if(e.succeeded()) {
-																putcopySiteCountyResponse(siteRequest, f -> {
+																putcopySiteAgencyResponse(siteRequest, f -> {
 																	if(f.succeeded()) {
-																		LOGGER.info(String.format("putcopySiteCounty succeeded. "));
+																		LOGGER.info(String.format("putcopySiteAgency succeeded. "));
 																		blockingCodeHandler.handle(Future.succeededFuture(f.result()));
 																	} else {
-																		LOGGER.error(String.format("putcopySiteCounty failed. ", f.cause()));
-																		errorSiteCounty(siteRequest, null, f);
+																		LOGGER.error(String.format("putcopySiteAgency failed. ", f.cause()));
+																		errorSiteAgency(siteRequest, null, f);
 																	}
 																});
 															} else {
-																LOGGER.error(String.format("putcopySiteCounty failed. ", e.cause()));
-																errorSiteCounty(siteRequest, null, e);
+																LOGGER.error(String.format("putcopySiteAgency failed. ", e.cause()));
+																errorSiteAgency(siteRequest, null, e);
 															}
 														});
 													} catch(Exception ex) {
-														LOGGER.error(String.format("putcopySiteCounty failed. ", ex));
-														errorSiteCounty(siteRequest, null, Future.failedFuture(ex));
+														LOGGER.error(String.format("putcopySiteAgency failed. ", ex));
+														errorSiteAgency(siteRequest, null, Future.failedFuture(ex));
 													}
 												} else {
-													LOGGER.error(String.format("putcopySiteCounty failed. ", d.cause()));
-													errorSiteCounty(siteRequest, null, d);
+													LOGGER.error(String.format("putcopySiteAgency failed. ", d.cause()));
+													errorSiteAgency(siteRequest, null, d);
 												}
 											});
 										} catch(Exception ex) {
-											LOGGER.error(String.format("putcopySiteCounty failed. ", ex));
-											errorSiteCounty(siteRequest, null, Future.failedFuture(ex));
+											LOGGER.error(String.format("putcopySiteAgency failed. ", ex));
+											errorSiteAgency(siteRequest, null, Future.failedFuture(ex));
 										}
 									}, resultHandler -> {
 									}
 								);
 							} else {
-								LOGGER.error(String.format("putcopySiteCounty failed. ", c.cause()));
-								errorSiteCounty(siteRequest, eventHandler, c);
+								LOGGER.error(String.format("putcopySiteAgency failed. ", c.cause()));
+								errorSiteAgency(siteRequest, eventHandler, c);
 							}
 						});
 					} else {
-						LOGGER.error(String.format("putcopySiteCounty failed. ", b.cause()));
-						errorSiteCounty(siteRequest, eventHandler, b);
+						LOGGER.error(String.format("putcopySiteAgency failed. ", b.cause()));
+						errorSiteAgency(siteRequest, eventHandler, b);
 					}
 				});
 			}
 		} catch(Exception ex) {
-			LOGGER.error(String.format("putcopySiteCounty failed. ", ex));
-			errorSiteCounty(siteRequest, eventHandler, Future.failedFuture(ex));
+			LOGGER.error(String.format("putcopySiteAgency failed. ", ex));
+			errorSiteAgency(siteRequest, eventHandler, Future.failedFuture(ex));
 		}
 	}
 
 
-	public void listPUTCopySiteCounty(ApiRequest apiRequest, SearchList<SiteCounty> listSiteCounty, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void listPUTCopySiteAgency(ApiRequest apiRequest, SearchList<SiteAgency> listSiteAgency, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		List<Future> futures = new ArrayList<>();
-		SiteRequestEnUS siteRequest = listSiteCounty.getSiteRequest_();
-		listSiteCounty.getList().forEach(o -> {
-			SiteRequestEnUS siteRequest2 = generateSiteRequestEnUSForSiteCounty(siteContext, siteRequest.getOperationRequest(), siteRequest.getJsonObject());
+		SiteRequestEnUS siteRequest = listSiteAgency.getSiteRequest_();
+		listSiteAgency.getList().forEach(o -> {
+			SiteRequestEnUS siteRequest2 = generateSiteRequestEnUSForSiteAgency(siteContext, siteRequest.getOperationRequest(), siteRequest.getJsonObject());
 			siteRequest2.setApiRequest_(siteRequest.getApiRequest_());
 			o.setSiteRequest_(siteRequest2);
 			futures.add(
-				putcopySiteCountyFuture(siteRequest2, JsonObject.mapFrom(o), a -> {
+				putcopySiteAgencyFuture(siteRequest2, JsonObject.mapFrom(o), a -> {
 					if(a.succeeded()) {
 					} else {
-						LOGGER.error(String.format("listPUTCopySiteCounty failed. ", a.cause()));
-						errorSiteCounty(siteRequest, eventHandler, a);
+						LOGGER.error(String.format("listPUTCopySiteAgency failed. ", a.cause()));
+						errorSiteAgency(siteRequest, eventHandler, a);
 					}
 				})
 			);
 		});
 		CompositeFuture.all(futures).setHandler( a -> {
 			if(a.succeeded()) {
-				apiRequest.setNumPATCH(apiRequest.getNumPATCH() + listSiteCounty.size());
-				if(listSiteCounty.next()) {
-					listPUTCopySiteCounty(apiRequest, listSiteCounty, eventHandler);
+				apiRequest.setNumPATCH(apiRequest.getNumPATCH() + listSiteAgency.size());
+				if(listSiteAgency.next()) {
+					listPUTCopySiteAgency(apiRequest, listSiteAgency, eventHandler);
 				} else {
-					response200PUTCopySiteCounty(siteRequest, eventHandler);
+					response200PUTCopySiteAgency(siteRequest, eventHandler);
 				}
 			} else {
-				LOGGER.error(String.format("listPUTCopySiteCounty failed. ", a.cause()));
-				errorSiteCounty(listSiteCounty.getSiteRequest_(), eventHandler, a);
+				LOGGER.error(String.format("listPUTCopySiteAgency failed. ", a.cause()));
+				errorSiteAgency(listSiteAgency.getSiteRequest_(), eventHandler, a);
 			}
 		});
 	}
 
-	public Future<SiteCounty> putcopySiteCountyFuture(SiteRequestEnUS siteRequest, JsonObject jsonObject, Handler<AsyncResult<SiteCounty>> eventHandler) {
-		Promise<SiteCounty> promise = Promise.promise();
+	public Future<SiteAgency> putcopySiteAgencyFuture(SiteRequestEnUS siteRequest, JsonObject jsonObject, Handler<AsyncResult<SiteAgency>> eventHandler) {
+		Promise<SiteAgency> promise = Promise.promise();
 		try {
 
 			jsonObject.put("saves", Optional.ofNullable(jsonObject.getJsonArray("saves")).orElse(new JsonArray()));
@@ -621,60 +621,60 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 				jsonObject.getJsonArray("saves").add(o.getKey());
 			});
 
-			sqlConnectionSiteCounty(siteRequest, a -> {
+			sqlConnectionSiteAgency(siteRequest, a -> {
 				if(a.succeeded()) {
-					sqlTransactionSiteCounty(siteRequest, b -> {
+					sqlTransactionSiteAgency(siteRequest, b -> {
 						if(b.succeeded()) {
-							createSiteCounty(siteRequest, c -> {
+							createSiteAgency(siteRequest, c -> {
 								if(c.succeeded()) {
-									SiteCounty siteCounty = c.result();
-									sqlPUTCopySiteCounty(siteCounty, jsonObject, d -> {
+									SiteAgency siteAgency = c.result();
+									sqlPUTCopySiteAgency(siteAgency, jsonObject, d -> {
 										if(d.succeeded()) {
-											defineIndexSiteCounty(siteCounty, e -> {
+											defineIndexSiteAgency(siteAgency, e -> {
 												if(e.succeeded()) {
 													ApiRequest apiRequest = siteRequest.getApiRequest_();
 													if(apiRequest != null) {
 														apiRequest.setNumPATCH(apiRequest.getNumPATCH() + 1);
 														if(apiRequest.getNumFound() == 1L) {
-															siteCounty.apiRequestSiteCounty();
+															siteAgency.apiRequestSiteAgency();
 														}
-														siteRequest.getVertx().eventBus().publish("websocketSiteCounty", JsonObject.mapFrom(apiRequest).toString());
+														siteRequest.getVertx().eventBus().publish("websocketSiteAgency", JsonObject.mapFrom(apiRequest).toString());
 													}
-													eventHandler.handle(Future.succeededFuture(siteCounty));
-													promise.complete(siteCounty);
+													eventHandler.handle(Future.succeededFuture(siteAgency));
+													promise.complete(siteAgency);
 												} else {
-													LOGGER.error(String.format("putcopySiteCountyFuture failed. ", e.cause()));
+													LOGGER.error(String.format("putcopySiteAgencyFuture failed. ", e.cause()));
 													eventHandler.handle(Future.failedFuture(e.cause()));
 												}
 											});
 										} else {
-											LOGGER.error(String.format("putcopySiteCountyFuture failed. ", d.cause()));
+											LOGGER.error(String.format("putcopySiteAgencyFuture failed. ", d.cause()));
 											eventHandler.handle(Future.failedFuture(d.cause()));
 										}
 									});
 								} else {
-									LOGGER.error(String.format("putcopySiteCountyFuture failed. ", c.cause()));
+									LOGGER.error(String.format("putcopySiteAgencyFuture failed. ", c.cause()));
 									eventHandler.handle(Future.failedFuture(c.cause()));
 								}
 							});
 						} else {
-							LOGGER.error(String.format("putcopySiteCountyFuture failed. ", b.cause()));
+							LOGGER.error(String.format("putcopySiteAgencyFuture failed. ", b.cause()));
 							eventHandler.handle(Future.failedFuture(b.cause()));
 						}
 					});
 				} else {
-					LOGGER.error(String.format("putcopySiteCountyFuture failed. ", a.cause()));
+					LOGGER.error(String.format("putcopySiteAgencyFuture failed. ", a.cause()));
 					eventHandler.handle(Future.failedFuture(a.cause()));
 				}
 			});
 		} catch(Exception e) {
-			LOGGER.error(String.format("putcopySiteCountyFuture failed. ", e));
-			errorSiteCounty(siteRequest, null, Future.failedFuture(e));
+			LOGGER.error(String.format("putcopySiteAgencyFuture failed. ", e));
+			errorSiteAgency(siteRequest, null, Future.failedFuture(e));
 		}
 		return promise.future();
 	}
 
-	public void sqlPUTCopySiteCounty(SiteCounty o, JsonObject jsonObject, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void sqlPUTCopySiteAgency(SiteAgency o, JsonObject jsonObject, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
 			SiteRequestEnUS siteRequest = o.getSiteRequest_();
 			ApiRequest apiRequest = siteRequest.getApiRequest_();
@@ -698,7 +698,7 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value SiteCounty.inheritPk failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value SiteAgency.inheritPk failed", b.cause())));
 							});
 						}));
 						break;
@@ -711,7 +711,7 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value SiteCounty.archived failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value SiteAgency.archived failed", b.cause())));
 							});
 						}));
 						break;
@@ -724,20 +724,20 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value SiteCounty.deleted failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value SiteAgency.deleted failed", b.cause())));
 							});
 						}));
 						break;
-					case "countyName":
+					case "agencyName":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "countyName", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "agencyName", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value SiteCounty.countyName failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value SiteAgency.agencyName failed", b.cause())));
 							});
 						}));
 						break;
@@ -746,13 +746,13 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 						Long l = Long.parseLong(jsonObject.getString(entityVar));
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_addA
-									, Tuple.of(l, "countyKeys", pk, "stateKey")
+									, Tuple.of(l, "agencyKeys", pk, "stateKey")
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value SiteCounty.stateKey failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value SiteAgency.stateKey failed", b.cause())));
 							});
 						}));
 						}
@@ -761,13 +761,13 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 						for(Long l : jsonObject.getJsonArray(entityVar).stream().map(a -> Long.parseLong((String)a)).collect(Collectors.toList())) {
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_addA
-										, Tuple.of(l, "countyKey", pk, "reportCardKeys")
+										, Tuple.of(l, "agencyKey", pk, "reportCardKeys")
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value SiteCounty.reportCardKeys failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value SiteAgency.reportCardKeys failed", b.cause())));
 								});
 							}));
 							if(!pks.contains(l)) {
@@ -783,37 +783,37 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 				if(a.succeeded()) {
 					eventHandler.handle(Future.succeededFuture());
 				} else {
-					LOGGER.error(String.format("sqlPUTCopySiteCounty failed. ", a.cause()));
+					LOGGER.error(String.format("sqlPUTCopySiteAgency failed. ", a.cause()));
 					eventHandler.handle(Future.failedFuture(a.cause()));
 				}
 			});
 		} catch(Exception e) {
-			LOGGER.error(String.format("sqlPUTCopySiteCounty failed. ", e));
+			LOGGER.error(String.format("sqlPUTCopySiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
 
-	public void putcopySiteCountyResponse(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void putcopySiteAgencyResponse(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
-			response200PUTCopySiteCounty(siteRequest, a -> {
+			response200PUTCopySiteAgency(siteRequest, a -> {
 				if(a.succeeded()) {
 					eventHandler.handle(Future.succeededFuture(a.result()));
 				} else {
-					LOGGER.error(String.format("putcopySiteCountyResponse failed. ", a.cause()));
-					errorSiteCounty(siteRequest, eventHandler, a);
+					LOGGER.error(String.format("putcopySiteAgencyResponse failed. ", a.cause()));
+					errorSiteAgency(siteRequest, eventHandler, a);
 				}
 			});
 		} catch(Exception ex) {
-			LOGGER.error(String.format("putcopySiteCountyResponse failed. ", ex));
-			errorSiteCounty(siteRequest, null, Future.failedFuture(ex));
+			LOGGER.error(String.format("putcopySiteAgencyResponse failed. ", ex));
+			errorSiteAgency(siteRequest, null, Future.failedFuture(ex));
 		}
 	}
-	public void response200PUTCopySiteCounty(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void response200PUTCopySiteAgency(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
 			JsonObject json = new JsonObject();
 			eventHandler.handle(Future.succeededFuture(OperationResponse.completedWithJson(Buffer.buffer(Optional.ofNullable(json).orElse(new JsonObject()).encodePrettily()))));
 		} catch(Exception e) {
-			LOGGER.error(String.format("response200PUTCopySiteCounty failed. ", e));
+			LOGGER.error(String.format("response200PUTCopySiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
@@ -821,12 +821,12 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 	// POST //
 
 	@Override
-	public void postSiteCounty(JsonObject body, OperationRequest operationRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
-		SiteRequestEnUS siteRequest = generateSiteRequestEnUSForSiteCounty(siteContext, operationRequest, body);
-		siteRequest.setRequestUri("/api/county");
+	public void postSiteAgency(JsonObject body, OperationRequest operationRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+		SiteRequestEnUS siteRequest = generateSiteRequestEnUSForSiteAgency(siteContext, operationRequest, body);
+		siteRequest.setRequestUri("/api/agency");
 		siteRequest.setRequestMethod("POST");
 		try {
-			LOGGER.info(String.format("postSiteCounty started. "));
+			LOGGER.info(String.format("postSiteAgency started. "));
 
 			List<String> roles = Arrays.asList("SiteAdmin");
 			if(
@@ -845,7 +845,7 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 				));
 			} else {
 
-				userSiteCounty(siteRequest, b -> {
+				userSiteAgency(siteRequest, b -> {
 					if(b.succeeded()) {
 						ApiRequest apiRequest = new ApiRequest();
 						apiRequest.setRows(1);
@@ -853,93 +853,93 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 						apiRequest.setNumPATCH(0L);
 						apiRequest.initDeepApiRequest(siteRequest);
 						siteRequest.setApiRequest_(apiRequest);
-						siteRequest.getVertx().eventBus().publish("websocketSiteCounty", JsonObject.mapFrom(apiRequest).toString());
-						postSiteCountyFuture(siteRequest, false, c -> {
+						siteRequest.getVertx().eventBus().publish("websocketSiteAgency", JsonObject.mapFrom(apiRequest).toString());
+						postSiteAgencyFuture(siteRequest, false, c -> {
 							if(c.succeeded()) {
-								SiteCounty siteCounty = c.result();
-								apiRequest.setPk(siteCounty.getPk());
-								postSiteCountyResponse(siteCounty, d -> {
+								SiteAgency siteAgency = c.result();
+								apiRequest.setPk(siteAgency.getPk());
+								postSiteAgencyResponse(siteAgency, d -> {
 										if(d.succeeded()) {
 										eventHandler.handle(Future.succeededFuture(d.result()));
-										LOGGER.info(String.format("postSiteCounty succeeded. "));
+										LOGGER.info(String.format("postSiteAgency succeeded. "));
 									} else {
-										LOGGER.error(String.format("postSiteCounty failed. ", d.cause()));
-										errorSiteCounty(siteRequest, eventHandler, d);
+										LOGGER.error(String.format("postSiteAgency failed. ", d.cause()));
+										errorSiteAgency(siteRequest, eventHandler, d);
 									}
 								});
 							} else {
-								LOGGER.error(String.format("postSiteCounty failed. ", c.cause()));
-								errorSiteCounty(siteRequest, eventHandler, c);
+								LOGGER.error(String.format("postSiteAgency failed. ", c.cause()));
+								errorSiteAgency(siteRequest, eventHandler, c);
 							}
 						});
 					} else {
-						LOGGER.error(String.format("postSiteCounty failed. ", b.cause()));
-						errorSiteCounty(siteRequest, eventHandler, b);
+						LOGGER.error(String.format("postSiteAgency failed. ", b.cause()));
+						errorSiteAgency(siteRequest, eventHandler, b);
 					}
 				});
 			}
 		} catch(Exception ex) {
-			LOGGER.error(String.format("postSiteCounty failed. ", ex));
-			errorSiteCounty(siteRequest, eventHandler, Future.failedFuture(ex));
+			LOGGER.error(String.format("postSiteAgency failed. ", ex));
+			errorSiteAgency(siteRequest, eventHandler, Future.failedFuture(ex));
 		}
 	}
 
 
-	public Future<SiteCounty> postSiteCountyFuture(SiteRequestEnUS siteRequest, Boolean inheritPk, Handler<AsyncResult<SiteCounty>> eventHandler) {
-		Promise<SiteCounty> promise = Promise.promise();
+	public Future<SiteAgency> postSiteAgencyFuture(SiteRequestEnUS siteRequest, Boolean inheritPk, Handler<AsyncResult<SiteAgency>> eventHandler) {
+		Promise<SiteAgency> promise = Promise.promise();
 		try {
-			sqlConnectionSiteCounty(siteRequest, a -> {
+			sqlConnectionSiteAgency(siteRequest, a -> {
 				if(a.succeeded()) {
-					sqlTransactionSiteCounty(siteRequest, b -> {
+					sqlTransactionSiteAgency(siteRequest, b -> {
 						if(b.succeeded()) {
-							createSiteCounty(siteRequest, c -> {
+							createSiteAgency(siteRequest, c -> {
 								if(c.succeeded()) {
-									SiteCounty siteCounty = c.result();
-									sqlPOSTSiteCounty(siteCounty, inheritPk, d -> {
+									SiteAgency siteAgency = c.result();
+									sqlPOSTSiteAgency(siteAgency, inheritPk, d -> {
 										if(d.succeeded()) {
-											defineIndexSiteCounty(siteCounty, e -> {
+											defineIndexSiteAgency(siteAgency, e -> {
 												if(e.succeeded()) {
 													ApiRequest apiRequest = siteRequest.getApiRequest_();
 													if(apiRequest != null) {
 														apiRequest.setNumPATCH(apiRequest.getNumPATCH() + 1);
-														siteCounty.apiRequestSiteCounty();
-														siteRequest.getVertx().eventBus().publish("websocketSiteCounty", JsonObject.mapFrom(apiRequest).toString());
+														siteAgency.apiRequestSiteAgency();
+														siteRequest.getVertx().eventBus().publish("websocketSiteAgency", JsonObject.mapFrom(apiRequest).toString());
 													}
-													eventHandler.handle(Future.succeededFuture(siteCounty));
-													promise.complete(siteCounty);
+													eventHandler.handle(Future.succeededFuture(siteAgency));
+													promise.complete(siteAgency);
 												} else {
-													LOGGER.error(String.format("postSiteCountyFuture failed. ", e.cause()));
+													LOGGER.error(String.format("postSiteAgencyFuture failed. ", e.cause()));
 													eventHandler.handle(Future.failedFuture(e.cause()));
 												}
 											});
 										} else {
-											LOGGER.error(String.format("postSiteCountyFuture failed. ", d.cause()));
+											LOGGER.error(String.format("postSiteAgencyFuture failed. ", d.cause()));
 											eventHandler.handle(Future.failedFuture(d.cause()));
 										}
 									});
 								} else {
-									LOGGER.error(String.format("postSiteCountyFuture failed. ", c.cause()));
+									LOGGER.error(String.format("postSiteAgencyFuture failed. ", c.cause()));
 									eventHandler.handle(Future.failedFuture(c.cause()));
 								}
 							});
 						} else {
-							LOGGER.error(String.format("postSiteCountyFuture failed. ", b.cause()));
+							LOGGER.error(String.format("postSiteAgencyFuture failed. ", b.cause()));
 							eventHandler.handle(Future.failedFuture(b.cause()));
 						}
 					});
 				} else {
-					LOGGER.error(String.format("postSiteCountyFuture failed. ", a.cause()));
+					LOGGER.error(String.format("postSiteAgencyFuture failed. ", a.cause()));
 					eventHandler.handle(Future.failedFuture(a.cause()));
 				}
 			});
 		} catch(Exception e) {
-			LOGGER.error(String.format("postSiteCountyFuture failed. ", e));
-			errorSiteCounty(siteRequest, null, Future.failedFuture(e));
+			LOGGER.error(String.format("postSiteAgencyFuture failed. ", e));
+			errorSiteAgency(siteRequest, null, Future.failedFuture(e));
 		}
 		return promise.future();
 	}
 
-	public void sqlPOSTSiteCounty(SiteCounty o, Boolean inheritPk, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void sqlPOSTSiteAgency(SiteAgency o, Boolean inheritPk, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
 			SiteRequestEnUS siteRequest = o.getSiteRequest_();
 			ApiRequest apiRequest = siteRequest.getApiRequest_();
@@ -1003,7 +1003,7 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value SiteCounty.inheritPk failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value SiteAgency.inheritPk failed", b.cause())));
 							});
 						}));
 						break;
@@ -1016,7 +1016,7 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value SiteCounty.archived failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value SiteAgency.archived failed", b.cause())));
 							});
 						}));
 						break;
@@ -1029,20 +1029,20 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value SiteCounty.deleted failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value SiteAgency.deleted failed", b.cause())));
 							});
 						}));
 						break;
-					case "countyName":
+					case "agencyName":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "countyName", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "agencyName", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value SiteCounty.countyName failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value SiteAgency.agencyName failed", b.cause())));
 							});
 						}));
 						break;
@@ -1062,13 +1062,13 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 								if(l2 != null) {
 									futures.add(Future.future(a -> {
 										tx.preparedQuery(SiteContextEnUS.SQL_addA
-												, Tuple.of(l2, "countyKeys", pk, "stateKey")
+												, Tuple.of(l2, "agencyKeys", pk, "stateKey")
 												, b
 										-> {
 											if(b.succeeded())
 												a.handle(Future.succeededFuture());
 											else
-												a.handle(Future.failedFuture(new Exception("value SiteCounty.stateKey failed", b.cause())));
+												a.handle(Future.failedFuture(new Exception("value SiteAgency.stateKey failed", b.cause())));
 										});
 									}));
 									if(!pks.contains(l2)) {
@@ -1094,13 +1094,13 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 								if(l2 != null) {
 									futures.add(Future.future(a -> {
 										tx.preparedQuery(SiteContextEnUS.SQL_addA
-												, Tuple.of(l2, "countyKey", pk, "reportCardKeys")
+												, Tuple.of(l2, "agencyKey", pk, "reportCardKeys")
 												, b
 										-> {
 											if(b.succeeded())
 												a.handle(Future.succeededFuture());
 											else
-												a.handle(Future.failedFuture(new Exception("value SiteCounty.reportCardKeys failed", b.cause())));
+												a.handle(Future.failedFuture(new Exception("value SiteAgency.reportCardKeys failed", b.cause())));
 										});
 									}));
 									if(!pks.contains(l2)) {
@@ -1118,39 +1118,39 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 				if(a.succeeded()) {
 					eventHandler.handle(Future.succeededFuture());
 				} else {
-					LOGGER.error(String.format("sqlPOSTSiteCounty failed. ", a.cause()));
+					LOGGER.error(String.format("sqlPOSTSiteAgency failed. ", a.cause()));
 					eventHandler.handle(Future.failedFuture(a.cause()));
 				}
 			});
 		} catch(Exception e) {
-			LOGGER.error(String.format("sqlPOSTSiteCounty failed. ", e));
+			LOGGER.error(String.format("sqlPOSTSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
 
-	public void postSiteCountyResponse(SiteCounty siteCounty, Handler<AsyncResult<OperationResponse>> eventHandler) {
-		SiteRequestEnUS siteRequest = siteCounty.getSiteRequest_();
+	public void postSiteAgencyResponse(SiteAgency siteAgency, Handler<AsyncResult<OperationResponse>> eventHandler) {
+		SiteRequestEnUS siteRequest = siteAgency.getSiteRequest_();
 		try {
-			response200POSTSiteCounty(siteCounty, a -> {
+			response200POSTSiteAgency(siteAgency, a -> {
 				if(a.succeeded()) {
 					eventHandler.handle(Future.succeededFuture(a.result()));
 				} else {
-					LOGGER.error(String.format("postSiteCountyResponse failed. ", a.cause()));
-					errorSiteCounty(siteRequest, eventHandler, a);
+					LOGGER.error(String.format("postSiteAgencyResponse failed. ", a.cause()));
+					errorSiteAgency(siteRequest, eventHandler, a);
 				}
 			});
 		} catch(Exception ex) {
-			LOGGER.error(String.format("postSiteCountyResponse failed. ", ex));
-			errorSiteCounty(siteRequest, null, Future.failedFuture(ex));
+			LOGGER.error(String.format("postSiteAgencyResponse failed. ", ex));
+			errorSiteAgency(siteRequest, null, Future.failedFuture(ex));
 		}
 	}
-	public void response200POSTSiteCounty(SiteCounty o, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void response200POSTSiteAgency(SiteAgency o, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
 			SiteRequestEnUS siteRequest = o.getSiteRequest_();
 			JsonObject json = JsonObject.mapFrom(o);
 			eventHandler.handle(Future.succeededFuture(OperationResponse.completedWithJson(Buffer.buffer(Optional.ofNullable(json).orElse(new JsonObject()).encodePrettily()))));
 		} catch(Exception e) {
-			LOGGER.error(String.format("response200POSTSiteCounty failed. ", e));
+			LOGGER.error(String.format("response200POSTSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
@@ -1158,12 +1158,12 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 	// PATCH //
 
 	@Override
-	public void patchSiteCounty(JsonObject body, OperationRequest operationRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
-		SiteRequestEnUS siteRequest = generateSiteRequestEnUSForSiteCounty(siteContext, operationRequest, body);
-		siteRequest.setRequestUri("/api/county");
+	public void patchSiteAgency(JsonObject body, OperationRequest operationRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+		SiteRequestEnUS siteRequest = generateSiteRequestEnUSForSiteAgency(siteContext, operationRequest, body);
+		siteRequest.setRequestUri("/api/agency");
 		siteRequest.setRequestMethod("PATCH");
 		try {
-			LOGGER.info(String.format("patchSiteCounty started. "));
+			LOGGER.info(String.format("patchSiteAgency started. "));
 
 			List<String> roles = Arrays.asList("SiteAdmin");
 			if(
@@ -1182,26 +1182,26 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 				));
 			} else {
 
-				userSiteCounty(siteRequest, b -> {
+				userSiteAgency(siteRequest, b -> {
 					if(b.succeeded()) {
-						patchSiteCountyResponse(siteRequest, c -> {
+						patchSiteAgencyResponse(siteRequest, c -> {
 							if(c.succeeded()) {
 								eventHandler.handle(Future.succeededFuture(c.result()));
 								WorkerExecutor workerExecutor = siteContext.getWorkerExecutor();
 								workerExecutor.executeBlocking(
 									blockingCodeHandler -> {
 										try {
-											aSearchSiteCounty(siteRequest, false, true, "/api/county", "PATCH", d -> {
+											aSearchSiteAgency(siteRequest, false, true, "/api/agency", "PATCH", d -> {
 												if(d.succeeded()) {
-													SearchList<SiteCounty> listSiteCounty = d.result();
+													SearchList<SiteAgency> listSiteAgency = d.result();
 													ApiRequest apiRequest = new ApiRequest();
-													apiRequest.setRows(listSiteCounty.getRows());
-													apiRequest.setNumFound(listSiteCounty.getQueryResponse().getResults().getNumFound());
+													apiRequest.setRows(listSiteAgency.getRows());
+													apiRequest.setNumFound(listSiteAgency.getQueryResponse().getResults().getNumFound());
 													apiRequest.setNumPATCH(0L);
 													apiRequest.initDeepApiRequest(siteRequest);
 													siteRequest.setApiRequest_(apiRequest);
-													siteRequest.getVertx().eventBus().publish("websocketSiteCounty", JsonObject.mapFrom(apiRequest).toString());
-													SimpleOrderedMap facets = (SimpleOrderedMap)Optional.ofNullable(listSiteCounty.getQueryResponse()).map(QueryResponse::getResponse).map(r -> r.get("facets")).orElse(null);
+													siteRequest.getVertx().eventBus().publish("websocketSiteAgency", JsonObject.mapFrom(apiRequest).toString());
+													SimpleOrderedMap facets = (SimpleOrderedMap)Optional.ofNullable(listSiteAgency.getQueryResponse()).map(QueryResponse::getResponse).map(r -> r.get("facets")).orElse(null);
 													Date date = null;
 													if(facets != null)
 														date = (Date)facets.get("max_modified");
@@ -1210,91 +1210,91 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 														dt = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").format(ZonedDateTime.ofInstant(ZonedDateTime.now().toInstant(), ZoneId.of("UTC")).minusNanos(1000));
 													else
 														dt = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").format(ZonedDateTime.ofInstant(date.toInstant(), ZoneId.of("UTC")));
-													listSiteCounty.addFilterQuery(String.format("modified_indexed_date:[* TO %s]", dt));
+													listSiteAgency.addFilterQuery(String.format("modified_indexed_date:[* TO %s]", dt));
 
 													try {
-														listPATCHSiteCounty(apiRequest, listSiteCounty, dt, e -> {
+														listPATCHSiteAgency(apiRequest, listSiteAgency, dt, e -> {
 															if(e.succeeded()) {
-																patchSiteCountyResponse(siteRequest, f -> {
+																patchSiteAgencyResponse(siteRequest, f -> {
 																	if(f.succeeded()) {
-																		LOGGER.info(String.format("patchSiteCounty succeeded. "));
+																		LOGGER.info(String.format("patchSiteAgency succeeded. "));
 																		blockingCodeHandler.handle(Future.succeededFuture(f.result()));
 																	} else {
-																		LOGGER.error(String.format("patchSiteCounty failed. ", f.cause()));
-																		errorSiteCounty(siteRequest, null, f);
+																		LOGGER.error(String.format("patchSiteAgency failed. ", f.cause()));
+																		errorSiteAgency(siteRequest, null, f);
 																	}
 																});
 															} else {
-																LOGGER.error(String.format("patchSiteCounty failed. ", e.cause()));
-																errorSiteCounty(siteRequest, null, e);
+																LOGGER.error(String.format("patchSiteAgency failed. ", e.cause()));
+																errorSiteAgency(siteRequest, null, e);
 															}
 														});
 													} catch(Exception ex) {
-														LOGGER.error(String.format("patchSiteCounty failed. ", ex));
-														errorSiteCounty(siteRequest, null, Future.failedFuture(ex));
+														LOGGER.error(String.format("patchSiteAgency failed. ", ex));
+														errorSiteAgency(siteRequest, null, Future.failedFuture(ex));
 													}
 										} else {
-													LOGGER.error(String.format("patchSiteCounty failed. ", d.cause()));
-													errorSiteCounty(siteRequest, null, d);
+													LOGGER.error(String.format("patchSiteAgency failed. ", d.cause()));
+													errorSiteAgency(siteRequest, null, d);
 												}
 											});
 										} catch(Exception ex) {
-											LOGGER.error(String.format("patchSiteCounty failed. ", ex));
-											errorSiteCounty(siteRequest, null, Future.failedFuture(ex));
+											LOGGER.error(String.format("patchSiteAgency failed. ", ex));
+											errorSiteAgency(siteRequest, null, Future.failedFuture(ex));
 										}
 									}, resultHandler -> {
 									}
 								);
 							} else {
-								LOGGER.error(String.format("patchSiteCounty failed. ", c.cause()));
-								errorSiteCounty(siteRequest, eventHandler, c);
+								LOGGER.error(String.format("patchSiteAgency failed. ", c.cause()));
+								errorSiteAgency(siteRequest, eventHandler, c);
 							}
 						});
 					} else {
-						LOGGER.error(String.format("patchSiteCounty failed. ", b.cause()));
-						errorSiteCounty(siteRequest, eventHandler, b);
+						LOGGER.error(String.format("patchSiteAgency failed. ", b.cause()));
+						errorSiteAgency(siteRequest, eventHandler, b);
 					}
 				});
 			}
 		} catch(Exception ex) {
-			LOGGER.error(String.format("patchSiteCounty failed. ", ex));
-			errorSiteCounty(siteRequest, eventHandler, Future.failedFuture(ex));
+			LOGGER.error(String.format("patchSiteAgency failed. ", ex));
+			errorSiteAgency(siteRequest, eventHandler, Future.failedFuture(ex));
 		}
 	}
 
 
-	public void listPATCHSiteCounty(ApiRequest apiRequest, SearchList<SiteCounty> listSiteCounty, String dt, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void listPATCHSiteAgency(ApiRequest apiRequest, SearchList<SiteAgency> listSiteAgency, String dt, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		List<Future> futures = new ArrayList<>();
-		SiteRequestEnUS siteRequest = listSiteCounty.getSiteRequest_();
-		listSiteCounty.getList().forEach(o -> {
-			SiteRequestEnUS siteRequest2 = generateSiteRequestEnUSForSiteCounty(siteContext, siteRequest.getOperationRequest(), siteRequest.getJsonObject());
+		SiteRequestEnUS siteRequest = listSiteAgency.getSiteRequest_();
+		listSiteAgency.getList().forEach(o -> {
+			SiteRequestEnUS siteRequest2 = generateSiteRequestEnUSForSiteAgency(siteContext, siteRequest.getOperationRequest(), siteRequest.getJsonObject());
 			siteRequest2.setApiRequest_(siteRequest.getApiRequest_());
 			o.setSiteRequest_(siteRequest2);
 			futures.add(
-				patchSiteCountyFuture(o, false, a -> {
+				patchSiteAgencyFuture(o, false, a -> {
 					if(a.succeeded()) {
 					} else {
-						errorSiteCounty(siteRequest2, eventHandler, a);
+						errorSiteAgency(siteRequest2, eventHandler, a);
 					}
 				})
 			);
 		});
 		CompositeFuture.all(futures).setHandler( a -> {
 			if(a.succeeded()) {
-				if(listSiteCounty.next(dt)) {
-					listPATCHSiteCounty(apiRequest, listSiteCounty, dt, eventHandler);
+				if(listSiteAgency.next(dt)) {
+					listPATCHSiteAgency(apiRequest, listSiteAgency, dt, eventHandler);
 				} else {
-					response200PATCHSiteCounty(siteRequest, eventHandler);
+					response200PATCHSiteAgency(siteRequest, eventHandler);
 				}
 			} else {
-				LOGGER.error(String.format("listPATCHSiteCounty failed. ", a.cause()));
-				errorSiteCounty(listSiteCounty.getSiteRequest_(), eventHandler, a);
+				LOGGER.error(String.format("listPATCHSiteAgency failed. ", a.cause()));
+				errorSiteAgency(listSiteAgency.getSiteRequest_(), eventHandler, a);
 			}
 		});
 	}
 
-	public Future<SiteCounty> patchSiteCountyFuture(SiteCounty o, Boolean inheritPk, Handler<AsyncResult<SiteCounty>> eventHandler) {
-		Promise<SiteCounty> promise = Promise.promise();
+	public Future<SiteAgency> patchSiteAgencyFuture(SiteAgency o, Boolean inheritPk, Handler<AsyncResult<SiteAgency>> eventHandler) {
+		Promise<SiteAgency> promise = Promise.promise();
 		SiteRequestEnUS siteRequest = o.getSiteRequest_();
 		try {
 			ApiRequest apiRequest = siteRequest.getApiRequest_();
@@ -1302,52 +1302,52 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 				apiRequest.setOriginal(o);
 				apiRequest.setPk(o.getPk());
 			}
-			sqlConnectionSiteCounty(siteRequest, a -> {
+			sqlConnectionSiteAgency(siteRequest, a -> {
 				if(a.succeeded()) {
-					sqlTransactionSiteCounty(siteRequest, b -> {
+					sqlTransactionSiteAgency(siteRequest, b -> {
 						if(b.succeeded()) {
-							sqlPATCHSiteCounty(o, inheritPk, c -> {
+							sqlPATCHSiteAgency(o, inheritPk, c -> {
 								if(c.succeeded()) {
-									SiteCounty siteCounty = c.result();
-									defineIndexSiteCounty(siteCounty, d -> {
+									SiteAgency siteAgency = c.result();
+									defineIndexSiteAgency(siteAgency, d -> {
 										if(d.succeeded()) {
 											if(apiRequest != null) {
 												apiRequest.setNumPATCH(apiRequest.getNumPATCH() + 1);
 												if(apiRequest.getNumFound() == 1L) {
-													siteCounty.apiRequestSiteCounty();
+													siteAgency.apiRequestSiteAgency();
 												}
-												siteRequest.getVertx().eventBus().publish("websocketSiteCounty", JsonObject.mapFrom(apiRequest).toString());
+												siteRequest.getVertx().eventBus().publish("websocketSiteAgency", JsonObject.mapFrom(apiRequest).toString());
 											}
-											eventHandler.handle(Future.succeededFuture(siteCounty));
-											promise.complete(siteCounty);
+											eventHandler.handle(Future.succeededFuture(siteAgency));
+											promise.complete(siteAgency);
 										} else {
-											LOGGER.error(String.format("patchSiteCountyFuture failed. ", d.cause()));
+											LOGGER.error(String.format("patchSiteAgencyFuture failed. ", d.cause()));
 											eventHandler.handle(Future.failedFuture(d.cause()));
 										}
 									});
 								} else {
-									LOGGER.error(String.format("patchSiteCountyFuture failed. ", c.cause()));
+									LOGGER.error(String.format("patchSiteAgencyFuture failed. ", c.cause()));
 									eventHandler.handle(Future.failedFuture(c.cause()));
 								}
 							});
 						} else {
-							LOGGER.error(String.format("patchSiteCountyFuture failed. ", b.cause()));
+							LOGGER.error(String.format("patchSiteAgencyFuture failed. ", b.cause()));
 							eventHandler.handle(Future.failedFuture(b.cause()));
 						}
 					});
 				} else {
-					LOGGER.error(String.format("patchSiteCountyFuture failed. ", a.cause()));
+					LOGGER.error(String.format("patchSiteAgencyFuture failed. ", a.cause()));
 					eventHandler.handle(Future.failedFuture(a.cause()));
 				}
 			});
 		} catch(Exception e) {
-			LOGGER.error(String.format("patchSiteCountyFuture failed. ", e));
-			errorSiteCounty(siteRequest, null, Future.failedFuture(e));
+			LOGGER.error(String.format("patchSiteAgencyFuture failed. ", e));
+			errorSiteAgency(siteRequest, null, Future.failedFuture(e));
 		}
 		return promise.future();
 	}
 
-	public void sqlPATCHSiteCounty(SiteCounty o, Boolean inheritPk, Handler<AsyncResult<SiteCounty>> eventHandler) {
+	public void sqlPATCHSiteAgency(SiteAgency o, Boolean inheritPk, Handler<AsyncResult<SiteAgency>> eventHandler) {
 		try {
 			SiteRequestEnUS siteRequest = o.getSiteRequest_();
 			ApiRequest apiRequest = siteRequest.getApiRequest_();
@@ -1357,7 +1357,7 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 			Long pk = o.getPk();
 			JsonObject jsonObject = siteRequest.getJsonObject();
 			Set<String> methodNames = jsonObject.fieldNames();
-			SiteCounty o2 = new SiteCounty();
+			SiteAgency o2 = new SiteAgency();
 			List<Future> futures = new ArrayList<>();
 
 			if(o.getUserId() == null && siteRequest.getUserId() != null) {
@@ -1399,7 +1399,7 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value SiteCounty.inheritPk failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value SiteAgency.inheritPk failed", b.cause())));
 								});
 							}));
 						} else {
@@ -1412,7 +1412,7 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value SiteCounty.inheritPk failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value SiteAgency.inheritPk failed", b.cause())));
 								});
 							}));
 						}
@@ -1427,7 +1427,7 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value SiteCounty.archived failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value SiteAgency.archived failed", b.cause())));
 								});
 							}));
 						} else {
@@ -1440,7 +1440,7 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value SiteCounty.archived failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value SiteAgency.archived failed", b.cause())));
 								});
 							}));
 						}
@@ -1455,7 +1455,7 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value SiteCounty.deleted failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value SiteAgency.deleted failed", b.cause())));
 								});
 							}));
 						} else {
@@ -1468,41 +1468,42 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value SiteCounty.deleted failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value SiteAgency.deleted failed", b.cause())));
 								});
 							}));
 						}
 						break;
-					case "setCountyName":
+					case "setAgencyName":
 						if(jsonObject.getString(methodName) == null) {
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_removeD
-										, Tuple.of(pk, "countyName")
+										, Tuple.of(pk, "agencyName")
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value SiteCounty.countyName failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value SiteAgency.agencyName failed", b.cause())));
 								});
 							}));
 						} else {
-							o2.setCountyName(jsonObject.getString(methodName));
+							o2.setAgencyName(jsonObject.getString(methodName));
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_setD
-										, Tuple.of(pk, "countyName", o2.jsonCountyName())
+										, Tuple.of(pk, "agencyName", o2.jsonAgencyName())
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value SiteCounty.countyName failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value SiteAgency.agencyName failed", b.cause())));
 								});
 							}));
 						}
 						break;
 					case "setStateKey":
 						{
+							o2.setStateKey(jsonObject.getString(methodName));
 							Long l = o2.getStateKey();
 							if(l != null && !l.equals(o.getStateKey())) {
 								SearchList<SiteState> searchList = new SearchList<SiteState>();
@@ -1515,16 +1516,15 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 								searchList.initDeepSearchList(siteRequest);
 								Long l2 = Optional.ofNullable(searchList.getList().stream().findFirst().orElse(null)).map(a -> a.getPk()).orElse(null);
 								if(l2 != null) {
-									o2.setStateKey(jsonObject.getString(methodName));
 									futures.add(Future.future(a -> {
 										tx.preparedQuery(SiteContextEnUS.SQL_addA
-												, Tuple.of(l2, "countyKeys", pk, "stateKey")
+												, Tuple.of(l2, "agencyKeys", pk, "stateKey")
 												, b
 										-> {
 											if(b.succeeded())
 												a.handle(Future.succeededFuture());
 											else
-												a.handle(Future.failedFuture(new Exception("value SiteCounty.stateKey failed", b.cause())));
+												a.handle(Future.failedFuture(new Exception("value SiteAgency.stateKey failed", b.cause())));
 										});
 									}));
 									if(!pks.contains(l2)) {
@@ -1537,6 +1537,7 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 						break;
 					case "removeStateKey":
 						{
+							o2.setStateKey(jsonObject.getString(methodName));
 							Long l = o2.getStateKey();
 							if(l != null) {
 								SearchList<SiteState> searchList = new SearchList<SiteState>();
@@ -1548,17 +1549,16 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 								searchList.addFilterQuery((inheritPk ? "inheritPk" : "pk") + "_indexed_long:" + l);
 								searchList.initDeepSearchList(siteRequest);
 								Long l2 = Optional.ofNullable(searchList.getList().stream().findFirst().orElse(null)).map(a -> a.getPk()).orElse(null);
-								if(l2 != null && l2.equals(o.getStateKey())) {
-									o2.setStateKey(jsonObject.getString(methodName));
+								if(l2 != null) {
 									futures.add(Future.future(a -> {
 										tx.preparedQuery(SiteContextEnUS.SQL_removeA
-												, Tuple.of(l2, "countyKeys", pk, "stateKey")
+												, Tuple.of(l2, "agencyKeys", pk, "stateKey")
 												, b
 										-> {
 											if(b.succeeded())
 												a.handle(Future.succeededFuture());
 											else
-												a.handle(Future.failedFuture(new Exception("value SiteCounty.stateKey failed", b.cause())));
+												a.handle(Future.failedFuture(new Exception("value SiteAgency.stateKey failed", b.cause())));
 										});
 									}));
 									if(!pks.contains(l2)) {
@@ -1585,13 +1585,13 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 								if(l2 != null && !o.getReportCardKeys().contains(l2)) {
 									futures.add(Future.future(a -> {
 										tx.preparedQuery(SiteContextEnUS.SQL_addA
-												, Tuple.of(l2, "countyKey", pk, "reportCardKeys")
+												, Tuple.of(l2, "agencyKey", pk, "reportCardKeys")
 												, b
 										-> {
 											if(b.succeeded())
 												a.handle(Future.succeededFuture());
 											else
-												a.handle(Future.failedFuture(new Exception("value SiteCounty.reportCardKeys failed", b.cause())));
+												a.handle(Future.failedFuture(new Exception("value SiteAgency.reportCardKeys failed", b.cause())));
 										});
 									}));
 									if(!pks.contains(l2)) {
@@ -1620,13 +1620,13 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 									if(l2 != null && !o.getReportCardKeys().contains(l2)) {
 									futures.add(Future.future(a -> {
 										tx.preparedQuery(SiteContextEnUS.SQL_addA
-												, Tuple.of(l2, "countyKey", pk, "reportCardKeys")
+												, Tuple.of(l2, "agencyKey", pk, "reportCardKeys")
 												, b
 										-> {
 											if(b.succeeded())
 												a.handle(Future.succeededFuture());
 											else
-												a.handle(Future.failedFuture(new Exception("value SiteCounty.reportCardKeys failed", b.cause())));
+												a.handle(Future.failedFuture(new Exception("value SiteAgency.reportCardKeys failed", b.cause())));
 										});
 									}));
 										if(!pks.contains(l2)) {
@@ -1659,13 +1659,13 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 									if(l2 != null && !o.getReportCardKeys().contains(l2)) {
 									futures.add(Future.future(a -> {
 										tx.preparedQuery(SiteContextEnUS.SQL_addA
-												, Tuple.of(l2, "countyKey", pk, "reportCardKeys")
+												, Tuple.of(l2, "agencyKey", pk, "reportCardKeys")
 												, b
 										-> {
 											if(b.succeeded())
 												a.handle(Future.succeededFuture());
 											else
-												a.handle(Future.failedFuture(new Exception("value SiteCounty.reportCardKeys failed", b.cause())));
+												a.handle(Future.failedFuture(new Exception("value SiteAgency.reportCardKeys failed", b.cause())));
 										});
 									}));
 										if(!pks.contains(l2)) {
@@ -1681,13 +1681,13 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 								if(l != null && (setReportCardKeysValues == null || !setReportCardKeysValues2.contains(l))) {
 									futures.add(Future.future(a -> {
 										tx.preparedQuery(SiteContextEnUS.SQL_removeA
-												, Tuple.of(l, "countyKey", pk, "reportCardKeys")
+												, Tuple.of(l, "agencyKey", pk, "reportCardKeys")
 												, b
 										-> {
 											if(b.succeeded())
 												a.handle(Future.succeededFuture());
 											else
-												a.handle(Future.failedFuture(new Exception("value SiteCounty.reportCardKeys failed", b.cause())));
+												a.handle(Future.failedFuture(new Exception("value SiteAgency.reportCardKeys failed", b.cause())));
 										});
 									}));
 								}
@@ -1710,13 +1710,13 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 								if(l2 != null && o.getReportCardKeys().contains(l2)) {
 									futures.add(Future.future(a -> {
 										tx.preparedQuery(SiteContextEnUS.SQL_removeA
-												, Tuple.of(l2, "countyKey", pk, "reportCardKeys")
+												, Tuple.of(l2, "agencyKey", pk, "reportCardKeys")
 												, b
 										-> {
 											if(b.succeeded())
 												a.handle(Future.succeededFuture());
 											else
-												a.handle(Future.failedFuture(new Exception("value SiteCounty.reportCardKeys failed", b.cause())));
+												a.handle(Future.failedFuture(new Exception("value SiteAgency.reportCardKeys failed", b.cause())));
 										});
 									}));
 									if(!pks.contains(l2)) {
@@ -1731,42 +1731,42 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 			}
 			CompositeFuture.all(futures).setHandler( a -> {
 				if(a.succeeded()) {
-					SiteCounty o3 = new SiteCounty();
+					SiteAgency o3 = new SiteAgency();
 					o3.setSiteRequest_(o.getSiteRequest_());
 					o3.setPk(pk);
 					eventHandler.handle(Future.succeededFuture(o3));
 				} else {
-					LOGGER.error(String.format("sqlPATCHSiteCounty failed. ", a.cause()));
+					LOGGER.error(String.format("sqlPATCHSiteAgency failed. ", a.cause()));
 					eventHandler.handle(Future.failedFuture(a.cause()));
 				}
 			});
 		} catch(Exception e) {
-			LOGGER.error(String.format("sqlPATCHSiteCounty failed. ", e));
+			LOGGER.error(String.format("sqlPATCHSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
 
-	public void patchSiteCountyResponse(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void patchSiteAgencyResponse(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
-			response200PATCHSiteCounty(siteRequest, a -> {
+			response200PATCHSiteAgency(siteRequest, a -> {
 				if(a.succeeded()) {
 					eventHandler.handle(Future.succeededFuture(a.result()));
 				} else {
-					LOGGER.error(String.format("patchSiteCountyResponse failed. ", a.cause()));
-					errorSiteCounty(siteRequest, eventHandler, a);
+					LOGGER.error(String.format("patchSiteAgencyResponse failed. ", a.cause()));
+					errorSiteAgency(siteRequest, eventHandler, a);
 				}
 			});
 		} catch(Exception ex) {
-			LOGGER.error(String.format("patchSiteCountyResponse failed. ", ex));
-			errorSiteCounty(siteRequest, null, Future.failedFuture(ex));
+			LOGGER.error(String.format("patchSiteAgencyResponse failed. ", ex));
+			errorSiteAgency(siteRequest, null, Future.failedFuture(ex));
 		}
 	}
-	public void response200PATCHSiteCounty(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void response200PATCHSiteAgency(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
 			JsonObject json = new JsonObject();
 			eventHandler.handle(Future.succeededFuture(OperationResponse.completedWithJson(Buffer.buffer(Optional.ofNullable(json).orElse(new JsonObject()).encodePrettily()))));
 		} catch(Exception e) {
-			LOGGER.error(String.format("response200PATCHSiteCounty failed. ", e));
+			LOGGER.error(String.format("response200PATCHSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
@@ -1774,69 +1774,69 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 	// GET //
 
 	@Override
-	public void getSiteCounty(OperationRequest operationRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
-		SiteRequestEnUS siteRequest = generateSiteRequestEnUSForSiteCounty(siteContext, operationRequest);
-		siteRequest.setRequestUri("/api/county/{id}");
+	public void getSiteAgency(OperationRequest operationRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+		SiteRequestEnUS siteRequest = generateSiteRequestEnUSForSiteAgency(siteContext, operationRequest);
+		siteRequest.setRequestUri("/api/agency/{id}");
 		siteRequest.setRequestMethod("GET");
 		try {
 			{
-				userSiteCounty(siteRequest, b -> {
+				userSiteAgency(siteRequest, b -> {
 					if(b.succeeded()) {
-						aSearchSiteCounty(siteRequest, false, true, "/api/county/{id}", "GET", c -> {
+						aSearchSiteAgency(siteRequest, false, true, "/api/agency/{id}", "GET", c -> {
 							if(c.succeeded()) {
-								SearchList<SiteCounty> listSiteCounty = c.result();
-								getSiteCountyResponse(listSiteCounty, d -> {
+								SearchList<SiteAgency> listSiteAgency = c.result();
+								getSiteAgencyResponse(listSiteAgency, d -> {
 									if(d.succeeded()) {
 										eventHandler.handle(Future.succeededFuture(d.result()));
-										LOGGER.info(String.format("getSiteCounty succeeded. "));
+										LOGGER.info(String.format("getSiteAgency succeeded. "));
 									} else {
-										LOGGER.error(String.format("getSiteCounty failed. ", d.cause()));
-										errorSiteCounty(siteRequest, eventHandler, d);
+										LOGGER.error(String.format("getSiteAgency failed. ", d.cause()));
+										errorSiteAgency(siteRequest, eventHandler, d);
 									}
 								});
 							} else {
-								LOGGER.error(String.format("getSiteCounty failed. ", c.cause()));
-								errorSiteCounty(siteRequest, eventHandler, c);
+								LOGGER.error(String.format("getSiteAgency failed. ", c.cause()));
+								errorSiteAgency(siteRequest, eventHandler, c);
 							}
 						});
 					} else {
-						LOGGER.error(String.format("getSiteCounty failed. ", b.cause()));
-						errorSiteCounty(siteRequest, eventHandler, b);
+						LOGGER.error(String.format("getSiteAgency failed. ", b.cause()));
+						errorSiteAgency(siteRequest, eventHandler, b);
 					}
 				});
 			}
 		} catch(Exception ex) {
-			LOGGER.error(String.format("getSiteCounty failed. ", ex));
-			errorSiteCounty(siteRequest, eventHandler, Future.failedFuture(ex));
+			LOGGER.error(String.format("getSiteAgency failed. ", ex));
+			errorSiteAgency(siteRequest, eventHandler, Future.failedFuture(ex));
 		}
 	}
 
 
-	public void getSiteCountyResponse(SearchList<SiteCounty> listSiteCounty, Handler<AsyncResult<OperationResponse>> eventHandler) {
-		SiteRequestEnUS siteRequest = listSiteCounty.getSiteRequest_();
+	public void getSiteAgencyResponse(SearchList<SiteAgency> listSiteAgency, Handler<AsyncResult<OperationResponse>> eventHandler) {
+		SiteRequestEnUS siteRequest = listSiteAgency.getSiteRequest_();
 		try {
-			response200GETSiteCounty(listSiteCounty, a -> {
+			response200GETSiteAgency(listSiteAgency, a -> {
 				if(a.succeeded()) {
 					eventHandler.handle(Future.succeededFuture(a.result()));
 				} else {
-					LOGGER.error(String.format("getSiteCountyResponse failed. ", a.cause()));
-					errorSiteCounty(siteRequest, eventHandler, a);
+					LOGGER.error(String.format("getSiteAgencyResponse failed. ", a.cause()));
+					errorSiteAgency(siteRequest, eventHandler, a);
 				}
 			});
 		} catch(Exception ex) {
-			LOGGER.error(String.format("getSiteCountyResponse failed. ", ex));
-			errorSiteCounty(siteRequest, null, Future.failedFuture(ex));
+			LOGGER.error(String.format("getSiteAgencyResponse failed. ", ex));
+			errorSiteAgency(siteRequest, null, Future.failedFuture(ex));
 		}
 	}
-	public void response200GETSiteCounty(SearchList<SiteCounty> listSiteCounty, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void response200GETSiteAgency(SearchList<SiteAgency> listSiteAgency, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
-			SiteRequestEnUS siteRequest = listSiteCounty.getSiteRequest_();
-			SolrDocumentList solrDocuments = listSiteCounty.getSolrDocumentList();
+			SiteRequestEnUS siteRequest = listSiteAgency.getSiteRequest_();
+			SolrDocumentList solrDocuments = listSiteAgency.getSolrDocumentList();
 
-			JsonObject json = JsonObject.mapFrom(listSiteCounty.getList().stream().findFirst().orElse(null));
+			JsonObject json = JsonObject.mapFrom(listSiteAgency.getList().stream().findFirst().orElse(null));
 			eventHandler.handle(Future.succeededFuture(OperationResponse.completedWithJson(Buffer.buffer(Optional.ofNullable(json).orElse(new JsonObject()).encodePrettily()))));
 		} catch(Exception e) {
-			LOGGER.error(String.format("response200GETSiteCounty failed. ", e));
+			LOGGER.error(String.format("response200GETSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
@@ -1844,65 +1844,65 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 	// Search //
 
 	@Override
-	public void searchSiteCounty(OperationRequest operationRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
-		SiteRequestEnUS siteRequest = generateSiteRequestEnUSForSiteCounty(siteContext, operationRequest);
-		siteRequest.setRequestUri("/api/county");
+	public void searchSiteAgency(OperationRequest operationRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+		SiteRequestEnUS siteRequest = generateSiteRequestEnUSForSiteAgency(siteContext, operationRequest);
+		siteRequest.setRequestUri("/api/agency");
 		siteRequest.setRequestMethod("Search");
 		try {
 			{
-				userSiteCounty(siteRequest, b -> {
+				userSiteAgency(siteRequest, b -> {
 					if(b.succeeded()) {
-						aSearchSiteCounty(siteRequest, false, true, "/api/county", "Search", c -> {
+						aSearchSiteAgency(siteRequest, false, true, "/api/agency", "Search", c -> {
 							if(c.succeeded()) {
-								SearchList<SiteCounty> listSiteCounty = c.result();
-								searchSiteCountyResponse(listSiteCounty, d -> {
+								SearchList<SiteAgency> listSiteAgency = c.result();
+								searchSiteAgencyResponse(listSiteAgency, d -> {
 									if(d.succeeded()) {
 										eventHandler.handle(Future.succeededFuture(d.result()));
-										LOGGER.info(String.format("searchSiteCounty succeeded. "));
+										LOGGER.info(String.format("searchSiteAgency succeeded. "));
 									} else {
-										LOGGER.error(String.format("searchSiteCounty failed. ", d.cause()));
-										errorSiteCounty(siteRequest, eventHandler, d);
+										LOGGER.error(String.format("searchSiteAgency failed. ", d.cause()));
+										errorSiteAgency(siteRequest, eventHandler, d);
 									}
 								});
 							} else {
-								LOGGER.error(String.format("searchSiteCounty failed. ", c.cause()));
-								errorSiteCounty(siteRequest, eventHandler, c);
+								LOGGER.error(String.format("searchSiteAgency failed. ", c.cause()));
+								errorSiteAgency(siteRequest, eventHandler, c);
 							}
 						});
 					} else {
-						LOGGER.error(String.format("searchSiteCounty failed. ", b.cause()));
-						errorSiteCounty(siteRequest, eventHandler, b);
+						LOGGER.error(String.format("searchSiteAgency failed. ", b.cause()));
+						errorSiteAgency(siteRequest, eventHandler, b);
 					}
 				});
 			}
 		} catch(Exception ex) {
-			LOGGER.error(String.format("searchSiteCounty failed. ", ex));
-			errorSiteCounty(siteRequest, eventHandler, Future.failedFuture(ex));
+			LOGGER.error(String.format("searchSiteAgency failed. ", ex));
+			errorSiteAgency(siteRequest, eventHandler, Future.failedFuture(ex));
 		}
 	}
 
 
-	public void searchSiteCountyResponse(SearchList<SiteCounty> listSiteCounty, Handler<AsyncResult<OperationResponse>> eventHandler) {
-		SiteRequestEnUS siteRequest = listSiteCounty.getSiteRequest_();
+	public void searchSiteAgencyResponse(SearchList<SiteAgency> listSiteAgency, Handler<AsyncResult<OperationResponse>> eventHandler) {
+		SiteRequestEnUS siteRequest = listSiteAgency.getSiteRequest_();
 		try {
-			response200SearchSiteCounty(listSiteCounty, a -> {
+			response200SearchSiteAgency(listSiteAgency, a -> {
 				if(a.succeeded()) {
 					eventHandler.handle(Future.succeededFuture(a.result()));
 				} else {
-					LOGGER.error(String.format("searchSiteCountyResponse failed. ", a.cause()));
-					errorSiteCounty(siteRequest, eventHandler, a);
+					LOGGER.error(String.format("searchSiteAgencyResponse failed. ", a.cause()));
+					errorSiteAgency(siteRequest, eventHandler, a);
 				}
 			});
 		} catch(Exception ex) {
-			LOGGER.error(String.format("searchSiteCountyResponse failed. ", ex));
-			errorSiteCounty(siteRequest, null, Future.failedFuture(ex));
+			LOGGER.error(String.format("searchSiteAgencyResponse failed. ", ex));
+			errorSiteAgency(siteRequest, null, Future.failedFuture(ex));
 		}
 	}
-	public void response200SearchSiteCounty(SearchList<SiteCounty> listSiteCounty, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void response200SearchSiteAgency(SearchList<SiteAgency> listSiteAgency, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
-			SiteRequestEnUS siteRequest = listSiteCounty.getSiteRequest_();
-			QueryResponse responseSearch = listSiteCounty.getQueryResponse();
-			SolrDocumentList solrDocuments = listSiteCounty.getSolrDocumentList();
+			SiteRequestEnUS siteRequest = listSiteAgency.getSiteRequest_();
+			QueryResponse responseSearch = listSiteAgency.getQueryResponse();
+			SolrDocumentList solrDocuments = listSiteAgency.getSolrDocumentList();
 			Long searchInMillis = Long.valueOf(responseSearch.getQTime());
 			Long transmissionInMillis = responseSearch.getElapsedTime();
 			Long startNum = responseSearch.getResults().getStart();
@@ -1919,9 +1919,9 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 			json.put("searchTime", searchTime);
 			json.put("transmissionTime", transmissionTime);
 			JsonArray l = new JsonArray();
-			listSiteCounty.getList().stream().forEach(o -> {
+			listSiteAgency.getList().stream().forEach(o -> {
 				JsonObject json2 = JsonObject.mapFrom(o);
-				List<String> fls = listSiteCounty.getFields();
+				List<String> fls = listSiteAgency.getFields();
 				if(fls.size() > 0) {
 					Set<String> fieldNames = new HashSet<String>();
 					fieldNames.addAll(json2.fieldNames());
@@ -1946,7 +1946,7 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 			}
 			eventHandler.handle(Future.succeededFuture(OperationResponse.completedWithJson(Buffer.buffer(Optional.ofNullable(json).orElse(new JsonObject()).encodePrettily()))));
 		} catch(Exception e) {
-			LOGGER.error(String.format("response200SearchSiteCounty failed. ", e));
+			LOGGER.error(String.format("response200SearchSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
@@ -1954,65 +1954,65 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 	// AdminSearch //
 
 	@Override
-	public void adminsearchSiteCounty(OperationRequest operationRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
-		SiteRequestEnUS siteRequest = generateSiteRequestEnUSForSiteCounty(siteContext, operationRequest);
-		siteRequest.setRequestUri("/api/admin/county");
+	public void adminsearchSiteAgency(OperationRequest operationRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+		SiteRequestEnUS siteRequest = generateSiteRequestEnUSForSiteAgency(siteContext, operationRequest);
+		siteRequest.setRequestUri("/api/admin/agency");
 		siteRequest.setRequestMethod("AdminSearch");
 		try {
 			{
-				userSiteCounty(siteRequest, b -> {
+				userSiteAgency(siteRequest, b -> {
 					if(b.succeeded()) {
-						aSearchSiteCounty(siteRequest, false, true, "/api/admin/county", "AdminSearch", c -> {
+						aSearchSiteAgency(siteRequest, false, true, "/api/admin/agency", "AdminSearch", c -> {
 							if(c.succeeded()) {
-								SearchList<SiteCounty> listSiteCounty = c.result();
-								adminsearchSiteCountyResponse(listSiteCounty, d -> {
+								SearchList<SiteAgency> listSiteAgency = c.result();
+								adminsearchSiteAgencyResponse(listSiteAgency, d -> {
 									if(d.succeeded()) {
 										eventHandler.handle(Future.succeededFuture(d.result()));
-										LOGGER.info(String.format("adminsearchSiteCounty succeeded. "));
+										LOGGER.info(String.format("adminsearchSiteAgency succeeded. "));
 									} else {
-										LOGGER.error(String.format("adminsearchSiteCounty failed. ", d.cause()));
-										errorSiteCounty(siteRequest, eventHandler, d);
+										LOGGER.error(String.format("adminsearchSiteAgency failed. ", d.cause()));
+										errorSiteAgency(siteRequest, eventHandler, d);
 									}
 								});
 							} else {
-								LOGGER.error(String.format("adminsearchSiteCounty failed. ", c.cause()));
-								errorSiteCounty(siteRequest, eventHandler, c);
+								LOGGER.error(String.format("adminsearchSiteAgency failed. ", c.cause()));
+								errorSiteAgency(siteRequest, eventHandler, c);
 							}
 						});
 					} else {
-						LOGGER.error(String.format("adminsearchSiteCounty failed. ", b.cause()));
-						errorSiteCounty(siteRequest, eventHandler, b);
+						LOGGER.error(String.format("adminsearchSiteAgency failed. ", b.cause()));
+						errorSiteAgency(siteRequest, eventHandler, b);
 					}
 				});
 			}
 		} catch(Exception ex) {
-			LOGGER.error(String.format("adminsearchSiteCounty failed. ", ex));
-			errorSiteCounty(siteRequest, eventHandler, Future.failedFuture(ex));
+			LOGGER.error(String.format("adminsearchSiteAgency failed. ", ex));
+			errorSiteAgency(siteRequest, eventHandler, Future.failedFuture(ex));
 		}
 	}
 
 
-	public void adminsearchSiteCountyResponse(SearchList<SiteCounty> listSiteCounty, Handler<AsyncResult<OperationResponse>> eventHandler) {
-		SiteRequestEnUS siteRequest = listSiteCounty.getSiteRequest_();
+	public void adminsearchSiteAgencyResponse(SearchList<SiteAgency> listSiteAgency, Handler<AsyncResult<OperationResponse>> eventHandler) {
+		SiteRequestEnUS siteRequest = listSiteAgency.getSiteRequest_();
 		try {
-			response200AdminSearchSiteCounty(listSiteCounty, a -> {
+			response200AdminSearchSiteAgency(listSiteAgency, a -> {
 				if(a.succeeded()) {
 					eventHandler.handle(Future.succeededFuture(a.result()));
 				} else {
-					LOGGER.error(String.format("adminsearchSiteCountyResponse failed. ", a.cause()));
-					errorSiteCounty(siteRequest, eventHandler, a);
+					LOGGER.error(String.format("adminsearchSiteAgencyResponse failed. ", a.cause()));
+					errorSiteAgency(siteRequest, eventHandler, a);
 				}
 			});
 		} catch(Exception ex) {
-			LOGGER.error(String.format("adminsearchSiteCountyResponse failed. ", ex));
-			errorSiteCounty(siteRequest, null, Future.failedFuture(ex));
+			LOGGER.error(String.format("adminsearchSiteAgencyResponse failed. ", ex));
+			errorSiteAgency(siteRequest, null, Future.failedFuture(ex));
 		}
 	}
-	public void response200AdminSearchSiteCounty(SearchList<SiteCounty> listSiteCounty, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void response200AdminSearchSiteAgency(SearchList<SiteAgency> listSiteAgency, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
-			SiteRequestEnUS siteRequest = listSiteCounty.getSiteRequest_();
-			QueryResponse responseSearch = listSiteCounty.getQueryResponse();
-			SolrDocumentList solrDocuments = listSiteCounty.getSolrDocumentList();
+			SiteRequestEnUS siteRequest = listSiteAgency.getSiteRequest_();
+			QueryResponse responseSearch = listSiteAgency.getQueryResponse();
+			SolrDocumentList solrDocuments = listSiteAgency.getSolrDocumentList();
 			Long searchInMillis = Long.valueOf(responseSearch.getQTime());
 			Long transmissionInMillis = responseSearch.getElapsedTime();
 			Long startNum = responseSearch.getResults().getStart();
@@ -2029,9 +2029,9 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 			json.put("searchTime", searchTime);
 			json.put("transmissionTime", transmissionTime);
 			JsonArray l = new JsonArray();
-			listSiteCounty.getList().stream().forEach(o -> {
+			listSiteAgency.getList().stream().forEach(o -> {
 				JsonObject json2 = JsonObject.mapFrom(o);
-				List<String> fls = listSiteCounty.getFields();
+				List<String> fls = listSiteAgency.getFields();
 				if(fls.size() > 0) {
 					Set<String> fieldNames = new HashSet<String>();
 					fieldNames.addAll(json2.fieldNames());
@@ -2056,7 +2056,7 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 			}
 			eventHandler.handle(Future.succeededFuture(OperationResponse.completedWithJson(Buffer.buffer(Optional.ofNullable(json).orElse(new JsonObject()).encodePrettily()))));
 		} catch(Exception e) {
-			LOGGER.error(String.format("response200AdminSearchSiteCounty failed. ", e));
+			LOGGER.error(String.format("response200AdminSearchSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
@@ -2064,151 +2064,151 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 	// SearchPage //
 
 	@Override
-	public void searchpageSiteCountyId(OperationRequest operationRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
-		searchpageSiteCounty(operationRequest, eventHandler);
+	public void searchpageSiteAgencyId(OperationRequest operationRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+		searchpageSiteAgency(operationRequest, eventHandler);
 	}
 
 	@Override
-	public void searchpageSiteCounty(OperationRequest operationRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
-		SiteRequestEnUS siteRequest = generateSiteRequestEnUSForSiteCounty(siteContext, operationRequest);
-		siteRequest.setRequestUri("/county");
+	public void searchpageSiteAgency(OperationRequest operationRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+		SiteRequestEnUS siteRequest = generateSiteRequestEnUSForSiteAgency(siteContext, operationRequest);
+		siteRequest.setRequestUri("/agency");
 		siteRequest.setRequestMethod("SearchPage");
 		try {
 			{
-				userSiteCounty(siteRequest, b -> {
+				userSiteAgency(siteRequest, b -> {
 					if(b.succeeded()) {
-						aSearchSiteCounty(siteRequest, false, true, "/county", "SearchPage", c -> {
+						aSearchSiteAgency(siteRequest, false, true, "/agency", "SearchPage", c -> {
 							if(c.succeeded()) {
-								SearchList<SiteCounty> listSiteCounty = c.result();
-								searchpageSiteCountyResponse(listSiteCounty, d -> {
+								SearchList<SiteAgency> listSiteAgency = c.result();
+								searchpageSiteAgencyResponse(listSiteAgency, d -> {
 									if(d.succeeded()) {
 										eventHandler.handle(Future.succeededFuture(d.result()));
-										LOGGER.info(String.format("searchpageSiteCounty succeeded. "));
+										LOGGER.info(String.format("searchpageSiteAgency succeeded. "));
 									} else {
-										LOGGER.error(String.format("searchpageSiteCounty failed. ", d.cause()));
-										errorSiteCounty(siteRequest, eventHandler, d);
+										LOGGER.error(String.format("searchpageSiteAgency failed. ", d.cause()));
+										errorSiteAgency(siteRequest, eventHandler, d);
 									}
 								});
 							} else {
-								LOGGER.error(String.format("searchpageSiteCounty failed. ", c.cause()));
-								errorSiteCounty(siteRequest, eventHandler, c);
+								LOGGER.error(String.format("searchpageSiteAgency failed. ", c.cause()));
+								errorSiteAgency(siteRequest, eventHandler, c);
 							}
 						});
 					} else {
-						LOGGER.error(String.format("searchpageSiteCounty failed. ", b.cause()));
-						errorSiteCounty(siteRequest, eventHandler, b);
+						LOGGER.error(String.format("searchpageSiteAgency failed. ", b.cause()));
+						errorSiteAgency(siteRequest, eventHandler, b);
 					}
 				});
 			}
 		} catch(Exception ex) {
-			LOGGER.error(String.format("searchpageSiteCounty failed. ", ex));
-			errorSiteCounty(siteRequest, eventHandler, Future.failedFuture(ex));
+			LOGGER.error(String.format("searchpageSiteAgency failed. ", ex));
+			errorSiteAgency(siteRequest, eventHandler, Future.failedFuture(ex));
 		}
 	}
 
 
-	public void searchpageSiteCountyPageInit(SiteCountyPage page, SearchList<SiteCounty> listSiteCounty) {
+	public void searchpageSiteAgencyPageInit(SiteAgencyPage page, SearchList<SiteAgency> listSiteAgency) {
 	}
-	public void searchpageSiteCountyResponse(SearchList<SiteCounty> listSiteCounty, Handler<AsyncResult<OperationResponse>> eventHandler) {
-		SiteRequestEnUS siteRequest = listSiteCounty.getSiteRequest_();
+	public void searchpageSiteAgencyResponse(SearchList<SiteAgency> listSiteAgency, Handler<AsyncResult<OperationResponse>> eventHandler) {
+		SiteRequestEnUS siteRequest = listSiteAgency.getSiteRequest_();
 		try {
 			Buffer buffer = Buffer.buffer();
 			AllWriter w = AllWriter.create(siteRequest, buffer);
 			siteRequest.setW(w);
-			response200SearchPageSiteCounty(listSiteCounty, a -> {
+			response200SearchPageSiteAgency(listSiteAgency, a -> {
 				if(a.succeeded()) {
 					eventHandler.handle(Future.succeededFuture(a.result()));
 				} else {
-					LOGGER.error(String.format("searchpageSiteCountyResponse failed. ", a.cause()));
-					errorSiteCounty(siteRequest, eventHandler, a);
+					LOGGER.error(String.format("searchpageSiteAgencyResponse failed. ", a.cause()));
+					errorSiteAgency(siteRequest, eventHandler, a);
 				}
 			});
 		} catch(Exception ex) {
-			LOGGER.error(String.format("searchpageSiteCountyResponse failed. ", ex));
-			errorSiteCounty(siteRequest, null, Future.failedFuture(ex));
+			LOGGER.error(String.format("searchpageSiteAgencyResponse failed. ", ex));
+			errorSiteAgency(siteRequest, null, Future.failedFuture(ex));
 		}
 	}
-	public void response200SearchPageSiteCounty(SearchList<SiteCounty> listSiteCounty, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void response200SearchPageSiteAgency(SearchList<SiteAgency> listSiteAgency, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
-			SiteRequestEnUS siteRequest = listSiteCounty.getSiteRequest_();
+			SiteRequestEnUS siteRequest = listSiteAgency.getSiteRequest_();
 			Buffer buffer = Buffer.buffer();
-			AllWriter w = AllWriter.create(listSiteCounty.getSiteRequest_(), buffer);
-			SiteCountyPage page = new SiteCountyPage();
+			AllWriter w = AllWriter.create(listSiteAgency.getSiteRequest_(), buffer);
+			SiteAgencyPage page = new SiteAgencyPage();
 			SolrDocument pageSolrDocument = new SolrDocument();
 			CaseInsensitiveHeaders requestHeaders = new CaseInsensitiveHeaders();
 			siteRequest.setRequestHeaders(requestHeaders);
 
-			pageSolrDocument.setField("pageUri_frFR_stored_string", "/county");
+			pageSolrDocument.setField("pageUri_frFR_stored_string", "/agency");
 			page.setPageSolrDocument(pageSolrDocument);
 			page.setW(w);
-			if(listSiteCounty.size() == 1)
-				siteRequest.setRequestPk(listSiteCounty.get(0).getPk());
+			if(listSiteAgency.size() == 1)
+				siteRequest.setRequestPk(listSiteAgency.get(0).getPk());
 			siteRequest.setW(w);
-			page.setListSiteCounty(listSiteCounty);
+			page.setListSiteAgency(listSiteAgency);
 			page.setSiteRequest_(siteRequest);
-			searchpageSiteCountyPageInit(page, listSiteCounty);
-			page.initDeepSiteCountyPage(siteRequest);
+			searchpageSiteAgencyPageInit(page, listSiteAgency);
+			page.initDeepSiteAgencyPage(siteRequest);
 			page.html();
 			eventHandler.handle(Future.succeededFuture(new OperationResponse(200, "OK", buffer, requestHeaders)));
 		} catch(Exception e) {
-			LOGGER.error(String.format("response200SearchPageSiteCounty failed. ", e));
+			LOGGER.error(String.format("response200SearchPageSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
 
 	// General //
 
-	public Future<SiteCounty> defineIndexSiteCounty(SiteCounty siteCounty, Handler<AsyncResult<SiteCounty>> eventHandler) {
-		Promise<SiteCounty> promise = Promise.promise();
-		SiteRequestEnUS siteRequest = siteCounty.getSiteRequest_();
-		defineSiteCounty(siteCounty, c -> {
+	public Future<SiteAgency> defineIndexSiteAgency(SiteAgency siteAgency, Handler<AsyncResult<SiteAgency>> eventHandler) {
+		Promise<SiteAgency> promise = Promise.promise();
+		SiteRequestEnUS siteRequest = siteAgency.getSiteRequest_();
+		defineSiteAgency(siteAgency, c -> {
 			if(c.succeeded()) {
-				attributeSiteCounty(siteCounty, d -> {
+				attributeSiteAgency(siteAgency, d -> {
 					if(d.succeeded()) {
-						indexSiteCounty(siteCounty, e -> {
+						indexSiteAgency(siteAgency, e -> {
 							if(e.succeeded()) {
-								sqlCommitSiteCounty(siteRequest, f -> {
+								sqlCommitSiteAgency(siteRequest, f -> {
 									if(f.succeeded()) {
-										sqlCloseSiteCounty(siteRequest, g -> {
+										sqlCloseSiteAgency(siteRequest, g -> {
 											if(g.succeeded()) {
-												refreshSiteCounty(siteCounty, h -> {
+												refreshSiteAgency(siteAgency, h -> {
 													if(h.succeeded()) {
-														eventHandler.handle(Future.succeededFuture(siteCounty));
-														promise.complete(siteCounty);
+														eventHandler.handle(Future.succeededFuture(siteAgency));
+														promise.complete(siteAgency);
 													} else {
-														LOGGER.error(String.format("refreshSiteCounty failed. ", h.cause()));
-														errorSiteCounty(siteRequest, null, h);
+														LOGGER.error(String.format("refreshSiteAgency failed. ", h.cause()));
+														errorSiteAgency(siteRequest, null, h);
 													}
 												});
 											} else {
-												LOGGER.error(String.format("defineIndexSiteCounty failed. ", g.cause()));
-												errorSiteCounty(siteRequest, null, g);
+												LOGGER.error(String.format("defineIndexSiteAgency failed. ", g.cause()));
+												errorSiteAgency(siteRequest, null, g);
 											}
 										});
 									} else {
-										LOGGER.error(String.format("defineIndexSiteCounty failed. ", f.cause()));
-										errorSiteCounty(siteRequest, null, f);
+										LOGGER.error(String.format("defineIndexSiteAgency failed. ", f.cause()));
+										errorSiteAgency(siteRequest, null, f);
 									}
 								});
 							} else {
-								LOGGER.error(String.format("defineIndexSiteCounty failed. ", e.cause()));
-								errorSiteCounty(siteRequest, null, e);
+								LOGGER.error(String.format("defineIndexSiteAgency failed. ", e.cause()));
+								errorSiteAgency(siteRequest, null, e);
 							}
 						});
 					} else {
-						LOGGER.error(String.format("defineIndexSiteCounty failed. ", d.cause()));
-						errorSiteCounty(siteRequest, null, d);
+						LOGGER.error(String.format("defineIndexSiteAgency failed. ", d.cause()));
+						errorSiteAgency(siteRequest, null, d);
 					}
 				});
 			} else {
-				LOGGER.error(String.format("defineIndexSiteCounty failed. ", c.cause()));
-				errorSiteCounty(siteRequest, null, c);
+				LOGGER.error(String.format("defineIndexSiteAgency failed. ", c.cause()));
+				errorSiteAgency(siteRequest, null, c);
 			}
 		});
 		return promise.future();
 	}
 
-	public void createSiteCounty(SiteRequestEnUS siteRequest, Handler<AsyncResult<SiteCounty>> eventHandler) {
+	public void createSiteAgency(SiteRequestEnUS siteRequest, Handler<AsyncResult<SiteAgency>> eventHandler) {
 		try {
 			Transaction tx = siteRequest.getTx();
 			String userId = siteRequest.getUserId();
@@ -2216,29 +2216,29 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 
 			tx.preparedQuery(
 					SiteContextEnUS.SQL_create
-					, Tuple.of(SiteCounty.class.getCanonicalName(), userId, created.toOffsetDateTime())
+					, Tuple.of(SiteAgency.class.getCanonicalName(), userId, created.toOffsetDateTime())
 					, Collectors.toList()
 					, createAsync
 			-> {
 				if(createAsync.succeeded()) {
 					Row createLine = createAsync.result().value().stream().findFirst().orElseGet(() -> null);
 					Long pk = createLine.getLong(0);
-					SiteCounty o = new SiteCounty();
+					SiteAgency o = new SiteAgency();
 					o.setPk(pk);
 					o.setSiteRequest_(siteRequest);
 					eventHandler.handle(Future.succeededFuture(o));
 				} else {
-					LOGGER.error(String.format("createSiteCounty failed. ", createAsync.cause()));
+					LOGGER.error(String.format("createSiteAgency failed. ", createAsync.cause()));
 					eventHandler.handle(Future.failedFuture(createAsync.cause()));
 				}
 			});
 		} catch(Exception e) {
-			LOGGER.error(String.format("createSiteCounty failed. ", e));
+			LOGGER.error(String.format("createSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
 
-	public void errorSiteCounty(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler, AsyncResult<?> resultAsync) {
+	public void errorSiteAgency(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler, AsyncResult<?> resultAsync) {
 		Throwable e = resultAsync.cause();
 		JsonObject json = new JsonObject()
 				.put("error", new JsonObject()
@@ -2276,10 +2276,10 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 			}, resultHandler -> {
 			}
 		);
-		sqlRollbackSiteCounty(siteRequest, a -> {
+		sqlRollbackSiteAgency(siteRequest, a -> {
 			if(a.succeeded()) {
 				LOGGER.info(String.format("sql rollback. "));
-				sqlCloseSiteCounty(siteRequest, b -> {
+				sqlCloseSiteAgency(siteRequest, b -> {
 					if(b.succeeded()) {
 						LOGGER.info(String.format("sql close. "));
 						if(eventHandler != null)
@@ -2296,7 +2296,7 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 		});
 	}
 
-	public void sqlConnectionSiteCounty(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void sqlConnectionSiteAgency(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
 			PgPool pgPool = siteRequest.getSiteContext_().getPgPool();
 
@@ -2309,18 +2309,18 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 						siteRequest.setSqlConnection(sqlConnection);
 						eventHandler.handle(Future.succeededFuture());
 					} else {
-						LOGGER.error(String.format("sqlConnectionSiteCounty failed. ", a.cause()));
+						LOGGER.error(String.format("sqlConnectionSiteAgency failed. ", a.cause()));
 						eventHandler.handle(Future.failedFuture(a.cause()));
 					}
 				});
 			}
 		} catch(Exception e) {
-			LOGGER.error(String.format("sqlSiteCounty failed. ", e));
+			LOGGER.error(String.format("sqlSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
 
-	public void sqlTransactionSiteCounty(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void sqlTransactionSiteAgency(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
 			SqlConnection sqlConnection = siteRequest.getSqlConnection();
 
@@ -2332,12 +2332,12 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 				eventHandler.handle(Future.succeededFuture());
 			}
 		} catch(Exception e) {
-			LOGGER.error(String.format("sqlTransactionSiteCounty failed. ", e));
+			LOGGER.error(String.format("sqlTransactionSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
 
-	public void sqlCommitSiteCounty(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void sqlCommitSiteAgency(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
 			Transaction tx = siteRequest.getTx();
 
@@ -2352,18 +2352,18 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 						siteRequest.setTx(null);
 						eventHandler.handle(Future.succeededFuture());
 					} else {
-						LOGGER.error(String.format("sqlCommitSiteCounty failed. ", a.cause()));
+						LOGGER.error(String.format("sqlCommitSiteAgency failed. ", a.cause()));
 						eventHandler.handle(Future.failedFuture(a.cause()));
 					}
 				});
 			}
 		} catch(Exception e) {
-			LOGGER.error(String.format("sqlSiteCounty failed. ", e));
+			LOGGER.error(String.format("sqlSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
 
-	public void sqlRollbackSiteCounty(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void sqlRollbackSiteAgency(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
 			Transaction tx = siteRequest.getTx();
 
@@ -2378,18 +2378,18 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 						siteRequest.setTx(null);
 						eventHandler.handle(Future.succeededFuture());
 					} else {
-						LOGGER.error(String.format("sqlRollbackSiteCounty failed. ", a.cause()));
+						LOGGER.error(String.format("sqlRollbackSiteAgency failed. ", a.cause()));
 						eventHandler.handle(Future.failedFuture(a.cause()));
 					}
 				});
 			}
 		} catch(Exception e) {
-			LOGGER.error(String.format("sqlSiteCounty failed. ", e));
+			LOGGER.error(String.format("sqlSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
 
-	public void sqlCloseSiteCounty(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void sqlCloseSiteAgency(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
 			SqlConnection sqlConnection = siteRequest.getSqlConnection();
 
@@ -2401,16 +2401,16 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 				eventHandler.handle(Future.succeededFuture());
 			}
 		} catch(Exception e) {
-			LOGGER.error(String.format("sqlCloseSiteCounty failed. ", e));
+			LOGGER.error(String.format("sqlCloseSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
 
-	public SiteRequestEnUS generateSiteRequestEnUSForSiteCounty(SiteContextEnUS siteContext, OperationRequest operationRequest) {
-		return generateSiteRequestEnUSForSiteCounty(siteContext, operationRequest, null);
+	public SiteRequestEnUS generateSiteRequestEnUSForSiteAgency(SiteContextEnUS siteContext, OperationRequest operationRequest) {
+		return generateSiteRequestEnUSForSiteAgency(siteContext, operationRequest, null);
 	}
 
-	public SiteRequestEnUS generateSiteRequestEnUSForSiteCounty(SiteContextEnUS siteContext, OperationRequest operationRequest, JsonObject body) {
+	public SiteRequestEnUS generateSiteRequestEnUSForSiteAgency(SiteContextEnUS siteContext, OperationRequest operationRequest, JsonObject body) {
 		Vertx vertx = siteContext.getVertx();
 		SiteRequestEnUS siteRequest = new SiteRequestEnUS();
 		siteRequest.setJsonObject(body);
@@ -2423,15 +2423,15 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 		return siteRequest;
 	}
 
-	public void userSiteCounty(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void userSiteAgency(SiteRequestEnUS siteRequest, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
 			String userId = siteRequest.getUserId();
 			if(userId == null) {
 				eventHandler.handle(Future.succeededFuture());
 			} else {
-				sqlConnectionSiteCounty(siteRequest, a -> {
+				sqlConnectionSiteAgency(siteRequest, a -> {
 					if(a.succeeded()) {
-						sqlTransactionSiteCounty(siteRequest, b -> {
+						sqlTransactionSiteAgency(siteRequest, b -> {
 							if(b.succeeded()) {
 								Transaction tx = siteRequest.getTx();
 								tx.preparedQuery(
@@ -2455,7 +2455,7 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 												jsonObject.put("userCompleteName", jsonPrincipal.getString("name"));
 												jsonObject.put("userId", jsonPrincipal.getString("sub"));
 												jsonObject.put("userEmail", jsonPrincipal.getString("email"));
-												userSiteCountyDefine(siteRequest, jsonObject, false);
+												userSiteAgencyDefine(siteRequest, jsonObject, false);
 
 												SiteRequestEnUS siteRequest2 = new SiteRequestEnUS();
 												siteRequest2.setTx(siteRequest.getTx());
@@ -2489,15 +2489,15 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 																		siteRequest.setUserKey(siteUser.getPk());
 																		eventHandler.handle(Future.succeededFuture());
 																	} else {
-																		errorSiteCounty(siteRequest, eventHandler, e);
+																		errorSiteAgency(siteRequest, eventHandler, e);
 																	}
 																});
 															} else {
-																errorSiteCounty(siteRequest, eventHandler, d);
+																errorSiteAgency(siteRequest, eventHandler, d);
 															}
 														});
 													} else {
-														errorSiteCounty(siteRequest, eventHandler, c);
+														errorSiteAgency(siteRequest, eventHandler, c);
 													}
 												});
 											} else {
@@ -2521,7 +2521,7 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 												jsonObject.put("setUserCompleteName", jsonPrincipal.getString("name"));
 												jsonObject.put("setUserId", jsonPrincipal.getString("sub"));
 												jsonObject.put("setUserEmail", jsonPrincipal.getString("email"));
-												Boolean define = userSiteCountyDefine(siteRequest, jsonObject, true);
+												Boolean define = userSiteAgencyDefine(siteRequest, jsonObject, true);
 												if(define) {
 													SiteUser siteUser;
 													if(siteUser1 == null) {
@@ -2564,11 +2564,11 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 																	siteRequest.setUserKey(siteUser2.getPk());
 																	eventHandler.handle(Future.succeededFuture());
 																} else {
-																	errorSiteCounty(siteRequest, eventHandler, e);
+																	errorSiteAgency(siteRequest, eventHandler, e);
 																}
 															});
 														} else {
-															errorSiteCounty(siteRequest, eventHandler, d);
+															errorSiteAgency(siteRequest, eventHandler, d);
 														}
 													});
 												} else {
@@ -2578,43 +2578,43 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 													siteRequest.setUserLastName(siteUser1.getUserLastName());
 													siteRequest.setUserId(siteUser1.getUserId());
 													siteRequest.setUserKey(siteUser1.getPk());
-													sqlRollbackSiteCounty(siteRequest, c -> {
+													sqlRollbackSiteAgency(siteRequest, c -> {
 														if(c.succeeded()) {
 															eventHandler.handle(Future.succeededFuture());
 														} else {
 															eventHandler.handle(Future.failedFuture(c.cause()));
-															errorSiteCounty(siteRequest, eventHandler, c);
+															errorSiteAgency(siteRequest, eventHandler, c);
 														}
 													});
 												}
 											}
 										} catch(Exception e) {
-											LOGGER.error(String.format("userSiteCounty failed. ", e));
+											LOGGER.error(String.format("userSiteAgency failed. ", e));
 											eventHandler.handle(Future.failedFuture(e));
 										}
 									} else {
-										LOGGER.error(String.format("userSiteCounty failed. ", selectCAsync.cause()));
+										LOGGER.error(String.format("userSiteAgency failed. ", selectCAsync.cause()));
 										eventHandler.handle(Future.failedFuture(selectCAsync.cause()));
 									}
 								});
 							} else {
-								LOGGER.error(String.format("userSiteCounty failed. ", b.cause()));
+								LOGGER.error(String.format("userSiteAgency failed. ", b.cause()));
 								eventHandler.handle(Future.failedFuture(b.cause()));
 							}
 						});
 					} else {
-						LOGGER.error(String.format("userSiteCounty failed. ", a.cause()));
+						LOGGER.error(String.format("userSiteAgency failed. ", a.cause()));
 						eventHandler.handle(Future.failedFuture(a.cause()));
 					}
 				});
 			}
 		} catch(Exception e) {
-			LOGGER.error(String.format("userSiteCounty failed. ", e));
+			LOGGER.error(String.format("userSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
 
-	public Boolean userSiteCountyDefine(SiteRequestEnUS siteRequest, JsonObject jsonObject, Boolean patch) {
+	public Boolean userSiteAgencyDefine(SiteRequestEnUS siteRequest, JsonObject jsonObject, Boolean patch) {
 		if(patch) {
 			return false;
 		} else {
@@ -2622,40 +2622,40 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 		}
 	}
 
-	public void aSearchSiteCountyQ(String uri, String apiMethod, SearchList<SiteCounty> searchList, String entityVar, String valueIndexed, String varIndexed) {
+	public void aSearchSiteAgencyQ(String uri, String apiMethod, SearchList<SiteAgency> searchList, String entityVar, String valueIndexed, String varIndexed) {
 		searchList.setQuery(varIndexed + ":" + ("*".equals(valueIndexed) ? valueIndexed : ClientUtils.escapeQueryChars(valueIndexed)));
 		if(!"*".equals(entityVar)) {
 		}
 	}
 
-	public void aSearchSiteCountyFq(String uri, String apiMethod, SearchList<SiteCounty> searchList, String entityVar, String valueIndexed, String varIndexed) {
+	public void aSearchSiteAgencyFq(String uri, String apiMethod, SearchList<SiteAgency> searchList, String entityVar, String valueIndexed, String varIndexed) {
 		if(varIndexed == null)
 			throw new RuntimeException(String.format("\"%s\" is not an indexed entity. ", entityVar));
 		searchList.addFilterQuery(varIndexed + ":" + ClientUtils.escapeQueryChars(valueIndexed));
 	}
 
-	public void aSearchSiteCountySort(String uri, String apiMethod, SearchList<SiteCounty> searchList, String entityVar, String valueIndexed, String varIndexed) {
+	public void aSearchSiteAgencySort(String uri, String apiMethod, SearchList<SiteAgency> searchList, String entityVar, String valueIndexed, String varIndexed) {
 		if(varIndexed == null)
 			throw new RuntimeException(String.format("\"%s\" is not an indexed entity. ", entityVar));
 		searchList.addSort(varIndexed, ORDER.valueOf(valueIndexed));
 	}
 
-	public void aSearchSiteCountyRows(String uri, String apiMethod, SearchList<SiteCounty> searchList, Integer valueRows) {
+	public void aSearchSiteAgencyRows(String uri, String apiMethod, SearchList<SiteAgency> searchList, Integer valueRows) {
 			searchList.setRows(apiMethod != null && apiMethod.contains("Search") ? valueRows : 10);
 	}
 
-	public void aSearchSiteCountyStart(String uri, String apiMethod, SearchList<SiteCounty> searchList, Integer valueStart) {
+	public void aSearchSiteAgencyStart(String uri, String apiMethod, SearchList<SiteAgency> searchList, Integer valueStart) {
 		searchList.setStart(valueStart);
 	}
 
-	public void aSearchSiteCountyVar(String uri, String apiMethod, SearchList<SiteCounty> searchList, String var, String value) {
+	public void aSearchSiteAgencyVar(String uri, String apiMethod, SearchList<SiteAgency> searchList, String var, String value) {
 		searchList.getSiteRequest_().getRequestVars().put(var, value);
 	}
 
-	public void aSearchSiteCountyUri(String uri, String apiMethod, SearchList<SiteCounty> searchList) {
+	public void aSearchSiteAgencyUri(String uri, String apiMethod, SearchList<SiteAgency> searchList) {
 	}
 
-	public void varsSiteCounty(SiteRequestEnUS siteRequest, Handler<AsyncResult<SearchList<OperationResponse>>> eventHandler) {
+	public void varsSiteAgency(SiteRequestEnUS siteRequest, Handler<AsyncResult<SearchList<OperationResponse>>> eventHandler) {
 		try {
 			OperationRequest operationRequest = siteRequest.getOperationRequest();
 
@@ -2677,27 +2677,27 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 						}
 					}
 				} catch(Exception e) {
-					LOGGER.error(String.format("aSearchSiteCounty failed. ", e));
+					LOGGER.error(String.format("aSearchSiteAgency failed. ", e));
 					eventHandler.handle(Future.failedFuture(e));
 				}
 			});
 			eventHandler.handle(Future.succeededFuture());
 		} catch(Exception e) {
-			LOGGER.error(String.format("aSearchSiteCounty failed. ", e));
+			LOGGER.error(String.format("aSearchSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
 
-	public void aSearchSiteCounty(SiteRequestEnUS siteRequest, Boolean populate, Boolean store, String uri, String apiMethod, Handler<AsyncResult<SearchList<SiteCounty>>> eventHandler) {
+	public void aSearchSiteAgency(SiteRequestEnUS siteRequest, Boolean populate, Boolean store, String uri, String apiMethod, Handler<AsyncResult<SearchList<SiteAgency>>> eventHandler) {
 		try {
 			OperationRequest operationRequest = siteRequest.getOperationRequest();
 			String entityListStr = siteRequest.getOperationRequest().getParams().getJsonObject("query").getString("fl");
 			String[] entityList = entityListStr == null ? null : entityListStr.split(",\\s*");
-			SearchList<SiteCounty> searchList = new SearchList<SiteCounty>();
+			SearchList<SiteAgency> searchList = new SearchList<SiteAgency>();
 			searchList.setPopulate(populate);
 			searchList.setStore(store);
 			searchList.setQuery("*:*");
-			searchList.setC(SiteCounty.class);
+			searchList.setC(SiteAgency.class);
 			searchList.setSiteRequest_(siteRequest);
 			if(entityList != null)
 				searchList.addFields(entityList);
@@ -2724,56 +2724,56 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 						switch(paramName) {
 							case "q":
 								entityVar = StringUtils.trim(StringUtils.substringBefore((String)paramObject, ":"));
-								varIndexed = "*".equals(entityVar) ? entityVar : SiteCounty.varSearchSiteCounty(entityVar);
+								varIndexed = "*".equals(entityVar) ? entityVar : SiteAgency.varSearchSiteAgency(entityVar);
 								valueIndexed = URLDecoder.decode(StringUtils.trim(StringUtils.substringAfter((String)paramObject, ":")), "UTF-8");
 								valueIndexed = StringUtils.isEmpty(valueIndexed) ? "*" : valueIndexed;
-								aSearchSiteCountyQ(uri, apiMethod, searchList, entityVar, valueIndexed, varIndexed);
+								aSearchSiteAgencyQ(uri, apiMethod, searchList, entityVar, valueIndexed, varIndexed);
 								break;
 							case "fq":
 								entityVar = StringUtils.trim(StringUtils.substringBefore((String)paramObject, ":"));
 								valueIndexed = URLDecoder.decode(StringUtils.trim(StringUtils.substringAfter((String)paramObject, ":")), "UTF-8");
-								varIndexed = SiteCounty.varIndexedSiteCounty(entityVar);
-								aSearchSiteCountyFq(uri, apiMethod, searchList, entityVar, valueIndexed, varIndexed);
+								varIndexed = SiteAgency.varIndexedSiteAgency(entityVar);
+								aSearchSiteAgencyFq(uri, apiMethod, searchList, entityVar, valueIndexed, varIndexed);
 								break;
 							case "sort":
 								entityVar = StringUtils.trim(StringUtils.substringBefore((String)paramObject, " "));
 								valueIndexed = StringUtils.trim(StringUtils.substringAfter((String)paramObject, " "));
-								varIndexed = SiteCounty.varIndexedSiteCounty(entityVar);
-								aSearchSiteCountySort(uri, apiMethod, searchList, entityVar, valueIndexed, varIndexed);
+								varIndexed = SiteAgency.varIndexedSiteAgency(entityVar);
+								aSearchSiteAgencySort(uri, apiMethod, searchList, entityVar, valueIndexed, varIndexed);
 								break;
 							case "start":
 								valueStart = (Integer)paramObject;
-								aSearchSiteCountyStart(uri, apiMethod, searchList, valueStart);
+								aSearchSiteAgencyStart(uri, apiMethod, searchList, valueStart);
 								break;
 							case "rows":
 								valueRows = (Integer)paramObject;
-								aSearchSiteCountyRows(uri, apiMethod, searchList, valueRows);
+								aSearchSiteAgencyRows(uri, apiMethod, searchList, valueRows);
 								break;
 							case "var":
 								entityVar = StringUtils.trim(StringUtils.substringBefore((String)paramObject, ":"));
 								valueIndexed = URLDecoder.decode(StringUtils.trim(StringUtils.substringAfter((String)paramObject, ":")), "UTF-8");
-								aSearchSiteCountyVar(uri, apiMethod, searchList, entityVar, valueIndexed);
+								aSearchSiteAgencyVar(uri, apiMethod, searchList, entityVar, valueIndexed);
 								break;
 						}
 					}
-					aSearchSiteCountyUri(uri, apiMethod, searchList);
+					aSearchSiteAgencyUri(uri, apiMethod, searchList);
 				} catch(Exception e) {
-					LOGGER.error(String.format("aSearchSiteCounty failed. ", e));
+					LOGGER.error(String.format("aSearchSiteAgency failed. ", e));
 					eventHandler.handle(Future.failedFuture(e));
 				}
 			});
 			if("*".equals(searchList.getQuery()) && searchList.getSorts().size() == 0) {
-				searchList.addSort("countyName_indexed_string", ORDER.asc);
+				searchList.addSort("agencyName_indexed_string", ORDER.asc);
 			}
 			searchList.initDeepForClass(siteRequest);
 			eventHandler.handle(Future.succeededFuture(searchList));
 		} catch(Exception e) {
-			LOGGER.error(String.format("aSearchSiteCounty failed. ", e));
+			LOGGER.error(String.format("aSearchSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
 
-	public void defineSiteCounty(SiteCounty o, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void defineSiteAgency(SiteAgency o, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
 			SiteRequestEnUS siteRequest = o.getSiteRequest_();
 			Transaction tx = siteRequest.getTx();
@@ -2790,27 +2790,27 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 							try {
 								o.defineForClass(definition.getString(0), definition.getString(1));
 							} catch(Exception e) {
-								LOGGER.error(String.format("defineSiteCounty failed. ", e));
+								LOGGER.error(String.format("defineSiteAgency failed. ", e));
 								LOGGER.error(e);
 							}
 						}
 						eventHandler.handle(Future.succeededFuture());
 					} catch(Exception e) {
-						LOGGER.error(String.format("defineSiteCounty failed. ", e));
+						LOGGER.error(String.format("defineSiteAgency failed. ", e));
 						eventHandler.handle(Future.failedFuture(e));
 					}
 				} else {
-					LOGGER.error(String.format("defineSiteCounty failed. ", defineAsync.cause()));
+					LOGGER.error(String.format("defineSiteAgency failed. ", defineAsync.cause()));
 					eventHandler.handle(Future.failedFuture(defineAsync.cause()));
 				}
 			});
 		} catch(Exception e) {
-			LOGGER.error(String.format("defineSiteCounty failed. ", e));
+			LOGGER.error(String.format("defineSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
 
-	public void attributeSiteCounty(SiteCounty o, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void attributeSiteAgency(SiteAgency o, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		try {
 			SiteRequestEnUS siteRequest = o.getSiteRequest_();
 			Transaction tx = siteRequest.getTx();
@@ -2833,21 +2833,21 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 						}
 						eventHandler.handle(Future.succeededFuture());
 					} else {
-						LOGGER.error(String.format("attributeSiteCounty failed. ", attributeAsync.cause()));
+						LOGGER.error(String.format("attributeSiteAgency failed. ", attributeAsync.cause()));
 						eventHandler.handle(Future.failedFuture(attributeAsync.cause()));
 					}
 				} catch(Exception e) {
-					LOGGER.error(String.format("attributeSiteCounty failed. ", e));
+					LOGGER.error(String.format("attributeSiteAgency failed. ", e));
 					eventHandler.handle(Future.failedFuture(e));
 				}
 			});
 		} catch(Exception e) {
-			LOGGER.error(String.format("attributeSiteCounty failed. ", e));
+			LOGGER.error(String.format("attributeSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
 
-	public void indexSiteCounty(SiteCounty o, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void indexSiteAgency(SiteAgency o, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		SiteRequestEnUS siteRequest = o.getSiteRequest_();
 		try {
 			ApiRequest apiRequest = siteRequest.getApiRequest_();
@@ -2857,12 +2857,12 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 			o.indexForClass();
 			eventHandler.handle(Future.succeededFuture());
 		} catch(Exception e) {
-			LOGGER.error(String.format("indexSiteCounty failed. ", e));
+			LOGGER.error(String.format("indexSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
 
-	public void refreshSiteCounty(SiteCounty o, Handler<AsyncResult<OperationResponse>> eventHandler) {
+	public void refreshSiteAgency(SiteAgency o, Handler<AsyncResult<OperationResponse>> eventHandler) {
 		SiteRequestEnUS siteRequest = o.getSiteRequest_();
 		try {
 			ApiRequest apiRequest = siteRequest.getApiRequest_();
@@ -2870,10 +2870,10 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 			List<String> classes = Optional.ofNullable(apiRequest).map(r -> r.getClasses()).orElse(new ArrayList<>());
 			Boolean refresh = !"false".equals(siteRequest.getRequestVars().get("refresh"));
 			if(refresh && BooleanUtils.isFalse(Optional.ofNullable(siteRequest.getApiRequest_()).map(ApiRequest::getEmpty).orElse(true))) {
-				SearchList<SiteCounty> searchList = new SearchList<SiteCounty>();
+				SearchList<SiteAgency> searchList = new SearchList<SiteAgency>();
 				searchList.setStore(true);
 				searchList.setQuery("*:*");
-				searchList.setC(SiteCounty.class);
+				searchList.setC(SiteAgency.class);
 				searchList.addFilterQuery("modified_indexed_date:[" + DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").format(ZonedDateTime.ofInstant(siteRequest.getApiRequest_().getCreated().toInstant(), ZoneId.of("UTC"))) + " TO *]");
 				searchList.add("json.facet", "{stateKey:{terms:{field:stateKey_indexed_longs, limit:1000}}}");
 				searchList.add("json.facet", "{reportCardKeys:{terms:{field:reportCardKeys_indexed_longs, limit:1000}}}");
@@ -2897,7 +2897,7 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 
 						if(o2 != null) {
 							SiteStateEnUSGenApiServiceImpl service = new SiteStateEnUSGenApiServiceImpl(siteRequest.getSiteContext_());
-							SiteRequestEnUS siteRequest2 = generateSiteRequestEnUSForSiteCounty(siteContext, siteRequest.getOperationRequest(), new JsonObject());
+							SiteRequestEnUS siteRequest2 = generateSiteRequestEnUSForSiteAgency(siteContext, siteRequest.getOperationRequest(), new JsonObject());
 							ApiRequest apiRequest2 = new ApiRequest();
 							apiRequest2.setRows(1);
 							apiRequest2.setNumFound(1l);
@@ -2932,7 +2932,7 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 
 						if(o2 != null) {
 							ReportCardEnUSGenApiServiceImpl service = new ReportCardEnUSGenApiServiceImpl(siteRequest.getSiteContext_());
-							SiteRequestEnUS siteRequest2 = generateSiteRequestEnUSForSiteCounty(siteContext, siteRequest.getOperationRequest(), new JsonObject());
+							SiteRequestEnUS siteRequest2 = generateSiteRequestEnUSForSiteAgency(siteContext, siteRequest.getOperationRequest(), new JsonObject());
 							ApiRequest apiRequest2 = new ApiRequest();
 							apiRequest2.setRows(1);
 							apiRequest2.setNumFound(1l);
@@ -2958,16 +2958,16 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 
 				CompositeFuture.all(futures).setHandler(a -> {
 					if(a.succeeded()) {
-						SiteCountyEnUSApiServiceImpl service = new SiteCountyEnUSApiServiceImpl(siteRequest.getSiteContext_());
+						SiteAgencyEnUSApiServiceImpl service = new SiteAgencyEnUSApiServiceImpl(siteRequest.getSiteContext_());
 						List<Future> futures2 = new ArrayList<>();
-						for(SiteCounty o2 : searchList.getList()) {
-							SiteRequestEnUS siteRequest2 = generateSiteRequestEnUSForSiteCounty(siteContext, siteRequest.getOperationRequest(), new JsonObject());
+						for(SiteAgency o2 : searchList.getList()) {
+							SiteRequestEnUS siteRequest2 = generateSiteRequestEnUSForSiteAgency(siteContext, siteRequest.getOperationRequest(), new JsonObject());
 							o2.setSiteRequest_(siteRequest2);
 							futures2.add(
-								service.patchSiteCountyFuture(o2, false, b -> {
+								service.patchSiteAgencyFuture(o2, false, b -> {
 									if(b.succeeded()) {
 									} else {
-										LOGGER.info(String.format("SiteCounty %s failed. ", o2.getPk()));
+										LOGGER.info(String.format("SiteAgency %s failed. ", o2.getPk()));
 										eventHandler.handle(Future.failedFuture(b.cause()));
 									}
 								})
@@ -2979,19 +2979,19 @@ public class SiteCountyEnUSGenApiServiceImpl implements SiteCountyEnUSGenApiServ
 								eventHandler.handle(Future.succeededFuture());
 							} else {
 								LOGGER.error("Refresh relations failed. ", b.cause());
-								errorSiteCounty(siteRequest, eventHandler, b);
+								errorSiteAgency(siteRequest, eventHandler, b);
 							}
 						});
 					} else {
 						LOGGER.error("Refresh relations failed. ", a.cause());
-						errorSiteCounty(siteRequest, eventHandler, a);
+						errorSiteAgency(siteRequest, eventHandler, a);
 					}
 				});
 			} else {
 				eventHandler.handle(Future.succeededFuture());
 			}
 		} catch(Exception e) {
-			LOGGER.error(String.format("refreshSiteCounty failed. ", e));
+			LOGGER.error(String.format("refreshSiteAgency failed. ", e));
 			eventHandler.handle(Future.failedFuture(e));
 		}
 	}
