@@ -152,13 +152,13 @@ public class SiteAgency extends SiteAgencyGen<Cluster> {
 	 * VarTitle: true
 	 */ 
 	protected void _agencyCompleteName(Wrap<String> c) {
-		c.o(agencyName + " agency in " + stateName + " (" + stateAbbreviation + ")");
+		c.o(agencyName + " in " + stateName + " (" + stateAbbreviation + ")");
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override() protected void  _objectTitle(Wrap<String> c) {
-		c.o(agencyName + " agency in " + stateName + " (" + stateAbbreviation + ")");
+		c.o(agencyName + " in " + stateName + " (" + stateAbbreviation + ")");
 	}
 }

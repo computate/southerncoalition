@@ -1451,6 +1451,22 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * {@inheritDoc}
 	 * Indexed: true
 	 * Stored: true
+	 * HtmlRow: 25
+	 * HtmlCell: 6
+	 * DisplayName.enUS: short-term suspensions black vs white
+	 */ 
+	protected void _shortTermSuspensionsBlackVsWhite(Wrap<BigDecimal> c) {
+		if(shortTermSuspensionsBlackTotal != null  && shortTermSuspensionsWhiteTotal != null && shortTermSuspensionsWhiteTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsBlackTotal).divide(new BigDecimal(shortTermSuspensionsWhiteTotal), 4, RoundingMode.HALF_UP).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strShortTermSuspensionsBlackVsWhite() {
+		return shortTermSuspensionsBlackVsWhite == null ? "" : shortTermSuspensionsBlackVsWhite.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
 	 */ 
 	protected void _stateKey(Wrap<Long> c) {
 		if(agency_ != null)
@@ -1515,7 +1531,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * VarTitle: true
 	 */ 
 	protected void _agencyCompleteName(Wrap<String> c) {
-		c.o(reportCardStartYear + "-" + reportCardEndYear + " report card in " + agencyName + " agency in " + stateName + " (" + stateAbbreviation + ")");
+		c.o(reportCardStartYear + "-" + reportCardEndYear + " report card in " + agencyName + " in " + stateName + " (" + stateAbbreviation + ")");
 	}
 
 	/**
