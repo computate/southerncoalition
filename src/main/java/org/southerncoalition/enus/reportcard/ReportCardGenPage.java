@@ -289,6 +289,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmShortTermSuspensionsWhiteTotal("Page");
 			o.htmShortTermSuspensionsWhitePercent("Page");
 			o.htmShortTermSuspensionsWhiteRate("Page");
+			o.htmShortTermSuspensionsBlackVsWhite("Page");
 		} g("div");
 	}
 
@@ -444,6 +445,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmShortTermSuspensionsWhiteTotal("POST");
 			o.htmShortTermSuspensionsWhitePercent("POST");
 			o.htmShortTermSuspensionsWhiteRate("POST");
+			o.htmShortTermSuspensionsBlackVsWhite("POST");
 		} g("div");
 	}
 
@@ -843,6 +845,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmShortTermSuspensionsWhiteTotal("Search");
 			o.htmShortTermSuspensionsWhitePercent("Search");
 			o.htmShortTermSuspensionsWhiteRate("Search");
+			o.htmShortTermSuspensionsBlackVsWhite("Search");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmInheritPk("Search");

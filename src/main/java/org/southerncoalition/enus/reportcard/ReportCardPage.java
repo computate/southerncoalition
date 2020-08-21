@@ -189,6 +189,7 @@ public class ReportCardPage extends ReportCardPageGen<ReportCardGenPage> {
 			o.htmShortTermSuspensionsWhiteTotal("Page");
 			o.htmShortTermSuspensionsWhitePercent("Page");
 			o.htmShortTermSuspensionsWhiteRate("Page");
+			o.htmShortTermSuspensionsBlackVsWhite("Page");
 		} g("div");
 	}
 }
