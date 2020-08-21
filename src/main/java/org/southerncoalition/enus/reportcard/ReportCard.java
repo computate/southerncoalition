@@ -2,6 +2,7 @@ package org.southerncoalition.enus.reportcard;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
+import java.nio.charset.Charset;
 import java.text.DecimalFormat;
 import java.util.Base64;
 import java.util.List;
@@ -1587,7 +1588,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _agencyStudentsByRaceGraph(Wrap<String> w) {
-		w.o(new String(Base64.getEncoder().encode(new byte[] {})));
+		w.o(new String(Base64.getEncoder().encode(new byte[] {}), Charset.forName("UTF-8")));
 	}
 
 	/**   
@@ -1595,7 +1596,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _agencyTeachersByRaceGraph(Wrap<String> w) {
-		w.o(new String(Base64.getEncoder().encode(new byte[] {})));
+		w.o(new String(Base64.getEncoder().encode(new byte[] {}), Charset.forName("UTF-8")));
 	}
 
 	/**   
@@ -1603,7 +1604,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _agencyGrades3To8Graph(Wrap<String> w) {
-		w.o(new String(Base64.getEncoder().encode(new byte[] {})));
+		w.o(new String(Base64.getEncoder().encode(new byte[] {}), Charset.forName("UTF-8")));
 	}
 
 	/**   
@@ -1611,7 +1612,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _agencyGrades9To12Graph(Wrap<String> w) {
-		w.o(new String(Base64.getEncoder().encode(new byte[] {})));
+		w.o(new String(Base64.getEncoder().encode(new byte[] {}), Charset.forName("UTF-8")));
 	}
 
 	/**   
@@ -1619,7 +1620,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _agencyGraduatesWithin4YearsGraph(Wrap<String> w) {
-		w.o(new String(Base64.getEncoder().encode(new byte[] {})));
+		w.o(new String(Base64.getEncoder().encode(new byte[] {}), Charset.forName("UTF-8")));
 	}
 
 	/**   
@@ -1627,7 +1628,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _suspensionsByRaceGraph(Wrap<String> w) {
-		w.o(new String(Base64.getEncoder().encode(new byte[] {})));
+		w.o(new String(Base64.getEncoder().encode(new byte[] {}), Charset.forName("UTF-8")));
 	}
 
 	/**   
@@ -1635,7 +1636,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _suspensionRatesByRaceGraph(Wrap<String> w) {
-		w.o(new String(Base64.getEncoder().encode(new byte[] {})));
+		w.o(new String(Base64.getEncoder().encode(new byte[] {}), Charset.forName("UTF-8")));
 	}
 
 	/**   
@@ -1643,7 +1644,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _countySchoolBasedComplaintsGraph(Wrap<String> w) {
-		w.o(new String(Base64.getEncoder().encode(new byte[] {})));
+		w.o(new String(Base64.getEncoder().encode(new byte[] {}), Charset.forName("UTF-8")));
 	}
 
 	/**   
@@ -1651,7 +1652,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _schoolBasedComplaintsGraph(Wrap<String> w) {
-		w.o(new String(Base64.getEncoder().encode(new byte[] {})));
+		w.o(new String(Base64.getEncoder().encode(new byte[] {}), Charset.forName("UTF-8")));
 	}
 
 	/**
