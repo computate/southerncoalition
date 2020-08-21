@@ -3,6 +3,7 @@ package org.southerncoalition.enus.reportcard;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
+import java.util.Base64;
 import java.util.List;
 
 import org.southerncoalition.enus.cluster.Cluster;
@@ -95,6 +96,16 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			c.o(reportCardStartYear + 1);
 	}
 
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 */ 
+	protected void _reportCardYearsStr(Wrap<String> c) {
+		if(reportCardStartYear != null && reportCardEndYear != null)
+			c.o(reportCardStartYear + "-" + (reportCardEndYear % 100));
+	}
+
 	/**
 	 * {@inheritDoc}
 	 * Ignore: true
@@ -151,7 +162,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 5
 	 * HtmlCell: 3
-	 * DisplayName.enUS: Indian female
+	 * DisplayName.enUS: First Nation female
 	 */ 
 	protected void _pupilsIndianFemale(Wrap<Long> c) {
 	}
@@ -163,7 +174,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 5
 	 * HtmlCell: 2
-	 * DisplayName.enUS: Indian male
+	 * DisplayName.enUS: First Nation male
 	 */  
 	protected void _pupilsIndianMale(Wrap<Long> c) {
 	}
@@ -174,7 +185,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 5
 	 * HtmlCell: 4
-	 * DisplayName.enUS: Indians total
+	 * DisplayName.enUS: First Nation total
 	 */ 
 	protected void _pupilsIndianTotal(Wrap<Long> c) {
 		if(pupilsIndianFemale != null  && pupilsIndianMale != null)
@@ -187,7 +198,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 5
 	 * HtmlCell: 5
-	 * DisplayName.enUS: Indians percent
+	 * DisplayName.enUS: First Nation percent
 	 */ 
 	protected void _pupilsIndianPercent(Wrap<BigDecimal> c) {
 		if(pupilsIndianFemale != null  && pupilsIndianMale != null
@@ -259,7 +270,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 7
 	 * HtmlCell: 2
-	 * DisplayName.enUS: Hispanic female
+	 * DisplayName.enUS: Latinx female
 	 */ 
 	protected void _pupilsHispanicFemale(Wrap<Long> c) {
 	}
@@ -271,7 +282,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 7
 	 * HtmlCell: 1
-	 * DisplayName.enUS: Hispanic male
+	 * DisplayName.enUS: Latinx male
 	 */ 
 	protected void _pupilsHispanicMale(Wrap<Long> c) {
 	}
@@ -282,7 +293,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 7
 	 * HtmlCell: 3
-	 * DisplayName.enUS: Hispanics total
+	 * DisplayName.enUS: Latinx total
 	 */ 
 	protected void _pupilsHispanicTotal(Wrap<Long> c) {
 		if(pupilsHispanicFemale != null  && pupilsHispanicMale != null)
@@ -295,7 +306,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 7
 	 * HtmlCell: 4
-	 * DisplayName.enUS: Hispanics percent
+	 * DisplayName.enUS: Latinx percent
 	 */ 
 	protected void _pupilsHispanicPercent(Wrap<BigDecimal> c) {
 		if(pupilsHispanicFemale != null  && pupilsHispanicMale != null
@@ -498,7 +509,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 11
 	 * HtmlCell: 4
-	 * DisplayName.enUS: Multi Racials total
+	 * DisplayName.enUS: Multi Racial total
 	 */ 
 	protected void _pupilsMultiRacialTotal(Wrap<Long> c) {
 		if(pupilsMultiRacialFemale != null  && pupilsMultiRacialMale != null)
@@ -511,7 +522,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 11
 	 * HtmlCell: 5
-	 * DisplayName.enUS: Multi Racials percent
+	 * DisplayName.enUS: Multi Racial percent
 	 */ 
 	protected void _pupilsMultiRacialPercent(Wrap<BigDecimal> c) {
 		if(pupilsMultiRacialFemale != null  && pupilsMultiRacialMale != null
@@ -764,7 +775,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 16
 	 * HtmlCell: 1
-	 * DisplayName.enUS: Hispanic complaints
+	 * DisplayName.enUS: Latinx complaints
 	 */ 
 	protected void _delinquentComplaintsHispanic(Wrap<Long> c) {
 	}
@@ -775,7 +786,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 16
 	 * HtmlCell: 2
-	 * DisplayName.enUS: Hispanic complaints percent
+	 * DisplayName.enUS: Latinx complaints percent
 	 */ 
 	protected void _delinquentComplaintsHispanicPercent(Wrap<BigDecimal> c) {
 		if(delinquentComplaintsHispanic != null 
@@ -822,7 +833,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 16
 	 * HtmlCell: 5
-	 * DisplayName.enUS: Indian complaints
+	 * DisplayName.enUS: First Nation complaints
 	 */ 
 	protected void _delinquentComplaintsIndian(Wrap<Long> c) {
 	}
@@ -833,7 +844,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 16
 	 * HtmlCell: 6
-	 * DisplayName.enUS: Indian complaints percent
+	 * DisplayName.enUS: First Nation complaints percent
 	 */ 
 	protected void _delinquentComplaintsIndianPercent(Wrap<BigDecimal> c) {
 		if(delinquentComplaintsIndian != null 
@@ -1099,7 +1110,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 21
 	 * HtmlCell: 1
-	 * DisplayName.enUS: short-term suspensions Hispanic female
+	 * DisplayName.enUS: short-term suspensions Latinx female
 	 */ 
 	protected void _shortTermSuspensionsHispanicFemale(Wrap<Long> c) {
 	}
@@ -1111,7 +1122,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 21
 	 * HtmlCell: 2
-	 * DisplayName.enUS: short-term suspensions Hispanic male
+	 * DisplayName.enUS: short-term suspensions Latinx male
 	 */ 
 	protected void _shortTermSuspensionsHispanicMale(Wrap<Long> c) {
 	}
@@ -1122,7 +1133,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 21
 	 * HtmlCell: 3
-	 * DisplayName.enUS: short-term suspensions Hispanics total
+	 * DisplayName.enUS: short-term suspensions Latinx total
 	 */ 
 	protected void _shortTermSuspensionsHispanicTotal(Wrap<Long> c) {
 		if(shortTermSuspensionsHispanicFemale != null  && shortTermSuspensionsHispanicMale != null)
@@ -1135,7 +1146,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 21
 	 * HtmlCell: 4
-	 * DisplayName.enUS: short-term suspensions Hispanics percent
+	 * DisplayName.enUS: short-term suspensions Latinx percent
 	 */ 
 	protected void _shortTermSuspensionsHispanicPercent(Wrap<BigDecimal> c) {
 		if(shortTermSuspensionsHispanicFemale != null  && shortTermSuspensionsHispanicMale != null
@@ -1152,7 +1163,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 21
 	 * HtmlCell: 5
-	 * DisplayName.enUS: short-term suspensions Hispanics rate
+	 * DisplayName.enUS: short-term suspensions Latinx rate
 	 */ 
 	protected void _shortTermSuspensionsHispanicRate(Wrap<BigDecimal> c) {
 		if(shortTermSuspensionsHispanicFemale != null  && shortTermSuspensionsHispanicMale != null
@@ -1170,7 +1181,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 22
 	 * HtmlCell: 1
-	 * DisplayName.enUS: short-term suspensions Indian female
+	 * DisplayName.enUS: short-term suspensions First Nation female
 	 */ 
 	protected void _shortTermSuspensionsIndianFemale(Wrap<Long> c) {
 	}
@@ -1182,7 +1193,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 22
 	 * HtmlCell: 2
-	 * DisplayName.enUS: short-term suspensions Indian male
+	 * DisplayName.enUS: short-term suspensions First Nation male
 	 */  
 	protected void _shortTermSuspensionsIndianMale(Wrap<Long> c) {
 	}
@@ -1193,7 +1204,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 22
 	 * HtmlCell: 3
-	 * DisplayName.enUS: short-term suspensions Indians total
+	 * DisplayName.enUS: short-term suspensions First Nation total
 	 */ 
 	protected void _shortTermSuspensionsIndianTotal(Wrap<Long> c) {
 		if(shortTermSuspensionsIndianFemale != null  && shortTermSuspensionsIndianMale != null)
@@ -1206,7 +1217,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 22
 	 * HtmlCell: 4
-	 * DisplayName.enUS: short-term suspensions Indians percent
+	 * DisplayName.enUS: short-term suspensions First Nation percent
 	 */ 
 	protected void _shortTermSuspensionsIndianPercent(Wrap<BigDecimal> c) {
 		if(shortTermSuspensionsIndianFemale != null  && shortTermSuspensionsIndianMale != null
@@ -1223,7 +1234,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 22
 	 * HtmlCell: 5
-	 * DisplayName.enUS: short-term suspensions Indians rate
+	 * DisplayName.enUS: short-term suspensions First Nation rate
 	 */ 
 	protected void _shortTermSuspensionsIndianRate(Wrap<BigDecimal> c) {
 		if(shortTermSuspensionsIndianFemale != null  && shortTermSuspensionsIndianMale != null
@@ -1264,7 +1275,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 23
 	 * HtmlCell: 3
-	 * DisplayName.enUS: short-term suspensions Multi Racials total
+	 * DisplayName.enUS: short-term suspensions Multi Racial total
 	 */ 
 	protected void _shortTermSuspensionsMultiRacialTotal(Wrap<Long> c) {
 		if(shortTermSuspensionsMultiRacialFemale != null  && shortTermSuspensionsMultiRacialMale != null)
@@ -1277,7 +1288,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 23
 	 * HtmlCell: 4
-	 * DisplayName.enUS: short-term suspensions Multi Racials percent
+	 * DisplayName.enUS: short-term suspensions Multi Racial percent
 	 */ 
 	protected void _shortTermSuspensionsMultiRacialPercent(Wrap<BigDecimal> c) {
 		if(shortTermSuspensionsMultiRacialFemale != null  && shortTermSuspensionsMultiRacialMale != null
@@ -1294,7 +1305,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 23
 	 * HtmlCell: 5
-	 * DisplayName.enUS: short-term suspensions Multi Racials rate
+	 * DisplayName.enUS: short-term suspensions Multi Racial rate
 	 */ 
 	protected void _shortTermSuspensionsMultiRacialRate(Wrap<BigDecimal> c) {
 		if(shortTermSuspensionsMultiRacialFemale != null  && shortTermSuspensionsMultiRacialMale != null
@@ -1553,6 +1564,95 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * {@inheritDoc}
 	 */ 
 	protected void _reportCardReportCards_(List<ReportCard> l) {}
+
+	/**   
+	 * {@inheritDoc}
+	 * Stored: true
+	 */ 
+	protected void _agencyDemographicsGraph(Wrap<String> w) {
+		/** Use these fields to generate the graph: 
+		pupilsIndianTotal
+		pupilsAsianTotal
+		pupilsBlackTotal
+		pupilsHispanicTotal
+		pupilsMultiRacialTotal
+		pupilsPacificIslanderTotal
+		pupilsWhiteTotal
+		**/
+		w.o(new String(Base64.getEncoder().encode(new byte[] {})));
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Stored: true
+	 */ 
+	protected void _agencyStudentsByRaceGraph(Wrap<String> w) {
+		w.o(new String(Base64.getEncoder().encode(new byte[] {})));
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Stored: true
+	 */ 
+	protected void _agencyTeachersByRaceGraph(Wrap<String> w) {
+		w.o(new String(Base64.getEncoder().encode(new byte[] {})));
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Stored: true
+	 */ 
+	protected void _agencyGrades3To8Graph(Wrap<String> w) {
+		w.o(new String(Base64.getEncoder().encode(new byte[] {})));
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Stored: true
+	 */ 
+	protected void _agencyGrades9To12Graph(Wrap<String> w) {
+		w.o(new String(Base64.getEncoder().encode(new byte[] {})));
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Stored: true
+	 */ 
+	protected void _agencyGraduatesWithin4YearsGraph(Wrap<String> w) {
+		w.o(new String(Base64.getEncoder().encode(new byte[] {})));
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Stored: true
+	 */ 
+	protected void _suspensionsByRaceGraph(Wrap<String> w) {
+		w.o(new String(Base64.getEncoder().encode(new byte[] {})));
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Stored: true
+	 */ 
+	protected void _suspensionRatesByRaceGraph(Wrap<String> w) {
+		w.o(new String(Base64.getEncoder().encode(new byte[] {})));
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Stored: true
+	 */ 
+	protected void _countySchoolBasedComplaintsGraph(Wrap<String> w) {
+		w.o(new String(Base64.getEncoder().encode(new byte[] {})));
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Stored: true
+	 */ 
+	protected void _schoolBasedComplaintsGraph(Wrap<String> w) {
+		w.o(new String(Base64.getEncoder().encode(new byte[] {})));
+	}
 
 	/**
 	 * {@inheritDoc}

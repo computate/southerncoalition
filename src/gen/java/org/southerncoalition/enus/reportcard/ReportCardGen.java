@@ -442,6 +442,68 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
+	////////////////////////
+	// reportCardYearsStr //
+	////////////////////////
+
+	/**	 The entity reportCardYearsStr
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String reportCardYearsStr;
+	@JsonIgnore
+	public Wrap<String> reportCardYearsStrWrap = new Wrap<String>().p(this).c(String.class).var("reportCardYearsStr").o(reportCardYearsStr);
+
+	/**	<br/> The entity reportCardYearsStr
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCardYearsStr">Find the entity reportCardYearsStr in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _reportCardYearsStr(Wrap<String> c);
+
+	public String getReportCardYearsStr() {
+		return reportCardYearsStr;
+	}
+
+	public void setReportCardYearsStr(String reportCardYearsStr) {
+		this.reportCardYearsStr = reportCardYearsStr;
+		this.reportCardYearsStrWrap.alreadyInitialized = true;
+	}
+	protected ReportCard reportCardYearsStrInit() {
+		if(!reportCardYearsStrWrap.alreadyInitialized) {
+			_reportCardYearsStr(reportCardYearsStrWrap);
+			if(reportCardYearsStr == null)
+				setReportCardYearsStr(reportCardYearsStrWrap.o);
+		}
+		reportCardYearsStrWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public String solrReportCardYearsStr() {
+		return reportCardYearsStr;
+	}
+
+	public String strReportCardYearsStr() {
+		return reportCardYearsStr == null ? "" : reportCardYearsStr;
+	}
+
+	public String jsonReportCardYearsStr() {
+		return reportCardYearsStr == null ? "" : reportCardYearsStr;
+	}
+
+	public String nomAffichageReportCardYearsStr() {
+		return null;
+	}
+
+	public String htmTooltipReportCardYearsStr() {
+		return null;
+	}
+
+	public String htmReportCardYearsStr() {
+		return reportCardYearsStr == null ? "" : StringEscapeUtils.escapeHtml4(strReportCardYearsStr());
+	}
+
 	//////////////////
 	// agencySearch //
 	//////////////////
@@ -852,7 +914,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichagePupilsIndianFemale() {
-		return "Indian female";
+		return "First Nation female";
 	}
 
 	public String htmTooltipPupilsIndianFemale() {
@@ -871,7 +933,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				) {
 			e("input")
 				.a("type", "text")
-				.a("placeholder", "Indian female")
+				.a("placeholder", "First Nation female")
 				.a("id", classApiMethodMethod, "_pupilsIndianFemale");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
 					a("class", "setPupilsIndianFemale classReportCard inputReportCard", pk, "PupilsIndianFemale w3-input w3-border ");
@@ -899,7 +961,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardPupilsIndianFemale").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_pupilsIndianFemale").a("class", "").f().sx("Indian female").g("label");
+							e("label").a("for", classApiMethodMethod, "_pupilsIndianFemale").a("class", "").f().sx("First Nation female").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -987,7 +1049,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichagePupilsIndianMale() {
-		return "Indian male";
+		return "First Nation male";
 	}
 
 	public String htmTooltipPupilsIndianMale() {
@@ -1006,7 +1068,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				) {
 			e("input")
 				.a("type", "text")
-				.a("placeholder", "Indian male")
+				.a("placeholder", "First Nation male")
 				.a("id", classApiMethodMethod, "_pupilsIndianMale");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
 					a("class", "setPupilsIndianMale classReportCard inputReportCard", pk, "PupilsIndianMale w3-input w3-border ");
@@ -1034,7 +1096,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardPupilsIndianMale").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_pupilsIndianMale").a("class", "").f().sx("Indian male").g("label");
+							e("label").a("for", classApiMethodMethod, "_pupilsIndianMale").a("class", "").f().sx("First Nation male").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -1122,7 +1184,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichagePupilsIndianTotal() {
-		return "Indians total";
+		return "First Nation total";
 	}
 
 	public String htmTooltipPupilsIndianTotal() {
@@ -1144,7 +1206,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("Indians total").g("label");
+							e("label").a("class", "").f().sx("First Nation total").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -1228,7 +1290,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichagePupilsIndianPercent() {
-		return "Indians percent";
+		return "First Nation percent";
 	}
 
 	public String htmTooltipPupilsIndianPercent() {
@@ -1250,7 +1312,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("Indians percent").g("label");
+							e("label").a("class", "").f().sx("First Nation percent").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -1794,7 +1856,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichagePupilsHispanicFemale() {
-		return "Hispanic female";
+		return "Latinx female";
 	}
 
 	public String htmTooltipPupilsHispanicFemale() {
@@ -1813,7 +1875,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				) {
 			e("input")
 				.a("type", "text")
-				.a("placeholder", "Hispanic female")
+				.a("placeholder", "Latinx female")
 				.a("id", classApiMethodMethod, "_pupilsHispanicFemale");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
 					a("class", "setPupilsHispanicFemale classReportCard inputReportCard", pk, "PupilsHispanicFemale w3-input w3-border ");
@@ -1841,7 +1903,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardPupilsHispanicFemale").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_pupilsHispanicFemale").a("class", "").f().sx("Hispanic female").g("label");
+							e("label").a("for", classApiMethodMethod, "_pupilsHispanicFemale").a("class", "").f().sx("Latinx female").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -1929,7 +1991,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichagePupilsHispanicMale() {
-		return "Hispanic male";
+		return "Latinx male";
 	}
 
 	public String htmTooltipPupilsHispanicMale() {
@@ -1948,7 +2010,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				) {
 			e("input")
 				.a("type", "text")
-				.a("placeholder", "Hispanic male")
+				.a("placeholder", "Latinx male")
 				.a("id", classApiMethodMethod, "_pupilsHispanicMale");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
 					a("class", "setPupilsHispanicMale classReportCard inputReportCard", pk, "PupilsHispanicMale w3-input w3-border ");
@@ -1976,7 +2038,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardPupilsHispanicMale").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_pupilsHispanicMale").a("class", "").f().sx("Hispanic male").g("label");
+							e("label").a("for", classApiMethodMethod, "_pupilsHispanicMale").a("class", "").f().sx("Latinx male").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -2064,7 +2126,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichagePupilsHispanicTotal() {
-		return "Hispanics total";
+		return "Latinx total";
 	}
 
 	public String htmTooltipPupilsHispanicTotal() {
@@ -2086,7 +2148,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("Hispanics total").g("label");
+							e("label").a("class", "").f().sx("Latinx total").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -2170,7 +2232,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichagePupilsHispanicPercent() {
-		return "Hispanics percent";
+		return "Latinx percent";
 	}
 
 	public String htmTooltipPupilsHispanicPercent() {
@@ -2192,7 +2254,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("Hispanics percent").g("label");
+							e("label").a("class", "").f().sx("Latinx percent").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -3948,7 +4010,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichagePupilsMultiRacialTotal() {
-		return "Multi Racials total";
+		return "Multi Racial total";
 	}
 
 	public String htmTooltipPupilsMultiRacialTotal() {
@@ -3970,7 +4032,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("Multi Racials total").g("label");
+							e("label").a("class", "").f().sx("Multi Racial total").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -4054,7 +4116,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichagePupilsMultiRacialPercent() {
-		return "Multi Racials percent";
+		return "Multi Racial percent";
 	}
 
 	public String htmTooltipPupilsMultiRacialPercent() {
@@ -4076,7 +4138,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("Multi Racials percent").g("label");
+							e("label").a("class", "").f().sx("Multi Racial percent").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -6095,7 +6157,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageDelinquentComplaintsHispanic() {
-		return "Hispanic complaints";
+		return "Latinx complaints";
 	}
 
 	public String htmTooltipDelinquentComplaintsHispanic() {
@@ -6114,7 +6176,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				) {
 			e("input")
 				.a("type", "text")
-				.a("placeholder", "Hispanic complaints")
+				.a("placeholder", "Latinx complaints")
 				.a("id", classApiMethodMethod, "_delinquentComplaintsHispanic");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
 					a("class", "setDelinquentComplaintsHispanic classReportCard inputReportCard", pk, "DelinquentComplaintsHispanic w3-input w3-border ");
@@ -6142,7 +6204,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardDelinquentComplaintsHispanic").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_delinquentComplaintsHispanic").a("class", "").f().sx("Hispanic complaints").g("label");
+							e("label").a("for", classApiMethodMethod, "_delinquentComplaintsHispanic").a("class", "").f().sx("Latinx complaints").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -6241,7 +6303,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageDelinquentComplaintsHispanicPercent() {
-		return "Hispanic complaints percent";
+		return "Latinx complaints percent";
 	}
 
 	public String htmTooltipDelinquentComplaintsHispanicPercent() {
@@ -6263,7 +6325,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("Hispanic complaints percent").g("label");
+							e("label").a("class", "").f().sx("Latinx complaints percent").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -6577,7 +6639,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageDelinquentComplaintsIndian() {
-		return "Indian complaints";
+		return "First Nation complaints";
 	}
 
 	public String htmTooltipDelinquentComplaintsIndian() {
@@ -6596,7 +6658,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				) {
 			e("input")
 				.a("type", "text")
-				.a("placeholder", "Indian complaints")
+				.a("placeholder", "First Nation complaints")
 				.a("id", classApiMethodMethod, "_delinquentComplaintsIndian");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
 					a("class", "setDelinquentComplaintsIndian classReportCard inputReportCard", pk, "DelinquentComplaintsIndian w3-input w3-border ");
@@ -6624,7 +6686,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardDelinquentComplaintsIndian").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_delinquentComplaintsIndian").a("class", "").f().sx("Indian complaints").g("label");
+							e("label").a("for", classApiMethodMethod, "_delinquentComplaintsIndian").a("class", "").f().sx("First Nation complaints").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -6723,7 +6785,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageDelinquentComplaintsIndianPercent() {
-		return "Indian complaints percent";
+		return "First Nation complaints percent";
 	}
 
 	public String htmTooltipDelinquentComplaintsIndianPercent() {
@@ -6745,7 +6807,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("Indian complaints percent").g("label");
+							e("label").a("class", "").f().sx("First Nation complaints percent").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -8859,7 +8921,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageShortTermSuspensionsHispanicFemale() {
-		return "short-term suspensions Hispanic female";
+		return "short-term suspensions Latinx female";
 	}
 
 	public String htmTooltipShortTermSuspensionsHispanicFemale() {
@@ -8878,7 +8940,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				) {
 			e("input")
 				.a("type", "text")
-				.a("placeholder", "short-term suspensions Hispanic female")
+				.a("placeholder", "short-term suspensions Latinx female")
 				.a("id", classApiMethodMethod, "_shortTermSuspensionsHispanicFemale");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
 					a("class", "setShortTermSuspensionsHispanicFemale classReportCard inputReportCard", pk, "ShortTermSuspensionsHispanicFemale w3-input w3-border ");
@@ -8906,7 +8968,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsHispanicFemale").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsHispanicFemale").a("class", "").f().sx("short-term suspensions Hispanic female").g("label");
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsHispanicFemale").a("class", "").f().sx("short-term suspensions Latinx female").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -8994,7 +9056,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageShortTermSuspensionsHispanicMale() {
-		return "short-term suspensions Hispanic male";
+		return "short-term suspensions Latinx male";
 	}
 
 	public String htmTooltipShortTermSuspensionsHispanicMale() {
@@ -9013,7 +9075,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				) {
 			e("input")
 				.a("type", "text")
-				.a("placeholder", "short-term suspensions Hispanic male")
+				.a("placeholder", "short-term suspensions Latinx male")
 				.a("id", classApiMethodMethod, "_shortTermSuspensionsHispanicMale");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
 					a("class", "setShortTermSuspensionsHispanicMale classReportCard inputReportCard", pk, "ShortTermSuspensionsHispanicMale w3-input w3-border ");
@@ -9041,7 +9103,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsHispanicMale").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsHispanicMale").a("class", "").f().sx("short-term suspensions Hispanic male").g("label");
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsHispanicMale").a("class", "").f().sx("short-term suspensions Latinx male").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -9129,7 +9191,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageShortTermSuspensionsHispanicTotal() {
-		return "short-term suspensions Hispanics total";
+		return "short-term suspensions Latinx total";
 	}
 
 	public String htmTooltipShortTermSuspensionsHispanicTotal() {
@@ -9151,7 +9213,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("short-term suspensions Hispanics total").g("label");
+							e("label").a("class", "").f().sx("short-term suspensions Latinx total").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -9235,7 +9297,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageShortTermSuspensionsHispanicPercent() {
-		return "short-term suspensions Hispanics percent";
+		return "short-term suspensions Latinx percent";
 	}
 
 	public String htmTooltipShortTermSuspensionsHispanicPercent() {
@@ -9257,7 +9319,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("short-term suspensions Hispanics percent").g("label");
+							e("label").a("class", "").f().sx("short-term suspensions Latinx percent").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -9341,7 +9403,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageShortTermSuspensionsHispanicRate() {
-		return "short-term suspensions Hispanics rate";
+		return "short-term suspensions Latinx rate";
 	}
 
 	public String htmTooltipShortTermSuspensionsHispanicRate() {
@@ -9363,7 +9425,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("short-term suspensions Hispanics rate").g("label");
+							e("label").a("class", "").f().sx("short-term suspensions Latinx rate").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -9436,7 +9498,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageShortTermSuspensionsIndianFemale() {
-		return "short-term suspensions Indian female";
+		return "short-term suspensions First Nation female";
 	}
 
 	public String htmTooltipShortTermSuspensionsIndianFemale() {
@@ -9455,7 +9517,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				) {
 			e("input")
 				.a("type", "text")
-				.a("placeholder", "short-term suspensions Indian female")
+				.a("placeholder", "short-term suspensions First Nation female")
 				.a("id", classApiMethodMethod, "_shortTermSuspensionsIndianFemale");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
 					a("class", "setShortTermSuspensionsIndianFemale classReportCard inputReportCard", pk, "ShortTermSuspensionsIndianFemale w3-input w3-border ");
@@ -9483,7 +9545,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsIndianFemale").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsIndianFemale").a("class", "").f().sx("short-term suspensions Indian female").g("label");
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsIndianFemale").a("class", "").f().sx("short-term suspensions First Nation female").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -9571,7 +9633,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageShortTermSuspensionsIndianMale() {
-		return "short-term suspensions Indian male";
+		return "short-term suspensions First Nation male";
 	}
 
 	public String htmTooltipShortTermSuspensionsIndianMale() {
@@ -9590,7 +9652,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				) {
 			e("input")
 				.a("type", "text")
-				.a("placeholder", "short-term suspensions Indian male")
+				.a("placeholder", "short-term suspensions First Nation male")
 				.a("id", classApiMethodMethod, "_shortTermSuspensionsIndianMale");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
 					a("class", "setShortTermSuspensionsIndianMale classReportCard inputReportCard", pk, "ShortTermSuspensionsIndianMale w3-input w3-border ");
@@ -9618,7 +9680,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsIndianMale").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsIndianMale").a("class", "").f().sx("short-term suspensions Indian male").g("label");
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsIndianMale").a("class", "").f().sx("short-term suspensions First Nation male").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -9706,7 +9768,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageShortTermSuspensionsIndianTotal() {
-		return "short-term suspensions Indians total";
+		return "short-term suspensions First Nation total";
 	}
 
 	public String htmTooltipShortTermSuspensionsIndianTotal() {
@@ -9728,7 +9790,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("short-term suspensions Indians total").g("label");
+							e("label").a("class", "").f().sx("short-term suspensions First Nation total").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -9812,7 +9874,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageShortTermSuspensionsIndianPercent() {
-		return "short-term suspensions Indians percent";
+		return "short-term suspensions First Nation percent";
 	}
 
 	public String htmTooltipShortTermSuspensionsIndianPercent() {
@@ -9834,7 +9896,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("short-term suspensions Indians percent").g("label");
+							e("label").a("class", "").f().sx("short-term suspensions First Nation percent").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -9918,7 +9980,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageShortTermSuspensionsIndianRate() {
-		return "short-term suspensions Indians rate";
+		return "short-term suspensions First Nation rate";
 	}
 
 	public String htmTooltipShortTermSuspensionsIndianRate() {
@@ -9940,7 +10002,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("short-term suspensions Indians rate").g("label");
+							e("label").a("class", "").f().sx("short-term suspensions First Nation rate").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -10283,7 +10345,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageShortTermSuspensionsMultiRacialTotal() {
-		return "short-term suspensions Multi Racials total";
+		return "short-term suspensions Multi Racial total";
 	}
 
 	public String htmTooltipShortTermSuspensionsMultiRacialTotal() {
@@ -10305,7 +10367,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("short-term suspensions Multi Racials total").g("label");
+							e("label").a("class", "").f().sx("short-term suspensions Multi Racial total").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -10389,7 +10451,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageShortTermSuspensionsMultiRacialPercent() {
-		return "short-term suspensions Multi Racials percent";
+		return "short-term suspensions Multi Racial percent";
 	}
 
 	public String htmTooltipShortTermSuspensionsMultiRacialPercent() {
@@ -10411,7 +10473,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("short-term suspensions Multi Racials percent").g("label");
+							e("label").a("class", "").f().sx("short-term suspensions Multi Racial percent").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -10495,7 +10557,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageShortTermSuspensionsMultiRacialRate() {
-		return "short-term suspensions Multi Racials rate";
+		return "short-term suspensions Multi Racial rate";
 	}
 
 	public String htmTooltipShortTermSuspensionsMultiRacialRate() {
@@ -10517,7 +10579,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("short-term suspensions Multi Racials rate").g("label");
+							e("label").a("class", "").f().sx("short-term suspensions Multi Racial rate").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -12443,6 +12505,626 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	/////////////////////////////
+	// agencyDemographicsGraph //
+	/////////////////////////////
+
+	/**	 The entity agencyDemographicsGraph
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String agencyDemographicsGraph;
+	@JsonIgnore
+	public Wrap<String> agencyDemographicsGraphWrap = new Wrap<String>().p(this).c(String.class).var("agencyDemographicsGraph").o(agencyDemographicsGraph);
+
+	/**	<br/> The entity agencyDemographicsGraph
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyDemographicsGraph">Find the entity agencyDemographicsGraph in Solr</a>
+	 * <br/>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _agencyDemographicsGraph(Wrap<String> w);
+
+	public String getAgencyDemographicsGraph() {
+		return agencyDemographicsGraph;
+	}
+
+	public void setAgencyDemographicsGraph(String agencyDemographicsGraph) {
+		this.agencyDemographicsGraph = agencyDemographicsGraph;
+		this.agencyDemographicsGraphWrap.alreadyInitialized = true;
+	}
+	protected ReportCard agencyDemographicsGraphInit() {
+		if(!agencyDemographicsGraphWrap.alreadyInitialized) {
+			_agencyDemographicsGraph(agencyDemographicsGraphWrap);
+			if(agencyDemographicsGraph == null)
+				setAgencyDemographicsGraph(agencyDemographicsGraphWrap.o);
+		}
+		agencyDemographicsGraphWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public String solrAgencyDemographicsGraph() {
+		return agencyDemographicsGraph;
+	}
+
+	public String strAgencyDemographicsGraph() {
+		return agencyDemographicsGraph == null ? "" : agencyDemographicsGraph;
+	}
+
+	public String jsonAgencyDemographicsGraph() {
+		return agencyDemographicsGraph == null ? "" : agencyDemographicsGraph;
+	}
+
+	public String nomAffichageAgencyDemographicsGraph() {
+		return null;
+	}
+
+	public String htmTooltipAgencyDemographicsGraph() {
+		return null;
+	}
+
+	public String htmAgencyDemographicsGraph() {
+		return agencyDemographicsGraph == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyDemographicsGraph());
+	}
+
+	///////////////////////////////
+	// agencyStudentsByRaceGraph //
+	///////////////////////////////
+
+	/**	 The entity agencyStudentsByRaceGraph
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String agencyStudentsByRaceGraph;
+	@JsonIgnore
+	public Wrap<String> agencyStudentsByRaceGraphWrap = new Wrap<String>().p(this).c(String.class).var("agencyStudentsByRaceGraph").o(agencyStudentsByRaceGraph);
+
+	/**	<br/> The entity agencyStudentsByRaceGraph
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyStudentsByRaceGraph">Find the entity agencyStudentsByRaceGraph in Solr</a>
+	 * <br/>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _agencyStudentsByRaceGraph(Wrap<String> w);
+
+	public String getAgencyStudentsByRaceGraph() {
+		return agencyStudentsByRaceGraph;
+	}
+
+	public void setAgencyStudentsByRaceGraph(String agencyStudentsByRaceGraph) {
+		this.agencyStudentsByRaceGraph = agencyStudentsByRaceGraph;
+		this.agencyStudentsByRaceGraphWrap.alreadyInitialized = true;
+	}
+	protected ReportCard agencyStudentsByRaceGraphInit() {
+		if(!agencyStudentsByRaceGraphWrap.alreadyInitialized) {
+			_agencyStudentsByRaceGraph(agencyStudentsByRaceGraphWrap);
+			if(agencyStudentsByRaceGraph == null)
+				setAgencyStudentsByRaceGraph(agencyStudentsByRaceGraphWrap.o);
+		}
+		agencyStudentsByRaceGraphWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public String solrAgencyStudentsByRaceGraph() {
+		return agencyStudentsByRaceGraph;
+	}
+
+	public String strAgencyStudentsByRaceGraph() {
+		return agencyStudentsByRaceGraph == null ? "" : agencyStudentsByRaceGraph;
+	}
+
+	public String jsonAgencyStudentsByRaceGraph() {
+		return agencyStudentsByRaceGraph == null ? "" : agencyStudentsByRaceGraph;
+	}
+
+	public String nomAffichageAgencyStudentsByRaceGraph() {
+		return null;
+	}
+
+	public String htmTooltipAgencyStudentsByRaceGraph() {
+		return null;
+	}
+
+	public String htmAgencyStudentsByRaceGraph() {
+		return agencyStudentsByRaceGraph == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyStudentsByRaceGraph());
+	}
+
+	///////////////////////////////
+	// agencyTeachersByRaceGraph //
+	///////////////////////////////
+
+	/**	 The entity agencyTeachersByRaceGraph
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String agencyTeachersByRaceGraph;
+	@JsonIgnore
+	public Wrap<String> agencyTeachersByRaceGraphWrap = new Wrap<String>().p(this).c(String.class).var("agencyTeachersByRaceGraph").o(agencyTeachersByRaceGraph);
+
+	/**	<br/> The entity agencyTeachersByRaceGraph
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyTeachersByRaceGraph">Find the entity agencyTeachersByRaceGraph in Solr</a>
+	 * <br/>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _agencyTeachersByRaceGraph(Wrap<String> w);
+
+	public String getAgencyTeachersByRaceGraph() {
+		return agencyTeachersByRaceGraph;
+	}
+
+	public void setAgencyTeachersByRaceGraph(String agencyTeachersByRaceGraph) {
+		this.agencyTeachersByRaceGraph = agencyTeachersByRaceGraph;
+		this.agencyTeachersByRaceGraphWrap.alreadyInitialized = true;
+	}
+	protected ReportCard agencyTeachersByRaceGraphInit() {
+		if(!agencyTeachersByRaceGraphWrap.alreadyInitialized) {
+			_agencyTeachersByRaceGraph(agencyTeachersByRaceGraphWrap);
+			if(agencyTeachersByRaceGraph == null)
+				setAgencyTeachersByRaceGraph(agencyTeachersByRaceGraphWrap.o);
+		}
+		agencyTeachersByRaceGraphWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public String solrAgencyTeachersByRaceGraph() {
+		return agencyTeachersByRaceGraph;
+	}
+
+	public String strAgencyTeachersByRaceGraph() {
+		return agencyTeachersByRaceGraph == null ? "" : agencyTeachersByRaceGraph;
+	}
+
+	public String jsonAgencyTeachersByRaceGraph() {
+		return agencyTeachersByRaceGraph == null ? "" : agencyTeachersByRaceGraph;
+	}
+
+	public String nomAffichageAgencyTeachersByRaceGraph() {
+		return null;
+	}
+
+	public String htmTooltipAgencyTeachersByRaceGraph() {
+		return null;
+	}
+
+	public String htmAgencyTeachersByRaceGraph() {
+		return agencyTeachersByRaceGraph == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyTeachersByRaceGraph());
+	}
+
+	///////////////////////////
+	// agencyGrades3To8Graph //
+	///////////////////////////
+
+	/**	 The entity agencyGrades3To8Graph
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String agencyGrades3To8Graph;
+	@JsonIgnore
+	public Wrap<String> agencyGrades3To8GraphWrap = new Wrap<String>().p(this).c(String.class).var("agencyGrades3To8Graph").o(agencyGrades3To8Graph);
+
+	/**	<br/> The entity agencyGrades3To8Graph
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyGrades3To8Graph">Find the entity agencyGrades3To8Graph in Solr</a>
+	 * <br/>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _agencyGrades3To8Graph(Wrap<String> w);
+
+	public String getAgencyGrades3To8Graph() {
+		return agencyGrades3To8Graph;
+	}
+
+	public void setAgencyGrades3To8Graph(String agencyGrades3To8Graph) {
+		this.agencyGrades3To8Graph = agencyGrades3To8Graph;
+		this.agencyGrades3To8GraphWrap.alreadyInitialized = true;
+	}
+	protected ReportCard agencyGrades3To8GraphInit() {
+		if(!agencyGrades3To8GraphWrap.alreadyInitialized) {
+			_agencyGrades3To8Graph(agencyGrades3To8GraphWrap);
+			if(agencyGrades3To8Graph == null)
+				setAgencyGrades3To8Graph(agencyGrades3To8GraphWrap.o);
+		}
+		agencyGrades3To8GraphWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public String solrAgencyGrades3To8Graph() {
+		return agencyGrades3To8Graph;
+	}
+
+	public String strAgencyGrades3To8Graph() {
+		return agencyGrades3To8Graph == null ? "" : agencyGrades3To8Graph;
+	}
+
+	public String jsonAgencyGrades3To8Graph() {
+		return agencyGrades3To8Graph == null ? "" : agencyGrades3To8Graph;
+	}
+
+	public String nomAffichageAgencyGrades3To8Graph() {
+		return null;
+	}
+
+	public String htmTooltipAgencyGrades3To8Graph() {
+		return null;
+	}
+
+	public String htmAgencyGrades3To8Graph() {
+		return agencyGrades3To8Graph == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyGrades3To8Graph());
+	}
+
+	////////////////////////////
+	// agencyGrades9To12Graph //
+	////////////////////////////
+
+	/**	 The entity agencyGrades9To12Graph
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String agencyGrades9To12Graph;
+	@JsonIgnore
+	public Wrap<String> agencyGrades9To12GraphWrap = new Wrap<String>().p(this).c(String.class).var("agencyGrades9To12Graph").o(agencyGrades9To12Graph);
+
+	/**	<br/> The entity agencyGrades9To12Graph
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyGrades9To12Graph">Find the entity agencyGrades9To12Graph in Solr</a>
+	 * <br/>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _agencyGrades9To12Graph(Wrap<String> w);
+
+	public String getAgencyGrades9To12Graph() {
+		return agencyGrades9To12Graph;
+	}
+
+	public void setAgencyGrades9To12Graph(String agencyGrades9To12Graph) {
+		this.agencyGrades9To12Graph = agencyGrades9To12Graph;
+		this.agencyGrades9To12GraphWrap.alreadyInitialized = true;
+	}
+	protected ReportCard agencyGrades9To12GraphInit() {
+		if(!agencyGrades9To12GraphWrap.alreadyInitialized) {
+			_agencyGrades9To12Graph(agencyGrades9To12GraphWrap);
+			if(agencyGrades9To12Graph == null)
+				setAgencyGrades9To12Graph(agencyGrades9To12GraphWrap.o);
+		}
+		agencyGrades9To12GraphWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public String solrAgencyGrades9To12Graph() {
+		return agencyGrades9To12Graph;
+	}
+
+	public String strAgencyGrades9To12Graph() {
+		return agencyGrades9To12Graph == null ? "" : agencyGrades9To12Graph;
+	}
+
+	public String jsonAgencyGrades9To12Graph() {
+		return agencyGrades9To12Graph == null ? "" : agencyGrades9To12Graph;
+	}
+
+	public String nomAffichageAgencyGrades9To12Graph() {
+		return null;
+	}
+
+	public String htmTooltipAgencyGrades9To12Graph() {
+		return null;
+	}
+
+	public String htmAgencyGrades9To12Graph() {
+		return agencyGrades9To12Graph == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyGrades9To12Graph());
+	}
+
+	//////////////////////////////////////
+	// agencyGraduatesWithin4YearsGraph //
+	//////////////////////////////////////
+
+	/**	 The entity agencyGraduatesWithin4YearsGraph
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String agencyGraduatesWithin4YearsGraph;
+	@JsonIgnore
+	public Wrap<String> agencyGraduatesWithin4YearsGraphWrap = new Wrap<String>().p(this).c(String.class).var("agencyGraduatesWithin4YearsGraph").o(agencyGraduatesWithin4YearsGraph);
+
+	/**	<br/> The entity agencyGraduatesWithin4YearsGraph
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyGraduatesWithin4YearsGraph">Find the entity agencyGraduatesWithin4YearsGraph in Solr</a>
+	 * <br/>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _agencyGraduatesWithin4YearsGraph(Wrap<String> w);
+
+	public String getAgencyGraduatesWithin4YearsGraph() {
+		return agencyGraduatesWithin4YearsGraph;
+	}
+
+	public void setAgencyGraduatesWithin4YearsGraph(String agencyGraduatesWithin4YearsGraph) {
+		this.agencyGraduatesWithin4YearsGraph = agencyGraduatesWithin4YearsGraph;
+		this.agencyGraduatesWithin4YearsGraphWrap.alreadyInitialized = true;
+	}
+	protected ReportCard agencyGraduatesWithin4YearsGraphInit() {
+		if(!agencyGraduatesWithin4YearsGraphWrap.alreadyInitialized) {
+			_agencyGraduatesWithin4YearsGraph(agencyGraduatesWithin4YearsGraphWrap);
+			if(agencyGraduatesWithin4YearsGraph == null)
+				setAgencyGraduatesWithin4YearsGraph(agencyGraduatesWithin4YearsGraphWrap.o);
+		}
+		agencyGraduatesWithin4YearsGraphWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public String solrAgencyGraduatesWithin4YearsGraph() {
+		return agencyGraduatesWithin4YearsGraph;
+	}
+
+	public String strAgencyGraduatesWithin4YearsGraph() {
+		return agencyGraduatesWithin4YearsGraph == null ? "" : agencyGraduatesWithin4YearsGraph;
+	}
+
+	public String jsonAgencyGraduatesWithin4YearsGraph() {
+		return agencyGraduatesWithin4YearsGraph == null ? "" : agencyGraduatesWithin4YearsGraph;
+	}
+
+	public String nomAffichageAgencyGraduatesWithin4YearsGraph() {
+		return null;
+	}
+
+	public String htmTooltipAgencyGraduatesWithin4YearsGraph() {
+		return null;
+	}
+
+	public String htmAgencyGraduatesWithin4YearsGraph() {
+		return agencyGraduatesWithin4YearsGraph == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyGraduatesWithin4YearsGraph());
+	}
+
+	////////////////////////////
+	// suspensionsByRaceGraph //
+	////////////////////////////
+
+	/**	 The entity suspensionsByRaceGraph
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String suspensionsByRaceGraph;
+	@JsonIgnore
+	public Wrap<String> suspensionsByRaceGraphWrap = new Wrap<String>().p(this).c(String.class).var("suspensionsByRaceGraph").o(suspensionsByRaceGraph);
+
+	/**	<br/> The entity suspensionsByRaceGraph
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:suspensionsByRaceGraph">Find the entity suspensionsByRaceGraph in Solr</a>
+	 * <br/>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _suspensionsByRaceGraph(Wrap<String> w);
+
+	public String getSuspensionsByRaceGraph() {
+		return suspensionsByRaceGraph;
+	}
+
+	public void setSuspensionsByRaceGraph(String suspensionsByRaceGraph) {
+		this.suspensionsByRaceGraph = suspensionsByRaceGraph;
+		this.suspensionsByRaceGraphWrap.alreadyInitialized = true;
+	}
+	protected ReportCard suspensionsByRaceGraphInit() {
+		if(!suspensionsByRaceGraphWrap.alreadyInitialized) {
+			_suspensionsByRaceGraph(suspensionsByRaceGraphWrap);
+			if(suspensionsByRaceGraph == null)
+				setSuspensionsByRaceGraph(suspensionsByRaceGraphWrap.o);
+		}
+		suspensionsByRaceGraphWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public String solrSuspensionsByRaceGraph() {
+		return suspensionsByRaceGraph;
+	}
+
+	public String strSuspensionsByRaceGraph() {
+		return suspensionsByRaceGraph == null ? "" : suspensionsByRaceGraph;
+	}
+
+	public String jsonSuspensionsByRaceGraph() {
+		return suspensionsByRaceGraph == null ? "" : suspensionsByRaceGraph;
+	}
+
+	public String nomAffichageSuspensionsByRaceGraph() {
+		return null;
+	}
+
+	public String htmTooltipSuspensionsByRaceGraph() {
+		return null;
+	}
+
+	public String htmSuspensionsByRaceGraph() {
+		return suspensionsByRaceGraph == null ? "" : StringEscapeUtils.escapeHtml4(strSuspensionsByRaceGraph());
+	}
+
+	////////////////////////////////
+	// suspensionRatesByRaceGraph //
+	////////////////////////////////
+
+	/**	 The entity suspensionRatesByRaceGraph
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String suspensionRatesByRaceGraph;
+	@JsonIgnore
+	public Wrap<String> suspensionRatesByRaceGraphWrap = new Wrap<String>().p(this).c(String.class).var("suspensionRatesByRaceGraph").o(suspensionRatesByRaceGraph);
+
+	/**	<br/> The entity suspensionRatesByRaceGraph
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:suspensionRatesByRaceGraph">Find the entity suspensionRatesByRaceGraph in Solr</a>
+	 * <br/>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _suspensionRatesByRaceGraph(Wrap<String> w);
+
+	public String getSuspensionRatesByRaceGraph() {
+		return suspensionRatesByRaceGraph;
+	}
+
+	public void setSuspensionRatesByRaceGraph(String suspensionRatesByRaceGraph) {
+		this.suspensionRatesByRaceGraph = suspensionRatesByRaceGraph;
+		this.suspensionRatesByRaceGraphWrap.alreadyInitialized = true;
+	}
+	protected ReportCard suspensionRatesByRaceGraphInit() {
+		if(!suspensionRatesByRaceGraphWrap.alreadyInitialized) {
+			_suspensionRatesByRaceGraph(suspensionRatesByRaceGraphWrap);
+			if(suspensionRatesByRaceGraph == null)
+				setSuspensionRatesByRaceGraph(suspensionRatesByRaceGraphWrap.o);
+		}
+		suspensionRatesByRaceGraphWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public String solrSuspensionRatesByRaceGraph() {
+		return suspensionRatesByRaceGraph;
+	}
+
+	public String strSuspensionRatesByRaceGraph() {
+		return suspensionRatesByRaceGraph == null ? "" : suspensionRatesByRaceGraph;
+	}
+
+	public String jsonSuspensionRatesByRaceGraph() {
+		return suspensionRatesByRaceGraph == null ? "" : suspensionRatesByRaceGraph;
+	}
+
+	public String nomAffichageSuspensionRatesByRaceGraph() {
+		return null;
+	}
+
+	public String htmTooltipSuspensionRatesByRaceGraph() {
+		return null;
+	}
+
+	public String htmSuspensionRatesByRaceGraph() {
+		return suspensionRatesByRaceGraph == null ? "" : StringEscapeUtils.escapeHtml4(strSuspensionRatesByRaceGraph());
+	}
+
+	//////////////////////////////////////
+	// countySchoolBasedComplaintsGraph //
+	//////////////////////////////////////
+
+	/**	 The entity countySchoolBasedComplaintsGraph
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String countySchoolBasedComplaintsGraph;
+	@JsonIgnore
+	public Wrap<String> countySchoolBasedComplaintsGraphWrap = new Wrap<String>().p(this).c(String.class).var("countySchoolBasedComplaintsGraph").o(countySchoolBasedComplaintsGraph);
+
+	/**	<br/> The entity countySchoolBasedComplaintsGraph
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:countySchoolBasedComplaintsGraph">Find the entity countySchoolBasedComplaintsGraph in Solr</a>
+	 * <br/>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _countySchoolBasedComplaintsGraph(Wrap<String> w);
+
+	public String getCountySchoolBasedComplaintsGraph() {
+		return countySchoolBasedComplaintsGraph;
+	}
+
+	public void setCountySchoolBasedComplaintsGraph(String countySchoolBasedComplaintsGraph) {
+		this.countySchoolBasedComplaintsGraph = countySchoolBasedComplaintsGraph;
+		this.countySchoolBasedComplaintsGraphWrap.alreadyInitialized = true;
+	}
+	protected ReportCard countySchoolBasedComplaintsGraphInit() {
+		if(!countySchoolBasedComplaintsGraphWrap.alreadyInitialized) {
+			_countySchoolBasedComplaintsGraph(countySchoolBasedComplaintsGraphWrap);
+			if(countySchoolBasedComplaintsGraph == null)
+				setCountySchoolBasedComplaintsGraph(countySchoolBasedComplaintsGraphWrap.o);
+		}
+		countySchoolBasedComplaintsGraphWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public String solrCountySchoolBasedComplaintsGraph() {
+		return countySchoolBasedComplaintsGraph;
+	}
+
+	public String strCountySchoolBasedComplaintsGraph() {
+		return countySchoolBasedComplaintsGraph == null ? "" : countySchoolBasedComplaintsGraph;
+	}
+
+	public String jsonCountySchoolBasedComplaintsGraph() {
+		return countySchoolBasedComplaintsGraph == null ? "" : countySchoolBasedComplaintsGraph;
+	}
+
+	public String nomAffichageCountySchoolBasedComplaintsGraph() {
+		return null;
+	}
+
+	public String htmTooltipCountySchoolBasedComplaintsGraph() {
+		return null;
+	}
+
+	public String htmCountySchoolBasedComplaintsGraph() {
+		return countySchoolBasedComplaintsGraph == null ? "" : StringEscapeUtils.escapeHtml4(strCountySchoolBasedComplaintsGraph());
+	}
+
+	////////////////////////////////
+	// schoolBasedComplaintsGraph //
+	////////////////////////////////
+
+	/**	 The entity schoolBasedComplaintsGraph
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String schoolBasedComplaintsGraph;
+	@JsonIgnore
+	public Wrap<String> schoolBasedComplaintsGraphWrap = new Wrap<String>().p(this).c(String.class).var("schoolBasedComplaintsGraph").o(schoolBasedComplaintsGraph);
+
+	/**	<br/> The entity schoolBasedComplaintsGraph
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:schoolBasedComplaintsGraph">Find the entity schoolBasedComplaintsGraph in Solr</a>
+	 * <br/>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _schoolBasedComplaintsGraph(Wrap<String> w);
+
+	public String getSchoolBasedComplaintsGraph() {
+		return schoolBasedComplaintsGraph;
+	}
+
+	public void setSchoolBasedComplaintsGraph(String schoolBasedComplaintsGraph) {
+		this.schoolBasedComplaintsGraph = schoolBasedComplaintsGraph;
+		this.schoolBasedComplaintsGraphWrap.alreadyInitialized = true;
+	}
+	protected ReportCard schoolBasedComplaintsGraphInit() {
+		if(!schoolBasedComplaintsGraphWrap.alreadyInitialized) {
+			_schoolBasedComplaintsGraph(schoolBasedComplaintsGraphWrap);
+			if(schoolBasedComplaintsGraph == null)
+				setSchoolBasedComplaintsGraph(schoolBasedComplaintsGraphWrap.o);
+		}
+		schoolBasedComplaintsGraphWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public String solrSchoolBasedComplaintsGraph() {
+		return schoolBasedComplaintsGraph;
+	}
+
+	public String strSchoolBasedComplaintsGraph() {
+		return schoolBasedComplaintsGraph == null ? "" : schoolBasedComplaintsGraph;
+	}
+
+	public String jsonSchoolBasedComplaintsGraph() {
+		return schoolBasedComplaintsGraph == null ? "" : schoolBasedComplaintsGraph;
+	}
+
+	public String nomAffichageSchoolBasedComplaintsGraph() {
+		return null;
+	}
+
+	public String htmTooltipSchoolBasedComplaintsGraph() {
+		return null;
+	}
+
+	public String htmSchoolBasedComplaintsGraph() {
+		return schoolBasedComplaintsGraph == null ? "" : StringEscapeUtils.escapeHtml4(strSchoolBasedComplaintsGraph());
+	}
+
 	//////////////
 	// initDeep //
 	//////////////
@@ -12468,6 +13150,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		reportCardStartYearInit();
 		reportCardStartYearStrInit();
 		reportCardEndYearInit();
+		reportCardYearsStrInit();
 		agencySearchInit();
 		agency_Init();
 		agencyKeyInit();
@@ -12576,6 +13259,16 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		reportCardStates_Init();
 		reportCardAgencies_Init();
 		reportCardReportCards_Init();
+		agencyDemographicsGraphInit();
+		agencyStudentsByRaceGraphInit();
+		agencyTeachersByRaceGraphInit();
+		agencyGrades3To8GraphInit();
+		agencyGrades9To12GraphInit();
+		agencyGraduatesWithin4YearsGraphInit();
+		suspensionsByRaceGraphInit();
+		suspensionRatesByRaceGraphInit();
+		countySchoolBasedComplaintsGraphInit();
+		schoolBasedComplaintsGraphInit();
 	}
 
 	@Override public void initDeepForClass(SiteRequestEnUS siteRequest_) {
@@ -12624,6 +13317,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.reportCardStartYearStr;
 			case "reportCardEndYear":
 				return oReportCard.reportCardEndYear;
+			case "reportCardYearsStr":
+				return oReportCard.reportCardYearsStr;
 			case "agencySearch":
 				return oReportCard.agencySearch;
 			case "agency_":
@@ -12840,6 +13535,26 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.reportCardAgencies_;
 			case "reportCardReportCards_":
 				return oReportCard.reportCardReportCards_;
+			case "agencyDemographicsGraph":
+				return oReportCard.agencyDemographicsGraph;
+			case "agencyStudentsByRaceGraph":
+				return oReportCard.agencyStudentsByRaceGraph;
+			case "agencyTeachersByRaceGraph":
+				return oReportCard.agencyTeachersByRaceGraph;
+			case "agencyGrades3To8Graph":
+				return oReportCard.agencyGrades3To8Graph;
+			case "agencyGrades9To12Graph":
+				return oReportCard.agencyGrades9To12Graph;
+			case "agencyGraduatesWithin4YearsGraph":
+				return oReportCard.agencyGraduatesWithin4YearsGraph;
+			case "suspensionsByRaceGraph":
+				return oReportCard.suspensionsByRaceGraph;
+			case "suspensionRatesByRaceGraph":
+				return oReportCard.suspensionRatesByRaceGraph;
+			case "countySchoolBasedComplaintsGraph":
+				return oReportCard.countySchoolBasedComplaintsGraph;
+			case "schoolBasedComplaintsGraph":
+				return oReportCard.schoolBasedComplaintsGraph;
 			default:
 				return super.obtainCluster(var);
 		}
@@ -13165,6 +13880,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				Integer reportCardEndYear = (Integer)solrDocument.get("reportCardEndYear_stored_int");
 				if(reportCardEndYear != null)
 					oReportCard.setReportCardEndYear(reportCardEndYear);
+			}
+
+			if(saves.contains("reportCardYearsStr")) {
+				String reportCardYearsStr = (String)solrDocument.get("reportCardYearsStr_stored_string");
+				if(reportCardYearsStr != null)
+					oReportCard.setReportCardYearsStr(reportCardYearsStr);
 			}
 
 			Long agencyKey = (Long)solrDocument.get("agencyKey_stored_long");
@@ -13776,6 +14497,66 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				if(agencyCompleteName != null)
 					oReportCard.setAgencyCompleteName(agencyCompleteName);
 			}
+
+			if(saves.contains("agencyDemographicsGraph")) {
+				String agencyDemographicsGraph = (String)solrDocument.get("agencyDemographicsGraph_stored_string");
+				if(agencyDemographicsGraph != null)
+					oReportCard.setAgencyDemographicsGraph(agencyDemographicsGraph);
+			}
+
+			if(saves.contains("agencyStudentsByRaceGraph")) {
+				String agencyStudentsByRaceGraph = (String)solrDocument.get("agencyStudentsByRaceGraph_stored_string");
+				if(agencyStudentsByRaceGraph != null)
+					oReportCard.setAgencyStudentsByRaceGraph(agencyStudentsByRaceGraph);
+			}
+
+			if(saves.contains("agencyTeachersByRaceGraph")) {
+				String agencyTeachersByRaceGraph = (String)solrDocument.get("agencyTeachersByRaceGraph_stored_string");
+				if(agencyTeachersByRaceGraph != null)
+					oReportCard.setAgencyTeachersByRaceGraph(agencyTeachersByRaceGraph);
+			}
+
+			if(saves.contains("agencyGrades3To8Graph")) {
+				String agencyGrades3To8Graph = (String)solrDocument.get("agencyGrades3To8Graph_stored_string");
+				if(agencyGrades3To8Graph != null)
+					oReportCard.setAgencyGrades3To8Graph(agencyGrades3To8Graph);
+			}
+
+			if(saves.contains("agencyGrades9To12Graph")) {
+				String agencyGrades9To12Graph = (String)solrDocument.get("agencyGrades9To12Graph_stored_string");
+				if(agencyGrades9To12Graph != null)
+					oReportCard.setAgencyGrades9To12Graph(agencyGrades9To12Graph);
+			}
+
+			if(saves.contains("agencyGraduatesWithin4YearsGraph")) {
+				String agencyGraduatesWithin4YearsGraph = (String)solrDocument.get("agencyGraduatesWithin4YearsGraph_stored_string");
+				if(agencyGraduatesWithin4YearsGraph != null)
+					oReportCard.setAgencyGraduatesWithin4YearsGraph(agencyGraduatesWithin4YearsGraph);
+			}
+
+			if(saves.contains("suspensionsByRaceGraph")) {
+				String suspensionsByRaceGraph = (String)solrDocument.get("suspensionsByRaceGraph_stored_string");
+				if(suspensionsByRaceGraph != null)
+					oReportCard.setSuspensionsByRaceGraph(suspensionsByRaceGraph);
+			}
+
+			if(saves.contains("suspensionRatesByRaceGraph")) {
+				String suspensionRatesByRaceGraph = (String)solrDocument.get("suspensionRatesByRaceGraph_stored_string");
+				if(suspensionRatesByRaceGraph != null)
+					oReportCard.setSuspensionRatesByRaceGraph(suspensionRatesByRaceGraph);
+			}
+
+			if(saves.contains("countySchoolBasedComplaintsGraph")) {
+				String countySchoolBasedComplaintsGraph = (String)solrDocument.get("countySchoolBasedComplaintsGraph_stored_string");
+				if(countySchoolBasedComplaintsGraph != null)
+					oReportCard.setCountySchoolBasedComplaintsGraph(countySchoolBasedComplaintsGraph);
+			}
+
+			if(saves.contains("schoolBasedComplaintsGraph")) {
+				String schoolBasedComplaintsGraph = (String)solrDocument.get("schoolBasedComplaintsGraph_stored_string");
+				if(schoolBasedComplaintsGraph != null)
+					oReportCard.setSchoolBasedComplaintsGraph(schoolBasedComplaintsGraph);
+			}
 		}
 
 		super.populateCluster(solrDocument);
@@ -13854,6 +14635,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(reportCardEndYear != null) {
 			document.addField("reportCardEndYear_indexed_int", reportCardEndYear);
 			document.addField("reportCardEndYear_stored_int", reportCardEndYear);
+		}
+		if(reportCardYearsStr != null) {
+			document.addField("reportCardYearsStr_indexed_string", reportCardYearsStr);
+			document.addField("reportCardYearsStr_stored_string", reportCardYearsStr);
 		}
 		if(agencyKey != null) {
 			document.addField("agencyKey_indexed_long", agencyKey);
@@ -14263,6 +15048,36 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			document.addField("agencyCompleteName_indexed_string", agencyCompleteName);
 			document.addField("agencyCompleteName_stored_string", agencyCompleteName);
 		}
+		if(agencyDemographicsGraph != null) {
+			document.addField("agencyDemographicsGraph_stored_string", agencyDemographicsGraph);
+		}
+		if(agencyStudentsByRaceGraph != null) {
+			document.addField("agencyStudentsByRaceGraph_stored_string", agencyStudentsByRaceGraph);
+		}
+		if(agencyTeachersByRaceGraph != null) {
+			document.addField("agencyTeachersByRaceGraph_stored_string", agencyTeachersByRaceGraph);
+		}
+		if(agencyGrades3To8Graph != null) {
+			document.addField("agencyGrades3To8Graph_stored_string", agencyGrades3To8Graph);
+		}
+		if(agencyGrades9To12Graph != null) {
+			document.addField("agencyGrades9To12Graph_stored_string", agencyGrades9To12Graph);
+		}
+		if(agencyGraduatesWithin4YearsGraph != null) {
+			document.addField("agencyGraduatesWithin4YearsGraph_stored_string", agencyGraduatesWithin4YearsGraph);
+		}
+		if(suspensionsByRaceGraph != null) {
+			document.addField("suspensionsByRaceGraph_stored_string", suspensionsByRaceGraph);
+		}
+		if(suspensionRatesByRaceGraph != null) {
+			document.addField("suspensionRatesByRaceGraph_stored_string", suspensionRatesByRaceGraph);
+		}
+		if(countySchoolBasedComplaintsGraph != null) {
+			document.addField("countySchoolBasedComplaintsGraph_stored_string", countySchoolBasedComplaintsGraph);
+		}
+		if(schoolBasedComplaintsGraph != null) {
+			document.addField("schoolBasedComplaintsGraph_stored_string", schoolBasedComplaintsGraph);
+		}
 		super.indexCluster(document);
 
 	}
@@ -14292,6 +15107,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return "reportCardStartYear_indexed_int";
 			case "reportCardEndYear":
 				return "reportCardEndYear_indexed_int";
+			case "reportCardYearsStr":
+				return "reportCardYearsStr_indexed_string";
 			case "agencyKey":
 				return "agencyKey_indexed_long";
 			case "pupilsTotal":
@@ -14536,6 +15353,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		Integer reportCardEndYear = (Integer)solrDocument.get("reportCardEndYear_stored_int");
 		if(reportCardEndYear != null)
 			oReportCard.setReportCardEndYear(reportCardEndYear);
+
+		String reportCardYearsStr = (String)solrDocument.get("reportCardYearsStr_stored_string");
+		if(reportCardYearsStr != null)
+			oReportCard.setReportCardYearsStr(reportCardYearsStr);
 
 		Long agencyKey = (Long)solrDocument.get("agencyKey_stored_long");
 		if(agencyKey != null)
@@ -14945,6 +15766,46 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(agencyCompleteName != null)
 			oReportCard.setAgencyCompleteName(agencyCompleteName);
 
+		String agencyDemographicsGraph = (String)solrDocument.get("agencyDemographicsGraph_stored_string");
+		if(agencyDemographicsGraph != null)
+			oReportCard.setAgencyDemographicsGraph(agencyDemographicsGraph);
+
+		String agencyStudentsByRaceGraph = (String)solrDocument.get("agencyStudentsByRaceGraph_stored_string");
+		if(agencyStudentsByRaceGraph != null)
+			oReportCard.setAgencyStudentsByRaceGraph(agencyStudentsByRaceGraph);
+
+		String agencyTeachersByRaceGraph = (String)solrDocument.get("agencyTeachersByRaceGraph_stored_string");
+		if(agencyTeachersByRaceGraph != null)
+			oReportCard.setAgencyTeachersByRaceGraph(agencyTeachersByRaceGraph);
+
+		String agencyGrades3To8Graph = (String)solrDocument.get("agencyGrades3To8Graph_stored_string");
+		if(agencyGrades3To8Graph != null)
+			oReportCard.setAgencyGrades3To8Graph(agencyGrades3To8Graph);
+
+		String agencyGrades9To12Graph = (String)solrDocument.get("agencyGrades9To12Graph_stored_string");
+		if(agencyGrades9To12Graph != null)
+			oReportCard.setAgencyGrades9To12Graph(agencyGrades9To12Graph);
+
+		String agencyGraduatesWithin4YearsGraph = (String)solrDocument.get("agencyGraduatesWithin4YearsGraph_stored_string");
+		if(agencyGraduatesWithin4YearsGraph != null)
+			oReportCard.setAgencyGraduatesWithin4YearsGraph(agencyGraduatesWithin4YearsGraph);
+
+		String suspensionsByRaceGraph = (String)solrDocument.get("suspensionsByRaceGraph_stored_string");
+		if(suspensionsByRaceGraph != null)
+			oReportCard.setSuspensionsByRaceGraph(suspensionsByRaceGraph);
+
+		String suspensionRatesByRaceGraph = (String)solrDocument.get("suspensionRatesByRaceGraph_stored_string");
+		if(suspensionRatesByRaceGraph != null)
+			oReportCard.setSuspensionRatesByRaceGraph(suspensionRatesByRaceGraph);
+
+		String countySchoolBasedComplaintsGraph = (String)solrDocument.get("countySchoolBasedComplaintsGraph_stored_string");
+		if(countySchoolBasedComplaintsGraph != null)
+			oReportCard.setCountySchoolBasedComplaintsGraph(countySchoolBasedComplaintsGraph);
+
+		String schoolBasedComplaintsGraph = (String)solrDocument.get("schoolBasedComplaintsGraph_stored_string");
+		if(schoolBasedComplaintsGraph != null)
+			oReportCard.setSchoolBasedComplaintsGraph(schoolBasedComplaintsGraph);
+
 		super.storeCluster(solrDocument);
 	}
 
@@ -14963,6 +15824,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("reportCardStartYear");
 			if(!Objects.equals(reportCardEndYear, original.getReportCardEndYear()))
 				apiRequest.addVars("reportCardEndYear");
+			if(!Objects.equals(reportCardYearsStr, original.getReportCardYearsStr()))
+				apiRequest.addVars("reportCardYearsStr");
 			if(!Objects.equals(agencyKey, original.getAgencyKey()))
 				apiRequest.addVars("agencyKey");
 			if(!Objects.equals(pupilsTotal, original.getPupilsTotal()))
@@ -15167,6 +16030,26 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("agencyName");
 			if(!Objects.equals(agencyCompleteName, original.getAgencyCompleteName()))
 				apiRequest.addVars("agencyCompleteName");
+			if(!Objects.equals(agencyDemographicsGraph, original.getAgencyDemographicsGraph()))
+				apiRequest.addVars("agencyDemographicsGraph");
+			if(!Objects.equals(agencyStudentsByRaceGraph, original.getAgencyStudentsByRaceGraph()))
+				apiRequest.addVars("agencyStudentsByRaceGraph");
+			if(!Objects.equals(agencyTeachersByRaceGraph, original.getAgencyTeachersByRaceGraph()))
+				apiRequest.addVars("agencyTeachersByRaceGraph");
+			if(!Objects.equals(agencyGrades3To8Graph, original.getAgencyGrades3To8Graph()))
+				apiRequest.addVars("agencyGrades3To8Graph");
+			if(!Objects.equals(agencyGrades9To12Graph, original.getAgencyGrades9To12Graph()))
+				apiRequest.addVars("agencyGrades9To12Graph");
+			if(!Objects.equals(agencyGraduatesWithin4YearsGraph, original.getAgencyGraduatesWithin4YearsGraph()))
+				apiRequest.addVars("agencyGraduatesWithin4YearsGraph");
+			if(!Objects.equals(suspensionsByRaceGraph, original.getSuspensionsByRaceGraph()))
+				apiRequest.addVars("suspensionsByRaceGraph");
+			if(!Objects.equals(suspensionRatesByRaceGraph, original.getSuspensionRatesByRaceGraph()))
+				apiRequest.addVars("suspensionRatesByRaceGraph");
+			if(!Objects.equals(countySchoolBasedComplaintsGraph, original.getCountySchoolBasedComplaintsGraph()))
+				apiRequest.addVars("countySchoolBasedComplaintsGraph");
+			if(!Objects.equals(schoolBasedComplaintsGraph, original.getSchoolBasedComplaintsGraph()))
+				apiRequest.addVars("schoolBasedComplaintsGraph");
 			super.apiRequestCluster();
 		}
 	}
@@ -15176,7 +16059,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	//////////////
 
 	@Override public int hashCode() {
-		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, agencyKey, pupilsTotal, pupilsIndianFemale, pupilsIndianMale, pupilsIndianTotal, pupilsIndianPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsHispanicFemale, pupilsHispanicMale, pupilsHispanicTotal, pupilsHispanicPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, teachersMale, teachersFemale, teachersTotal, teachersWhiteTotal, teachersWhitePercent, teachersBlackTotal, teachersBlackPercent, teachersOtherTotal, teachersOtherPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, delinquentComplaintsAsian, delinquentComplaintsAsianPercent, delinquentComplaintsBlack, delinquentComplaintsBlackPercent, delinquentComplaintsHispanic, delinquentComplaintsHispanicPercent, delinquentComplaintsMultiRacial, delinquentComplaintsMultiRacialPercent, delinquentComplaintsIndian, delinquentComplaintsIndianPercent, delinquentComplaintsWhite, delinquentComplaintsWhitePercent, delinquentComplaintsPacificIslander, delinquentComplaintsPacificIslanderPercent, shortTermSuspensionsTotal, longTermSuspensionsTotal, expulsionsTotal, shortTermSuspensionsAsianFemale, shortTermSuspensionsAsianMale, shortTermSuspensionsAsianTotal, shortTermSuspensionsAsianPercent, shortTermSuspensionsAsianRate, shortTermSuspensionsBlackFemale, shortTermSuspensionsBlackMale, shortTermSuspensionsBlackTotal, shortTermSuspensionsBlackPercent, shortTermSuspensionsBlackRate, shortTermSuspensionsHispanicFemale, shortTermSuspensionsHispanicMale, shortTermSuspensionsHispanicTotal, shortTermSuspensionsHispanicPercent, shortTermSuspensionsHispanicRate, shortTermSuspensionsIndianFemale, shortTermSuspensionsIndianMale, shortTermSuspensionsIndianTotal, shortTermSuspensionsIndianPercent, shortTermSuspensionsIndianRate, shortTermSuspensionsMultiRacialFemale, shortTermSuspensionsMultiRacialMale, shortTermSuspensionsMultiRacialTotal, shortTermSuspensionsMultiRacialPercent, shortTermSuspensionsMultiRacialRate, shortTermSuspensionsPacificIslanderFemale, shortTermSuspensionsPacificIslanderMale, shortTermSuspensionsPacificIslanderTotal, shortTermSuspensionsPacificIslanderPercent, shortTermSuspensionsPacificIslanderRate, shortTermSuspensionsWhiteFemale, shortTermSuspensionsWhiteMale, shortTermSuspensionsWhiteTotal, shortTermSuspensionsWhitePercent, shortTermSuspensionsWhiteRate, shortTermSuspensionsBlackVsWhite, stateKey, stateId, agencyId, stateName, stateAbbreviation, agencyName, agencyCompleteName);
+		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, reportCardYearsStr, agencyKey, pupilsTotal, pupilsIndianFemale, pupilsIndianMale, pupilsIndianTotal, pupilsIndianPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsHispanicFemale, pupilsHispanicMale, pupilsHispanicTotal, pupilsHispanicPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, teachersMale, teachersFemale, teachersTotal, teachersWhiteTotal, teachersWhitePercent, teachersBlackTotal, teachersBlackPercent, teachersOtherTotal, teachersOtherPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, delinquentComplaintsAsian, delinquentComplaintsAsianPercent, delinquentComplaintsBlack, delinquentComplaintsBlackPercent, delinquentComplaintsHispanic, delinquentComplaintsHispanicPercent, delinquentComplaintsMultiRacial, delinquentComplaintsMultiRacialPercent, delinquentComplaintsIndian, delinquentComplaintsIndianPercent, delinquentComplaintsWhite, delinquentComplaintsWhitePercent, delinquentComplaintsPacificIslander, delinquentComplaintsPacificIslanderPercent, shortTermSuspensionsTotal, longTermSuspensionsTotal, expulsionsTotal, shortTermSuspensionsAsianFemale, shortTermSuspensionsAsianMale, shortTermSuspensionsAsianTotal, shortTermSuspensionsAsianPercent, shortTermSuspensionsAsianRate, shortTermSuspensionsBlackFemale, shortTermSuspensionsBlackMale, shortTermSuspensionsBlackTotal, shortTermSuspensionsBlackPercent, shortTermSuspensionsBlackRate, shortTermSuspensionsHispanicFemale, shortTermSuspensionsHispanicMale, shortTermSuspensionsHispanicTotal, shortTermSuspensionsHispanicPercent, shortTermSuspensionsHispanicRate, shortTermSuspensionsIndianFemale, shortTermSuspensionsIndianMale, shortTermSuspensionsIndianTotal, shortTermSuspensionsIndianPercent, shortTermSuspensionsIndianRate, shortTermSuspensionsMultiRacialFemale, shortTermSuspensionsMultiRacialMale, shortTermSuspensionsMultiRacialTotal, shortTermSuspensionsMultiRacialPercent, shortTermSuspensionsMultiRacialRate, shortTermSuspensionsPacificIslanderFemale, shortTermSuspensionsPacificIslanderMale, shortTermSuspensionsPacificIslanderTotal, shortTermSuspensionsPacificIslanderPercent, shortTermSuspensionsPacificIslanderRate, shortTermSuspensionsWhiteFemale, shortTermSuspensionsWhiteMale, shortTermSuspensionsWhiteTotal, shortTermSuspensionsWhitePercent, shortTermSuspensionsWhiteRate, shortTermSuspensionsBlackVsWhite, stateKey, stateId, agencyId, stateName, stateAbbreviation, agencyName, agencyCompleteName, agencyDemographicsGraph, agencyStudentsByRaceGraph, agencyTeachersByRaceGraph, agencyGrades3To8Graph, agencyGrades9To12Graph, agencyGraduatesWithin4YearsGraph, suspensionsByRaceGraph, suspensionRatesByRaceGraph, countySchoolBasedComplaintsGraph, schoolBasedComplaintsGraph);
 	}
 
 	////////////
@@ -15193,6 +16076,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				&& Objects.equals( reportCardKey, that.reportCardKey )
 				&& Objects.equals( reportCardStartYear, that.reportCardStartYear )
 				&& Objects.equals( reportCardEndYear, that.reportCardEndYear )
+				&& Objects.equals( reportCardYearsStr, that.reportCardYearsStr )
 				&& Objects.equals( agencyKey, that.agencyKey )
 				&& Objects.equals( pupilsTotal, that.pupilsTotal )
 				&& Objects.equals( pupilsIndianFemale, that.pupilsIndianFemale )
@@ -15294,7 +16178,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				&& Objects.equals( stateName, that.stateName )
 				&& Objects.equals( stateAbbreviation, that.stateAbbreviation )
 				&& Objects.equals( agencyName, that.agencyName )
-				&& Objects.equals( agencyCompleteName, that.agencyCompleteName );
+				&& Objects.equals( agencyCompleteName, that.agencyCompleteName )
+				&& Objects.equals( agencyDemographicsGraph, that.agencyDemographicsGraph )
+				&& Objects.equals( agencyStudentsByRaceGraph, that.agencyStudentsByRaceGraph )
+				&& Objects.equals( agencyTeachersByRaceGraph, that.agencyTeachersByRaceGraph )
+				&& Objects.equals( agencyGrades3To8Graph, that.agencyGrades3To8Graph )
+				&& Objects.equals( agencyGrades9To12Graph, that.agencyGrades9To12Graph )
+				&& Objects.equals( agencyGraduatesWithin4YearsGraph, that.agencyGraduatesWithin4YearsGraph )
+				&& Objects.equals( suspensionsByRaceGraph, that.suspensionsByRaceGraph )
+				&& Objects.equals( suspensionRatesByRaceGraph, that.suspensionRatesByRaceGraph )
+				&& Objects.equals( countySchoolBasedComplaintsGraph, that.countySchoolBasedComplaintsGraph )
+				&& Objects.equals( schoolBasedComplaintsGraph, that.schoolBasedComplaintsGraph );
 	}
 
 	//////////////
@@ -15308,6 +16202,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		sb.append( "reportCardKey: " ).append(reportCardKey);
 		sb.append( ", reportCardStartYear: " ).append(reportCardStartYear);
 		sb.append( ", reportCardEndYear: " ).append(reportCardEndYear);
+		sb.append( ", reportCardYearsStr: \"" ).append(reportCardYearsStr).append( "\"" );
 		sb.append( ", agencyKey: " ).append(agencyKey);
 		sb.append( ", pupilsTotal: " ).append(pupilsTotal);
 		sb.append( ", pupilsIndianFemale: " ).append(pupilsIndianFemale);
@@ -15410,6 +16305,16 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		sb.append( ", stateAbbreviation: \"" ).append(stateAbbreviation).append( "\"" );
 		sb.append( ", agencyName: \"" ).append(agencyName).append( "\"" );
 		sb.append( ", agencyCompleteName: \"" ).append(agencyCompleteName).append( "\"" );
+		sb.append( ", agencyDemographicsGraph: \"" ).append(agencyDemographicsGraph).append( "\"" );
+		sb.append( ", agencyStudentsByRaceGraph: \"" ).append(agencyStudentsByRaceGraph).append( "\"" );
+		sb.append( ", agencyTeachersByRaceGraph: \"" ).append(agencyTeachersByRaceGraph).append( "\"" );
+		sb.append( ", agencyGrades3To8Graph: \"" ).append(agencyGrades3To8Graph).append( "\"" );
+		sb.append( ", agencyGrades9To12Graph: \"" ).append(agencyGrades9To12Graph).append( "\"" );
+		sb.append( ", agencyGraduatesWithin4YearsGraph: \"" ).append(agencyGraduatesWithin4YearsGraph).append( "\"" );
+		sb.append( ", suspensionsByRaceGraph: \"" ).append(suspensionsByRaceGraph).append( "\"" );
+		sb.append( ", suspensionRatesByRaceGraph: \"" ).append(suspensionRatesByRaceGraph).append( "\"" );
+		sb.append( ", countySchoolBasedComplaintsGraph: \"" ).append(countySchoolBasedComplaintsGraph).append( "\"" );
+		sb.append( ", schoolBasedComplaintsGraph: \"" ).append(schoolBasedComplaintsGraph).append( "\"" );
 		sb.append(" }");
 		return sb.toString();
 	}
