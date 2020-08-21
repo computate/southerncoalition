@@ -80,43 +80,41 @@ public abstract class SiteStateGenPageGen<DEV> extends PageLayout {
 		return (SiteStateGenPage)this;
 	}
 
-	///////////////
-	// siteState //
-	///////////////
+	////////////////
+	// siteState_ //
+	////////////////
 
-	/**	 The entity siteState
+	/**	 The entity siteState_
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonInclude(Include.NON_NULL)
-	protected SiteState siteState;
+	protected SiteState siteState_;
 	@JsonIgnore
-	public Wrap<SiteState> siteStateWrap = new Wrap<SiteState>().p(this).c(SiteState.class).var("siteState").o(siteState);
+	public Wrap<SiteState> siteState_Wrap = new Wrap<SiteState>().p(this).c(SiteState.class).var("siteState_").o(siteState_);
 
-	/**	<br/> The entity siteState
+	/**	<br/> The entity siteState_
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.state.SiteStateGenPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:siteState">Find the entity siteState in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.state.SiteStateGenPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:siteState_">Find the entity siteState_ in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _siteState(Wrap<SiteState> c);
+	protected abstract void _siteState_(Wrap<SiteState> c);
 
-	public SiteState getSiteState() {
-		return siteState;
+	public SiteState getSiteState_() {
+		return siteState_;
 	}
 
-	public void setSiteState(SiteState siteState) {
-		this.siteState = siteState;
-		this.siteStateWrap.alreadyInitialized = true;
+	public void setSiteState_(SiteState siteState_) {
+		this.siteState_ = siteState_;
+		this.siteState_Wrap.alreadyInitialized = true;
 	}
-	protected SiteStateGenPage siteStateInit() {
-		if(!siteStateWrap.alreadyInitialized) {
-			_siteState(siteStateWrap);
-			if(siteState == null)
-				setSiteState(siteStateWrap.o);
+	protected SiteStateGenPage siteState_Init() {
+		if(!siteState_Wrap.alreadyInitialized) {
+			_siteState_(siteState_Wrap);
+			if(siteState_ == null)
+				setSiteState_(siteState_Wrap.o);
 		}
-		if(siteState != null)
-			siteState.initDeepForClass(siteRequest_);
-		siteStateWrap.alreadyInitialized(true);
+		siteState_Wrap.alreadyInitialized(true);
 		return (SiteStateGenPage)this;
 	}
 
@@ -142,7 +140,7 @@ public abstract class SiteStateGenPageGen<DEV> extends PageLayout {
 
 	public void initSiteStateGenPage() {
 		listSiteStateInit();
-		siteStateInit();
+		siteState_Init();
 	}
 
 	@Override public void initDeepForClass(SiteRequestEnUS siteRequest_) {
@@ -157,8 +155,6 @@ public abstract class SiteStateGenPageGen<DEV> extends PageLayout {
 			super.siteRequestPageLayout(siteRequest_);
 		if(listSiteState != null)
 			listSiteState.setSiteRequest_(siteRequest_);
-		if(siteState != null)
-			siteState.setSiteRequest_(siteRequest_);
 	}
 
 	public void siteRequestForClass(SiteRequestEnUS siteRequest_) {
@@ -187,8 +183,8 @@ public abstract class SiteStateGenPageGen<DEV> extends PageLayout {
 		switch(var) {
 			case "listSiteState":
 				return oSiteStateGenPage.listSiteState;
-			case "siteState":
-				return oSiteStateGenPage.siteState;
+			case "siteState_":
+				return oSiteStateGenPage.siteState_;
 			default:
 				return super.obtainPageLayout(var);
 		}

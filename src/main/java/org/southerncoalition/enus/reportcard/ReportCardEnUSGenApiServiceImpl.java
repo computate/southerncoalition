@@ -1,7 +1,7 @@
 package org.southerncoalition.enus.reportcard;
 
-import org.southerncoalition.enus.county.SiteCountyEnUSGenApiServiceImpl;
-import org.southerncoalition.enus.county.SiteCounty;
+import org.southerncoalition.enus.agency.SiteAgencyEnUSGenApiServiceImpl;
+import org.southerncoalition.enus.agency.SiteAgency;
 import org.southerncoalition.enus.config.SiteConfig;
 import org.southerncoalition.enus.request.SiteRequestEnUS;
 import org.southerncoalition.enus.context.SiteContextEnUS;
@@ -739,18 +739,18 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "countyKey":
+					case "agencyKey":
 							{
 						Long l = Long.parseLong(jsonObject.getString(entityVar));
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_addA
-									, Tuple.of(pk, "countyKey", l, "reportCardKeys")
+									, Tuple.of(pk, "agencyKey", l, "reportCardKeys")
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.countyKey failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.agencyKey failed", b.cause())));
 							});
 						}));
 						}
@@ -1623,14 +1623,14 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "countyKey":
+					case "agencyKey":
 						{
 							Long l = Long.parseLong(jsonObject.getString(entityVar));
 							if(l != null) {
-								SearchList<SiteCounty> searchList = new SearchList<SiteCounty>();
+								SearchList<SiteAgency> searchList = new SearchList<SiteAgency>();
 								searchList.setQuery("*:*");
 								searchList.setStore(true);
-								searchList.setC(SiteCounty.class);
+								searchList.setC(SiteAgency.class);
 								searchList.addFilterQuery("deleted_indexed_boolean:false");
 								searchList.addFilterQuery("archived_indexed_boolean:false");
 								searchList.addFilterQuery((inheritPk ? "inheritPk" : "pk") + "_indexed_long:" + l);
@@ -1639,18 +1639,18 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 								if(l2 != null) {
 									futures.add(Future.future(a -> {
 										tx.preparedQuery(SiteContextEnUS.SQL_addA
-												, Tuple.of(pk, "countyKey", l2, "reportCardKeys")
+												, Tuple.of(pk, "agencyKey", l2, "reportCardKeys")
 												, b
 										-> {
 											if(b.succeeded())
 												a.handle(Future.succeededFuture());
 											else
-												a.handle(Future.failedFuture(new Exception("value ReportCard.countyKey failed", b.cause())));
+												a.handle(Future.failedFuture(new Exception("value ReportCard.agencyKey failed", b.cause())));
 										});
 									}));
 									if(!pks.contains(l2)) {
 										pks.add(l2);
-										classes.add("SiteCounty");
+										classes.add("SiteAgency");
 									}
 								}
 							}
@@ -2644,69 +2644,69 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							}));
 						}
 						break;
-					case "setCountyKey":
+					case "setAgencyKey":
 						{
-							Long l = o2.getCountyKey();
+							o2.setAgencyKey(jsonObject.getString(methodName));
+							Long l = o2.getAgencyKey();
 							if(l != null) {
-								SearchList<SiteCounty> searchList = new SearchList<SiteCounty>();
+								SearchList<SiteAgency> searchList = new SearchList<SiteAgency>();
 								searchList.setQuery("*:*");
 								searchList.setStore(true);
-								searchList.setC(SiteCounty.class);
+								searchList.setC(SiteAgency.class);
 								searchList.addFilterQuery("deleted_indexed_boolean:false");
 								searchList.addFilterQuery("archived_indexed_boolean:false");
 								searchList.addFilterQuery((inheritPk ? "inheritPk" : "pk") + "_indexed_long:" + l);
 								searchList.initDeepSearchList(siteRequest);
 								Long l2 = Optional.ofNullable(searchList.getList().stream().findFirst().orElse(null)).map(a -> a.getPk()).orElse(null);
-								if(l2 != null && !l2.equals(o.getCountyKey())) {
-									o2.setCountyKey(jsonObject.getString(methodName));
+								if(l2 != null && !l2.equals(o.getAgencyKey())) {
 									futures.add(Future.future(a -> {
 										tx.preparedQuery(SiteContextEnUS.SQL_addA
-												, Tuple.of(pk, "countyKey", l2, "reportCardKeys")
+												, Tuple.of(pk, "agencyKey", l2, "reportCardKeys")
 												, b
 										-> {
 											if(b.succeeded())
 												a.handle(Future.succeededFuture());
 											else
-												a.handle(Future.failedFuture(new Exception("value ReportCard.countyKey failed", b.cause())));
+												a.handle(Future.failedFuture(new Exception("value ReportCard.agencyKey failed", b.cause())));
 										});
 									}));
 									if(!pks.contains(l2)) {
 										pks.add(l2);
-										classes.add("SiteCounty");
+										classes.add("SiteAgency");
 									}
 								}
 							}
 						}
 						break;
-					case "removeCountyKey":
+					case "removeAgencyKey":
 						{
-							Long l = o2.getCountyKey();
+							o2.setAgencyKey(jsonObject.getString(methodName));
+							Long l = o2.getAgencyKey();
 							if(l != null) {
-								SearchList<SiteCounty> searchList = new SearchList<SiteCounty>();
+								SearchList<SiteAgency> searchList = new SearchList<SiteAgency>();
 								searchList.setQuery("*:*");
 								searchList.setStore(true);
-								searchList.setC(SiteCounty.class);
+								searchList.setC(SiteAgency.class);
 								searchList.addFilterQuery("deleted_indexed_boolean:false");
 								searchList.addFilterQuery("archived_indexed_boolean:false");
 								searchList.addFilterQuery((inheritPk ? "inheritPk" : "pk") + "_indexed_long:" + l);
 								searchList.initDeepSearchList(siteRequest);
 								Long l2 = Optional.ofNullable(searchList.getList().stream().findFirst().orElse(null)).map(a -> a.getPk()).orElse(null);
-								if(l2 != null && l2.equals(o.getCountyKey())) {
-									o2.setCountyKey(jsonObject.getString(methodName));
+								if(l2 != null) {
 									futures.add(Future.future(a -> {
 										tx.preparedQuery(SiteContextEnUS.SQL_removeA
-												, Tuple.of(pk, "countyKey", l2, "reportCardKeys")
+												, Tuple.of(pk, "agencyKey", l2, "reportCardKeys")
 												, b
 										-> {
 											if(b.succeeded())
 												a.handle(Future.succeededFuture());
 											else
-												a.handle(Future.failedFuture(new Exception("value ReportCard.countyKey failed", b.cause())));
+												a.handle(Future.failedFuture(new Exception("value ReportCard.agencyKey failed", b.cause())));
 										});
 									}));
 									if(!pks.contains(l2)) {
 										pks.add(l2);
-										classes.add("SiteCounty");
+										classes.add("SiteAgency");
 									}
 								}
 							}
@@ -5038,7 +5038,7 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 			if("*".equals(searchList.getQuery()) && searchList.getSorts().size() == 0) {
 				searchList.addSort("reportCardStartYear_indexed_int", ORDER.desc);
 				searchList.addSort("stateName_indexed_string", ORDER.asc);
-				searchList.addSort("countyName_indexed_string", ORDER.asc);
+				searchList.addSort("agencyName_indexed_string", ORDER.asc);
 			}
 			searchList.initDeepForClass(siteRequest);
 			eventHandler.handle(Future.succeededFuture(searchList));
@@ -5150,7 +5150,7 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 				searchList.setQuery("*:*");
 				searchList.setC(ReportCard.class);
 				searchList.addFilterQuery("modified_indexed_date:[" + DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'").format(ZonedDateTime.ofInstant(siteRequest.getApiRequest_().getCreated().toInstant(), ZoneId.of("UTC"))) + " TO *]");
-				searchList.add("json.facet", "{countyKey:{terms:{field:countyKey_indexed_longs, limit:1000}}}");
+				searchList.add("json.facet", "{agencyKey:{terms:{field:agencyKey_indexed_longs, limit:1000}}}");
 				searchList.setRows(1000);
 				searchList.initDeepSearchList(siteRequest);
 				List<Future> futures = new ArrayList<>();
@@ -5159,18 +5159,18 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 					Long pk2 = pks.get(i);
 					String classSimpleName2 = classes.get(i);
 
-					if("SiteCounty".equals(classSimpleName2) && pk2 != null) {
-						SearchList<SiteCounty> searchList2 = new SearchList<SiteCounty>();
+					if("SiteAgency".equals(classSimpleName2) && pk2 != null) {
+						SearchList<SiteAgency> searchList2 = new SearchList<SiteAgency>();
 						searchList2.setStore(true);
 						searchList2.setQuery("*:*");
-						searchList2.setC(SiteCounty.class);
+						searchList2.setC(SiteAgency.class);
 						searchList2.addFilterQuery("pk_indexed_long:" + pk2);
 						searchList2.setRows(1);
 						searchList2.initDeepSearchList(siteRequest);
-						SiteCounty o2 = searchList2.getList().stream().findFirst().orElse(null);
+						SiteAgency o2 = searchList2.getList().stream().findFirst().orElse(null);
 
 						if(o2 != null) {
-							SiteCountyEnUSGenApiServiceImpl service = new SiteCountyEnUSGenApiServiceImpl(siteRequest.getSiteContext_());
+							SiteAgencyEnUSGenApiServiceImpl service = new SiteAgencyEnUSGenApiServiceImpl(siteRequest.getSiteContext_());
 							SiteRequestEnUS siteRequest2 = generateSiteRequestEnUSForReportCard(siteContext, siteRequest.getOperationRequest(), new JsonObject());
 							ApiRequest apiRequest2 = new ApiRequest();
 							apiRequest2.setRows(1);
@@ -5178,15 +5178,15 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							apiRequest2.setNumPATCH(0L);
 							apiRequest2.initDeepApiRequest(siteRequest2);
 							siteRequest2.setApiRequest_(apiRequest2);
-							siteRequest2.getVertx().eventBus().publish("websocketSiteCounty", JsonObject.mapFrom(apiRequest2).toString());
+							siteRequest2.getVertx().eventBus().publish("websocketSiteAgency", JsonObject.mapFrom(apiRequest2).toString());
 
 							o2.setPk(pk2);
 							o2.setSiteRequest_(siteRequest2);
 							futures.add(
-								service.patchSiteCountyFuture(o2, false, a -> {
+								service.patchSiteAgencyFuture(o2, false, a -> {
 									if(a.succeeded()) {
 									} else {
-										LOGGER.info(String.format("SiteCounty %s failed. ", pk2));
+										LOGGER.info(String.format("SiteAgency %s failed. ", pk2));
 										eventHandler.handle(Future.failedFuture(a.cause()));
 									}
 								})

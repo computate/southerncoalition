@@ -4,6 +4,7 @@ import java.util.Arrays;
 import org.southerncoalition.enus.request.api.ApiRequest;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import org.southerncoalition.enus.search.SearchList;
+import org.southerncoalition.enus.agency.SiteAgency;
 import java.util.HashMap;
 import org.apache.commons.lang3.StringUtils;
 import java.lang.Integer;
@@ -33,7 +34,6 @@ import java.util.Objects;
 import org.southerncoalition.enus.design.DesignDisplayGenPage;
 import io.vertx.core.json.JsonArray;
 import java.util.List;
-import org.southerncoalition.enus.county.SiteCounty;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.southerncoalition.enus.reportcard.ReportCard;
 import java.util.Optional;
@@ -330,46 +330,38 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 	//////////////////////////
 
 	/**	 The entity reportCardStartYears
-	 *	Il est construit avant d'être initialisé avec le constructeur par défaut List<String>(). 
+	 *	Il est construit avant d'être initialisé avec le constructeur par défaut List<ReportCard>(). 
 	 */
 	@JsonInclude(Include.NON_NULL)
-	protected List<String> reportCardStartYears = new ArrayList<String>();
+	protected List<ReportCard> reportCardStartYears = new ArrayList<ReportCard>();
 	@JsonIgnore
-	public Wrap<List<String>> reportCardStartYearsWrap = new Wrap<List<String>>().p(this).c(List.class).var("reportCardStartYears").o(reportCardStartYears);
+	public Wrap<List<ReportCard>> reportCardStartYearsWrap = new Wrap<List<ReportCard>>().p(this).c(List.class).var("reportCardStartYears").o(reportCardStartYears);
 
 	/**	<br/> The entity reportCardStartYears
-	 *  It is constructed before being initialized with the constructor by default List<String>(). 
+	 *  It is constructed before being initialized with the constructor by default List<ReportCard>(). 
 	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCardStartYears">Find the entity reportCardStartYears in Solr</a>
 	 * <br/>
 	 * @param reportCardStartYears is the entity already constructed. 
 	 **/
-	protected abstract void _reportCardStartYears(List<String> l);
+	protected abstract void _reportCardStartYears(List<ReportCard> l);
 
-	public List<String> getReportCardStartYears() {
+	public List<ReportCard> getReportCardStartYears() {
 		return reportCardStartYears;
 	}
 
-	public void setReportCardStartYears(List<String> reportCardStartYears) {
+	public void setReportCardStartYears(List<ReportCard> reportCardStartYears) {
 		this.reportCardStartYears = reportCardStartYears;
 		this.reportCardStartYearsWrap.alreadyInitialized = true;
 	}
-	public DesignDisplayPage addReportCardStartYears(String...objets) {
-		for(String o : objets) {
+	public DesignDisplayPage addReportCardStartYears(ReportCard...objets) {
+		for(ReportCard o : objets) {
 			addReportCardStartYears(o);
 		}
 		return (DesignDisplayPage)this;
 	}
-	public DesignDisplayPage addReportCardStartYears(String o) {
+	public DesignDisplayPage addReportCardStartYears(ReportCard o) {
 		if(o != null && !reportCardStartYears.contains(o))
 			this.reportCardStartYears.add(o);
-		return (DesignDisplayPage)this;
-	}
-	public DesignDisplayPage setReportCardStartYears(JsonArray objets) {
-		reportCardStartYears.clear();
-		for(int i = 0; i < objets.size(); i++) {
-			String o = objets.getString(i);
-			addReportCardStartYears(o);
-		}
 		return (DesignDisplayPage)this;
 	}
 	protected DesignDisplayPage reportCardStartYearsInit() {
@@ -380,30 +372,6 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		return (DesignDisplayPage)this;
 	}
 
-	public List<String> solrReportCardStartYears() {
-		return reportCardStartYears;
-	}
-
-	public String strReportCardStartYears() {
-		return reportCardStartYears == null ? "" : reportCardStartYears.toString();
-	}
-
-	public String jsonReportCardStartYears() {
-		return reportCardStartYears == null ? "" : reportCardStartYears.toString();
-	}
-
-	public String nomAffichageReportCardStartYears() {
-		return null;
-	}
-
-	public String htmTooltipReportCardStartYears() {
-		return null;
-	}
-
-	public String htmReportCardStartYears() {
-		return reportCardStartYears == null ? "" : StringEscapeUtils.escapeHtml4(strReportCardStartYears());
-	}
-
 	////////////////////////////////
 	// reportCardStartYearCurrent //
 	////////////////////////////////
@@ -412,9 +380,9 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonInclude(Include.NON_NULL)
-	protected String reportCardStartYearCurrent;
+	protected ReportCard reportCardStartYearCurrent;
 	@JsonIgnore
-	public Wrap<String> reportCardStartYearCurrentWrap = new Wrap<String>().p(this).c(String.class).var("reportCardStartYearCurrent").o(reportCardStartYearCurrent);
+	public Wrap<ReportCard> reportCardStartYearCurrentWrap = new Wrap<ReportCard>().p(this).c(ReportCard.class).var("reportCardStartYearCurrent").o(reportCardStartYearCurrent);
 
 	/**	<br/> The entity reportCardStartYearCurrent
 	 *  is defined as null before being initialized. 
@@ -422,13 +390,13 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _reportCardStartYearCurrent(Wrap<String> c);
+	protected abstract void _reportCardStartYearCurrent(Wrap<ReportCard> c);
 
-	public String getReportCardStartYearCurrent() {
+	public ReportCard getReportCardStartYearCurrent() {
 		return reportCardStartYearCurrent;
 	}
 
-	public void setReportCardStartYearCurrent(String reportCardStartYearCurrent) {
+	public void setReportCardStartYearCurrent(ReportCard reportCardStartYearCurrent) {
 		this.reportCardStartYearCurrent = reportCardStartYearCurrent;
 		this.reportCardStartYearCurrentWrap.alreadyInitialized = true;
 	}
@@ -438,32 +406,10 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 			if(reportCardStartYearCurrent == null)
 				setReportCardStartYearCurrent(reportCardStartYearCurrentWrap.o);
 		}
+		if(reportCardStartYearCurrent != null)
+			reportCardStartYearCurrent.initDeepForClass(siteRequest_);
 		reportCardStartYearCurrentWrap.alreadyInitialized(true);
 		return (DesignDisplayPage)this;
-	}
-
-	public String solrReportCardStartYearCurrent() {
-		return reportCardStartYearCurrent;
-	}
-
-	public String strReportCardStartYearCurrent() {
-		return reportCardStartYearCurrent == null ? "" : reportCardStartYearCurrent;
-	}
-
-	public String jsonReportCardStartYearCurrent() {
-		return reportCardStartYearCurrent == null ? "" : reportCardStartYearCurrent;
-	}
-
-	public String nomAffichageReportCardStartYearCurrent() {
-		return null;
-	}
-
-	public String htmTooltipReportCardStartYearCurrent() {
-		return null;
-	}
-
-	public String htmReportCardStartYearCurrent() {
-		return reportCardStartYearCurrent == null ? "" : StringEscapeUtils.escapeHtml4(strReportCardStartYearCurrent());
 	}
 
 	/////////////////
@@ -601,51 +547,51 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 	}
 
 	/////////////////////////
-	// reportCardCounties_ //
+	// reportCardAgencies_ //
 	/////////////////////////
 
-	/**	 The entity reportCardCounties_
+	/**	 The entity reportCardAgencies_
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonInclude(Include.NON_NULL)
-	protected List<ReportCard> reportCardCounties_;
+	protected List<ReportCard> reportCardAgencies_;
 	@JsonIgnore
-	public Wrap<List<ReportCard>> reportCardCounties_Wrap = new Wrap<List<ReportCard>>().p(this).c(List.class).var("reportCardCounties_").o(reportCardCounties_);
+	public Wrap<List<ReportCard>> reportCardAgencies_Wrap = new Wrap<List<ReportCard>>().p(this).c(List.class).var("reportCardAgencies_").o(reportCardAgencies_);
 
-	/**	<br/> The entity reportCardCounties_
+	/**	<br/> The entity reportCardAgencies_
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCardCounties_">Find the entity reportCardCounties_ in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCardAgencies_">Find the entity reportCardAgencies_ in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _reportCardCounties_(Wrap<List<ReportCard>> c);
+	protected abstract void _reportCardAgencies_(Wrap<List<ReportCard>> c);
 
-	public List<ReportCard> getReportCardCounties_() {
-		return reportCardCounties_;
+	public List<ReportCard> getReportCardAgencies_() {
+		return reportCardAgencies_;
 	}
 
-	public void setReportCardCounties_(List<ReportCard> reportCardCounties_) {
-		this.reportCardCounties_ = reportCardCounties_;
-		this.reportCardCounties_Wrap.alreadyInitialized = true;
+	public void setReportCardAgencies_(List<ReportCard> reportCardAgencies_) {
+		this.reportCardAgencies_ = reportCardAgencies_;
+		this.reportCardAgencies_Wrap.alreadyInitialized = true;
 	}
-	public DesignDisplayPage addReportCardCounties_(ReportCard...objets) {
+	public DesignDisplayPage addReportCardAgencies_(ReportCard...objets) {
 		for(ReportCard o : objets) {
-			addReportCardCounties_(o);
+			addReportCardAgencies_(o);
 		}
 		return (DesignDisplayPage)this;
 	}
-	public DesignDisplayPage addReportCardCounties_(ReportCard o) {
-		if(o != null && !reportCardCounties_.contains(o))
-			this.reportCardCounties_.add(o);
+	public DesignDisplayPage addReportCardAgencies_(ReportCard o) {
+		if(o != null && !reportCardAgencies_.contains(o))
+			this.reportCardAgencies_.add(o);
 		return (DesignDisplayPage)this;
 	}
-	protected DesignDisplayPage reportCardCounties_Init() {
-		if(!reportCardCounties_Wrap.alreadyInitialized) {
-			_reportCardCounties_(reportCardCounties_Wrap);
-			if(reportCardCounties_ == null)
-				setReportCardCounties_(reportCardCounties_Wrap.o);
+	protected DesignDisplayPage reportCardAgencies_Init() {
+		if(!reportCardAgencies_Wrap.alreadyInitialized) {
+			_reportCardAgencies_(reportCardAgencies_Wrap);
+			if(reportCardAgencies_ == null)
+				setReportCardAgencies_(reportCardAgencies_Wrap.o);
 		}
-		reportCardCounties_Wrap.alreadyInitialized(true);
+		reportCardAgencies_Wrap.alreadyInitialized(true);
 		return (DesignDisplayPage)this;
 	}
 
@@ -688,40 +634,40 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 	}
 
 	///////////////////////
-	// reportCardCounty_ //
+	// reportCardAgency_ //
 	///////////////////////
 
-	/**	 The entity reportCardCounty_
+	/**	 The entity reportCardAgency_
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonInclude(Include.NON_NULL)
-	protected ReportCard reportCardCounty_;
+	protected ReportCard reportCardAgency_;
 	@JsonIgnore
-	public Wrap<ReportCard> reportCardCounty_Wrap = new Wrap<ReportCard>().p(this).c(ReportCard.class).var("reportCardCounty_").o(reportCardCounty_);
+	public Wrap<ReportCard> reportCardAgency_Wrap = new Wrap<ReportCard>().p(this).c(ReportCard.class).var("reportCardAgency_").o(reportCardAgency_);
 
-	/**	<br/> The entity reportCardCounty_
+	/**	<br/> The entity reportCardAgency_
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCardCounty_">Find the entity reportCardCounty_ in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCardAgency_">Find the entity reportCardAgency_ in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _reportCardCounty_(Wrap<ReportCard> c);
+	protected abstract void _reportCardAgency_(Wrap<ReportCard> c);
 
-	public ReportCard getReportCardCounty_() {
-		return reportCardCounty_;
+	public ReportCard getReportCardAgency_() {
+		return reportCardAgency_;
 	}
 
-	public void setReportCardCounty_(ReportCard reportCardCounty_) {
-		this.reportCardCounty_ = reportCardCounty_;
-		this.reportCardCounty_Wrap.alreadyInitialized = true;
+	public void setReportCardAgency_(ReportCard reportCardAgency_) {
+		this.reportCardAgency_ = reportCardAgency_;
+		this.reportCardAgency_Wrap.alreadyInitialized = true;
 	}
-	protected DesignDisplayPage reportCardCounty_Init() {
-		if(!reportCardCounty_Wrap.alreadyInitialized) {
-			_reportCardCounty_(reportCardCounty_Wrap);
-			if(reportCardCounty_ == null)
-				setReportCardCounty_(reportCardCounty_Wrap.o);
+	protected DesignDisplayPage reportCardAgency_Init() {
+		if(!reportCardAgency_Wrap.alreadyInitialized) {
+			_reportCardAgency_(reportCardAgency_Wrap);
+			if(reportCardAgency_ == null)
+				setReportCardAgency_(reportCardAgency_Wrap.o);
 		}
-		reportCardCounty_Wrap.alreadyInitialized(true);
+		reportCardAgency_Wrap.alreadyInitialized(true);
 		return (DesignDisplayPage)this;
 	}
 
@@ -764,147 +710,147 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 	}
 
 	//////////////////
-	// countySearch //
+	// agencySearch //
 	//////////////////
 
-	/**	 The entity countySearch
-	 *	Il est construit avant d'être initialisé avec le constructeur par défaut SearchList<SiteCounty>(). 
+	/**	 The entity agencySearch
+	 *	Il est construit avant d'être initialisé avec le constructeur par défaut SearchList<SiteAgency>(). 
 	 */
 	@JsonInclude(Include.NON_NULL)
-	protected SearchList<SiteCounty> countySearch = new SearchList<SiteCounty>();
+	protected SearchList<SiteAgency> agencySearch = new SearchList<SiteAgency>();
 	@JsonIgnore
-	public Wrap<SearchList<SiteCounty>> countySearchWrap = new Wrap<SearchList<SiteCounty>>().p(this).c(SearchList.class).var("countySearch").o(countySearch);
+	public Wrap<SearchList<SiteAgency>> agencySearchWrap = new Wrap<SearchList<SiteAgency>>().p(this).c(SearchList.class).var("agencySearch").o(agencySearch);
 
-	/**	<br/> The entity countySearch
-	 *  It is constructed before being initialized with the constructor by default SearchList<SiteCounty>(). 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:countySearch">Find the entity countySearch in Solr</a>
+	/**	<br/> The entity agencySearch
+	 *  It is constructed before being initialized with the constructor by default SearchList<SiteAgency>(). 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencySearch">Find the entity agencySearch in Solr</a>
 	 * <br/>
-	 * @param countySearch is the entity already constructed. 
+	 * @param agencySearch is the entity already constructed. 
 	 **/
-	protected abstract void _countySearch(SearchList<SiteCounty> l);
+	protected abstract void _agencySearch(SearchList<SiteAgency> l);
 
-	public SearchList<SiteCounty> getCountySearch() {
-		return countySearch;
+	public SearchList<SiteAgency> getAgencySearch() {
+		return agencySearch;
 	}
 
-	public void setCountySearch(SearchList<SiteCounty> countySearch) {
-		this.countySearch = countySearch;
-		this.countySearchWrap.alreadyInitialized = true;
+	public void setAgencySearch(SearchList<SiteAgency> agencySearch) {
+		this.agencySearch = agencySearch;
+		this.agencySearchWrap.alreadyInitialized = true;
 	}
-	protected DesignDisplayPage countySearchInit() {
-		if(!countySearchWrap.alreadyInitialized) {
-			_countySearch(countySearch);
+	protected DesignDisplayPage agencySearchInit() {
+		if(!agencySearchWrap.alreadyInitialized) {
+			_agencySearch(agencySearch);
 		}
-		countySearch.initDeepForClass(siteRequest_);
-		countySearchWrap.alreadyInitialized(true);
+		agencySearch.initDeepForClass(siteRequest_);
+		agencySearchWrap.alreadyInitialized(true);
 		return (DesignDisplayPage)this;
 	}
 
 	/////////////
-	// county_ //
+	// agency_ //
 	/////////////
 
-	/**	 The entity county_
+	/**	 The entity agency_
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonInclude(Include.NON_NULL)
-	protected SiteCounty county_;
+	protected SiteAgency agency_;
 	@JsonIgnore
-	public Wrap<SiteCounty> county_Wrap = new Wrap<SiteCounty>().p(this).c(SiteCounty.class).var("county_").o(county_);
+	public Wrap<SiteAgency> agency_Wrap = new Wrap<SiteAgency>().p(this).c(SiteAgency.class).var("agency_").o(agency_);
 
-	/**	<br/> The entity county_
+	/**	<br/> The entity agency_
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:county_">Find the entity county_ in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agency_">Find the entity agency_ in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _county_(Wrap<SiteCounty> c);
+	protected abstract void _agency_(Wrap<SiteAgency> c);
 
-	public SiteCounty getCounty_() {
-		return county_;
+	public SiteAgency getAgency_() {
+		return agency_;
 	}
 
-	public void setCounty_(SiteCounty county_) {
-		this.county_ = county_;
-		this.county_Wrap.alreadyInitialized = true;
+	public void setAgency_(SiteAgency agency_) {
+		this.agency_ = agency_;
+		this.agency_Wrap.alreadyInitialized = true;
 	}
-	protected DesignDisplayPage county_Init() {
-		if(!county_Wrap.alreadyInitialized) {
-			_county_(county_Wrap);
-			if(county_ == null)
-				setCounty_(county_Wrap.o);
+	protected DesignDisplayPage agency_Init() {
+		if(!agency_Wrap.alreadyInitialized) {
+			_agency_(agency_Wrap);
+			if(agency_ == null)
+				setAgency_(agency_Wrap.o);
 		}
-		county_Wrap.alreadyInitialized(true);
+		agency_Wrap.alreadyInitialized(true);
 		return (DesignDisplayPage)this;
 	}
 
 	///////////////
-	// countyKey //
+	// agencyKey //
 	///////////////
 
-	/**	 The entity countyKey
+	/**	 The entity agencyKey
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Long countyKey;
+	protected Long agencyKey;
 	@JsonIgnore
-	public Wrap<Long> countyKeyWrap = new Wrap<Long>().p(this).c(Long.class).var("countyKey").o(countyKey);
+	public Wrap<Long> agencyKeyWrap = new Wrap<Long>().p(this).c(Long.class).var("agencyKey").o(agencyKey);
 
-	/**	<br/> The entity countyKey
+	/**	<br/> The entity agencyKey
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:countyKey">Find the entity countyKey in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyKey">Find the entity agencyKey in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _countyKey(Wrap<Long> c);
+	protected abstract void _agencyKey(Wrap<Long> c);
 
-	public Long getCountyKey() {
-		return countyKey;
+	public Long getAgencyKey() {
+		return agencyKey;
 	}
 
-	public void setCountyKey(Long countyKey) {
-		this.countyKey = countyKey;
-		this.countyKeyWrap.alreadyInitialized = true;
+	public void setAgencyKey(Long agencyKey) {
+		this.agencyKey = agencyKey;
+		this.agencyKeyWrap.alreadyInitialized = true;
 	}
-	public DesignDisplayPage setCountyKey(String o) {
+	public DesignDisplayPage setAgencyKey(String o) {
 		if(NumberUtils.isParsable(o))
-			this.countyKey = Long.parseLong(o);
-		this.countyKeyWrap.alreadyInitialized = true;
+			this.agencyKey = Long.parseLong(o);
+		this.agencyKeyWrap.alreadyInitialized = true;
 		return (DesignDisplayPage)this;
 	}
-	protected DesignDisplayPage countyKeyInit() {
-		if(!countyKeyWrap.alreadyInitialized) {
-			_countyKey(countyKeyWrap);
-			if(countyKey == null)
-				setCountyKey(countyKeyWrap.o);
+	protected DesignDisplayPage agencyKeyInit() {
+		if(!agencyKeyWrap.alreadyInitialized) {
+			_agencyKey(agencyKeyWrap);
+			if(agencyKey == null)
+				setAgencyKey(agencyKeyWrap.o);
 		}
-		countyKeyWrap.alreadyInitialized(true);
+		agencyKeyWrap.alreadyInitialized(true);
 		return (DesignDisplayPage)this;
 	}
 
-	public Long solrCountyKey() {
-		return countyKey;
+	public Long solrAgencyKey() {
+		return agencyKey;
 	}
 
-	public String strCountyKey() {
-		return countyKey == null ? "" : countyKey.toString();
+	public String strAgencyKey() {
+		return agencyKey == null ? "" : agencyKey.toString();
 	}
 
-	public String jsonCountyKey() {
-		return countyKey == null ? "" : countyKey.toString();
+	public String jsonAgencyKey() {
+		return agencyKey == null ? "" : agencyKey.toString();
 	}
 
-	public String nomAffichageCountyKey() {
+	public String nomAffichageAgencyKey() {
 		return null;
 	}
 
-	public String htmTooltipCountyKey() {
+	public String htmTooltipAgencyKey() {
 		return null;
 	}
 
-	public String htmCountyKey() {
-		return countyKey == null ? "" : StringEscapeUtils.escapeHtml4(strCountyKey());
+	public String htmAgencyKey() {
+		return agencyKey == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyKey());
 	}
 
 	/////////////////
@@ -1416,13 +1362,13 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		reportCard_Init();
 		reportCardsInit();
 		reportCardStates_Init();
-		reportCardCounties_Init();
+		reportCardAgencies_Init();
 		reportCardState_Init();
-		reportCardCounty_Init();
+		reportCardAgency_Init();
 		reportCardReportCard_Init();
-		countySearchInit();
-		county_Init();
-		countyKeyInit();
+		agencySearchInit();
+		agency_Init();
+		agencyKeyInit();
 		stateSearchInit();
 		state_Init();
 		emailToAddressInit();
@@ -1448,8 +1394,10 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 			pageDesign.setSiteRequest_(siteRequest_);
 		if(reportCardSearch != null)
 			reportCardSearch.setSiteRequest_(siteRequest_);
-		if(countySearch != null)
-			countySearch.setSiteRequest_(siteRequest_);
+		if(reportCardStartYearCurrent != null)
+			reportCardStartYearCurrent.setSiteRequest_(siteRequest_);
+		if(agencySearch != null)
+			agencySearch.setSiteRequest_(siteRequest_);
 		if(stateSearch != null)
 			stateSearch.setSiteRequest_(siteRequest_);
 		if(htmlPartSearch != null)
@@ -1500,20 +1448,20 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 				return oDesignDisplayPage.reportCards;
 			case "reportCardStates_":
 				return oDesignDisplayPage.reportCardStates_;
-			case "reportCardCounties_":
-				return oDesignDisplayPage.reportCardCounties_;
+			case "reportCardAgencies_":
+				return oDesignDisplayPage.reportCardAgencies_;
 			case "reportCardState_":
 				return oDesignDisplayPage.reportCardState_;
-			case "reportCardCounty_":
-				return oDesignDisplayPage.reportCardCounty_;
+			case "reportCardAgency_":
+				return oDesignDisplayPage.reportCardAgency_;
 			case "reportCardReportCard_":
 				return oDesignDisplayPage.reportCardReportCard_;
-			case "countySearch":
-				return oDesignDisplayPage.countySearch;
-			case "county_":
-				return oDesignDisplayPage.county_;
-			case "countyKey":
-				return oDesignDisplayPage.countyKey;
+			case "agencySearch":
+				return oDesignDisplayPage.agencySearch;
+			case "agency_":
+				return oDesignDisplayPage.agency_;
+			case "agencyKey":
+				return oDesignDisplayPage.agencyKey;
 			case "stateSearch":
 				return oDesignDisplayPage.stateSearch;
 			case "state_":

@@ -86,12 +86,12 @@ public class SiteState extends SiteStateGen<Cluster> {
 	 * {@inheritDoc}
 	 * Indexed: true
 	 * Stored: true
-	 * Attribute: SiteCounty.stateKey
+	 * Attribute: SiteAgency.stateKey
 	 * HtmlRow: 4
 	 * HtmlCell: 1
-	 * DisplayName.enUS: counties
+	 * DisplayName.enUS: agencies
 	 */          
-	protected void _countyKeys(List<Long> o) {}
+	protected void _agencyKeys(List<Long> o) {}
 
 	/**   
 	 * {@inheritDoc}
@@ -100,7 +100,7 @@ public class SiteState extends SiteStateGen<Cluster> {
 	 * VarH2: true
 	 * VarTitle: true
 	 */ 
-	protected void _countyCompleteName(Wrap<String> c) {
+	protected void _agencyCompleteName(Wrap<String> c) {
 		c.o(stateName + " (" + stateAbbreviation + ")");
 	}
 

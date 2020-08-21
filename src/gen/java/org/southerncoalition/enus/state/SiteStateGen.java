@@ -4,6 +4,7 @@ import java.util.Arrays;
 import org.southerncoalition.enus.request.api.ApiRequest;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import java.util.Date;
+import org.southerncoalition.enus.agency.SiteAgency;
 import java.util.HashMap;
 import org.apache.commons.lang3.StringUtils;
 import io.vertx.core.logging.LoggerFactory;
@@ -33,7 +34,6 @@ import java.util.Objects;
 import io.vertx.core.json.JsonArray;
 import org.apache.solr.common.SolrDocument;
 import java.util.List;
-import org.southerncoalition.enus.county.SiteCounty;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.commons.lang3.math.NumberUtils;
 import java.util.Optional;
@@ -403,93 +403,93 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 	}
 
 	////////////////
-	// countyKeys //
+	// agencyKeys //
 	////////////////
 
-	/**	 The entity countyKeys
+	/**	 The entity agencyKeys
 	 *	Il est construit avant d'être initialisé avec le constructeur par défaut List<Long>(). 
 	 */
 	@JsonSerialize(contentUsing = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected List<Long> countyKeys = new ArrayList<Long>();
+	protected List<Long> agencyKeys = new ArrayList<Long>();
 	@JsonIgnore
-	public Wrap<List<Long>> countyKeysWrap = new Wrap<List<Long>>().p(this).c(List.class).var("countyKeys").o(countyKeys);
+	public Wrap<List<Long>> agencyKeysWrap = new Wrap<List<Long>>().p(this).c(List.class).var("agencyKeys").o(agencyKeys);
 
-	/**	<br/> The entity countyKeys
+	/**	<br/> The entity agencyKeys
 	 *  It is constructed before being initialized with the constructor by default List<Long>(). 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.state.SiteState&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:countyKeys">Find the entity countyKeys in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.state.SiteState&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyKeys">Find the entity agencyKeys in Solr</a>
 	 * <br/>
-	 * @param countyKeys is the entity already constructed. 
+	 * @param agencyKeys is the entity already constructed. 
 	 **/
-	protected abstract void _countyKeys(List<Long> o);
+	protected abstract void _agencyKeys(List<Long> o);
 
-	public List<Long> getCountyKeys() {
-		return countyKeys;
+	public List<Long> getAgencyKeys() {
+		return agencyKeys;
 	}
 
-	public void setCountyKeys(List<Long> countyKeys) {
-		this.countyKeys = countyKeys;
-		this.countyKeysWrap.alreadyInitialized = true;
+	public void setAgencyKeys(List<Long> agencyKeys) {
+		this.agencyKeys = agencyKeys;
+		this.agencyKeysWrap.alreadyInitialized = true;
 	}
-	public SiteState addCountyKeys(Long...objets) {
+	public SiteState addAgencyKeys(Long...objets) {
 		for(Long o : objets) {
-			addCountyKeys(o);
+			addAgencyKeys(o);
 		}
 		return (SiteState)this;
 	}
-	public SiteState addCountyKeys(Long o) {
-		if(o != null && !countyKeys.contains(o))
-			this.countyKeys.add(o);
+	public SiteState addAgencyKeys(Long o) {
+		if(o != null && !agencyKeys.contains(o))
+			this.agencyKeys.add(o);
 		return (SiteState)this;
 	}
-	public SiteState setCountyKeys(JsonArray objets) {
-		countyKeys.clear();
+	public SiteState setAgencyKeys(JsonArray objets) {
+		agencyKeys.clear();
 		for(int i = 0; i < objets.size(); i++) {
 			Long o = objets.getLong(i);
-			addCountyKeys(o);
+			addAgencyKeys(o);
 		}
 		return (SiteState)this;
 	}
-	public SiteState addCountyKeys(String o) {
+	public SiteState addAgencyKeys(String o) {
 		if(NumberUtils.isParsable(o)) {
 			Long p = Long.parseLong(o);
-			addCountyKeys(p);
+			addAgencyKeys(p);
 		}
 		return (SiteState)this;
 	}
-	protected SiteState countyKeysInit() {
-		if(!countyKeysWrap.alreadyInitialized) {
-			_countyKeys(countyKeys);
+	protected SiteState agencyKeysInit() {
+		if(!agencyKeysWrap.alreadyInitialized) {
+			_agencyKeys(agencyKeys);
 		}
-		countyKeysWrap.alreadyInitialized(true);
+		agencyKeysWrap.alreadyInitialized(true);
 		return (SiteState)this;
 	}
 
-	public List<Long> solrCountyKeys() {
-		return countyKeys;
+	public List<Long> solrAgencyKeys() {
+		return agencyKeys;
 	}
 
-	public String strCountyKeys() {
-		return countyKeys == null ? "" : countyKeys.toString();
+	public String strAgencyKeys() {
+		return agencyKeys == null ? "" : agencyKeys.toString();
 	}
 
-	public String jsonCountyKeys() {
-		return countyKeys == null ? "" : countyKeys.toString();
+	public String jsonAgencyKeys() {
+		return agencyKeys == null ? "" : agencyKeys.toString();
 	}
 
-	public String nomAffichageCountyKeys() {
-		return "counties";
+	public String nomAffichageAgencyKeys() {
+		return "agencies";
 	}
 
-	public String htmTooltipCountyKeys() {
+	public String htmTooltipAgencyKeys() {
 		return null;
 	}
 
-	public String htmCountyKeys() {
-		return countyKeys == null ? "" : StringEscapeUtils.escapeHtml4(strCountyKeys());
+	public String htmAgencyKeys() {
+		return agencyKeys == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyKeys());
 	}
 
-	public void inputCountyKeys(String classApiMethodMethod) {
+	public void inputAgencyKeys(String classApiMethodMethod) {
 		SiteState s = (SiteState)this;
 		if(
 				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -498,29 +498,29 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 			e("i").a("class", "far fa-search w3-xxlarge w3-cell w3-cell-middle ").f().g("i");
 				e("input")
 					.a("type", "text")
-					.a("placeholder", "counties")
-					.a("class", "value suggestCountyKeys w3-input w3-border w3-cell w3-cell-middle ")
-					.a("name", "setCountyKeys")
-					.a("id", classApiMethodMethod, "_countyKeys")
+					.a("placeholder", "agencies")
+					.a("class", "value suggestAgencyKeys w3-input w3-border w3-cell w3-cell-middle ")
+					.a("name", "setAgencyKeys")
+					.a("id", classApiMethodMethod, "_agencyKeys")
 					.a("autocomplete", "off")
-					.a("oninput", "suggestSiteStateCountyKeys($(this).val() ? searchSiteCountyFilters($(this.parentElement)) : [", pk == null ? "" : "{'name':'fq','value':'stateKey:" + pk + "'}", "], $('#listSiteStateCountyKeys_", classApiMethodMethod, "'), ", pk, "); ")
+					.a("oninput", "suggestSiteStateAgencyKeys($(this).val() ? searchSiteAgencyFilters($(this.parentElement)) : [", pk == null ? "" : "{'name':'fq','value':'stateKey:" + pk + "'}", "], $('#listSiteStateAgencyKeys_", classApiMethodMethod, "'), ", pk, "); ")
 				.fg();
 
 		} else {
-			e("span").a("class", "varSiteState", pk, "CountyKeys ").f().sx(htmCountyKeys()).g("span");
+			e("span").a("class", "varSiteState", pk, "AgencyKeys ").f().sx(htmAgencyKeys()).g("span");
 		}
 	}
 
-	public void htmCountyKeys(String classApiMethodMethod) {
+	public void htmAgencyKeys(String classApiMethodMethod) {
 		SiteState s = (SiteState)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			{ e("div").a("class", "w3-padding ").f();
-				{ e("div").a("id", "suggest", classApiMethodMethod, "SiteStateCountyKeys").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "SiteStateAgencyKeys").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row ").f();
-							{ e("a").a("href", "/county?fq=stateKey:", pk).a("class", "w3-cell w3-btn w3-center h4 w3-block h4 w3-pale-yellow w3-hover-pale-yellow ").f();
+							{ e("a").a("href", "/agency?fq=stateKey:", pk).a("class", "w3-cell w3-btn w3-center h4 w3-block h4 w3-pale-yellow w3-hover-pale-yellow ").f();
 								e("i").a("class", "far fa-road ").f().g("i");
-								sx("counties");
+								sx("agencies");
 							} g("a");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row ").f();
@@ -532,24 +532,24 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 							{ e("div").a("class", "w3-cell ").f();
 								{ e("div").a("class", "w3-cell-row ").f();
 
-								inputCountyKeys(classApiMethodMethod);
+								inputAgencyKeys(classApiMethodMethod);
 								} g("div");
 							} g("div");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
-								{ e("ul").a("class", "w3-ul w3-hoverable ").a("id", "listSiteStateCountyKeys_", classApiMethodMethod).f();
+								{ e("ul").a("class", "w3-ul w3-hoverable ").a("id", "listSiteStateAgencyKeys_", classApiMethodMethod).f();
 								} g("ul");
 								if(
-										CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), SiteCounty.ROLES)
-										|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), SiteCounty.ROLES)
+										CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), SiteAgency.ROLES)
+										|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), SiteAgency.ROLES)
 										) {
 									{ e("div").a("class", "w3-cell-row ").f();
 										e("button")
 											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-pale-yellow ")
-											.a("id", classApiMethodMethod, "_countyKeys_add")
-											.a("onclick", "$(this).addClass('w3-disabled'); this.disabled = true; this.innerHTML = 'Sending…'; postSiteCountyVals({ stateKey: \"", pk, "\" }, function() {}, function() { addError($('#", classApiMethodMethod, "countyKeys')); });")
-											.f().sx("add a county")
+											.a("id", classApiMethodMethod, "_agencyKeys_add")
+											.a("onclick", "$(this).addClass('w3-disabled'); this.disabled = true; this.innerHTML = 'Sending…'; postSiteAgencyVals({ stateKey: \"", pk, "\" }, function() {}, function() { addError($('#", classApiMethodMethod, "agencyKeys')); });")
+											.f().sx("add a agency")
 										.g("button");
 									} g("div");
 								}
@@ -562,65 +562,65 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 	}
 
 	////////////////////////
-	// countyCompleteName //
+	// agencyCompleteName //
 	////////////////////////
 
-	/**	 The entity countyCompleteName
+	/**	 The entity agencyCompleteName
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonInclude(Include.NON_NULL)
-	protected String countyCompleteName;
+	protected String agencyCompleteName;
 	@JsonIgnore
-	public Wrap<String> countyCompleteNameWrap = new Wrap<String>().p(this).c(String.class).var("countyCompleteName").o(countyCompleteName);
+	public Wrap<String> agencyCompleteNameWrap = new Wrap<String>().p(this).c(String.class).var("agencyCompleteName").o(agencyCompleteName);
 
-	/**	<br/> The entity countyCompleteName
+	/**	<br/> The entity agencyCompleteName
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.state.SiteState&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:countyCompleteName">Find the entity countyCompleteName in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.state.SiteState&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyCompleteName">Find the entity agencyCompleteName in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _countyCompleteName(Wrap<String> c);
+	protected abstract void _agencyCompleteName(Wrap<String> c);
 
-	public String getCountyCompleteName() {
-		return countyCompleteName;
+	public String getAgencyCompleteName() {
+		return agencyCompleteName;
 	}
 
-	public void setCountyCompleteName(String countyCompleteName) {
-		this.countyCompleteName = countyCompleteName;
-		this.countyCompleteNameWrap.alreadyInitialized = true;
+	public void setAgencyCompleteName(String agencyCompleteName) {
+		this.agencyCompleteName = agencyCompleteName;
+		this.agencyCompleteNameWrap.alreadyInitialized = true;
 	}
-	protected SiteState countyCompleteNameInit() {
-		if(!countyCompleteNameWrap.alreadyInitialized) {
-			_countyCompleteName(countyCompleteNameWrap);
-			if(countyCompleteName == null)
-				setCountyCompleteName(countyCompleteNameWrap.o);
+	protected SiteState agencyCompleteNameInit() {
+		if(!agencyCompleteNameWrap.alreadyInitialized) {
+			_agencyCompleteName(agencyCompleteNameWrap);
+			if(agencyCompleteName == null)
+				setAgencyCompleteName(agencyCompleteNameWrap.o);
 		}
-		countyCompleteNameWrap.alreadyInitialized(true);
+		agencyCompleteNameWrap.alreadyInitialized(true);
 		return (SiteState)this;
 	}
 
-	public String solrCountyCompleteName() {
-		return countyCompleteName;
+	public String solrAgencyCompleteName() {
+		return agencyCompleteName;
 	}
 
-	public String strCountyCompleteName() {
-		return countyCompleteName == null ? "" : countyCompleteName;
+	public String strAgencyCompleteName() {
+		return agencyCompleteName == null ? "" : agencyCompleteName;
 	}
 
-	public String jsonCountyCompleteName() {
-		return countyCompleteName == null ? "" : countyCompleteName;
+	public String jsonAgencyCompleteName() {
+		return agencyCompleteName == null ? "" : agencyCompleteName;
 	}
 
-	public String nomAffichageCountyCompleteName() {
+	public String nomAffichageAgencyCompleteName() {
 		return null;
 	}
 
-	public String htmTooltipCountyCompleteName() {
+	public String htmTooltipAgencyCompleteName() {
 		return null;
 	}
 
-	public String htmCountyCompleteName() {
-		return countyCompleteName == null ? "" : StringEscapeUtils.escapeHtml4(strCountyCompleteName());
+	public String htmAgencyCompleteName() {
+		return agencyCompleteName == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyCompleteName());
 	}
 
 	//////////////
@@ -647,8 +647,8 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		stateKeyInit();
 		stateNameInit();
 		stateAbbreviationInit();
-		countyKeysInit();
-		countyCompleteNameInit();
+		agencyKeysInit();
+		agencyCompleteNameInit();
 	}
 
 	@Override public void initDeepForClass(SiteRequestEnUS siteRequest_) {
@@ -693,10 +693,10 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 				return oSiteState.stateName;
 			case "stateAbbreviation":
 				return oSiteState.stateAbbreviation;
-			case "countyKeys":
-				return oSiteState.countyKeys;
-			case "countyCompleteName":
-				return oSiteState.countyCompleteName;
+			case "agencyKeys":
+				return oSiteState.agencyKeys;
+			case "agencyCompleteName":
+				return oSiteState.agencyCompleteName;
 			default:
 				return super.obtainCluster(var);
 		}
@@ -722,8 +722,8 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 	public Object attributeSiteState(String var, Object val) {
 		SiteState oSiteState = (SiteState)this;
 		switch(var) {
-			case "countyKeys":
-				oSiteState.addCountyKeys((Long)val);
+			case "agencyKeys":
+				oSiteState.addAgencyKeys((Long)val);
 				if(!saves.contains(var))
 					saves.add(var);
 				return val;
@@ -798,14 +798,14 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 					oSiteState.setStateAbbreviation(stateAbbreviation);
 			}
 
-			List<Long> countyKeys = (List<Long>)solrDocument.get("countyKeys_stored_longs");
-			if(countyKeys != null)
-				oSiteState.countyKeys.addAll(countyKeys);
+			List<Long> agencyKeys = (List<Long>)solrDocument.get("agencyKeys_stored_longs");
+			if(agencyKeys != null)
+				oSiteState.agencyKeys.addAll(agencyKeys);
 
-			if(saves.contains("countyCompleteName")) {
-				String countyCompleteName = (String)solrDocument.get("countyCompleteName_stored_string");
-				if(countyCompleteName != null)
-					oSiteState.setCountyCompleteName(countyCompleteName);
+			if(saves.contains("agencyCompleteName")) {
+				String agencyCompleteName = (String)solrDocument.get("agencyCompleteName_stored_string");
+				if(agencyCompleteName != null)
+					oSiteState.setAgencyCompleteName(agencyCompleteName);
 			}
 		}
 
@@ -886,17 +886,17 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 			document.addField("stateAbbreviation_indexed_string", stateAbbreviation);
 			document.addField("stateAbbreviation_stored_string", stateAbbreviation);
 		}
-		if(countyKeys != null) {
-			for(java.lang.Long o : countyKeys) {
-				document.addField("countyKeys_indexed_longs", o);
+		if(agencyKeys != null) {
+			for(java.lang.Long o : agencyKeys) {
+				document.addField("agencyKeys_indexed_longs", o);
 			}
-			for(java.lang.Long o : countyKeys) {
-				document.addField("countyKeys_stored_longs", o);
+			for(java.lang.Long o : agencyKeys) {
+				document.addField("agencyKeys_stored_longs", o);
 			}
 		}
-		if(countyCompleteName != null) {
-			document.addField("countyCompleteName_indexed_string", countyCompleteName);
-			document.addField("countyCompleteName_stored_string", countyCompleteName);
+		if(agencyCompleteName != null) {
+			document.addField("agencyCompleteName_indexed_string", agencyCompleteName);
+			document.addField("agencyCompleteName_stored_string", agencyCompleteName);
 		}
 		super.indexCluster(document);
 
@@ -927,10 +927,10 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 				return "stateName_indexed_string";
 			case "stateAbbreviation":
 				return "stateAbbreviation_indexed_string";
-			case "countyKeys":
-				return "countyKeys_indexed_longs";
-			case "countyCompleteName":
-				return "countyCompleteName_indexed_string";
+			case "agencyKeys":
+				return "agencyKeys_indexed_longs";
+			case "agencyCompleteName":
+				return "agencyCompleteName_indexed_string";
 			default:
 				return Cluster.varIndexedCluster(entityVar);
 		}
@@ -972,13 +972,13 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		if(stateAbbreviation != null)
 			oSiteState.setStateAbbreviation(stateAbbreviation);
 
-		List<Long> countyKeys = (List<Long>)solrDocument.get("countyKeys_stored_longs");
-		if(countyKeys != null)
-			oSiteState.countyKeys.addAll(countyKeys);
+		List<Long> agencyKeys = (List<Long>)solrDocument.get("agencyKeys_stored_longs");
+		if(agencyKeys != null)
+			oSiteState.agencyKeys.addAll(agencyKeys);
 
-		String countyCompleteName = (String)solrDocument.get("countyCompleteName_stored_string");
-		if(countyCompleteName != null)
-			oSiteState.setCountyCompleteName(countyCompleteName);
+		String agencyCompleteName = (String)solrDocument.get("agencyCompleteName_stored_string");
+		if(agencyCompleteName != null)
+			oSiteState.setAgencyCompleteName(agencyCompleteName);
 
 		super.storeCluster(solrDocument);
 	}
@@ -998,10 +998,10 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 				apiRequest.addVars("stateName");
 			if(!Objects.equals(stateAbbreviation, original.getStateAbbreviation()))
 				apiRequest.addVars("stateAbbreviation");
-			if(!Objects.equals(countyKeys, original.getCountyKeys()))
-				apiRequest.addVars("countyKeys");
-			if(!Objects.equals(countyCompleteName, original.getCountyCompleteName()))
-				apiRequest.addVars("countyCompleteName");
+			if(!Objects.equals(agencyKeys, original.getAgencyKeys()))
+				apiRequest.addVars("agencyKeys");
+			if(!Objects.equals(agencyCompleteName, original.getAgencyCompleteName()))
+				apiRequest.addVars("agencyCompleteName");
 			super.apiRequestCluster();
 		}
 	}
@@ -1011,7 +1011,7 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 	//////////////
 
 	@Override public int hashCode() {
-		return Objects.hash(super.hashCode(), stateKey, stateName, stateAbbreviation, countyKeys, countyCompleteName);
+		return Objects.hash(super.hashCode(), stateKey, stateName, stateAbbreviation, agencyKeys, agencyCompleteName);
 	}
 
 	////////////
@@ -1028,8 +1028,8 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 				&& Objects.equals( stateKey, that.stateKey )
 				&& Objects.equals( stateName, that.stateName )
 				&& Objects.equals( stateAbbreviation, that.stateAbbreviation )
-				&& Objects.equals( countyKeys, that.countyKeys )
-				&& Objects.equals( countyCompleteName, that.countyCompleteName );
+				&& Objects.equals( agencyKeys, that.agencyKeys )
+				&& Objects.equals( agencyCompleteName, that.agencyCompleteName );
 	}
 
 	//////////////
@@ -1043,8 +1043,8 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		sb.append( "stateKey: " ).append(stateKey);
 		sb.append( ", stateName: \"" ).append(stateName).append( "\"" );
 		sb.append( ", stateAbbreviation: \"" ).append(stateAbbreviation).append( "\"" );
-		sb.append( ", countyKeys: " ).append(countyKeys);
-		sb.append( ", countyCompleteName: \"" ).append(countyCompleteName).append( "\"" );
+		sb.append( ", agencyKeys: " ).append(agencyKeys);
+		sb.append( ", agencyCompleteName: \"" ).append(agencyCompleteName).append( "\"" );
 		sb.append(" }");
 		return sb.toString();
 	}

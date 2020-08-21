@@ -62,8 +62,8 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 	}
 
 	@Override protected void _pageH2(Wrap<String> c) {
-		if(reportCard_ != null && reportCard_.getCountyCompleteName() != null)
-			c.o(reportCard_.getCountyCompleteName());
+		if(reportCard_ != null && reportCard_.getAgencyCompleteName() != null)
+			c.o(reportCard_.getAgencyCompleteName());
 	}
 
 	@Override protected void _pageH3(Wrap<String> c) {
@@ -71,8 +71,8 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 	}
 
 	@Override protected void _pageTitle(Wrap<String> c) {
-		if(reportCard_ != null && reportCard_.getCountyCompleteName() != null)
-			c.o(reportCard_.getCountyCompleteName());
+		if(reportCard_ != null && reportCard_.getAgencyCompleteName() != null)
+			c.o(reportCard_.getAgencyCompleteName());
 		else if(reportCard_ != null)
 			c.o("report cards");
 		else if(listReportCard == null || listReportCard.size() == 0)
@@ -104,7 +104,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 
 	@Override public void htmlScriptsReportCardGenPage() {
 		e("script").a("src", staticBaseUrl, "/js/enUS/ReportCardPage.js").f().g("script");
-		e("script").a("src", staticBaseUrl, "/js/enUS/SiteCountyPage.js").f().g("script");
+		e("script").a("src", staticBaseUrl, "/js/enUS/SiteAgencyPage.js").f().g("script");
 	}
 
 	@Override public void htmlScriptReportCardGenPage() {
@@ -128,9 +128,9 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
 				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
 				) {
-			tl(2, "suggestReportCardCountyKey([{'name':'fq','value':'reportCardKeys:' + pk}], $('#listReportCardCountyKey_Page'), pk, true); ");
+			tl(2, "suggestReportCardAgencyKey([{'name':'fq','value':'reportCardKeys:' + pk}], $('#listReportCardAgencyKey_Page'), pk, true); ");
 		} else {
-			tl(2, "suggestReportCardCountyKey([{'name':'fq','value':'reportCardKeys:' + pk}], $('#listReportCardCountyKey_Page'), pk, false); ");
+			tl(2, "suggestReportCardAgencyKey([{'name':'fq','value':'reportCardKeys:' + pk}], $('#listReportCardAgencyKey_Page'), pk, false); ");
 		}
 		tl(1, "}");
 		tl(1, "websocketReportCard(websocketReportCardInner);");
@@ -153,7 +153,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmReportCardEndYear("Page");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
-			o.htmCountyKey("Page");
+			o.htmAgencyKey("Page");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmPupilsIndianMale("Page");
@@ -289,6 +289,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmShortTermSuspensionsWhiteTotal("Page");
 			o.htmShortTermSuspensionsWhitePercent("Page");
 			o.htmShortTermSuspensionsWhiteRate("Page");
+			o.htmShortTermSuspensionsBlackVsWhite("Page");
 		} g("div");
 	}
 
@@ -308,7 +309,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmReportCardEndYear("POST");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
-			o.htmCountyKey("POST");
+			o.htmAgencyKey("POST");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmPupilsIndianMale("POST");
@@ -444,6 +445,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmShortTermSuspensionsWhiteTotal("POST");
 			o.htmShortTermSuspensionsWhitePercent("POST");
 			o.htmShortTermSuspensionsWhiteRate("POST");
+			o.htmShortTermSuspensionsBlackVsWhite("POST");
 		} g("div");
 	}
 
@@ -484,7 +486,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmReportCardStartYear("PUTCopy");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
-			o.htmCountyKey("PUTCopy");
+			o.htmAgencyKey("PUTCopy");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmPupilsIndianMale("PUTCopy");
@@ -594,7 +596,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmReportCardStartYear("PATCH");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
-			o.htmCountyKey("PATCH");
+			o.htmAgencyKey("PATCH");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmPupilsIndianMale("PATCH");
@@ -707,7 +709,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmReportCardEndYear("Search");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
-			o.htmCountyKey("Search");
+			o.htmAgencyKey("Search");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmPupilsIndianMale("Search");
@@ -843,6 +845,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmShortTermSuspensionsWhiteTotal("Search");
 			o.htmShortTermSuspensionsWhitePercent("Search");
 			o.htmShortTermSuspensionsWhiteRate("Search");
+			o.htmShortTermSuspensionsBlackVsWhite("Search");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmInheritPk("Search");
@@ -1385,7 +1388,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 					.a("name", "suggestReportCard")
 					.a("id", "suggestReportCard", id)
 					.a("autocomplete", "off")
-					.a("oninput", "suggestReportCardObjectSuggest( [ { 'name': 'q', 'value': 'objectSuggest:' + $(this).val() }, { 'name': 'rows', 'value': '10' }, { 'name': 'fl', 'value': 'pk,pageUrlPk,countyCompleteName' } ], $('#suggestListReportCard", id, "'), ", p.getSiteRequest_().getRequestPk(), "); ")
+					.a("oninput", "suggestReportCardObjectSuggest( [ { 'name': 'q', 'value': 'objectSuggest:' + $(this).val() }, { 'name': 'rows', 'value': '10' }, { 'name': 'fl', 'value': 'pk,pageUrlPk,agencyCompleteName' } ], $('#suggestListReportCard", id, "'), ", p.getSiteRequest_().getRequestPk(), "); ")
 					.a("onkeyup", "if (event.keyCode === 13) { event.preventDefault(); window.location.href = '/reportcard?q=", query1, ":' + encodeURIComponent(this.value) + '", fqs, sorts, "&start=", start2, "&rows=", rows1, "'; }"); 
 				if(listReportCard != null)
 					p.a("value", query2);

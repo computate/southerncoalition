@@ -6,7 +6,7 @@ import java.text.DecimalFormat;
 import java.util.List;
 
 import org.southerncoalition.enus.cluster.Cluster;
-import org.southerncoalition.enus.county.SiteCounty;
+import org.southerncoalition.enus.agency.SiteAgency;
 import org.southerncoalition.enus.search.SearchList;
 import org.southerncoalition.enus.wrap.Wrap;
 
@@ -48,7 +48,7 @@ import org.southerncoalition.enus.wrap.Wrap;
  * 
  * Sort.desc: reportCardStartYear
  * Sort.asc: stateName
- * Sort.asc: countyName
+ * Sort.asc: agencyName
  * 
  * Lines: 100
  **/      
@@ -76,6 +76,12 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	protected void _reportCardStartYear(Wrap<Integer> c) {
 	}
 
+	/**    
+	 * {@inheritDoc}
+	 */ 
+	protected void _reportCardStartYearStr(Wrap<String> c) {
+	}
+
 	/**   
 	 * {@inheritDoc}
 	 * Indexed: true
@@ -93,16 +99,16 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * {@inheritDoc}
 	 * Ignore: true
 	 */ 
-	protected void _countySearch(SearchList<SiteCounty> l) {
+	protected void _agencySearch(SearchList<SiteAgency> l) {
 		l.setQuery("*:*");
 		l.addFilterQuery("reportCardKeys_indexed_longs:" + pk);
-		l.setC(SiteCounty.class);
+		l.setC(SiteAgency.class);
 		l.setStore(true);
 	}
 
-	protected void _county_(Wrap<SiteCounty> c) {
-		if(countySearch.size() > 0) {
-			c.o(countySearch.get(0));
+	protected void _agency_(Wrap<SiteAgency> c) {
+		if(agencySearch.size() > 0) {
+			c.o(agencySearch.get(0));
 		}
 	}
 
@@ -110,12 +116,12 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * {@inheritDoc}
 	 * Indexed: true
 	 * Stored: true
-	 * Attribute: SiteCounty.reportCardKeys
+	 * Attribute: SiteAgency.reportCardKeys
 	 * HtmlRow: 4
 	 * HtmlCell: 1
-	 * DisplayName.enUS: county
+	 * DisplayName.enUS: agency
 	 */           
-	protected void _countyKey(Wrap<Long> c) {
+	protected void _agencyKey(Wrap<Long> c) {
 	}
 
 	////////////////////////////////////////////////////////
@@ -1445,10 +1451,26 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * {@inheritDoc}
 	 * Indexed: true
 	 * Stored: true
+	 * HtmlRow: 25
+	 * HtmlCell: 6
+	 * DisplayName.enUS: short-term suspensions black vs white
+	 */ 
+	protected void _shortTermSuspensionsBlackVsWhite(Wrap<BigDecimal> c) {
+		if(shortTermSuspensionsBlackTotal != null  && shortTermSuspensionsWhiteTotal != null && shortTermSuspensionsWhiteTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsBlackTotal).divide(new BigDecimal(shortTermSuspensionsWhiteTotal), 4, RoundingMode.HALF_UP).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strShortTermSuspensionsBlackVsWhite() {
+		return shortTermSuspensionsBlackVsWhite == null ? "" : shortTermSuspensionsBlackVsWhite.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
 	 */ 
 	protected void _stateKey(Wrap<Long> c) {
-		if(county_ != null)
-			c.o(county_.getStateKey());
+		if(agency_ != null)
+			c.o(agency_.getStateKey());
 	}
 
 	/**   
@@ -1457,8 +1479,8 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _stateId(Wrap<String> c) {
-		if(county_ != null)
-			c.o(county_.getStateId());
+		if(agency_ != null)
+			c.o(agency_.getStateId());
 	}
 
 	/**   
@@ -1466,9 +1488,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Indexed: true
 	 * Stored: true
 	 */ 
-	protected void _countyId(Wrap<String> c) {
-		if(county_ != null)
-			c.o(county_.getObjectId());
+	protected void _agencyId(Wrap<String> c) {
+		if(agency_ != null)
+			c.o(agency_.getObjectId());
 	}
 
 	/**   
@@ -1477,8 +1499,8 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _stateName(Wrap<String> c) {
-		if(county_ != null)
-			c.o(county_.getStateName());
+		if(agency_ != null)
+			c.o(agency_.getStateName());
 	}
 
 	/**   
@@ -1487,8 +1509,8 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _stateAbbreviation(Wrap<String> c) {
-		if(county_ != null)
-			c.o(county_.getStateAbbreviation());
+		if(agency_ != null)
+			c.o(agency_.getStateAbbreviation());
 	}
 
 	/**   
@@ -1496,9 +1518,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Indexed: true
 	 * Stored: true
 	 */ 
-	protected void _countyName(Wrap<String> c) {
-		if(county_ != null)
-			c.o(county_.getCountyName());
+	protected void _agencyName(Wrap<String> c) {
+		if(agency_ != null)
+			c.o(agency_.getAgencyName());
 	}
 
 	/**   
@@ -1508,8 +1530,8 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * VarH2: true
 	 * VarTitle: true
 	 */ 
-	protected void _countyCompleteName(Wrap<String> c) {
-		c.o(reportCardStartYear + "-" + reportCardEndYear + " report card in " + countyName + " county in " + stateName + " (" + stateAbbreviation + ")");
+	protected void _agencyCompleteName(Wrap<String> c) {
+		c.o(reportCardStartYear + "-" + reportCardEndYear + " report card in " + agencyName + " in " + stateName + " (" + stateAbbreviation + ")");
 	}
 
 	/**
@@ -1525,7 +1547,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	/**
 	 * {@inheritDoc}
 	 */ 
-	protected void _reportCardCounties_(List<ReportCard> l) {}
+	protected void _reportCardAgencies_(List<ReportCard> l) {}
 
 	/**   
 	 * {@inheritDoc}
@@ -1536,6 +1558,6 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * {@inheritDoc}
 	 */
 	@Override() protected void  _objectTitle(Wrap<String> c) {
-		c.o(reportCardStartYear + "-" + reportCardEndYear + " report card in " + countyName + " county in " + stateName + " (" + stateAbbreviation + ")");
+		c.o(reportCardStartYear + "-" + reportCardEndYear + " report card in " + agencyName + " agency in " + stateName + " (" + stateAbbreviation + ")");
 	}
 }

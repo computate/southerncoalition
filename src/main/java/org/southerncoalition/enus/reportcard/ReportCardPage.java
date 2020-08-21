@@ -21,7 +21,7 @@ public class ReportCardPage extends ReportCardPageGen<ReportCardGenPage> {
 			o.htmReportCardEndYear("Page");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
-			o.htmCountyKey("Page");
+			o.htmAgencyKey("Page");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row w3-padding ").f();
 			{ e("h5").a("class", "w3-cell-row ").f().sx("Pupils in membership by race and sex").g("h5");
@@ -189,6 +189,7 @@ public class ReportCardPage extends ReportCardPageGen<ReportCardGenPage> {
 			o.htmShortTermSuspensionsWhiteTotal("Page");
 			o.htmShortTermSuspensionsWhitePercent("Page");
 			o.htmShortTermSuspensionsWhiteRate("Page");
+			o.htmShortTermSuspensionsBlackVsWhite("Page");
 		} g("div");
 	}
 }
