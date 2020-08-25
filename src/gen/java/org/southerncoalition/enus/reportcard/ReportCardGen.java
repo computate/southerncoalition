@@ -7304,6 +7304,141 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
+	/////////////////////////////
+	// shortTermSuspensionRate //
+	/////////////////////////////
+
+	/**	 The entity shortTermSuspensionRate
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long shortTermSuspensionRate;
+	@JsonIgnore
+	public Wrap<Long> shortTermSuspensionRateWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionRate").o(shortTermSuspensionRate);
+
+	/**	<br/> The entity shortTermSuspensionRate
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionRate">Find the entity shortTermSuspensionRate in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionRate(Wrap<Long> c);
+
+	public Long getShortTermSuspensionRate() {
+		return shortTermSuspensionRate;
+	}
+
+	public void setShortTermSuspensionRate(Long shortTermSuspensionRate) {
+		this.shortTermSuspensionRate = shortTermSuspensionRate;
+		this.shortTermSuspensionRateWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionRate(String o) {
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionRate = Long.parseLong(o);
+		this.shortTermSuspensionRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionRateInit() {
+		if(!shortTermSuspensionRateWrap.alreadyInitialized) {
+			_shortTermSuspensionRate(shortTermSuspensionRateWrap);
+			if(shortTermSuspensionRate == null)
+				setShortTermSuspensionRate(shortTermSuspensionRateWrap.o);
+		}
+		shortTermSuspensionRateWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Long solrShortTermSuspensionRate() {
+		return shortTermSuspensionRate;
+	}
+
+	public String strShortTermSuspensionRate() {
+		return shortTermSuspensionRate == null ? "" : shortTermSuspensionRate.toString();
+	}
+
+	public String jsonShortTermSuspensionRate() {
+		return shortTermSuspensionRate == null ? "" : shortTermSuspensionRate.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionRate() {
+		return "short-term suspension rate";
+	}
+
+	public String htmTooltipShortTermSuspensionRate() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionRate() {
+		return shortTermSuspensionRate == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionRate());
+	}
+
+	public void inputShortTermSuspensionRate(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "short-term suspension rate")
+				.a("id", classApiMethodMethod, "_shortTermSuspensionRate");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setShortTermSuspensionRate classReportCard inputReportCard", pk, "ShortTermSuspensionRate w3-input w3-border ");
+					a("name", "setShortTermSuspensionRate");
+				} else {
+					a("class", "valueShortTermSuspensionRate w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionRate w3-input w3-border ");
+					a("name", "shortTermSuspensionRate");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionRate', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionRate')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionRate')); }); ");
+				}
+				a("value", strShortTermSuspensionRate())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionRate ").f().sx(htmShortTermSuspensionRate()).g("span");
+		}
+	}
+
+	public void htmShortTermSuspensionRate(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionRate").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionRate").a("class", "").f().sx("short-term suspension rate").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputShortTermSuspensionRate(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionRate')); $('#", classApiMethodMethod, "_shortTermSuspensionRate').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionRate', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionRate')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionRate')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
 	///////////////////////////////
 	// shortTermSuspensionsTotal //
 	///////////////////////////////
@@ -11748,6 +11883,112 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
+	/////////////////////////////////
+	// shortTermSuspensionsAllRate //
+	/////////////////////////////////
+
+	/**	 The entity shortTermSuspensionsAllRate
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal shortTermSuspensionsAllRate;
+	@JsonIgnore
+	public Wrap<BigDecimal> shortTermSuspensionsAllRateWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsAllRate").o(shortTermSuspensionsAllRate);
+
+	/**	<br/> The entity shortTermSuspensionsAllRate
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsAllRate">Find the entity shortTermSuspensionsAllRate in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _shortTermSuspensionsAllRate(Wrap<BigDecimal> c);
+
+	public BigDecimal getShortTermSuspensionsAllRate() {
+		return shortTermSuspensionsAllRate;
+	}
+
+	public void setShortTermSuspensionsAllRate(BigDecimal shortTermSuspensionsAllRate) {
+		this.shortTermSuspensionsAllRate = shortTermSuspensionsAllRate;
+		this.shortTermSuspensionsAllRateWrap.alreadyInitialized = true;
+	}
+	public ReportCard setShortTermSuspensionsAllRate(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.shortTermSuspensionsAllRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsAllRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsAllRate(Double o) {
+			this.shortTermSuspensionsAllRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsAllRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setShortTermSuspensionsAllRate(Integer o) {
+			this.shortTermSuspensionsAllRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+		this.shortTermSuspensionsAllRateWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard shortTermSuspensionsAllRateInit() {
+		if(!shortTermSuspensionsAllRateWrap.alreadyInitialized) {
+			_shortTermSuspensionsAllRate(shortTermSuspensionsAllRateWrap);
+			if(shortTermSuspensionsAllRate == null)
+				setShortTermSuspensionsAllRate(shortTermSuspensionsAllRateWrap.o);
+		}
+		shortTermSuspensionsAllRateWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrShortTermSuspensionsAllRate() {
+		return shortTermSuspensionsAllRate == null ? null : shortTermSuspensionsAllRate.doubleValue();
+	}
+
+	public String strShortTermSuspensionsAllRate() {
+		return shortTermSuspensionsAllRate == null ? "" : shortTermSuspensionsAllRate.setScale(2, RoundingMode.CEILING).toString();
+	}
+
+	public String jsonShortTermSuspensionsAllRate() {
+		return shortTermSuspensionsAllRate == null ? "" : shortTermSuspensionsAllRate.toString();
+	}
+
+	public String nomAffichageShortTermSuspensionsAllRate() {
+		return "short-term suspensions Pacific Islanders rate";
+	}
+
+	public String htmTooltipShortTermSuspensionsAllRate() {
+		return null;
+	}
+
+	public String htmShortTermSuspensionsAllRate() {
+		return shortTermSuspensionsAllRate == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsAllRate());
+	}
+
+	public void inputShortTermSuspensionsAllRate(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+	}
+
+	public void htmShortTermSuspensionsAllRate(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			if("Page".equals(classApiMethodMethod)) {
+				{ e("div").a("class", "w3-padding ").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("class", "").f().sx("short-term suspensions Pacific Islanders rate").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row  ").f();
+							{ e("div").a("class", "w3-cell ").f();
+								{ e("div").a("class", "w3-rest ").f();
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsAllRate ").f().sx(strShortTermSuspensionsAllRate()).g("span");
+								} g("div");
+							} g("div");
+						} g("div");
+					} g("div");
+				} g("div");
+			}
+		} g("div");
+	}
+
 	//////////////////////////////////////
 	// shortTermSuspensionsBlackVsWhite //
 	//////////////////////////////////////
@@ -13209,6 +13450,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		delinquentComplaintsWhitePercentInit();
 		delinquentComplaintsPacificIslanderInit();
 		delinquentComplaintsPacificIslanderPercentInit();
+		shortTermSuspensionRateInit();
 		shortTermSuspensionsTotalInit();
 		longTermSuspensionsTotalInit();
 		expulsionsTotalInit();
@@ -13247,6 +13489,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		shortTermSuspensionsWhiteTotalInit();
 		shortTermSuspensionsWhitePercentInit();
 		shortTermSuspensionsWhiteRateInit();
+		shortTermSuspensionsAllRateInit();
 		shortTermSuspensionsBlackVsWhiteInit();
 		stateKeyInit();
 		stateIdInit();
@@ -13435,6 +13678,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.delinquentComplaintsPacificIslander;
 			case "delinquentComplaintsPacificIslanderPercent":
 				return oReportCard.delinquentComplaintsPacificIslanderPercent;
+			case "shortTermSuspensionRate":
+				return oReportCard.shortTermSuspensionRate;
 			case "shortTermSuspensionsTotal":
 				return oReportCard.shortTermSuspensionsTotal;
 			case "longTermSuspensionsTotal":
@@ -13511,6 +13756,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.shortTermSuspensionsWhitePercent;
 			case "shortTermSuspensionsWhiteRate":
 				return oReportCard.shortTermSuspensionsWhiteRate;
+			case "shortTermSuspensionsAllRate":
+				return oReportCard.shortTermSuspensionsAllRate;
 			case "shortTermSuspensionsBlackVsWhite":
 				return oReportCard.shortTermSuspensionsBlackVsWhite;
 			case "stateKey":
@@ -13760,6 +14007,11 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			case "delinquentComplaintsPacificIslander":
 				if(val != null)
 					setDelinquentComplaintsPacificIslander(val);
+				saves.add(var);
+				return val;
+			case "shortTermSuspensionRate":
+				if(val != null)
+					setShortTermSuspensionRate(val);
 				saves.add(var);
 				return val;
 			case "shortTermSuspensionsTotal":
@@ -14222,6 +14474,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					oReportCard.setDelinquentComplaintsPacificIslanderPercent(delinquentComplaintsPacificIslanderPercent);
 			}
 
+			if(saves.contains("shortTermSuspensionRate")) {
+				Long shortTermSuspensionRate = (Long)solrDocument.get("shortTermSuspensionRate_stored_long");
+				if(shortTermSuspensionRate != null)
+					oReportCard.setShortTermSuspensionRate(shortTermSuspensionRate);
+			}
+
 			if(saves.contains("shortTermSuspensionsTotal")) {
 				Long shortTermSuspensionsTotal = (Long)solrDocument.get("shortTermSuspensionsTotal_stored_long");
 				if(shortTermSuspensionsTotal != null)
@@ -14448,6 +14706,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				Double shortTermSuspensionsWhiteRate = (Double)solrDocument.get("shortTermSuspensionsWhiteRate_stored_double");
 				if(shortTermSuspensionsWhiteRate != null)
 					oReportCard.setShortTermSuspensionsWhiteRate(shortTermSuspensionsWhiteRate);
+			}
+
+			if(saves.contains("shortTermSuspensionsAllRate")) {
+				Double shortTermSuspensionsAllRate = (Double)solrDocument.get("shortTermSuspensionsAllRate_stored_double");
+				if(shortTermSuspensionsAllRate != null)
+					oReportCard.setShortTermSuspensionsAllRate(shortTermSuspensionsAllRate);
 			}
 
 			if(saves.contains("shortTermSuspensionsBlackVsWhite")) {
@@ -14864,6 +15128,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			document.addField("delinquentComplaintsPacificIslanderPercent_indexed_double", delinquentComplaintsPacificIslanderPercent.doubleValue());
 			document.addField("delinquentComplaintsPacificIslanderPercent_stored_double", delinquentComplaintsPacificIslanderPercent.doubleValue());
 		}
+		if(shortTermSuspensionRate != null) {
+			document.addField("shortTermSuspensionRate_indexed_long", shortTermSuspensionRate);
+			document.addField("shortTermSuspensionRate_stored_long", shortTermSuspensionRate);
+		}
 		if(shortTermSuspensionsTotal != null) {
 			document.addField("shortTermSuspensionsTotal_indexed_long", shortTermSuspensionsTotal);
 			document.addField("shortTermSuspensionsTotal_stored_long", shortTermSuspensionsTotal);
@@ -15015,6 +15283,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(shortTermSuspensionsWhiteRate != null) {
 			document.addField("shortTermSuspensionsWhiteRate_indexed_double", shortTermSuspensionsWhiteRate.doubleValue());
 			document.addField("shortTermSuspensionsWhiteRate_stored_double", shortTermSuspensionsWhiteRate.doubleValue());
+		}
+		if(shortTermSuspensionsAllRate != null) {
+			document.addField("shortTermSuspensionsAllRate_indexed_double", shortTermSuspensionsAllRate.doubleValue());
+			document.addField("shortTermSuspensionsAllRate_stored_double", shortTermSuspensionsAllRate.doubleValue());
 		}
 		if(shortTermSuspensionsBlackVsWhite != null) {
 			document.addField("shortTermSuspensionsBlackVsWhite_indexed_double", shortTermSuspensionsBlackVsWhite.doubleValue());
@@ -15221,6 +15493,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return "delinquentComplaintsPacificIslander_indexed_long";
 			case "delinquentComplaintsPacificIslanderPercent":
 				return "delinquentComplaintsPacificIslanderPercent_indexed_double";
+			case "shortTermSuspensionRate":
+				return "shortTermSuspensionRate_indexed_long";
 			case "shortTermSuspensionsTotal":
 				return "shortTermSuspensionsTotal_indexed_long";
 			case "longTermSuspensionsTotal":
@@ -15297,6 +15571,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return "shortTermSuspensionsWhitePercent_indexed_double";
 			case "shortTermSuspensionsWhiteRate":
 				return "shortTermSuspensionsWhiteRate_indexed_double";
+			case "shortTermSuspensionsAllRate":
+				return "shortTermSuspensionsAllRate_indexed_double";
 			case "shortTermSuspensionsBlackVsWhite":
 				return "shortTermSuspensionsBlackVsWhite_indexed_double";
 			case "stateKey":
@@ -15582,6 +15858,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(delinquentComplaintsPacificIslanderPercent != null)
 			oReportCard.setDelinquentComplaintsPacificIslanderPercent(delinquentComplaintsPacificIslanderPercent);
 
+		Long shortTermSuspensionRate = (Long)solrDocument.get("shortTermSuspensionRate_stored_long");
+		if(shortTermSuspensionRate != null)
+			oReportCard.setShortTermSuspensionRate(shortTermSuspensionRate);
+
 		Long shortTermSuspensionsTotal = (Long)solrDocument.get("shortTermSuspensionsTotal_stored_long");
 		if(shortTermSuspensionsTotal != null)
 			oReportCard.setShortTermSuspensionsTotal(shortTermSuspensionsTotal);
@@ -15733,6 +16013,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		Double shortTermSuspensionsWhiteRate = (Double)solrDocument.get("shortTermSuspensionsWhiteRate_stored_double");
 		if(shortTermSuspensionsWhiteRate != null)
 			oReportCard.setShortTermSuspensionsWhiteRate(shortTermSuspensionsWhiteRate);
+
+		Double shortTermSuspensionsAllRate = (Double)solrDocument.get("shortTermSuspensionsAllRate_stored_double");
+		if(shortTermSuspensionsAllRate != null)
+			oReportCard.setShortTermSuspensionsAllRate(shortTermSuspensionsAllRate);
 
 		Double shortTermSuspensionsBlackVsWhite = (Double)solrDocument.get("shortTermSuspensionsBlackVsWhite_stored_double");
 		if(shortTermSuspensionsBlackVsWhite != null)
@@ -15938,6 +16222,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("delinquentComplaintsPacificIslander");
 			if(!Objects.equals(delinquentComplaintsPacificIslanderPercent, original.getDelinquentComplaintsPacificIslanderPercent()))
 				apiRequest.addVars("delinquentComplaintsPacificIslanderPercent");
+			if(!Objects.equals(shortTermSuspensionRate, original.getShortTermSuspensionRate()))
+				apiRequest.addVars("shortTermSuspensionRate");
 			if(!Objects.equals(shortTermSuspensionsTotal, original.getShortTermSuspensionsTotal()))
 				apiRequest.addVars("shortTermSuspensionsTotal");
 			if(!Objects.equals(longTermSuspensionsTotal, original.getLongTermSuspensionsTotal()))
@@ -16014,6 +16300,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("shortTermSuspensionsWhitePercent");
 			if(!Objects.equals(shortTermSuspensionsWhiteRate, original.getShortTermSuspensionsWhiteRate()))
 				apiRequest.addVars("shortTermSuspensionsWhiteRate");
+			if(!Objects.equals(shortTermSuspensionsAllRate, original.getShortTermSuspensionsAllRate()))
+				apiRequest.addVars("shortTermSuspensionsAllRate");
 			if(!Objects.equals(shortTermSuspensionsBlackVsWhite, original.getShortTermSuspensionsBlackVsWhite()))
 				apiRequest.addVars("shortTermSuspensionsBlackVsWhite");
 			if(!Objects.equals(stateKey, original.getStateKey()))
@@ -16059,7 +16347,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	//////////////
 
 	@Override public int hashCode() {
-		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, reportCardYearsStr, agencyKey, pupilsTotal, pupilsIndianFemale, pupilsIndianMale, pupilsIndianTotal, pupilsIndianPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsHispanicFemale, pupilsHispanicMale, pupilsHispanicTotal, pupilsHispanicPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, teachersMale, teachersFemale, teachersTotal, teachersWhiteTotal, teachersWhitePercent, teachersBlackTotal, teachersBlackPercent, teachersOtherTotal, teachersOtherPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, delinquentComplaintsAsian, delinquentComplaintsAsianPercent, delinquentComplaintsBlack, delinquentComplaintsBlackPercent, delinquentComplaintsHispanic, delinquentComplaintsHispanicPercent, delinquentComplaintsMultiRacial, delinquentComplaintsMultiRacialPercent, delinquentComplaintsIndian, delinquentComplaintsIndianPercent, delinquentComplaintsWhite, delinquentComplaintsWhitePercent, delinquentComplaintsPacificIslander, delinquentComplaintsPacificIslanderPercent, shortTermSuspensionsTotal, longTermSuspensionsTotal, expulsionsTotal, shortTermSuspensionsAsianFemale, shortTermSuspensionsAsianMale, shortTermSuspensionsAsianTotal, shortTermSuspensionsAsianPercent, shortTermSuspensionsAsianRate, shortTermSuspensionsBlackFemale, shortTermSuspensionsBlackMale, shortTermSuspensionsBlackTotal, shortTermSuspensionsBlackPercent, shortTermSuspensionsBlackRate, shortTermSuspensionsHispanicFemale, shortTermSuspensionsHispanicMale, shortTermSuspensionsHispanicTotal, shortTermSuspensionsHispanicPercent, shortTermSuspensionsHispanicRate, shortTermSuspensionsIndianFemale, shortTermSuspensionsIndianMale, shortTermSuspensionsIndianTotal, shortTermSuspensionsIndianPercent, shortTermSuspensionsIndianRate, shortTermSuspensionsMultiRacialFemale, shortTermSuspensionsMultiRacialMale, shortTermSuspensionsMultiRacialTotal, shortTermSuspensionsMultiRacialPercent, shortTermSuspensionsMultiRacialRate, shortTermSuspensionsPacificIslanderFemale, shortTermSuspensionsPacificIslanderMale, shortTermSuspensionsPacificIslanderTotal, shortTermSuspensionsPacificIslanderPercent, shortTermSuspensionsPacificIslanderRate, shortTermSuspensionsWhiteFemale, shortTermSuspensionsWhiteMale, shortTermSuspensionsWhiteTotal, shortTermSuspensionsWhitePercent, shortTermSuspensionsWhiteRate, shortTermSuspensionsBlackVsWhite, stateKey, stateId, agencyId, stateName, stateAbbreviation, agencyName, agencyCompleteName, agencyDemographicsGraph, agencyStudentsByRaceGraph, agencyTeachersByRaceGraph, agencyGrades3To8Graph, agencyGrades9To12Graph, agencyGraduatesWithin4YearsGraph, suspensionsByRaceGraph, suspensionRatesByRaceGraph, countySchoolBasedComplaintsGraph, schoolBasedComplaintsGraph);
+		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, reportCardYearsStr, agencyKey, pupilsTotal, pupilsIndianFemale, pupilsIndianMale, pupilsIndianTotal, pupilsIndianPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsHispanicFemale, pupilsHispanicMale, pupilsHispanicTotal, pupilsHispanicPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, teachersMale, teachersFemale, teachersTotal, teachersWhiteTotal, teachersWhitePercent, teachersBlackTotal, teachersBlackPercent, teachersOtherTotal, teachersOtherPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, delinquentComplaintsAsian, delinquentComplaintsAsianPercent, delinquentComplaintsBlack, delinquentComplaintsBlackPercent, delinquentComplaintsHispanic, delinquentComplaintsHispanicPercent, delinquentComplaintsMultiRacial, delinquentComplaintsMultiRacialPercent, delinquentComplaintsIndian, delinquentComplaintsIndianPercent, delinquentComplaintsWhite, delinquentComplaintsWhitePercent, delinquentComplaintsPacificIslander, delinquentComplaintsPacificIslanderPercent, shortTermSuspensionRate, shortTermSuspensionsTotal, longTermSuspensionsTotal, expulsionsTotal, shortTermSuspensionsAsianFemale, shortTermSuspensionsAsianMale, shortTermSuspensionsAsianTotal, shortTermSuspensionsAsianPercent, shortTermSuspensionsAsianRate, shortTermSuspensionsBlackFemale, shortTermSuspensionsBlackMale, shortTermSuspensionsBlackTotal, shortTermSuspensionsBlackPercent, shortTermSuspensionsBlackRate, shortTermSuspensionsHispanicFemale, shortTermSuspensionsHispanicMale, shortTermSuspensionsHispanicTotal, shortTermSuspensionsHispanicPercent, shortTermSuspensionsHispanicRate, shortTermSuspensionsIndianFemale, shortTermSuspensionsIndianMale, shortTermSuspensionsIndianTotal, shortTermSuspensionsIndianPercent, shortTermSuspensionsIndianRate, shortTermSuspensionsMultiRacialFemale, shortTermSuspensionsMultiRacialMale, shortTermSuspensionsMultiRacialTotal, shortTermSuspensionsMultiRacialPercent, shortTermSuspensionsMultiRacialRate, shortTermSuspensionsPacificIslanderFemale, shortTermSuspensionsPacificIslanderMale, shortTermSuspensionsPacificIslanderTotal, shortTermSuspensionsPacificIslanderPercent, shortTermSuspensionsPacificIslanderRate, shortTermSuspensionsWhiteFemale, shortTermSuspensionsWhiteMale, shortTermSuspensionsWhiteTotal, shortTermSuspensionsWhitePercent, shortTermSuspensionsWhiteRate, shortTermSuspensionsAllRate, shortTermSuspensionsBlackVsWhite, stateKey, stateId, agencyId, stateName, stateAbbreviation, agencyName, agencyCompleteName, agencyDemographicsGraph, agencyStudentsByRaceGraph, agencyTeachersByRaceGraph, agencyGrades3To8Graph, agencyGrades9To12Graph, agencyGraduatesWithin4YearsGraph, suspensionsByRaceGraph, suspensionRatesByRaceGraph, countySchoolBasedComplaintsGraph, schoolBasedComplaintsGraph);
 	}
 
 	////////////
@@ -16133,6 +16421,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				&& Objects.equals( delinquentComplaintsWhitePercent, that.delinquentComplaintsWhitePercent )
 				&& Objects.equals( delinquentComplaintsPacificIslander, that.delinquentComplaintsPacificIslander )
 				&& Objects.equals( delinquentComplaintsPacificIslanderPercent, that.delinquentComplaintsPacificIslanderPercent )
+				&& Objects.equals( shortTermSuspensionRate, that.shortTermSuspensionRate )
 				&& Objects.equals( shortTermSuspensionsTotal, that.shortTermSuspensionsTotal )
 				&& Objects.equals( longTermSuspensionsTotal, that.longTermSuspensionsTotal )
 				&& Objects.equals( expulsionsTotal, that.expulsionsTotal )
@@ -16171,6 +16460,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				&& Objects.equals( shortTermSuspensionsWhiteTotal, that.shortTermSuspensionsWhiteTotal )
 				&& Objects.equals( shortTermSuspensionsWhitePercent, that.shortTermSuspensionsWhitePercent )
 				&& Objects.equals( shortTermSuspensionsWhiteRate, that.shortTermSuspensionsWhiteRate )
+				&& Objects.equals( shortTermSuspensionsAllRate, that.shortTermSuspensionsAllRate )
 				&& Objects.equals( shortTermSuspensionsBlackVsWhite, that.shortTermSuspensionsBlackVsWhite )
 				&& Objects.equals( stateKey, that.stateKey )
 				&& Objects.equals( stateId, that.stateId )
@@ -16259,6 +16549,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		sb.append( ", delinquentComplaintsWhitePercent: " ).append(delinquentComplaintsWhitePercent);
 		sb.append( ", delinquentComplaintsPacificIslander: " ).append(delinquentComplaintsPacificIslander);
 		sb.append( ", delinquentComplaintsPacificIslanderPercent: " ).append(delinquentComplaintsPacificIslanderPercent);
+		sb.append( ", shortTermSuspensionRate: " ).append(shortTermSuspensionRate);
 		sb.append( ", shortTermSuspensionsTotal: " ).append(shortTermSuspensionsTotal);
 		sb.append( ", longTermSuspensionsTotal: " ).append(longTermSuspensionsTotal);
 		sb.append( ", expulsionsTotal: " ).append(expulsionsTotal);
@@ -16297,6 +16588,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		sb.append( ", shortTermSuspensionsWhiteTotal: " ).append(shortTermSuspensionsWhiteTotal);
 		sb.append( ", shortTermSuspensionsWhitePercent: " ).append(shortTermSuspensionsWhitePercent);
 		sb.append( ", shortTermSuspensionsWhiteRate: " ).append(shortTermSuspensionsWhiteRate);
+		sb.append( ", shortTermSuspensionsAllRate: " ).append(shortTermSuspensionsAllRate);
 		sb.append( ", shortTermSuspensionsBlackVsWhite: " ).append(shortTermSuspensionsBlackVsWhite);
 		sb.append( ", stateKey: " ).append(stateKey);
 		sb.append( ", stateId: \"" ).append(stateId).append( "\"" );

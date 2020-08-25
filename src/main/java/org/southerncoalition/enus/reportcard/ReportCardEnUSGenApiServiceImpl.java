@@ -1132,6 +1132,19 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
+					case "shortTermSuspensionRate":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionRate", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionRate failed", b.cause())));
+							});
+						}));
+						break;
 					case "shortTermSuspensionsTotal":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
@@ -2030,6 +2043,19 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 									a.handle(Future.succeededFuture());
 								else
 									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsPacificIslander failed", b.cause())));
+							});
+						}));
+						break;
+					case "shortTermSuspensionRate":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "shortTermSuspensionRate", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionRate failed", b.cause())));
 							});
 						}));
 						break;
@@ -3520,6 +3546,34 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 										a.handle(Future.succeededFuture());
 									else
 										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsPacificIslander failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setShortTermSuspensionRate":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "shortTermSuspensionRate")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionRate failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setShortTermSuspensionRate(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "shortTermSuspensionRate", o2.jsonShortTermSuspensionRate())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionRate failed", b.cause())));
 								});
 							}));
 						}

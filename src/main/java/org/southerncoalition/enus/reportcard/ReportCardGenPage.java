@@ -237,6 +237,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmDelinquentComplaintsPacificIslanderPercent("Page");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionRate("Page");
 			o.htmShortTermSuspensionsTotal("Page");
 			o.htmLongTermSuspensionsTotal("Page");
 			o.htmExpulsionsTotal("Page");
@@ -289,6 +290,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmShortTermSuspensionsWhiteTotal("Page");
 			o.htmShortTermSuspensionsWhitePercent("Page");
 			o.htmShortTermSuspensionsWhiteRate("Page");
+			o.htmShortTermSuspensionsAllRate("Page");
 			o.htmShortTermSuspensionsBlackVsWhite("Page");
 		} g("div");
 	}
@@ -393,6 +395,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmDelinquentComplaintsPacificIslanderPercent("POST");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionRate("POST");
 			o.htmShortTermSuspensionsTotal("POST");
 			o.htmLongTermSuspensionsTotal("POST");
 			o.htmExpulsionsTotal("POST");
@@ -445,6 +448,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmShortTermSuspensionsWhiteTotal("POST");
 			o.htmShortTermSuspensionsWhitePercent("POST");
 			o.htmShortTermSuspensionsWhiteRate("POST");
+			o.htmShortTermSuspensionsAllRate("POST");
 			o.htmShortTermSuspensionsBlackVsWhite("POST");
 		} g("div");
 	}
@@ -544,6 +548,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmDelinquentComplaintsPacificIslander("PUTCopy");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionRate("PUTCopy");
 			o.htmShortTermSuspensionsTotal("PUTCopy");
 			o.htmLongTermSuspensionsTotal("PUTCopy");
 			o.htmExpulsionsTotal("PUTCopy");
@@ -654,6 +659,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmDelinquentComplaintsPacificIslander("PATCH");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionRate("PATCH");
 			o.htmShortTermSuspensionsTotal("PATCH");
 			o.htmLongTermSuspensionsTotal("PATCH");
 			o.htmExpulsionsTotal("PATCH");
@@ -793,6 +799,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmDelinquentComplaintsPacificIslanderPercent("Search");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmShortTermSuspensionRate("Search");
 			o.htmShortTermSuspensionsTotal("Search");
 			o.htmLongTermSuspensionsTotal("Search");
 			o.htmExpulsionsTotal("Search");
@@ -845,6 +852,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmShortTermSuspensionsWhiteTotal("Search");
 			o.htmShortTermSuspensionsWhitePercent("Search");
 			o.htmShortTermSuspensionsWhiteRate("Search");
+			o.htmShortTermSuspensionsAllRate("Search");
 			o.htmShortTermSuspensionsBlackVsWhite("Search");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();

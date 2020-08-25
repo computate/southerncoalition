@@ -925,6 +925,22 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 18
 	 * HtmlCell: 1
+	 * DisplayName.enUS: short-term suspension rate
+	 */ 
+	protected void _shortTermSuspensionRate(Wrap<Long> c) {
+	}
+	@Override
+	public String strShortTermSuspensionRate() {
+		return shortTermSuspensionRate == null ? "" : new DecimalFormat("#.00").format(shortTermSuspensionRate);
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 18
+	 * HtmlCell: 2
 	 * DisplayName.enUS: short-term suspensions total
 	 */ 
 	protected void _shortTermSuspensionsTotal(Wrap<Long> c) {
@@ -940,7 +956,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * Define: true
 	 * HtmlRow: 18
-	 * HtmlCell: 2
+	 * HtmlCell: 3
 	 * DisplayName.enUS: long-term suspensions total
 	 */ 
 	protected void _longTermSuspensionsTotal(Wrap<Long> c) {
@@ -956,7 +972,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * Define: true
 	 * HtmlRow: 18
-	 * HtmlCell: 3
+	 * HtmlCell: 4
 	 * DisplayName.enUS: expulsions total
 	 */ 
 	protected void _expulsionsTotal(Wrap<Long> c) {
@@ -1025,12 +1041,11 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions Asians rate
 	 */ 
 	protected void _shortTermSuspensionsAsianRate(Wrap<BigDecimal> c) {
-		if(shortTermSuspensionsAsianFemale != null  && shortTermSuspensionsAsianMale != null
-				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
-			c.o(new BigDecimal(shortTermSuspensionsAsianFemale).add(new BigDecimal(shortTermSuspensionsAsianMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+		if(shortTermSuspensionsAsianTotal != null && pupilsAsianTotal != null && pupilsAsianTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsAsianTotal).divide(new BigDecimal(pupilsAsianTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
 	@Override public String strShortTermSuspensionsAsianRate() {
-		return shortTermSuspensionsAsianPercent == null ? "" : shortTermSuspensionsAsianPercent.setScale(1, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsAsianRate == null ? "" : shortTermSuspensionsAsianRate.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1096,12 +1111,11 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions Blacks rate
 	 */ 
 	protected void _shortTermSuspensionsBlackRate(Wrap<BigDecimal> c) {
-		if(shortTermSuspensionsBlackFemale != null  && shortTermSuspensionsBlackMale != null
-				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
-			c.o(new BigDecimal(shortTermSuspensionsBlackFemale).add(new BigDecimal(shortTermSuspensionsBlackMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+		if(shortTermSuspensionsBlackTotal != null && pupilsBlackTotal != null && pupilsBlackTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsBlackTotal).divide(new BigDecimal(pupilsBlackTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
 	@Override public String strShortTermSuspensionsBlackRate() {
-		return shortTermSuspensionsBlackPercent == null ? "" : shortTermSuspensionsBlackPercent.setScale(1, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsBlackRate == null ? "" : shortTermSuspensionsBlackRate.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1167,12 +1181,11 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions Latinx rate
 	 */ 
 	protected void _shortTermSuspensionsHispanicRate(Wrap<BigDecimal> c) {
-		if(shortTermSuspensionsHispanicFemale != null  && shortTermSuspensionsHispanicMale != null
-				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
-			c.o(new BigDecimal(shortTermSuspensionsHispanicFemale).add(new BigDecimal(shortTermSuspensionsHispanicMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+		if(shortTermSuspensionsHispanicTotal != null && pupilsHispanicTotal != null && pupilsHispanicTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsHispanicTotal).divide(new BigDecimal(pupilsHispanicTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
 	@Override public String strShortTermSuspensionsHispanicRate() {
-		return shortTermSuspensionsHispanicPercent == null ? "" : shortTermSuspensionsHispanicPercent.setScale(1, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsHispanicRate == null ? "" : shortTermSuspensionsHispanicRate.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1238,12 +1251,11 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions First Nation rate
 	 */ 
 	protected void _shortTermSuspensionsIndianRate(Wrap<BigDecimal> c) {
-		if(shortTermSuspensionsIndianFemale != null  && shortTermSuspensionsIndianMale != null
-				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
-			c.o(new BigDecimal(shortTermSuspensionsIndianFemale).add(new BigDecimal(shortTermSuspensionsIndianMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+		if(shortTermSuspensionsIndianTotal != null && pupilsIndianTotal != null && pupilsIndianTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsIndianTotal).divide(new BigDecimal(pupilsIndianTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
 	@Override public String strShortTermSuspensionsIndianRate() {
-		return shortTermSuspensionsIndianPercent == null ? "" : shortTermSuspensionsIndianPercent.setScale(1, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsIndianRate == null ? "" : shortTermSuspensionsIndianRate.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1309,12 +1321,11 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions Multi Racial rate
 	 */ 
 	protected void _shortTermSuspensionsMultiRacialRate(Wrap<BigDecimal> c) {
-		if(shortTermSuspensionsMultiRacialFemale != null  && shortTermSuspensionsMultiRacialMale != null
-				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
-			c.o(new BigDecimal(shortTermSuspensionsMultiRacialFemale).add(new BigDecimal(shortTermSuspensionsMultiRacialMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+		if(shortTermSuspensionsMultiRacialTotal != null && pupilsMultiRacialTotal != null && pupilsMultiRacialTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsMultiRacialTotal).divide(new BigDecimal(pupilsMultiRacialTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
 	@Override public String strShortTermSuspensionsMultiRacialRate() {
-		return shortTermSuspensionsMultiRacialPercent == null ? "" : shortTermSuspensionsMultiRacialPercent.setScale(1, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsMultiRacialRate == null ? "" : shortTermSuspensionsMultiRacialRate.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1380,12 +1391,11 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions Pacific Islanders rate
 	 */ 
 	protected void _shortTermSuspensionsPacificIslanderRate(Wrap<BigDecimal> c) {
-		if(shortTermSuspensionsPacificIslanderFemale != null  && shortTermSuspensionsPacificIslanderMale != null
-				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
-			c.o(new BigDecimal(shortTermSuspensionsPacificIslanderFemale).add(new BigDecimal(shortTermSuspensionsPacificIslanderMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+		if(shortTermSuspensionsPacificIslanderTotal != null && shortTermSuspensionsTotal != null && pupilsPacificIslanderTotal != null && pupilsPacificIslanderTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsPacificIslanderTotal).divide(new BigDecimal(pupilsPacificIslanderTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
 	@Override public String strShortTermSuspensionsPacificIslanderRate() {
-		return shortTermSuspensionsPacificIslanderPercent == null ? "" : shortTermSuspensionsPacificIslanderPercent.setScale(1, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsPacificIslanderRate == null ? "" : shortTermSuspensionsPacificIslanderRate.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1451,12 +1461,11 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions Whites rate
 	 */ 
 	protected void _shortTermSuspensionsWhiteRate(Wrap<BigDecimal> c) {
-		if(shortTermSuspensionsWhiteFemale != null  && shortTermSuspensionsWhiteMale != null
-				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
-			c.o(new BigDecimal(shortTermSuspensionsWhiteFemale).add(new BigDecimal(shortTermSuspensionsWhiteMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+		if(shortTermSuspensionsWhiteTotal != null && pupilsWhiteTotal != null && pupilsWhiteTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsWhiteTotal).divide(new BigDecimal(pupilsWhiteTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
 	@Override public String strShortTermSuspensionsWhiteRate() {
-		return shortTermSuspensionsWhitePercent == null ? "" : shortTermSuspensionsWhitePercent.setScale(1, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsWhiteRate == null ? "" : shortTermSuspensionsWhiteRate.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1465,6 +1474,22 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 25
 	 * HtmlCell: 6
+	 * DisplayName.enUS: short-term suspensions Pacific Islanders rate
+	 */ 
+	protected void _shortTermSuspensionsAllRate(Wrap<BigDecimal> c) {
+		if(shortTermSuspensionsTotal != null && pupilsTotal != null && pupilsTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsTotal).divide(new BigDecimal(pupilsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strShortTermSuspensionsAllRate() {
+		return shortTermSuspensionsAllRate == null ? "" : shortTermSuspensionsAllRate.setScale(1, RoundingMode.CEILING).toString();
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * HtmlRow: 25
+	 * HtmlCell: 7
 	 * DisplayName.enUS: short-term suspensions black vs white
 	 */ 
 	protected void _shortTermSuspensionsBlackVsWhite(Wrap<BigDecimal> c) {
