@@ -1474,7 +1474,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 25
 	 * HtmlCell: 6
-	 * DisplayName.enUS: short-term suspensions Pacific Islanders rate
+	 * DisplayName.enUS: short-term suspensions all rate
 	 */ 
 	protected void _shortTermSuspensionsAllRate(Wrap<BigDecimal> c) {
 		if(shortTermSuspensionsTotal != null && pupilsTotal != null && pupilsTotal > 0)

@@ -11952,7 +11952,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageShortTermSuspensionsAllRate() {
-		return "short-term suspensions Pacific Islanders rate";
+		return "short-term suspensions all rate";
 	}
 
 	public String htmTooltipShortTermSuspensionsAllRate() {
@@ -11974,7 +11974,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("short-term suspensions Pacific Islanders rate").g("label");
+							e("label").a("class", "").f().sx("short-term suspensions all rate").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
