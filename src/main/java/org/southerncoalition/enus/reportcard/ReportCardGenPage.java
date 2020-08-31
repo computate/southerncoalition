@@ -1157,7 +1157,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#putimportReportCardModal').hide(); ").f().sx("×").g("span");
 							e("h2").a("class", "w3-padding ").f().sx("Import report cards").g("h2");
 						} g("header");
-						{ e("div").a("class", "w3-container ").f();
+						{ e("div").a("class", "w3-container ").a("id", "putimportReportCardFormValues").f();
 							ReportCard o = new ReportCard();
 							o.setSiteRequest_(siteRequest_);
 
@@ -1191,7 +1191,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#putmergeReportCardModal').hide(); ").f().sx("×").g("span");
 							e("h2").a("class", "w3-padding ").f().sx("Merge report cards").g("h2");
 						} g("header");
-						{ e("div").a("class", "w3-container ").f();
+						{ e("div").a("class", "w3-container ").a("id", "putmergeReportCardFormValues").f();
 							ReportCard o = new ReportCard();
 							o.setSiteRequest_(siteRequest_);
 
@@ -1225,7 +1225,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#putcopyReportCardModal').hide(); ").f().sx("×").g("span");
 							e("h2").a("class", "w3-padding ").f().sx("Duplicate report cards").g("h2");
 						} g("header");
-						{ e("div").a("class", "w3-container ").f();
+						{ e("div").a("class", "w3-container ").a("id", "putcopyReportCardFormValues").f();
 							ReportCard o = new ReportCard();
 							o.setSiteRequest_(siteRequest_);
 
@@ -1259,7 +1259,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#postReportCardModal').hide(); ").f().sx("×").g("span");
 							e("h2").a("class", "w3-padding ").f().sx("Create a report card").g("h2");
 						} g("header");
-						{ e("div").a("class", "w3-container ").f();
+						{ e("div").a("class", "w3-container ").a("id", "postReportCardFormValues").f();
 							ReportCard o = new ReportCard();
 							o.setSiteRequest_(siteRequest_);
 
@@ -1293,14 +1293,11 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#patchReportCardModal').hide(); ").f().sx("×").g("span");
 							e("h2").a("class", "w3-padding ").f().sx("Modify report cards").g("h2");
 						} g("header");
-						{ e("div").a("class", "w3-container ").f();
+						{ e("div").a("class", "w3-container ").a("id", "patchReportCardFormValues").f();
 							ReportCard o = new ReportCard();
 							o.setSiteRequest_(siteRequest_);
 
-							// FormValues PATCH
-							{ e("form").a("action", "").a("id", "patchReportCardFormValues").a("onsubmit", "event.preventDefault(); return false; ").f();
-								htmlFormPATCHReportCard(o);
-							} g("form");
+							htmlFormPATCHReportCard(o);
 							e("button")
 								.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-margin w3-pale-green ")
 								.a("onclick", "patchReportCard(null, $('#patchReportCardFormValues'), ", Optional.ofNullable(reportCard_).map(ReportCard::getPk).map(a -> a.toString()).orElse("null"), ", function() {}, function() {}); ")

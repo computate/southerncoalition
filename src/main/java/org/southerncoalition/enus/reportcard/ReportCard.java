@@ -1,5 +1,13 @@
 package org.southerncoalition.enus.reportcard;
 
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.Rectangle;
+import java.awt.Shape;
+import java.awt.geom.Rectangle2D;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.nio.charset.Charset;
@@ -7,8 +15,17 @@ import java.text.DecimalFormat;
 import java.util.Base64;
 import java.util.List;
 
-import org.southerncoalition.enus.cluster.Cluster;
+import javax.imageio.ImageIO;
+
+import org.apache.commons.lang3.exception.ExceptionUtils;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.block.ColumnArrangement;
+import org.jfree.chart.plot.PiePlot;
+import org.jfree.chart.title.LegendTitle;
+import org.jfree.data.general.DefaultPieDataset;
 import org.southerncoalition.enus.agency.SiteAgency;
+import org.southerncoalition.enus.cluster.Cluster;
 import org.southerncoalition.enus.search.SearchList;
 import org.southerncoalition.enus.wrap.Wrap;
 
@@ -1596,16 +1613,48 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _agencyDemographicsGraph(Wrap<String> w) {
-		/** Use these fields to generate the graph: 
-		pupilsIndianTotal
-		pupilsAsianTotal
-		pupilsBlackTotal
-		pupilsHispanicTotal
-		pupilsMultiRacialTotal
-		pupilsPacificIslanderTotal
-		pupilsWhiteTotal
-		**/
-		w.o(new String(Base64.getEncoder().encode(new byte[] {})));
+		DefaultPieDataset dataset = new DefaultPieDataset();
+		dataset.setValue( String.format("%s (%s%%)", "American Indian", pupilsIndianPercent), pupilsIndianPercent );  
+		dataset.setValue( String.format("%s (%s%%)", "Asian", pupilsAsianPercent), pupilsAsianPercent );  
+		dataset.setValue( String.format("%s (%s%%)", "Black", pupilsBlackPercent), pupilsBlackPercent );  
+		dataset.setValue( String.format("%s (%s%%)", "Hispanic", pupilsHispanicPercent), pupilsHispanicPercent );  
+		dataset.setValue( String.format("%s (%s%%)", "Multi-Racial", pupilsMultiRacialPercent), pupilsMultiRacialPercent );  
+		dataset.setValue( String.format("%s (%s%%)", "Pacific Islander", pupilsPacificIslanderPercent), pupilsPacificIslanderPercent );  
+		dataset.setValue( String.format("%s (%s%%)", "White", pupilsWhitePercent), pupilsWhitePercent );  
+
+		JFreeChart chart = ChartFactory.createPieChart(null, dataset, true, false, false);
+		PiePlot plot = (PiePlot)chart.getPlot();
+
+		LegendTitle legendOld = chart.getLegend();
+		LegendTitle legendNew = new LegendTitle(plot, new ColumnArrangement(), new ColumnArrangement());
+		legendNew.setPosition(legendOld.getPosition());
+		legendNew.setBackgroundPaint(legendOld.getBackgroundPaint());
+		legendNew.setItemFont(new Font("Arial", 0, 24));
+		plot.setLegendItemShape(new Rectangle(24, 24));
+		chart.removeLegend();
+		chart.addLegend(legendNew);
+		plot.setBackgroundPaint(null);
+		plot.setOutlinePaint(null);
+
+		plot.setLabelGenerator(null);
+		plot.setSectionPaint(dataset.getKey(0), Color.decode("#8064a2"));
+		plot.setSectionPaint(dataset.getKey(1), Color.decode("#308399"));
+		plot.setSectionPaint(dataset.getKey(2), Color.decode("#e97000"));
+		plot.setSectionPaint(dataset.getKey(3), Color.decode("#77933c"));
+		plot.setSectionPaint(dataset.getKey(4), Color.decode("#254061"));
+		plot.setSectionPaint(dataset.getKey(5), Color.decode("#edda38"));
+		plot.setSectionPaint(dataset.getKey(6), Color.decode("#a84039"));
+		BufferedImage image = chart.createBufferedImage(400, 600);
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		try {
+			ImageIO.write(image, "png", baos);
+			baos.flush();
+			byte[] imageInByte = baos.toByteArray();
+			baos.close();
+			w.o(new String(Base64.getEncoder().encode(imageInByte), Charset.forName("UTF-8")));
+		} catch (IOException ex) {
+			ExceptionUtils.rethrow(ex);
+		}
 	}
 
 	/**   
@@ -1613,7 +1662,38 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _agencyStudentsByRaceGraph(Wrap<String> w) {
-		w.o(new String(Base64.getEncoder().encode(new byte[] {}), Charset.forName("UTF-8")));
+		DefaultPieDataset dataset = new DefaultPieDataset();
+		dataset.setValue( "American Indian" , pupilsIndianPercent );  
+		dataset.setValue( "Asian" , pupilsAsianPercent );  
+		dataset.setValue( "Black" , pupilsBlackPercent );  
+		dataset.setValue( "Hispanic" , pupilsHispanicPercent );  
+		dataset.setValue( "Multi-Racial" , pupilsMultiRacialPercent );  
+		dataset.setValue( "Pacific Islander" , pupilsPacificIslanderPercent );  
+		dataset.setValue( "White" , pupilsWhitePercent );  
+		JFreeChart chart = ChartFactory.createPieChart(
+				"Mobile Sales", // chart title
+				dataset, // data
+				true, // include legend
+				false, false);
+		PiePlot plot = (PiePlot)chart.getPlot();
+		plot.setSectionPaint(dataset.getKey(0), Color.decode("#8064a2"));
+		plot.setSectionPaint(dataset.getKey(1), Color.decode("#308399"));
+		plot.setSectionPaint(dataset.getKey(2), Color.decode("#e97000"));
+		plot.setSectionPaint(dataset.getKey(3), Color.decode("#77933c"));
+		plot.setSectionPaint(dataset.getKey(4), Color.decode("#254061"));
+		plot.setSectionPaint(dataset.getKey(5), Color.decode("#edda38"));
+		plot.setSectionPaint(dataset.getKey(6), Color.decode("#a84039"));
+		BufferedImage image = chart.createBufferedImage(200, 200);
+		ByteArrayOutputStream baos = new ByteArrayOutputStream();
+		try {
+			ImageIO.write(image, "png", baos);
+			baos.flush();
+			byte[] imageInByte = baos.toByteArray();
+			baos.close();
+			w.o(new String(Base64.getEncoder().encode(imageInByte), Charset.forName("UTF-8")));
+		} catch (IOException ex) {
+			ExceptionUtils.rethrow(ex);
+		}
 	}
 
 	/**   
