@@ -1662,38 +1662,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _agencyStudentsByRaceGraph(Wrap<String> w) {
-		DefaultPieDataset dataset = new DefaultPieDataset();
-		dataset.setValue( "American Indian" , pupilsIndianPercent );  
-		dataset.setValue( "Asian" , pupilsAsianPercent );  
-		dataset.setValue( "Black" , pupilsBlackPercent );  
-		dataset.setValue( "Hispanic" , pupilsHispanicPercent );  
-		dataset.setValue( "Multi-Racial" , pupilsMultiRacialPercent );  
-		dataset.setValue( "Pacific Islander" , pupilsPacificIslanderPercent );  
-		dataset.setValue( "White" , pupilsWhitePercent );  
-		JFreeChart chart = ChartFactory.createPieChart(
-				"Mobile Sales", // chart title
-				dataset, // data
-				true, // include legend
-				false, false);
-		PiePlot plot = (PiePlot)chart.getPlot();
-		plot.setSectionPaint(dataset.getKey(0), Color.decode("#8064a2"));
-		plot.setSectionPaint(dataset.getKey(1), Color.decode("#308399"));
-		plot.setSectionPaint(dataset.getKey(2), Color.decode("#e97000"));
-		plot.setSectionPaint(dataset.getKey(3), Color.decode("#77933c"));
-		plot.setSectionPaint(dataset.getKey(4), Color.decode("#254061"));
-		plot.setSectionPaint(dataset.getKey(5), Color.decode("#edda38"));
-		plot.setSectionPaint(dataset.getKey(6), Color.decode("#a84039"));
-		BufferedImage image = chart.createBufferedImage(200, 200);
-		ByteArrayOutputStream baos = new ByteArrayOutputStream();
-		try {
-			ImageIO.write(image, "png", baos);
-			baos.flush();
-			byte[] imageInByte = baos.toByteArray();
-			baos.close();
-			w.o(new String(Base64.getEncoder().encode(imageInByte), Charset.forName("UTF-8")));
-		} catch (IOException ex) {
-			ExceptionUtils.rethrow(ex);
-		}
+		w.o(new String(Base64.getEncoder().encode(new byte[] {}), Charset.forName("UTF-8")));
 	}
 
 	/**   
