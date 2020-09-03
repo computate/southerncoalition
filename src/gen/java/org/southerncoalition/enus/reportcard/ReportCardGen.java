@@ -1253,17 +1253,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setPupilsIndianPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.pupilsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.pupilsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsIndianPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setPupilsIndianPercent(Double o) {
-			this.pupilsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.pupilsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsIndianPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setPupilsIndianPercent(Integer o) {
-			this.pupilsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.pupilsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsIndianPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -1282,7 +1282,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strPupilsIndianPercent() {
-		return pupilsIndianPercent == null ? "" : pupilsIndianPercent.setScale(2, RoundingMode.CEILING).toString();
+		return pupilsIndianPercent == null ? "" : pupilsIndianPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonPupilsIndianPercent() {
@@ -1724,17 +1724,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setPupilsAsianPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.pupilsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.pupilsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsAsianPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setPupilsAsianPercent(Double o) {
-			this.pupilsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.pupilsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsAsianPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setPupilsAsianPercent(Integer o) {
-			this.pupilsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.pupilsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsAsianPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -1753,7 +1753,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strPupilsAsianPercent() {
-		return pupilsAsianPercent == null ? "" : pupilsAsianPercent.setScale(2, RoundingMode.CEILING).toString();
+		return pupilsAsianPercent == null ? "" : pupilsAsianPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonPupilsAsianPercent() {
@@ -2195,17 +2195,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setPupilsHispanicPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.pupilsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.pupilsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsHispanicPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setPupilsHispanicPercent(Double o) {
-			this.pupilsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.pupilsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsHispanicPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setPupilsHispanicPercent(Integer o) {
-			this.pupilsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.pupilsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsHispanicPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -2224,7 +2224,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strPupilsHispanicPercent() {
-		return pupilsHispanicPercent == null ? "" : pupilsHispanicPercent.setScale(2, RoundingMode.CEILING).toString();
+		return pupilsHispanicPercent == null ? "" : pupilsHispanicPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonPupilsHispanicPercent() {
@@ -2666,17 +2666,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setPupilsBlackPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.pupilsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.pupilsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsBlackPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setPupilsBlackPercent(Double o) {
-			this.pupilsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.pupilsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsBlackPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setPupilsBlackPercent(Integer o) {
-			this.pupilsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.pupilsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsBlackPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -2695,7 +2695,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strPupilsBlackPercent() {
-		return pupilsBlackPercent == null ? "" : pupilsBlackPercent.setScale(2, RoundingMode.CEILING).toString();
+		return pupilsBlackPercent == null ? "" : pupilsBlackPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonPupilsBlackPercent() {
@@ -3137,17 +3137,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setPupilsWhitePercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.pupilsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.pupilsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsWhitePercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setPupilsWhitePercent(Double o) {
-			this.pupilsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.pupilsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsWhitePercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setPupilsWhitePercent(Integer o) {
-			this.pupilsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.pupilsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsWhitePercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -3166,7 +3166,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strPupilsWhitePercent() {
-		return pupilsWhitePercent == null ? "" : pupilsWhitePercent.setScale(2, RoundingMode.CEILING).toString();
+		return pupilsWhitePercent == null ? "" : pupilsWhitePercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonPupilsWhitePercent() {
@@ -3608,17 +3608,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setPupilsPacificIslanderPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.pupilsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.pupilsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsPacificIslanderPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setPupilsPacificIslanderPercent(Double o) {
-			this.pupilsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.pupilsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsPacificIslanderPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setPupilsPacificIslanderPercent(Integer o) {
-			this.pupilsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.pupilsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsPacificIslanderPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -3637,7 +3637,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strPupilsPacificIslanderPercent() {
-		return pupilsPacificIslanderPercent == null ? "" : pupilsPacificIslanderPercent.setScale(2, RoundingMode.CEILING).toString();
+		return pupilsPacificIslanderPercent == null ? "" : pupilsPacificIslanderPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonPupilsPacificIslanderPercent() {
@@ -4079,17 +4079,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setPupilsMultiRacialPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.pupilsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.pupilsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsMultiRacialPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setPupilsMultiRacialPercent(Double o) {
-			this.pupilsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.pupilsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsMultiRacialPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setPupilsMultiRacialPercent(Integer o) {
-			this.pupilsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.pupilsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsMultiRacialPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -4108,7 +4108,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strPupilsMultiRacialPercent() {
-		return pupilsMultiRacialPercent == null ? "" : pupilsMultiRacialPercent.setScale(2, RoundingMode.CEILING).toString();
+		return pupilsMultiRacialPercent == null ? "" : pupilsMultiRacialPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonPupilsMultiRacialPercent() {
@@ -4151,6 +4151,86 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				} g("div");
 			}
 		} g("div");
+	}
+
+	////////////////////////
+	// pupilsOtherPercent //
+	////////////////////////
+
+	/**	 The entity pupilsOtherPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal pupilsOtherPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> pupilsOtherPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("pupilsOtherPercent").o(pupilsOtherPercent);
+
+	/**	<br/> The entity pupilsOtherPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pupilsOtherPercent">Find the entity pupilsOtherPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _pupilsOtherPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getPupilsOtherPercent() {
+		return pupilsOtherPercent;
+	}
+
+	public void setPupilsOtherPercent(BigDecimal pupilsOtherPercent) {
+		this.pupilsOtherPercent = pupilsOtherPercent;
+		this.pupilsOtherPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setPupilsOtherPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.pupilsOtherPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.pupilsOtherPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setPupilsOtherPercent(Double o) {
+			this.pupilsOtherPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.pupilsOtherPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setPupilsOtherPercent(Integer o) {
+			this.pupilsOtherPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.pupilsOtherPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard pupilsOtherPercentInit() {
+		if(!pupilsOtherPercentWrap.alreadyInitialized) {
+			_pupilsOtherPercent(pupilsOtherPercentWrap);
+			if(pupilsOtherPercent == null)
+				setPupilsOtherPercent(pupilsOtherPercentWrap.o);
+		}
+		pupilsOtherPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrPupilsOtherPercent() {
+		return pupilsOtherPercent == null ? null : pupilsOtherPercent.doubleValue();
+	}
+
+	public String strPupilsOtherPercent() {
+		return pupilsOtherPercent == null ? "" : pupilsOtherPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonPupilsOtherPercent() {
+		return pupilsOtherPercent == null ? "" : pupilsOtherPercent.toString();
+	}
+
+	public String nomAffichagePupilsOtherPercent() {
+		return null;
+	}
+
+	public String htmTooltipPupilsOtherPercent() {
+		return null;
+	}
+
+	public String htmPupilsOtherPercent() {
+		return pupilsOtherPercent == null ? "" : StringEscapeUtils.escapeHtml4(strPupilsOtherPercent());
 	}
 
 	//////////////////
@@ -4685,17 +4765,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setTeachersWhitePercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.teachersWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.teachersWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.teachersWhitePercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setTeachersWhitePercent(Double o) {
-			this.teachersWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.teachersWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.teachersWhitePercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setTeachersWhitePercent(Integer o) {
-			this.teachersWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.teachersWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.teachersWhitePercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -4714,7 +4794,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strTeachersWhitePercent() {
-		return teachersWhitePercent == null ? "" : teachersWhitePercent.setScale(2, RoundingMode.CEILING).toString();
+		return teachersWhitePercent == null ? "" : teachersWhitePercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonTeachersWhitePercent() {
@@ -4926,17 +5006,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setTeachersBlackPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.teachersBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.teachersBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.teachersBlackPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setTeachersBlackPercent(Double o) {
-			this.teachersBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.teachersBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.teachersBlackPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setTeachersBlackPercent(Integer o) {
-			this.teachersBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.teachersBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.teachersBlackPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -4955,7 +5035,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strTeachersBlackPercent() {
-		return teachersBlackPercent == null ? "" : teachersBlackPercent.setScale(2, RoundingMode.CEILING).toString();
+		return teachersBlackPercent == null ? "" : teachersBlackPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonTeachersBlackPercent() {
@@ -5167,17 +5247,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setTeachersOtherPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.teachersOtherPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.teachersOtherPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.teachersOtherPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setTeachersOtherPercent(Double o) {
-			this.teachersOtherPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.teachersOtherPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.teachersOtherPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setTeachersOtherPercent(Integer o) {
-			this.teachersOtherPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.teachersOtherPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.teachersOtherPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -5196,7 +5276,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strTeachersOtherPercent() {
-		return teachersOtherPercent == null ? "" : teachersOtherPercent.setScale(2, RoundingMode.CEILING).toString();
+		return teachersOtherPercent == null ? "" : teachersOtherPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonTeachersOtherPercent() {
@@ -5543,17 +5623,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setDelinquentComplaintsAtSchoolPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsAtSchoolPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsAtSchoolPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsAtSchoolPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setDelinquentComplaintsAtSchoolPercent(Double o) {
-			this.delinquentComplaintsAtSchoolPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsAtSchoolPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsAtSchoolPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setDelinquentComplaintsAtSchoolPercent(Integer o) {
-			this.delinquentComplaintsAtSchoolPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsAtSchoolPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsAtSchoolPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -5572,7 +5652,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strDelinquentComplaintsAtSchoolPercent() {
-		return delinquentComplaintsAtSchoolPercent == null ? "" : delinquentComplaintsAtSchoolPercent.setScale(2, RoundingMode.CEILING).toString();
+		return delinquentComplaintsAtSchoolPercent == null ? "" : delinquentComplaintsAtSchoolPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonDelinquentComplaintsAtSchoolPercent() {
@@ -5784,17 +5864,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setDelinquentComplaintsAsianPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsAsianPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setDelinquentComplaintsAsianPercent(Double o) {
-			this.delinquentComplaintsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsAsianPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setDelinquentComplaintsAsianPercent(Integer o) {
-			this.delinquentComplaintsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsAsianPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -5813,7 +5893,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strDelinquentComplaintsAsianPercent() {
-		return delinquentComplaintsAsianPercent == null ? "" : delinquentComplaintsAsianPercent.setScale(2, RoundingMode.CEILING).toString();
+		return delinquentComplaintsAsianPercent == null ? "" : delinquentComplaintsAsianPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonDelinquentComplaintsAsianPercent() {
@@ -6025,17 +6105,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setDelinquentComplaintsBlackPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsBlackPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setDelinquentComplaintsBlackPercent(Double o) {
-			this.delinquentComplaintsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsBlackPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setDelinquentComplaintsBlackPercent(Integer o) {
-			this.delinquentComplaintsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsBlackPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -6054,7 +6134,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strDelinquentComplaintsBlackPercent() {
-		return delinquentComplaintsBlackPercent == null ? "" : delinquentComplaintsBlackPercent.setScale(2, RoundingMode.CEILING).toString();
+		return delinquentComplaintsBlackPercent == null ? "" : delinquentComplaintsBlackPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonDelinquentComplaintsBlackPercent() {
@@ -6266,17 +6346,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setDelinquentComplaintsHispanicPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsHispanicPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setDelinquentComplaintsHispanicPercent(Double o) {
-			this.delinquentComplaintsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsHispanicPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setDelinquentComplaintsHispanicPercent(Integer o) {
-			this.delinquentComplaintsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsHispanicPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -6295,7 +6375,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strDelinquentComplaintsHispanicPercent() {
-		return delinquentComplaintsHispanicPercent == null ? "" : delinquentComplaintsHispanicPercent.setScale(2, RoundingMode.CEILING).toString();
+		return delinquentComplaintsHispanicPercent == null ? "" : delinquentComplaintsHispanicPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonDelinquentComplaintsHispanicPercent() {
@@ -6507,17 +6587,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setDelinquentComplaintsMultiRacialPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsMultiRacialPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setDelinquentComplaintsMultiRacialPercent(Double o) {
-			this.delinquentComplaintsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsMultiRacialPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setDelinquentComplaintsMultiRacialPercent(Integer o) {
-			this.delinquentComplaintsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsMultiRacialPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -6536,7 +6616,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strDelinquentComplaintsMultiRacialPercent() {
-		return delinquentComplaintsMultiRacialPercent == null ? "" : delinquentComplaintsMultiRacialPercent.setScale(2, RoundingMode.CEILING).toString();
+		return delinquentComplaintsMultiRacialPercent == null ? "" : delinquentComplaintsMultiRacialPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonDelinquentComplaintsMultiRacialPercent() {
@@ -6748,17 +6828,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setDelinquentComplaintsIndianPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsIndianPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setDelinquentComplaintsIndianPercent(Double o) {
-			this.delinquentComplaintsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsIndianPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setDelinquentComplaintsIndianPercent(Integer o) {
-			this.delinquentComplaintsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsIndianPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -6777,7 +6857,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strDelinquentComplaintsIndianPercent() {
-		return delinquentComplaintsIndianPercent == null ? "" : delinquentComplaintsIndianPercent.setScale(2, RoundingMode.CEILING).toString();
+		return delinquentComplaintsIndianPercent == null ? "" : delinquentComplaintsIndianPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonDelinquentComplaintsIndianPercent() {
@@ -6989,17 +7069,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setDelinquentComplaintsWhitePercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsWhitePercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setDelinquentComplaintsWhitePercent(Double o) {
-			this.delinquentComplaintsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsWhitePercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setDelinquentComplaintsWhitePercent(Integer o) {
-			this.delinquentComplaintsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsWhitePercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -7018,7 +7098,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strDelinquentComplaintsWhitePercent() {
-		return delinquentComplaintsWhitePercent == null ? "" : delinquentComplaintsWhitePercent.setScale(2, RoundingMode.CEILING).toString();
+		return delinquentComplaintsWhitePercent == null ? "" : delinquentComplaintsWhitePercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonDelinquentComplaintsWhitePercent() {
@@ -7230,17 +7310,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setDelinquentComplaintsPacificIslanderPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsPacificIslanderPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setDelinquentComplaintsPacificIslanderPercent(Double o) {
-			this.delinquentComplaintsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsPacificIslanderPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setDelinquentComplaintsPacificIslanderPercent(Integer o) {
-			this.delinquentComplaintsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.delinquentComplaintsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsPacificIslanderPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -7259,7 +7339,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strDelinquentComplaintsPacificIslanderPercent() {
-		return delinquentComplaintsPacificIslanderPercent == null ? "" : delinquentComplaintsPacificIslanderPercent.setScale(2, RoundingMode.CEILING).toString();
+		return delinquentComplaintsPacificIslanderPercent == null ? "" : delinquentComplaintsPacificIslanderPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonDelinquentComplaintsPacificIslanderPercent() {
@@ -8241,17 +8321,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setShortTermSuspensionsAsianPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsAsianPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsAsianPercent(Double o) {
-			this.shortTermSuspensionsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsAsianPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsAsianPercent(Integer o) {
-			this.shortTermSuspensionsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsAsianPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -8270,7 +8350,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strShortTermSuspensionsAsianPercent() {
-		return shortTermSuspensionsAsianPercent == null ? "" : shortTermSuspensionsAsianPercent.setScale(2, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsAsianPercent == null ? "" : shortTermSuspensionsAsianPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonShortTermSuspensionsAsianPercent() {
@@ -8347,17 +8427,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setShortTermSuspensionsAsianRate(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsAsianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsAsianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsAsianRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsAsianRate(Double o) {
-			this.shortTermSuspensionsAsianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsAsianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsAsianRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsAsianRate(Integer o) {
-			this.shortTermSuspensionsAsianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsAsianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsAsianRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -8376,7 +8456,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strShortTermSuspensionsAsianRate() {
-		return shortTermSuspensionsAsianRate == null ? "" : shortTermSuspensionsAsianRate.setScale(2, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsAsianRate == null ? "" : shortTermSuspensionsAsianRate.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonShortTermSuspensionsAsianRate() {
@@ -8818,17 +8898,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setShortTermSuspensionsBlackPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsBlackPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsBlackPercent(Double o) {
-			this.shortTermSuspensionsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsBlackPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsBlackPercent(Integer o) {
-			this.shortTermSuspensionsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsBlackPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -8847,7 +8927,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strShortTermSuspensionsBlackPercent() {
-		return shortTermSuspensionsBlackPercent == null ? "" : shortTermSuspensionsBlackPercent.setScale(2, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsBlackPercent == null ? "" : shortTermSuspensionsBlackPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonShortTermSuspensionsBlackPercent() {
@@ -8924,17 +9004,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setShortTermSuspensionsBlackRate(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsBlackRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsBlackRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsBlackRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsBlackRate(Double o) {
-			this.shortTermSuspensionsBlackRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsBlackRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsBlackRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsBlackRate(Integer o) {
-			this.shortTermSuspensionsBlackRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsBlackRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsBlackRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -8953,7 +9033,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strShortTermSuspensionsBlackRate() {
-		return shortTermSuspensionsBlackRate == null ? "" : shortTermSuspensionsBlackRate.setScale(2, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsBlackRate == null ? "" : shortTermSuspensionsBlackRate.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonShortTermSuspensionsBlackRate() {
@@ -9395,17 +9475,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setShortTermSuspensionsHispanicPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsHispanicPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsHispanicPercent(Double o) {
-			this.shortTermSuspensionsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsHispanicPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsHispanicPercent(Integer o) {
-			this.shortTermSuspensionsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsHispanicPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -9424,7 +9504,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strShortTermSuspensionsHispanicPercent() {
-		return shortTermSuspensionsHispanicPercent == null ? "" : shortTermSuspensionsHispanicPercent.setScale(2, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsHispanicPercent == null ? "" : shortTermSuspensionsHispanicPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonShortTermSuspensionsHispanicPercent() {
@@ -9501,17 +9581,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setShortTermSuspensionsHispanicRate(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsHispanicRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsHispanicRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsHispanicRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsHispanicRate(Double o) {
-			this.shortTermSuspensionsHispanicRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsHispanicRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsHispanicRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsHispanicRate(Integer o) {
-			this.shortTermSuspensionsHispanicRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsHispanicRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsHispanicRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -9530,7 +9610,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strShortTermSuspensionsHispanicRate() {
-		return shortTermSuspensionsHispanicRate == null ? "" : shortTermSuspensionsHispanicRate.setScale(2, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsHispanicRate == null ? "" : shortTermSuspensionsHispanicRate.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonShortTermSuspensionsHispanicRate() {
@@ -9972,17 +10052,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setShortTermSuspensionsIndianPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsIndianPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsIndianPercent(Double o) {
-			this.shortTermSuspensionsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsIndianPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsIndianPercent(Integer o) {
-			this.shortTermSuspensionsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsIndianPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -10001,7 +10081,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strShortTermSuspensionsIndianPercent() {
-		return shortTermSuspensionsIndianPercent == null ? "" : shortTermSuspensionsIndianPercent.setScale(2, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsIndianPercent == null ? "" : shortTermSuspensionsIndianPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonShortTermSuspensionsIndianPercent() {
@@ -10078,17 +10158,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setShortTermSuspensionsIndianRate(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsIndianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsIndianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsIndianRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsIndianRate(Double o) {
-			this.shortTermSuspensionsIndianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsIndianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsIndianRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsIndianRate(Integer o) {
-			this.shortTermSuspensionsIndianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsIndianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsIndianRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -10107,7 +10187,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strShortTermSuspensionsIndianRate() {
-		return shortTermSuspensionsIndianRate == null ? "" : shortTermSuspensionsIndianRate.setScale(2, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsIndianRate == null ? "" : shortTermSuspensionsIndianRate.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonShortTermSuspensionsIndianRate() {
@@ -10549,17 +10629,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setShortTermSuspensionsMultiRacialPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsMultiRacialPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsMultiRacialPercent(Double o) {
-			this.shortTermSuspensionsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsMultiRacialPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsMultiRacialPercent(Integer o) {
-			this.shortTermSuspensionsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsMultiRacialPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -10578,7 +10658,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strShortTermSuspensionsMultiRacialPercent() {
-		return shortTermSuspensionsMultiRacialPercent == null ? "" : shortTermSuspensionsMultiRacialPercent.setScale(2, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsMultiRacialPercent == null ? "" : shortTermSuspensionsMultiRacialPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonShortTermSuspensionsMultiRacialPercent() {
@@ -10655,17 +10735,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setShortTermSuspensionsMultiRacialRate(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsMultiRacialRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsMultiRacialRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsMultiRacialRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsMultiRacialRate(Double o) {
-			this.shortTermSuspensionsMultiRacialRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsMultiRacialRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsMultiRacialRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsMultiRacialRate(Integer o) {
-			this.shortTermSuspensionsMultiRacialRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsMultiRacialRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsMultiRacialRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -10684,7 +10764,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strShortTermSuspensionsMultiRacialRate() {
-		return shortTermSuspensionsMultiRacialRate == null ? "" : shortTermSuspensionsMultiRacialRate.setScale(2, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsMultiRacialRate == null ? "" : shortTermSuspensionsMultiRacialRate.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonShortTermSuspensionsMultiRacialRate() {
@@ -11126,17 +11206,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setShortTermSuspensionsPacificIslanderPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsPacificIslanderPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsPacificIslanderPercent(Double o) {
-			this.shortTermSuspensionsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsPacificIslanderPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsPacificIslanderPercent(Integer o) {
-			this.shortTermSuspensionsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsPacificIslanderPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -11155,7 +11235,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strShortTermSuspensionsPacificIslanderPercent() {
-		return shortTermSuspensionsPacificIslanderPercent == null ? "" : shortTermSuspensionsPacificIslanderPercent.setScale(2, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsPacificIslanderPercent == null ? "" : shortTermSuspensionsPacificIslanderPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonShortTermSuspensionsPacificIslanderPercent() {
@@ -11232,17 +11312,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setShortTermSuspensionsPacificIslanderRate(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsPacificIslanderRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsPacificIslanderRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsPacificIslanderRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsPacificIslanderRate(Double o) {
-			this.shortTermSuspensionsPacificIslanderRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsPacificIslanderRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsPacificIslanderRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsPacificIslanderRate(Integer o) {
-			this.shortTermSuspensionsPacificIslanderRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsPacificIslanderRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsPacificIslanderRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -11261,7 +11341,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strShortTermSuspensionsPacificIslanderRate() {
-		return shortTermSuspensionsPacificIslanderRate == null ? "" : shortTermSuspensionsPacificIslanderRate.setScale(2, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsPacificIslanderRate == null ? "" : shortTermSuspensionsPacificIslanderRate.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonShortTermSuspensionsPacificIslanderRate() {
@@ -11703,17 +11783,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setShortTermSuspensionsWhitePercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsWhitePercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsWhitePercent(Double o) {
-			this.shortTermSuspensionsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsWhitePercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsWhitePercent(Integer o) {
-			this.shortTermSuspensionsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsWhitePercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -11732,7 +11812,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strShortTermSuspensionsWhitePercent() {
-		return shortTermSuspensionsWhitePercent == null ? "" : shortTermSuspensionsWhitePercent.setScale(2, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsWhitePercent == null ? "" : shortTermSuspensionsWhitePercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonShortTermSuspensionsWhitePercent() {
@@ -11809,17 +11889,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setShortTermSuspensionsWhiteRate(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsWhiteRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsWhiteRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsWhiteRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsWhiteRate(Double o) {
-			this.shortTermSuspensionsWhiteRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsWhiteRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsWhiteRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsWhiteRate(Integer o) {
-			this.shortTermSuspensionsWhiteRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsWhiteRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsWhiteRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -11838,7 +11918,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strShortTermSuspensionsWhiteRate() {
-		return shortTermSuspensionsWhiteRate == null ? "" : shortTermSuspensionsWhiteRate.setScale(2, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsWhiteRate == null ? "" : shortTermSuspensionsWhiteRate.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonShortTermSuspensionsWhiteRate() {
@@ -11915,17 +11995,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setShortTermSuspensionsAllRate(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsAllRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsAllRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsAllRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsAllRate(Double o) {
-			this.shortTermSuspensionsAllRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsAllRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsAllRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsAllRate(Integer o) {
-			this.shortTermSuspensionsAllRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsAllRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsAllRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -11944,7 +12024,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strShortTermSuspensionsAllRate() {
-		return shortTermSuspensionsAllRate == null ? "" : shortTermSuspensionsAllRate.setScale(2, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsAllRate == null ? "" : shortTermSuspensionsAllRate.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonShortTermSuspensionsAllRate() {
@@ -12021,17 +12101,17 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public ReportCard setShortTermSuspensionsBlackVsWhite(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsBlackVsWhite = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsBlackVsWhite = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsBlackVsWhiteWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsBlackVsWhite(Double o) {
-			this.shortTermSuspensionsBlackVsWhite = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsBlackVsWhite = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsBlackVsWhiteWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
 	public ReportCard setShortTermSuspensionsBlackVsWhite(Integer o) {
-			this.shortTermSuspensionsBlackVsWhite = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.CEILING);
+			this.shortTermSuspensionsBlackVsWhite = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsBlackVsWhiteWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
@@ -12050,7 +12130,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String strShortTermSuspensionsBlackVsWhite() {
-		return shortTermSuspensionsBlackVsWhite == null ? "" : shortTermSuspensionsBlackVsWhite.setScale(2, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsBlackVsWhite == null ? "" : shortTermSuspensionsBlackVsWhite.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
 	public String jsonShortTermSuspensionsBlackVsWhite() {
@@ -13366,6 +13446,68 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return schoolBasedComplaintsGraph == null ? "" : StringEscapeUtils.escapeHtml4(strSchoolBasedComplaintsGraph());
 	}
 
+	////////////////////////////////
+	// agencyStudentsByRaceGraph2 //
+	////////////////////////////////
+
+	/**	 The entity agencyStudentsByRaceGraph2
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String agencyStudentsByRaceGraph2;
+	@JsonIgnore
+	public Wrap<String> agencyStudentsByRaceGraph2Wrap = new Wrap<String>().p(this).c(String.class).var("agencyStudentsByRaceGraph2").o(agencyStudentsByRaceGraph2);
+
+	/**	<br/> The entity agencyStudentsByRaceGraph2
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyStudentsByRaceGraph2">Find the entity agencyStudentsByRaceGraph2 in Solr</a>
+	 * <br/>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _agencyStudentsByRaceGraph2(Wrap<String> w);
+
+	public String getAgencyStudentsByRaceGraph2() {
+		return agencyStudentsByRaceGraph2;
+	}
+
+	public void setAgencyStudentsByRaceGraph2(String agencyStudentsByRaceGraph2) {
+		this.agencyStudentsByRaceGraph2 = agencyStudentsByRaceGraph2;
+		this.agencyStudentsByRaceGraph2Wrap.alreadyInitialized = true;
+	}
+	protected ReportCard agencyStudentsByRaceGraph2Init() {
+		if(!agencyStudentsByRaceGraph2Wrap.alreadyInitialized) {
+			_agencyStudentsByRaceGraph2(agencyStudentsByRaceGraph2Wrap);
+			if(agencyStudentsByRaceGraph2 == null)
+				setAgencyStudentsByRaceGraph2(agencyStudentsByRaceGraph2Wrap.o);
+		}
+		agencyStudentsByRaceGraph2Wrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public String solrAgencyStudentsByRaceGraph2() {
+		return agencyStudentsByRaceGraph2;
+	}
+
+	public String strAgencyStudentsByRaceGraph2() {
+		return agencyStudentsByRaceGraph2 == null ? "" : agencyStudentsByRaceGraph2;
+	}
+
+	public String jsonAgencyStudentsByRaceGraph2() {
+		return agencyStudentsByRaceGraph2 == null ? "" : agencyStudentsByRaceGraph2;
+	}
+
+	public String nomAffichageAgencyStudentsByRaceGraph2() {
+		return null;
+	}
+
+	public String htmTooltipAgencyStudentsByRaceGraph2() {
+		return null;
+	}
+
+	public String htmAgencyStudentsByRaceGraph2() {
+		return agencyStudentsByRaceGraph2 == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyStudentsByRaceGraph2());
+	}
+
 	//////////////
 	// initDeep //
 	//////////////
@@ -13424,6 +13566,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		pupilsMultiRacialMaleInit();
 		pupilsMultiRacialTotalInit();
 		pupilsMultiRacialPercentInit();
+		pupilsOtherPercentInit();
 		teachersMaleInit();
 		teachersFemaleInit();
 		teachersTotalInit();
@@ -13512,6 +13655,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		suspensionRatesByRaceGraphInit();
 		countySchoolBasedComplaintsGraphInit();
 		schoolBasedComplaintsGraphInit();
+		agencyStudentsByRaceGraph2Init();
 	}
 
 	@Override public void initDeepForClass(SiteRequestEnUS siteRequest_) {
@@ -13626,6 +13770,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.pupilsMultiRacialTotal;
 			case "pupilsMultiRacialPercent":
 				return oReportCard.pupilsMultiRacialPercent;
+			case "pupilsOtherPercent":
+				return oReportCard.pupilsOtherPercent;
 			case "teachersMale":
 				return oReportCard.teachersMale;
 			case "teachersFemale":
@@ -13802,6 +13948,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.countySchoolBasedComplaintsGraph;
 			case "schoolBasedComplaintsGraph":
 				return oReportCard.schoolBasedComplaintsGraph;
+			case "agencyStudentsByRaceGraph2":
+				return oReportCard.agencyStudentsByRaceGraph2;
 			default:
 				return super.obtainCluster(var);
 		}
@@ -14318,6 +14466,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					oReportCard.setPupilsMultiRacialPercent(pupilsMultiRacialPercent);
 			}
 
+			if(saves.contains("pupilsOtherPercent")) {
+				Double pupilsOtherPercent = (Double)solrDocument.get("pupilsOtherPercent_stored_double");
+				if(pupilsOtherPercent != null)
+					oReportCard.setPupilsOtherPercent(pupilsOtherPercent);
+			}
+
 			if(saves.contains("teachersMale")) {
 				Long teachersMale = (Long)solrDocument.get("teachersMale_stored_long");
 				if(teachersMale != null)
@@ -14821,6 +14975,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				if(schoolBasedComplaintsGraph != null)
 					oReportCard.setSchoolBasedComplaintsGraph(schoolBasedComplaintsGraph);
 			}
+
+			if(saves.contains("agencyStudentsByRaceGraph2")) {
+				String agencyStudentsByRaceGraph2 = (String)solrDocument.get("agencyStudentsByRaceGraph2_stored_string");
+				if(agencyStudentsByRaceGraph2 != null)
+					oReportCard.setAgencyStudentsByRaceGraph2(agencyStudentsByRaceGraph2);
+			}
 		}
 
 		super.populateCluster(solrDocument);
@@ -15023,6 +15183,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(pupilsMultiRacialPercent != null) {
 			document.addField("pupilsMultiRacialPercent_indexed_double", pupilsMultiRacialPercent.doubleValue());
 			document.addField("pupilsMultiRacialPercent_stored_double", pupilsMultiRacialPercent.doubleValue());
+		}
+		if(pupilsOtherPercent != null) {
+			document.addField("pupilsOtherPercent_indexed_double", pupilsOtherPercent.doubleValue());
+			document.addField("pupilsOtherPercent_stored_double", pupilsOtherPercent.doubleValue());
 		}
 		if(teachersMale != null) {
 			document.addField("teachersMale_indexed_long", teachersMale);
@@ -15350,6 +15514,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(schoolBasedComplaintsGraph != null) {
 			document.addField("schoolBasedComplaintsGraph_stored_string", schoolBasedComplaintsGraph);
 		}
+		if(agencyStudentsByRaceGraph2 != null) {
+			document.addField("agencyStudentsByRaceGraph2_stored_string", agencyStudentsByRaceGraph2);
+		}
 		super.indexCluster(document);
 
 	}
@@ -15441,6 +15608,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return "pupilsMultiRacialTotal_indexed_long";
 			case "pupilsMultiRacialPercent":
 				return "pupilsMultiRacialPercent_indexed_double";
+			case "pupilsOtherPercent":
+				return "pupilsOtherPercent_indexed_double";
 			case "teachersMale":
 				return "teachersMale_indexed_long";
 			case "teachersFemale":
@@ -15753,6 +15922,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		Double pupilsMultiRacialPercent = (Double)solrDocument.get("pupilsMultiRacialPercent_stored_double");
 		if(pupilsMultiRacialPercent != null)
 			oReportCard.setPupilsMultiRacialPercent(pupilsMultiRacialPercent);
+
+		Double pupilsOtherPercent = (Double)solrDocument.get("pupilsOtherPercent_stored_double");
+		if(pupilsOtherPercent != null)
+			oReportCard.setPupilsOtherPercent(pupilsOtherPercent);
 
 		Long teachersMale = (Long)solrDocument.get("teachersMale_stored_long");
 		if(teachersMale != null)
@@ -16090,6 +16263,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(schoolBasedComplaintsGraph != null)
 			oReportCard.setSchoolBasedComplaintsGraph(schoolBasedComplaintsGraph);
 
+		String agencyStudentsByRaceGraph2 = (String)solrDocument.get("agencyStudentsByRaceGraph2_stored_string");
+		if(agencyStudentsByRaceGraph2 != null)
+			oReportCard.setAgencyStudentsByRaceGraph2(agencyStudentsByRaceGraph2);
+
 		super.storeCluster(solrDocument);
 	}
 
@@ -16170,6 +16347,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("pupilsMultiRacialTotal");
 			if(!Objects.equals(pupilsMultiRacialPercent, original.getPupilsMultiRacialPercent()))
 				apiRequest.addVars("pupilsMultiRacialPercent");
+			if(!Objects.equals(pupilsOtherPercent, original.getPupilsOtherPercent()))
+				apiRequest.addVars("pupilsOtherPercent");
 			if(!Objects.equals(teachersMale, original.getTeachersMale()))
 				apiRequest.addVars("teachersMale");
 			if(!Objects.equals(teachersFemale, original.getTeachersFemale()))
@@ -16338,6 +16517,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("countySchoolBasedComplaintsGraph");
 			if(!Objects.equals(schoolBasedComplaintsGraph, original.getSchoolBasedComplaintsGraph()))
 				apiRequest.addVars("schoolBasedComplaintsGraph");
+			if(!Objects.equals(agencyStudentsByRaceGraph2, original.getAgencyStudentsByRaceGraph2()))
+				apiRequest.addVars("agencyStudentsByRaceGraph2");
 			super.apiRequestCluster();
 		}
 	}
@@ -16347,7 +16528,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	//////////////
 
 	@Override public int hashCode() {
-		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, reportCardYearsStr, agencyKey, pupilsTotal, pupilsIndianFemale, pupilsIndianMale, pupilsIndianTotal, pupilsIndianPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsHispanicFemale, pupilsHispanicMale, pupilsHispanicTotal, pupilsHispanicPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, teachersMale, teachersFemale, teachersTotal, teachersWhiteTotal, teachersWhitePercent, teachersBlackTotal, teachersBlackPercent, teachersOtherTotal, teachersOtherPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, delinquentComplaintsAsian, delinquentComplaintsAsianPercent, delinquentComplaintsBlack, delinquentComplaintsBlackPercent, delinquentComplaintsHispanic, delinquentComplaintsHispanicPercent, delinquentComplaintsMultiRacial, delinquentComplaintsMultiRacialPercent, delinquentComplaintsIndian, delinquentComplaintsIndianPercent, delinquentComplaintsWhite, delinquentComplaintsWhitePercent, delinquentComplaintsPacificIslander, delinquentComplaintsPacificIslanderPercent, shortTermSuspensionRate, shortTermSuspensionsTotal, longTermSuspensionsTotal, expulsionsTotal, shortTermSuspensionsAsianFemale, shortTermSuspensionsAsianMale, shortTermSuspensionsAsianTotal, shortTermSuspensionsAsianPercent, shortTermSuspensionsAsianRate, shortTermSuspensionsBlackFemale, shortTermSuspensionsBlackMale, shortTermSuspensionsBlackTotal, shortTermSuspensionsBlackPercent, shortTermSuspensionsBlackRate, shortTermSuspensionsHispanicFemale, shortTermSuspensionsHispanicMale, shortTermSuspensionsHispanicTotal, shortTermSuspensionsHispanicPercent, shortTermSuspensionsHispanicRate, shortTermSuspensionsIndianFemale, shortTermSuspensionsIndianMale, shortTermSuspensionsIndianTotal, shortTermSuspensionsIndianPercent, shortTermSuspensionsIndianRate, shortTermSuspensionsMultiRacialFemale, shortTermSuspensionsMultiRacialMale, shortTermSuspensionsMultiRacialTotal, shortTermSuspensionsMultiRacialPercent, shortTermSuspensionsMultiRacialRate, shortTermSuspensionsPacificIslanderFemale, shortTermSuspensionsPacificIslanderMale, shortTermSuspensionsPacificIslanderTotal, shortTermSuspensionsPacificIslanderPercent, shortTermSuspensionsPacificIslanderRate, shortTermSuspensionsWhiteFemale, shortTermSuspensionsWhiteMale, shortTermSuspensionsWhiteTotal, shortTermSuspensionsWhitePercent, shortTermSuspensionsWhiteRate, shortTermSuspensionsAllRate, shortTermSuspensionsBlackVsWhite, stateKey, stateId, agencyId, stateName, stateAbbreviation, agencyName, agencyCompleteName, agencyDemographicsGraph, agencyStudentsByRaceGraph, agencyTeachersByRaceGraph, agencyGrades3To8Graph, agencyGrades9To12Graph, agencyGraduatesWithin4YearsGraph, suspensionsByRaceGraph, suspensionRatesByRaceGraph, countySchoolBasedComplaintsGraph, schoolBasedComplaintsGraph);
+		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, reportCardYearsStr, agencyKey, pupilsTotal, pupilsIndianFemale, pupilsIndianMale, pupilsIndianTotal, pupilsIndianPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsHispanicFemale, pupilsHispanicMale, pupilsHispanicTotal, pupilsHispanicPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, pupilsOtherPercent, teachersMale, teachersFemale, teachersTotal, teachersWhiteTotal, teachersWhitePercent, teachersBlackTotal, teachersBlackPercent, teachersOtherTotal, teachersOtherPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, delinquentComplaintsAsian, delinquentComplaintsAsianPercent, delinquentComplaintsBlack, delinquentComplaintsBlackPercent, delinquentComplaintsHispanic, delinquentComplaintsHispanicPercent, delinquentComplaintsMultiRacial, delinquentComplaintsMultiRacialPercent, delinquentComplaintsIndian, delinquentComplaintsIndianPercent, delinquentComplaintsWhite, delinquentComplaintsWhitePercent, delinquentComplaintsPacificIslander, delinquentComplaintsPacificIslanderPercent, shortTermSuspensionRate, shortTermSuspensionsTotal, longTermSuspensionsTotal, expulsionsTotal, shortTermSuspensionsAsianFemale, shortTermSuspensionsAsianMale, shortTermSuspensionsAsianTotal, shortTermSuspensionsAsianPercent, shortTermSuspensionsAsianRate, shortTermSuspensionsBlackFemale, shortTermSuspensionsBlackMale, shortTermSuspensionsBlackTotal, shortTermSuspensionsBlackPercent, shortTermSuspensionsBlackRate, shortTermSuspensionsHispanicFemale, shortTermSuspensionsHispanicMale, shortTermSuspensionsHispanicTotal, shortTermSuspensionsHispanicPercent, shortTermSuspensionsHispanicRate, shortTermSuspensionsIndianFemale, shortTermSuspensionsIndianMale, shortTermSuspensionsIndianTotal, shortTermSuspensionsIndianPercent, shortTermSuspensionsIndianRate, shortTermSuspensionsMultiRacialFemale, shortTermSuspensionsMultiRacialMale, shortTermSuspensionsMultiRacialTotal, shortTermSuspensionsMultiRacialPercent, shortTermSuspensionsMultiRacialRate, shortTermSuspensionsPacificIslanderFemale, shortTermSuspensionsPacificIslanderMale, shortTermSuspensionsPacificIslanderTotal, shortTermSuspensionsPacificIslanderPercent, shortTermSuspensionsPacificIslanderRate, shortTermSuspensionsWhiteFemale, shortTermSuspensionsWhiteMale, shortTermSuspensionsWhiteTotal, shortTermSuspensionsWhitePercent, shortTermSuspensionsWhiteRate, shortTermSuspensionsAllRate, shortTermSuspensionsBlackVsWhite, stateKey, stateId, agencyId, stateName, stateAbbreviation, agencyName, agencyCompleteName, agencyDemographicsGraph, agencyStudentsByRaceGraph, agencyTeachersByRaceGraph, agencyGrades3To8Graph, agencyGrades9To12Graph, agencyGraduatesWithin4YearsGraph, suspensionsByRaceGraph, suspensionRatesByRaceGraph, countySchoolBasedComplaintsGraph, schoolBasedComplaintsGraph, agencyStudentsByRaceGraph2);
 	}
 
 	////////////
@@ -16395,6 +16576,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				&& Objects.equals( pupilsMultiRacialMale, that.pupilsMultiRacialMale )
 				&& Objects.equals( pupilsMultiRacialTotal, that.pupilsMultiRacialTotal )
 				&& Objects.equals( pupilsMultiRacialPercent, that.pupilsMultiRacialPercent )
+				&& Objects.equals( pupilsOtherPercent, that.pupilsOtherPercent )
 				&& Objects.equals( teachersMale, that.teachersMale )
 				&& Objects.equals( teachersFemale, that.teachersFemale )
 				&& Objects.equals( teachersTotal, that.teachersTotal )
@@ -16478,7 +16660,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				&& Objects.equals( suspensionsByRaceGraph, that.suspensionsByRaceGraph )
 				&& Objects.equals( suspensionRatesByRaceGraph, that.suspensionRatesByRaceGraph )
 				&& Objects.equals( countySchoolBasedComplaintsGraph, that.countySchoolBasedComplaintsGraph )
-				&& Objects.equals( schoolBasedComplaintsGraph, that.schoolBasedComplaintsGraph );
+				&& Objects.equals( schoolBasedComplaintsGraph, that.schoolBasedComplaintsGraph )
+				&& Objects.equals( agencyStudentsByRaceGraph2, that.agencyStudentsByRaceGraph2 );
 	}
 
 	//////////////
@@ -16523,6 +16706,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		sb.append( ", pupilsMultiRacialMale: " ).append(pupilsMultiRacialMale);
 		sb.append( ", pupilsMultiRacialTotal: " ).append(pupilsMultiRacialTotal);
 		sb.append( ", pupilsMultiRacialPercent: " ).append(pupilsMultiRacialPercent);
+		sb.append( ", pupilsOtherPercent: " ).append(pupilsOtherPercent);
 		sb.append( ", teachersMale: " ).append(teachersMale);
 		sb.append( ", teachersFemale: " ).append(teachersFemale);
 		sb.append( ", teachersTotal: " ).append(teachersTotal);
@@ -16607,6 +16791,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		sb.append( ", suspensionRatesByRaceGraph: \"" ).append(suspensionRatesByRaceGraph).append( "\"" );
 		sb.append( ", countySchoolBasedComplaintsGraph: \"" ).append(countySchoolBasedComplaintsGraph).append( "\"" );
 		sb.append( ", schoolBasedComplaintsGraph: \"" ).append(schoolBasedComplaintsGraph).append( "\"" );
+		sb.append( ", agencyStudentsByRaceGraph2: \"" ).append(agencyStudentsByRaceGraph2).append( "\"" );
 		sb.append(" }");
 		return sb.toString();
 	}
