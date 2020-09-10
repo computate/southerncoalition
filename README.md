@@ -92,23 +92,48 @@ sudo install -d -o $USER -g $USER /usr/local/src/southerncoalition-ansible
 Create a directory for your development inventory.
 
 ```bash
-install -d /usr/local/src/southerncoalition-ansible/inventories/$USER-$HOSTNAME
+install -d /usr/local/src/southerncoalition-ansible/inventories/$USER-localhost/host_vars/localhost
 ```
 
 Create a hosts file for your development inventory.
 
 ```bash
-echo 'localhost' > /usr/local/src/southerncoalition-ansible/inventories/$USER-$HOSTNAME/hosts
+echo 'localhost' > /usr/local/src/southerncoalition-ansible/inventories/$USER-localhost/hosts
+
+echo "
+[computate_org]
+localhost
+
+[computate_postgres]
+localhost
+
+[computate_zookeeper]
+localhost
+
+[computate_solr]
+localhost
+
+[computate_certbot]
+localhost
+
+[southerncoalition]
+localhost
+
+[southerncoalition_login]
+localhost
+
+[southerncoalition_refresh]
+localhost
+
+[southerncoalition_backup]
+localhost
+
+[southerncoalition_restore]
+localhost
+" > /usr/local/src/southerncoalition-ansible/inventories/$USER-localhost/hosts
 ```
 
 ### Create an ansible vault for the application secrets.
-
-Create and edit an encrypted ansible vault with a password for the host secrets for your development inventory.
-
-```bash
-ansible-vault create /usr/local/src/southerncoalition-ansible/inventories/$USER-$HOSTNAME/host_vars/$HOSTNAME/vault
-ansible-vault edit /usr/local/src/southerncoalition-ansible/inventories/$USER-$HOSTNAME/host_vars/$HOSTNAME/vault
-```
 
 The contents of the vault will contain the secrets needed to override any default values you want to change in the southerncoalition defaults defined here.
 
@@ -131,8 +156,19 @@ There are several sections of fields, including:
 To add the neccesary variables to your vault, run:
 
 ```bash
-cp inventories/southerncoalition-local/host_vars/localhost/vault inventories/$USER-$HOSTNAME/host_vars/new-host/vault
+cp inventories/southerncoalition-local/host_vars/localhost/vault inventories/$USER-localhost/host_vars/localhost/vault
 ```
+
+Edit the encrypted ansible vault with a password for the host secrets for your development inventory.
+
+```bash
+ansible-vault edit /usr/local/src/southerncoalition-ansible/inventories/$USER-localhost/host_vars/localhost/vault
+```
+
+In the ansiable vault file, replace:
+- USERNAME: the username of your machine
+- PASSWORD: the password of your machine
+
 
 Also, make sure your machine allows ssh. If you are on a linux machine (Fedora):
 
@@ -140,6 +176,8 @@ Also, make sure your machine allows ssh. If you are on a linux machine (Fedora):
 yum install -y openssh-server
 systemctl start sshd.service
 systemctl enable sshd.service
+ssh localhost (say yes to creating the fingerprint)
+exit
 ```
 
 ### Clone the computate project to run the ansible scripts.
@@ -165,25 +203,25 @@ cd /usr/local/src/computate/ansible
 #### Run the playbook to install a PostgreSQL server on your development computer.
 
 ```bash
-ansible-playbook computate_postgres.yml -i /usr/local/src/southerncoalition-ansible/inventories/$USER-$HOSTNAME/hosts --vault-id @prompt
+ansible-playbook computate_postgres.yml -i /usr/local/src/southerncoalition-ansible/inventories/$USER-localhost/hosts --vault-id @prompt
 ```
 
 #### Run the playbook to install a Zookeeper cluster manager on your development computer.
 
 ```bash
-ansible-playbook computate_zookeeper.yml -i /usr/local/src/southerncoalition-ansible/inventories/$USER-$HOSTNAME/hosts --vault-id @prompt
+ansible-playbook computate_zookeeper.yml -i /usr/local/src/southerncoalition-ansible/inventories/$USER-localhost/hosts --vault-id @prompt
 ```
 
 #### Run the playbook to install a Solr search engine on your development computer.
 
 ```bash
-ansible-playbook computate_zookeeper.yml -i /usr/local/src/southerncoalition-ansible/inventories/$USER-$HOSTNAME/hosts --vault-id @prompt
+ansible-playbook computate_solr.yml -i /usr/local/src/southerncoalition-ansible/inventories/$USER-localhost/hosts --vault-id @prompt
 ```
 
 #### Run the playbook to install the southerncoalition project for development.
 
 ```bash
-ansible-playbook southerncoalition.yml -i /usr/local/src/southerncoalition-ansible/inventories/$USER-$HOSTNAME/hosts --vault-id @prompt
+ansible-playbook southerncoalition.yml -i /usr/local/src/southerncoalition-ansible/inventories/$USER-localhost/hosts --vault-id @prompt
 ```
 
 If you are on an older operating system with an older version of ansible, you may run into the following error:
