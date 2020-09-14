@@ -1366,6 +1366,318 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
+					case "examsCollegeReadyGrades38OverallPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades38OverallPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38OverallPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades38IndianPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades38IndianPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38IndianPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades38AsianPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades38AsianPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38AsianPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades38BlackPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades38BlackPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38BlackPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades38HispanicPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades38HispanicPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38HispanicPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades38MultiRacialPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades38MultiRacialPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38MultiRacialPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades38PacificIslanderPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades38PacificIslanderPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38PacificIslanderPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades38WhitePercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades38WhitePercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38WhitePercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades912OverallPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades912OverallPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912OverallPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades912IndianPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades912IndianPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912IndianPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades912AsianPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades912AsianPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912AsianPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades912BlackPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades912BlackPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912BlackPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades912HispanicPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades912HispanicPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912HispanicPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades912MultiRacialPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades912MultiRacialPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912MultiRacialPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades912PacificIslanderPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades912PacificIslanderPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912PacificIslanderPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades912WhitePercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades912WhitePercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912WhitePercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "graduateWithin4YearsOverallPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "graduateWithin4YearsOverallPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsOverallPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "graduateWithin4YearsIndianPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "graduateWithin4YearsIndianPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsIndianPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "graduateWithin4YearsAsianPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "graduateWithin4YearsAsianPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsAsianPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "graduateWithin4YearsBlackPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "graduateWithin4YearsBlackPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsBlackPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "graduateWithin4YearsHispanicPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "graduateWithin4YearsHispanicPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsHispanicPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "graduateWithin4YearsMultiRacialPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "graduateWithin4YearsMultiRacialPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsMultiRacialPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "graduateWithin4YearsPacificIslanderPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "graduateWithin4YearsPacificIslanderPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsPacificIslanderPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "graduateWithin4YearsWhitePercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "graduateWithin4YearsWhitePercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsWhitePercent failed", b.cause())));
+							});
+						}));
+						break;
 					}
 				}
 			}
@@ -2277,6 +2589,318 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 									a.handle(Future.succeededFuture());
 								else
 									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsWhiteMale failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades38OverallPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades38OverallPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38OverallPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades38IndianPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades38IndianPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38IndianPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades38AsianPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades38AsianPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38AsianPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades38BlackPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades38BlackPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38BlackPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades38HispanicPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades38HispanicPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38HispanicPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades38MultiRacialPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades38MultiRacialPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38MultiRacialPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades38PacificIslanderPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades38PacificIslanderPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38PacificIslanderPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades38WhitePercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades38WhitePercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38WhitePercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades912OverallPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades912OverallPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912OverallPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades912IndianPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades912IndianPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912IndianPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades912AsianPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades912AsianPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912AsianPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades912BlackPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades912BlackPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912BlackPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades912HispanicPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades912HispanicPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912HispanicPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades912MultiRacialPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades912MultiRacialPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912MultiRacialPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades912PacificIslanderPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades912PacificIslanderPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912PacificIslanderPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "examsCollegeReadyGrades912WhitePercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "examsCollegeReadyGrades912WhitePercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912WhitePercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "graduateWithin4YearsOverallPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "graduateWithin4YearsOverallPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsOverallPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "graduateWithin4YearsIndianPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "graduateWithin4YearsIndianPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsIndianPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "graduateWithin4YearsAsianPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "graduateWithin4YearsAsianPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsAsianPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "graduateWithin4YearsBlackPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "graduateWithin4YearsBlackPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsBlackPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "graduateWithin4YearsHispanicPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "graduateWithin4YearsHispanicPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsHispanicPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "graduateWithin4YearsMultiRacialPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "graduateWithin4YearsMultiRacialPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsMultiRacialPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "graduateWithin4YearsPacificIslanderPercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "graduateWithin4YearsPacificIslanderPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsPacificIslanderPercent failed", b.cause())));
+							});
+						}));
+						break;
+					case "graduateWithin4YearsWhitePercent":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "graduateWithin4YearsWhitePercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsWhitePercent failed", b.cause())));
 							});
 						}));
 						break;
@@ -4054,6 +4678,678 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							}));
 						}
 						break;
+					case "setExamsCollegeReadyGrades38OverallPercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "examsCollegeReadyGrades38OverallPercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38OverallPercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setExamsCollegeReadyGrades38OverallPercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "examsCollegeReadyGrades38OverallPercent", o2.jsonExamsCollegeReadyGrades38OverallPercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38OverallPercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setExamsCollegeReadyGrades38IndianPercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "examsCollegeReadyGrades38IndianPercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38IndianPercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setExamsCollegeReadyGrades38IndianPercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "examsCollegeReadyGrades38IndianPercent", o2.jsonExamsCollegeReadyGrades38IndianPercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38IndianPercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setExamsCollegeReadyGrades38AsianPercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "examsCollegeReadyGrades38AsianPercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38AsianPercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setExamsCollegeReadyGrades38AsianPercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "examsCollegeReadyGrades38AsianPercent", o2.jsonExamsCollegeReadyGrades38AsianPercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38AsianPercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setExamsCollegeReadyGrades38BlackPercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "examsCollegeReadyGrades38BlackPercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38BlackPercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setExamsCollegeReadyGrades38BlackPercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "examsCollegeReadyGrades38BlackPercent", o2.jsonExamsCollegeReadyGrades38BlackPercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38BlackPercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setExamsCollegeReadyGrades38HispanicPercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "examsCollegeReadyGrades38HispanicPercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38HispanicPercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setExamsCollegeReadyGrades38HispanicPercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "examsCollegeReadyGrades38HispanicPercent", o2.jsonExamsCollegeReadyGrades38HispanicPercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38HispanicPercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setExamsCollegeReadyGrades38MultiRacialPercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "examsCollegeReadyGrades38MultiRacialPercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38MultiRacialPercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setExamsCollegeReadyGrades38MultiRacialPercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "examsCollegeReadyGrades38MultiRacialPercent", o2.jsonExamsCollegeReadyGrades38MultiRacialPercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38MultiRacialPercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setExamsCollegeReadyGrades38PacificIslanderPercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "examsCollegeReadyGrades38PacificIslanderPercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38PacificIslanderPercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setExamsCollegeReadyGrades38PacificIslanderPercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "examsCollegeReadyGrades38PacificIslanderPercent", o2.jsonExamsCollegeReadyGrades38PacificIslanderPercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38PacificIslanderPercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setExamsCollegeReadyGrades38WhitePercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "examsCollegeReadyGrades38WhitePercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38WhitePercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setExamsCollegeReadyGrades38WhitePercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "examsCollegeReadyGrades38WhitePercent", o2.jsonExamsCollegeReadyGrades38WhitePercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38WhitePercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setExamsCollegeReadyGrades912OverallPercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "examsCollegeReadyGrades912OverallPercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912OverallPercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setExamsCollegeReadyGrades912OverallPercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "examsCollegeReadyGrades912OverallPercent", o2.jsonExamsCollegeReadyGrades912OverallPercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912OverallPercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setExamsCollegeReadyGrades912IndianPercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "examsCollegeReadyGrades912IndianPercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912IndianPercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setExamsCollegeReadyGrades912IndianPercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "examsCollegeReadyGrades912IndianPercent", o2.jsonExamsCollegeReadyGrades912IndianPercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912IndianPercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setExamsCollegeReadyGrades912AsianPercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "examsCollegeReadyGrades912AsianPercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912AsianPercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setExamsCollegeReadyGrades912AsianPercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "examsCollegeReadyGrades912AsianPercent", o2.jsonExamsCollegeReadyGrades912AsianPercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912AsianPercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setExamsCollegeReadyGrades912BlackPercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "examsCollegeReadyGrades912BlackPercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912BlackPercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setExamsCollegeReadyGrades912BlackPercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "examsCollegeReadyGrades912BlackPercent", o2.jsonExamsCollegeReadyGrades912BlackPercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912BlackPercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setExamsCollegeReadyGrades912HispanicPercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "examsCollegeReadyGrades912HispanicPercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912HispanicPercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setExamsCollegeReadyGrades912HispanicPercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "examsCollegeReadyGrades912HispanicPercent", o2.jsonExamsCollegeReadyGrades912HispanicPercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912HispanicPercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setExamsCollegeReadyGrades912MultiRacialPercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "examsCollegeReadyGrades912MultiRacialPercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912MultiRacialPercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setExamsCollegeReadyGrades912MultiRacialPercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "examsCollegeReadyGrades912MultiRacialPercent", o2.jsonExamsCollegeReadyGrades912MultiRacialPercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912MultiRacialPercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setExamsCollegeReadyGrades912PacificIslanderPercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "examsCollegeReadyGrades912PacificIslanderPercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912PacificIslanderPercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setExamsCollegeReadyGrades912PacificIslanderPercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "examsCollegeReadyGrades912PacificIslanderPercent", o2.jsonExamsCollegeReadyGrades912PacificIslanderPercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912PacificIslanderPercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setExamsCollegeReadyGrades912WhitePercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "examsCollegeReadyGrades912WhitePercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912WhitePercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setExamsCollegeReadyGrades912WhitePercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "examsCollegeReadyGrades912WhitePercent", o2.jsonExamsCollegeReadyGrades912WhitePercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912WhitePercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setGraduateWithin4YearsOverallPercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "graduateWithin4YearsOverallPercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsOverallPercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setGraduateWithin4YearsOverallPercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "graduateWithin4YearsOverallPercent", o2.jsonGraduateWithin4YearsOverallPercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsOverallPercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setGraduateWithin4YearsIndianPercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "graduateWithin4YearsIndianPercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsIndianPercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setGraduateWithin4YearsIndianPercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "graduateWithin4YearsIndianPercent", o2.jsonGraduateWithin4YearsIndianPercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsIndianPercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setGraduateWithin4YearsAsianPercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "graduateWithin4YearsAsianPercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsAsianPercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setGraduateWithin4YearsAsianPercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "graduateWithin4YearsAsianPercent", o2.jsonGraduateWithin4YearsAsianPercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsAsianPercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setGraduateWithin4YearsBlackPercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "graduateWithin4YearsBlackPercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsBlackPercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setGraduateWithin4YearsBlackPercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "graduateWithin4YearsBlackPercent", o2.jsonGraduateWithin4YearsBlackPercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsBlackPercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setGraduateWithin4YearsHispanicPercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "graduateWithin4YearsHispanicPercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsHispanicPercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setGraduateWithin4YearsHispanicPercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "graduateWithin4YearsHispanicPercent", o2.jsonGraduateWithin4YearsHispanicPercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsHispanicPercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setGraduateWithin4YearsMultiRacialPercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "graduateWithin4YearsMultiRacialPercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsMultiRacialPercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setGraduateWithin4YearsMultiRacialPercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "graduateWithin4YearsMultiRacialPercent", o2.jsonGraduateWithin4YearsMultiRacialPercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsMultiRacialPercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setGraduateWithin4YearsPacificIslanderPercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "graduateWithin4YearsPacificIslanderPercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsPacificIslanderPercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setGraduateWithin4YearsPacificIslanderPercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "graduateWithin4YearsPacificIslanderPercent", o2.jsonGraduateWithin4YearsPacificIslanderPercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsPacificIslanderPercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setGraduateWithin4YearsWhitePercent":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "graduateWithin4YearsWhitePercent")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsWhitePercent failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setGraduateWithin4YearsWhitePercent(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "graduateWithin4YearsWhitePercent", o2.jsonGraduateWithin4YearsWhitePercent())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsWhitePercent failed", b.cause())));
+								});
+							}));
+						}
+						break;
 				}
 			}
 			CompositeFuture.all(futures).setHandler( a -> {
@@ -4574,7 +5870,7 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 				.put("userFullName", siteRequest.getUserFullName())
 				.put("requestUri", siteRequest.getRequestUri())
 				.put("requestMethod", siteRequest.getRequestMethod())
-				.put("params", siteRequest.getOperationRequest().getParams())
+				.put("params", Optional.ofNullable(siteRequest.getOperationRequest()).map(o -> o.getParams()).orElse(null))
 				);
 		ExceptionUtils.printRootCauseStackTrace(e);
 		OperationResponse responseOperation = new OperationResponse(400, "BAD REQUEST", 

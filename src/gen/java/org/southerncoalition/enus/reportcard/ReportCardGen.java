@@ -12175,6 +12175,3590 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
+	/////////////////////////////////////////////
+	// examsCollegeReadyGrades38OverallPercent //
+	/////////////////////////////////////////////
+
+	/**	 The entity examsCollegeReadyGrades38OverallPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal examsCollegeReadyGrades38OverallPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> examsCollegeReadyGrades38OverallPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades38OverallPercent").o(examsCollegeReadyGrades38OverallPercent);
+
+	/**	<br/> The entity examsCollegeReadyGrades38OverallPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades38OverallPercent">Find the entity examsCollegeReadyGrades38OverallPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _examsCollegeReadyGrades38OverallPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getExamsCollegeReadyGrades38OverallPercent() {
+		return examsCollegeReadyGrades38OverallPercent;
+	}
+
+	public void setExamsCollegeReadyGrades38OverallPercent(BigDecimal examsCollegeReadyGrades38OverallPercent) {
+		this.examsCollegeReadyGrades38OverallPercent = examsCollegeReadyGrades38OverallPercent;
+		this.examsCollegeReadyGrades38OverallPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setExamsCollegeReadyGrades38OverallPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.examsCollegeReadyGrades38OverallPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38OverallPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades38OverallPercent(Double o) {
+			this.examsCollegeReadyGrades38OverallPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38OverallPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades38OverallPercent(Integer o) {
+			this.examsCollegeReadyGrades38OverallPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38OverallPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard examsCollegeReadyGrades38OverallPercentInit() {
+		if(!examsCollegeReadyGrades38OverallPercentWrap.alreadyInitialized) {
+			_examsCollegeReadyGrades38OverallPercent(examsCollegeReadyGrades38OverallPercentWrap);
+			if(examsCollegeReadyGrades38OverallPercent == null)
+				setExamsCollegeReadyGrades38OverallPercent(examsCollegeReadyGrades38OverallPercentWrap.o);
+		}
+		examsCollegeReadyGrades38OverallPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrExamsCollegeReadyGrades38OverallPercent() {
+		return examsCollegeReadyGrades38OverallPercent == null ? null : examsCollegeReadyGrades38OverallPercent.doubleValue();
+	}
+
+	public String strExamsCollegeReadyGrades38OverallPercent() {
+		return examsCollegeReadyGrades38OverallPercent == null ? "" : examsCollegeReadyGrades38OverallPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonExamsCollegeReadyGrades38OverallPercent() {
+		return examsCollegeReadyGrades38OverallPercent == null ? "" : examsCollegeReadyGrades38OverallPercent.toString();
+	}
+
+	public String nomAffichageExamsCollegeReadyGrades38OverallPercent() {
+		return "College ready exams grades 3-8 overall";
+	}
+
+	public String htmTooltipExamsCollegeReadyGrades38OverallPercent() {
+		return null;
+	}
+
+	public String htmExamsCollegeReadyGrades38OverallPercent() {
+		return examsCollegeReadyGrades38OverallPercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades38OverallPercent());
+	}
+
+	public void inputExamsCollegeReadyGrades38OverallPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "College ready exams grades 3-8 overall")
+				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades38OverallPercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setExamsCollegeReadyGrades38OverallPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38OverallPercent w3-input w3-border ");
+					a("name", "setExamsCollegeReadyGrades38OverallPercent");
+				} else {
+					a("class", "valueExamsCollegeReadyGrades38OverallPercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38OverallPercent w3-input w3-border ");
+					a("name", "examsCollegeReadyGrades38OverallPercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades38OverallPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38OverallPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38OverallPercent')); }); ");
+				}
+				a("value", strExamsCollegeReadyGrades38OverallPercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades38OverallPercent ").f().sx(htmExamsCollegeReadyGrades38OverallPercent()).g("span");
+		}
+	}
+
+	public void htmExamsCollegeReadyGrades38OverallPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades38OverallPercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades38OverallPercent").a("class", "").f().sx("College ready exams grades 3-8 overall").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputExamsCollegeReadyGrades38OverallPercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38OverallPercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades38OverallPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades38OverallPercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38OverallPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38OverallPercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	////////////////////////////////////////////
+	// examsCollegeReadyGrades38IndianPercent //
+	////////////////////////////////////////////
+
+	/**	 The entity examsCollegeReadyGrades38IndianPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal examsCollegeReadyGrades38IndianPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> examsCollegeReadyGrades38IndianPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades38IndianPercent").o(examsCollegeReadyGrades38IndianPercent);
+
+	/**	<br/> The entity examsCollegeReadyGrades38IndianPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades38IndianPercent">Find the entity examsCollegeReadyGrades38IndianPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _examsCollegeReadyGrades38IndianPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getExamsCollegeReadyGrades38IndianPercent() {
+		return examsCollegeReadyGrades38IndianPercent;
+	}
+
+	public void setExamsCollegeReadyGrades38IndianPercent(BigDecimal examsCollegeReadyGrades38IndianPercent) {
+		this.examsCollegeReadyGrades38IndianPercent = examsCollegeReadyGrades38IndianPercent;
+		this.examsCollegeReadyGrades38IndianPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setExamsCollegeReadyGrades38IndianPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.examsCollegeReadyGrades38IndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38IndianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades38IndianPercent(Double o) {
+			this.examsCollegeReadyGrades38IndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38IndianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades38IndianPercent(Integer o) {
+			this.examsCollegeReadyGrades38IndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38IndianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard examsCollegeReadyGrades38IndianPercentInit() {
+		if(!examsCollegeReadyGrades38IndianPercentWrap.alreadyInitialized) {
+			_examsCollegeReadyGrades38IndianPercent(examsCollegeReadyGrades38IndianPercentWrap);
+			if(examsCollegeReadyGrades38IndianPercent == null)
+				setExamsCollegeReadyGrades38IndianPercent(examsCollegeReadyGrades38IndianPercentWrap.o);
+		}
+		examsCollegeReadyGrades38IndianPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrExamsCollegeReadyGrades38IndianPercent() {
+		return examsCollegeReadyGrades38IndianPercent == null ? null : examsCollegeReadyGrades38IndianPercent.doubleValue();
+	}
+
+	public String strExamsCollegeReadyGrades38IndianPercent() {
+		return examsCollegeReadyGrades38IndianPercent == null ? "" : examsCollegeReadyGrades38IndianPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonExamsCollegeReadyGrades38IndianPercent() {
+		return examsCollegeReadyGrades38IndianPercent == null ? "" : examsCollegeReadyGrades38IndianPercent.toString();
+	}
+
+	public String nomAffichageExamsCollegeReadyGrades38IndianPercent() {
+		return "College ready exams grades 3-8 first nation";
+	}
+
+	public String htmTooltipExamsCollegeReadyGrades38IndianPercent() {
+		return null;
+	}
+
+	public String htmExamsCollegeReadyGrades38IndianPercent() {
+		return examsCollegeReadyGrades38IndianPercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades38IndianPercent());
+	}
+
+	public void inputExamsCollegeReadyGrades38IndianPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "College ready exams grades 3-8 first nation")
+				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades38IndianPercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setExamsCollegeReadyGrades38IndianPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38IndianPercent w3-input w3-border ");
+					a("name", "setExamsCollegeReadyGrades38IndianPercent");
+				} else {
+					a("class", "valueExamsCollegeReadyGrades38IndianPercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38IndianPercent w3-input w3-border ");
+					a("name", "examsCollegeReadyGrades38IndianPercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades38IndianPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38IndianPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38IndianPercent')); }); ");
+				}
+				a("value", strExamsCollegeReadyGrades38IndianPercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades38IndianPercent ").f().sx(htmExamsCollegeReadyGrades38IndianPercent()).g("span");
+		}
+	}
+
+	public void htmExamsCollegeReadyGrades38IndianPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades38IndianPercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades38IndianPercent").a("class", "").f().sx("College ready exams grades 3-8 first nation").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputExamsCollegeReadyGrades38IndianPercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38IndianPercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades38IndianPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades38IndianPercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38IndianPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38IndianPercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	///////////////////////////////////////////
+	// examsCollegeReadyGrades38AsianPercent //
+	///////////////////////////////////////////
+
+	/**	 The entity examsCollegeReadyGrades38AsianPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal examsCollegeReadyGrades38AsianPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> examsCollegeReadyGrades38AsianPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades38AsianPercent").o(examsCollegeReadyGrades38AsianPercent);
+
+	/**	<br/> The entity examsCollegeReadyGrades38AsianPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades38AsianPercent">Find the entity examsCollegeReadyGrades38AsianPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _examsCollegeReadyGrades38AsianPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getExamsCollegeReadyGrades38AsianPercent() {
+		return examsCollegeReadyGrades38AsianPercent;
+	}
+
+	public void setExamsCollegeReadyGrades38AsianPercent(BigDecimal examsCollegeReadyGrades38AsianPercent) {
+		this.examsCollegeReadyGrades38AsianPercent = examsCollegeReadyGrades38AsianPercent;
+		this.examsCollegeReadyGrades38AsianPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setExamsCollegeReadyGrades38AsianPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.examsCollegeReadyGrades38AsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38AsianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades38AsianPercent(Double o) {
+			this.examsCollegeReadyGrades38AsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38AsianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades38AsianPercent(Integer o) {
+			this.examsCollegeReadyGrades38AsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38AsianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard examsCollegeReadyGrades38AsianPercentInit() {
+		if(!examsCollegeReadyGrades38AsianPercentWrap.alreadyInitialized) {
+			_examsCollegeReadyGrades38AsianPercent(examsCollegeReadyGrades38AsianPercentWrap);
+			if(examsCollegeReadyGrades38AsianPercent == null)
+				setExamsCollegeReadyGrades38AsianPercent(examsCollegeReadyGrades38AsianPercentWrap.o);
+		}
+		examsCollegeReadyGrades38AsianPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrExamsCollegeReadyGrades38AsianPercent() {
+		return examsCollegeReadyGrades38AsianPercent == null ? null : examsCollegeReadyGrades38AsianPercent.doubleValue();
+	}
+
+	public String strExamsCollegeReadyGrades38AsianPercent() {
+		return examsCollegeReadyGrades38AsianPercent == null ? "" : examsCollegeReadyGrades38AsianPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonExamsCollegeReadyGrades38AsianPercent() {
+		return examsCollegeReadyGrades38AsianPercent == null ? "" : examsCollegeReadyGrades38AsianPercent.toString();
+	}
+
+	public String nomAffichageExamsCollegeReadyGrades38AsianPercent() {
+		return "College ready exams grades 3-8 asian";
+	}
+
+	public String htmTooltipExamsCollegeReadyGrades38AsianPercent() {
+		return null;
+	}
+
+	public String htmExamsCollegeReadyGrades38AsianPercent() {
+		return examsCollegeReadyGrades38AsianPercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades38AsianPercent());
+	}
+
+	public void inputExamsCollegeReadyGrades38AsianPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "College ready exams grades 3-8 asian")
+				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades38AsianPercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setExamsCollegeReadyGrades38AsianPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38AsianPercent w3-input w3-border ");
+					a("name", "setExamsCollegeReadyGrades38AsianPercent");
+				} else {
+					a("class", "valueExamsCollegeReadyGrades38AsianPercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38AsianPercent w3-input w3-border ");
+					a("name", "examsCollegeReadyGrades38AsianPercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades38AsianPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38AsianPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38AsianPercent')); }); ");
+				}
+				a("value", strExamsCollegeReadyGrades38AsianPercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades38AsianPercent ").f().sx(htmExamsCollegeReadyGrades38AsianPercent()).g("span");
+		}
+	}
+
+	public void htmExamsCollegeReadyGrades38AsianPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades38AsianPercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades38AsianPercent").a("class", "").f().sx("College ready exams grades 3-8 asian").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputExamsCollegeReadyGrades38AsianPercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38AsianPercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades38AsianPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades38AsianPercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38AsianPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38AsianPercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	///////////////////////////////////////////
+	// examsCollegeReadyGrades38BlackPercent //
+	///////////////////////////////////////////
+
+	/**	 The entity examsCollegeReadyGrades38BlackPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal examsCollegeReadyGrades38BlackPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> examsCollegeReadyGrades38BlackPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades38BlackPercent").o(examsCollegeReadyGrades38BlackPercent);
+
+	/**	<br/> The entity examsCollegeReadyGrades38BlackPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades38BlackPercent">Find the entity examsCollegeReadyGrades38BlackPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _examsCollegeReadyGrades38BlackPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getExamsCollegeReadyGrades38BlackPercent() {
+		return examsCollegeReadyGrades38BlackPercent;
+	}
+
+	public void setExamsCollegeReadyGrades38BlackPercent(BigDecimal examsCollegeReadyGrades38BlackPercent) {
+		this.examsCollegeReadyGrades38BlackPercent = examsCollegeReadyGrades38BlackPercent;
+		this.examsCollegeReadyGrades38BlackPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setExamsCollegeReadyGrades38BlackPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.examsCollegeReadyGrades38BlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38BlackPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades38BlackPercent(Double o) {
+			this.examsCollegeReadyGrades38BlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38BlackPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades38BlackPercent(Integer o) {
+			this.examsCollegeReadyGrades38BlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38BlackPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard examsCollegeReadyGrades38BlackPercentInit() {
+		if(!examsCollegeReadyGrades38BlackPercentWrap.alreadyInitialized) {
+			_examsCollegeReadyGrades38BlackPercent(examsCollegeReadyGrades38BlackPercentWrap);
+			if(examsCollegeReadyGrades38BlackPercent == null)
+				setExamsCollegeReadyGrades38BlackPercent(examsCollegeReadyGrades38BlackPercentWrap.o);
+		}
+		examsCollegeReadyGrades38BlackPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrExamsCollegeReadyGrades38BlackPercent() {
+		return examsCollegeReadyGrades38BlackPercent == null ? null : examsCollegeReadyGrades38BlackPercent.doubleValue();
+	}
+
+	public String strExamsCollegeReadyGrades38BlackPercent() {
+		return examsCollegeReadyGrades38BlackPercent == null ? "" : examsCollegeReadyGrades38BlackPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonExamsCollegeReadyGrades38BlackPercent() {
+		return examsCollegeReadyGrades38BlackPercent == null ? "" : examsCollegeReadyGrades38BlackPercent.toString();
+	}
+
+	public String nomAffichageExamsCollegeReadyGrades38BlackPercent() {
+		return "College ready exams grades 3-8 black";
+	}
+
+	public String htmTooltipExamsCollegeReadyGrades38BlackPercent() {
+		return null;
+	}
+
+	public String htmExamsCollegeReadyGrades38BlackPercent() {
+		return examsCollegeReadyGrades38BlackPercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades38BlackPercent());
+	}
+
+	public void inputExamsCollegeReadyGrades38BlackPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "College ready exams grades 3-8 black")
+				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades38BlackPercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setExamsCollegeReadyGrades38BlackPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38BlackPercent w3-input w3-border ");
+					a("name", "setExamsCollegeReadyGrades38BlackPercent");
+				} else {
+					a("class", "valueExamsCollegeReadyGrades38BlackPercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38BlackPercent w3-input w3-border ");
+					a("name", "examsCollegeReadyGrades38BlackPercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades38BlackPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38BlackPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38BlackPercent')); }); ");
+				}
+				a("value", strExamsCollegeReadyGrades38BlackPercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades38BlackPercent ").f().sx(htmExamsCollegeReadyGrades38BlackPercent()).g("span");
+		}
+	}
+
+	public void htmExamsCollegeReadyGrades38BlackPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades38BlackPercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades38BlackPercent").a("class", "").f().sx("College ready exams grades 3-8 black").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputExamsCollegeReadyGrades38BlackPercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38BlackPercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades38BlackPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades38BlackPercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38BlackPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38BlackPercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	//////////////////////////////////////////////
+	// examsCollegeReadyGrades38HispanicPercent //
+	//////////////////////////////////////////////
+
+	/**	 The entity examsCollegeReadyGrades38HispanicPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal examsCollegeReadyGrades38HispanicPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> examsCollegeReadyGrades38HispanicPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades38HispanicPercent").o(examsCollegeReadyGrades38HispanicPercent);
+
+	/**	<br/> The entity examsCollegeReadyGrades38HispanicPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades38HispanicPercent">Find the entity examsCollegeReadyGrades38HispanicPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _examsCollegeReadyGrades38HispanicPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getExamsCollegeReadyGrades38HispanicPercent() {
+		return examsCollegeReadyGrades38HispanicPercent;
+	}
+
+	public void setExamsCollegeReadyGrades38HispanicPercent(BigDecimal examsCollegeReadyGrades38HispanicPercent) {
+		this.examsCollegeReadyGrades38HispanicPercent = examsCollegeReadyGrades38HispanicPercent;
+		this.examsCollegeReadyGrades38HispanicPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setExamsCollegeReadyGrades38HispanicPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.examsCollegeReadyGrades38HispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38HispanicPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades38HispanicPercent(Double o) {
+			this.examsCollegeReadyGrades38HispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38HispanicPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades38HispanicPercent(Integer o) {
+			this.examsCollegeReadyGrades38HispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38HispanicPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard examsCollegeReadyGrades38HispanicPercentInit() {
+		if(!examsCollegeReadyGrades38HispanicPercentWrap.alreadyInitialized) {
+			_examsCollegeReadyGrades38HispanicPercent(examsCollegeReadyGrades38HispanicPercentWrap);
+			if(examsCollegeReadyGrades38HispanicPercent == null)
+				setExamsCollegeReadyGrades38HispanicPercent(examsCollegeReadyGrades38HispanicPercentWrap.o);
+		}
+		examsCollegeReadyGrades38HispanicPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrExamsCollegeReadyGrades38HispanicPercent() {
+		return examsCollegeReadyGrades38HispanicPercent == null ? null : examsCollegeReadyGrades38HispanicPercent.doubleValue();
+	}
+
+	public String strExamsCollegeReadyGrades38HispanicPercent() {
+		return examsCollegeReadyGrades38HispanicPercent == null ? "" : examsCollegeReadyGrades38HispanicPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonExamsCollegeReadyGrades38HispanicPercent() {
+		return examsCollegeReadyGrades38HispanicPercent == null ? "" : examsCollegeReadyGrades38HispanicPercent.toString();
+	}
+
+	public String nomAffichageExamsCollegeReadyGrades38HispanicPercent() {
+		return "College ready exams grades 3-8 hispanic";
+	}
+
+	public String htmTooltipExamsCollegeReadyGrades38HispanicPercent() {
+		return null;
+	}
+
+	public String htmExamsCollegeReadyGrades38HispanicPercent() {
+		return examsCollegeReadyGrades38HispanicPercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades38HispanicPercent());
+	}
+
+	public void inputExamsCollegeReadyGrades38HispanicPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "College ready exams grades 3-8 hispanic")
+				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades38HispanicPercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setExamsCollegeReadyGrades38HispanicPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38HispanicPercent w3-input w3-border ");
+					a("name", "setExamsCollegeReadyGrades38HispanicPercent");
+				} else {
+					a("class", "valueExamsCollegeReadyGrades38HispanicPercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38HispanicPercent w3-input w3-border ");
+					a("name", "examsCollegeReadyGrades38HispanicPercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades38HispanicPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38HispanicPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38HispanicPercent')); }); ");
+				}
+				a("value", strExamsCollegeReadyGrades38HispanicPercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades38HispanicPercent ").f().sx(htmExamsCollegeReadyGrades38HispanicPercent()).g("span");
+		}
+	}
+
+	public void htmExamsCollegeReadyGrades38HispanicPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades38HispanicPercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades38HispanicPercent").a("class", "").f().sx("College ready exams grades 3-8 hispanic").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputExamsCollegeReadyGrades38HispanicPercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38HispanicPercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades38HispanicPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades38HispanicPercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38HispanicPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38HispanicPercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	/////////////////////////////////////////////////
+	// examsCollegeReadyGrades38MultiRacialPercent //
+	/////////////////////////////////////////////////
+
+	/**	 The entity examsCollegeReadyGrades38MultiRacialPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal examsCollegeReadyGrades38MultiRacialPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> examsCollegeReadyGrades38MultiRacialPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades38MultiRacialPercent").o(examsCollegeReadyGrades38MultiRacialPercent);
+
+	/**	<br/> The entity examsCollegeReadyGrades38MultiRacialPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades38MultiRacialPercent">Find the entity examsCollegeReadyGrades38MultiRacialPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _examsCollegeReadyGrades38MultiRacialPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getExamsCollegeReadyGrades38MultiRacialPercent() {
+		return examsCollegeReadyGrades38MultiRacialPercent;
+	}
+
+	public void setExamsCollegeReadyGrades38MultiRacialPercent(BigDecimal examsCollegeReadyGrades38MultiRacialPercent) {
+		this.examsCollegeReadyGrades38MultiRacialPercent = examsCollegeReadyGrades38MultiRacialPercent;
+		this.examsCollegeReadyGrades38MultiRacialPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setExamsCollegeReadyGrades38MultiRacialPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.examsCollegeReadyGrades38MultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38MultiRacialPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades38MultiRacialPercent(Double o) {
+			this.examsCollegeReadyGrades38MultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38MultiRacialPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades38MultiRacialPercent(Integer o) {
+			this.examsCollegeReadyGrades38MultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38MultiRacialPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard examsCollegeReadyGrades38MultiRacialPercentInit() {
+		if(!examsCollegeReadyGrades38MultiRacialPercentWrap.alreadyInitialized) {
+			_examsCollegeReadyGrades38MultiRacialPercent(examsCollegeReadyGrades38MultiRacialPercentWrap);
+			if(examsCollegeReadyGrades38MultiRacialPercent == null)
+				setExamsCollegeReadyGrades38MultiRacialPercent(examsCollegeReadyGrades38MultiRacialPercentWrap.o);
+		}
+		examsCollegeReadyGrades38MultiRacialPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrExamsCollegeReadyGrades38MultiRacialPercent() {
+		return examsCollegeReadyGrades38MultiRacialPercent == null ? null : examsCollegeReadyGrades38MultiRacialPercent.doubleValue();
+	}
+
+	public String strExamsCollegeReadyGrades38MultiRacialPercent() {
+		return examsCollegeReadyGrades38MultiRacialPercent == null ? "" : examsCollegeReadyGrades38MultiRacialPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonExamsCollegeReadyGrades38MultiRacialPercent() {
+		return examsCollegeReadyGrades38MultiRacialPercent == null ? "" : examsCollegeReadyGrades38MultiRacialPercent.toString();
+	}
+
+	public String nomAffichageExamsCollegeReadyGrades38MultiRacialPercent() {
+		return "College ready exams grades 3-8 multi-racial";
+	}
+
+	public String htmTooltipExamsCollegeReadyGrades38MultiRacialPercent() {
+		return null;
+	}
+
+	public String htmExamsCollegeReadyGrades38MultiRacialPercent() {
+		return examsCollegeReadyGrades38MultiRacialPercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades38MultiRacialPercent());
+	}
+
+	public void inputExamsCollegeReadyGrades38MultiRacialPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "College ready exams grades 3-8 multi-racial")
+				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades38MultiRacialPercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setExamsCollegeReadyGrades38MultiRacialPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38MultiRacialPercent w3-input w3-border ");
+					a("name", "setExamsCollegeReadyGrades38MultiRacialPercent");
+				} else {
+					a("class", "valueExamsCollegeReadyGrades38MultiRacialPercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38MultiRacialPercent w3-input w3-border ");
+					a("name", "examsCollegeReadyGrades38MultiRacialPercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades38MultiRacialPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38MultiRacialPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38MultiRacialPercent')); }); ");
+				}
+				a("value", strExamsCollegeReadyGrades38MultiRacialPercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades38MultiRacialPercent ").f().sx(htmExamsCollegeReadyGrades38MultiRacialPercent()).g("span");
+		}
+	}
+
+	public void htmExamsCollegeReadyGrades38MultiRacialPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades38MultiRacialPercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades38MultiRacialPercent").a("class", "").f().sx("College ready exams grades 3-8 multi-racial").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputExamsCollegeReadyGrades38MultiRacialPercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38MultiRacialPercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades38MultiRacialPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades38MultiRacialPercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38MultiRacialPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38MultiRacialPercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	/////////////////////////////////////////////////////
+	// examsCollegeReadyGrades38PacificIslanderPercent //
+	/////////////////////////////////////////////////////
+
+	/**	 The entity examsCollegeReadyGrades38PacificIslanderPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal examsCollegeReadyGrades38PacificIslanderPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> examsCollegeReadyGrades38PacificIslanderPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades38PacificIslanderPercent").o(examsCollegeReadyGrades38PacificIslanderPercent);
+
+	/**	<br/> The entity examsCollegeReadyGrades38PacificIslanderPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades38PacificIslanderPercent">Find the entity examsCollegeReadyGrades38PacificIslanderPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _examsCollegeReadyGrades38PacificIslanderPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getExamsCollegeReadyGrades38PacificIslanderPercent() {
+		return examsCollegeReadyGrades38PacificIslanderPercent;
+	}
+
+	public void setExamsCollegeReadyGrades38PacificIslanderPercent(BigDecimal examsCollegeReadyGrades38PacificIslanderPercent) {
+		this.examsCollegeReadyGrades38PacificIslanderPercent = examsCollegeReadyGrades38PacificIslanderPercent;
+		this.examsCollegeReadyGrades38PacificIslanderPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setExamsCollegeReadyGrades38PacificIslanderPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.examsCollegeReadyGrades38PacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38PacificIslanderPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades38PacificIslanderPercent(Double o) {
+			this.examsCollegeReadyGrades38PacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38PacificIslanderPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades38PacificIslanderPercent(Integer o) {
+			this.examsCollegeReadyGrades38PacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38PacificIslanderPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard examsCollegeReadyGrades38PacificIslanderPercentInit() {
+		if(!examsCollegeReadyGrades38PacificIslanderPercentWrap.alreadyInitialized) {
+			_examsCollegeReadyGrades38PacificIslanderPercent(examsCollegeReadyGrades38PacificIslanderPercentWrap);
+			if(examsCollegeReadyGrades38PacificIslanderPercent == null)
+				setExamsCollegeReadyGrades38PacificIslanderPercent(examsCollegeReadyGrades38PacificIslanderPercentWrap.o);
+		}
+		examsCollegeReadyGrades38PacificIslanderPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrExamsCollegeReadyGrades38PacificIslanderPercent() {
+		return examsCollegeReadyGrades38PacificIslanderPercent == null ? null : examsCollegeReadyGrades38PacificIslanderPercent.doubleValue();
+	}
+
+	public String strExamsCollegeReadyGrades38PacificIslanderPercent() {
+		return examsCollegeReadyGrades38PacificIslanderPercent == null ? "" : examsCollegeReadyGrades38PacificIslanderPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonExamsCollegeReadyGrades38PacificIslanderPercent() {
+		return examsCollegeReadyGrades38PacificIslanderPercent == null ? "" : examsCollegeReadyGrades38PacificIslanderPercent.toString();
+	}
+
+	public String nomAffichageExamsCollegeReadyGrades38PacificIslanderPercent() {
+		return "College ready exams grades 3-8 pacific islander";
+	}
+
+	public String htmTooltipExamsCollegeReadyGrades38PacificIslanderPercent() {
+		return null;
+	}
+
+	public String htmExamsCollegeReadyGrades38PacificIslanderPercent() {
+		return examsCollegeReadyGrades38PacificIslanderPercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades38PacificIslanderPercent());
+	}
+
+	public void inputExamsCollegeReadyGrades38PacificIslanderPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "College ready exams grades 3-8 pacific islander")
+				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades38PacificIslanderPercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setExamsCollegeReadyGrades38PacificIslanderPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38PacificIslanderPercent w3-input w3-border ");
+					a("name", "setExamsCollegeReadyGrades38PacificIslanderPercent");
+				} else {
+					a("class", "valueExamsCollegeReadyGrades38PacificIslanderPercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38PacificIslanderPercent w3-input w3-border ");
+					a("name", "examsCollegeReadyGrades38PacificIslanderPercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades38PacificIslanderPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38PacificIslanderPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38PacificIslanderPercent')); }); ");
+				}
+				a("value", strExamsCollegeReadyGrades38PacificIslanderPercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades38PacificIslanderPercent ").f().sx(htmExamsCollegeReadyGrades38PacificIslanderPercent()).g("span");
+		}
+	}
+
+	public void htmExamsCollegeReadyGrades38PacificIslanderPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades38PacificIslanderPercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades38PacificIslanderPercent").a("class", "").f().sx("College ready exams grades 3-8 pacific islander").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputExamsCollegeReadyGrades38PacificIslanderPercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38PacificIslanderPercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades38PacificIslanderPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades38PacificIslanderPercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38PacificIslanderPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38PacificIslanderPercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	///////////////////////////////////////////
+	// examsCollegeReadyGrades38WhitePercent //
+	///////////////////////////////////////////
+
+	/**	 The entity examsCollegeReadyGrades38WhitePercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal examsCollegeReadyGrades38WhitePercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> examsCollegeReadyGrades38WhitePercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades38WhitePercent").o(examsCollegeReadyGrades38WhitePercent);
+
+	/**	<br/> The entity examsCollegeReadyGrades38WhitePercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades38WhitePercent">Find the entity examsCollegeReadyGrades38WhitePercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _examsCollegeReadyGrades38WhitePercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getExamsCollegeReadyGrades38WhitePercent() {
+		return examsCollegeReadyGrades38WhitePercent;
+	}
+
+	public void setExamsCollegeReadyGrades38WhitePercent(BigDecimal examsCollegeReadyGrades38WhitePercent) {
+		this.examsCollegeReadyGrades38WhitePercent = examsCollegeReadyGrades38WhitePercent;
+		this.examsCollegeReadyGrades38WhitePercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setExamsCollegeReadyGrades38WhitePercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.examsCollegeReadyGrades38WhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38WhitePercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades38WhitePercent(Double o) {
+			this.examsCollegeReadyGrades38WhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38WhitePercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades38WhitePercent(Integer o) {
+			this.examsCollegeReadyGrades38WhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38WhitePercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard examsCollegeReadyGrades38WhitePercentInit() {
+		if(!examsCollegeReadyGrades38WhitePercentWrap.alreadyInitialized) {
+			_examsCollegeReadyGrades38WhitePercent(examsCollegeReadyGrades38WhitePercentWrap);
+			if(examsCollegeReadyGrades38WhitePercent == null)
+				setExamsCollegeReadyGrades38WhitePercent(examsCollegeReadyGrades38WhitePercentWrap.o);
+		}
+		examsCollegeReadyGrades38WhitePercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrExamsCollegeReadyGrades38WhitePercent() {
+		return examsCollegeReadyGrades38WhitePercent == null ? null : examsCollegeReadyGrades38WhitePercent.doubleValue();
+	}
+
+	public String strExamsCollegeReadyGrades38WhitePercent() {
+		return examsCollegeReadyGrades38WhitePercent == null ? "" : examsCollegeReadyGrades38WhitePercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonExamsCollegeReadyGrades38WhitePercent() {
+		return examsCollegeReadyGrades38WhitePercent == null ? "" : examsCollegeReadyGrades38WhitePercent.toString();
+	}
+
+	public String nomAffichageExamsCollegeReadyGrades38WhitePercent() {
+		return "College ready exams grades 3-8 white";
+	}
+
+	public String htmTooltipExamsCollegeReadyGrades38WhitePercent() {
+		return null;
+	}
+
+	public String htmExamsCollegeReadyGrades38WhitePercent() {
+		return examsCollegeReadyGrades38WhitePercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades38WhitePercent());
+	}
+
+	public void inputExamsCollegeReadyGrades38WhitePercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "College ready exams grades 3-8 white")
+				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades38WhitePercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setExamsCollegeReadyGrades38WhitePercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38WhitePercent w3-input w3-border ");
+					a("name", "setExamsCollegeReadyGrades38WhitePercent");
+				} else {
+					a("class", "valueExamsCollegeReadyGrades38WhitePercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38WhitePercent w3-input w3-border ");
+					a("name", "examsCollegeReadyGrades38WhitePercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades38WhitePercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38WhitePercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38WhitePercent')); }); ");
+				}
+				a("value", strExamsCollegeReadyGrades38WhitePercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades38WhitePercent ").f().sx(htmExamsCollegeReadyGrades38WhitePercent()).g("span");
+		}
+	}
+
+	public void htmExamsCollegeReadyGrades38WhitePercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades38WhitePercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades38WhitePercent").a("class", "").f().sx("College ready exams grades 3-8 white").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputExamsCollegeReadyGrades38WhitePercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38WhitePercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades38WhitePercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades38WhitePercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38WhitePercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38WhitePercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	//////////////////////////////////////////////
+	// examsCollegeReadyGrades912OverallPercent //
+	//////////////////////////////////////////////
+
+	/**	 The entity examsCollegeReadyGrades912OverallPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal examsCollegeReadyGrades912OverallPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> examsCollegeReadyGrades912OverallPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades912OverallPercent").o(examsCollegeReadyGrades912OverallPercent);
+
+	/**	<br/> The entity examsCollegeReadyGrades912OverallPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades912OverallPercent">Find the entity examsCollegeReadyGrades912OverallPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _examsCollegeReadyGrades912OverallPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getExamsCollegeReadyGrades912OverallPercent() {
+		return examsCollegeReadyGrades912OverallPercent;
+	}
+
+	public void setExamsCollegeReadyGrades912OverallPercent(BigDecimal examsCollegeReadyGrades912OverallPercent) {
+		this.examsCollegeReadyGrades912OverallPercent = examsCollegeReadyGrades912OverallPercent;
+		this.examsCollegeReadyGrades912OverallPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setExamsCollegeReadyGrades912OverallPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.examsCollegeReadyGrades912OverallPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912OverallPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades912OverallPercent(Double o) {
+			this.examsCollegeReadyGrades912OverallPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912OverallPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades912OverallPercent(Integer o) {
+			this.examsCollegeReadyGrades912OverallPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912OverallPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard examsCollegeReadyGrades912OverallPercentInit() {
+		if(!examsCollegeReadyGrades912OverallPercentWrap.alreadyInitialized) {
+			_examsCollegeReadyGrades912OverallPercent(examsCollegeReadyGrades912OverallPercentWrap);
+			if(examsCollegeReadyGrades912OverallPercent == null)
+				setExamsCollegeReadyGrades912OverallPercent(examsCollegeReadyGrades912OverallPercentWrap.o);
+		}
+		examsCollegeReadyGrades912OverallPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrExamsCollegeReadyGrades912OverallPercent() {
+		return examsCollegeReadyGrades912OverallPercent == null ? null : examsCollegeReadyGrades912OverallPercent.doubleValue();
+	}
+
+	public String strExamsCollegeReadyGrades912OverallPercent() {
+		return examsCollegeReadyGrades912OverallPercent == null ? "" : examsCollegeReadyGrades912OverallPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonExamsCollegeReadyGrades912OverallPercent() {
+		return examsCollegeReadyGrades912OverallPercent == null ? "" : examsCollegeReadyGrades912OverallPercent.toString();
+	}
+
+	public String nomAffichageExamsCollegeReadyGrades912OverallPercent() {
+		return "College ready exams grades 9-12 overall";
+	}
+
+	public String htmTooltipExamsCollegeReadyGrades912OverallPercent() {
+		return null;
+	}
+
+	public String htmExamsCollegeReadyGrades912OverallPercent() {
+		return examsCollegeReadyGrades912OverallPercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades912OverallPercent());
+	}
+
+	public void inputExamsCollegeReadyGrades912OverallPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "College ready exams grades 9-12 overall")
+				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades912OverallPercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setExamsCollegeReadyGrades912OverallPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912OverallPercent w3-input w3-border ");
+					a("name", "setExamsCollegeReadyGrades912OverallPercent");
+				} else {
+					a("class", "valueExamsCollegeReadyGrades912OverallPercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912OverallPercent w3-input w3-border ");
+					a("name", "examsCollegeReadyGrades912OverallPercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades912OverallPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912OverallPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912OverallPercent')); }); ");
+				}
+				a("value", strExamsCollegeReadyGrades912OverallPercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades912OverallPercent ").f().sx(htmExamsCollegeReadyGrades912OverallPercent()).g("span");
+		}
+	}
+
+	public void htmExamsCollegeReadyGrades912OverallPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades912OverallPercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades912OverallPercent").a("class", "").f().sx("College ready exams grades 9-12 overall").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputExamsCollegeReadyGrades912OverallPercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912OverallPercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades912OverallPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades912OverallPercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912OverallPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912OverallPercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	/////////////////////////////////////////////
+	// examsCollegeReadyGrades912IndianPercent //
+	/////////////////////////////////////////////
+
+	/**	 The entity examsCollegeReadyGrades912IndianPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal examsCollegeReadyGrades912IndianPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> examsCollegeReadyGrades912IndianPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades912IndianPercent").o(examsCollegeReadyGrades912IndianPercent);
+
+	/**	<br/> The entity examsCollegeReadyGrades912IndianPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades912IndianPercent">Find the entity examsCollegeReadyGrades912IndianPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _examsCollegeReadyGrades912IndianPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getExamsCollegeReadyGrades912IndianPercent() {
+		return examsCollegeReadyGrades912IndianPercent;
+	}
+
+	public void setExamsCollegeReadyGrades912IndianPercent(BigDecimal examsCollegeReadyGrades912IndianPercent) {
+		this.examsCollegeReadyGrades912IndianPercent = examsCollegeReadyGrades912IndianPercent;
+		this.examsCollegeReadyGrades912IndianPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setExamsCollegeReadyGrades912IndianPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.examsCollegeReadyGrades912IndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912IndianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades912IndianPercent(Double o) {
+			this.examsCollegeReadyGrades912IndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912IndianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades912IndianPercent(Integer o) {
+			this.examsCollegeReadyGrades912IndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912IndianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard examsCollegeReadyGrades912IndianPercentInit() {
+		if(!examsCollegeReadyGrades912IndianPercentWrap.alreadyInitialized) {
+			_examsCollegeReadyGrades912IndianPercent(examsCollegeReadyGrades912IndianPercentWrap);
+			if(examsCollegeReadyGrades912IndianPercent == null)
+				setExamsCollegeReadyGrades912IndianPercent(examsCollegeReadyGrades912IndianPercentWrap.o);
+		}
+		examsCollegeReadyGrades912IndianPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrExamsCollegeReadyGrades912IndianPercent() {
+		return examsCollegeReadyGrades912IndianPercent == null ? null : examsCollegeReadyGrades912IndianPercent.doubleValue();
+	}
+
+	public String strExamsCollegeReadyGrades912IndianPercent() {
+		return examsCollegeReadyGrades912IndianPercent == null ? "" : examsCollegeReadyGrades912IndianPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonExamsCollegeReadyGrades912IndianPercent() {
+		return examsCollegeReadyGrades912IndianPercent == null ? "" : examsCollegeReadyGrades912IndianPercent.toString();
+	}
+
+	public String nomAffichageExamsCollegeReadyGrades912IndianPercent() {
+		return "College ready exams grades 9-12 first nation";
+	}
+
+	public String htmTooltipExamsCollegeReadyGrades912IndianPercent() {
+		return null;
+	}
+
+	public String htmExamsCollegeReadyGrades912IndianPercent() {
+		return examsCollegeReadyGrades912IndianPercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades912IndianPercent());
+	}
+
+	public void inputExamsCollegeReadyGrades912IndianPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "College ready exams grades 9-12 first nation")
+				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades912IndianPercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setExamsCollegeReadyGrades912IndianPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912IndianPercent w3-input w3-border ");
+					a("name", "setExamsCollegeReadyGrades912IndianPercent");
+				} else {
+					a("class", "valueExamsCollegeReadyGrades912IndianPercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912IndianPercent w3-input w3-border ");
+					a("name", "examsCollegeReadyGrades912IndianPercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades912IndianPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912IndianPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912IndianPercent')); }); ");
+				}
+				a("value", strExamsCollegeReadyGrades912IndianPercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades912IndianPercent ").f().sx(htmExamsCollegeReadyGrades912IndianPercent()).g("span");
+		}
+	}
+
+	public void htmExamsCollegeReadyGrades912IndianPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades912IndianPercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades912IndianPercent").a("class", "").f().sx("College ready exams grades 9-12 first nation").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputExamsCollegeReadyGrades912IndianPercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912IndianPercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades912IndianPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades912IndianPercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912IndianPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912IndianPercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	////////////////////////////////////////////
+	// examsCollegeReadyGrades912AsianPercent //
+	////////////////////////////////////////////
+
+	/**	 The entity examsCollegeReadyGrades912AsianPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal examsCollegeReadyGrades912AsianPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> examsCollegeReadyGrades912AsianPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades912AsianPercent").o(examsCollegeReadyGrades912AsianPercent);
+
+	/**	<br/> The entity examsCollegeReadyGrades912AsianPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades912AsianPercent">Find the entity examsCollegeReadyGrades912AsianPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _examsCollegeReadyGrades912AsianPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getExamsCollegeReadyGrades912AsianPercent() {
+		return examsCollegeReadyGrades912AsianPercent;
+	}
+
+	public void setExamsCollegeReadyGrades912AsianPercent(BigDecimal examsCollegeReadyGrades912AsianPercent) {
+		this.examsCollegeReadyGrades912AsianPercent = examsCollegeReadyGrades912AsianPercent;
+		this.examsCollegeReadyGrades912AsianPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setExamsCollegeReadyGrades912AsianPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.examsCollegeReadyGrades912AsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912AsianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades912AsianPercent(Double o) {
+			this.examsCollegeReadyGrades912AsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912AsianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades912AsianPercent(Integer o) {
+			this.examsCollegeReadyGrades912AsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912AsianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard examsCollegeReadyGrades912AsianPercentInit() {
+		if(!examsCollegeReadyGrades912AsianPercentWrap.alreadyInitialized) {
+			_examsCollegeReadyGrades912AsianPercent(examsCollegeReadyGrades912AsianPercentWrap);
+			if(examsCollegeReadyGrades912AsianPercent == null)
+				setExamsCollegeReadyGrades912AsianPercent(examsCollegeReadyGrades912AsianPercentWrap.o);
+		}
+		examsCollegeReadyGrades912AsianPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrExamsCollegeReadyGrades912AsianPercent() {
+		return examsCollegeReadyGrades912AsianPercent == null ? null : examsCollegeReadyGrades912AsianPercent.doubleValue();
+	}
+
+	public String strExamsCollegeReadyGrades912AsianPercent() {
+		return examsCollegeReadyGrades912AsianPercent == null ? "" : examsCollegeReadyGrades912AsianPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonExamsCollegeReadyGrades912AsianPercent() {
+		return examsCollegeReadyGrades912AsianPercent == null ? "" : examsCollegeReadyGrades912AsianPercent.toString();
+	}
+
+	public String nomAffichageExamsCollegeReadyGrades912AsianPercent() {
+		return "College ready exams grades 9-12 asian";
+	}
+
+	public String htmTooltipExamsCollegeReadyGrades912AsianPercent() {
+		return null;
+	}
+
+	public String htmExamsCollegeReadyGrades912AsianPercent() {
+		return examsCollegeReadyGrades912AsianPercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades912AsianPercent());
+	}
+
+	public void inputExamsCollegeReadyGrades912AsianPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "College ready exams grades 9-12 asian")
+				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades912AsianPercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setExamsCollegeReadyGrades912AsianPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912AsianPercent w3-input w3-border ");
+					a("name", "setExamsCollegeReadyGrades912AsianPercent");
+				} else {
+					a("class", "valueExamsCollegeReadyGrades912AsianPercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912AsianPercent w3-input w3-border ");
+					a("name", "examsCollegeReadyGrades912AsianPercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades912AsianPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912AsianPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912AsianPercent')); }); ");
+				}
+				a("value", strExamsCollegeReadyGrades912AsianPercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades912AsianPercent ").f().sx(htmExamsCollegeReadyGrades912AsianPercent()).g("span");
+		}
+	}
+
+	public void htmExamsCollegeReadyGrades912AsianPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades912AsianPercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades912AsianPercent").a("class", "").f().sx("College ready exams grades 9-12 asian").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputExamsCollegeReadyGrades912AsianPercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912AsianPercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades912AsianPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades912AsianPercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912AsianPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912AsianPercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	////////////////////////////////////////////
+	// examsCollegeReadyGrades912BlackPercent //
+	////////////////////////////////////////////
+
+	/**	 The entity examsCollegeReadyGrades912BlackPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal examsCollegeReadyGrades912BlackPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> examsCollegeReadyGrades912BlackPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades912BlackPercent").o(examsCollegeReadyGrades912BlackPercent);
+
+	/**	<br/> The entity examsCollegeReadyGrades912BlackPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades912BlackPercent">Find the entity examsCollegeReadyGrades912BlackPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _examsCollegeReadyGrades912BlackPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getExamsCollegeReadyGrades912BlackPercent() {
+		return examsCollegeReadyGrades912BlackPercent;
+	}
+
+	public void setExamsCollegeReadyGrades912BlackPercent(BigDecimal examsCollegeReadyGrades912BlackPercent) {
+		this.examsCollegeReadyGrades912BlackPercent = examsCollegeReadyGrades912BlackPercent;
+		this.examsCollegeReadyGrades912BlackPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setExamsCollegeReadyGrades912BlackPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.examsCollegeReadyGrades912BlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912BlackPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades912BlackPercent(Double o) {
+			this.examsCollegeReadyGrades912BlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912BlackPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades912BlackPercent(Integer o) {
+			this.examsCollegeReadyGrades912BlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912BlackPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard examsCollegeReadyGrades912BlackPercentInit() {
+		if(!examsCollegeReadyGrades912BlackPercentWrap.alreadyInitialized) {
+			_examsCollegeReadyGrades912BlackPercent(examsCollegeReadyGrades912BlackPercentWrap);
+			if(examsCollegeReadyGrades912BlackPercent == null)
+				setExamsCollegeReadyGrades912BlackPercent(examsCollegeReadyGrades912BlackPercentWrap.o);
+		}
+		examsCollegeReadyGrades912BlackPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrExamsCollegeReadyGrades912BlackPercent() {
+		return examsCollegeReadyGrades912BlackPercent == null ? null : examsCollegeReadyGrades912BlackPercent.doubleValue();
+	}
+
+	public String strExamsCollegeReadyGrades912BlackPercent() {
+		return examsCollegeReadyGrades912BlackPercent == null ? "" : examsCollegeReadyGrades912BlackPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonExamsCollegeReadyGrades912BlackPercent() {
+		return examsCollegeReadyGrades912BlackPercent == null ? "" : examsCollegeReadyGrades912BlackPercent.toString();
+	}
+
+	public String nomAffichageExamsCollegeReadyGrades912BlackPercent() {
+		return "College ready exams grades 9-12 black";
+	}
+
+	public String htmTooltipExamsCollegeReadyGrades912BlackPercent() {
+		return null;
+	}
+
+	public String htmExamsCollegeReadyGrades912BlackPercent() {
+		return examsCollegeReadyGrades912BlackPercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades912BlackPercent());
+	}
+
+	public void inputExamsCollegeReadyGrades912BlackPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "College ready exams grades 9-12 black")
+				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades912BlackPercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setExamsCollegeReadyGrades912BlackPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912BlackPercent w3-input w3-border ");
+					a("name", "setExamsCollegeReadyGrades912BlackPercent");
+				} else {
+					a("class", "valueExamsCollegeReadyGrades912BlackPercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912BlackPercent w3-input w3-border ");
+					a("name", "examsCollegeReadyGrades912BlackPercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades912BlackPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912BlackPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912BlackPercent')); }); ");
+				}
+				a("value", strExamsCollegeReadyGrades912BlackPercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades912BlackPercent ").f().sx(htmExamsCollegeReadyGrades912BlackPercent()).g("span");
+		}
+	}
+
+	public void htmExamsCollegeReadyGrades912BlackPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades912BlackPercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades912BlackPercent").a("class", "").f().sx("College ready exams grades 9-12 black").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputExamsCollegeReadyGrades912BlackPercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912BlackPercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades912BlackPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades912BlackPercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912BlackPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912BlackPercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	///////////////////////////////////////////////
+	// examsCollegeReadyGrades912HispanicPercent //
+	///////////////////////////////////////////////
+
+	/**	 The entity examsCollegeReadyGrades912HispanicPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal examsCollegeReadyGrades912HispanicPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> examsCollegeReadyGrades912HispanicPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades912HispanicPercent").o(examsCollegeReadyGrades912HispanicPercent);
+
+	/**	<br/> The entity examsCollegeReadyGrades912HispanicPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades912HispanicPercent">Find the entity examsCollegeReadyGrades912HispanicPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _examsCollegeReadyGrades912HispanicPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getExamsCollegeReadyGrades912HispanicPercent() {
+		return examsCollegeReadyGrades912HispanicPercent;
+	}
+
+	public void setExamsCollegeReadyGrades912HispanicPercent(BigDecimal examsCollegeReadyGrades912HispanicPercent) {
+		this.examsCollegeReadyGrades912HispanicPercent = examsCollegeReadyGrades912HispanicPercent;
+		this.examsCollegeReadyGrades912HispanicPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setExamsCollegeReadyGrades912HispanicPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.examsCollegeReadyGrades912HispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912HispanicPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades912HispanicPercent(Double o) {
+			this.examsCollegeReadyGrades912HispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912HispanicPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades912HispanicPercent(Integer o) {
+			this.examsCollegeReadyGrades912HispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912HispanicPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard examsCollegeReadyGrades912HispanicPercentInit() {
+		if(!examsCollegeReadyGrades912HispanicPercentWrap.alreadyInitialized) {
+			_examsCollegeReadyGrades912HispanicPercent(examsCollegeReadyGrades912HispanicPercentWrap);
+			if(examsCollegeReadyGrades912HispanicPercent == null)
+				setExamsCollegeReadyGrades912HispanicPercent(examsCollegeReadyGrades912HispanicPercentWrap.o);
+		}
+		examsCollegeReadyGrades912HispanicPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrExamsCollegeReadyGrades912HispanicPercent() {
+		return examsCollegeReadyGrades912HispanicPercent == null ? null : examsCollegeReadyGrades912HispanicPercent.doubleValue();
+	}
+
+	public String strExamsCollegeReadyGrades912HispanicPercent() {
+		return examsCollegeReadyGrades912HispanicPercent == null ? "" : examsCollegeReadyGrades912HispanicPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonExamsCollegeReadyGrades912HispanicPercent() {
+		return examsCollegeReadyGrades912HispanicPercent == null ? "" : examsCollegeReadyGrades912HispanicPercent.toString();
+	}
+
+	public String nomAffichageExamsCollegeReadyGrades912HispanicPercent() {
+		return "College ready exams grades 9-12 hispanic";
+	}
+
+	public String htmTooltipExamsCollegeReadyGrades912HispanicPercent() {
+		return null;
+	}
+
+	public String htmExamsCollegeReadyGrades912HispanicPercent() {
+		return examsCollegeReadyGrades912HispanicPercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades912HispanicPercent());
+	}
+
+	public void inputExamsCollegeReadyGrades912HispanicPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "College ready exams grades 9-12 hispanic")
+				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades912HispanicPercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setExamsCollegeReadyGrades912HispanicPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912HispanicPercent w3-input w3-border ");
+					a("name", "setExamsCollegeReadyGrades912HispanicPercent");
+				} else {
+					a("class", "valueExamsCollegeReadyGrades912HispanicPercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912HispanicPercent w3-input w3-border ");
+					a("name", "examsCollegeReadyGrades912HispanicPercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades912HispanicPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912HispanicPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912HispanicPercent')); }); ");
+				}
+				a("value", strExamsCollegeReadyGrades912HispanicPercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades912HispanicPercent ").f().sx(htmExamsCollegeReadyGrades912HispanicPercent()).g("span");
+		}
+	}
+
+	public void htmExamsCollegeReadyGrades912HispanicPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades912HispanicPercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades912HispanicPercent").a("class", "").f().sx("College ready exams grades 9-12 hispanic").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputExamsCollegeReadyGrades912HispanicPercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912HispanicPercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades912HispanicPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades912HispanicPercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912HispanicPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912HispanicPercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	//////////////////////////////////////////////////
+	// examsCollegeReadyGrades912MultiRacialPercent //
+	//////////////////////////////////////////////////
+
+	/**	 The entity examsCollegeReadyGrades912MultiRacialPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal examsCollegeReadyGrades912MultiRacialPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> examsCollegeReadyGrades912MultiRacialPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades912MultiRacialPercent").o(examsCollegeReadyGrades912MultiRacialPercent);
+
+	/**	<br/> The entity examsCollegeReadyGrades912MultiRacialPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades912MultiRacialPercent">Find the entity examsCollegeReadyGrades912MultiRacialPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _examsCollegeReadyGrades912MultiRacialPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getExamsCollegeReadyGrades912MultiRacialPercent() {
+		return examsCollegeReadyGrades912MultiRacialPercent;
+	}
+
+	public void setExamsCollegeReadyGrades912MultiRacialPercent(BigDecimal examsCollegeReadyGrades912MultiRacialPercent) {
+		this.examsCollegeReadyGrades912MultiRacialPercent = examsCollegeReadyGrades912MultiRacialPercent;
+		this.examsCollegeReadyGrades912MultiRacialPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setExamsCollegeReadyGrades912MultiRacialPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.examsCollegeReadyGrades912MultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912MultiRacialPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades912MultiRacialPercent(Double o) {
+			this.examsCollegeReadyGrades912MultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912MultiRacialPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades912MultiRacialPercent(Integer o) {
+			this.examsCollegeReadyGrades912MultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912MultiRacialPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard examsCollegeReadyGrades912MultiRacialPercentInit() {
+		if(!examsCollegeReadyGrades912MultiRacialPercentWrap.alreadyInitialized) {
+			_examsCollegeReadyGrades912MultiRacialPercent(examsCollegeReadyGrades912MultiRacialPercentWrap);
+			if(examsCollegeReadyGrades912MultiRacialPercent == null)
+				setExamsCollegeReadyGrades912MultiRacialPercent(examsCollegeReadyGrades912MultiRacialPercentWrap.o);
+		}
+		examsCollegeReadyGrades912MultiRacialPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrExamsCollegeReadyGrades912MultiRacialPercent() {
+		return examsCollegeReadyGrades912MultiRacialPercent == null ? null : examsCollegeReadyGrades912MultiRacialPercent.doubleValue();
+	}
+
+	public String strExamsCollegeReadyGrades912MultiRacialPercent() {
+		return examsCollegeReadyGrades912MultiRacialPercent == null ? "" : examsCollegeReadyGrades912MultiRacialPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonExamsCollegeReadyGrades912MultiRacialPercent() {
+		return examsCollegeReadyGrades912MultiRacialPercent == null ? "" : examsCollegeReadyGrades912MultiRacialPercent.toString();
+	}
+
+	public String nomAffichageExamsCollegeReadyGrades912MultiRacialPercent() {
+		return "College ready exams grades 9-12 multi-racial";
+	}
+
+	public String htmTooltipExamsCollegeReadyGrades912MultiRacialPercent() {
+		return null;
+	}
+
+	public String htmExamsCollegeReadyGrades912MultiRacialPercent() {
+		return examsCollegeReadyGrades912MultiRacialPercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades912MultiRacialPercent());
+	}
+
+	public void inputExamsCollegeReadyGrades912MultiRacialPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "College ready exams grades 9-12 multi-racial")
+				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades912MultiRacialPercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setExamsCollegeReadyGrades912MultiRacialPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912MultiRacialPercent w3-input w3-border ");
+					a("name", "setExamsCollegeReadyGrades912MultiRacialPercent");
+				} else {
+					a("class", "valueExamsCollegeReadyGrades912MultiRacialPercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912MultiRacialPercent w3-input w3-border ");
+					a("name", "examsCollegeReadyGrades912MultiRacialPercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades912MultiRacialPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912MultiRacialPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912MultiRacialPercent')); }); ");
+				}
+				a("value", strExamsCollegeReadyGrades912MultiRacialPercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades912MultiRacialPercent ").f().sx(htmExamsCollegeReadyGrades912MultiRacialPercent()).g("span");
+		}
+	}
+
+	public void htmExamsCollegeReadyGrades912MultiRacialPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades912MultiRacialPercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades912MultiRacialPercent").a("class", "").f().sx("College ready exams grades 9-12 multi-racial").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputExamsCollegeReadyGrades912MultiRacialPercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912MultiRacialPercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades912MultiRacialPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades912MultiRacialPercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912MultiRacialPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912MultiRacialPercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	//////////////////////////////////////////////////////
+	// examsCollegeReadyGrades912PacificIslanderPercent //
+	//////////////////////////////////////////////////////
+
+	/**	 The entity examsCollegeReadyGrades912PacificIslanderPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal examsCollegeReadyGrades912PacificIslanderPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> examsCollegeReadyGrades912PacificIslanderPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades912PacificIslanderPercent").o(examsCollegeReadyGrades912PacificIslanderPercent);
+
+	/**	<br/> The entity examsCollegeReadyGrades912PacificIslanderPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades912PacificIslanderPercent">Find the entity examsCollegeReadyGrades912PacificIslanderPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _examsCollegeReadyGrades912PacificIslanderPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getExamsCollegeReadyGrades912PacificIslanderPercent() {
+		return examsCollegeReadyGrades912PacificIslanderPercent;
+	}
+
+	public void setExamsCollegeReadyGrades912PacificIslanderPercent(BigDecimal examsCollegeReadyGrades912PacificIslanderPercent) {
+		this.examsCollegeReadyGrades912PacificIslanderPercent = examsCollegeReadyGrades912PacificIslanderPercent;
+		this.examsCollegeReadyGrades912PacificIslanderPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setExamsCollegeReadyGrades912PacificIslanderPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.examsCollegeReadyGrades912PacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912PacificIslanderPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades912PacificIslanderPercent(Double o) {
+			this.examsCollegeReadyGrades912PacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912PacificIslanderPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades912PacificIslanderPercent(Integer o) {
+			this.examsCollegeReadyGrades912PacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912PacificIslanderPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard examsCollegeReadyGrades912PacificIslanderPercentInit() {
+		if(!examsCollegeReadyGrades912PacificIslanderPercentWrap.alreadyInitialized) {
+			_examsCollegeReadyGrades912PacificIslanderPercent(examsCollegeReadyGrades912PacificIslanderPercentWrap);
+			if(examsCollegeReadyGrades912PacificIslanderPercent == null)
+				setExamsCollegeReadyGrades912PacificIslanderPercent(examsCollegeReadyGrades912PacificIslanderPercentWrap.o);
+		}
+		examsCollegeReadyGrades912PacificIslanderPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrExamsCollegeReadyGrades912PacificIslanderPercent() {
+		return examsCollegeReadyGrades912PacificIslanderPercent == null ? null : examsCollegeReadyGrades912PacificIslanderPercent.doubleValue();
+	}
+
+	public String strExamsCollegeReadyGrades912PacificIslanderPercent() {
+		return examsCollegeReadyGrades912PacificIslanderPercent == null ? "" : examsCollegeReadyGrades912PacificIslanderPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonExamsCollegeReadyGrades912PacificIslanderPercent() {
+		return examsCollegeReadyGrades912PacificIslanderPercent == null ? "" : examsCollegeReadyGrades912PacificIslanderPercent.toString();
+	}
+
+	public String nomAffichageExamsCollegeReadyGrades912PacificIslanderPercent() {
+		return "College ready exams grades 9-12 pacific islander";
+	}
+
+	public String htmTooltipExamsCollegeReadyGrades912PacificIslanderPercent() {
+		return null;
+	}
+
+	public String htmExamsCollegeReadyGrades912PacificIslanderPercent() {
+		return examsCollegeReadyGrades912PacificIslanderPercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades912PacificIslanderPercent());
+	}
+
+	public void inputExamsCollegeReadyGrades912PacificIslanderPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "College ready exams grades 9-12 pacific islander")
+				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades912PacificIslanderPercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setExamsCollegeReadyGrades912PacificIslanderPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912PacificIslanderPercent w3-input w3-border ");
+					a("name", "setExamsCollegeReadyGrades912PacificIslanderPercent");
+				} else {
+					a("class", "valueExamsCollegeReadyGrades912PacificIslanderPercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912PacificIslanderPercent w3-input w3-border ");
+					a("name", "examsCollegeReadyGrades912PacificIslanderPercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades912PacificIslanderPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912PacificIslanderPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912PacificIslanderPercent')); }); ");
+				}
+				a("value", strExamsCollegeReadyGrades912PacificIslanderPercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades912PacificIslanderPercent ").f().sx(htmExamsCollegeReadyGrades912PacificIslanderPercent()).g("span");
+		}
+	}
+
+	public void htmExamsCollegeReadyGrades912PacificIslanderPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades912PacificIslanderPercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades912PacificIslanderPercent").a("class", "").f().sx("College ready exams grades 9-12 pacific islander").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputExamsCollegeReadyGrades912PacificIslanderPercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912PacificIslanderPercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades912PacificIslanderPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades912PacificIslanderPercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912PacificIslanderPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912PacificIslanderPercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	////////////////////////////////////////////
+	// examsCollegeReadyGrades912WhitePercent //
+	////////////////////////////////////////////
+
+	/**	 The entity examsCollegeReadyGrades912WhitePercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal examsCollegeReadyGrades912WhitePercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> examsCollegeReadyGrades912WhitePercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades912WhitePercent").o(examsCollegeReadyGrades912WhitePercent);
+
+	/**	<br/> The entity examsCollegeReadyGrades912WhitePercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades912WhitePercent">Find the entity examsCollegeReadyGrades912WhitePercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _examsCollegeReadyGrades912WhitePercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getExamsCollegeReadyGrades912WhitePercent() {
+		return examsCollegeReadyGrades912WhitePercent;
+	}
+
+	public void setExamsCollegeReadyGrades912WhitePercent(BigDecimal examsCollegeReadyGrades912WhitePercent) {
+		this.examsCollegeReadyGrades912WhitePercent = examsCollegeReadyGrades912WhitePercent;
+		this.examsCollegeReadyGrades912WhitePercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setExamsCollegeReadyGrades912WhitePercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.examsCollegeReadyGrades912WhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912WhitePercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades912WhitePercent(Double o) {
+			this.examsCollegeReadyGrades912WhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912WhitePercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades912WhitePercent(Integer o) {
+			this.examsCollegeReadyGrades912WhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912WhitePercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard examsCollegeReadyGrades912WhitePercentInit() {
+		if(!examsCollegeReadyGrades912WhitePercentWrap.alreadyInitialized) {
+			_examsCollegeReadyGrades912WhitePercent(examsCollegeReadyGrades912WhitePercentWrap);
+			if(examsCollegeReadyGrades912WhitePercent == null)
+				setExamsCollegeReadyGrades912WhitePercent(examsCollegeReadyGrades912WhitePercentWrap.o);
+		}
+		examsCollegeReadyGrades912WhitePercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrExamsCollegeReadyGrades912WhitePercent() {
+		return examsCollegeReadyGrades912WhitePercent == null ? null : examsCollegeReadyGrades912WhitePercent.doubleValue();
+	}
+
+	public String strExamsCollegeReadyGrades912WhitePercent() {
+		return examsCollegeReadyGrades912WhitePercent == null ? "" : examsCollegeReadyGrades912WhitePercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonExamsCollegeReadyGrades912WhitePercent() {
+		return examsCollegeReadyGrades912WhitePercent == null ? "" : examsCollegeReadyGrades912WhitePercent.toString();
+	}
+
+	public String nomAffichageExamsCollegeReadyGrades912WhitePercent() {
+		return "College ready exams grades 9-12 white";
+	}
+
+	public String htmTooltipExamsCollegeReadyGrades912WhitePercent() {
+		return null;
+	}
+
+	public String htmExamsCollegeReadyGrades912WhitePercent() {
+		return examsCollegeReadyGrades912WhitePercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades912WhitePercent());
+	}
+
+	public void inputExamsCollegeReadyGrades912WhitePercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "College ready exams grades 9-12 white")
+				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades912WhitePercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setExamsCollegeReadyGrades912WhitePercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912WhitePercent w3-input w3-border ");
+					a("name", "setExamsCollegeReadyGrades912WhitePercent");
+				} else {
+					a("class", "valueExamsCollegeReadyGrades912WhitePercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912WhitePercent w3-input w3-border ");
+					a("name", "examsCollegeReadyGrades912WhitePercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades912WhitePercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912WhitePercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912WhitePercent')); }); ");
+				}
+				a("value", strExamsCollegeReadyGrades912WhitePercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades912WhitePercent ").f().sx(htmExamsCollegeReadyGrades912WhitePercent()).g("span");
+		}
+	}
+
+	public void htmExamsCollegeReadyGrades912WhitePercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades912WhitePercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades912WhitePercent").a("class", "").f().sx("College ready exams grades 9-12 white").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputExamsCollegeReadyGrades912WhitePercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912WhitePercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades912WhitePercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades912WhitePercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912WhitePercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912WhitePercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	////////////////////////////////////////
+	// graduateWithin4YearsOverallPercent //
+	////////////////////////////////////////
+
+	/**	 The entity graduateWithin4YearsOverallPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal graduateWithin4YearsOverallPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> graduateWithin4YearsOverallPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("graduateWithin4YearsOverallPercent").o(graduateWithin4YearsOverallPercent);
+
+	/**	<br/> The entity graduateWithin4YearsOverallPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:graduateWithin4YearsOverallPercent">Find the entity graduateWithin4YearsOverallPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _graduateWithin4YearsOverallPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getGraduateWithin4YearsOverallPercent() {
+		return graduateWithin4YearsOverallPercent;
+	}
+
+	public void setGraduateWithin4YearsOverallPercent(BigDecimal graduateWithin4YearsOverallPercent) {
+		this.graduateWithin4YearsOverallPercent = graduateWithin4YearsOverallPercent;
+		this.graduateWithin4YearsOverallPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setGraduateWithin4YearsOverallPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.graduateWithin4YearsOverallPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsOverallPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setGraduateWithin4YearsOverallPercent(Double o) {
+			this.graduateWithin4YearsOverallPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsOverallPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setGraduateWithin4YearsOverallPercent(Integer o) {
+			this.graduateWithin4YearsOverallPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsOverallPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard graduateWithin4YearsOverallPercentInit() {
+		if(!graduateWithin4YearsOverallPercentWrap.alreadyInitialized) {
+			_graduateWithin4YearsOverallPercent(graduateWithin4YearsOverallPercentWrap);
+			if(graduateWithin4YearsOverallPercent == null)
+				setGraduateWithin4YearsOverallPercent(graduateWithin4YearsOverallPercentWrap.o);
+		}
+		graduateWithin4YearsOverallPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrGraduateWithin4YearsOverallPercent() {
+		return graduateWithin4YearsOverallPercent == null ? null : graduateWithin4YearsOverallPercent.doubleValue();
+	}
+
+	public String strGraduateWithin4YearsOverallPercent() {
+		return graduateWithin4YearsOverallPercent == null ? "" : graduateWithin4YearsOverallPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonGraduateWithin4YearsOverallPercent() {
+		return graduateWithin4YearsOverallPercent == null ? "" : graduateWithin4YearsOverallPercent.toString();
+	}
+
+	public String nomAffichageGraduateWithin4YearsOverallPercent() {
+		return "Graduate HS within 4 years overall";
+	}
+
+	public String htmTooltipGraduateWithin4YearsOverallPercent() {
+		return null;
+	}
+
+	public String htmGraduateWithin4YearsOverallPercent() {
+		return graduateWithin4YearsOverallPercent == null ? "" : StringEscapeUtils.escapeHtml4(strGraduateWithin4YearsOverallPercent());
+	}
+
+	public void inputGraduateWithin4YearsOverallPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "Graduate HS within 4 years overall")
+				.a("id", classApiMethodMethod, "_graduateWithin4YearsOverallPercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setGraduateWithin4YearsOverallPercent classReportCard inputReportCard", pk, "GraduateWithin4YearsOverallPercent w3-input w3-border ");
+					a("name", "setGraduateWithin4YearsOverallPercent");
+				} else {
+					a("class", "valueGraduateWithin4YearsOverallPercent w3-input w3-border classReportCard inputReportCard", pk, "GraduateWithin4YearsOverallPercent w3-input w3-border ");
+					a("name", "graduateWithin4YearsOverallPercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setGraduateWithin4YearsOverallPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsOverallPercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsOverallPercent')); }); ");
+				}
+				a("value", strGraduateWithin4YearsOverallPercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "GraduateWithin4YearsOverallPercent ").f().sx(htmGraduateWithin4YearsOverallPercent()).g("span");
+		}
+	}
+
+	public void htmGraduateWithin4YearsOverallPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardGraduateWithin4YearsOverallPercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_graduateWithin4YearsOverallPercent").a("class", "").f().sx("Graduate HS within 4 years overall").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputGraduateWithin4YearsOverallPercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_graduateWithin4YearsOverallPercent')); $('#", classApiMethodMethod, "_graduateWithin4YearsOverallPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setGraduateWithin4YearsOverallPercent', null, function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsOverallPercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsOverallPercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	///////////////////////////////////////
+	// graduateWithin4YearsIndianPercent //
+	///////////////////////////////////////
+
+	/**	 The entity graduateWithin4YearsIndianPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal graduateWithin4YearsIndianPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> graduateWithin4YearsIndianPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("graduateWithin4YearsIndianPercent").o(graduateWithin4YearsIndianPercent);
+
+	/**	<br/> The entity graduateWithin4YearsIndianPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:graduateWithin4YearsIndianPercent">Find the entity graduateWithin4YearsIndianPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _graduateWithin4YearsIndianPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getGraduateWithin4YearsIndianPercent() {
+		return graduateWithin4YearsIndianPercent;
+	}
+
+	public void setGraduateWithin4YearsIndianPercent(BigDecimal graduateWithin4YearsIndianPercent) {
+		this.graduateWithin4YearsIndianPercent = graduateWithin4YearsIndianPercent;
+		this.graduateWithin4YearsIndianPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setGraduateWithin4YearsIndianPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.graduateWithin4YearsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsIndianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setGraduateWithin4YearsIndianPercent(Double o) {
+			this.graduateWithin4YearsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsIndianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setGraduateWithin4YearsIndianPercent(Integer o) {
+			this.graduateWithin4YearsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsIndianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard graduateWithin4YearsIndianPercentInit() {
+		if(!graduateWithin4YearsIndianPercentWrap.alreadyInitialized) {
+			_graduateWithin4YearsIndianPercent(graduateWithin4YearsIndianPercentWrap);
+			if(graduateWithin4YearsIndianPercent == null)
+				setGraduateWithin4YearsIndianPercent(graduateWithin4YearsIndianPercentWrap.o);
+		}
+		graduateWithin4YearsIndianPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrGraduateWithin4YearsIndianPercent() {
+		return graduateWithin4YearsIndianPercent == null ? null : graduateWithin4YearsIndianPercent.doubleValue();
+	}
+
+	public String strGraduateWithin4YearsIndianPercent() {
+		return graduateWithin4YearsIndianPercent == null ? "" : graduateWithin4YearsIndianPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonGraduateWithin4YearsIndianPercent() {
+		return graduateWithin4YearsIndianPercent == null ? "" : graduateWithin4YearsIndianPercent.toString();
+	}
+
+	public String nomAffichageGraduateWithin4YearsIndianPercent() {
+		return "Graduate HS within 4 years first nation";
+	}
+
+	public String htmTooltipGraduateWithin4YearsIndianPercent() {
+		return null;
+	}
+
+	public String htmGraduateWithin4YearsIndianPercent() {
+		return graduateWithin4YearsIndianPercent == null ? "" : StringEscapeUtils.escapeHtml4(strGraduateWithin4YearsIndianPercent());
+	}
+
+	public void inputGraduateWithin4YearsIndianPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "Graduate HS within 4 years first nation")
+				.a("id", classApiMethodMethod, "_graduateWithin4YearsIndianPercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setGraduateWithin4YearsIndianPercent classReportCard inputReportCard", pk, "GraduateWithin4YearsIndianPercent w3-input w3-border ");
+					a("name", "setGraduateWithin4YearsIndianPercent");
+				} else {
+					a("class", "valueGraduateWithin4YearsIndianPercent w3-input w3-border classReportCard inputReportCard", pk, "GraduateWithin4YearsIndianPercent w3-input w3-border ");
+					a("name", "graduateWithin4YearsIndianPercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setGraduateWithin4YearsIndianPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsIndianPercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsIndianPercent')); }); ");
+				}
+				a("value", strGraduateWithin4YearsIndianPercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "GraduateWithin4YearsIndianPercent ").f().sx(htmGraduateWithin4YearsIndianPercent()).g("span");
+		}
+	}
+
+	public void htmGraduateWithin4YearsIndianPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardGraduateWithin4YearsIndianPercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_graduateWithin4YearsIndianPercent").a("class", "").f().sx("Graduate HS within 4 years first nation").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputGraduateWithin4YearsIndianPercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_graduateWithin4YearsIndianPercent')); $('#", classApiMethodMethod, "_graduateWithin4YearsIndianPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setGraduateWithin4YearsIndianPercent', null, function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsIndianPercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsIndianPercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	//////////////////////////////////////
+	// graduateWithin4YearsAsianPercent //
+	//////////////////////////////////////
+
+	/**	 The entity graduateWithin4YearsAsianPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal graduateWithin4YearsAsianPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> graduateWithin4YearsAsianPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("graduateWithin4YearsAsianPercent").o(graduateWithin4YearsAsianPercent);
+
+	/**	<br/> The entity graduateWithin4YearsAsianPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:graduateWithin4YearsAsianPercent">Find the entity graduateWithin4YearsAsianPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _graduateWithin4YearsAsianPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getGraduateWithin4YearsAsianPercent() {
+		return graduateWithin4YearsAsianPercent;
+	}
+
+	public void setGraduateWithin4YearsAsianPercent(BigDecimal graduateWithin4YearsAsianPercent) {
+		this.graduateWithin4YearsAsianPercent = graduateWithin4YearsAsianPercent;
+		this.graduateWithin4YearsAsianPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setGraduateWithin4YearsAsianPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.graduateWithin4YearsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsAsianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setGraduateWithin4YearsAsianPercent(Double o) {
+			this.graduateWithin4YearsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsAsianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setGraduateWithin4YearsAsianPercent(Integer o) {
+			this.graduateWithin4YearsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsAsianPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard graduateWithin4YearsAsianPercentInit() {
+		if(!graduateWithin4YearsAsianPercentWrap.alreadyInitialized) {
+			_graduateWithin4YearsAsianPercent(graduateWithin4YearsAsianPercentWrap);
+			if(graduateWithin4YearsAsianPercent == null)
+				setGraduateWithin4YearsAsianPercent(graduateWithin4YearsAsianPercentWrap.o);
+		}
+		graduateWithin4YearsAsianPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrGraduateWithin4YearsAsianPercent() {
+		return graduateWithin4YearsAsianPercent == null ? null : graduateWithin4YearsAsianPercent.doubleValue();
+	}
+
+	public String strGraduateWithin4YearsAsianPercent() {
+		return graduateWithin4YearsAsianPercent == null ? "" : graduateWithin4YearsAsianPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonGraduateWithin4YearsAsianPercent() {
+		return graduateWithin4YearsAsianPercent == null ? "" : graduateWithin4YearsAsianPercent.toString();
+	}
+
+	public String nomAffichageGraduateWithin4YearsAsianPercent() {
+		return "Graduate HS within 4 years asian";
+	}
+
+	public String htmTooltipGraduateWithin4YearsAsianPercent() {
+		return null;
+	}
+
+	public String htmGraduateWithin4YearsAsianPercent() {
+		return graduateWithin4YearsAsianPercent == null ? "" : StringEscapeUtils.escapeHtml4(strGraduateWithin4YearsAsianPercent());
+	}
+
+	public void inputGraduateWithin4YearsAsianPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "Graduate HS within 4 years asian")
+				.a("id", classApiMethodMethod, "_graduateWithin4YearsAsianPercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setGraduateWithin4YearsAsianPercent classReportCard inputReportCard", pk, "GraduateWithin4YearsAsianPercent w3-input w3-border ");
+					a("name", "setGraduateWithin4YearsAsianPercent");
+				} else {
+					a("class", "valueGraduateWithin4YearsAsianPercent w3-input w3-border classReportCard inputReportCard", pk, "GraduateWithin4YearsAsianPercent w3-input w3-border ");
+					a("name", "graduateWithin4YearsAsianPercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setGraduateWithin4YearsAsianPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsAsianPercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsAsianPercent')); }); ");
+				}
+				a("value", strGraduateWithin4YearsAsianPercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "GraduateWithin4YearsAsianPercent ").f().sx(htmGraduateWithin4YearsAsianPercent()).g("span");
+		}
+	}
+
+	public void htmGraduateWithin4YearsAsianPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardGraduateWithin4YearsAsianPercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_graduateWithin4YearsAsianPercent").a("class", "").f().sx("Graduate HS within 4 years asian").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputGraduateWithin4YearsAsianPercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_graduateWithin4YearsAsianPercent')); $('#", classApiMethodMethod, "_graduateWithin4YearsAsianPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setGraduateWithin4YearsAsianPercent', null, function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsAsianPercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsAsianPercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	//////////////////////////////////////
+	// graduateWithin4YearsBlackPercent //
+	//////////////////////////////////////
+
+	/**	 The entity graduateWithin4YearsBlackPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal graduateWithin4YearsBlackPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> graduateWithin4YearsBlackPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("graduateWithin4YearsBlackPercent").o(graduateWithin4YearsBlackPercent);
+
+	/**	<br/> The entity graduateWithin4YearsBlackPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:graduateWithin4YearsBlackPercent">Find the entity graduateWithin4YearsBlackPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _graduateWithin4YearsBlackPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getGraduateWithin4YearsBlackPercent() {
+		return graduateWithin4YearsBlackPercent;
+	}
+
+	public void setGraduateWithin4YearsBlackPercent(BigDecimal graduateWithin4YearsBlackPercent) {
+		this.graduateWithin4YearsBlackPercent = graduateWithin4YearsBlackPercent;
+		this.graduateWithin4YearsBlackPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setGraduateWithin4YearsBlackPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.graduateWithin4YearsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsBlackPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setGraduateWithin4YearsBlackPercent(Double o) {
+			this.graduateWithin4YearsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsBlackPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setGraduateWithin4YearsBlackPercent(Integer o) {
+			this.graduateWithin4YearsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsBlackPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard graduateWithin4YearsBlackPercentInit() {
+		if(!graduateWithin4YearsBlackPercentWrap.alreadyInitialized) {
+			_graduateWithin4YearsBlackPercent(graduateWithin4YearsBlackPercentWrap);
+			if(graduateWithin4YearsBlackPercent == null)
+				setGraduateWithin4YearsBlackPercent(graduateWithin4YearsBlackPercentWrap.o);
+		}
+		graduateWithin4YearsBlackPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrGraduateWithin4YearsBlackPercent() {
+		return graduateWithin4YearsBlackPercent == null ? null : graduateWithin4YearsBlackPercent.doubleValue();
+	}
+
+	public String strGraduateWithin4YearsBlackPercent() {
+		return graduateWithin4YearsBlackPercent == null ? "" : graduateWithin4YearsBlackPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonGraduateWithin4YearsBlackPercent() {
+		return graduateWithin4YearsBlackPercent == null ? "" : graduateWithin4YearsBlackPercent.toString();
+	}
+
+	public String nomAffichageGraduateWithin4YearsBlackPercent() {
+		return "Graduate HS within 4 years black";
+	}
+
+	public String htmTooltipGraduateWithin4YearsBlackPercent() {
+		return null;
+	}
+
+	public String htmGraduateWithin4YearsBlackPercent() {
+		return graduateWithin4YearsBlackPercent == null ? "" : StringEscapeUtils.escapeHtml4(strGraduateWithin4YearsBlackPercent());
+	}
+
+	public void inputGraduateWithin4YearsBlackPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "Graduate HS within 4 years black")
+				.a("id", classApiMethodMethod, "_graduateWithin4YearsBlackPercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setGraduateWithin4YearsBlackPercent classReportCard inputReportCard", pk, "GraduateWithin4YearsBlackPercent w3-input w3-border ");
+					a("name", "setGraduateWithin4YearsBlackPercent");
+				} else {
+					a("class", "valueGraduateWithin4YearsBlackPercent w3-input w3-border classReportCard inputReportCard", pk, "GraduateWithin4YearsBlackPercent w3-input w3-border ");
+					a("name", "graduateWithin4YearsBlackPercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setGraduateWithin4YearsBlackPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsBlackPercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsBlackPercent')); }); ");
+				}
+				a("value", strGraduateWithin4YearsBlackPercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "GraduateWithin4YearsBlackPercent ").f().sx(htmGraduateWithin4YearsBlackPercent()).g("span");
+		}
+	}
+
+	public void htmGraduateWithin4YearsBlackPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardGraduateWithin4YearsBlackPercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_graduateWithin4YearsBlackPercent").a("class", "").f().sx("Graduate HS within 4 years black").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputGraduateWithin4YearsBlackPercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_graduateWithin4YearsBlackPercent')); $('#", classApiMethodMethod, "_graduateWithin4YearsBlackPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setGraduateWithin4YearsBlackPercent', null, function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsBlackPercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsBlackPercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	/////////////////////////////////////////
+	// graduateWithin4YearsHispanicPercent //
+	/////////////////////////////////////////
+
+	/**	 The entity graduateWithin4YearsHispanicPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal graduateWithin4YearsHispanicPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> graduateWithin4YearsHispanicPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("graduateWithin4YearsHispanicPercent").o(graduateWithin4YearsHispanicPercent);
+
+	/**	<br/> The entity graduateWithin4YearsHispanicPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:graduateWithin4YearsHispanicPercent">Find the entity graduateWithin4YearsHispanicPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _graduateWithin4YearsHispanicPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getGraduateWithin4YearsHispanicPercent() {
+		return graduateWithin4YearsHispanicPercent;
+	}
+
+	public void setGraduateWithin4YearsHispanicPercent(BigDecimal graduateWithin4YearsHispanicPercent) {
+		this.graduateWithin4YearsHispanicPercent = graduateWithin4YearsHispanicPercent;
+		this.graduateWithin4YearsHispanicPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setGraduateWithin4YearsHispanicPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.graduateWithin4YearsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsHispanicPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setGraduateWithin4YearsHispanicPercent(Double o) {
+			this.graduateWithin4YearsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsHispanicPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setGraduateWithin4YearsHispanicPercent(Integer o) {
+			this.graduateWithin4YearsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsHispanicPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard graduateWithin4YearsHispanicPercentInit() {
+		if(!graduateWithin4YearsHispanicPercentWrap.alreadyInitialized) {
+			_graduateWithin4YearsHispanicPercent(graduateWithin4YearsHispanicPercentWrap);
+			if(graduateWithin4YearsHispanicPercent == null)
+				setGraduateWithin4YearsHispanicPercent(graduateWithin4YearsHispanicPercentWrap.o);
+		}
+		graduateWithin4YearsHispanicPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrGraduateWithin4YearsHispanicPercent() {
+		return graduateWithin4YearsHispanicPercent == null ? null : graduateWithin4YearsHispanicPercent.doubleValue();
+	}
+
+	public String strGraduateWithin4YearsHispanicPercent() {
+		return graduateWithin4YearsHispanicPercent == null ? "" : graduateWithin4YearsHispanicPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonGraduateWithin4YearsHispanicPercent() {
+		return graduateWithin4YearsHispanicPercent == null ? "" : graduateWithin4YearsHispanicPercent.toString();
+	}
+
+	public String nomAffichageGraduateWithin4YearsHispanicPercent() {
+		return "Graduate HS within 4 years hispanic";
+	}
+
+	public String htmTooltipGraduateWithin4YearsHispanicPercent() {
+		return null;
+	}
+
+	public String htmGraduateWithin4YearsHispanicPercent() {
+		return graduateWithin4YearsHispanicPercent == null ? "" : StringEscapeUtils.escapeHtml4(strGraduateWithin4YearsHispanicPercent());
+	}
+
+	public void inputGraduateWithin4YearsHispanicPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "Graduate HS within 4 years hispanic")
+				.a("id", classApiMethodMethod, "_graduateWithin4YearsHispanicPercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setGraduateWithin4YearsHispanicPercent classReportCard inputReportCard", pk, "GraduateWithin4YearsHispanicPercent w3-input w3-border ");
+					a("name", "setGraduateWithin4YearsHispanicPercent");
+				} else {
+					a("class", "valueGraduateWithin4YearsHispanicPercent w3-input w3-border classReportCard inputReportCard", pk, "GraduateWithin4YearsHispanicPercent w3-input w3-border ");
+					a("name", "graduateWithin4YearsHispanicPercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setGraduateWithin4YearsHispanicPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsHispanicPercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsHispanicPercent')); }); ");
+				}
+				a("value", strGraduateWithin4YearsHispanicPercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "GraduateWithin4YearsHispanicPercent ").f().sx(htmGraduateWithin4YearsHispanicPercent()).g("span");
+		}
+	}
+
+	public void htmGraduateWithin4YearsHispanicPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardGraduateWithin4YearsHispanicPercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_graduateWithin4YearsHispanicPercent").a("class", "").f().sx("Graduate HS within 4 years hispanic").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputGraduateWithin4YearsHispanicPercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_graduateWithin4YearsHispanicPercent')); $('#", classApiMethodMethod, "_graduateWithin4YearsHispanicPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setGraduateWithin4YearsHispanicPercent', null, function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsHispanicPercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsHispanicPercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	////////////////////////////////////////////
+	// graduateWithin4YearsMultiRacialPercent //
+	////////////////////////////////////////////
+
+	/**	 The entity graduateWithin4YearsMultiRacialPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal graduateWithin4YearsMultiRacialPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> graduateWithin4YearsMultiRacialPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("graduateWithin4YearsMultiRacialPercent").o(graduateWithin4YearsMultiRacialPercent);
+
+	/**	<br/> The entity graduateWithin4YearsMultiRacialPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:graduateWithin4YearsMultiRacialPercent">Find the entity graduateWithin4YearsMultiRacialPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _graduateWithin4YearsMultiRacialPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getGraduateWithin4YearsMultiRacialPercent() {
+		return graduateWithin4YearsMultiRacialPercent;
+	}
+
+	public void setGraduateWithin4YearsMultiRacialPercent(BigDecimal graduateWithin4YearsMultiRacialPercent) {
+		this.graduateWithin4YearsMultiRacialPercent = graduateWithin4YearsMultiRacialPercent;
+		this.graduateWithin4YearsMultiRacialPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setGraduateWithin4YearsMultiRacialPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.graduateWithin4YearsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsMultiRacialPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setGraduateWithin4YearsMultiRacialPercent(Double o) {
+			this.graduateWithin4YearsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsMultiRacialPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setGraduateWithin4YearsMultiRacialPercent(Integer o) {
+			this.graduateWithin4YearsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsMultiRacialPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard graduateWithin4YearsMultiRacialPercentInit() {
+		if(!graduateWithin4YearsMultiRacialPercentWrap.alreadyInitialized) {
+			_graduateWithin4YearsMultiRacialPercent(graduateWithin4YearsMultiRacialPercentWrap);
+			if(graduateWithin4YearsMultiRacialPercent == null)
+				setGraduateWithin4YearsMultiRacialPercent(graduateWithin4YearsMultiRacialPercentWrap.o);
+		}
+		graduateWithin4YearsMultiRacialPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrGraduateWithin4YearsMultiRacialPercent() {
+		return graduateWithin4YearsMultiRacialPercent == null ? null : graduateWithin4YearsMultiRacialPercent.doubleValue();
+	}
+
+	public String strGraduateWithin4YearsMultiRacialPercent() {
+		return graduateWithin4YearsMultiRacialPercent == null ? "" : graduateWithin4YearsMultiRacialPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonGraduateWithin4YearsMultiRacialPercent() {
+		return graduateWithin4YearsMultiRacialPercent == null ? "" : graduateWithin4YearsMultiRacialPercent.toString();
+	}
+
+	public String nomAffichageGraduateWithin4YearsMultiRacialPercent() {
+		return "Graduate HS within 4 years multi-racial";
+	}
+
+	public String htmTooltipGraduateWithin4YearsMultiRacialPercent() {
+		return null;
+	}
+
+	public String htmGraduateWithin4YearsMultiRacialPercent() {
+		return graduateWithin4YearsMultiRacialPercent == null ? "" : StringEscapeUtils.escapeHtml4(strGraduateWithin4YearsMultiRacialPercent());
+	}
+
+	public void inputGraduateWithin4YearsMultiRacialPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "Graduate HS within 4 years multi-racial")
+				.a("id", classApiMethodMethod, "_graduateWithin4YearsMultiRacialPercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setGraduateWithin4YearsMultiRacialPercent classReportCard inputReportCard", pk, "GraduateWithin4YearsMultiRacialPercent w3-input w3-border ");
+					a("name", "setGraduateWithin4YearsMultiRacialPercent");
+				} else {
+					a("class", "valueGraduateWithin4YearsMultiRacialPercent w3-input w3-border classReportCard inputReportCard", pk, "GraduateWithin4YearsMultiRacialPercent w3-input w3-border ");
+					a("name", "graduateWithin4YearsMultiRacialPercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setGraduateWithin4YearsMultiRacialPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsMultiRacialPercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsMultiRacialPercent')); }); ");
+				}
+				a("value", strGraduateWithin4YearsMultiRacialPercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "GraduateWithin4YearsMultiRacialPercent ").f().sx(htmGraduateWithin4YearsMultiRacialPercent()).g("span");
+		}
+	}
+
+	public void htmGraduateWithin4YearsMultiRacialPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardGraduateWithin4YearsMultiRacialPercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_graduateWithin4YearsMultiRacialPercent").a("class", "").f().sx("Graduate HS within 4 years multi-racial").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputGraduateWithin4YearsMultiRacialPercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_graduateWithin4YearsMultiRacialPercent')); $('#", classApiMethodMethod, "_graduateWithin4YearsMultiRacialPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setGraduateWithin4YearsMultiRacialPercent', null, function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsMultiRacialPercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsMultiRacialPercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	////////////////////////////////////////////////
+	// graduateWithin4YearsPacificIslanderPercent //
+	////////////////////////////////////////////////
+
+	/**	 The entity graduateWithin4YearsPacificIslanderPercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal graduateWithin4YearsPacificIslanderPercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> graduateWithin4YearsPacificIslanderPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("graduateWithin4YearsPacificIslanderPercent").o(graduateWithin4YearsPacificIslanderPercent);
+
+	/**	<br/> The entity graduateWithin4YearsPacificIslanderPercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:graduateWithin4YearsPacificIslanderPercent">Find the entity graduateWithin4YearsPacificIslanderPercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _graduateWithin4YearsPacificIslanderPercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getGraduateWithin4YearsPacificIslanderPercent() {
+		return graduateWithin4YearsPacificIslanderPercent;
+	}
+
+	public void setGraduateWithin4YearsPacificIslanderPercent(BigDecimal graduateWithin4YearsPacificIslanderPercent) {
+		this.graduateWithin4YearsPacificIslanderPercent = graduateWithin4YearsPacificIslanderPercent;
+		this.graduateWithin4YearsPacificIslanderPercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setGraduateWithin4YearsPacificIslanderPercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.graduateWithin4YearsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsPacificIslanderPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setGraduateWithin4YearsPacificIslanderPercent(Double o) {
+			this.graduateWithin4YearsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsPacificIslanderPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setGraduateWithin4YearsPacificIslanderPercent(Integer o) {
+			this.graduateWithin4YearsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsPacificIslanderPercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard graduateWithin4YearsPacificIslanderPercentInit() {
+		if(!graduateWithin4YearsPacificIslanderPercentWrap.alreadyInitialized) {
+			_graduateWithin4YearsPacificIslanderPercent(graduateWithin4YearsPacificIslanderPercentWrap);
+			if(graduateWithin4YearsPacificIslanderPercent == null)
+				setGraduateWithin4YearsPacificIslanderPercent(graduateWithin4YearsPacificIslanderPercentWrap.o);
+		}
+		graduateWithin4YearsPacificIslanderPercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrGraduateWithin4YearsPacificIslanderPercent() {
+		return graduateWithin4YearsPacificIslanderPercent == null ? null : graduateWithin4YearsPacificIslanderPercent.doubleValue();
+	}
+
+	public String strGraduateWithin4YearsPacificIslanderPercent() {
+		return graduateWithin4YearsPacificIslanderPercent == null ? "" : graduateWithin4YearsPacificIslanderPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonGraduateWithin4YearsPacificIslanderPercent() {
+		return graduateWithin4YearsPacificIslanderPercent == null ? "" : graduateWithin4YearsPacificIslanderPercent.toString();
+	}
+
+	public String nomAffichageGraduateWithin4YearsPacificIslanderPercent() {
+		return "Graduate HS within 4 years pacific islander";
+	}
+
+	public String htmTooltipGraduateWithin4YearsPacificIslanderPercent() {
+		return null;
+	}
+
+	public String htmGraduateWithin4YearsPacificIslanderPercent() {
+		return graduateWithin4YearsPacificIslanderPercent == null ? "" : StringEscapeUtils.escapeHtml4(strGraduateWithin4YearsPacificIslanderPercent());
+	}
+
+	public void inputGraduateWithin4YearsPacificIslanderPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "Graduate HS within 4 years pacific islander")
+				.a("id", classApiMethodMethod, "_graduateWithin4YearsPacificIslanderPercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setGraduateWithin4YearsPacificIslanderPercent classReportCard inputReportCard", pk, "GraduateWithin4YearsPacificIslanderPercent w3-input w3-border ");
+					a("name", "setGraduateWithin4YearsPacificIslanderPercent");
+				} else {
+					a("class", "valueGraduateWithin4YearsPacificIslanderPercent w3-input w3-border classReportCard inputReportCard", pk, "GraduateWithin4YearsPacificIslanderPercent w3-input w3-border ");
+					a("name", "graduateWithin4YearsPacificIslanderPercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setGraduateWithin4YearsPacificIslanderPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsPacificIslanderPercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsPacificIslanderPercent')); }); ");
+				}
+				a("value", strGraduateWithin4YearsPacificIslanderPercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "GraduateWithin4YearsPacificIslanderPercent ").f().sx(htmGraduateWithin4YearsPacificIslanderPercent()).g("span");
+		}
+	}
+
+	public void htmGraduateWithin4YearsPacificIslanderPercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardGraduateWithin4YearsPacificIslanderPercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_graduateWithin4YearsPacificIslanderPercent").a("class", "").f().sx("Graduate HS within 4 years pacific islander").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputGraduateWithin4YearsPacificIslanderPercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_graduateWithin4YearsPacificIslanderPercent')); $('#", classApiMethodMethod, "_graduateWithin4YearsPacificIslanderPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setGraduateWithin4YearsPacificIslanderPercent', null, function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsPacificIslanderPercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsPacificIslanderPercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	//////////////////////////////////////
+	// graduateWithin4YearsWhitePercent //
+	//////////////////////////////////////
+
+	/**	 The entity graduateWithin4YearsWhitePercent
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal graduateWithin4YearsWhitePercent;
+	@JsonIgnore
+	public Wrap<BigDecimal> graduateWithin4YearsWhitePercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("graduateWithin4YearsWhitePercent").o(graduateWithin4YearsWhitePercent);
+
+	/**	<br/> The entity graduateWithin4YearsWhitePercent
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:graduateWithin4YearsWhitePercent">Find the entity graduateWithin4YearsWhitePercent in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _graduateWithin4YearsWhitePercent(Wrap<BigDecimal> c);
+
+	public BigDecimal getGraduateWithin4YearsWhitePercent() {
+		return graduateWithin4YearsWhitePercent;
+	}
+
+	public void setGraduateWithin4YearsWhitePercent(BigDecimal graduateWithin4YearsWhitePercent) {
+		this.graduateWithin4YearsWhitePercent = graduateWithin4YearsWhitePercent;
+		this.graduateWithin4YearsWhitePercentWrap.alreadyInitialized = true;
+	}
+	public ReportCard setGraduateWithin4YearsWhitePercent(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.graduateWithin4YearsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsWhitePercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setGraduateWithin4YearsWhitePercent(Double o) {
+			this.graduateWithin4YearsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsWhitePercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setGraduateWithin4YearsWhitePercent(Integer o) {
+			this.graduateWithin4YearsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsWhitePercentWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard graduateWithin4YearsWhitePercentInit() {
+		if(!graduateWithin4YearsWhitePercentWrap.alreadyInitialized) {
+			_graduateWithin4YearsWhitePercent(graduateWithin4YearsWhitePercentWrap);
+			if(graduateWithin4YearsWhitePercent == null)
+				setGraduateWithin4YearsWhitePercent(graduateWithin4YearsWhitePercentWrap.o);
+		}
+		graduateWithin4YearsWhitePercentWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrGraduateWithin4YearsWhitePercent() {
+		return graduateWithin4YearsWhitePercent == null ? null : graduateWithin4YearsWhitePercent.doubleValue();
+	}
+
+	public String strGraduateWithin4YearsWhitePercent() {
+		return graduateWithin4YearsWhitePercent == null ? "" : graduateWithin4YearsWhitePercent.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonGraduateWithin4YearsWhitePercent() {
+		return graduateWithin4YearsWhitePercent == null ? "" : graduateWithin4YearsWhitePercent.toString();
+	}
+
+	public String nomAffichageGraduateWithin4YearsWhitePercent() {
+		return "Graduate HS within 4 years white";
+	}
+
+	public String htmTooltipGraduateWithin4YearsWhitePercent() {
+		return null;
+	}
+
+	public String htmGraduateWithin4YearsWhitePercent() {
+		return graduateWithin4YearsWhitePercent == null ? "" : StringEscapeUtils.escapeHtml4(strGraduateWithin4YearsWhitePercent());
+	}
+
+	public void inputGraduateWithin4YearsWhitePercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "Graduate HS within 4 years white")
+				.a("id", classApiMethodMethod, "_graduateWithin4YearsWhitePercent");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setGraduateWithin4YearsWhitePercent classReportCard inputReportCard", pk, "GraduateWithin4YearsWhitePercent w3-input w3-border ");
+					a("name", "setGraduateWithin4YearsWhitePercent");
+				} else {
+					a("class", "valueGraduateWithin4YearsWhitePercent w3-input w3-border classReportCard inputReportCard", pk, "GraduateWithin4YearsWhitePercent w3-input w3-border ");
+					a("name", "graduateWithin4YearsWhitePercent");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setGraduateWithin4YearsWhitePercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsWhitePercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsWhitePercent')); }); ");
+				}
+				a("value", strGraduateWithin4YearsWhitePercent())
+			.fg();
+
+		} else {
+			e("span").a("class", "varReportCard", pk, "GraduateWithin4YearsWhitePercent ").f().sx(htmGraduateWithin4YearsWhitePercent()).g("span");
+		}
+	}
+
+	public void htmGraduateWithin4YearsWhitePercent(String classApiMethodMethod) {
+		ReportCard s = (ReportCard)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardGraduateWithin4YearsWhitePercent").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
+							e("label").a("for", classApiMethodMethod, "_graduateWithin4YearsWhitePercent").a("class", "").f().sx("Graduate HS within 4 years white").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputGraduateWithin4YearsWhitePercent(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_graduateWithin4YearsWhitePercent')); $('#", classApiMethodMethod, "_graduateWithin4YearsWhitePercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setGraduateWithin4YearsWhitePercent', null, function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsWhitePercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsWhitePercent')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	///////////////////////////////////////////
+	// examsCollegeReadyGrades38BlackVsWhite //
+	///////////////////////////////////////////
+
+	/**	 The entity examsCollegeReadyGrades38BlackVsWhite
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal examsCollegeReadyGrades38BlackVsWhite;
+	@JsonIgnore
+	public Wrap<BigDecimal> examsCollegeReadyGrades38BlackVsWhiteWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades38BlackVsWhite").o(examsCollegeReadyGrades38BlackVsWhite);
+
+	/**	<br/> The entity examsCollegeReadyGrades38BlackVsWhite
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades38BlackVsWhite">Find the entity examsCollegeReadyGrades38BlackVsWhite in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _examsCollegeReadyGrades38BlackVsWhite(Wrap<BigDecimal> c);
+
+	public BigDecimal getExamsCollegeReadyGrades38BlackVsWhite() {
+		return examsCollegeReadyGrades38BlackVsWhite;
+	}
+
+	public void setExamsCollegeReadyGrades38BlackVsWhite(BigDecimal examsCollegeReadyGrades38BlackVsWhite) {
+		this.examsCollegeReadyGrades38BlackVsWhite = examsCollegeReadyGrades38BlackVsWhite;
+		this.examsCollegeReadyGrades38BlackVsWhiteWrap.alreadyInitialized = true;
+	}
+	public ReportCard setExamsCollegeReadyGrades38BlackVsWhite(String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			this.examsCollegeReadyGrades38BlackVsWhite = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38BlackVsWhiteWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades38BlackVsWhite(Double o) {
+			this.examsCollegeReadyGrades38BlackVsWhite = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38BlackVsWhiteWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	public ReportCard setExamsCollegeReadyGrades38BlackVsWhite(Integer o) {
+			this.examsCollegeReadyGrades38BlackVsWhite = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38BlackVsWhiteWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard examsCollegeReadyGrades38BlackVsWhiteInit() {
+		if(!examsCollegeReadyGrades38BlackVsWhiteWrap.alreadyInitialized) {
+			_examsCollegeReadyGrades38BlackVsWhite(examsCollegeReadyGrades38BlackVsWhiteWrap);
+			if(examsCollegeReadyGrades38BlackVsWhite == null)
+				setExamsCollegeReadyGrades38BlackVsWhite(examsCollegeReadyGrades38BlackVsWhiteWrap.o);
+		}
+		examsCollegeReadyGrades38BlackVsWhiteWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Double solrExamsCollegeReadyGrades38BlackVsWhite() {
+		return examsCollegeReadyGrades38BlackVsWhite == null ? null : examsCollegeReadyGrades38BlackVsWhite.doubleValue();
+	}
+
+	public String strExamsCollegeReadyGrades38BlackVsWhite() {
+		return examsCollegeReadyGrades38BlackVsWhite == null ? "" : examsCollegeReadyGrades38BlackVsWhite.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonExamsCollegeReadyGrades38BlackVsWhite() {
+		return examsCollegeReadyGrades38BlackVsWhite == null ? "" : examsCollegeReadyGrades38BlackVsWhite.toString();
+	}
+
+	public String nomAffichageExamsCollegeReadyGrades38BlackVsWhite() {
+		return "short-term suspensions black vs white";
+	}
+
+	public String htmTooltipExamsCollegeReadyGrades38BlackVsWhite() {
+		return null;
+	}
+
+	public String htmExamsCollegeReadyGrades38BlackVsWhite() {
+		return examsCollegeReadyGrades38BlackVsWhite == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades38BlackVsWhite());
+	}
+
 	//////////////
 	// stateKey //
 	//////////////
@@ -13634,6 +17218,31 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		shortTermSuspensionsWhiteRateInit();
 		shortTermSuspensionsAllRateInit();
 		shortTermSuspensionsBlackVsWhiteInit();
+		examsCollegeReadyGrades38OverallPercentInit();
+		examsCollegeReadyGrades38IndianPercentInit();
+		examsCollegeReadyGrades38AsianPercentInit();
+		examsCollegeReadyGrades38BlackPercentInit();
+		examsCollegeReadyGrades38HispanicPercentInit();
+		examsCollegeReadyGrades38MultiRacialPercentInit();
+		examsCollegeReadyGrades38PacificIslanderPercentInit();
+		examsCollegeReadyGrades38WhitePercentInit();
+		examsCollegeReadyGrades912OverallPercentInit();
+		examsCollegeReadyGrades912IndianPercentInit();
+		examsCollegeReadyGrades912AsianPercentInit();
+		examsCollegeReadyGrades912BlackPercentInit();
+		examsCollegeReadyGrades912HispanicPercentInit();
+		examsCollegeReadyGrades912MultiRacialPercentInit();
+		examsCollegeReadyGrades912PacificIslanderPercentInit();
+		examsCollegeReadyGrades912WhitePercentInit();
+		graduateWithin4YearsOverallPercentInit();
+		graduateWithin4YearsIndianPercentInit();
+		graduateWithin4YearsAsianPercentInit();
+		graduateWithin4YearsBlackPercentInit();
+		graduateWithin4YearsHispanicPercentInit();
+		graduateWithin4YearsMultiRacialPercentInit();
+		graduateWithin4YearsPacificIslanderPercentInit();
+		graduateWithin4YearsWhitePercentInit();
+		examsCollegeReadyGrades38BlackVsWhiteInit();
 		stateKeyInit();
 		stateIdInit();
 		agencyIdInit();
@@ -13906,6 +17515,56 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.shortTermSuspensionsAllRate;
 			case "shortTermSuspensionsBlackVsWhite":
 				return oReportCard.shortTermSuspensionsBlackVsWhite;
+			case "examsCollegeReadyGrades38OverallPercent":
+				return oReportCard.examsCollegeReadyGrades38OverallPercent;
+			case "examsCollegeReadyGrades38IndianPercent":
+				return oReportCard.examsCollegeReadyGrades38IndianPercent;
+			case "examsCollegeReadyGrades38AsianPercent":
+				return oReportCard.examsCollegeReadyGrades38AsianPercent;
+			case "examsCollegeReadyGrades38BlackPercent":
+				return oReportCard.examsCollegeReadyGrades38BlackPercent;
+			case "examsCollegeReadyGrades38HispanicPercent":
+				return oReportCard.examsCollegeReadyGrades38HispanicPercent;
+			case "examsCollegeReadyGrades38MultiRacialPercent":
+				return oReportCard.examsCollegeReadyGrades38MultiRacialPercent;
+			case "examsCollegeReadyGrades38PacificIslanderPercent":
+				return oReportCard.examsCollegeReadyGrades38PacificIslanderPercent;
+			case "examsCollegeReadyGrades38WhitePercent":
+				return oReportCard.examsCollegeReadyGrades38WhitePercent;
+			case "examsCollegeReadyGrades912OverallPercent":
+				return oReportCard.examsCollegeReadyGrades912OverallPercent;
+			case "examsCollegeReadyGrades912IndianPercent":
+				return oReportCard.examsCollegeReadyGrades912IndianPercent;
+			case "examsCollegeReadyGrades912AsianPercent":
+				return oReportCard.examsCollegeReadyGrades912AsianPercent;
+			case "examsCollegeReadyGrades912BlackPercent":
+				return oReportCard.examsCollegeReadyGrades912BlackPercent;
+			case "examsCollegeReadyGrades912HispanicPercent":
+				return oReportCard.examsCollegeReadyGrades912HispanicPercent;
+			case "examsCollegeReadyGrades912MultiRacialPercent":
+				return oReportCard.examsCollegeReadyGrades912MultiRacialPercent;
+			case "examsCollegeReadyGrades912PacificIslanderPercent":
+				return oReportCard.examsCollegeReadyGrades912PacificIslanderPercent;
+			case "examsCollegeReadyGrades912WhitePercent":
+				return oReportCard.examsCollegeReadyGrades912WhitePercent;
+			case "graduateWithin4YearsOverallPercent":
+				return oReportCard.graduateWithin4YearsOverallPercent;
+			case "graduateWithin4YearsIndianPercent":
+				return oReportCard.graduateWithin4YearsIndianPercent;
+			case "graduateWithin4YearsAsianPercent":
+				return oReportCard.graduateWithin4YearsAsianPercent;
+			case "graduateWithin4YearsBlackPercent":
+				return oReportCard.graduateWithin4YearsBlackPercent;
+			case "graduateWithin4YearsHispanicPercent":
+				return oReportCard.graduateWithin4YearsHispanicPercent;
+			case "graduateWithin4YearsMultiRacialPercent":
+				return oReportCard.graduateWithin4YearsMultiRacialPercent;
+			case "graduateWithin4YearsPacificIslanderPercent":
+				return oReportCard.graduateWithin4YearsPacificIslanderPercent;
+			case "graduateWithin4YearsWhitePercent":
+				return oReportCard.graduateWithin4YearsWhitePercent;
+			case "examsCollegeReadyGrades38BlackVsWhite":
+				return oReportCard.examsCollegeReadyGrades38BlackVsWhite;
 			case "stateKey":
 				return oReportCard.stateKey;
 			case "stateId":
@@ -14245,6 +17904,126 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			case "shortTermSuspensionsWhiteMale":
 				if(val != null)
 					setShortTermSuspensionsWhiteMale(val);
+				saves.add(var);
+				return val;
+			case "examsCollegeReadyGrades38OverallPercent":
+				if(val != null)
+					setExamsCollegeReadyGrades38OverallPercent(val);
+				saves.add(var);
+				return val;
+			case "examsCollegeReadyGrades38IndianPercent":
+				if(val != null)
+					setExamsCollegeReadyGrades38IndianPercent(val);
+				saves.add(var);
+				return val;
+			case "examsCollegeReadyGrades38AsianPercent":
+				if(val != null)
+					setExamsCollegeReadyGrades38AsianPercent(val);
+				saves.add(var);
+				return val;
+			case "examsCollegeReadyGrades38BlackPercent":
+				if(val != null)
+					setExamsCollegeReadyGrades38BlackPercent(val);
+				saves.add(var);
+				return val;
+			case "examsCollegeReadyGrades38HispanicPercent":
+				if(val != null)
+					setExamsCollegeReadyGrades38HispanicPercent(val);
+				saves.add(var);
+				return val;
+			case "examsCollegeReadyGrades38MultiRacialPercent":
+				if(val != null)
+					setExamsCollegeReadyGrades38MultiRacialPercent(val);
+				saves.add(var);
+				return val;
+			case "examsCollegeReadyGrades38PacificIslanderPercent":
+				if(val != null)
+					setExamsCollegeReadyGrades38PacificIslanderPercent(val);
+				saves.add(var);
+				return val;
+			case "examsCollegeReadyGrades38WhitePercent":
+				if(val != null)
+					setExamsCollegeReadyGrades38WhitePercent(val);
+				saves.add(var);
+				return val;
+			case "examsCollegeReadyGrades912OverallPercent":
+				if(val != null)
+					setExamsCollegeReadyGrades912OverallPercent(val);
+				saves.add(var);
+				return val;
+			case "examsCollegeReadyGrades912IndianPercent":
+				if(val != null)
+					setExamsCollegeReadyGrades912IndianPercent(val);
+				saves.add(var);
+				return val;
+			case "examsCollegeReadyGrades912AsianPercent":
+				if(val != null)
+					setExamsCollegeReadyGrades912AsianPercent(val);
+				saves.add(var);
+				return val;
+			case "examsCollegeReadyGrades912BlackPercent":
+				if(val != null)
+					setExamsCollegeReadyGrades912BlackPercent(val);
+				saves.add(var);
+				return val;
+			case "examsCollegeReadyGrades912HispanicPercent":
+				if(val != null)
+					setExamsCollegeReadyGrades912HispanicPercent(val);
+				saves.add(var);
+				return val;
+			case "examsCollegeReadyGrades912MultiRacialPercent":
+				if(val != null)
+					setExamsCollegeReadyGrades912MultiRacialPercent(val);
+				saves.add(var);
+				return val;
+			case "examsCollegeReadyGrades912PacificIslanderPercent":
+				if(val != null)
+					setExamsCollegeReadyGrades912PacificIslanderPercent(val);
+				saves.add(var);
+				return val;
+			case "examsCollegeReadyGrades912WhitePercent":
+				if(val != null)
+					setExamsCollegeReadyGrades912WhitePercent(val);
+				saves.add(var);
+				return val;
+			case "graduateWithin4YearsOverallPercent":
+				if(val != null)
+					setGraduateWithin4YearsOverallPercent(val);
+				saves.add(var);
+				return val;
+			case "graduateWithin4YearsIndianPercent":
+				if(val != null)
+					setGraduateWithin4YearsIndianPercent(val);
+				saves.add(var);
+				return val;
+			case "graduateWithin4YearsAsianPercent":
+				if(val != null)
+					setGraduateWithin4YearsAsianPercent(val);
+				saves.add(var);
+				return val;
+			case "graduateWithin4YearsBlackPercent":
+				if(val != null)
+					setGraduateWithin4YearsBlackPercent(val);
+				saves.add(var);
+				return val;
+			case "graduateWithin4YearsHispanicPercent":
+				if(val != null)
+					setGraduateWithin4YearsHispanicPercent(val);
+				saves.add(var);
+				return val;
+			case "graduateWithin4YearsMultiRacialPercent":
+				if(val != null)
+					setGraduateWithin4YearsMultiRacialPercent(val);
+				saves.add(var);
+				return val;
+			case "graduateWithin4YearsPacificIslanderPercent":
+				if(val != null)
+					setGraduateWithin4YearsPacificIslanderPercent(val);
+				saves.add(var);
+				return val;
+			case "graduateWithin4YearsWhitePercent":
+				if(val != null)
+					setGraduateWithin4YearsWhitePercent(val);
 				saves.add(var);
 				return val;
 			default:
@@ -14874,6 +18653,156 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					oReportCard.setShortTermSuspensionsBlackVsWhite(shortTermSuspensionsBlackVsWhite);
 			}
 
+			if(saves.contains("examsCollegeReadyGrades38OverallPercent")) {
+				Double examsCollegeReadyGrades38OverallPercent = (Double)solrDocument.get("examsCollegeReadyGrades38OverallPercent_stored_double");
+				if(examsCollegeReadyGrades38OverallPercent != null)
+					oReportCard.setExamsCollegeReadyGrades38OverallPercent(examsCollegeReadyGrades38OverallPercent);
+			}
+
+			if(saves.contains("examsCollegeReadyGrades38IndianPercent")) {
+				Double examsCollegeReadyGrades38IndianPercent = (Double)solrDocument.get("examsCollegeReadyGrades38IndianPercent_stored_double");
+				if(examsCollegeReadyGrades38IndianPercent != null)
+					oReportCard.setExamsCollegeReadyGrades38IndianPercent(examsCollegeReadyGrades38IndianPercent);
+			}
+
+			if(saves.contains("examsCollegeReadyGrades38AsianPercent")) {
+				Double examsCollegeReadyGrades38AsianPercent = (Double)solrDocument.get("examsCollegeReadyGrades38AsianPercent_stored_double");
+				if(examsCollegeReadyGrades38AsianPercent != null)
+					oReportCard.setExamsCollegeReadyGrades38AsianPercent(examsCollegeReadyGrades38AsianPercent);
+			}
+
+			if(saves.contains("examsCollegeReadyGrades38BlackPercent")) {
+				Double examsCollegeReadyGrades38BlackPercent = (Double)solrDocument.get("examsCollegeReadyGrades38BlackPercent_stored_double");
+				if(examsCollegeReadyGrades38BlackPercent != null)
+					oReportCard.setExamsCollegeReadyGrades38BlackPercent(examsCollegeReadyGrades38BlackPercent);
+			}
+
+			if(saves.contains("examsCollegeReadyGrades38HispanicPercent")) {
+				Double examsCollegeReadyGrades38HispanicPercent = (Double)solrDocument.get("examsCollegeReadyGrades38HispanicPercent_stored_double");
+				if(examsCollegeReadyGrades38HispanicPercent != null)
+					oReportCard.setExamsCollegeReadyGrades38HispanicPercent(examsCollegeReadyGrades38HispanicPercent);
+			}
+
+			if(saves.contains("examsCollegeReadyGrades38MultiRacialPercent")) {
+				Double examsCollegeReadyGrades38MultiRacialPercent = (Double)solrDocument.get("examsCollegeReadyGrades38MultiRacialPercent_stored_double");
+				if(examsCollegeReadyGrades38MultiRacialPercent != null)
+					oReportCard.setExamsCollegeReadyGrades38MultiRacialPercent(examsCollegeReadyGrades38MultiRacialPercent);
+			}
+
+			if(saves.contains("examsCollegeReadyGrades38PacificIslanderPercent")) {
+				Double examsCollegeReadyGrades38PacificIslanderPercent = (Double)solrDocument.get("examsCollegeReadyGrades38PacificIslanderPercent_stored_double");
+				if(examsCollegeReadyGrades38PacificIslanderPercent != null)
+					oReportCard.setExamsCollegeReadyGrades38PacificIslanderPercent(examsCollegeReadyGrades38PacificIslanderPercent);
+			}
+
+			if(saves.contains("examsCollegeReadyGrades38WhitePercent")) {
+				Double examsCollegeReadyGrades38WhitePercent = (Double)solrDocument.get("examsCollegeReadyGrades38WhitePercent_stored_double");
+				if(examsCollegeReadyGrades38WhitePercent != null)
+					oReportCard.setExamsCollegeReadyGrades38WhitePercent(examsCollegeReadyGrades38WhitePercent);
+			}
+
+			if(saves.contains("examsCollegeReadyGrades912OverallPercent")) {
+				Double examsCollegeReadyGrades912OverallPercent = (Double)solrDocument.get("examsCollegeReadyGrades912OverallPercent_stored_double");
+				if(examsCollegeReadyGrades912OverallPercent != null)
+					oReportCard.setExamsCollegeReadyGrades912OverallPercent(examsCollegeReadyGrades912OverallPercent);
+			}
+
+			if(saves.contains("examsCollegeReadyGrades912IndianPercent")) {
+				Double examsCollegeReadyGrades912IndianPercent = (Double)solrDocument.get("examsCollegeReadyGrades912IndianPercent_stored_double");
+				if(examsCollegeReadyGrades912IndianPercent != null)
+					oReportCard.setExamsCollegeReadyGrades912IndianPercent(examsCollegeReadyGrades912IndianPercent);
+			}
+
+			if(saves.contains("examsCollegeReadyGrades912AsianPercent")) {
+				Double examsCollegeReadyGrades912AsianPercent = (Double)solrDocument.get("examsCollegeReadyGrades912AsianPercent_stored_double");
+				if(examsCollegeReadyGrades912AsianPercent != null)
+					oReportCard.setExamsCollegeReadyGrades912AsianPercent(examsCollegeReadyGrades912AsianPercent);
+			}
+
+			if(saves.contains("examsCollegeReadyGrades912BlackPercent")) {
+				Double examsCollegeReadyGrades912BlackPercent = (Double)solrDocument.get("examsCollegeReadyGrades912BlackPercent_stored_double");
+				if(examsCollegeReadyGrades912BlackPercent != null)
+					oReportCard.setExamsCollegeReadyGrades912BlackPercent(examsCollegeReadyGrades912BlackPercent);
+			}
+
+			if(saves.contains("examsCollegeReadyGrades912HispanicPercent")) {
+				Double examsCollegeReadyGrades912HispanicPercent = (Double)solrDocument.get("examsCollegeReadyGrades912HispanicPercent_stored_double");
+				if(examsCollegeReadyGrades912HispanicPercent != null)
+					oReportCard.setExamsCollegeReadyGrades912HispanicPercent(examsCollegeReadyGrades912HispanicPercent);
+			}
+
+			if(saves.contains("examsCollegeReadyGrades912MultiRacialPercent")) {
+				Double examsCollegeReadyGrades912MultiRacialPercent = (Double)solrDocument.get("examsCollegeReadyGrades912MultiRacialPercent_stored_double");
+				if(examsCollegeReadyGrades912MultiRacialPercent != null)
+					oReportCard.setExamsCollegeReadyGrades912MultiRacialPercent(examsCollegeReadyGrades912MultiRacialPercent);
+			}
+
+			if(saves.contains("examsCollegeReadyGrades912PacificIslanderPercent")) {
+				Double examsCollegeReadyGrades912PacificIslanderPercent = (Double)solrDocument.get("examsCollegeReadyGrades912PacificIslanderPercent_stored_double");
+				if(examsCollegeReadyGrades912PacificIslanderPercent != null)
+					oReportCard.setExamsCollegeReadyGrades912PacificIslanderPercent(examsCollegeReadyGrades912PacificIslanderPercent);
+			}
+
+			if(saves.contains("examsCollegeReadyGrades912WhitePercent")) {
+				Double examsCollegeReadyGrades912WhitePercent = (Double)solrDocument.get("examsCollegeReadyGrades912WhitePercent_stored_double");
+				if(examsCollegeReadyGrades912WhitePercent != null)
+					oReportCard.setExamsCollegeReadyGrades912WhitePercent(examsCollegeReadyGrades912WhitePercent);
+			}
+
+			if(saves.contains("graduateWithin4YearsOverallPercent")) {
+				Double graduateWithin4YearsOverallPercent = (Double)solrDocument.get("graduateWithin4YearsOverallPercent_stored_double");
+				if(graduateWithin4YearsOverallPercent != null)
+					oReportCard.setGraduateWithin4YearsOverallPercent(graduateWithin4YearsOverallPercent);
+			}
+
+			if(saves.contains("graduateWithin4YearsIndianPercent")) {
+				Double graduateWithin4YearsIndianPercent = (Double)solrDocument.get("graduateWithin4YearsIndianPercent_stored_double");
+				if(graduateWithin4YearsIndianPercent != null)
+					oReportCard.setGraduateWithin4YearsIndianPercent(graduateWithin4YearsIndianPercent);
+			}
+
+			if(saves.contains("graduateWithin4YearsAsianPercent")) {
+				Double graduateWithin4YearsAsianPercent = (Double)solrDocument.get("graduateWithin4YearsAsianPercent_stored_double");
+				if(graduateWithin4YearsAsianPercent != null)
+					oReportCard.setGraduateWithin4YearsAsianPercent(graduateWithin4YearsAsianPercent);
+			}
+
+			if(saves.contains("graduateWithin4YearsBlackPercent")) {
+				Double graduateWithin4YearsBlackPercent = (Double)solrDocument.get("graduateWithin4YearsBlackPercent_stored_double");
+				if(graduateWithin4YearsBlackPercent != null)
+					oReportCard.setGraduateWithin4YearsBlackPercent(graduateWithin4YearsBlackPercent);
+			}
+
+			if(saves.contains("graduateWithin4YearsHispanicPercent")) {
+				Double graduateWithin4YearsHispanicPercent = (Double)solrDocument.get("graduateWithin4YearsHispanicPercent_stored_double");
+				if(graduateWithin4YearsHispanicPercent != null)
+					oReportCard.setGraduateWithin4YearsHispanicPercent(graduateWithin4YearsHispanicPercent);
+			}
+
+			if(saves.contains("graduateWithin4YearsMultiRacialPercent")) {
+				Double graduateWithin4YearsMultiRacialPercent = (Double)solrDocument.get("graduateWithin4YearsMultiRacialPercent_stored_double");
+				if(graduateWithin4YearsMultiRacialPercent != null)
+					oReportCard.setGraduateWithin4YearsMultiRacialPercent(graduateWithin4YearsMultiRacialPercent);
+			}
+
+			if(saves.contains("graduateWithin4YearsPacificIslanderPercent")) {
+				Double graduateWithin4YearsPacificIslanderPercent = (Double)solrDocument.get("graduateWithin4YearsPacificIslanderPercent_stored_double");
+				if(graduateWithin4YearsPacificIslanderPercent != null)
+					oReportCard.setGraduateWithin4YearsPacificIslanderPercent(graduateWithin4YearsPacificIslanderPercent);
+			}
+
+			if(saves.contains("graduateWithin4YearsWhitePercent")) {
+				Double graduateWithin4YearsWhitePercent = (Double)solrDocument.get("graduateWithin4YearsWhitePercent_stored_double");
+				if(graduateWithin4YearsWhitePercent != null)
+					oReportCard.setGraduateWithin4YearsWhitePercent(graduateWithin4YearsWhitePercent);
+			}
+
+			if(saves.contains("examsCollegeReadyGrades38BlackVsWhite")) {
+				Double examsCollegeReadyGrades38BlackVsWhite = (Double)solrDocument.get("examsCollegeReadyGrades38BlackVsWhite_stored_double");
+				if(examsCollegeReadyGrades38BlackVsWhite != null)
+					oReportCard.setExamsCollegeReadyGrades38BlackVsWhite(examsCollegeReadyGrades38BlackVsWhite);
+			}
+
 			if(saves.contains("stateKey")) {
 				Long stateKey = (Long)solrDocument.get("stateKey_stored_long");
 				if(stateKey != null)
@@ -15456,6 +19385,106 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			document.addField("shortTermSuspensionsBlackVsWhite_indexed_double", shortTermSuspensionsBlackVsWhite.doubleValue());
 			document.addField("shortTermSuspensionsBlackVsWhite_stored_double", shortTermSuspensionsBlackVsWhite.doubleValue());
 		}
+		if(examsCollegeReadyGrades38OverallPercent != null) {
+			document.addField("examsCollegeReadyGrades38OverallPercent_indexed_double", examsCollegeReadyGrades38OverallPercent.doubleValue());
+			document.addField("examsCollegeReadyGrades38OverallPercent_stored_double", examsCollegeReadyGrades38OverallPercent.doubleValue());
+		}
+		if(examsCollegeReadyGrades38IndianPercent != null) {
+			document.addField("examsCollegeReadyGrades38IndianPercent_indexed_double", examsCollegeReadyGrades38IndianPercent.doubleValue());
+			document.addField("examsCollegeReadyGrades38IndianPercent_stored_double", examsCollegeReadyGrades38IndianPercent.doubleValue());
+		}
+		if(examsCollegeReadyGrades38AsianPercent != null) {
+			document.addField("examsCollegeReadyGrades38AsianPercent_indexed_double", examsCollegeReadyGrades38AsianPercent.doubleValue());
+			document.addField("examsCollegeReadyGrades38AsianPercent_stored_double", examsCollegeReadyGrades38AsianPercent.doubleValue());
+		}
+		if(examsCollegeReadyGrades38BlackPercent != null) {
+			document.addField("examsCollegeReadyGrades38BlackPercent_indexed_double", examsCollegeReadyGrades38BlackPercent.doubleValue());
+			document.addField("examsCollegeReadyGrades38BlackPercent_stored_double", examsCollegeReadyGrades38BlackPercent.doubleValue());
+		}
+		if(examsCollegeReadyGrades38HispanicPercent != null) {
+			document.addField("examsCollegeReadyGrades38HispanicPercent_indexed_double", examsCollegeReadyGrades38HispanicPercent.doubleValue());
+			document.addField("examsCollegeReadyGrades38HispanicPercent_stored_double", examsCollegeReadyGrades38HispanicPercent.doubleValue());
+		}
+		if(examsCollegeReadyGrades38MultiRacialPercent != null) {
+			document.addField("examsCollegeReadyGrades38MultiRacialPercent_indexed_double", examsCollegeReadyGrades38MultiRacialPercent.doubleValue());
+			document.addField("examsCollegeReadyGrades38MultiRacialPercent_stored_double", examsCollegeReadyGrades38MultiRacialPercent.doubleValue());
+		}
+		if(examsCollegeReadyGrades38PacificIslanderPercent != null) {
+			document.addField("examsCollegeReadyGrades38PacificIslanderPercent_indexed_double", examsCollegeReadyGrades38PacificIslanderPercent.doubleValue());
+			document.addField("examsCollegeReadyGrades38PacificIslanderPercent_stored_double", examsCollegeReadyGrades38PacificIslanderPercent.doubleValue());
+		}
+		if(examsCollegeReadyGrades38WhitePercent != null) {
+			document.addField("examsCollegeReadyGrades38WhitePercent_indexed_double", examsCollegeReadyGrades38WhitePercent.doubleValue());
+			document.addField("examsCollegeReadyGrades38WhitePercent_stored_double", examsCollegeReadyGrades38WhitePercent.doubleValue());
+		}
+		if(examsCollegeReadyGrades912OverallPercent != null) {
+			document.addField("examsCollegeReadyGrades912OverallPercent_indexed_double", examsCollegeReadyGrades912OverallPercent.doubleValue());
+			document.addField("examsCollegeReadyGrades912OverallPercent_stored_double", examsCollegeReadyGrades912OverallPercent.doubleValue());
+		}
+		if(examsCollegeReadyGrades912IndianPercent != null) {
+			document.addField("examsCollegeReadyGrades912IndianPercent_indexed_double", examsCollegeReadyGrades912IndianPercent.doubleValue());
+			document.addField("examsCollegeReadyGrades912IndianPercent_stored_double", examsCollegeReadyGrades912IndianPercent.doubleValue());
+		}
+		if(examsCollegeReadyGrades912AsianPercent != null) {
+			document.addField("examsCollegeReadyGrades912AsianPercent_indexed_double", examsCollegeReadyGrades912AsianPercent.doubleValue());
+			document.addField("examsCollegeReadyGrades912AsianPercent_stored_double", examsCollegeReadyGrades912AsianPercent.doubleValue());
+		}
+		if(examsCollegeReadyGrades912BlackPercent != null) {
+			document.addField("examsCollegeReadyGrades912BlackPercent_indexed_double", examsCollegeReadyGrades912BlackPercent.doubleValue());
+			document.addField("examsCollegeReadyGrades912BlackPercent_stored_double", examsCollegeReadyGrades912BlackPercent.doubleValue());
+		}
+		if(examsCollegeReadyGrades912HispanicPercent != null) {
+			document.addField("examsCollegeReadyGrades912HispanicPercent_indexed_double", examsCollegeReadyGrades912HispanicPercent.doubleValue());
+			document.addField("examsCollegeReadyGrades912HispanicPercent_stored_double", examsCollegeReadyGrades912HispanicPercent.doubleValue());
+		}
+		if(examsCollegeReadyGrades912MultiRacialPercent != null) {
+			document.addField("examsCollegeReadyGrades912MultiRacialPercent_indexed_double", examsCollegeReadyGrades912MultiRacialPercent.doubleValue());
+			document.addField("examsCollegeReadyGrades912MultiRacialPercent_stored_double", examsCollegeReadyGrades912MultiRacialPercent.doubleValue());
+		}
+		if(examsCollegeReadyGrades912PacificIslanderPercent != null) {
+			document.addField("examsCollegeReadyGrades912PacificIslanderPercent_indexed_double", examsCollegeReadyGrades912PacificIslanderPercent.doubleValue());
+			document.addField("examsCollegeReadyGrades912PacificIslanderPercent_stored_double", examsCollegeReadyGrades912PacificIslanderPercent.doubleValue());
+		}
+		if(examsCollegeReadyGrades912WhitePercent != null) {
+			document.addField("examsCollegeReadyGrades912WhitePercent_indexed_double", examsCollegeReadyGrades912WhitePercent.doubleValue());
+			document.addField("examsCollegeReadyGrades912WhitePercent_stored_double", examsCollegeReadyGrades912WhitePercent.doubleValue());
+		}
+		if(graduateWithin4YearsOverallPercent != null) {
+			document.addField("graduateWithin4YearsOverallPercent_indexed_double", graduateWithin4YearsOverallPercent.doubleValue());
+			document.addField("graduateWithin4YearsOverallPercent_stored_double", graduateWithin4YearsOverallPercent.doubleValue());
+		}
+		if(graduateWithin4YearsIndianPercent != null) {
+			document.addField("graduateWithin4YearsIndianPercent_indexed_double", graduateWithin4YearsIndianPercent.doubleValue());
+			document.addField("graduateWithin4YearsIndianPercent_stored_double", graduateWithin4YearsIndianPercent.doubleValue());
+		}
+		if(graduateWithin4YearsAsianPercent != null) {
+			document.addField("graduateWithin4YearsAsianPercent_indexed_double", graduateWithin4YearsAsianPercent.doubleValue());
+			document.addField("graduateWithin4YearsAsianPercent_stored_double", graduateWithin4YearsAsianPercent.doubleValue());
+		}
+		if(graduateWithin4YearsBlackPercent != null) {
+			document.addField("graduateWithin4YearsBlackPercent_indexed_double", graduateWithin4YearsBlackPercent.doubleValue());
+			document.addField("graduateWithin4YearsBlackPercent_stored_double", graduateWithin4YearsBlackPercent.doubleValue());
+		}
+		if(graduateWithin4YearsHispanicPercent != null) {
+			document.addField("graduateWithin4YearsHispanicPercent_indexed_double", graduateWithin4YearsHispanicPercent.doubleValue());
+			document.addField("graduateWithin4YearsHispanicPercent_stored_double", graduateWithin4YearsHispanicPercent.doubleValue());
+		}
+		if(graduateWithin4YearsMultiRacialPercent != null) {
+			document.addField("graduateWithin4YearsMultiRacialPercent_indexed_double", graduateWithin4YearsMultiRacialPercent.doubleValue());
+			document.addField("graduateWithin4YearsMultiRacialPercent_stored_double", graduateWithin4YearsMultiRacialPercent.doubleValue());
+		}
+		if(graduateWithin4YearsPacificIslanderPercent != null) {
+			document.addField("graduateWithin4YearsPacificIslanderPercent_indexed_double", graduateWithin4YearsPacificIslanderPercent.doubleValue());
+			document.addField("graduateWithin4YearsPacificIslanderPercent_stored_double", graduateWithin4YearsPacificIslanderPercent.doubleValue());
+		}
+		if(graduateWithin4YearsWhitePercent != null) {
+			document.addField("graduateWithin4YearsWhitePercent_indexed_double", graduateWithin4YearsWhitePercent.doubleValue());
+			document.addField("graduateWithin4YearsWhitePercent_stored_double", graduateWithin4YearsWhitePercent.doubleValue());
+		}
+		if(examsCollegeReadyGrades38BlackVsWhite != null) {
+			document.addField("examsCollegeReadyGrades38BlackVsWhite_indexed_double", examsCollegeReadyGrades38BlackVsWhite.doubleValue());
+			document.addField("examsCollegeReadyGrades38BlackVsWhite_stored_double", examsCollegeReadyGrades38BlackVsWhite.doubleValue());
+		}
 		if(stateKey != null) {
 			document.addField("stateKey_indexed_long", stateKey);
 			document.addField("stateKey_stored_long", stateKey);
@@ -15744,6 +19773,56 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return "shortTermSuspensionsAllRate_indexed_double";
 			case "shortTermSuspensionsBlackVsWhite":
 				return "shortTermSuspensionsBlackVsWhite_indexed_double";
+			case "examsCollegeReadyGrades38OverallPercent":
+				return "examsCollegeReadyGrades38OverallPercent_indexed_double";
+			case "examsCollegeReadyGrades38IndianPercent":
+				return "examsCollegeReadyGrades38IndianPercent_indexed_double";
+			case "examsCollegeReadyGrades38AsianPercent":
+				return "examsCollegeReadyGrades38AsianPercent_indexed_double";
+			case "examsCollegeReadyGrades38BlackPercent":
+				return "examsCollegeReadyGrades38BlackPercent_indexed_double";
+			case "examsCollegeReadyGrades38HispanicPercent":
+				return "examsCollegeReadyGrades38HispanicPercent_indexed_double";
+			case "examsCollegeReadyGrades38MultiRacialPercent":
+				return "examsCollegeReadyGrades38MultiRacialPercent_indexed_double";
+			case "examsCollegeReadyGrades38PacificIslanderPercent":
+				return "examsCollegeReadyGrades38PacificIslanderPercent_indexed_double";
+			case "examsCollegeReadyGrades38WhitePercent":
+				return "examsCollegeReadyGrades38WhitePercent_indexed_double";
+			case "examsCollegeReadyGrades912OverallPercent":
+				return "examsCollegeReadyGrades912OverallPercent_indexed_double";
+			case "examsCollegeReadyGrades912IndianPercent":
+				return "examsCollegeReadyGrades912IndianPercent_indexed_double";
+			case "examsCollegeReadyGrades912AsianPercent":
+				return "examsCollegeReadyGrades912AsianPercent_indexed_double";
+			case "examsCollegeReadyGrades912BlackPercent":
+				return "examsCollegeReadyGrades912BlackPercent_indexed_double";
+			case "examsCollegeReadyGrades912HispanicPercent":
+				return "examsCollegeReadyGrades912HispanicPercent_indexed_double";
+			case "examsCollegeReadyGrades912MultiRacialPercent":
+				return "examsCollegeReadyGrades912MultiRacialPercent_indexed_double";
+			case "examsCollegeReadyGrades912PacificIslanderPercent":
+				return "examsCollegeReadyGrades912PacificIslanderPercent_indexed_double";
+			case "examsCollegeReadyGrades912WhitePercent":
+				return "examsCollegeReadyGrades912WhitePercent_indexed_double";
+			case "graduateWithin4YearsOverallPercent":
+				return "graduateWithin4YearsOverallPercent_indexed_double";
+			case "graduateWithin4YearsIndianPercent":
+				return "graduateWithin4YearsIndianPercent_indexed_double";
+			case "graduateWithin4YearsAsianPercent":
+				return "graduateWithin4YearsAsianPercent_indexed_double";
+			case "graduateWithin4YearsBlackPercent":
+				return "graduateWithin4YearsBlackPercent_indexed_double";
+			case "graduateWithin4YearsHispanicPercent":
+				return "graduateWithin4YearsHispanicPercent_indexed_double";
+			case "graduateWithin4YearsMultiRacialPercent":
+				return "graduateWithin4YearsMultiRacialPercent_indexed_double";
+			case "graduateWithin4YearsPacificIslanderPercent":
+				return "graduateWithin4YearsPacificIslanderPercent_indexed_double";
+			case "graduateWithin4YearsWhitePercent":
+				return "graduateWithin4YearsWhitePercent_indexed_double";
+			case "examsCollegeReadyGrades38BlackVsWhite":
+				return "examsCollegeReadyGrades38BlackVsWhite_indexed_double";
 			case "stateKey":
 				return "stateKey_indexed_long";
 			case "stateId":
@@ -16195,6 +20274,106 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(shortTermSuspensionsBlackVsWhite != null)
 			oReportCard.setShortTermSuspensionsBlackVsWhite(shortTermSuspensionsBlackVsWhite);
 
+		Double examsCollegeReadyGrades38OverallPercent = (Double)solrDocument.get("examsCollegeReadyGrades38OverallPercent_stored_double");
+		if(examsCollegeReadyGrades38OverallPercent != null)
+			oReportCard.setExamsCollegeReadyGrades38OverallPercent(examsCollegeReadyGrades38OverallPercent);
+
+		Double examsCollegeReadyGrades38IndianPercent = (Double)solrDocument.get("examsCollegeReadyGrades38IndianPercent_stored_double");
+		if(examsCollegeReadyGrades38IndianPercent != null)
+			oReportCard.setExamsCollegeReadyGrades38IndianPercent(examsCollegeReadyGrades38IndianPercent);
+
+		Double examsCollegeReadyGrades38AsianPercent = (Double)solrDocument.get("examsCollegeReadyGrades38AsianPercent_stored_double");
+		if(examsCollegeReadyGrades38AsianPercent != null)
+			oReportCard.setExamsCollegeReadyGrades38AsianPercent(examsCollegeReadyGrades38AsianPercent);
+
+		Double examsCollegeReadyGrades38BlackPercent = (Double)solrDocument.get("examsCollegeReadyGrades38BlackPercent_stored_double");
+		if(examsCollegeReadyGrades38BlackPercent != null)
+			oReportCard.setExamsCollegeReadyGrades38BlackPercent(examsCollegeReadyGrades38BlackPercent);
+
+		Double examsCollegeReadyGrades38HispanicPercent = (Double)solrDocument.get("examsCollegeReadyGrades38HispanicPercent_stored_double");
+		if(examsCollegeReadyGrades38HispanicPercent != null)
+			oReportCard.setExamsCollegeReadyGrades38HispanicPercent(examsCollegeReadyGrades38HispanicPercent);
+
+		Double examsCollegeReadyGrades38MultiRacialPercent = (Double)solrDocument.get("examsCollegeReadyGrades38MultiRacialPercent_stored_double");
+		if(examsCollegeReadyGrades38MultiRacialPercent != null)
+			oReportCard.setExamsCollegeReadyGrades38MultiRacialPercent(examsCollegeReadyGrades38MultiRacialPercent);
+
+		Double examsCollegeReadyGrades38PacificIslanderPercent = (Double)solrDocument.get("examsCollegeReadyGrades38PacificIslanderPercent_stored_double");
+		if(examsCollegeReadyGrades38PacificIslanderPercent != null)
+			oReportCard.setExamsCollegeReadyGrades38PacificIslanderPercent(examsCollegeReadyGrades38PacificIslanderPercent);
+
+		Double examsCollegeReadyGrades38WhitePercent = (Double)solrDocument.get("examsCollegeReadyGrades38WhitePercent_stored_double");
+		if(examsCollegeReadyGrades38WhitePercent != null)
+			oReportCard.setExamsCollegeReadyGrades38WhitePercent(examsCollegeReadyGrades38WhitePercent);
+
+		Double examsCollegeReadyGrades912OverallPercent = (Double)solrDocument.get("examsCollegeReadyGrades912OverallPercent_stored_double");
+		if(examsCollegeReadyGrades912OverallPercent != null)
+			oReportCard.setExamsCollegeReadyGrades912OverallPercent(examsCollegeReadyGrades912OverallPercent);
+
+		Double examsCollegeReadyGrades912IndianPercent = (Double)solrDocument.get("examsCollegeReadyGrades912IndianPercent_stored_double");
+		if(examsCollegeReadyGrades912IndianPercent != null)
+			oReportCard.setExamsCollegeReadyGrades912IndianPercent(examsCollegeReadyGrades912IndianPercent);
+
+		Double examsCollegeReadyGrades912AsianPercent = (Double)solrDocument.get("examsCollegeReadyGrades912AsianPercent_stored_double");
+		if(examsCollegeReadyGrades912AsianPercent != null)
+			oReportCard.setExamsCollegeReadyGrades912AsianPercent(examsCollegeReadyGrades912AsianPercent);
+
+		Double examsCollegeReadyGrades912BlackPercent = (Double)solrDocument.get("examsCollegeReadyGrades912BlackPercent_stored_double");
+		if(examsCollegeReadyGrades912BlackPercent != null)
+			oReportCard.setExamsCollegeReadyGrades912BlackPercent(examsCollegeReadyGrades912BlackPercent);
+
+		Double examsCollegeReadyGrades912HispanicPercent = (Double)solrDocument.get("examsCollegeReadyGrades912HispanicPercent_stored_double");
+		if(examsCollegeReadyGrades912HispanicPercent != null)
+			oReportCard.setExamsCollegeReadyGrades912HispanicPercent(examsCollegeReadyGrades912HispanicPercent);
+
+		Double examsCollegeReadyGrades912MultiRacialPercent = (Double)solrDocument.get("examsCollegeReadyGrades912MultiRacialPercent_stored_double");
+		if(examsCollegeReadyGrades912MultiRacialPercent != null)
+			oReportCard.setExamsCollegeReadyGrades912MultiRacialPercent(examsCollegeReadyGrades912MultiRacialPercent);
+
+		Double examsCollegeReadyGrades912PacificIslanderPercent = (Double)solrDocument.get("examsCollegeReadyGrades912PacificIslanderPercent_stored_double");
+		if(examsCollegeReadyGrades912PacificIslanderPercent != null)
+			oReportCard.setExamsCollegeReadyGrades912PacificIslanderPercent(examsCollegeReadyGrades912PacificIslanderPercent);
+
+		Double examsCollegeReadyGrades912WhitePercent = (Double)solrDocument.get("examsCollegeReadyGrades912WhitePercent_stored_double");
+		if(examsCollegeReadyGrades912WhitePercent != null)
+			oReportCard.setExamsCollegeReadyGrades912WhitePercent(examsCollegeReadyGrades912WhitePercent);
+
+		Double graduateWithin4YearsOverallPercent = (Double)solrDocument.get("graduateWithin4YearsOverallPercent_stored_double");
+		if(graduateWithin4YearsOverallPercent != null)
+			oReportCard.setGraduateWithin4YearsOverallPercent(graduateWithin4YearsOverallPercent);
+
+		Double graduateWithin4YearsIndianPercent = (Double)solrDocument.get("graduateWithin4YearsIndianPercent_stored_double");
+		if(graduateWithin4YearsIndianPercent != null)
+			oReportCard.setGraduateWithin4YearsIndianPercent(graduateWithin4YearsIndianPercent);
+
+		Double graduateWithin4YearsAsianPercent = (Double)solrDocument.get("graduateWithin4YearsAsianPercent_stored_double");
+		if(graduateWithin4YearsAsianPercent != null)
+			oReportCard.setGraduateWithin4YearsAsianPercent(graduateWithin4YearsAsianPercent);
+
+		Double graduateWithin4YearsBlackPercent = (Double)solrDocument.get("graduateWithin4YearsBlackPercent_stored_double");
+		if(graduateWithin4YearsBlackPercent != null)
+			oReportCard.setGraduateWithin4YearsBlackPercent(graduateWithin4YearsBlackPercent);
+
+		Double graduateWithin4YearsHispanicPercent = (Double)solrDocument.get("graduateWithin4YearsHispanicPercent_stored_double");
+		if(graduateWithin4YearsHispanicPercent != null)
+			oReportCard.setGraduateWithin4YearsHispanicPercent(graduateWithin4YearsHispanicPercent);
+
+		Double graduateWithin4YearsMultiRacialPercent = (Double)solrDocument.get("graduateWithin4YearsMultiRacialPercent_stored_double");
+		if(graduateWithin4YearsMultiRacialPercent != null)
+			oReportCard.setGraduateWithin4YearsMultiRacialPercent(graduateWithin4YearsMultiRacialPercent);
+
+		Double graduateWithin4YearsPacificIslanderPercent = (Double)solrDocument.get("graduateWithin4YearsPacificIslanderPercent_stored_double");
+		if(graduateWithin4YearsPacificIslanderPercent != null)
+			oReportCard.setGraduateWithin4YearsPacificIslanderPercent(graduateWithin4YearsPacificIslanderPercent);
+
+		Double graduateWithin4YearsWhitePercent = (Double)solrDocument.get("graduateWithin4YearsWhitePercent_stored_double");
+		if(graduateWithin4YearsWhitePercent != null)
+			oReportCard.setGraduateWithin4YearsWhitePercent(graduateWithin4YearsWhitePercent);
+
+		Double examsCollegeReadyGrades38BlackVsWhite = (Double)solrDocument.get("examsCollegeReadyGrades38BlackVsWhite_stored_double");
+		if(examsCollegeReadyGrades38BlackVsWhite != null)
+			oReportCard.setExamsCollegeReadyGrades38BlackVsWhite(examsCollegeReadyGrades38BlackVsWhite);
+
 		Long stateKey = (Long)solrDocument.get("stateKey_stored_long");
 		if(stateKey != null)
 			oReportCard.setStateKey(stateKey);
@@ -16483,6 +20662,56 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("shortTermSuspensionsAllRate");
 			if(!Objects.equals(shortTermSuspensionsBlackVsWhite, original.getShortTermSuspensionsBlackVsWhite()))
 				apiRequest.addVars("shortTermSuspensionsBlackVsWhite");
+			if(!Objects.equals(examsCollegeReadyGrades38OverallPercent, original.getExamsCollegeReadyGrades38OverallPercent()))
+				apiRequest.addVars("examsCollegeReadyGrades38OverallPercent");
+			if(!Objects.equals(examsCollegeReadyGrades38IndianPercent, original.getExamsCollegeReadyGrades38IndianPercent()))
+				apiRequest.addVars("examsCollegeReadyGrades38IndianPercent");
+			if(!Objects.equals(examsCollegeReadyGrades38AsianPercent, original.getExamsCollegeReadyGrades38AsianPercent()))
+				apiRequest.addVars("examsCollegeReadyGrades38AsianPercent");
+			if(!Objects.equals(examsCollegeReadyGrades38BlackPercent, original.getExamsCollegeReadyGrades38BlackPercent()))
+				apiRequest.addVars("examsCollegeReadyGrades38BlackPercent");
+			if(!Objects.equals(examsCollegeReadyGrades38HispanicPercent, original.getExamsCollegeReadyGrades38HispanicPercent()))
+				apiRequest.addVars("examsCollegeReadyGrades38HispanicPercent");
+			if(!Objects.equals(examsCollegeReadyGrades38MultiRacialPercent, original.getExamsCollegeReadyGrades38MultiRacialPercent()))
+				apiRequest.addVars("examsCollegeReadyGrades38MultiRacialPercent");
+			if(!Objects.equals(examsCollegeReadyGrades38PacificIslanderPercent, original.getExamsCollegeReadyGrades38PacificIslanderPercent()))
+				apiRequest.addVars("examsCollegeReadyGrades38PacificIslanderPercent");
+			if(!Objects.equals(examsCollegeReadyGrades38WhitePercent, original.getExamsCollegeReadyGrades38WhitePercent()))
+				apiRequest.addVars("examsCollegeReadyGrades38WhitePercent");
+			if(!Objects.equals(examsCollegeReadyGrades912OverallPercent, original.getExamsCollegeReadyGrades912OverallPercent()))
+				apiRequest.addVars("examsCollegeReadyGrades912OverallPercent");
+			if(!Objects.equals(examsCollegeReadyGrades912IndianPercent, original.getExamsCollegeReadyGrades912IndianPercent()))
+				apiRequest.addVars("examsCollegeReadyGrades912IndianPercent");
+			if(!Objects.equals(examsCollegeReadyGrades912AsianPercent, original.getExamsCollegeReadyGrades912AsianPercent()))
+				apiRequest.addVars("examsCollegeReadyGrades912AsianPercent");
+			if(!Objects.equals(examsCollegeReadyGrades912BlackPercent, original.getExamsCollegeReadyGrades912BlackPercent()))
+				apiRequest.addVars("examsCollegeReadyGrades912BlackPercent");
+			if(!Objects.equals(examsCollegeReadyGrades912HispanicPercent, original.getExamsCollegeReadyGrades912HispanicPercent()))
+				apiRequest.addVars("examsCollegeReadyGrades912HispanicPercent");
+			if(!Objects.equals(examsCollegeReadyGrades912MultiRacialPercent, original.getExamsCollegeReadyGrades912MultiRacialPercent()))
+				apiRequest.addVars("examsCollegeReadyGrades912MultiRacialPercent");
+			if(!Objects.equals(examsCollegeReadyGrades912PacificIslanderPercent, original.getExamsCollegeReadyGrades912PacificIslanderPercent()))
+				apiRequest.addVars("examsCollegeReadyGrades912PacificIslanderPercent");
+			if(!Objects.equals(examsCollegeReadyGrades912WhitePercent, original.getExamsCollegeReadyGrades912WhitePercent()))
+				apiRequest.addVars("examsCollegeReadyGrades912WhitePercent");
+			if(!Objects.equals(graduateWithin4YearsOverallPercent, original.getGraduateWithin4YearsOverallPercent()))
+				apiRequest.addVars("graduateWithin4YearsOverallPercent");
+			if(!Objects.equals(graduateWithin4YearsIndianPercent, original.getGraduateWithin4YearsIndianPercent()))
+				apiRequest.addVars("graduateWithin4YearsIndianPercent");
+			if(!Objects.equals(graduateWithin4YearsAsianPercent, original.getGraduateWithin4YearsAsianPercent()))
+				apiRequest.addVars("graduateWithin4YearsAsianPercent");
+			if(!Objects.equals(graduateWithin4YearsBlackPercent, original.getGraduateWithin4YearsBlackPercent()))
+				apiRequest.addVars("graduateWithin4YearsBlackPercent");
+			if(!Objects.equals(graduateWithin4YearsHispanicPercent, original.getGraduateWithin4YearsHispanicPercent()))
+				apiRequest.addVars("graduateWithin4YearsHispanicPercent");
+			if(!Objects.equals(graduateWithin4YearsMultiRacialPercent, original.getGraduateWithin4YearsMultiRacialPercent()))
+				apiRequest.addVars("graduateWithin4YearsMultiRacialPercent");
+			if(!Objects.equals(graduateWithin4YearsPacificIslanderPercent, original.getGraduateWithin4YearsPacificIslanderPercent()))
+				apiRequest.addVars("graduateWithin4YearsPacificIslanderPercent");
+			if(!Objects.equals(graduateWithin4YearsWhitePercent, original.getGraduateWithin4YearsWhitePercent()))
+				apiRequest.addVars("graduateWithin4YearsWhitePercent");
+			if(!Objects.equals(examsCollegeReadyGrades38BlackVsWhite, original.getExamsCollegeReadyGrades38BlackVsWhite()))
+				apiRequest.addVars("examsCollegeReadyGrades38BlackVsWhite");
 			if(!Objects.equals(stateKey, original.getStateKey()))
 				apiRequest.addVars("stateKey");
 			if(!Objects.equals(stateId, original.getStateId()))
@@ -16528,7 +20757,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	//////////////
 
 	@Override public int hashCode() {
-		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, reportCardYearsStr, agencyKey, pupilsTotal, pupilsIndianFemale, pupilsIndianMale, pupilsIndianTotal, pupilsIndianPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsHispanicFemale, pupilsHispanicMale, pupilsHispanicTotal, pupilsHispanicPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, pupilsOtherPercent, teachersMale, teachersFemale, teachersTotal, teachersWhiteTotal, teachersWhitePercent, teachersBlackTotal, teachersBlackPercent, teachersOtherTotal, teachersOtherPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, delinquentComplaintsAsian, delinquentComplaintsAsianPercent, delinquentComplaintsBlack, delinquentComplaintsBlackPercent, delinquentComplaintsHispanic, delinquentComplaintsHispanicPercent, delinquentComplaintsMultiRacial, delinquentComplaintsMultiRacialPercent, delinquentComplaintsIndian, delinquentComplaintsIndianPercent, delinquentComplaintsWhite, delinquentComplaintsWhitePercent, delinquentComplaintsPacificIslander, delinquentComplaintsPacificIslanderPercent, shortTermSuspensionRate, shortTermSuspensionsTotal, longTermSuspensionsTotal, expulsionsTotal, shortTermSuspensionsAsianFemale, shortTermSuspensionsAsianMale, shortTermSuspensionsAsianTotal, shortTermSuspensionsAsianPercent, shortTermSuspensionsAsianRate, shortTermSuspensionsBlackFemale, shortTermSuspensionsBlackMale, shortTermSuspensionsBlackTotal, shortTermSuspensionsBlackPercent, shortTermSuspensionsBlackRate, shortTermSuspensionsHispanicFemale, shortTermSuspensionsHispanicMale, shortTermSuspensionsHispanicTotal, shortTermSuspensionsHispanicPercent, shortTermSuspensionsHispanicRate, shortTermSuspensionsIndianFemale, shortTermSuspensionsIndianMale, shortTermSuspensionsIndianTotal, shortTermSuspensionsIndianPercent, shortTermSuspensionsIndianRate, shortTermSuspensionsMultiRacialFemale, shortTermSuspensionsMultiRacialMale, shortTermSuspensionsMultiRacialTotal, shortTermSuspensionsMultiRacialPercent, shortTermSuspensionsMultiRacialRate, shortTermSuspensionsPacificIslanderFemale, shortTermSuspensionsPacificIslanderMale, shortTermSuspensionsPacificIslanderTotal, shortTermSuspensionsPacificIslanderPercent, shortTermSuspensionsPacificIslanderRate, shortTermSuspensionsWhiteFemale, shortTermSuspensionsWhiteMale, shortTermSuspensionsWhiteTotal, shortTermSuspensionsWhitePercent, shortTermSuspensionsWhiteRate, shortTermSuspensionsAllRate, shortTermSuspensionsBlackVsWhite, stateKey, stateId, agencyId, stateName, stateAbbreviation, agencyName, agencyCompleteName, agencyDemographicsGraph, agencyStudentsByRaceGraph, agencyTeachersByRaceGraph, agencyGrades3To8Graph, agencyGrades9To12Graph, agencyGraduatesWithin4YearsGraph, suspensionsByRaceGraph, suspensionRatesByRaceGraph, countySchoolBasedComplaintsGraph, schoolBasedComplaintsGraph, agencyStudentsByRaceGraph2);
+		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, reportCardYearsStr, agencyKey, pupilsTotal, pupilsIndianFemale, pupilsIndianMale, pupilsIndianTotal, pupilsIndianPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsHispanicFemale, pupilsHispanicMale, pupilsHispanicTotal, pupilsHispanicPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, pupilsOtherPercent, teachersMale, teachersFemale, teachersTotal, teachersWhiteTotal, teachersWhitePercent, teachersBlackTotal, teachersBlackPercent, teachersOtherTotal, teachersOtherPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, delinquentComplaintsAsian, delinquentComplaintsAsianPercent, delinquentComplaintsBlack, delinquentComplaintsBlackPercent, delinquentComplaintsHispanic, delinquentComplaintsHispanicPercent, delinquentComplaintsMultiRacial, delinquentComplaintsMultiRacialPercent, delinquentComplaintsIndian, delinquentComplaintsIndianPercent, delinquentComplaintsWhite, delinquentComplaintsWhitePercent, delinquentComplaintsPacificIslander, delinquentComplaintsPacificIslanderPercent, shortTermSuspensionRate, shortTermSuspensionsTotal, longTermSuspensionsTotal, expulsionsTotal, shortTermSuspensionsAsianFemale, shortTermSuspensionsAsianMale, shortTermSuspensionsAsianTotal, shortTermSuspensionsAsianPercent, shortTermSuspensionsAsianRate, shortTermSuspensionsBlackFemale, shortTermSuspensionsBlackMale, shortTermSuspensionsBlackTotal, shortTermSuspensionsBlackPercent, shortTermSuspensionsBlackRate, shortTermSuspensionsHispanicFemale, shortTermSuspensionsHispanicMale, shortTermSuspensionsHispanicTotal, shortTermSuspensionsHispanicPercent, shortTermSuspensionsHispanicRate, shortTermSuspensionsIndianFemale, shortTermSuspensionsIndianMale, shortTermSuspensionsIndianTotal, shortTermSuspensionsIndianPercent, shortTermSuspensionsIndianRate, shortTermSuspensionsMultiRacialFemale, shortTermSuspensionsMultiRacialMale, shortTermSuspensionsMultiRacialTotal, shortTermSuspensionsMultiRacialPercent, shortTermSuspensionsMultiRacialRate, shortTermSuspensionsPacificIslanderFemale, shortTermSuspensionsPacificIslanderMale, shortTermSuspensionsPacificIslanderTotal, shortTermSuspensionsPacificIslanderPercent, shortTermSuspensionsPacificIslanderRate, shortTermSuspensionsWhiteFemale, shortTermSuspensionsWhiteMale, shortTermSuspensionsWhiteTotal, shortTermSuspensionsWhitePercent, shortTermSuspensionsWhiteRate, shortTermSuspensionsAllRate, shortTermSuspensionsBlackVsWhite, examsCollegeReadyGrades38OverallPercent, examsCollegeReadyGrades38IndianPercent, examsCollegeReadyGrades38AsianPercent, examsCollegeReadyGrades38BlackPercent, examsCollegeReadyGrades38HispanicPercent, examsCollegeReadyGrades38MultiRacialPercent, examsCollegeReadyGrades38PacificIslanderPercent, examsCollegeReadyGrades38WhitePercent, examsCollegeReadyGrades912OverallPercent, examsCollegeReadyGrades912IndianPercent, examsCollegeReadyGrades912AsianPercent, examsCollegeReadyGrades912BlackPercent, examsCollegeReadyGrades912HispanicPercent, examsCollegeReadyGrades912MultiRacialPercent, examsCollegeReadyGrades912PacificIslanderPercent, examsCollegeReadyGrades912WhitePercent, graduateWithin4YearsOverallPercent, graduateWithin4YearsIndianPercent, graduateWithin4YearsAsianPercent, graduateWithin4YearsBlackPercent, graduateWithin4YearsHispanicPercent, graduateWithin4YearsMultiRacialPercent, graduateWithin4YearsPacificIslanderPercent, graduateWithin4YearsWhitePercent, examsCollegeReadyGrades38BlackVsWhite, stateKey, stateId, agencyId, stateName, stateAbbreviation, agencyName, agencyCompleteName, agencyDemographicsGraph, agencyStudentsByRaceGraph, agencyTeachersByRaceGraph, agencyGrades3To8Graph, agencyGrades9To12Graph, agencyGraduatesWithin4YearsGraph, suspensionsByRaceGraph, suspensionRatesByRaceGraph, countySchoolBasedComplaintsGraph, schoolBasedComplaintsGraph, agencyStudentsByRaceGraph2);
 	}
 
 	////////////
@@ -16644,6 +20873,31 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				&& Objects.equals( shortTermSuspensionsWhiteRate, that.shortTermSuspensionsWhiteRate )
 				&& Objects.equals( shortTermSuspensionsAllRate, that.shortTermSuspensionsAllRate )
 				&& Objects.equals( shortTermSuspensionsBlackVsWhite, that.shortTermSuspensionsBlackVsWhite )
+				&& Objects.equals( examsCollegeReadyGrades38OverallPercent, that.examsCollegeReadyGrades38OverallPercent )
+				&& Objects.equals( examsCollegeReadyGrades38IndianPercent, that.examsCollegeReadyGrades38IndianPercent )
+				&& Objects.equals( examsCollegeReadyGrades38AsianPercent, that.examsCollegeReadyGrades38AsianPercent )
+				&& Objects.equals( examsCollegeReadyGrades38BlackPercent, that.examsCollegeReadyGrades38BlackPercent )
+				&& Objects.equals( examsCollegeReadyGrades38HispanicPercent, that.examsCollegeReadyGrades38HispanicPercent )
+				&& Objects.equals( examsCollegeReadyGrades38MultiRacialPercent, that.examsCollegeReadyGrades38MultiRacialPercent )
+				&& Objects.equals( examsCollegeReadyGrades38PacificIslanderPercent, that.examsCollegeReadyGrades38PacificIslanderPercent )
+				&& Objects.equals( examsCollegeReadyGrades38WhitePercent, that.examsCollegeReadyGrades38WhitePercent )
+				&& Objects.equals( examsCollegeReadyGrades912OverallPercent, that.examsCollegeReadyGrades912OverallPercent )
+				&& Objects.equals( examsCollegeReadyGrades912IndianPercent, that.examsCollegeReadyGrades912IndianPercent )
+				&& Objects.equals( examsCollegeReadyGrades912AsianPercent, that.examsCollegeReadyGrades912AsianPercent )
+				&& Objects.equals( examsCollegeReadyGrades912BlackPercent, that.examsCollegeReadyGrades912BlackPercent )
+				&& Objects.equals( examsCollegeReadyGrades912HispanicPercent, that.examsCollegeReadyGrades912HispanicPercent )
+				&& Objects.equals( examsCollegeReadyGrades912MultiRacialPercent, that.examsCollegeReadyGrades912MultiRacialPercent )
+				&& Objects.equals( examsCollegeReadyGrades912PacificIslanderPercent, that.examsCollegeReadyGrades912PacificIslanderPercent )
+				&& Objects.equals( examsCollegeReadyGrades912WhitePercent, that.examsCollegeReadyGrades912WhitePercent )
+				&& Objects.equals( graduateWithin4YearsOverallPercent, that.graduateWithin4YearsOverallPercent )
+				&& Objects.equals( graduateWithin4YearsIndianPercent, that.graduateWithin4YearsIndianPercent )
+				&& Objects.equals( graduateWithin4YearsAsianPercent, that.graduateWithin4YearsAsianPercent )
+				&& Objects.equals( graduateWithin4YearsBlackPercent, that.graduateWithin4YearsBlackPercent )
+				&& Objects.equals( graduateWithin4YearsHispanicPercent, that.graduateWithin4YearsHispanicPercent )
+				&& Objects.equals( graduateWithin4YearsMultiRacialPercent, that.graduateWithin4YearsMultiRacialPercent )
+				&& Objects.equals( graduateWithin4YearsPacificIslanderPercent, that.graduateWithin4YearsPacificIslanderPercent )
+				&& Objects.equals( graduateWithin4YearsWhitePercent, that.graduateWithin4YearsWhitePercent )
+				&& Objects.equals( examsCollegeReadyGrades38BlackVsWhite, that.examsCollegeReadyGrades38BlackVsWhite )
 				&& Objects.equals( stateKey, that.stateKey )
 				&& Objects.equals( stateId, that.stateId )
 				&& Objects.equals( agencyId, that.agencyId )
@@ -16774,6 +21028,31 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		sb.append( ", shortTermSuspensionsWhiteRate: " ).append(shortTermSuspensionsWhiteRate);
 		sb.append( ", shortTermSuspensionsAllRate: " ).append(shortTermSuspensionsAllRate);
 		sb.append( ", shortTermSuspensionsBlackVsWhite: " ).append(shortTermSuspensionsBlackVsWhite);
+		sb.append( ", examsCollegeReadyGrades38OverallPercent: " ).append(examsCollegeReadyGrades38OverallPercent);
+		sb.append( ", examsCollegeReadyGrades38IndianPercent: " ).append(examsCollegeReadyGrades38IndianPercent);
+		sb.append( ", examsCollegeReadyGrades38AsianPercent: " ).append(examsCollegeReadyGrades38AsianPercent);
+		sb.append( ", examsCollegeReadyGrades38BlackPercent: " ).append(examsCollegeReadyGrades38BlackPercent);
+		sb.append( ", examsCollegeReadyGrades38HispanicPercent: " ).append(examsCollegeReadyGrades38HispanicPercent);
+		sb.append( ", examsCollegeReadyGrades38MultiRacialPercent: " ).append(examsCollegeReadyGrades38MultiRacialPercent);
+		sb.append( ", examsCollegeReadyGrades38PacificIslanderPercent: " ).append(examsCollegeReadyGrades38PacificIslanderPercent);
+		sb.append( ", examsCollegeReadyGrades38WhitePercent: " ).append(examsCollegeReadyGrades38WhitePercent);
+		sb.append( ", examsCollegeReadyGrades912OverallPercent: " ).append(examsCollegeReadyGrades912OverallPercent);
+		sb.append( ", examsCollegeReadyGrades912IndianPercent: " ).append(examsCollegeReadyGrades912IndianPercent);
+		sb.append( ", examsCollegeReadyGrades912AsianPercent: " ).append(examsCollegeReadyGrades912AsianPercent);
+		sb.append( ", examsCollegeReadyGrades912BlackPercent: " ).append(examsCollegeReadyGrades912BlackPercent);
+		sb.append( ", examsCollegeReadyGrades912HispanicPercent: " ).append(examsCollegeReadyGrades912HispanicPercent);
+		sb.append( ", examsCollegeReadyGrades912MultiRacialPercent: " ).append(examsCollegeReadyGrades912MultiRacialPercent);
+		sb.append( ", examsCollegeReadyGrades912PacificIslanderPercent: " ).append(examsCollegeReadyGrades912PacificIslanderPercent);
+		sb.append( ", examsCollegeReadyGrades912WhitePercent: " ).append(examsCollegeReadyGrades912WhitePercent);
+		sb.append( ", graduateWithin4YearsOverallPercent: " ).append(graduateWithin4YearsOverallPercent);
+		sb.append( ", graduateWithin4YearsIndianPercent: " ).append(graduateWithin4YearsIndianPercent);
+		sb.append( ", graduateWithin4YearsAsianPercent: " ).append(graduateWithin4YearsAsianPercent);
+		sb.append( ", graduateWithin4YearsBlackPercent: " ).append(graduateWithin4YearsBlackPercent);
+		sb.append( ", graduateWithin4YearsHispanicPercent: " ).append(graduateWithin4YearsHispanicPercent);
+		sb.append( ", graduateWithin4YearsMultiRacialPercent: " ).append(graduateWithin4YearsMultiRacialPercent);
+		sb.append( ", graduateWithin4YearsPacificIslanderPercent: " ).append(graduateWithin4YearsPacificIslanderPercent);
+		sb.append( ", graduateWithin4YearsWhitePercent: " ).append(graduateWithin4YearsWhitePercent);
+		sb.append( ", examsCollegeReadyGrades38BlackVsWhite: " ).append(examsCollegeReadyGrades38BlackVsWhite);
 		sb.append( ", stateKey: " ).append(stateKey);
 		sb.append( ", stateId: \"" ).append(stateId).append( "\"" );
 		sb.append( ", agencyId: \"" ).append(agencyId).append( "\"" );

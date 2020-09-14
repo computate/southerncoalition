@@ -176,6 +176,9 @@ public class HtmlPartGenPage extends HtmlPartGenPageGen<PageLayout> {
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmHtmlVarForEach("Page");
+			o.htmHtmlVarHtml("Page");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmHtmlExclude("Page");
 			o.htmPdfExclude("Page");
 			o.htmLoginLogout("Page");
@@ -236,6 +239,9 @@ public class HtmlPartGenPage extends HtmlPartGenPageGen<PageLayout> {
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmHtmlVarForEach("POST");
+			o.htmHtmlVarHtml("POST");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmHtmlExclude("POST");
 			o.htmPdfExclude("POST");
 			o.htmLoginLogout("POST");
@@ -318,6 +324,9 @@ public class HtmlPartGenPage extends HtmlPartGenPageGen<PageLayout> {
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmHtmlVarForEach("PUTCopy");
+			o.htmHtmlVarHtml("PUTCopy");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmHtmlExclude("PUTCopy");
 			o.htmPdfExclude("PUTCopy");
 			o.htmLoginLogout("PUTCopy");
@@ -381,6 +390,9 @@ public class HtmlPartGenPage extends HtmlPartGenPageGen<PageLayout> {
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmHtmlVarForEach("PATCH");
+			o.htmHtmlVarHtml("PATCH");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmHtmlExclude("PATCH");
 			o.htmPdfExclude("PATCH");
 			o.htmLoginLogout("PATCH");
@@ -437,6 +449,9 @@ public class HtmlPartGenPage extends HtmlPartGenPageGen<PageLayout> {
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmHtmlVarForEach("Search");
+			o.htmHtmlVarHtml("Search");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmHtmlExclude("Search");
 			o.htmPdfExclude("Search");
 			o.htmLoginLogout("Search");
@@ -757,7 +772,7 @@ public class HtmlPartGenPage extends HtmlPartGenPageGen<PageLayout> {
 							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#postHtmlPartModal').hide(); ").f().sx("×").g("span");
 							e("h2").a("class", "w3-padding ").f().sx("Create an HTML part").g("h2");
 						} g("header");
-						{ e("div").a("class", "w3-container ").f();
+						{ e("div").a("class", "w3-container ").a("id", "postHtmlPartFormValues").f();
 							HtmlPart o = new HtmlPart();
 							o.setSiteRequest_(siteRequest_);
 
@@ -791,7 +806,7 @@ public class HtmlPartGenPage extends HtmlPartGenPageGen<PageLayout> {
 							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#putimportHtmlPartModal').hide(); ").f().sx("×").g("span");
 							e("h2").a("class", "w3-padding ").f().sx("Import HTML parts").g("h2");
 						} g("header");
-						{ e("div").a("class", "w3-container ").f();
+						{ e("div").a("class", "w3-container ").a("id", "putimportHtmlPartFormValues").f();
 							HtmlPart o = new HtmlPart();
 							o.setSiteRequest_(siteRequest_);
 
@@ -825,7 +840,7 @@ public class HtmlPartGenPage extends HtmlPartGenPageGen<PageLayout> {
 							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#putmergeHtmlPartModal').hide(); ").f().sx("×").g("span");
 							e("h2").a("class", "w3-padding ").f().sx("Merge HTML parts").g("h2");
 						} g("header");
-						{ e("div").a("class", "w3-container ").f();
+						{ e("div").a("class", "w3-container ").a("id", "putmergeHtmlPartFormValues").f();
 							HtmlPart o = new HtmlPart();
 							o.setSiteRequest_(siteRequest_);
 
@@ -859,7 +874,7 @@ public class HtmlPartGenPage extends HtmlPartGenPageGen<PageLayout> {
 							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#putcopyHtmlPartModal').hide(); ").f().sx("×").g("span");
 							e("h2").a("class", "w3-padding ").f().sx("Duplicate HTML parts").g("h2");
 						} g("header");
-						{ e("div").a("class", "w3-container ").f();
+						{ e("div").a("class", "w3-container ").a("id", "putcopyHtmlPartFormValues").f();
 							HtmlPart o = new HtmlPart();
 							o.setSiteRequest_(siteRequest_);
 
@@ -893,14 +908,11 @@ public class HtmlPartGenPage extends HtmlPartGenPageGen<PageLayout> {
 							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#patchHtmlPartModal').hide(); ").f().sx("×").g("span");
 							e("h2").a("class", "w3-padding ").f().sx("Modify HTML parts").g("h2");
 						} g("header");
-						{ e("div").a("class", "w3-container ").f();
+						{ e("div").a("class", "w3-container ").a("id", "patchHtmlPartFormValues").f();
 							HtmlPart o = new HtmlPart();
 							o.setSiteRequest_(siteRequest_);
 
-							// FormValues PATCH
-							{ e("form").a("action", "").a("id", "patchHtmlPartFormValues").a("onsubmit", "event.preventDefault(); return false; ").f();
-								htmlFormPATCHHtmlPart(o);
-							} g("form");
+							htmlFormPATCHHtmlPart(o);
 							e("button")
 								.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-margin w3-khaki ")
 								.a("onclick", "patchHtmlPart(null, $('#patchHtmlPartFormValues'), ", Optional.ofNullable(htmlPart_).map(HtmlPart::getPk).map(a -> a.toString()).orElse("null"), ", function() {}, function() {}); ")
