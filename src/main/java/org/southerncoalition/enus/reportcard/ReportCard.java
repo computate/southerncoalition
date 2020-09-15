@@ -1,5 +1,6 @@
 package org.southerncoalition.enus.reportcard;
 
+import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Rectangle;
@@ -33,6 +34,7 @@ import org.jfree.chart.labels.StandardCategoryItemLabelGenerator;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PiePlot;
 import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.plot.RingPlot;
 import org.jfree.chart.renderer.category.StackedBarRenderer;
 import org.jfree.chart.renderer.category.StandardBarPainter;
 import org.jfree.chart.title.LegendTitle;
@@ -1968,45 +1970,70 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _agencyDemographicsGraph(Wrap<String> w) {
-		DefaultPieDataset dataset = new DefaultPieDataset();
-		dataset.setValue( String.format("%s (%s%%)", "American Indian", pupilsIndianPercent), pupilsIndianPercent );  
-		dataset.setValue( String.format("%s (%s%%)", "Asian", pupilsAsianPercent), pupilsAsianPercent );  
-		dataset.setValue( String.format("%s (%s%%)", "Black", pupilsBlackPercent), pupilsBlackPercent );  
-		dataset.setValue( String.format("%s (%s%%)", "Hispanic", pupilsHispanicPercent), pupilsHispanicPercent );  
-		dataset.setValue( String.format("%s (%s%%)", "Multi-Racial", pupilsMultiRacialPercent), pupilsMultiRacialPercent );  
-		dataset.setValue( String.format("%s (%s%%)", "Pacific Islander", pupilsPacificIslanderPercent), pupilsPacificIslanderPercent );  
-		dataset.setValue( String.format("%s (%s%%)", "White", pupilsWhitePercent), pupilsWhitePercent );  
-
-		JFreeChart chart = ChartFactory.createPieChart(null, dataset, true, false, false);
-		PiePlot plot = (PiePlot)chart.getPlot();
-
-		LegendTitle legendOld = chart.getLegend();
-		LegendTitle legendNew = new LegendTitle(plot, new ColumnArrangement(), new ColumnArrangement());
-		legendNew.setPosition(legendOld.getPosition());
-		legendNew.setBackgroundPaint(legendOld.getBackgroundPaint());
-		legendNew.setItemFont(new Font("Arial", 0, 24));
-		plot.setLegendItemShape(new Rectangle(24, 24));
-		chart.removeLegend();
-		chart.addLegend(legendNew);
-		plot.setBackgroundPaint(null);
-		plot.setOutlinePaint(null);
-
-		plot.setLabelGenerator(null);
-		plot.setSectionPaint(dataset.getKey(0), Color.decode("#8064a2"));
-		plot.setSectionPaint(dataset.getKey(1), Color.decode("#308399"));
-		plot.setSectionPaint(dataset.getKey(2), Color.decode("#e97000"));
-		plot.setSectionPaint(dataset.getKey(3), Color.decode("#77933c"));
-		plot.setSectionPaint(dataset.getKey(4), Color.decode("#254061"));
-		plot.setSectionPaint(dataset.getKey(5), Color.decode("#edda38"));
-		plot.setSectionPaint(dataset.getKey(6), Color.decode("#a84039"));
-		BufferedImage image = chart.createBufferedImage(400, 600);
-		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		try {
+			DefaultPieDataset dataset = new DefaultPieDataset();
+			dataset.setValue( String.format("%s (%s%%)", "American Indian", pupilsIndianPercent), pupilsIndianPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "Asian", pupilsAsianPercent), pupilsAsianPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "Black", pupilsBlackPercent), pupilsBlackPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "Hispanic", pupilsHispanicPercent), pupilsHispanicPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "Multi-Racial", pupilsMultiRacialPercent), pupilsMultiRacialPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "Pacific Islander", pupilsPacificIslanderPercent), pupilsPacificIslanderPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "White", pupilsWhitePercent), pupilsWhitePercent );  
+	
+			JFreeChart chart = ChartFactory.createPieChart(null, dataset, true, false, false);
+			PiePlot plot = (PiePlot)chart.getPlot();
+	
+			LegendTitle legendOld = chart.getLegend();
+			LegendTitle legendNew = new LegendTitle(plot, new ColumnArrangement(), new ColumnArrangement());
+			legendNew.setPosition(legendOld.getPosition());
+			legendNew.setBackgroundPaint(legendOld.getBackgroundPaint());
+			legendNew.setItemFont(new Font("Arial", 0, 24));
+			plot.setLegendItemShape(new Rectangle(24, 24));
+			chart.removeLegend();
+			chart.addLegend(legendNew);
+			plot.setBackgroundPaint(null);
+			plot.setOutlinePaint(null);
+			plot.setShadowPaint(null);
+	
+			plot.setLabelGenerator(null);
+			plot.setSectionPaint(dataset.getKey(0), Color.decode("#8064a2"));
+			plot.setSectionPaint(dataset.getKey(1), Color.decode("#308399"));
+			plot.setSectionPaint(dataset.getKey(2), Color.decode("#e97000"));
+			plot.setSectionPaint(dataset.getKey(3), Color.decode("#77933c"));
+			plot.setSectionPaint(dataset.getKey(4), Color.decode("#254061"));
+			plot.setSectionPaint(dataset.getKey(5), Color.decode("#edda38"));
+			plot.setSectionPaint(dataset.getKey(6), Color.decode("#a84039"));
+
+			ChartRenderingInfo chartRenderingInfo = new ChartRenderingInfo(new StandardEntityCollection());
+			BufferedImage image = chart.createBufferedImage(400, 600, chartRenderingInfo);
+
+			ToolTipTagFragmentGenerator toolTipFragmentGenerator = new StandardToolTipTagFragmentGenerator() {
+				@Override
+				public String generateToolTipFragment(String toolTipText) {
+					return super.generateToolTipFragment(toolTipText);
+				}
+			};
+			URLTagFragmentGenerator urlTagFragmentGenerator = new StandardURLTagFragmentGenerator() {
+				@Override
+				public String generateURLFragment(String urlText) {
+					// TODO Auto-generated method stub
+					return super.generateURLFragment(urlText);
+				}
+			};
+
+			String imageMap = ImageMapUtils.getImageMap("map_" + w.var, chartRenderingInfo, toolTipFragmentGenerator, urlTagFragmentGenerator);
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
 			ImageIO.write(image, "png", baos);
 			baos.flush();
 			byte[] imageInByte = baos.toByteArray();
 			baos.close();
-			w.o(new String(Base64.getEncoder().encode(imageInByte), Charset.forName("UTF-8")));
+
+			String imageStr = new String(Base64.getEncoder().encode(imageInByte), Charset.forName("UTF-8"));
+
+			StringBuilder b = new StringBuilder();
+			b.append("                  ").append(imageMap).append("\n");
+			b.append("                  <img usemap=\"#map_").append(w.var).append("\" style=\"width: 200px; \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
+			w.o(b.toString());
 		} catch (IOException ex) {
 			ExceptionUtils.rethrow(ex);
 		}
@@ -2017,34 +2044,68 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _agencyStudentsByRaceGraph(Wrap<String> w) {
-		DefaultPieDataset dataset = new DefaultPieDataset();
-		dataset.setValue( String.format("%s (%s%%)", "White", pupilsWhitePercent), pupilsWhitePercent );  
-		dataset.setValue( String.format("%s (%s%%)", "Black", pupilsBlackPercent), pupilsBlackPercent );  
-		dataset.setValue( String.format("%s (%s%%)", "Other", pupilsOtherPercent), pupilsOtherPercent );  
-
-		JFreeChart chart = ChartFactory.createPieChart(null, dataset, true, false, false);
-		PiePlot plot = (PiePlot)chart.getPlot();
-
-		chart.removeLegend();
-		plot.setBackgroundPaint(null);
-		plot.setOutlinePaint(null);
-
-//		plot.setLabelGenerator(null);
-//		plot.setLabelDistributor(PieLabelDistributor);
-		plot.setLabelGap(0D);
-		plot.setSimpleLabelOffset(RectangleInsets.ZERO_INSETS);
-		plot.setSectionPaint(dataset.getKey(0), Color.decode("#a84039"));
-		plot.setSectionPaint(dataset.getKey(1), Color.decode("#e97000"));
-		plot.setSectionPaint(dataset.getKey(2), Color.decode("#00b0f0"));
-		BufferedImage image = chart.createBufferedImage(400, 600);
-		ByteArrayOutputStream baos = new ByteArrayOutputStream();
 		try {
+			DefaultPieDataset dataset = new DefaultPieDataset();
+			dataset.setValue( String.format("%s%%", pupilsWhitePercent.setScale(0, RoundingMode.HALF_UP)), pupilsWhitePercent );  
+			dataset.setValue( String.format("%s%%", pupilsBlackPercent.setScale(0, RoundingMode.HALF_UP)), pupilsBlackPercent );  
+			dataset.setValue( String.format("%s%%", pupilsOtherPercent.setScale(0, RoundingMode.HALF_UP)), pupilsOtherPercent );  
+
+			JFreeChart chart = ChartFactory.createRingChart(null, dataset, true, false, false);
+			RingPlot plot = (RingPlot)chart.getPlot();
+
+			chart.removeLegend();
+			plot.setBackgroundPaint(null);
+			plot.setOutlinePaint(null);
+
+			plot.setLabelGap(0D);
+			plot.setSimpleLabels(true);
+			plot.setLabelFont(new Font("Arial", 0, 24));
+			plot.setLabelBackgroundPaint(null);
+			plot.setLabelShadowPaint(null);
+			plot.setLabelOutlinePaint(null);
+			plot.setShadowPaint(null);
+			plot.setSectionDepth(0.5);
+			plot.setSimpleLabelOffset(new RectangleInsets(UnitType.RELATIVE, 0.12, 0.12, 0.12, 0.12));
+			plot.setSectionPaint(dataset.getKey(0), Color.decode("#a84039"));
+			plot.setSectionPaint(dataset.getKey(1), Color.decode("#e97000"));
+			plot.setSectionPaint(dataset.getKey(2), Color.decode("#00b0f0"));
+			plot.setOutlinePaint(Color.WHITE);
+			plot.setOutlineStroke(new BasicStroke(4));
+			plot.setDefaultSectionOutlinePaint(Color.WHITE);
+			plot.setDefaultSectionOutlineStroke(new BasicStroke(4));
+			plot.setSeparatorsVisible(false);
+
+			ChartRenderingInfo chartRenderingInfo = new ChartRenderingInfo(new StandardEntityCollection());
+			BufferedImage image = chart.createBufferedImage(400, 400, chartRenderingInfo);
+
+			ToolTipTagFragmentGenerator toolTipFragmentGenerator = new StandardToolTipTagFragmentGenerator() {
+				@Override
+				public String generateToolTipFragment(String toolTipText) {
+					return super.generateToolTipFragment(toolTipText);
+				}
+			};
+			URLTagFragmentGenerator urlTagFragmentGenerator = new StandardURLTagFragmentGenerator() {
+				@Override
+				public String generateURLFragment(String urlText) {
+					// TODO Auto-generated method stub
+					return super.generateURLFragment(urlText);
+				}
+			};
+
+			String imageMap = ImageMapUtils.getImageMap("map_" + w.var, chartRenderingInfo, toolTipFragmentGenerator, urlTagFragmentGenerator);
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
 			ImageIO.write(image, "png", baos);
 			baos.flush();
 			byte[] imageInByte = baos.toByteArray();
 			baos.close();
-			w.o(new String(Base64.getEncoder().encode(imageInByte), Charset.forName("UTF-8")));
-		} catch (IOException ex) {
+
+			String imageStr = new String(Base64.getEncoder().encode(imageInByte), Charset.forName("UTF-8"));
+
+			StringBuilder b = new StringBuilder();
+			b.append("                  ").append(imageMap).append("\n");
+			b.append("                  <img usemap=\"#map_").append(w.var).append("\" style=\"width: 200px; \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
+			w.o(b.toString());
+		} catch (NumberFormatException | IOException ex) {
 			ExceptionUtils.rethrow(ex);
 		}
 	}
@@ -2094,6 +2155,10 @@ public class ReportCard extends ReportCardGen<Cluster> {
 
 			ValueAxis axis = plot.getRangeAxis();
 			axis.setUpperMargin(0.2);
+			plot.getRangeAxis().setLabelFont(new Font("Arial", 0, 18));
+			plot.getRangeAxis().setTickLabelFont(new Font("Arial", 0, 18));
+			plot.getDomainAxis().setLabelFont(new Font("Arial", 0, 18));
+			plot.getDomainAxis().setTickLabelFont(new Font("Arial", 0, 18));
 
 			renderer.setItemLabelAnchorOffset(22);
 			renderer.setItemMargin(0.0);
@@ -2135,7 +2200,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 
 			StringBuilder b = new StringBuilder();
 			b.append("                  ").append(imageMap).append("\n");
-			b.append("                  <img usemap=\"#map_").append(w.var).append("\" class=\"w3-image \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
+			b.append("                  <img usemap=\"#map_").append(w.var).append("\" class=\"w3-image \" style=\"width: 500px; \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
 			w.o(b.toString());
 		} catch (IOException ex) {
 			ExceptionUtils.rethrow(ex);
@@ -2179,6 +2244,10 @@ public class ReportCard extends ReportCardGen<Cluster> {
 
 			ValueAxis axis = plot.getRangeAxis();
 			axis.setUpperMargin(0.2);
+			plot.getRangeAxis().setLabelFont(new Font("Arial", 0, 18));
+			plot.getRangeAxis().setTickLabelFont(new Font("Arial", 0, 18));
+			plot.getDomainAxis().setLabelFont(new Font("Arial", 0, 18));
+			plot.getDomainAxis().setTickLabelFont(new Font("Arial", 0, 18));
 
 			renderer.setItemLabelAnchorOffset(22);
 			renderer.setItemMargin(0.0);
@@ -2220,7 +2289,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 
 			StringBuilder b = new StringBuilder();
 			b.append("                  ").append(imageMap).append("\n");
-			b.append("                  <img usemap=\"#map_").append(w.var).append("\" class=\"w3-image \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
+			b.append("                  <img usemap=\"#map_").append(w.var).append("\" class=\"w3-image \" style=\"width: 500px; \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
 			w.o(b.toString());
 		} catch (IOException ex) {
 			ExceptionUtils.rethrow(ex);
@@ -2264,6 +2333,10 @@ public class ReportCard extends ReportCardGen<Cluster> {
 
 			ValueAxis axis = plot.getRangeAxis();
 			axis.setUpperMargin(0.2);
+			plot.getRangeAxis().setLabelFont(new Font("Arial", 0, 18));
+			plot.getRangeAxis().setTickLabelFont(new Font("Arial", 0, 18));
+			plot.getDomainAxis().setLabelFont(new Font("Arial", 0, 18));
+			plot.getDomainAxis().setTickLabelFont(new Font("Arial", 0, 18));
 
 			renderer.setItemLabelAnchorOffset(22);
 			renderer.setItemMargin(0.0);
@@ -2305,7 +2378,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 
 			StringBuilder b = new StringBuilder();
 			b.append("                  ").append(imageMap).append("\n");
-			b.append("                  <img usemap=\"#map_").append(w.var).append("\" class=\"w3-image \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
+			b.append("                  <img usemap=\"#map_").append(w.var).append("\" class=\"w3-image \" style=\"width: 500px; \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
 			w.o(b.toString());
 		} catch (IOException ex) {
 			ExceptionUtils.rethrow(ex);
@@ -2417,7 +2490,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 
 			StringBuilder b = new StringBuilder();
 			b.append("                  ").append(imageMap).append("\n");
-			b.append("                  <img usemap=\"#map_").append(w.var).append("\" class=\"w3-image \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
+			b.append("                  <img usemap=\"#map_").append(w.var).append("\" style=\"width: 300px; \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
 			w.o(b.toString());
 		} catch (IOException ex) {
 			ExceptionUtils.rethrow(ex);
