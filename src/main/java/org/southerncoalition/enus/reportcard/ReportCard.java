@@ -1987,7 +1987,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			LegendTitle legendNew = new LegendTitle(plot, new ColumnArrangement(), new ColumnArrangement());
 			legendNew.setPosition(legendOld.getPosition());
 			legendNew.setBackgroundPaint(legendOld.getBackgroundPaint());
-			legendNew.setItemFont(new Font("SansSerif", 0, 24));
+			legendNew.setItemFont(new Font(Font.SANS_SERIF, 0, 24));
 			plot.setLegendItemShape(new Rectangle(24, 24));
 			chart.removeLegend();
 			chart.addLegend(legendNew);
@@ -2059,7 +2059,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 
 			plot.setLabelGap(0D);
 			plot.setSimpleLabels(true);
-			plot.setLabelFont(new Font("SansSerif", 0, 24));
+			plot.setLabelFont(new Font(Font.SANS_SERIF, 0, 24));
 			plot.setLabelBackgroundPaint(null);
 			plot.setLabelShadowPaint(null);
 			plot.setLabelOutlinePaint(null);
@@ -2155,10 +2155,10 @@ public class ReportCard extends ReportCardGen<Cluster> {
 
 			ValueAxis axis = plot.getRangeAxis();
 			axis.setUpperMargin(0.2);
-			plot.getRangeAxis().setLabelFont(new Font("SansSerif", 0, 18));
-			plot.getRangeAxis().setTickLabelFont(new Font("SansSerif", 0, 18));
-			plot.getDomainAxis().setLabelFont(new Font("SansSerif", 0, 18));
-			plot.getDomainAxis().setTickLabelFont(new Font("SansSerif", 0, 18));
+			plot.getRangeAxis().setLabelFont(new Font(Font.SANS_SERIF, 0, 18));
+			plot.getRangeAxis().setTickLabelFont(new Font(Font.SANS_SERIF, 0, 18));
+			plot.getDomainAxis().setLabelFont(new Font(Font.SANS_SERIF, 0, 18));
+			plot.getDomainAxis().setTickLabelFont(new Font(Font.SANS_SERIF, 0, 18));
 
 			renderer.setItemLabelAnchorOffset(22);
 			renderer.setItemMargin(0.0);
@@ -2170,7 +2170,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			renderer.setDefaultItemLabelsVisible(true);
 			ItemLabelPosition position = new ItemLabelPosition(ItemLabelAnchor.OUTSIDE12, TextAnchor.TOP_CENTER);
 			renderer.setDefaultPositiveItemLabelPosition(position);
-			renderer.setDefaultItemLabelFont(new Font("SansSerif", 0, 18));
+			renderer.setDefaultItemLabelFont(new Font(Font.SANS_SERIF, 0, 18));
 
 			ChartRenderingInfo chartRenderingInfo = new ChartRenderingInfo(new StandardEntityCollection());
 			BufferedImage image = chart.createBufferedImage(1000, 280, chartRenderingInfo);
@@ -2244,10 +2244,10 @@ public class ReportCard extends ReportCardGen<Cluster> {
 
 			ValueAxis axis = plot.getRangeAxis();
 			axis.setUpperMargin(0.2);
-			plot.getRangeAxis().setLabelFont(new Font("SansSerif", 0, 18));
-			plot.getRangeAxis().setTickLabelFont(new Font("SansSerif", 0, 18));
-			plot.getDomainAxis().setLabelFont(new Font("SansSerif", 0, 18));
-			plot.getDomainAxis().setTickLabelFont(new Font("SansSerif", 0, 18));
+			plot.getRangeAxis().setLabelFont(new Font(Font.SANS_SERIF, 0, 18));
+			plot.getRangeAxis().setTickLabelFont(new Font(Font.SANS_SERIF, 0, 18));
+			plot.getDomainAxis().setLabelFont(new Font(Font.SANS_SERIF, 0, 18));
+			plot.getDomainAxis().setTickLabelFont(new Font(Font.SANS_SERIF, 0, 18));
 
 			renderer.setItemLabelAnchorOffset(22);
 			renderer.setItemMargin(0.0);
@@ -2259,7 +2259,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			renderer.setDefaultItemLabelsVisible(true);
 			ItemLabelPosition position = new ItemLabelPosition(ItemLabelAnchor.OUTSIDE12, TextAnchor.TOP_CENTER);
 			renderer.setDefaultPositiveItemLabelPosition(position);
-			renderer.setDefaultItemLabelFont(new Font("SansSerif", 0, 18));
+			renderer.setDefaultItemLabelFont(new Font(Font.SANS_SERIF, 0, 18));
 
 			ChartRenderingInfo chartRenderingInfo = new ChartRenderingInfo(new StandardEntityCollection());
 			BufferedImage image = chart.createBufferedImage(1000, 280, chartRenderingInfo);
@@ -2333,10 +2333,10 @@ public class ReportCard extends ReportCardGen<Cluster> {
 
 			ValueAxis axis = plot.getRangeAxis();
 			axis.setUpperMargin(0.2);
-			plot.getRangeAxis().setLabelFont(new Font("SansSerif", 0, 18));
-			plot.getRangeAxis().setTickLabelFont(new Font("SansSerif", 0, 18));
-			plot.getDomainAxis().setLabelFont(new Font("SansSerif", 0, 18));
-			plot.getDomainAxis().setTickLabelFont(new Font("SansSerif", 0, 18));
+			plot.getRangeAxis().setLabelFont(new Font(Font.SANS_SERIF, 0, 18));
+			plot.getRangeAxis().setTickLabelFont(new Font(Font.SANS_SERIF, 0, 18));
+			plot.getDomainAxis().setLabelFont(new Font(Font.SANS_SERIF, 0, 18));
+			plot.getDomainAxis().setTickLabelFont(new Font(Font.SANS_SERIF, 0, 18));
 
 			renderer.setItemLabelAnchorOffset(22);
 			renderer.setItemMargin(0.0);
@@ -2348,7 +2348,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			renderer.setDefaultItemLabelsVisible(true);
 			ItemLabelPosition position = new ItemLabelPosition(ItemLabelAnchor.OUTSIDE12, TextAnchor.TOP_CENTER);
 			renderer.setDefaultPositiveItemLabelPosition(position);
-			renderer.setDefaultItemLabelFont(new Font("SansSerif", 0, 18));
+			renderer.setDefaultItemLabelFont(new Font(Font.SANS_SERIF, 0, 18));
 
 			ChartRenderingInfo chartRenderingInfo = new ChartRenderingInfo(new StandardEntityCollection());
 			BufferedImage image = chart.createBufferedImage(1000, 280, chartRenderingInfo);
@@ -2439,7 +2439,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			LegendTitle legendNew = new LegendTitle(plot, new ColumnArrangement(), new ColumnArrangement());
 			legendNew.setPosition(RectangleEdge.RIGHT);
 			legendNew.setBackgroundPaint(legendOld.getBackgroundPaint());
-			legendNew.setItemFont(new Font("SansSerif", 0, 24));
+			legendNew.setItemFont(new Font(Font.SANS_SERIF, 0, 24));
 			plot.setLegendItemShape(new Rectangle(24, 24));
 			chart.removeLegend();
 			chart.addLegend(legendNew);
