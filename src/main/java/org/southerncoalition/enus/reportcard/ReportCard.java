@@ -2044,69 +2044,71 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _agencyStudentsByRaceGraph(Wrap<String> w) {
-		try {
-			DefaultPieDataset dataset = new DefaultPieDataset();
-			dataset.setValue( String.format("%s%%", pupilsWhitePercent.setScale(0, RoundingMode.HALF_UP)), pupilsWhitePercent );  
-			dataset.setValue( String.format("%s%%", pupilsBlackPercent.setScale(0, RoundingMode.HALF_UP)), pupilsBlackPercent );  
-			dataset.setValue( String.format("%s%%", pupilsOtherPercent.setScale(0, RoundingMode.HALF_UP)), pupilsOtherPercent );  
-
-			JFreeChart chart = ChartFactory.createRingChart(null, dataset, true, false, false);
-			RingPlot plot = (RingPlot)chart.getPlot();
-
-			chart.removeLegend();
-			plot.setBackgroundPaint(null);
-			plot.setOutlinePaint(null);
-
-			plot.setLabelGap(0D);
-			plot.setSimpleLabels(true);
-			plot.setLabelFont(new Font(Font.SANS_SERIF, 0, 24));
-			plot.setLabelBackgroundPaint(null);
-			plot.setLabelShadowPaint(null);
-			plot.setLabelOutlinePaint(null);
-			plot.setShadowPaint(null);
-			plot.setSectionDepth(0.5);
-			plot.setSimpleLabelOffset(new RectangleInsets(UnitType.RELATIVE, 0.12, 0.12, 0.12, 0.12));
-			plot.setSectionPaint(dataset.getKey(0), Color.decode("#a84039"));
-			plot.setSectionPaint(dataset.getKey(1), Color.decode("#e97000"));
-			plot.setSectionPaint(dataset.getKey(2), Color.decode("#00b0f0"));
-			plot.setOutlinePaint(Color.WHITE);
-			plot.setOutlineStroke(new BasicStroke(4));
-			plot.setDefaultSectionOutlinePaint(Color.WHITE);
-			plot.setDefaultSectionOutlineStroke(new BasicStroke(4));
-			plot.setSeparatorsVisible(false);
-
-			ChartRenderingInfo chartRenderingInfo = new ChartRenderingInfo(new StandardEntityCollection());
-			BufferedImage image = chart.createBufferedImage(400, 400, chartRenderingInfo);
-
-			ToolTipTagFragmentGenerator toolTipFragmentGenerator = new StandardToolTipTagFragmentGenerator() {
-				@Override
-				public String generateToolTipFragment(String toolTipText) {
-					return super.generateToolTipFragment(toolTipText);
-				}
-			};
-			URLTagFragmentGenerator urlTagFragmentGenerator = new StandardURLTagFragmentGenerator() {
-				@Override
-				public String generateURLFragment(String urlText) {
-					// TODO Auto-generated method stub
-					return super.generateURLFragment(urlText);
-				}
-			};
-
-			String imageMap = ImageMapUtils.getImageMap("map_" + w.var, chartRenderingInfo, toolTipFragmentGenerator, urlTagFragmentGenerator);
-			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			ImageIO.write(image, "png", baos);
-			baos.flush();
-			byte[] imageInByte = baos.toByteArray();
-			baos.close();
-
-			String imageStr = new String(Base64.getEncoder().encode(imageInByte), Charset.forName("UTF-8"));
-
-			StringBuilder b = new StringBuilder();
-			b.append("                  ").append(imageMap).append("\n");
-			b.append("                  <img usemap=\"#map_").append(w.var).append("\" style=\"width: 200px; \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
-			w.o(b.toString());
-		} catch (NumberFormatException | IOException ex) {
-			ExceptionUtils.rethrow(ex);
+		if(pupilsWhitePercent != null && pupilsBlackPercent != null && pupilsOtherPercent != null) {
+			try {
+				DefaultPieDataset dataset = new DefaultPieDataset();
+				dataset.setValue( String.format("%s%%", pupilsWhitePercent.setScale(0, RoundingMode.HALF_UP)), pupilsWhitePercent );  
+				dataset.setValue( String.format("%s%%", pupilsBlackPercent.setScale(0, RoundingMode.HALF_UP)), pupilsBlackPercent );  
+				dataset.setValue( String.format("%s%%", pupilsOtherPercent.setScale(0, RoundingMode.HALF_UP)), pupilsOtherPercent );  
+	
+				JFreeChart chart = ChartFactory.createRingChart(null, dataset, true, false, false);
+				RingPlot plot = (RingPlot)chart.getPlot();
+	
+				chart.removeLegend();
+				plot.setBackgroundPaint(null);
+				plot.setOutlinePaint(null);
+	
+				plot.setLabelGap(0D);
+				plot.setSimpleLabels(true);
+				plot.setLabelFont(new Font(Font.SANS_SERIF, 0, 24));
+				plot.setLabelBackgroundPaint(null);
+				plot.setLabelShadowPaint(null);
+				plot.setLabelOutlinePaint(null);
+				plot.setShadowPaint(null);
+				plot.setSectionDepth(0.5);
+				plot.setSimpleLabelOffset(new RectangleInsets(UnitType.RELATIVE, 0.12, 0.12, 0.12, 0.12));
+				plot.setSectionPaint(dataset.getKey(0), Color.decode("#a84039"));
+				plot.setSectionPaint(dataset.getKey(1), Color.decode("#e97000"));
+				plot.setSectionPaint(dataset.getKey(2), Color.decode("#00b0f0"));
+				plot.setOutlinePaint(Color.WHITE);
+				plot.setOutlineStroke(new BasicStroke(4));
+				plot.setDefaultSectionOutlinePaint(Color.WHITE);
+				plot.setDefaultSectionOutlineStroke(new BasicStroke(4));
+				plot.setSeparatorsVisible(false);
+	
+				ChartRenderingInfo chartRenderingInfo = new ChartRenderingInfo(new StandardEntityCollection());
+				BufferedImage image = chart.createBufferedImage(400, 400, chartRenderingInfo);
+	
+				ToolTipTagFragmentGenerator toolTipFragmentGenerator = new StandardToolTipTagFragmentGenerator() {
+					@Override
+					public String generateToolTipFragment(String toolTipText) {
+						return super.generateToolTipFragment(toolTipText);
+					}
+				};
+				URLTagFragmentGenerator urlTagFragmentGenerator = new StandardURLTagFragmentGenerator() {
+					@Override
+					public String generateURLFragment(String urlText) {
+						// TODO Auto-generated method stub
+						return super.generateURLFragment(urlText);
+					}
+				};
+	
+				String imageMap = ImageMapUtils.getImageMap("map_" + w.var, chartRenderingInfo, toolTipFragmentGenerator, urlTagFragmentGenerator);
+				ByteArrayOutputStream baos = new ByteArrayOutputStream();
+				ImageIO.write(image, "png", baos);
+				baos.flush();
+				byte[] imageInByte = baos.toByteArray();
+				baos.close();
+	
+				String imageStr = new String(Base64.getEncoder().encode(imageInByte), Charset.forName("UTF-8"));
+	
+				StringBuilder b = new StringBuilder();
+				b.append("                  ").append(imageMap).append("\n");
+				b.append("                  <img usemap=\"#map_").append(w.var).append("\" style=\"width: 200px; \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
+				w.o(b.toString());
+			} catch (NumberFormatException | IOException ex) {
+				ExceptionUtils.rethrow(ex);
+			}
 		}
 	}
 
