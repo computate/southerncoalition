@@ -576,7 +576,7 @@ public class SiteAgencyGenPage extends SiteAgencyGenPageGen<PageLayout> {
 							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#putimportSiteAgencyModal').hide(); ").f().sx("×").g("span");
 							e("h2").a("class", "w3-padding ").f().sx("Import agencies").g("h2");
 						} g("header");
-						{ e("div").a("class", "w3-container ").f();
+						{ e("div").a("class", "w3-container ").a("id", "putimportSiteAgencyFormValues").f();
 							SiteAgency o = new SiteAgency();
 							o.setSiteRequest_(siteRequest_);
 
@@ -610,7 +610,7 @@ public class SiteAgencyGenPage extends SiteAgencyGenPageGen<PageLayout> {
 							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#putmergeSiteAgencyModal').hide(); ").f().sx("×").g("span");
 							e("h2").a("class", "w3-padding ").f().sx("Merge agencies").g("h2");
 						} g("header");
-						{ e("div").a("class", "w3-container ").f();
+						{ e("div").a("class", "w3-container ").a("id", "putmergeSiteAgencyFormValues").f();
 							SiteAgency o = new SiteAgency();
 							o.setSiteRequest_(siteRequest_);
 
@@ -644,7 +644,7 @@ public class SiteAgencyGenPage extends SiteAgencyGenPageGen<PageLayout> {
 							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#putcopySiteAgencyModal').hide(); ").f().sx("×").g("span");
 							e("h2").a("class", "w3-padding ").f().sx("Duplicate agencies").g("h2");
 						} g("header");
-						{ e("div").a("class", "w3-container ").f();
+						{ e("div").a("class", "w3-container ").a("id", "putcopySiteAgencyFormValues").f();
 							SiteAgency o = new SiteAgency();
 							o.setSiteRequest_(siteRequest_);
 
@@ -678,7 +678,7 @@ public class SiteAgencyGenPage extends SiteAgencyGenPageGen<PageLayout> {
 							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#postSiteAgencyModal').hide(); ").f().sx("×").g("span");
 							e("h2").a("class", "w3-padding ").f().sx("Create a agency").g("h2");
 						} g("header");
-						{ e("div").a("class", "w3-container ").f();
+						{ e("div").a("class", "w3-container ").a("id", "postSiteAgencyFormValues").f();
 							SiteAgency o = new SiteAgency();
 							o.setSiteRequest_(siteRequest_);
 
@@ -712,14 +712,11 @@ public class SiteAgencyGenPage extends SiteAgencyGenPageGen<PageLayout> {
 							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#patchSiteAgencyModal').hide(); ").f().sx("×").g("span");
 							e("h2").a("class", "w3-padding ").f().sx("Modify agencies").g("h2");
 						} g("header");
-						{ e("div").a("class", "w3-container ").f();
+						{ e("div").a("class", "w3-container ").a("id", "patchSiteAgencyFormValues").f();
 							SiteAgency o = new SiteAgency();
 							o.setSiteRequest_(siteRequest_);
 
-							// FormValues PATCH
-							{ e("form").a("action", "").a("id", "patchSiteAgencyFormValues").a("onsubmit", "event.preventDefault(); return false; ").f();
-								htmlFormPATCHSiteAgency(o);
-							} g("form");
+							htmlFormPATCHSiteAgency(o);
 							e("button")
 								.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-margin w3-pale-yellow ")
 								.a("onclick", "patchSiteAgency(null, $('#patchSiteAgencyFormValues'), ", Optional.ofNullable(siteAgency_).map(SiteAgency::getPk).map(a -> a.toString()).orElse("null"), ", function() {}, function() {}); ")

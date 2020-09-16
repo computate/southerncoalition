@@ -567,7 +567,7 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#putimportSiteStateModal').hide(); ").f().sx("×").g("span");
 							e("h2").a("class", "w3-padding ").f().sx("Import states").g("h2");
 						} g("header");
-						{ e("div").a("class", "w3-container ").f();
+						{ e("div").a("class", "w3-container ").a("id", "putimportSiteStateFormValues").f();
 							SiteState o = new SiteState();
 							o.setSiteRequest_(siteRequest_);
 
@@ -601,7 +601,7 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#putmergeSiteStateModal').hide(); ").f().sx("×").g("span");
 							e("h2").a("class", "w3-padding ").f().sx("Merge states").g("h2");
 						} g("header");
-						{ e("div").a("class", "w3-container ").f();
+						{ e("div").a("class", "w3-container ").a("id", "putmergeSiteStateFormValues").f();
 							SiteState o = new SiteState();
 							o.setSiteRequest_(siteRequest_);
 
@@ -635,7 +635,7 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#putcopySiteStateModal').hide(); ").f().sx("×").g("span");
 							e("h2").a("class", "w3-padding ").f().sx("Duplicate states").g("h2");
 						} g("header");
-						{ e("div").a("class", "w3-container ").f();
+						{ e("div").a("class", "w3-container ").a("id", "putcopySiteStateFormValues").f();
 							SiteState o = new SiteState();
 							o.setSiteRequest_(siteRequest_);
 
@@ -669,7 +669,7 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#postSiteStateModal').hide(); ").f().sx("×").g("span");
 							e("h2").a("class", "w3-padding ").f().sx("Create a state").g("h2");
 						} g("header");
-						{ e("div").a("class", "w3-container ").f();
+						{ e("div").a("class", "w3-container ").a("id", "postSiteStateFormValues").f();
 							SiteState o = new SiteState();
 							o.setSiteRequest_(siteRequest_);
 
@@ -703,14 +703,11 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 							e("span").a("class", "w3-button w3-display-topright ").a("onclick", "$('#patchSiteStateModal').hide(); ").f().sx("×").g("span");
 							e("h2").a("class", "w3-padding ").f().sx("Modify states").g("h2");
 						} g("header");
-						{ e("div").a("class", "w3-container ").f();
+						{ e("div").a("class", "w3-container ").a("id", "patchSiteStateFormValues").f();
 							SiteState o = new SiteState();
 							o.setSiteRequest_(siteRequest_);
 
-							// FormValues PATCH
-							{ e("form").a("action", "").a("id", "patchSiteStateFormValues").a("onsubmit", "event.preventDefault(); return false; ").f();
-								htmlFormPATCHSiteState(o);
-							} g("form");
+							htmlFormPATCHSiteState(o);
 							e("button")
 								.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-margin w3-pale-blue ")
 								.a("onclick", "patchSiteState(null, $('#patchSiteStateFormValues'), ", Optional.ofNullable(siteState_).map(SiteState::getPk).map(a -> a.toString()).orElse("null"), ", function() {}, function() {}); ")
