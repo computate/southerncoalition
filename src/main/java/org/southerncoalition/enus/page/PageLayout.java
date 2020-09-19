@@ -3,10 +3,7 @@ package org.southerncoalition.enus.page;
 
 
 import java.io.UnsupportedEncodingException;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.net.URLEncoder;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
@@ -25,8 +22,8 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.commons.lang3.reflect.MethodUtils;
 import org.apache.solr.common.SolrDocument;
-import org.southerncoalition.enus.config.SiteConfig;
 import org.southerncoalition.enus.agency.SiteAgencyGenPage;
+import org.southerncoalition.enus.config.SiteConfig;
 import org.southerncoalition.enus.design.PageDesignGenPage;
 import org.southerncoalition.enus.html.part.HtmlPart;
 import org.southerncoalition.enus.html.part.HtmlPartGenPage;
@@ -37,26 +34,6 @@ import org.southerncoalition.enus.user.SiteUser;
 import org.southerncoalition.enus.wrap.Wrap;
 import org.southerncoalition.enus.writer.AllWriter;
 import org.southerncoalition.enus.xml.UtilXml;
-
-import net.authorize.Environment;
-import net.authorize.api.contract.v1.ArrayOfLineItem;
-import net.authorize.api.contract.v1.ArrayOfSetting;
-import net.authorize.api.contract.v1.CustomerProfilePaymentType;
-import net.authorize.api.contract.v1.GetHostedPaymentPageRequest;
-import net.authorize.api.contract.v1.GetHostedPaymentPageResponse;
-import net.authorize.api.contract.v1.GetHostedProfilePageRequest;
-import net.authorize.api.contract.v1.GetHostedProfilePageResponse;
-import net.authorize.api.contract.v1.LineItemType;
-import net.authorize.api.contract.v1.MerchantAuthenticationType;
-import net.authorize.api.contract.v1.MessageTypeEnum;
-import net.authorize.api.contract.v1.OrderType;
-import net.authorize.api.contract.v1.SettingType;
-import net.authorize.api.contract.v1.TransactionRequestType;
-import net.authorize.api.contract.v1.TransactionTypeEnum;
-import net.authorize.api.controller.GetHostedPaymentPageController;
-import net.authorize.api.controller.GetHostedProfilePageController;
-import net.authorize.api.controller.GetTransactionListForCustomerController;
-import net.authorize.api.controller.base.ApiOperationBase;
 
 
 /**
