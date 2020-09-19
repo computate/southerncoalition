@@ -429,6 +429,51 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		return (SiteConfig)this;
 	}
 
+	///////////////////
+	// siteInstances //
+	///////////////////
+
+	/**	 The entity siteInstances
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Integer siteInstances;
+	@JsonIgnore
+	public Wrap<Integer> siteInstancesWrap = new Wrap<Integer>().p(this).c(Integer.class).var("siteInstances").o(siteInstances);
+
+	/**	<br/> The entity siteInstances
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.config.SiteConfig&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:siteInstances">Find the entity siteInstances in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _siteInstances(Wrap<Integer> c);
+
+	public Integer getSiteInstances() {
+		return siteInstances;
+	}
+
+	public void setSiteInstances(Integer siteInstances) {
+		this.siteInstances = siteInstances;
+		this.siteInstancesWrap.alreadyInitialized = true;
+	}
+	public SiteConfig setSiteInstances(String o) {
+		if(NumberUtils.isParsable(o))
+			this.siteInstances = Integer.parseInt(o);
+		this.siteInstancesWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	protected SiteConfig siteInstancesInit() {
+		if(!siteInstancesWrap.alreadyInitialized) {
+			_siteInstances(siteInstancesWrap);
+			if(siteInstances == null)
+				setSiteInstances(siteInstancesWrap.o);
+		}
+		siteInstancesWrap.alreadyInitialized(true);
+		return (SiteConfig)this;
+	}
+
 	///////////////
 	// authRealm //
 	///////////////
@@ -2590,6 +2635,7 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		domainNameInit();
 		siteHostNameInit();
 		sitePortInit();
+		siteInstancesInit();
 		authRealmInit();
 		authResourceInit();
 		authSecretInit();
@@ -2690,6 +2736,8 @@ public abstract class SiteConfigGen<DEV> extends Object {
 				return oSiteConfig.siteHostName;
 			case "sitePort":
 				return oSiteConfig.sitePort;
+			case "siteInstances":
+				return oSiteConfig.siteInstances;
 			case "authRealm":
 				return oSiteConfig.authRealm;
 			case "authResource":
