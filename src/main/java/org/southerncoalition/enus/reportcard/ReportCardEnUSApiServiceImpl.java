@@ -13,7 +13,6 @@ import org.apache.solr.common.SolrInputDocument;
 import org.southerncoalition.enus.context.SiteContextEnUS;
 import org.southerncoalition.enus.request.SiteRequestEnUS;
 import org.southerncoalition.enus.search.SearchList;
-import org.southerncoalition.enus.statistic.SiteStatistic;
 
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
