@@ -10,6 +10,7 @@ import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServerException;
@@ -669,7 +670,7 @@ public class AppVertx extends AppVertxGen<AbstractVerticle> {
 		Integer sitePort = siteConfig.getSitePort();
 		HttpServerOptions options = new HttpServerOptions();
 		Boolean ssl = false;
-		if(siteConfig.getSslJksPath() != null && new File(siteConfig.getSslJksPath()).exists()) {
+		if(StringUtils.isNotBlank(siteConfig.getSslJksPath()) && new File(siteConfig.getSslJksPath()).exists()) {
 			options.setKeyStoreOptions(new JksOptions().setPath(siteConfig.getSslJksPath()).setPassword(siteConfig.getSslJksPassword()));
 			ssl = true;
 			options.setSsl(ssl);
