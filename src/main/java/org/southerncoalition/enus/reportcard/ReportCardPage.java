@@ -6,6 +6,11 @@ package org.southerncoalition.enus.reportcard;
 public class ReportCardPage extends ReportCardPageGen<ReportCardGenPage> {
 
 	@Override public void htmlFormPageReportCard(ReportCard o) {
+		{ e("div").a("class", "w3-padding ").f();
+			{ e("a").a("href", siteBaseUrl, "/page/report-card-by-agency?var=agencyId:", reportCard_.getAgencyId(), "&var=reportCardStartYear:", reportCard_.getReportCardStartYear()).f();
+				sx("View the ", reportCard_.getAgencyName(), " ", reportCard_.getReportCardYearsStr(), " report card");
+			} g("a");
+		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmPk("Page");
 			o.htmCreated("Page");

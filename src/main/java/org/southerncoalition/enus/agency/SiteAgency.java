@@ -2,6 +2,7 @@ package org.southerncoalition.enus.agency;
 
 import java.util.List;
 
+import org.apache.commons.lang3.StringUtils;
 import org.southerncoalition.enus.cluster.Cluster;
 import org.southerncoalition.enus.search.SearchList;
 import org.southerncoalition.enus.state.SiteState;
@@ -152,13 +153,19 @@ public class SiteAgency extends SiteAgencyGen<Cluster> {
 	 * VarTitle: true
 	 */ 
 	protected void _agencyCompleteName(Wrap<String> c) {
-		c.o(agencyName + " in " + stateName + " (" + stateAbbreviation + ")");
+		if(StringUtils.equals(agencyName, stateName))
+			c.o(stateName + " (" + stateAbbreviation + ")");
+		else
+			c.o(agencyName + " in " + stateName + " (" + stateAbbreviation + ")");
 	}
 
 	/**
 	 * {@inheritDoc}
 	 */
 	@Override() protected void  _objectTitle(Wrap<String> c) {
-		c.o(agencyName + " in " + stateName + " (" + stateAbbreviation + ")");
+		if(StringUtils.equals(agencyName, stateName))
+			c.o(stateName + " (" + stateAbbreviation + ")");
+		else
+			c.o(agencyName + " in " + stateName + " (" + stateAbbreviation + ")");
 	}
 }

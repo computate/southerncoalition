@@ -100,7 +100,7 @@ public class SiteState extends SiteStateGen<Cluster> {
 	 * VarH2: true
 	 * VarTitle: true
 	 */ 
-	protected void _agencyCompleteName(Wrap<String> c) {
+	protected void _stateCompleteName(Wrap<String> c) {
 		c.o(stateName + " (" + stateAbbreviation + ")");
 	}
 
