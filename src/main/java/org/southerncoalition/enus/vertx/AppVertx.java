@@ -10,6 +10,7 @@ import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Consumer;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServerException;
@@ -666,16 +667,19 @@ public class AppVertx extends AppVertxGen<AbstractVerticle> {
 		Json.mapper.registerModule(module);
 
 		String siteHostName = siteConfig.getSiteHostName();
+		String siteBaseUrl = siteConfig.getSiteBaseUrl();
 		Integer sitePort = siteConfig.getSitePort();
 		HttpServerOptions options = new HttpServerOptions();
-		if(siteConfig.getSslJksPath() != null && new File(siteConfig.getSslJksPath()).exists()) {
+		Boolean ssl = false;
+		if(StringUtils.isNotBlank(siteConfig.getSslJksPath()) && StringUtils.startsWith(siteBaseUrl, "https://") && new File(siteConfig.getSslJksPath()).exists()) {
 			options.setKeyStoreOptions(new JksOptions().setPath(siteConfig.getSslJksPath()).setPassword(siteConfig.getSslJksPassword()));
-			options.setSsl(true);
+			ssl = true;
+			options.setSsl(ssl);
 			LOGGER.info(String.format(startServerSsl, siteConfig.getSslJksPath()));
 		}
 		options.setPort(sitePort);
 
-		LOGGER.info(String.format(startServerBeforeServer, "https", siteHostName, sitePort));
+		LOGGER.info(String.format(startServerBeforeServer, (ssl ? "https" : "http"), siteHostName, sitePort));
 		vertx.createHttpServer(options).requestHandler(siteRouter).listen(ar -> {
 			if (ar.succeeded()) {
 				LOGGER.info(String.format(startServerSuccessServer, "*", sitePort));
