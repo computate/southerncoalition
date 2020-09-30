@@ -210,7 +210,7 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 		l.setC(SiteAgency.class);
 
 		Long agencyKey = Optional.ofNullable(reportCardSearch.first()).map(ReportCard::getAgencyKey).orElse(null);
-		if(pageDesignId != null && pageDesignId.endsWith("-reportCard-form") && agencyKey != null) {
+		if(agencyKey != null) {
 			l.addFilterQuery("pk_indexed_long:" + agencyKey);
 		} else {
 			for(String var : siteRequest_.getRequestVars().keySet()) {
@@ -225,16 +225,8 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 	}
 
 	protected void _agency_(Wrap<SiteAgency> c) {
-		if(pageDesignId != null && pageDesignId.endsWith("-reportCard-form")) {
-			if(agencySearch.size() == 0) {
-				throw new RuntimeException("No agency was found for the query: " + siteRequest_.getOperationRequest().getParams().getJsonObject("query").encode());
-			}
-			else if(agencySearch.size() == 1) {
-				c.o(agencySearch.get(0));
-			}
-			else  {
-				throw new RuntimeException("More than one agency was found for the query: " + siteRequest_.getOperationRequest().getParams().getJsonObject("query").encode());
-			}
+		if(agencySearch.size() == 1) {
+			c.o(agencySearch.get(0));
 		}
 	}
 
@@ -309,6 +301,26 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 	protected void _stateName(Wrap<String> c) {
 		if(agency_ != null)
 			c.o(agency_.getStateName());
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * Ignore: true
+	 */ 
+	protected void _stateReportCardSearch(SearchList<ReportCard> l) {
+		if(stateKey != null) {
+			l.setQuery("*:*");
+			l.addFilterQuery("stateKey_indexed_long:" + stateKey);
+			l.addFilterQuery("agencyName_indexed_string:" + ClientUtils.escapeQueryChars(stateName));
+			l.setC(ReportCard.class);
+			l.setStore(true);
+		}
+	}
+
+	protected void _stateReportCard_(Wrap<ReportCard> c) {
+		if(stateReportCardSearch.size() > 0) {
+			c.o(stateReportCardSearch.get(0));
+		}
 	}
 
 	/**

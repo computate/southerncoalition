@@ -62,8 +62,8 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 	}
 
 	@Override protected void _pageH2(Wrap<String> c) {
-		if(siteState_ != null && siteState_.getAgencyCompleteName() != null)
-			c.o(siteState_.getAgencyCompleteName());
+		if(siteState_ != null && siteState_.getStateCompleteName() != null)
+			c.o(siteState_.getStateCompleteName());
 	}
 
 	@Override protected void _pageH3(Wrap<String> c) {
@@ -71,8 +71,8 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 	}
 
 	@Override protected void _pageTitle(Wrap<String> c) {
-		if(siteState_ != null && siteState_.getAgencyCompleteName() != null)
-			c.o(siteState_.getAgencyCompleteName());
+		if(siteState_ != null && siteState_.getStateCompleteName() != null)
+			c.o(siteState_.getStateCompleteName());
 		else if(siteState_ != null)
 			c.o("states");
 		else if(listSiteState == null || listSiteState.size() == 0)
@@ -803,7 +803,7 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 					.a("name", "suggestSiteState")
 					.a("id", "suggestSiteState", id)
 					.a("autocomplete", "off")
-					.a("oninput", "suggestSiteStateObjectSuggest( [ { 'name': 'q', 'value': 'objectSuggest:' + $(this).val() }, { 'name': 'rows', 'value': '10' }, { 'name': 'fl', 'value': 'pk,pageUrlPk,agencyCompleteName' } ], $('#suggestListSiteState", id, "'), ", p.getSiteRequest_().getRequestPk(), "); ")
+					.a("oninput", "suggestSiteStateObjectSuggest( [ { 'name': 'q', 'value': 'objectSuggest:' + $(this).val() }, { 'name': 'rows', 'value': '10' }, { 'name': 'fl', 'value': 'pk,pageUrlPk,stateCompleteName' } ], $('#suggestListSiteState", id, "'), ", p.getSiteRequest_().getRequestPk(), "); ")
 					.a("onkeyup", "if (event.keyCode === 13) { event.preventDefault(); window.location.href = '/state?q=", query1, ":' + encodeURIComponent(this.value) + '", fqs, sorts, "&start=", start2, "&rows=", rows1, "'; }"); 
 				if(listSiteState != null)
 					p.a("value", query2);

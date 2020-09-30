@@ -1245,6 +1245,82 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		return stateName == null ? "" : StringEscapeUtils.escapeHtml4(strStateName());
 	}
 
+	///////////////////////////
+	// stateReportCardSearch //
+	///////////////////////////
+
+	/**	 The entity stateReportCardSearch
+	 *	Il est construit avant d'être initialisé avec le constructeur par défaut SearchList<ReportCard>(). 
+	 */
+	@JsonIgnore
+	@JsonInclude(Include.NON_NULL)
+	protected SearchList<ReportCard> stateReportCardSearch = new SearchList<ReportCard>();
+	@JsonIgnore
+	public Wrap<SearchList<ReportCard>> stateReportCardSearchWrap = new Wrap<SearchList<ReportCard>>().p(this).c(SearchList.class).var("stateReportCardSearch").o(stateReportCardSearch);
+
+	/**	<br/> The entity stateReportCardSearch
+	 *  It is constructed before being initialized with the constructor by default SearchList<ReportCard>(). 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:stateReportCardSearch">Find the entity stateReportCardSearch in Solr</a>
+	 * <br/>
+	 * @param stateReportCardSearch is the entity already constructed. 
+	 **/
+	protected abstract void _stateReportCardSearch(SearchList<ReportCard> l);
+
+	public SearchList<ReportCard> getStateReportCardSearch() {
+		return stateReportCardSearch;
+	}
+
+	public void setStateReportCardSearch(SearchList<ReportCard> stateReportCardSearch) {
+		this.stateReportCardSearch = stateReportCardSearch;
+		this.stateReportCardSearchWrap.alreadyInitialized = true;
+	}
+	protected DesignDisplayPage stateReportCardSearchInit() {
+		if(!stateReportCardSearchWrap.alreadyInitialized) {
+			_stateReportCardSearch(stateReportCardSearch);
+		}
+		stateReportCardSearch.initDeepForClass(siteRequest_);
+		stateReportCardSearchWrap.alreadyInitialized(true);
+		return (DesignDisplayPage)this;
+	}
+
+	//////////////////////
+	// stateReportCard_ //
+	//////////////////////
+
+	/**	 The entity stateReportCard_
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected ReportCard stateReportCard_;
+	@JsonIgnore
+	public Wrap<ReportCard> stateReportCard_Wrap = new Wrap<ReportCard>().p(this).c(ReportCard.class).var("stateReportCard_").o(stateReportCard_);
+
+	/**	<br/> The entity stateReportCard_
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignDisplayPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:stateReportCard_">Find the entity stateReportCard_ in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _stateReportCard_(Wrap<ReportCard> c);
+
+	public ReportCard getStateReportCard_() {
+		return stateReportCard_;
+	}
+
+	public void setStateReportCard_(ReportCard stateReportCard_) {
+		this.stateReportCard_ = stateReportCard_;
+		this.stateReportCard_Wrap.alreadyInitialized = true;
+	}
+	protected DesignDisplayPage stateReportCard_Init() {
+		if(!stateReportCard_Wrap.alreadyInitialized) {
+			_stateReportCard_(stateReportCard_Wrap);
+			if(stateReportCard_ == null)
+				setStateReportCard_(stateReportCard_Wrap.o);
+		}
+		stateReportCard_Wrap.alreadyInitialized(true);
+		return (DesignDisplayPage)this;
+	}
+
 	////////////////////
 	// htmlPartSearch //
 	////////////////////
@@ -1376,6 +1452,8 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		emailMessageInit();
 		stateKeyInit();
 		stateNameInit();
+		stateReportCardSearchInit();
+		stateReportCard_Init();
 		htmlPartSearchInit();
 		htmlPartListInit();
 	}
@@ -1400,6 +1478,8 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 			agencySearch.setSiteRequest_(siteRequest_);
 		if(stateSearch != null)
 			stateSearch.setSiteRequest_(siteRequest_);
+		if(stateReportCardSearch != null)
+			stateReportCardSearch.setSiteRequest_(siteRequest_);
 		if(htmlPartSearch != null)
 			htmlPartSearch.setSiteRequest_(siteRequest_);
 	}
@@ -1476,6 +1556,10 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 				return oDesignDisplayPage.stateKey;
 			case "stateName":
 				return oDesignDisplayPage.stateName;
+			case "stateReportCardSearch":
+				return oDesignDisplayPage.stateReportCardSearch;
+			case "stateReportCard_":
+				return oDesignDisplayPage.stateReportCard_;
 			case "htmlPartSearch":
 				return oDesignDisplayPage.htmlPartSearch;
 			case "htmlPartList":

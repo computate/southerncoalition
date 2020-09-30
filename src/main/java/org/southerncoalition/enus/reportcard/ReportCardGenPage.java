@@ -62,8 +62,8 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 	}
 
 	@Override protected void _pageH2(Wrap<String> c) {
-		if(reportCard_ != null && reportCard_.getAgencyCompleteName() != null)
-			c.o(reportCard_.getAgencyCompleteName());
+		if(reportCard_ != null && reportCard_.getReportCardCompleteName() != null)
+			c.o(reportCard_.getReportCardCompleteName());
 	}
 
 	@Override protected void _pageH3(Wrap<String> c) {
@@ -71,8 +71,8 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 	}
 
 	@Override protected void _pageTitle(Wrap<String> c) {
-		if(reportCard_ != null && reportCard_.getAgencyCompleteName() != null)
-			c.o(reportCard_.getAgencyCompleteName());
+		if(reportCard_ != null && reportCard_.getReportCardCompleteName() != null)
+			c.o(reportCard_.getReportCardCompleteName());
 		else if(reportCard_ != null)
 			c.o("report cards");
 		else if(listReportCard == null || listReportCard.size() == 0)
@@ -1579,7 +1579,7 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 					.a("name", "suggestReportCard")
 					.a("id", "suggestReportCard", id)
 					.a("autocomplete", "off")
-					.a("oninput", "suggestReportCardObjectSuggest( [ { 'name': 'q', 'value': 'objectSuggest:' + $(this).val() }, { 'name': 'rows', 'value': '10' }, { 'name': 'fl', 'value': 'pk,pageUrlPk,agencyCompleteName' } ], $('#suggestListReportCard", id, "'), ", p.getSiteRequest_().getRequestPk(), "); ")
+					.a("oninput", "suggestReportCardObjectSuggest( [ { 'name': 'q', 'value': 'objectSuggest:' + $(this).val() }, { 'name': 'rows', 'value': '10' }, { 'name': 'fl', 'value': 'pk,pageUrlPk,reportCardCompleteName' } ], $('#suggestListReportCard", id, "'), ", p.getSiteRequest_().getRequestPk(), "); ")
 					.a("onkeyup", "if (event.keyCode === 13) { event.preventDefault(); window.location.href = '/reportcard?q=", query1, ":' + encodeURIComponent(this.value) + '", fqs, sorts, "&start=", start2, "&rows=", rows1, "'; }"); 
 				if(listReportCard != null)
 					p.a("value", query2);

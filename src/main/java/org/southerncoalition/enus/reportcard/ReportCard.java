@@ -11,15 +11,18 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.nio.charset.Charset;
 import java.text.DecimalFormat;
+import java.text.MessageFormat;
 import java.util.Base64;
 import java.util.List;
 
 import javax.imageio.ImageIO;
 
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartRenderingInfo;
 import org.jfree.chart.JFreeChart;
+import org.jfree.chart.axis.AxisLocation;
 import org.jfree.chart.axis.ValueAxis;
 import org.jfree.chart.block.ColumnArrangement;
 import org.jfree.chart.entity.StandardEntityCollection;
@@ -31,6 +34,7 @@ import org.jfree.chart.imagemap.URLTagFragmentGenerator;
 import org.jfree.chart.labels.ItemLabelAnchor;
 import org.jfree.chart.labels.ItemLabelPosition;
 import org.jfree.chart.labels.StandardCategoryItemLabelGenerator;
+import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
 import org.jfree.chart.plot.CategoryPlot;
 import org.jfree.chart.plot.PiePlot;
 import org.jfree.chart.plot.PlotOrientation;
@@ -1579,6 +1583,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _examsCollegeReadyGrades38OverallPercent(Wrap<BigDecimal> c) {
 	}
+	@Override public String strExamsCollegeReadyGrades38OverallPercent() {
+		return examsCollegeReadyGrades38OverallPercent == null ? "" : examsCollegeReadyGrades38OverallPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
 
 	/**   
 	 * {@inheritDoc}
@@ -1590,6 +1597,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 3-8 first nation
 	 */ 
 	protected void _examsCollegeReadyGrades38IndianPercent(Wrap<BigDecimal> c) {
+	}
+	@Override public String strExamsCollegeReadyGrades38IndianPercent() {
+		return examsCollegeReadyGrades38IndianPercent == null ? "" : examsCollegeReadyGrades38IndianPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1603,6 +1613,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _examsCollegeReadyGrades38AsianPercent(Wrap<BigDecimal> c) {
 	}
+	@Override public String strExamsCollegeReadyGrades38AsianPercent() {
+		return examsCollegeReadyGrades38AsianPercent == null ? "" : examsCollegeReadyGrades38AsianPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
 
 	/**   
 	 * {@inheritDoc}
@@ -1614,6 +1627,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 3-8 black
 	 */ 
 	protected void _examsCollegeReadyGrades38BlackPercent(Wrap<BigDecimal> c) {
+	}
+	@Override public String strExamsCollegeReadyGrades38BlackPercent() {
+		return examsCollegeReadyGrades38BlackPercent == null ? "" : examsCollegeReadyGrades38BlackPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1627,6 +1643,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _examsCollegeReadyGrades38HispanicPercent(Wrap<BigDecimal> c) {
 	}
+	@Override public String strExamsCollegeReadyGrades38HispanicPercent() {
+		return examsCollegeReadyGrades38HispanicPercent == null ? "" : examsCollegeReadyGrades38HispanicPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
 
 	/**   
 	 * {@inheritDoc}
@@ -1638,6 +1657,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 3-8 multi-racial
 	 */ 
 	protected void _examsCollegeReadyGrades38MultiRacialPercent(Wrap<BigDecimal> c) {
+	}
+	@Override public String strExamsCollegeReadyGrades38MultiRacialPercent() {
+		return examsCollegeReadyGrades38MultiRacialPercent == null ? "" : examsCollegeReadyGrades38MultiRacialPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1651,6 +1673,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _examsCollegeReadyGrades38PacificIslanderPercent(Wrap<BigDecimal> c) {
 	}
+	@Override public String strExamsCollegeReadyGrades38PacificIslanderPercent() {
+		return examsCollegeReadyGrades38PacificIslanderPercent == null ? "" : examsCollegeReadyGrades38PacificIslanderPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
 
 	/**   
 	 * {@inheritDoc}
@@ -1662,6 +1687,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 3-8 white
 	 */ 
 	protected void _examsCollegeReadyGrades38WhitePercent(Wrap<BigDecimal> c) {
+	}
+	@Override public String strExamsCollegeReadyGrades38WhitePercent() {
+		return examsCollegeReadyGrades38WhitePercent == null ? "" : examsCollegeReadyGrades38WhitePercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1675,6 +1703,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _examsCollegeReadyGrades912OverallPercent(Wrap<BigDecimal> c) {
 	}
+	@Override public String strExamsCollegeReadyGrades912OverallPercent() {
+		return examsCollegeReadyGrades912OverallPercent == null ? "" : examsCollegeReadyGrades912OverallPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
 
 	/**   
 	 * {@inheritDoc}
@@ -1686,6 +1717,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 9-12 first nation
 	 */ 
 	protected void _examsCollegeReadyGrades912IndianPercent(Wrap<BigDecimal> c) {
+	}
+	@Override public String strExamsCollegeReadyGrades912IndianPercent() {
+		return examsCollegeReadyGrades912IndianPercent == null ? "" : examsCollegeReadyGrades912IndianPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1699,6 +1733,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _examsCollegeReadyGrades912AsianPercent(Wrap<BigDecimal> c) {
 	}
+	@Override public String strExamsCollegeReadyGrades912AsianPercent() {
+		return examsCollegeReadyGrades912AsianPercent == null ? "" : examsCollegeReadyGrades912AsianPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
 
 	/**   
 	 * {@inheritDoc}
@@ -1710,6 +1747,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 9-12 black
 	 */ 
 	protected void _examsCollegeReadyGrades912BlackPercent(Wrap<BigDecimal> c) {
+	}
+	@Override public String strExamsCollegeReadyGrades912BlackPercent() {
+		return examsCollegeReadyGrades912BlackPercent == null ? "" : examsCollegeReadyGrades912BlackPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1723,6 +1763,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _examsCollegeReadyGrades912HispanicPercent(Wrap<BigDecimal> c) {
 	}
+	@Override public String strExamsCollegeReadyGrades912HispanicPercent() {
+		return examsCollegeReadyGrades912HispanicPercent == null ? "" : examsCollegeReadyGrades912HispanicPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
 
 	/**   
 	 * {@inheritDoc}
@@ -1734,6 +1777,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 9-12 multi-racial
 	 */ 
 	protected void _examsCollegeReadyGrades912MultiRacialPercent(Wrap<BigDecimal> c) {
+	}
+	@Override public String strExamsCollegeReadyGrades912MultiRacialPercent() {
+		return examsCollegeReadyGrades912MultiRacialPercent == null ? "" : examsCollegeReadyGrades912MultiRacialPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1747,6 +1793,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _examsCollegeReadyGrades912PacificIslanderPercent(Wrap<BigDecimal> c) {
 	}
+	@Override public String strExamsCollegeReadyGrades912PacificIslanderPercent() {
+		return examsCollegeReadyGrades912PacificIslanderPercent == null ? "" : examsCollegeReadyGrades912PacificIslanderPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
 
 	/**   
 	 * {@inheritDoc}
@@ -1758,6 +1807,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 9-12 white
 	 */ 
 	protected void _examsCollegeReadyGrades912WhitePercent(Wrap<BigDecimal> c) {
+	}
+	@Override public String strExamsCollegeReadyGrades912WhitePercent() {
+		return examsCollegeReadyGrades912WhitePercent == null ? "" : examsCollegeReadyGrades912WhitePercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1771,6 +1823,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _graduateWithin4YearsOverallPercent(Wrap<BigDecimal> c) {
 	}
+	@Override public String strGraduateWithin4YearsOverallPercent() {
+		return graduateWithin4YearsOverallPercent == null ? "" : graduateWithin4YearsOverallPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
 
 	/**   
 	 * {@inheritDoc}
@@ -1782,6 +1837,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Graduate HS within 4 years first nation
 	 */ 
 	protected void _graduateWithin4YearsIndianPercent(Wrap<BigDecimal> c) {
+	}
+	@Override public String strGraduateWithin4YearsIndianPercent() {
+		return graduateWithin4YearsIndianPercent == null ? "" : graduateWithin4YearsIndianPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1795,6 +1853,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _graduateWithin4YearsAsianPercent(Wrap<BigDecimal> c) {
 	}
+	@Override public String strGraduateWithin4YearsAsianPercent() {
+		return graduateWithin4YearsAsianPercent == null ? "" : graduateWithin4YearsAsianPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
 
 	/**   
 	 * {@inheritDoc}
@@ -1806,6 +1867,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Graduate HS within 4 years black
 	 */ 
 	protected void _graduateWithin4YearsBlackPercent(Wrap<BigDecimal> c) {
+	}
+	@Override public String strGraduateWithin4YearsBlackPercent() {
+		return graduateWithin4YearsBlackPercent == null ? "" : graduateWithin4YearsBlackPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1819,6 +1883,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _graduateWithin4YearsHispanicPercent(Wrap<BigDecimal> c) {
 	}
+	@Override public String strGraduateWithin4YearsHispanicPercent() {
+		return graduateWithin4YearsHispanicPercent == null ? "" : graduateWithin4YearsHispanicPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
 
 	/**   
 	 * {@inheritDoc}
@@ -1830,6 +1897,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Graduate HS within 4 years multi-racial
 	 */ 
 	protected void _graduateWithin4YearsMultiRacialPercent(Wrap<BigDecimal> c) {
+	}
+	@Override public String strGraduateWithin4YearsMultiRacialPercent() {
+		return graduateWithin4YearsMultiRacialPercent == null ? "" : graduateWithin4YearsMultiRacialPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1843,6 +1913,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _graduateWithin4YearsPacificIslanderPercent(Wrap<BigDecimal> c) {
 	}
+	@Override public String strGraduateWithin4YearsPacificIslanderPercent() {
+		return graduateWithin4YearsPacificIslanderPercent == null ? "" : graduateWithin4YearsPacificIslanderPercent.setScale(1, RoundingMode.CEILING).toString();
+	}
 
 	/**   
 	 * {@inheritDoc}
@@ -1854,6 +1927,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Graduate HS within 4 years white
 	 */ 
 	protected void _graduateWithin4YearsWhitePercent(Wrap<BigDecimal> c) {
+	}
+	@Override public String strGraduateWithin4YearsWhitePercent() {
+		return graduateWithin4YearsWhitePercent == null ? "" : graduateWithin4YearsWhitePercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1937,8 +2013,8 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * VarH2: true
 	 * VarTitle: true
 	 */ 
-	protected void _agencyCompleteName(Wrap<String> c) {
-		c.o(reportCardStartYear + "-" + reportCardEndYear + " report card in " + agencyName + " in " + stateName + " (" + stateAbbreviation + ")");
+	protected void _reportCardCompleteName(Wrap<String> c) {
+		c.o(reportCardStartYear + "-" + reportCardEndYear + " report card in " + agencyName + " (" + stateAbbreviation + ")");
 	}
 
 	/**
@@ -2032,7 +2108,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 
 			StringBuilder b = new StringBuilder();
 			b.append("                  ").append(imageMap).append("\n");
-			b.append("                  <img usemap=\"#map_").append(w.var).append("\" style=\"width: 200px; \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
+			b.append("                  <img usemap=\"#map_").append(w.var).append("\" style=\"width: 150px; \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
 			w.o(b.toString());
 		} catch (IOException ex) {
 			ExceptionUtils.rethrow(ex);
@@ -2117,7 +2193,72 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _agencyTeachersByRaceGraph(Wrap<String> w) {
-		w.o(new String(Base64.getEncoder().encode(new byte[] {}), Charset.forName("UTF-8")));
+		if(teachersWhitePercent != null && teachersBlackPercent != null && teachersOtherPercent != null) {
+			try {
+				DefaultPieDataset dataset = new DefaultPieDataset();
+				dataset.setValue( String.format("%s%%", teachersWhitePercent.setScale(0, RoundingMode.HALF_UP)), teachersWhitePercent );  
+				dataset.setValue( String.format("%s%%", teachersBlackPercent.setScale(0, RoundingMode.HALF_UP)), teachersBlackPercent );  
+				dataset.setValue( String.format("%s%%", teachersOtherPercent.setScale(0, RoundingMode.HALF_UP)), teachersOtherPercent );  
+	
+				JFreeChart chart = ChartFactory.createRingChart(null, dataset, true, false, false);
+				RingPlot plot = (RingPlot)chart.getPlot();
+	
+				chart.removeLegend();
+				plot.setBackgroundPaint(null);
+				plot.setOutlinePaint(null);
+	
+				plot.setLabelGap(0D);
+				plot.setSimpleLabels(true);
+				plot.setLabelFont(new Font("DejaVu Sans", 0, 24));
+				plot.setLabelBackgroundPaint(null);
+				plot.setLabelShadowPaint(null);
+				plot.setLabelOutlinePaint(null);
+				plot.setShadowPaint(null);
+				plot.setSectionDepth(0.5);
+				plot.setSimpleLabelOffset(new RectangleInsets(UnitType.RELATIVE, 0.12, 0.12, 0.12, 0.12));
+				plot.setSectionPaint(dataset.getKey(0), Color.decode("#a84039"));
+				plot.setSectionPaint(dataset.getKey(1), Color.decode("#e97000"));
+				plot.setSectionPaint(dataset.getKey(2), Color.decode("#00b0f0"));
+				plot.setOutlinePaint(Color.WHITE);
+				plot.setOutlineStroke(new BasicStroke(4));
+				plot.setDefaultSectionOutlinePaint(Color.WHITE);
+				plot.setDefaultSectionOutlineStroke(new BasicStroke(4));
+				plot.setSeparatorsVisible(false);
+	
+				ChartRenderingInfo chartRenderingInfo = new ChartRenderingInfo(new StandardEntityCollection());
+				BufferedImage image = chart.createBufferedImage(400, 400, chartRenderingInfo);
+	
+				ToolTipTagFragmentGenerator toolTipFragmentGenerator = new StandardToolTipTagFragmentGenerator() {
+					@Override
+					public String generateToolTipFragment(String toolTipText) {
+						return super.generateToolTipFragment(toolTipText);
+					}
+				};
+				URLTagFragmentGenerator urlTagFragmentGenerator = new StandardURLTagFragmentGenerator() {
+					@Override
+					public String generateURLFragment(String urlText) {
+						// TODO Auto-generated method stub
+						return super.generateURLFragment(urlText);
+					}
+				};
+	
+				String imageMap = ImageMapUtils.getImageMap("map_" + w.var, chartRenderingInfo, toolTipFragmentGenerator, urlTagFragmentGenerator);
+				ByteArrayOutputStream baos = new ByteArrayOutputStream();
+				ImageIO.write(image, "png", baos);
+				baos.flush();
+				byte[] imageInByte = baos.toByteArray();
+				baos.close();
+	
+				String imageStr = new String(Base64.getEncoder().encode(imageInByte), Charset.forName("UTF-8"));
+	
+				StringBuilder b = new StringBuilder();
+				b.append("                  ").append(imageMap).append("\n");
+				b.append("                  <img usemap=\"#map_").append(w.var).append("\" style=\"width: 200px; \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
+				w.o(b.toString());
+			} catch (NumberFormatException | IOException ex) {
+				ExceptionUtils.rethrow(ex);
+			}
+		}
 	}
 
 	/**   
@@ -2161,6 +2302,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			plot.getRangeAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 18));
 			plot.getDomainAxis().setLabelFont(new Font("DejaVu Sans", 0, 18));
 			plot.getDomainAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 18));
+			plot.getDomainAxis().setMaximumCategoryLabelWidthRatio(2);
 
 			renderer.setItemLabelAnchorOffset(22);
 			renderer.setItemMargin(0.0);
@@ -2250,6 +2392,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			plot.getRangeAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 18));
 			plot.getDomainAxis().setLabelFont(new Font("DejaVu Sans", 0, 18));
 			plot.getDomainAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 18));
+			plot.getDomainAxis().setMaximumCategoryLabelWidthRatio(2);
 
 			renderer.setItemLabelAnchorOffset(22);
 			renderer.setItemMargin(0.0);
@@ -2339,6 +2482,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			plot.getRangeAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 18));
 			plot.getDomainAxis().setLabelFont(new Font("DejaVu Sans", 0, 18));
 			plot.getDomainAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 18));
+			plot.getDomainAxis().setMaximumCategoryLabelWidthRatio(2);
 
 			renderer.setItemLabelAnchorOffset(22);
 			renderer.setItemMargin(0.0);
@@ -2392,7 +2536,87 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _suspensionsByRaceGraph(Wrap<String> w) {
-		w.o(new String(Base64.getEncoder().encode(new byte[] {}), Charset.forName("UTF-8")));
+		try {
+			DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+
+			dataset.addValue( shortTermSuspensionsIndianPercent, "First Nation", "First Nation" );  
+			dataset.addValue( shortTermSuspensionsAsianPercent, "Asian", "Asian" );  
+			dataset.addValue( shortTermSuspensionsBlackPercent, "Black", "Black" );  
+			dataset.addValue( shortTermSuspensionsHispanicPercent, "Hispanic", "Hispanic" );  
+			dataset.addValue( shortTermSuspensionsMultiRacialPercent, "Multi-Racial", "Multi-Racial" );  
+			dataset.addValue( shortTermSuspensionsPacificIslanderPercent, "Pacific Islander", "Pacific Islander" );  
+			dataset.addValue( shortTermSuspensionsWhitePercent, "White", "White" );  
+	
+			JFreeChart chart = ChartFactory.createStackedBarChart(null, null, null, dataset, PlotOrientation.VERTICAL, true, true, true);
+			CategoryPlot plot = (CategoryPlot)chart.getPlot();
+	
+			chart.removeLegend();
+			plot.setBackgroundPaint(null);
+			plot.setOutlinePaint(null);
+	
+			StackedBarRenderer renderer = (StackedBarRenderer)plot.getRenderer();
+
+			renderer.setSeriesPaint(0, Color.decode("#8064a2"));
+			renderer.setSeriesPaint(1, Color.decode("#308399"));
+			renderer.setSeriesPaint(2, Color.decode("#e97000"));
+			renderer.setSeriesPaint(3, Color.decode("#77933c"));
+			renderer.setSeriesPaint(4, Color.decode("#254061"));
+			renderer.setSeriesPaint(5, Color.decode("#edda38"));
+			renderer.setSeriesPaint(6, Color.decode("#a84039"));
+
+			ValueAxis axis = plot.getRangeAxis();
+			axis.setUpperMargin(0.2);
+			plot.getRangeAxis().setLabelFont(new Font("DejaVu Sans", 0, 18));
+			plot.getRangeAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 18));
+			plot.getDomainAxis().setLabelFont(new Font("DejaVu Sans", 0, 18));
+			plot.getDomainAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 18));
+			plot.getDomainAxis().setMaximumCategoryLabelWidthRatio(2);
+
+			renderer.setItemLabelAnchorOffset(22);
+			renderer.setItemMargin(0.0);
+			renderer.setMaximumBarWidth(100.0);
+			renderer.setShadowVisible(false);
+			renderer.setBarPainter(new StandardBarPainter());
+
+			renderer.setDefaultItemLabelGenerator(new StandardCategoryItemLabelGenerator());
+			renderer.setDefaultItemLabelsVisible(true);
+			ItemLabelPosition position = new ItemLabelPosition(ItemLabelAnchor.OUTSIDE12, TextAnchor.TOP_CENTER);
+			renderer.setDefaultPositiveItemLabelPosition(position);
+			renderer.setDefaultItemLabelFont(new Font("DejaVu Sans", 0, 18));
+
+			ChartRenderingInfo chartRenderingInfo = new ChartRenderingInfo(new StandardEntityCollection());
+			BufferedImage image = chart.createBufferedImage(900, 600, chartRenderingInfo);
+
+			ToolTipTagFragmentGenerator toolTipFragmentGenerator = new StandardToolTipTagFragmentGenerator() {
+				@Override
+				public String generateToolTipFragment(String toolTipText) {
+					return super.generateToolTipFragment(toolTipText);
+				}
+			};
+			URLTagFragmentGenerator urlTagFragmentGenerator = new StandardURLTagFragmentGenerator() {
+				@Override
+				public String generateURLFragment(String urlText) {
+					// TODO Auto-generated method stub
+					return super.generateURLFragment(urlText);
+				}
+			};
+
+			String imageMap = ImageMapUtils.getImageMap("map_" + w.var, chartRenderingInfo, toolTipFragmentGenerator, urlTagFragmentGenerator);
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			ImageIO.write(image, "png", baos);
+			baos.flush();
+			byte[] imageInByte = baos.toByteArray();
+			baos.close();
+
+			String imageStr = new String(Base64.getEncoder().encode(imageInByte), Charset.forName("UTF-8"));
+
+			StringBuilder b = new StringBuilder();
+			b.append("                  ").append(imageMap).append("\n");
+			b.append("                  <img usemap=\"#map_").append(w.var).append("\" class=\"w3-image \" style=\"width: 350px; \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
+			w.o(b.toString());
+		} catch (IOException ex) {
+			ExceptionUtils.rethrow(ex);
+		}
 	}
 
 	/**   
@@ -2400,7 +2624,89 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _suspensionRatesByRaceGraph(Wrap<String> w) {
-		w.o(new String(Base64.getEncoder().encode(new byte[] {}), Charset.forName("UTF-8")));
+		try {
+			DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+
+			dataset.addValue( shortTermSuspensionsIndianRate, "First Nation", "First Nation" );  
+			dataset.addValue( shortTermSuspensionsAsianRate, "Asian", "Asian" );  
+			dataset.addValue( shortTermSuspensionsBlackRate, "Black", "Black" );  
+			dataset.addValue( shortTermSuspensionsHispanicRate, "Hispanic", "Hispanic" );  
+			dataset.addValue( shortTermSuspensionsMultiRacialRate, "Multi-Racial", "Multi-Racial" );  
+			dataset.addValue( shortTermSuspensionsPacificIslanderRate, "Pacific Islander", "Pacific Islander" );  
+			dataset.addValue( shortTermSuspensionsWhiteRate, "White", "White" );  
+			dataset.addValue( shortTermSuspensionsAllRate, "Overall", "Overall" );  
+	
+			JFreeChart chart = ChartFactory.createStackedBarChart(null, null, null, dataset, PlotOrientation.HORIZONTAL, true, true, true);
+			CategoryPlot plot = (CategoryPlot)chart.getPlot();
+	
+			chart.removeLegend();
+			plot.setBackgroundPaint(null);
+			plot.setOutlinePaint(null);
+	
+			StackedBarRenderer renderer = (StackedBarRenderer)plot.getRenderer();
+
+			renderer.setSeriesPaint(0, Color.decode("#8064a2"));
+			renderer.setSeriesPaint(1, Color.decode("#308399"));
+			renderer.setSeriesPaint(2, Color.decode("#e97000"));
+			renderer.setSeriesPaint(3, Color.decode("#77933c"));
+			renderer.setSeriesPaint(4, Color.decode("#254061"));
+			renderer.setSeriesPaint(5, Color.decode("#edda38"));
+			renderer.setSeriesPaint(6, Color.decode("#a84039"));
+			renderer.setSeriesPaint(7, Color.decode("#7f7f7f"));
+
+			ValueAxis axis = plot.getRangeAxis();
+			axis.setUpperMargin(0.2);
+			plot.getRangeAxis().setLabelFont(new Font("DejaVu Sans", 0, 18));
+			plot.getRangeAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 18));
+			plot.getDomainAxis().setLabelFont(new Font("DejaVu Sans", 0, 18));
+			plot.getDomainAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 18));
+			plot.setRangeAxisLocation(AxisLocation.BOTTOM_OR_RIGHT);
+
+			renderer.setItemLabelAnchorOffset(12);
+			renderer.setItemMargin(0.0);
+			renderer.setMaximumBarWidth(100.0);
+			renderer.setShadowVisible(false);
+			renderer.setBarPainter(new StandardBarPainter());
+
+			renderer.setDefaultItemLabelGenerator(new StandardCategoryItemLabelGenerator());
+			renderer.setDefaultItemLabelsVisible(true);
+			ItemLabelPosition position = new ItemLabelPosition(ItemLabelAnchor.OUTSIDE3, TextAnchor.CENTER_LEFT);
+			renderer.setDefaultPositiveItemLabelPosition(position);
+			renderer.setDefaultItemLabelFont(new Font("DejaVu Sans", 0, 18));
+
+			ChartRenderingInfo chartRenderingInfo = new ChartRenderingInfo(new StandardEntityCollection());
+			BufferedImage image = chart.createBufferedImage(900, 600, chartRenderingInfo);
+
+			ToolTipTagFragmentGenerator toolTipFragmentGenerator = new StandardToolTipTagFragmentGenerator() {
+				@Override
+				public String generateToolTipFragment(String toolTipText) {
+					return super.generateToolTipFragment(toolTipText);
+				}
+			};
+			URLTagFragmentGenerator urlTagFragmentGenerator = new StandardURLTagFragmentGenerator() {
+				@Override
+				public String generateURLFragment(String urlText) {
+					// TODO Auto-generated method stub
+					return super.generateURLFragment(urlText);
+				}
+			};
+
+			String imageMap = ImageMapUtils.getImageMap("map_" + w.var, chartRenderingInfo, toolTipFragmentGenerator, urlTagFragmentGenerator);
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			ImageIO.write(image, "png", baos);
+			baos.flush();
+			byte[] imageInByte = baos.toByteArray();
+			baos.close();
+
+			String imageStr = new String(Base64.getEncoder().encode(imageInByte), Charset.forName("UTF-8"));
+
+			StringBuilder b = new StringBuilder();
+			b.append("                  ").append(imageMap).append("\n");
+			b.append("                  <img usemap=\"#map_").append(w.var).append("\" class=\"w3-image \" style=\"width: 350px; \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
+			w.o(b.toString());
+		} catch (IOException ex) {
+			ExceptionUtils.rethrow(ex);
+		}
 	}
 
 	/**   
@@ -2408,7 +2714,91 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _countySchoolBasedComplaintsGraph(Wrap<String> w) {
-		w.o(new String(Base64.getEncoder().encode(new byte[] {}), Charset.forName("UTF-8")));
+		try {
+			DefaultPieDataset dataset = new DefaultPieDataset();
+			BigDecimal delinquentComplaintsNotSchoolPercent = null;
+			if(delinquentComplaintsAtSchoolPercent != null)
+				delinquentComplaintsNotSchoolPercent = new BigDecimal(100).subtract(delinquentComplaintsAtSchoolPercent);
+			dataset.setValue( String.format("%s (%s%%)", "School Based Complaints", delinquentComplaintsAtSchoolPercent), delinquentComplaintsAtSchoolPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "Non-School Based Complaints", delinquentComplaintsNotSchoolPercent), delinquentComplaintsNotSchoolPercent );  
+	
+			JFreeChart chart = ChartFactory.createPieChart(null, dataset, true, true, true);
+			PiePlot plot = (PiePlot)chart.getPlot();
+	
+			LegendTitle legendOld = chart.getLegend();
+			LegendTitle legendNew = new LegendTitle(plot, new ColumnArrangement(), new ColumnArrangement());
+			legendNew.setPosition(RectangleEdge.BOTTOM);
+			legendNew.setBackgroundPaint(legendOld.getBackgroundPaint());
+			legendNew.setItemFont(new Font("DejaVu Sans", 0, 24));
+			plot.setLegendItemShape(new Rectangle(24, 24));
+			chart.removeLegend();
+			chart.addLegend(legendNew);
+			plot.setBackgroundPaint(null);
+			plot.setOutlinePaint(null);
+			plot.setURLGenerator(new PieURLGenerator() {
+				
+				@Override
+				public String generateURL(PieDataset dataset, Comparable key, int pieIndex) {
+					Number value = dataset.getValue(pieIndex);
+					return null;
+				}
+			});
+
+			plot.setLabelGap(0D);
+			plot.setSimpleLabels(true);
+			plot.setLabelFont(new Font("DejaVu Sans", 0, 24));
+			plot.setLabelBackgroundPaint(null);
+			plot.setLabelShadowPaint(null);
+			plot.setLabelOutlinePaint(null);
+			plot.setShadowPaint(null);
+			plot.setSimpleLabelOffset(new RectangleInsets(UnitType.RELATIVE, 0.12, 0.12, 0.12, 0.12));
+			plot.setLabelGenerator(new StandardPieSectionLabelGenerator() {
+				@Override
+				public String generateSectionLabel(PieDataset dataset, Comparable key) {
+					String result = null;
+					if (dataset != null) {
+						Object[] items = createItemArray(dataset, key);
+						result = MessageFormat.format(this.getLabelFormat(), items);
+					}
+					return StringUtils.substringAfterLast(StringUtils.substringBeforeLast(result, ")"), "(");
+				}
+			});
+	
+			plot.setSectionPaint(dataset.getKey(0), Color.decode("#71588f"));
+			plot.setSectionPaint(dataset.getKey(1), Color.decode("#a99bbd"));
+			ChartRenderingInfo chartRenderingInfo = new ChartRenderingInfo(new StandardEntityCollection());
+			BufferedImage image = chart.createBufferedImage(500, 600, chartRenderingInfo);
+
+			ToolTipTagFragmentGenerator toolTipFragmentGenerator = new StandardToolTipTagFragmentGenerator() {
+				@Override
+				public String generateToolTipFragment(String toolTipText) {
+					return super.generateToolTipFragment(toolTipText);
+				}
+			};
+			URLTagFragmentGenerator urlTagFragmentGenerator = new StandardURLTagFragmentGenerator() {
+				@Override
+				public String generateURLFragment(String urlText) {
+					// TODO Auto-generated method stub
+					return super.generateURLFragment(urlText);
+				}
+			};
+
+			String imageMap = ImageMapUtils.getImageMap("map_" + w.var, chartRenderingInfo, toolTipFragmentGenerator, urlTagFragmentGenerator);
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			ImageIO.write(image, "png", baos);
+			baos.flush();
+			byte[] imageInByte = baos.toByteArray();
+			baos.close();
+
+			String imageStr = new String(Base64.getEncoder().encode(imageInByte), Charset.forName("UTF-8"));
+
+			StringBuilder b = new StringBuilder();
+			b.append("                  ").append(imageMap).append("\n");
+			b.append("                  <img usemap=\"#map_").append(w.var).append("\" style=\"width: 200px; \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
+			w.o(b.toString());
+		} catch (IOException ex) {
+			ExceptionUtils.rethrow(ex);
+		}
 	}
 
 	/**   
@@ -2416,7 +2806,79 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 */ 
 	protected void _schoolBasedComplaintsGraph(Wrap<String> w) {
-		w.o(new String(Base64.getEncoder().encode(new byte[] {}), Charset.forName("UTF-8")));
+		try {
+			DefaultPieDataset dataset = new DefaultPieDataset();
+			dataset.setValue( String.format("%s (%s%%)", "American Indian", delinquentComplaintsIndianPercent), delinquentComplaintsIndianPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "Asian", delinquentComplaintsAsianPercent), delinquentComplaintsAsianPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "Black", delinquentComplaintsBlackPercent), delinquentComplaintsBlackPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "Hispanic", delinquentComplaintsHispanicPercent), delinquentComplaintsHispanicPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "Multi-Racial", delinquentComplaintsMultiRacialPercent), delinquentComplaintsMultiRacialPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "Pacific Islander", delinquentComplaintsPacificIslanderPercent), delinquentComplaintsPacificIslanderPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "White", delinquentComplaintsWhitePercent), delinquentComplaintsWhitePercent );  
+	
+			JFreeChart chart = ChartFactory.createPieChart(null, dataset, true, true, true);
+			PiePlot plot = (PiePlot)chart.getPlot();
+	
+			LegendTitle legendOld = chart.getLegend();
+			LegendTitle legendNew = new LegendTitle(plot, new ColumnArrangement(), new ColumnArrangement());
+			legendNew.setPosition(RectangleEdge.RIGHT);
+			legendNew.setBackgroundPaint(legendOld.getBackgroundPaint());
+			legendNew.setItemFont(new Font("DejaVu Sans", 0, 24));
+			plot.setLegendItemShape(new Rectangle(24, 24));
+			chart.removeLegend();
+			chart.addLegend(legendNew);
+			plot.setBackgroundPaint(null);
+			plot.setOutlinePaint(null);
+			plot.setURLGenerator(new PieURLGenerator() {
+				
+				@Override
+				public String generateURL(PieDataset dataset, Comparable key, int pieIndex) {
+					Number value = dataset.getValue(pieIndex);
+					return null;
+				}
+			});
+	
+			plot.setLabelGenerator(null);
+			plot.setSectionPaint(dataset.getKey(0), Color.decode("#8064a2"));
+			plot.setSectionPaint(dataset.getKey(1), Color.decode("#308399"));
+			plot.setSectionPaint(dataset.getKey(2), Color.decode("#e97000"));
+			plot.setSectionPaint(dataset.getKey(3), Color.decode("#77933c"));
+			plot.setSectionPaint(dataset.getKey(4), Color.decode("#254061"));
+			plot.setSectionPaint(dataset.getKey(5), Color.decode("#edda38"));
+			plot.setSectionPaint(dataset.getKey(6), Color.decode("#a84039"));
+			ChartRenderingInfo chartRenderingInfo = new ChartRenderingInfo(new StandardEntityCollection());
+			BufferedImage image = chart.createBufferedImage(600, 400, chartRenderingInfo);
+
+			ToolTipTagFragmentGenerator toolTipFragmentGenerator = new StandardToolTipTagFragmentGenerator() {
+				@Override
+				public String generateToolTipFragment(String toolTipText) {
+					return super.generateToolTipFragment(toolTipText);
+				}
+			};
+			URLTagFragmentGenerator urlTagFragmentGenerator = new StandardURLTagFragmentGenerator() {
+				@Override
+				public String generateURLFragment(String urlText) {
+					// TODO Auto-generated method stub
+					return super.generateURLFragment(urlText);
+				}
+			};
+
+			String imageMap = ImageMapUtils.getImageMap("map_" + w.var, chartRenderingInfo, toolTipFragmentGenerator, urlTagFragmentGenerator);
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			ImageIO.write(image, "png", baos);
+			baos.flush();
+			byte[] imageInByte = baos.toByteArray();
+			baos.close();
+
+			String imageStr = new String(Base64.getEncoder().encode(imageInByte), Charset.forName("UTF-8"));
+
+			StringBuilder b = new StringBuilder();
+			b.append("                  ").append(imageMap).append("\n");
+			b.append("                  <img usemap=\"#map_").append(w.var).append("\" style=\"width: 300px; \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
+			w.o(b.toString());
+		} catch (IOException ex) {
+			ExceptionUtils.rethrow(ex);
+		}
 	}
 
 	/**   
@@ -2503,6 +2965,6 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * {@inheritDoc}
 	 */
 	@Override() protected void  _objectTitle(Wrap<String> c) {
-		c.o(reportCardStartYear + "-" + reportCardEndYear + " report card in " + agencyName + " agency in " + stateName + " (" + stateAbbreviation + ")");
+		c.o(reportCardStartYear + "-" + reportCardEndYear + " report card in " + agencyName + " (" + stateAbbreviation + ")");
 	}
 }
