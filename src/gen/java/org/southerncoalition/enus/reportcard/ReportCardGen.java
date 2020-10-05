@@ -856,76 +856,76 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	////////////////////////
-	// pupilsIndianFemale //
-	////////////////////////
+	////////////////////////////
+	// pupilsIndigenousFemale //
+	////////////////////////////
 
-	/**	 The entity pupilsIndianFemale
+	/**	 The entity pupilsIndigenousFemale
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Long pupilsIndianFemale;
+	protected Long pupilsIndigenousFemale;
 	@JsonIgnore
-	public Wrap<Long> pupilsIndianFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsIndianFemale").o(pupilsIndianFemale);
+	public Wrap<Long> pupilsIndigenousFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsIndigenousFemale").o(pupilsIndigenousFemale);
 
-	/**	<br/> The entity pupilsIndianFemale
+	/**	<br/> The entity pupilsIndigenousFemale
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pupilsIndianFemale">Find the entity pupilsIndianFemale in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pupilsIndigenousFemale">Find the entity pupilsIndigenousFemale in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsIndianFemale(Wrap<Long> c);
+	protected abstract void _pupilsIndigenousFemale(Wrap<Long> c);
 
-	public Long getPupilsIndianFemale() {
-		return pupilsIndianFemale;
+	public Long getPupilsIndigenousFemale() {
+		return pupilsIndigenousFemale;
 	}
 
-	public void setPupilsIndianFemale(Long pupilsIndianFemale) {
-		this.pupilsIndianFemale = pupilsIndianFemale;
-		this.pupilsIndianFemaleWrap.alreadyInitialized = true;
+	public void setPupilsIndigenousFemale(Long pupilsIndigenousFemale) {
+		this.pupilsIndigenousFemale = pupilsIndigenousFemale;
+		this.pupilsIndigenousFemaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsIndianFemale(String o) {
+	public ReportCard setPupilsIndigenousFemale(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsIndianFemale = Long.parseLong(o);
-		this.pupilsIndianFemaleWrap.alreadyInitialized = true;
+			this.pupilsIndigenousFemale = Long.parseLong(o);
+		this.pupilsIndigenousFemaleWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard pupilsIndianFemaleInit() {
-		if(!pupilsIndianFemaleWrap.alreadyInitialized) {
-			_pupilsIndianFemale(pupilsIndianFemaleWrap);
-			if(pupilsIndianFemale == null)
-				setPupilsIndianFemale(pupilsIndianFemaleWrap.o);
+	protected ReportCard pupilsIndigenousFemaleInit() {
+		if(!pupilsIndigenousFemaleWrap.alreadyInitialized) {
+			_pupilsIndigenousFemale(pupilsIndigenousFemaleWrap);
+			if(pupilsIndigenousFemale == null)
+				setPupilsIndigenousFemale(pupilsIndigenousFemaleWrap.o);
 		}
-		pupilsIndianFemaleWrap.alreadyInitialized(true);
+		pupilsIndigenousFemaleWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Long solrPupilsIndianFemale() {
-		return pupilsIndianFemale;
+	public Long solrPupilsIndigenousFemale() {
+		return pupilsIndigenousFemale;
 	}
 
-	public String strPupilsIndianFemale() {
-		return pupilsIndianFemale == null ? "" : pupilsIndianFemale.toString();
+	public String strPupilsIndigenousFemale() {
+		return pupilsIndigenousFemale == null ? "" : pupilsIndigenousFemale.toString();
 	}
 
-	public String jsonPupilsIndianFemale() {
-		return pupilsIndianFemale == null ? "" : pupilsIndianFemale.toString();
+	public String jsonPupilsIndigenousFemale() {
+		return pupilsIndigenousFemale == null ? "" : pupilsIndigenousFemale.toString();
 	}
 
-	public String nomAffichagePupilsIndianFemale() {
-		return "First Nation female";
+	public String nomAffichagePupilsIndigenousFemale() {
+		return "Indigenous female";
 	}
 
-	public String htmTooltipPupilsIndianFemale() {
+	public String htmTooltipPupilsIndigenousFemale() {
 		return null;
 	}
 
-	public String htmPupilsIndianFemale() {
-		return pupilsIndianFemale == null ? "" : StringEscapeUtils.escapeHtml4(strPupilsIndianFemale());
+	public String htmPupilsIndigenousFemale() {
+		return pupilsIndigenousFemale == null ? "" : StringEscapeUtils.escapeHtml4(strPupilsIndigenousFemale());
 	}
 
-	public void inputPupilsIndianFemale(String classApiMethodMethod) {
+	public void inputPupilsIndigenousFemale(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		if(
 				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -933,40 +933,40 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				) {
 			e("input")
 				.a("type", "text")
-				.a("placeholder", "First Nation female")
-				.a("id", classApiMethodMethod, "_pupilsIndianFemale");
+				.a("placeholder", "Indigenous female")
+				.a("id", classApiMethodMethod, "_pupilsIndigenousFemale");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
-					a("class", "setPupilsIndianFemale classReportCard inputReportCard", pk, "PupilsIndianFemale w3-input w3-border ");
-					a("name", "setPupilsIndianFemale");
+					a("class", "setPupilsIndigenousFemale classReportCard inputReportCard", pk, "PupilsIndigenousFemale w3-input w3-border ");
+					a("name", "setPupilsIndigenousFemale");
 				} else {
-					a("class", "valuePupilsIndianFemale w3-input w3-border classReportCard inputReportCard", pk, "PupilsIndianFemale w3-input w3-border ");
-					a("name", "pupilsIndianFemale");
+					a("class", "valuePupilsIndigenousFemale w3-input w3-border classReportCard inputReportCard", pk, "PupilsIndigenousFemale w3-input w3-border ");
+					a("name", "pupilsIndigenousFemale");
 				}
 				if("Page".equals(classApiMethodMethod)) {
 					a("onclick", "removeGlow($(this)); ");
-					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setPupilsIndianFemale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_pupilsIndianFemale')); }, function() { addError($('#", classApiMethodMethod, "_pupilsIndianFemale')); }); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setPupilsIndigenousFemale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_pupilsIndigenousFemale')); }, function() { addError($('#", classApiMethodMethod, "_pupilsIndigenousFemale')); }); ");
 				}
-				a("value", strPupilsIndianFemale())
+				a("value", strPupilsIndigenousFemale())
 			.fg();
 
 		} else {
-			e("span").a("class", "varReportCard", pk, "PupilsIndianFemale ").f().sx(htmPupilsIndianFemale()).g("span");
+			e("span").a("class", "varReportCard", pk, "PupilsIndigenousFemale ").f().sx(htmPupilsIndigenousFemale()).g("span");
 		}
 	}
 
-	public void htmPupilsIndianFemale(String classApiMethodMethod) {
+	public void htmPupilsIndigenousFemale(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			{ e("div").a("class", "w3-padding ").f();
-				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardPupilsIndianFemale").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardPupilsIndigenousFemale").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_pupilsIndianFemale").a("class", "").f().sx("First Nation female").g("label");
+							e("label").a("for", classApiMethodMethod, "_pupilsIndigenousFemale").a("class", "").f().sx("Indigenous female").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
 
-								inputPupilsIndianFemale(classApiMethodMethod);
+								inputPupilsIndigenousFemale(classApiMethodMethod);
 							} g("div");
 							if(
 									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -977,7 +977,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 										{ e("button")
 											.a("tabindex", "-1")
 											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
-										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_pupilsIndianFemale')); $('#", classApiMethodMethod, "_pupilsIndianFemale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setPupilsIndianFemale', null, function() { addGlow($('#", classApiMethodMethod, "_pupilsIndianFemale')); }, function() { addError($('#", classApiMethodMethod, "_pupilsIndianFemale')); }); ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_pupilsIndigenousFemale')); $('#", classApiMethodMethod, "_pupilsIndigenousFemale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setPupilsIndigenousFemale', null, function() { addGlow($('#", classApiMethodMethod, "_pupilsIndigenousFemale')); }, function() { addError($('#", classApiMethodMethod, "_pupilsIndigenousFemale')); }); ")
 											.f();
 											e("i").a("class", "far fa-eraser ").f().g("i");
 										} g("button");
@@ -991,76 +991,76 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	//////////////////////
-	// pupilsIndianMale //
-	//////////////////////
+	//////////////////////////
+	// pupilsIndigenousMale //
+	//////////////////////////
 
-	/**	 The entity pupilsIndianMale
+	/**	 The entity pupilsIndigenousMale
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Long pupilsIndianMale;
+	protected Long pupilsIndigenousMale;
 	@JsonIgnore
-	public Wrap<Long> pupilsIndianMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsIndianMale").o(pupilsIndianMale);
+	public Wrap<Long> pupilsIndigenousMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsIndigenousMale").o(pupilsIndigenousMale);
 
-	/**	<br/> The entity pupilsIndianMale
+	/**	<br/> The entity pupilsIndigenousMale
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pupilsIndianMale">Find the entity pupilsIndianMale in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pupilsIndigenousMale">Find the entity pupilsIndigenousMale in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsIndianMale(Wrap<Long> c);
+	protected abstract void _pupilsIndigenousMale(Wrap<Long> c);
 
-	public Long getPupilsIndianMale() {
-		return pupilsIndianMale;
+	public Long getPupilsIndigenousMale() {
+		return pupilsIndigenousMale;
 	}
 
-	public void setPupilsIndianMale(Long pupilsIndianMale) {
-		this.pupilsIndianMale = pupilsIndianMale;
-		this.pupilsIndianMaleWrap.alreadyInitialized = true;
+	public void setPupilsIndigenousMale(Long pupilsIndigenousMale) {
+		this.pupilsIndigenousMale = pupilsIndigenousMale;
+		this.pupilsIndigenousMaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsIndianMale(String o) {
+	public ReportCard setPupilsIndigenousMale(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsIndianMale = Long.parseLong(o);
-		this.pupilsIndianMaleWrap.alreadyInitialized = true;
+			this.pupilsIndigenousMale = Long.parseLong(o);
+		this.pupilsIndigenousMaleWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard pupilsIndianMaleInit() {
-		if(!pupilsIndianMaleWrap.alreadyInitialized) {
-			_pupilsIndianMale(pupilsIndianMaleWrap);
-			if(pupilsIndianMale == null)
-				setPupilsIndianMale(pupilsIndianMaleWrap.o);
+	protected ReportCard pupilsIndigenousMaleInit() {
+		if(!pupilsIndigenousMaleWrap.alreadyInitialized) {
+			_pupilsIndigenousMale(pupilsIndigenousMaleWrap);
+			if(pupilsIndigenousMale == null)
+				setPupilsIndigenousMale(pupilsIndigenousMaleWrap.o);
 		}
-		pupilsIndianMaleWrap.alreadyInitialized(true);
+		pupilsIndigenousMaleWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Long solrPupilsIndianMale() {
-		return pupilsIndianMale;
+	public Long solrPupilsIndigenousMale() {
+		return pupilsIndigenousMale;
 	}
 
-	public String strPupilsIndianMale() {
-		return pupilsIndianMale == null ? "" : pupilsIndianMale.toString();
+	public String strPupilsIndigenousMale() {
+		return pupilsIndigenousMale == null ? "" : pupilsIndigenousMale.toString();
 	}
 
-	public String jsonPupilsIndianMale() {
-		return pupilsIndianMale == null ? "" : pupilsIndianMale.toString();
+	public String jsonPupilsIndigenousMale() {
+		return pupilsIndigenousMale == null ? "" : pupilsIndigenousMale.toString();
 	}
 
-	public String nomAffichagePupilsIndianMale() {
-		return "First Nation male";
+	public String nomAffichagePupilsIndigenousMale() {
+		return "Indigenous male";
 	}
 
-	public String htmTooltipPupilsIndianMale() {
+	public String htmTooltipPupilsIndigenousMale() {
 		return null;
 	}
 
-	public String htmPupilsIndianMale() {
-		return pupilsIndianMale == null ? "" : StringEscapeUtils.escapeHtml4(strPupilsIndianMale());
+	public String htmPupilsIndigenousMale() {
+		return pupilsIndigenousMale == null ? "" : StringEscapeUtils.escapeHtml4(strPupilsIndigenousMale());
 	}
 
-	public void inputPupilsIndianMale(String classApiMethodMethod) {
+	public void inputPupilsIndigenousMale(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		if(
 				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -1068,40 +1068,40 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				) {
 			e("input")
 				.a("type", "text")
-				.a("placeholder", "First Nation male")
-				.a("id", classApiMethodMethod, "_pupilsIndianMale");
+				.a("placeholder", "Indigenous male")
+				.a("id", classApiMethodMethod, "_pupilsIndigenousMale");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
-					a("class", "setPupilsIndianMale classReportCard inputReportCard", pk, "PupilsIndianMale w3-input w3-border ");
-					a("name", "setPupilsIndianMale");
+					a("class", "setPupilsIndigenousMale classReportCard inputReportCard", pk, "PupilsIndigenousMale w3-input w3-border ");
+					a("name", "setPupilsIndigenousMale");
 				} else {
-					a("class", "valuePupilsIndianMale w3-input w3-border classReportCard inputReportCard", pk, "PupilsIndianMale w3-input w3-border ");
-					a("name", "pupilsIndianMale");
+					a("class", "valuePupilsIndigenousMale w3-input w3-border classReportCard inputReportCard", pk, "PupilsIndigenousMale w3-input w3-border ");
+					a("name", "pupilsIndigenousMale");
 				}
 				if("Page".equals(classApiMethodMethod)) {
 					a("onclick", "removeGlow($(this)); ");
-					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setPupilsIndianMale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_pupilsIndianMale')); }, function() { addError($('#", classApiMethodMethod, "_pupilsIndianMale')); }); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setPupilsIndigenousMale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_pupilsIndigenousMale')); }, function() { addError($('#", classApiMethodMethod, "_pupilsIndigenousMale')); }); ");
 				}
-				a("value", strPupilsIndianMale())
+				a("value", strPupilsIndigenousMale())
 			.fg();
 
 		} else {
-			e("span").a("class", "varReportCard", pk, "PupilsIndianMale ").f().sx(htmPupilsIndianMale()).g("span");
+			e("span").a("class", "varReportCard", pk, "PupilsIndigenousMale ").f().sx(htmPupilsIndigenousMale()).g("span");
 		}
 	}
 
-	public void htmPupilsIndianMale(String classApiMethodMethod) {
+	public void htmPupilsIndigenousMale(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			{ e("div").a("class", "w3-padding ").f();
-				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardPupilsIndianMale").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardPupilsIndigenousMale").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_pupilsIndianMale").a("class", "").f().sx("First Nation male").g("label");
+							e("label").a("for", classApiMethodMethod, "_pupilsIndigenousMale").a("class", "").f().sx("Indigenous male").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
 
-								inputPupilsIndianMale(classApiMethodMethod);
+								inputPupilsIndigenousMale(classApiMethodMethod);
 							} g("div");
 							if(
 									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -1112,7 +1112,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 										{ e("button")
 											.a("tabindex", "-1")
 											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
-										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_pupilsIndianMale')); $('#", classApiMethodMethod, "_pupilsIndianMale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setPupilsIndianMale', null, function() { addGlow($('#", classApiMethodMethod, "_pupilsIndianMale')); }, function() { addError($('#", classApiMethodMethod, "_pupilsIndianMale')); }); ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_pupilsIndigenousMale')); $('#", classApiMethodMethod, "_pupilsIndigenousMale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setPupilsIndigenousMale', null, function() { addGlow($('#", classApiMethodMethod, "_pupilsIndigenousMale')); }, function() { addError($('#", classApiMethodMethod, "_pupilsIndigenousMale')); }); ")
 											.f();
 											e("i").a("class", "far fa-eraser ").f().g("i");
 										} g("button");
@@ -1126,92 +1126,92 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	///////////////////////
-	// pupilsIndianTotal //
-	///////////////////////
+	///////////////////////////
+	// pupilsIndigenousTotal //
+	///////////////////////////
 
-	/**	 The entity pupilsIndianTotal
+	/**	 The entity pupilsIndigenousTotal
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Long pupilsIndianTotal;
+	protected Long pupilsIndigenousTotal;
 	@JsonIgnore
-	public Wrap<Long> pupilsIndianTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsIndianTotal").o(pupilsIndianTotal);
+	public Wrap<Long> pupilsIndigenousTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsIndigenousTotal").o(pupilsIndigenousTotal);
 
-	/**	<br/> The entity pupilsIndianTotal
+	/**	<br/> The entity pupilsIndigenousTotal
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pupilsIndianTotal">Find the entity pupilsIndianTotal in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pupilsIndigenousTotal">Find the entity pupilsIndigenousTotal in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsIndianTotal(Wrap<Long> c);
+	protected abstract void _pupilsIndigenousTotal(Wrap<Long> c);
 
-	public Long getPupilsIndianTotal() {
-		return pupilsIndianTotal;
+	public Long getPupilsIndigenousTotal() {
+		return pupilsIndigenousTotal;
 	}
 
-	public void setPupilsIndianTotal(Long pupilsIndianTotal) {
-		this.pupilsIndianTotal = pupilsIndianTotal;
-		this.pupilsIndianTotalWrap.alreadyInitialized = true;
+	public void setPupilsIndigenousTotal(Long pupilsIndigenousTotal) {
+		this.pupilsIndigenousTotal = pupilsIndigenousTotal;
+		this.pupilsIndigenousTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsIndianTotal(String o) {
+	public ReportCard setPupilsIndigenousTotal(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsIndianTotal = Long.parseLong(o);
-		this.pupilsIndianTotalWrap.alreadyInitialized = true;
+			this.pupilsIndigenousTotal = Long.parseLong(o);
+		this.pupilsIndigenousTotalWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard pupilsIndianTotalInit() {
-		if(!pupilsIndianTotalWrap.alreadyInitialized) {
-			_pupilsIndianTotal(pupilsIndianTotalWrap);
-			if(pupilsIndianTotal == null)
-				setPupilsIndianTotal(pupilsIndianTotalWrap.o);
+	protected ReportCard pupilsIndigenousTotalInit() {
+		if(!pupilsIndigenousTotalWrap.alreadyInitialized) {
+			_pupilsIndigenousTotal(pupilsIndigenousTotalWrap);
+			if(pupilsIndigenousTotal == null)
+				setPupilsIndigenousTotal(pupilsIndigenousTotalWrap.o);
 		}
-		pupilsIndianTotalWrap.alreadyInitialized(true);
+		pupilsIndigenousTotalWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Long solrPupilsIndianTotal() {
-		return pupilsIndianTotal;
+	public Long solrPupilsIndigenousTotal() {
+		return pupilsIndigenousTotal;
 	}
 
-	public String strPupilsIndianTotal() {
-		return pupilsIndianTotal == null ? "" : pupilsIndianTotal.toString();
+	public String strPupilsIndigenousTotal() {
+		return pupilsIndigenousTotal == null ? "" : pupilsIndigenousTotal.toString();
 	}
 
-	public String jsonPupilsIndianTotal() {
-		return pupilsIndianTotal == null ? "" : pupilsIndianTotal.toString();
+	public String jsonPupilsIndigenousTotal() {
+		return pupilsIndigenousTotal == null ? "" : pupilsIndigenousTotal.toString();
 	}
 
-	public String nomAffichagePupilsIndianTotal() {
-		return "First Nation total";
+	public String nomAffichagePupilsIndigenousTotal() {
+		return "Indigenous total";
 	}
 
-	public String htmTooltipPupilsIndianTotal() {
+	public String htmTooltipPupilsIndigenousTotal() {
 		return null;
 	}
 
-	public String htmPupilsIndianTotal() {
-		return pupilsIndianTotal == null ? "" : StringEscapeUtils.escapeHtml4(strPupilsIndianTotal());
+	public String htmPupilsIndigenousTotal() {
+		return pupilsIndigenousTotal == null ? "" : StringEscapeUtils.escapeHtml4(strPupilsIndigenousTotal());
 	}
 
-	public void inputPupilsIndianTotal(String classApiMethodMethod) {
+	public void inputPupilsIndigenousTotal(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 	}
 
-	public void htmPupilsIndianTotal(String classApiMethodMethod) {
+	public void htmPupilsIndigenousTotal(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			if("Page".equals(classApiMethodMethod)) {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("First Nation total").g("label");
+							e("label").a("class", "").f().sx("Indigenous total").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
 								{ e("div").a("class", "w3-rest ").f();
-									e("span").a("class", "varReportCard", pk, "PupilsIndianTotal ").f().sx(strPupilsIndianTotal()).g("span");
+									e("span").a("class", "varReportCard", pk, "PupilsIndigenousTotal ").f().sx(strPupilsIndigenousTotal()).g("span");
 								} g("div");
 							} g("div");
 						} g("div");
@@ -1221,103 +1221,103 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	/////////////////////////
-	// pupilsIndianPercent //
-	/////////////////////////
+	/////////////////////////////
+	// pupilsIndigenousPercent //
+	/////////////////////////////
 
-	/**	 The entity pupilsIndianPercent
+	/**	 The entity pupilsIndigenousPercent
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected BigDecimal pupilsIndianPercent;
+	protected BigDecimal pupilsIndigenousPercent;
 	@JsonIgnore
-	public Wrap<BigDecimal> pupilsIndianPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("pupilsIndianPercent").o(pupilsIndianPercent);
+	public Wrap<BigDecimal> pupilsIndigenousPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("pupilsIndigenousPercent").o(pupilsIndigenousPercent);
 
-	/**	<br/> The entity pupilsIndianPercent
+	/**	<br/> The entity pupilsIndigenousPercent
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pupilsIndianPercent">Find the entity pupilsIndianPercent in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pupilsIndigenousPercent">Find the entity pupilsIndigenousPercent in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsIndianPercent(Wrap<BigDecimal> c);
+	protected abstract void _pupilsIndigenousPercent(Wrap<BigDecimal> c);
 
-	public BigDecimal getPupilsIndianPercent() {
-		return pupilsIndianPercent;
+	public BigDecimal getPupilsIndigenousPercent() {
+		return pupilsIndigenousPercent;
 	}
 
-	public void setPupilsIndianPercent(BigDecimal pupilsIndianPercent) {
-		this.pupilsIndianPercent = pupilsIndianPercent;
-		this.pupilsIndianPercentWrap.alreadyInitialized = true;
+	public void setPupilsIndigenousPercent(BigDecimal pupilsIndigenousPercent) {
+		this.pupilsIndigenousPercent = pupilsIndigenousPercent;
+		this.pupilsIndigenousPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsIndianPercent(String o) {
+	public ReportCard setPupilsIndigenousPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.pupilsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.pupilsIndianPercentWrap.alreadyInitialized = true;
+			this.pupilsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.pupilsIndigenousPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setPupilsIndianPercent(Double o) {
-			this.pupilsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.pupilsIndianPercentWrap.alreadyInitialized = true;
+	public ReportCard setPupilsIndigenousPercent(Double o) {
+			this.pupilsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.pupilsIndigenousPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setPupilsIndianPercent(Integer o) {
-			this.pupilsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.pupilsIndianPercentWrap.alreadyInitialized = true;
+	public ReportCard setPupilsIndigenousPercent(Integer o) {
+			this.pupilsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.pupilsIndigenousPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard pupilsIndianPercentInit() {
-		if(!pupilsIndianPercentWrap.alreadyInitialized) {
-			_pupilsIndianPercent(pupilsIndianPercentWrap);
-			if(pupilsIndianPercent == null)
-				setPupilsIndianPercent(pupilsIndianPercentWrap.o);
+	protected ReportCard pupilsIndigenousPercentInit() {
+		if(!pupilsIndigenousPercentWrap.alreadyInitialized) {
+			_pupilsIndigenousPercent(pupilsIndigenousPercentWrap);
+			if(pupilsIndigenousPercent == null)
+				setPupilsIndigenousPercent(pupilsIndigenousPercentWrap.o);
 		}
-		pupilsIndianPercentWrap.alreadyInitialized(true);
+		pupilsIndigenousPercentWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Double solrPupilsIndianPercent() {
-		return pupilsIndianPercent == null ? null : pupilsIndianPercent.doubleValue();
+	public Double solrPupilsIndigenousPercent() {
+		return pupilsIndigenousPercent == null ? null : pupilsIndigenousPercent.doubleValue();
 	}
 
-	public String strPupilsIndianPercent() {
-		return pupilsIndianPercent == null ? "" : pupilsIndianPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	public String strPupilsIndigenousPercent() {
+		return pupilsIndigenousPercent == null ? "" : pupilsIndigenousPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
-	public String jsonPupilsIndianPercent() {
-		return pupilsIndianPercent == null ? "" : pupilsIndianPercent.toString();
+	public String jsonPupilsIndigenousPercent() {
+		return pupilsIndigenousPercent == null ? "" : pupilsIndigenousPercent.toString();
 	}
 
-	public String nomAffichagePupilsIndianPercent() {
-		return "First Nation percent";
+	public String nomAffichagePupilsIndigenousPercent() {
+		return "Indigenous percent";
 	}
 
-	public String htmTooltipPupilsIndianPercent() {
+	public String htmTooltipPupilsIndigenousPercent() {
 		return null;
 	}
 
-	public String htmPupilsIndianPercent() {
-		return pupilsIndianPercent == null ? "" : StringEscapeUtils.escapeHtml4(strPupilsIndianPercent());
+	public String htmPupilsIndigenousPercent() {
+		return pupilsIndigenousPercent == null ? "" : StringEscapeUtils.escapeHtml4(strPupilsIndigenousPercent());
 	}
 
-	public void inputPupilsIndianPercent(String classApiMethodMethod) {
+	public void inputPupilsIndigenousPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 	}
 
-	public void htmPupilsIndianPercent(String classApiMethodMethod) {
+	public void htmPupilsIndigenousPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			if("Page".equals(classApiMethodMethod)) {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("First Nation percent").g("label");
+							e("label").a("class", "").f().sx("Indigenous percent").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
 								{ e("div").a("class", "w3-rest ").f();
-									e("span").a("class", "varReportCard", pk, "PupilsIndianPercent ").f().sx(strPupilsIndianPercent()).g("span");
+									e("span").a("class", "varReportCard", pk, "PupilsIndigenousPercent ").f().sx(strPupilsIndigenousPercent()).g("span");
 								} g("div");
 							} g("div");
 						} g("div");
@@ -1798,76 +1798,76 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	//////////////////////////
-	// pupilsHispanicFemale //
-	//////////////////////////
+	////////////////////////
+	// pupilsLatinxFemale //
+	////////////////////////
 
-	/**	 The entity pupilsHispanicFemale
+	/**	 The entity pupilsLatinxFemale
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Long pupilsHispanicFemale;
+	protected Long pupilsLatinxFemale;
 	@JsonIgnore
-	public Wrap<Long> pupilsHispanicFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsHispanicFemale").o(pupilsHispanicFemale);
+	public Wrap<Long> pupilsLatinxFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsLatinxFemale").o(pupilsLatinxFemale);
 
-	/**	<br/> The entity pupilsHispanicFemale
+	/**	<br/> The entity pupilsLatinxFemale
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pupilsHispanicFemale">Find the entity pupilsHispanicFemale in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pupilsLatinxFemale">Find the entity pupilsLatinxFemale in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsHispanicFemale(Wrap<Long> c);
+	protected abstract void _pupilsLatinxFemale(Wrap<Long> c);
 
-	public Long getPupilsHispanicFemale() {
-		return pupilsHispanicFemale;
+	public Long getPupilsLatinxFemale() {
+		return pupilsLatinxFemale;
 	}
 
-	public void setPupilsHispanicFemale(Long pupilsHispanicFemale) {
-		this.pupilsHispanicFemale = pupilsHispanicFemale;
-		this.pupilsHispanicFemaleWrap.alreadyInitialized = true;
+	public void setPupilsLatinxFemale(Long pupilsLatinxFemale) {
+		this.pupilsLatinxFemale = pupilsLatinxFemale;
+		this.pupilsLatinxFemaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsHispanicFemale(String o) {
+	public ReportCard setPupilsLatinxFemale(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsHispanicFemale = Long.parseLong(o);
-		this.pupilsHispanicFemaleWrap.alreadyInitialized = true;
+			this.pupilsLatinxFemale = Long.parseLong(o);
+		this.pupilsLatinxFemaleWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard pupilsHispanicFemaleInit() {
-		if(!pupilsHispanicFemaleWrap.alreadyInitialized) {
-			_pupilsHispanicFemale(pupilsHispanicFemaleWrap);
-			if(pupilsHispanicFemale == null)
-				setPupilsHispanicFemale(pupilsHispanicFemaleWrap.o);
+	protected ReportCard pupilsLatinxFemaleInit() {
+		if(!pupilsLatinxFemaleWrap.alreadyInitialized) {
+			_pupilsLatinxFemale(pupilsLatinxFemaleWrap);
+			if(pupilsLatinxFemale == null)
+				setPupilsLatinxFemale(pupilsLatinxFemaleWrap.o);
 		}
-		pupilsHispanicFemaleWrap.alreadyInitialized(true);
+		pupilsLatinxFemaleWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Long solrPupilsHispanicFemale() {
-		return pupilsHispanicFemale;
+	public Long solrPupilsLatinxFemale() {
+		return pupilsLatinxFemale;
 	}
 
-	public String strPupilsHispanicFemale() {
-		return pupilsHispanicFemale == null ? "" : pupilsHispanicFemale.toString();
+	public String strPupilsLatinxFemale() {
+		return pupilsLatinxFemale == null ? "" : pupilsLatinxFemale.toString();
 	}
 
-	public String jsonPupilsHispanicFemale() {
-		return pupilsHispanicFemale == null ? "" : pupilsHispanicFemale.toString();
+	public String jsonPupilsLatinxFemale() {
+		return pupilsLatinxFemale == null ? "" : pupilsLatinxFemale.toString();
 	}
 
-	public String nomAffichagePupilsHispanicFemale() {
+	public String nomAffichagePupilsLatinxFemale() {
 		return "Latinx female";
 	}
 
-	public String htmTooltipPupilsHispanicFemale() {
+	public String htmTooltipPupilsLatinxFemale() {
 		return null;
 	}
 
-	public String htmPupilsHispanicFemale() {
-		return pupilsHispanicFemale == null ? "" : StringEscapeUtils.escapeHtml4(strPupilsHispanicFemale());
+	public String htmPupilsLatinxFemale() {
+		return pupilsLatinxFemale == null ? "" : StringEscapeUtils.escapeHtml4(strPupilsLatinxFemale());
 	}
 
-	public void inputPupilsHispanicFemale(String classApiMethodMethod) {
+	public void inputPupilsLatinxFemale(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		if(
 				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -1876,39 +1876,39 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			e("input")
 				.a("type", "text")
 				.a("placeholder", "Latinx female")
-				.a("id", classApiMethodMethod, "_pupilsHispanicFemale");
+				.a("id", classApiMethodMethod, "_pupilsLatinxFemale");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
-					a("class", "setPupilsHispanicFemale classReportCard inputReportCard", pk, "PupilsHispanicFemale w3-input w3-border ");
-					a("name", "setPupilsHispanicFemale");
+					a("class", "setPupilsLatinxFemale classReportCard inputReportCard", pk, "PupilsLatinxFemale w3-input w3-border ");
+					a("name", "setPupilsLatinxFemale");
 				} else {
-					a("class", "valuePupilsHispanicFemale w3-input w3-border classReportCard inputReportCard", pk, "PupilsHispanicFemale w3-input w3-border ");
-					a("name", "pupilsHispanicFemale");
+					a("class", "valuePupilsLatinxFemale w3-input w3-border classReportCard inputReportCard", pk, "PupilsLatinxFemale w3-input w3-border ");
+					a("name", "pupilsLatinxFemale");
 				}
 				if("Page".equals(classApiMethodMethod)) {
 					a("onclick", "removeGlow($(this)); ");
-					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setPupilsHispanicFemale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_pupilsHispanicFemale')); }, function() { addError($('#", classApiMethodMethod, "_pupilsHispanicFemale')); }); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setPupilsLatinxFemale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_pupilsLatinxFemale')); }, function() { addError($('#", classApiMethodMethod, "_pupilsLatinxFemale')); }); ");
 				}
-				a("value", strPupilsHispanicFemale())
+				a("value", strPupilsLatinxFemale())
 			.fg();
 
 		} else {
-			e("span").a("class", "varReportCard", pk, "PupilsHispanicFemale ").f().sx(htmPupilsHispanicFemale()).g("span");
+			e("span").a("class", "varReportCard", pk, "PupilsLatinxFemale ").f().sx(htmPupilsLatinxFemale()).g("span");
 		}
 	}
 
-	public void htmPupilsHispanicFemale(String classApiMethodMethod) {
+	public void htmPupilsLatinxFemale(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			{ e("div").a("class", "w3-padding ").f();
-				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardPupilsHispanicFemale").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardPupilsLatinxFemale").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_pupilsHispanicFemale").a("class", "").f().sx("Latinx female").g("label");
+							e("label").a("for", classApiMethodMethod, "_pupilsLatinxFemale").a("class", "").f().sx("Latinx female").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
 
-								inputPupilsHispanicFemale(classApiMethodMethod);
+								inputPupilsLatinxFemale(classApiMethodMethod);
 							} g("div");
 							if(
 									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -1919,7 +1919,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 										{ e("button")
 											.a("tabindex", "-1")
 											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
-										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_pupilsHispanicFemale')); $('#", classApiMethodMethod, "_pupilsHispanicFemale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setPupilsHispanicFemale', null, function() { addGlow($('#", classApiMethodMethod, "_pupilsHispanicFemale')); }, function() { addError($('#", classApiMethodMethod, "_pupilsHispanicFemale')); }); ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_pupilsLatinxFemale')); $('#", classApiMethodMethod, "_pupilsLatinxFemale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setPupilsLatinxFemale', null, function() { addGlow($('#", classApiMethodMethod, "_pupilsLatinxFemale')); }, function() { addError($('#", classApiMethodMethod, "_pupilsLatinxFemale')); }); ")
 											.f();
 											e("i").a("class", "far fa-eraser ").f().g("i");
 										} g("button");
@@ -1933,76 +1933,76 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	////////////////////////
-	// pupilsHispanicMale //
-	////////////////////////
+	//////////////////////
+	// pupilsLatinxMale //
+	//////////////////////
 
-	/**	 The entity pupilsHispanicMale
+	/**	 The entity pupilsLatinxMale
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Long pupilsHispanicMale;
+	protected Long pupilsLatinxMale;
 	@JsonIgnore
-	public Wrap<Long> pupilsHispanicMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsHispanicMale").o(pupilsHispanicMale);
+	public Wrap<Long> pupilsLatinxMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsLatinxMale").o(pupilsLatinxMale);
 
-	/**	<br/> The entity pupilsHispanicMale
+	/**	<br/> The entity pupilsLatinxMale
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pupilsHispanicMale">Find the entity pupilsHispanicMale in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pupilsLatinxMale">Find the entity pupilsLatinxMale in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsHispanicMale(Wrap<Long> c);
+	protected abstract void _pupilsLatinxMale(Wrap<Long> c);
 
-	public Long getPupilsHispanicMale() {
-		return pupilsHispanicMale;
+	public Long getPupilsLatinxMale() {
+		return pupilsLatinxMale;
 	}
 
-	public void setPupilsHispanicMale(Long pupilsHispanicMale) {
-		this.pupilsHispanicMale = pupilsHispanicMale;
-		this.pupilsHispanicMaleWrap.alreadyInitialized = true;
+	public void setPupilsLatinxMale(Long pupilsLatinxMale) {
+		this.pupilsLatinxMale = pupilsLatinxMale;
+		this.pupilsLatinxMaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsHispanicMale(String o) {
+	public ReportCard setPupilsLatinxMale(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsHispanicMale = Long.parseLong(o);
-		this.pupilsHispanicMaleWrap.alreadyInitialized = true;
+			this.pupilsLatinxMale = Long.parseLong(o);
+		this.pupilsLatinxMaleWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard pupilsHispanicMaleInit() {
-		if(!pupilsHispanicMaleWrap.alreadyInitialized) {
-			_pupilsHispanicMale(pupilsHispanicMaleWrap);
-			if(pupilsHispanicMale == null)
-				setPupilsHispanicMale(pupilsHispanicMaleWrap.o);
+	protected ReportCard pupilsLatinxMaleInit() {
+		if(!pupilsLatinxMaleWrap.alreadyInitialized) {
+			_pupilsLatinxMale(pupilsLatinxMaleWrap);
+			if(pupilsLatinxMale == null)
+				setPupilsLatinxMale(pupilsLatinxMaleWrap.o);
 		}
-		pupilsHispanicMaleWrap.alreadyInitialized(true);
+		pupilsLatinxMaleWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Long solrPupilsHispanicMale() {
-		return pupilsHispanicMale;
+	public Long solrPupilsLatinxMale() {
+		return pupilsLatinxMale;
 	}
 
-	public String strPupilsHispanicMale() {
-		return pupilsHispanicMale == null ? "" : pupilsHispanicMale.toString();
+	public String strPupilsLatinxMale() {
+		return pupilsLatinxMale == null ? "" : pupilsLatinxMale.toString();
 	}
 
-	public String jsonPupilsHispanicMale() {
-		return pupilsHispanicMale == null ? "" : pupilsHispanicMale.toString();
+	public String jsonPupilsLatinxMale() {
+		return pupilsLatinxMale == null ? "" : pupilsLatinxMale.toString();
 	}
 
-	public String nomAffichagePupilsHispanicMale() {
+	public String nomAffichagePupilsLatinxMale() {
 		return "Latinx male";
 	}
 
-	public String htmTooltipPupilsHispanicMale() {
+	public String htmTooltipPupilsLatinxMale() {
 		return null;
 	}
 
-	public String htmPupilsHispanicMale() {
-		return pupilsHispanicMale == null ? "" : StringEscapeUtils.escapeHtml4(strPupilsHispanicMale());
+	public String htmPupilsLatinxMale() {
+		return pupilsLatinxMale == null ? "" : StringEscapeUtils.escapeHtml4(strPupilsLatinxMale());
 	}
 
-	public void inputPupilsHispanicMale(String classApiMethodMethod) {
+	public void inputPupilsLatinxMale(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		if(
 				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -2011,39 +2011,39 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			e("input")
 				.a("type", "text")
 				.a("placeholder", "Latinx male")
-				.a("id", classApiMethodMethod, "_pupilsHispanicMale");
+				.a("id", classApiMethodMethod, "_pupilsLatinxMale");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
-					a("class", "setPupilsHispanicMale classReportCard inputReportCard", pk, "PupilsHispanicMale w3-input w3-border ");
-					a("name", "setPupilsHispanicMale");
+					a("class", "setPupilsLatinxMale classReportCard inputReportCard", pk, "PupilsLatinxMale w3-input w3-border ");
+					a("name", "setPupilsLatinxMale");
 				} else {
-					a("class", "valuePupilsHispanicMale w3-input w3-border classReportCard inputReportCard", pk, "PupilsHispanicMale w3-input w3-border ");
-					a("name", "pupilsHispanicMale");
+					a("class", "valuePupilsLatinxMale w3-input w3-border classReportCard inputReportCard", pk, "PupilsLatinxMale w3-input w3-border ");
+					a("name", "pupilsLatinxMale");
 				}
 				if("Page".equals(classApiMethodMethod)) {
 					a("onclick", "removeGlow($(this)); ");
-					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setPupilsHispanicMale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_pupilsHispanicMale')); }, function() { addError($('#", classApiMethodMethod, "_pupilsHispanicMale')); }); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setPupilsLatinxMale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_pupilsLatinxMale')); }, function() { addError($('#", classApiMethodMethod, "_pupilsLatinxMale')); }); ");
 				}
-				a("value", strPupilsHispanicMale())
+				a("value", strPupilsLatinxMale())
 			.fg();
 
 		} else {
-			e("span").a("class", "varReportCard", pk, "PupilsHispanicMale ").f().sx(htmPupilsHispanicMale()).g("span");
+			e("span").a("class", "varReportCard", pk, "PupilsLatinxMale ").f().sx(htmPupilsLatinxMale()).g("span");
 		}
 	}
 
-	public void htmPupilsHispanicMale(String classApiMethodMethod) {
+	public void htmPupilsLatinxMale(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			{ e("div").a("class", "w3-padding ").f();
-				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardPupilsHispanicMale").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardPupilsLatinxMale").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_pupilsHispanicMale").a("class", "").f().sx("Latinx male").g("label");
+							e("label").a("for", classApiMethodMethod, "_pupilsLatinxMale").a("class", "").f().sx("Latinx male").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
 
-								inputPupilsHispanicMale(classApiMethodMethod);
+								inputPupilsLatinxMale(classApiMethodMethod);
 							} g("div");
 							if(
 									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -2054,7 +2054,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 										{ e("button")
 											.a("tabindex", "-1")
 											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
-										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_pupilsHispanicMale')); $('#", classApiMethodMethod, "_pupilsHispanicMale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setPupilsHispanicMale', null, function() { addGlow($('#", classApiMethodMethod, "_pupilsHispanicMale')); }, function() { addError($('#", classApiMethodMethod, "_pupilsHispanicMale')); }); ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_pupilsLatinxMale')); $('#", classApiMethodMethod, "_pupilsLatinxMale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setPupilsLatinxMale', null, function() { addGlow($('#", classApiMethodMethod, "_pupilsLatinxMale')); }, function() { addError($('#", classApiMethodMethod, "_pupilsLatinxMale')); }); ")
 											.f();
 											e("i").a("class", "far fa-eraser ").f().g("i");
 										} g("button");
@@ -2068,80 +2068,80 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	/////////////////////////
-	// pupilsHispanicTotal //
-	/////////////////////////
+	///////////////////////
+	// pupilsLatinxTotal //
+	///////////////////////
 
-	/**	 The entity pupilsHispanicTotal
+	/**	 The entity pupilsLatinxTotal
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Long pupilsHispanicTotal;
+	protected Long pupilsLatinxTotal;
 	@JsonIgnore
-	public Wrap<Long> pupilsHispanicTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsHispanicTotal").o(pupilsHispanicTotal);
+	public Wrap<Long> pupilsLatinxTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("pupilsLatinxTotal").o(pupilsLatinxTotal);
 
-	/**	<br/> The entity pupilsHispanicTotal
+	/**	<br/> The entity pupilsLatinxTotal
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pupilsHispanicTotal">Find the entity pupilsHispanicTotal in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pupilsLatinxTotal">Find the entity pupilsLatinxTotal in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsHispanicTotal(Wrap<Long> c);
+	protected abstract void _pupilsLatinxTotal(Wrap<Long> c);
 
-	public Long getPupilsHispanicTotal() {
-		return pupilsHispanicTotal;
+	public Long getPupilsLatinxTotal() {
+		return pupilsLatinxTotal;
 	}
 
-	public void setPupilsHispanicTotal(Long pupilsHispanicTotal) {
-		this.pupilsHispanicTotal = pupilsHispanicTotal;
-		this.pupilsHispanicTotalWrap.alreadyInitialized = true;
+	public void setPupilsLatinxTotal(Long pupilsLatinxTotal) {
+		this.pupilsLatinxTotal = pupilsLatinxTotal;
+		this.pupilsLatinxTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsHispanicTotal(String o) {
+	public ReportCard setPupilsLatinxTotal(String o) {
 		if(NumberUtils.isParsable(o))
-			this.pupilsHispanicTotal = Long.parseLong(o);
-		this.pupilsHispanicTotalWrap.alreadyInitialized = true;
+			this.pupilsLatinxTotal = Long.parseLong(o);
+		this.pupilsLatinxTotalWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard pupilsHispanicTotalInit() {
-		if(!pupilsHispanicTotalWrap.alreadyInitialized) {
-			_pupilsHispanicTotal(pupilsHispanicTotalWrap);
-			if(pupilsHispanicTotal == null)
-				setPupilsHispanicTotal(pupilsHispanicTotalWrap.o);
+	protected ReportCard pupilsLatinxTotalInit() {
+		if(!pupilsLatinxTotalWrap.alreadyInitialized) {
+			_pupilsLatinxTotal(pupilsLatinxTotalWrap);
+			if(pupilsLatinxTotal == null)
+				setPupilsLatinxTotal(pupilsLatinxTotalWrap.o);
 		}
-		pupilsHispanicTotalWrap.alreadyInitialized(true);
+		pupilsLatinxTotalWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Long solrPupilsHispanicTotal() {
-		return pupilsHispanicTotal;
+	public Long solrPupilsLatinxTotal() {
+		return pupilsLatinxTotal;
 	}
 
-	public String strPupilsHispanicTotal() {
-		return pupilsHispanicTotal == null ? "" : pupilsHispanicTotal.toString();
+	public String strPupilsLatinxTotal() {
+		return pupilsLatinxTotal == null ? "" : pupilsLatinxTotal.toString();
 	}
 
-	public String jsonPupilsHispanicTotal() {
-		return pupilsHispanicTotal == null ? "" : pupilsHispanicTotal.toString();
+	public String jsonPupilsLatinxTotal() {
+		return pupilsLatinxTotal == null ? "" : pupilsLatinxTotal.toString();
 	}
 
-	public String nomAffichagePupilsHispanicTotal() {
+	public String nomAffichagePupilsLatinxTotal() {
 		return "Latinx total";
 	}
 
-	public String htmTooltipPupilsHispanicTotal() {
+	public String htmTooltipPupilsLatinxTotal() {
 		return null;
 	}
 
-	public String htmPupilsHispanicTotal() {
-		return pupilsHispanicTotal == null ? "" : StringEscapeUtils.escapeHtml4(strPupilsHispanicTotal());
+	public String htmPupilsLatinxTotal() {
+		return pupilsLatinxTotal == null ? "" : StringEscapeUtils.escapeHtml4(strPupilsLatinxTotal());
 	}
 
-	public void inputPupilsHispanicTotal(String classApiMethodMethod) {
+	public void inputPupilsLatinxTotal(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 	}
 
-	public void htmPupilsHispanicTotal(String classApiMethodMethod) {
+	public void htmPupilsLatinxTotal(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			if("Page".equals(classApiMethodMethod)) {
@@ -2153,7 +2153,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
 								{ e("div").a("class", "w3-rest ").f();
-									e("span").a("class", "varReportCard", pk, "PupilsHispanicTotal ").f().sx(strPupilsHispanicTotal()).g("span");
+									e("span").a("class", "varReportCard", pk, "PupilsLatinxTotal ").f().sx(strPupilsLatinxTotal()).g("span");
 								} g("div");
 							} g("div");
 						} g("div");
@@ -2163,91 +2163,91 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	///////////////////////////
-	// pupilsHispanicPercent //
-	///////////////////////////
+	/////////////////////////
+	// pupilsLatinxPercent //
+	/////////////////////////
 
-	/**	 The entity pupilsHispanicPercent
+	/**	 The entity pupilsLatinxPercent
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected BigDecimal pupilsHispanicPercent;
+	protected BigDecimal pupilsLatinxPercent;
 	@JsonIgnore
-	public Wrap<BigDecimal> pupilsHispanicPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("pupilsHispanicPercent").o(pupilsHispanicPercent);
+	public Wrap<BigDecimal> pupilsLatinxPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("pupilsLatinxPercent").o(pupilsLatinxPercent);
 
-	/**	<br/> The entity pupilsHispanicPercent
+	/**	<br/> The entity pupilsLatinxPercent
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pupilsHispanicPercent">Find the entity pupilsHispanicPercent in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pupilsLatinxPercent">Find the entity pupilsLatinxPercent in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _pupilsHispanicPercent(Wrap<BigDecimal> c);
+	protected abstract void _pupilsLatinxPercent(Wrap<BigDecimal> c);
 
-	public BigDecimal getPupilsHispanicPercent() {
-		return pupilsHispanicPercent;
+	public BigDecimal getPupilsLatinxPercent() {
+		return pupilsLatinxPercent;
 	}
 
-	public void setPupilsHispanicPercent(BigDecimal pupilsHispanicPercent) {
-		this.pupilsHispanicPercent = pupilsHispanicPercent;
-		this.pupilsHispanicPercentWrap.alreadyInitialized = true;
+	public void setPupilsLatinxPercent(BigDecimal pupilsLatinxPercent) {
+		this.pupilsLatinxPercent = pupilsLatinxPercent;
+		this.pupilsLatinxPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsHispanicPercent(String o) {
+	public ReportCard setPupilsLatinxPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.pupilsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.pupilsHispanicPercentWrap.alreadyInitialized = true;
+			this.pupilsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.pupilsLatinxPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setPupilsHispanicPercent(Double o) {
-			this.pupilsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.pupilsHispanicPercentWrap.alreadyInitialized = true;
+	public ReportCard setPupilsLatinxPercent(Double o) {
+			this.pupilsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.pupilsLatinxPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setPupilsHispanicPercent(Integer o) {
-			this.pupilsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.pupilsHispanicPercentWrap.alreadyInitialized = true;
+	public ReportCard setPupilsLatinxPercent(Integer o) {
+			this.pupilsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.pupilsLatinxPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard pupilsHispanicPercentInit() {
-		if(!pupilsHispanicPercentWrap.alreadyInitialized) {
-			_pupilsHispanicPercent(pupilsHispanicPercentWrap);
-			if(pupilsHispanicPercent == null)
-				setPupilsHispanicPercent(pupilsHispanicPercentWrap.o);
+	protected ReportCard pupilsLatinxPercentInit() {
+		if(!pupilsLatinxPercentWrap.alreadyInitialized) {
+			_pupilsLatinxPercent(pupilsLatinxPercentWrap);
+			if(pupilsLatinxPercent == null)
+				setPupilsLatinxPercent(pupilsLatinxPercentWrap.o);
 		}
-		pupilsHispanicPercentWrap.alreadyInitialized(true);
+		pupilsLatinxPercentWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Double solrPupilsHispanicPercent() {
-		return pupilsHispanicPercent == null ? null : pupilsHispanicPercent.doubleValue();
+	public Double solrPupilsLatinxPercent() {
+		return pupilsLatinxPercent == null ? null : pupilsLatinxPercent.doubleValue();
 	}
 
-	public String strPupilsHispanicPercent() {
-		return pupilsHispanicPercent == null ? "" : pupilsHispanicPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	public String strPupilsLatinxPercent() {
+		return pupilsLatinxPercent == null ? "" : pupilsLatinxPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
-	public String jsonPupilsHispanicPercent() {
-		return pupilsHispanicPercent == null ? "" : pupilsHispanicPercent.toString();
+	public String jsonPupilsLatinxPercent() {
+		return pupilsLatinxPercent == null ? "" : pupilsLatinxPercent.toString();
 	}
 
-	public String nomAffichagePupilsHispanicPercent() {
+	public String nomAffichagePupilsLatinxPercent() {
 		return "Latinx percent";
 	}
 
-	public String htmTooltipPupilsHispanicPercent() {
+	public String htmTooltipPupilsLatinxPercent() {
 		return null;
 	}
 
-	public String htmPupilsHispanicPercent() {
-		return pupilsHispanicPercent == null ? "" : StringEscapeUtils.escapeHtml4(strPupilsHispanicPercent());
+	public String htmPupilsLatinxPercent() {
+		return pupilsLatinxPercent == null ? "" : StringEscapeUtils.escapeHtml4(strPupilsLatinxPercent());
 	}
 
-	public void inputPupilsHispanicPercent(String classApiMethodMethod) {
+	public void inputPupilsLatinxPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 	}
 
-	public void htmPupilsHispanicPercent(String classApiMethodMethod) {
+	public void htmPupilsLatinxPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			if("Page".equals(classApiMethodMethod)) {
@@ -2259,7 +2259,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
 								{ e("div").a("class", "w3-rest ").f();
-									e("span").a("class", "varReportCard", pk, "PupilsHispanicPercent ").f().sx(strPupilsHispanicPercent()).g("span");
+									e("span").a("class", "varReportCard", pk, "PupilsLatinxPercent ").f().sx(strPupilsLatinxPercent()).g("span");
 								} g("div");
 							} g("div");
 						} g("div");
@@ -6179,76 +6179,76 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	//////////////////////////////////
-	// delinquentComplaintsHispanic //
-	//////////////////////////////////
+	////////////////////////////////
+	// delinquentComplaintsLatinx //
+	////////////////////////////////
 
-	/**	 The entity delinquentComplaintsHispanic
+	/**	 The entity delinquentComplaintsLatinx
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Long delinquentComplaintsHispanic;
+	protected Long delinquentComplaintsLatinx;
 	@JsonIgnore
-	public Wrap<Long> delinquentComplaintsHispanicWrap = new Wrap<Long>().p(this).c(Long.class).var("delinquentComplaintsHispanic").o(delinquentComplaintsHispanic);
+	public Wrap<Long> delinquentComplaintsLatinxWrap = new Wrap<Long>().p(this).c(Long.class).var("delinquentComplaintsLatinx").o(delinquentComplaintsLatinx);
 
-	/**	<br/> The entity delinquentComplaintsHispanic
+	/**	<br/> The entity delinquentComplaintsLatinx
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:delinquentComplaintsHispanic">Find the entity delinquentComplaintsHispanic in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:delinquentComplaintsLatinx">Find the entity delinquentComplaintsLatinx in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _delinquentComplaintsHispanic(Wrap<Long> c);
+	protected abstract void _delinquentComplaintsLatinx(Wrap<Long> c);
 
-	public Long getDelinquentComplaintsHispanic() {
-		return delinquentComplaintsHispanic;
+	public Long getDelinquentComplaintsLatinx() {
+		return delinquentComplaintsLatinx;
 	}
 
-	public void setDelinquentComplaintsHispanic(Long delinquentComplaintsHispanic) {
-		this.delinquentComplaintsHispanic = delinquentComplaintsHispanic;
-		this.delinquentComplaintsHispanicWrap.alreadyInitialized = true;
+	public void setDelinquentComplaintsLatinx(Long delinquentComplaintsLatinx) {
+		this.delinquentComplaintsLatinx = delinquentComplaintsLatinx;
+		this.delinquentComplaintsLatinxWrap.alreadyInitialized = true;
 	}
-	public ReportCard setDelinquentComplaintsHispanic(String o) {
+	public ReportCard setDelinquentComplaintsLatinx(String o) {
 		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsHispanic = Long.parseLong(o);
-		this.delinquentComplaintsHispanicWrap.alreadyInitialized = true;
+			this.delinquentComplaintsLatinx = Long.parseLong(o);
+		this.delinquentComplaintsLatinxWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard delinquentComplaintsHispanicInit() {
-		if(!delinquentComplaintsHispanicWrap.alreadyInitialized) {
-			_delinquentComplaintsHispanic(delinquentComplaintsHispanicWrap);
-			if(delinquentComplaintsHispanic == null)
-				setDelinquentComplaintsHispanic(delinquentComplaintsHispanicWrap.o);
+	protected ReportCard delinquentComplaintsLatinxInit() {
+		if(!delinquentComplaintsLatinxWrap.alreadyInitialized) {
+			_delinquentComplaintsLatinx(delinquentComplaintsLatinxWrap);
+			if(delinquentComplaintsLatinx == null)
+				setDelinquentComplaintsLatinx(delinquentComplaintsLatinxWrap.o);
 		}
-		delinquentComplaintsHispanicWrap.alreadyInitialized(true);
+		delinquentComplaintsLatinxWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Long solrDelinquentComplaintsHispanic() {
-		return delinquentComplaintsHispanic;
+	public Long solrDelinquentComplaintsLatinx() {
+		return delinquentComplaintsLatinx;
 	}
 
-	public String strDelinquentComplaintsHispanic() {
-		return delinquentComplaintsHispanic == null ? "" : delinquentComplaintsHispanic.toString();
+	public String strDelinquentComplaintsLatinx() {
+		return delinquentComplaintsLatinx == null ? "" : delinquentComplaintsLatinx.toString();
 	}
 
-	public String jsonDelinquentComplaintsHispanic() {
-		return delinquentComplaintsHispanic == null ? "" : delinquentComplaintsHispanic.toString();
+	public String jsonDelinquentComplaintsLatinx() {
+		return delinquentComplaintsLatinx == null ? "" : delinquentComplaintsLatinx.toString();
 	}
 
-	public String nomAffichageDelinquentComplaintsHispanic() {
+	public String nomAffichageDelinquentComplaintsLatinx() {
 		return "Latinx complaints";
 	}
 
-	public String htmTooltipDelinquentComplaintsHispanic() {
+	public String htmTooltipDelinquentComplaintsLatinx() {
 		return null;
 	}
 
-	public String htmDelinquentComplaintsHispanic() {
-		return delinquentComplaintsHispanic == null ? "" : StringEscapeUtils.escapeHtml4(strDelinquentComplaintsHispanic());
+	public String htmDelinquentComplaintsLatinx() {
+		return delinquentComplaintsLatinx == null ? "" : StringEscapeUtils.escapeHtml4(strDelinquentComplaintsLatinx());
 	}
 
-	public void inputDelinquentComplaintsHispanic(String classApiMethodMethod) {
+	public void inputDelinquentComplaintsLatinx(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		if(
 				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -6257,39 +6257,39 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			e("input")
 				.a("type", "text")
 				.a("placeholder", "Latinx complaints")
-				.a("id", classApiMethodMethod, "_delinquentComplaintsHispanic");
+				.a("id", classApiMethodMethod, "_delinquentComplaintsLatinx");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
-					a("class", "setDelinquentComplaintsHispanic classReportCard inputReportCard", pk, "DelinquentComplaintsHispanic w3-input w3-border ");
-					a("name", "setDelinquentComplaintsHispanic");
+					a("class", "setDelinquentComplaintsLatinx classReportCard inputReportCard", pk, "DelinquentComplaintsLatinx w3-input w3-border ");
+					a("name", "setDelinquentComplaintsLatinx");
 				} else {
-					a("class", "valueDelinquentComplaintsHispanic w3-input w3-border classReportCard inputReportCard", pk, "DelinquentComplaintsHispanic w3-input w3-border ");
-					a("name", "delinquentComplaintsHispanic");
+					a("class", "valueDelinquentComplaintsLatinx w3-input w3-border classReportCard inputReportCard", pk, "DelinquentComplaintsLatinx w3-input w3-border ");
+					a("name", "delinquentComplaintsLatinx");
 				}
 				if("Page".equals(classApiMethodMethod)) {
 					a("onclick", "removeGlow($(this)); ");
-					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setDelinquentComplaintsHispanic', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_delinquentComplaintsHispanic')); }, function() { addError($('#", classApiMethodMethod, "_delinquentComplaintsHispanic')); }); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setDelinquentComplaintsLatinx', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_delinquentComplaintsLatinx')); }, function() { addError($('#", classApiMethodMethod, "_delinquentComplaintsLatinx')); }); ");
 				}
-				a("value", strDelinquentComplaintsHispanic())
+				a("value", strDelinquentComplaintsLatinx())
 			.fg();
 
 		} else {
-			e("span").a("class", "varReportCard", pk, "DelinquentComplaintsHispanic ").f().sx(htmDelinquentComplaintsHispanic()).g("span");
+			e("span").a("class", "varReportCard", pk, "DelinquentComplaintsLatinx ").f().sx(htmDelinquentComplaintsLatinx()).g("span");
 		}
 	}
 
-	public void htmDelinquentComplaintsHispanic(String classApiMethodMethod) {
+	public void htmDelinquentComplaintsLatinx(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			{ e("div").a("class", "w3-padding ").f();
-				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardDelinquentComplaintsHispanic").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardDelinquentComplaintsLatinx").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_delinquentComplaintsHispanic").a("class", "").f().sx("Latinx complaints").g("label");
+							e("label").a("for", classApiMethodMethod, "_delinquentComplaintsLatinx").a("class", "").f().sx("Latinx complaints").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
 
-								inputDelinquentComplaintsHispanic(classApiMethodMethod);
+								inputDelinquentComplaintsLatinx(classApiMethodMethod);
 							} g("div");
 							if(
 									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -6300,7 +6300,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 										{ e("button")
 											.a("tabindex", "-1")
 											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
-										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_delinquentComplaintsHispanic')); $('#", classApiMethodMethod, "_delinquentComplaintsHispanic').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setDelinquentComplaintsHispanic', null, function() { addGlow($('#", classApiMethodMethod, "_delinquentComplaintsHispanic')); }, function() { addError($('#", classApiMethodMethod, "_delinquentComplaintsHispanic')); }); ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_delinquentComplaintsLatinx')); $('#", classApiMethodMethod, "_delinquentComplaintsLatinx').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setDelinquentComplaintsLatinx', null, function() { addGlow($('#", classApiMethodMethod, "_delinquentComplaintsLatinx')); }, function() { addError($('#", classApiMethodMethod, "_delinquentComplaintsLatinx')); }); ")
 											.f();
 											e("i").a("class", "far fa-eraser ").f().g("i");
 										} g("button");
@@ -6314,91 +6314,91 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	/////////////////////////////////////////
-	// delinquentComplaintsHispanicPercent //
-	/////////////////////////////////////////
+	///////////////////////////////////////
+	// delinquentComplaintsLatinxPercent //
+	///////////////////////////////////////
 
-	/**	 The entity delinquentComplaintsHispanicPercent
+	/**	 The entity delinquentComplaintsLatinxPercent
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected BigDecimal delinquentComplaintsHispanicPercent;
+	protected BigDecimal delinquentComplaintsLatinxPercent;
 	@JsonIgnore
-	public Wrap<BigDecimal> delinquentComplaintsHispanicPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("delinquentComplaintsHispanicPercent").o(delinquentComplaintsHispanicPercent);
+	public Wrap<BigDecimal> delinquentComplaintsLatinxPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("delinquentComplaintsLatinxPercent").o(delinquentComplaintsLatinxPercent);
 
-	/**	<br/> The entity delinquentComplaintsHispanicPercent
+	/**	<br/> The entity delinquentComplaintsLatinxPercent
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:delinquentComplaintsHispanicPercent">Find the entity delinquentComplaintsHispanicPercent in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:delinquentComplaintsLatinxPercent">Find the entity delinquentComplaintsLatinxPercent in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _delinquentComplaintsHispanicPercent(Wrap<BigDecimal> c);
+	protected abstract void _delinquentComplaintsLatinxPercent(Wrap<BigDecimal> c);
 
-	public BigDecimal getDelinquentComplaintsHispanicPercent() {
-		return delinquentComplaintsHispanicPercent;
+	public BigDecimal getDelinquentComplaintsLatinxPercent() {
+		return delinquentComplaintsLatinxPercent;
 	}
 
-	public void setDelinquentComplaintsHispanicPercent(BigDecimal delinquentComplaintsHispanicPercent) {
-		this.delinquentComplaintsHispanicPercent = delinquentComplaintsHispanicPercent;
-		this.delinquentComplaintsHispanicPercentWrap.alreadyInitialized = true;
+	public void setDelinquentComplaintsLatinxPercent(BigDecimal delinquentComplaintsLatinxPercent) {
+		this.delinquentComplaintsLatinxPercent = delinquentComplaintsLatinxPercent;
+		this.delinquentComplaintsLatinxPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setDelinquentComplaintsHispanicPercent(String o) {
+	public ReportCard setDelinquentComplaintsLatinxPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.delinquentComplaintsHispanicPercentWrap.alreadyInitialized = true;
+			this.delinquentComplaintsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.delinquentComplaintsLatinxPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setDelinquentComplaintsHispanicPercent(Double o) {
-			this.delinquentComplaintsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.delinquentComplaintsHispanicPercentWrap.alreadyInitialized = true;
+	public ReportCard setDelinquentComplaintsLatinxPercent(Double o) {
+			this.delinquentComplaintsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.delinquentComplaintsLatinxPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setDelinquentComplaintsHispanicPercent(Integer o) {
-			this.delinquentComplaintsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.delinquentComplaintsHispanicPercentWrap.alreadyInitialized = true;
+	public ReportCard setDelinquentComplaintsLatinxPercent(Integer o) {
+			this.delinquentComplaintsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.delinquentComplaintsLatinxPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard delinquentComplaintsHispanicPercentInit() {
-		if(!delinquentComplaintsHispanicPercentWrap.alreadyInitialized) {
-			_delinquentComplaintsHispanicPercent(delinquentComplaintsHispanicPercentWrap);
-			if(delinquentComplaintsHispanicPercent == null)
-				setDelinquentComplaintsHispanicPercent(delinquentComplaintsHispanicPercentWrap.o);
+	protected ReportCard delinquentComplaintsLatinxPercentInit() {
+		if(!delinquentComplaintsLatinxPercentWrap.alreadyInitialized) {
+			_delinquentComplaintsLatinxPercent(delinquentComplaintsLatinxPercentWrap);
+			if(delinquentComplaintsLatinxPercent == null)
+				setDelinquentComplaintsLatinxPercent(delinquentComplaintsLatinxPercentWrap.o);
 		}
-		delinquentComplaintsHispanicPercentWrap.alreadyInitialized(true);
+		delinquentComplaintsLatinxPercentWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Double solrDelinquentComplaintsHispanicPercent() {
-		return delinquentComplaintsHispanicPercent == null ? null : delinquentComplaintsHispanicPercent.doubleValue();
+	public Double solrDelinquentComplaintsLatinxPercent() {
+		return delinquentComplaintsLatinxPercent == null ? null : delinquentComplaintsLatinxPercent.doubleValue();
 	}
 
-	public String strDelinquentComplaintsHispanicPercent() {
-		return delinquentComplaintsHispanicPercent == null ? "" : delinquentComplaintsHispanicPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	public String strDelinquentComplaintsLatinxPercent() {
+		return delinquentComplaintsLatinxPercent == null ? "" : delinquentComplaintsLatinxPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
-	public String jsonDelinquentComplaintsHispanicPercent() {
-		return delinquentComplaintsHispanicPercent == null ? "" : delinquentComplaintsHispanicPercent.toString();
+	public String jsonDelinquentComplaintsLatinxPercent() {
+		return delinquentComplaintsLatinxPercent == null ? "" : delinquentComplaintsLatinxPercent.toString();
 	}
 
-	public String nomAffichageDelinquentComplaintsHispanicPercent() {
+	public String nomAffichageDelinquentComplaintsLatinxPercent() {
 		return "Latinx complaints percent";
 	}
 
-	public String htmTooltipDelinquentComplaintsHispanicPercent() {
+	public String htmTooltipDelinquentComplaintsLatinxPercent() {
 		return null;
 	}
 
-	public String htmDelinquentComplaintsHispanicPercent() {
-		return delinquentComplaintsHispanicPercent == null ? "" : StringEscapeUtils.escapeHtml4(strDelinquentComplaintsHispanicPercent());
+	public String htmDelinquentComplaintsLatinxPercent() {
+		return delinquentComplaintsLatinxPercent == null ? "" : StringEscapeUtils.escapeHtml4(strDelinquentComplaintsLatinxPercent());
 	}
 
-	public void inputDelinquentComplaintsHispanicPercent(String classApiMethodMethod) {
+	public void inputDelinquentComplaintsLatinxPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 	}
 
-	public void htmDelinquentComplaintsHispanicPercent(String classApiMethodMethod) {
+	public void htmDelinquentComplaintsLatinxPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			if("Page".equals(classApiMethodMethod)) {
@@ -6410,7 +6410,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
 								{ e("div").a("class", "w3-rest ").f();
-									e("span").a("class", "varReportCard", pk, "DelinquentComplaintsHispanicPercent ").f().sx(strDelinquentComplaintsHispanicPercent()).g("span");
+									e("span").a("class", "varReportCard", pk, "DelinquentComplaintsLatinxPercent ").f().sx(strDelinquentComplaintsLatinxPercent()).g("span");
 								} g("div");
 							} g("div");
 						} g("div");
@@ -6661,76 +6661,76 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	////////////////////////////////
-	// delinquentComplaintsIndian //
-	////////////////////////////////
+	////////////////////////////////////
+	// delinquentComplaintsIndigenous //
+	////////////////////////////////////
 
-	/**	 The entity delinquentComplaintsIndian
+	/**	 The entity delinquentComplaintsIndigenous
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Long delinquentComplaintsIndian;
+	protected Long delinquentComplaintsIndigenous;
 	@JsonIgnore
-	public Wrap<Long> delinquentComplaintsIndianWrap = new Wrap<Long>().p(this).c(Long.class).var("delinquentComplaintsIndian").o(delinquentComplaintsIndian);
+	public Wrap<Long> delinquentComplaintsIndigenousWrap = new Wrap<Long>().p(this).c(Long.class).var("delinquentComplaintsIndigenous").o(delinquentComplaintsIndigenous);
 
-	/**	<br/> The entity delinquentComplaintsIndian
+	/**	<br/> The entity delinquentComplaintsIndigenous
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:delinquentComplaintsIndian">Find the entity delinquentComplaintsIndian in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:delinquentComplaintsIndigenous">Find the entity delinquentComplaintsIndigenous in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _delinquentComplaintsIndian(Wrap<Long> c);
+	protected abstract void _delinquentComplaintsIndigenous(Wrap<Long> c);
 
-	public Long getDelinquentComplaintsIndian() {
-		return delinquentComplaintsIndian;
+	public Long getDelinquentComplaintsIndigenous() {
+		return delinquentComplaintsIndigenous;
 	}
 
-	public void setDelinquentComplaintsIndian(Long delinquentComplaintsIndian) {
-		this.delinquentComplaintsIndian = delinquentComplaintsIndian;
-		this.delinquentComplaintsIndianWrap.alreadyInitialized = true;
+	public void setDelinquentComplaintsIndigenous(Long delinquentComplaintsIndigenous) {
+		this.delinquentComplaintsIndigenous = delinquentComplaintsIndigenous;
+		this.delinquentComplaintsIndigenousWrap.alreadyInitialized = true;
 	}
-	public ReportCard setDelinquentComplaintsIndian(String o) {
+	public ReportCard setDelinquentComplaintsIndigenous(String o) {
 		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsIndian = Long.parseLong(o);
-		this.delinquentComplaintsIndianWrap.alreadyInitialized = true;
+			this.delinquentComplaintsIndigenous = Long.parseLong(o);
+		this.delinquentComplaintsIndigenousWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard delinquentComplaintsIndianInit() {
-		if(!delinquentComplaintsIndianWrap.alreadyInitialized) {
-			_delinquentComplaintsIndian(delinquentComplaintsIndianWrap);
-			if(delinquentComplaintsIndian == null)
-				setDelinquentComplaintsIndian(delinquentComplaintsIndianWrap.o);
+	protected ReportCard delinquentComplaintsIndigenousInit() {
+		if(!delinquentComplaintsIndigenousWrap.alreadyInitialized) {
+			_delinquentComplaintsIndigenous(delinquentComplaintsIndigenousWrap);
+			if(delinquentComplaintsIndigenous == null)
+				setDelinquentComplaintsIndigenous(delinquentComplaintsIndigenousWrap.o);
 		}
-		delinquentComplaintsIndianWrap.alreadyInitialized(true);
+		delinquentComplaintsIndigenousWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Long solrDelinquentComplaintsIndian() {
-		return delinquentComplaintsIndian;
+	public Long solrDelinquentComplaintsIndigenous() {
+		return delinquentComplaintsIndigenous;
 	}
 
-	public String strDelinquentComplaintsIndian() {
-		return delinquentComplaintsIndian == null ? "" : delinquentComplaintsIndian.toString();
+	public String strDelinquentComplaintsIndigenous() {
+		return delinquentComplaintsIndigenous == null ? "" : delinquentComplaintsIndigenous.toString();
 	}
 
-	public String jsonDelinquentComplaintsIndian() {
-		return delinquentComplaintsIndian == null ? "" : delinquentComplaintsIndian.toString();
+	public String jsonDelinquentComplaintsIndigenous() {
+		return delinquentComplaintsIndigenous == null ? "" : delinquentComplaintsIndigenous.toString();
 	}
 
-	public String nomAffichageDelinquentComplaintsIndian() {
-		return "First Nation complaints";
+	public String nomAffichageDelinquentComplaintsIndigenous() {
+		return "Indigenous complaints";
 	}
 
-	public String htmTooltipDelinquentComplaintsIndian() {
+	public String htmTooltipDelinquentComplaintsIndigenous() {
 		return null;
 	}
 
-	public String htmDelinquentComplaintsIndian() {
-		return delinquentComplaintsIndian == null ? "" : StringEscapeUtils.escapeHtml4(strDelinquentComplaintsIndian());
+	public String htmDelinquentComplaintsIndigenous() {
+		return delinquentComplaintsIndigenous == null ? "" : StringEscapeUtils.escapeHtml4(strDelinquentComplaintsIndigenous());
 	}
 
-	public void inputDelinquentComplaintsIndian(String classApiMethodMethod) {
+	public void inputDelinquentComplaintsIndigenous(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		if(
 				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -6738,40 +6738,40 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				) {
 			e("input")
 				.a("type", "text")
-				.a("placeholder", "First Nation complaints")
-				.a("id", classApiMethodMethod, "_delinquentComplaintsIndian");
+				.a("placeholder", "Indigenous complaints")
+				.a("id", classApiMethodMethod, "_delinquentComplaintsIndigenous");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
-					a("class", "setDelinquentComplaintsIndian classReportCard inputReportCard", pk, "DelinquentComplaintsIndian w3-input w3-border ");
-					a("name", "setDelinquentComplaintsIndian");
+					a("class", "setDelinquentComplaintsIndigenous classReportCard inputReportCard", pk, "DelinquentComplaintsIndigenous w3-input w3-border ");
+					a("name", "setDelinquentComplaintsIndigenous");
 				} else {
-					a("class", "valueDelinquentComplaintsIndian w3-input w3-border classReportCard inputReportCard", pk, "DelinquentComplaintsIndian w3-input w3-border ");
-					a("name", "delinquentComplaintsIndian");
+					a("class", "valueDelinquentComplaintsIndigenous w3-input w3-border classReportCard inputReportCard", pk, "DelinquentComplaintsIndigenous w3-input w3-border ");
+					a("name", "delinquentComplaintsIndigenous");
 				}
 				if("Page".equals(classApiMethodMethod)) {
 					a("onclick", "removeGlow($(this)); ");
-					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setDelinquentComplaintsIndian', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_delinquentComplaintsIndian')); }, function() { addError($('#", classApiMethodMethod, "_delinquentComplaintsIndian')); }); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setDelinquentComplaintsIndigenous', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_delinquentComplaintsIndigenous')); }, function() { addError($('#", classApiMethodMethod, "_delinquentComplaintsIndigenous')); }); ");
 				}
-				a("value", strDelinquentComplaintsIndian())
+				a("value", strDelinquentComplaintsIndigenous())
 			.fg();
 
 		} else {
-			e("span").a("class", "varReportCard", pk, "DelinquentComplaintsIndian ").f().sx(htmDelinquentComplaintsIndian()).g("span");
+			e("span").a("class", "varReportCard", pk, "DelinquentComplaintsIndigenous ").f().sx(htmDelinquentComplaintsIndigenous()).g("span");
 		}
 	}
 
-	public void htmDelinquentComplaintsIndian(String classApiMethodMethod) {
+	public void htmDelinquentComplaintsIndigenous(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			{ e("div").a("class", "w3-padding ").f();
-				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardDelinquentComplaintsIndian").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardDelinquentComplaintsIndigenous").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_delinquentComplaintsIndian").a("class", "").f().sx("First Nation complaints").g("label");
+							e("label").a("for", classApiMethodMethod, "_delinquentComplaintsIndigenous").a("class", "").f().sx("Indigenous complaints").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
 
-								inputDelinquentComplaintsIndian(classApiMethodMethod);
+								inputDelinquentComplaintsIndigenous(classApiMethodMethod);
 							} g("div");
 							if(
 									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -6782,7 +6782,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 										{ e("button")
 											.a("tabindex", "-1")
 											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
-										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_delinquentComplaintsIndian')); $('#", classApiMethodMethod, "_delinquentComplaintsIndian').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setDelinquentComplaintsIndian', null, function() { addGlow($('#", classApiMethodMethod, "_delinquentComplaintsIndian')); }, function() { addError($('#", classApiMethodMethod, "_delinquentComplaintsIndian')); }); ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_delinquentComplaintsIndigenous')); $('#", classApiMethodMethod, "_delinquentComplaintsIndigenous').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setDelinquentComplaintsIndigenous', null, function() { addGlow($('#", classApiMethodMethod, "_delinquentComplaintsIndigenous')); }, function() { addError($('#", classApiMethodMethod, "_delinquentComplaintsIndigenous')); }); ")
 											.f();
 											e("i").a("class", "far fa-eraser ").f().g("i");
 										} g("button");
@@ -6796,103 +6796,103 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	///////////////////////////////////////
-	// delinquentComplaintsIndianPercent //
-	///////////////////////////////////////
+	///////////////////////////////////////////
+	// delinquentComplaintsIndigenousPercent //
+	///////////////////////////////////////////
 
-	/**	 The entity delinquentComplaintsIndianPercent
+	/**	 The entity delinquentComplaintsIndigenousPercent
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected BigDecimal delinquentComplaintsIndianPercent;
+	protected BigDecimal delinquentComplaintsIndigenousPercent;
 	@JsonIgnore
-	public Wrap<BigDecimal> delinquentComplaintsIndianPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("delinquentComplaintsIndianPercent").o(delinquentComplaintsIndianPercent);
+	public Wrap<BigDecimal> delinquentComplaintsIndigenousPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("delinquentComplaintsIndigenousPercent").o(delinquentComplaintsIndigenousPercent);
 
-	/**	<br/> The entity delinquentComplaintsIndianPercent
+	/**	<br/> The entity delinquentComplaintsIndigenousPercent
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:delinquentComplaintsIndianPercent">Find the entity delinquentComplaintsIndianPercent in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:delinquentComplaintsIndigenousPercent">Find the entity delinquentComplaintsIndigenousPercent in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _delinquentComplaintsIndianPercent(Wrap<BigDecimal> c);
+	protected abstract void _delinquentComplaintsIndigenousPercent(Wrap<BigDecimal> c);
 
-	public BigDecimal getDelinquentComplaintsIndianPercent() {
-		return delinquentComplaintsIndianPercent;
+	public BigDecimal getDelinquentComplaintsIndigenousPercent() {
+		return delinquentComplaintsIndigenousPercent;
 	}
 
-	public void setDelinquentComplaintsIndianPercent(BigDecimal delinquentComplaintsIndianPercent) {
-		this.delinquentComplaintsIndianPercent = delinquentComplaintsIndianPercent;
-		this.delinquentComplaintsIndianPercentWrap.alreadyInitialized = true;
+	public void setDelinquentComplaintsIndigenousPercent(BigDecimal delinquentComplaintsIndigenousPercent) {
+		this.delinquentComplaintsIndigenousPercent = delinquentComplaintsIndigenousPercent;
+		this.delinquentComplaintsIndigenousPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setDelinquentComplaintsIndianPercent(String o) {
+	public ReportCard setDelinquentComplaintsIndigenousPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.delinquentComplaintsIndianPercentWrap.alreadyInitialized = true;
+			this.delinquentComplaintsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.delinquentComplaintsIndigenousPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setDelinquentComplaintsIndianPercent(Double o) {
-			this.delinquentComplaintsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.delinquentComplaintsIndianPercentWrap.alreadyInitialized = true;
+	public ReportCard setDelinquentComplaintsIndigenousPercent(Double o) {
+			this.delinquentComplaintsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.delinquentComplaintsIndigenousPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setDelinquentComplaintsIndianPercent(Integer o) {
-			this.delinquentComplaintsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.delinquentComplaintsIndianPercentWrap.alreadyInitialized = true;
+	public ReportCard setDelinquentComplaintsIndigenousPercent(Integer o) {
+			this.delinquentComplaintsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.delinquentComplaintsIndigenousPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard delinquentComplaintsIndianPercentInit() {
-		if(!delinquentComplaintsIndianPercentWrap.alreadyInitialized) {
-			_delinquentComplaintsIndianPercent(delinquentComplaintsIndianPercentWrap);
-			if(delinquentComplaintsIndianPercent == null)
-				setDelinquentComplaintsIndianPercent(delinquentComplaintsIndianPercentWrap.o);
+	protected ReportCard delinquentComplaintsIndigenousPercentInit() {
+		if(!delinquentComplaintsIndigenousPercentWrap.alreadyInitialized) {
+			_delinquentComplaintsIndigenousPercent(delinquentComplaintsIndigenousPercentWrap);
+			if(delinquentComplaintsIndigenousPercent == null)
+				setDelinquentComplaintsIndigenousPercent(delinquentComplaintsIndigenousPercentWrap.o);
 		}
-		delinquentComplaintsIndianPercentWrap.alreadyInitialized(true);
+		delinquentComplaintsIndigenousPercentWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Double solrDelinquentComplaintsIndianPercent() {
-		return delinquentComplaintsIndianPercent == null ? null : delinquentComplaintsIndianPercent.doubleValue();
+	public Double solrDelinquentComplaintsIndigenousPercent() {
+		return delinquentComplaintsIndigenousPercent == null ? null : delinquentComplaintsIndigenousPercent.doubleValue();
 	}
 
-	public String strDelinquentComplaintsIndianPercent() {
-		return delinquentComplaintsIndianPercent == null ? "" : delinquentComplaintsIndianPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	public String strDelinquentComplaintsIndigenousPercent() {
+		return delinquentComplaintsIndigenousPercent == null ? "" : delinquentComplaintsIndigenousPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
-	public String jsonDelinquentComplaintsIndianPercent() {
-		return delinquentComplaintsIndianPercent == null ? "" : delinquentComplaintsIndianPercent.toString();
+	public String jsonDelinquentComplaintsIndigenousPercent() {
+		return delinquentComplaintsIndigenousPercent == null ? "" : delinquentComplaintsIndigenousPercent.toString();
 	}
 
-	public String nomAffichageDelinquentComplaintsIndianPercent() {
-		return "First Nation complaints percent";
+	public String nomAffichageDelinquentComplaintsIndigenousPercent() {
+		return "Indigenous complaints percent";
 	}
 
-	public String htmTooltipDelinquentComplaintsIndianPercent() {
+	public String htmTooltipDelinquentComplaintsIndigenousPercent() {
 		return null;
 	}
 
-	public String htmDelinquentComplaintsIndianPercent() {
-		return delinquentComplaintsIndianPercent == null ? "" : StringEscapeUtils.escapeHtml4(strDelinquentComplaintsIndianPercent());
+	public String htmDelinquentComplaintsIndigenousPercent() {
+		return delinquentComplaintsIndigenousPercent == null ? "" : StringEscapeUtils.escapeHtml4(strDelinquentComplaintsIndigenousPercent());
 	}
 
-	public void inputDelinquentComplaintsIndianPercent(String classApiMethodMethod) {
+	public void inputDelinquentComplaintsIndigenousPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 	}
 
-	public void htmDelinquentComplaintsIndianPercent(String classApiMethodMethod) {
+	public void htmDelinquentComplaintsIndigenousPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			if("Page".equals(classApiMethodMethod)) {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("First Nation complaints percent").g("label");
+							e("label").a("class", "").f().sx("Indigenous complaints percent").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
 								{ e("div").a("class", "w3-rest ").f();
-									e("span").a("class", "varReportCard", pk, "DelinquentComplaintsIndianPercent ").f().sx(strDelinquentComplaintsIndianPercent()).g("span");
+									e("span").a("class", "varReportCard", pk, "DelinquentComplaintsIndigenousPercent ").f().sx(strDelinquentComplaintsIndigenousPercent()).g("span");
 								} g("div");
 							} g("div");
 						} g("div");
@@ -9078,76 +9078,76 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	////////////////////////////////////////
-	// shortTermSuspensionsHispanicFemale //
-	////////////////////////////////////////
+	//////////////////////////////////////
+	// shortTermSuspensionsLatinxFemale //
+	//////////////////////////////////////
 
-	/**	 The entity shortTermSuspensionsHispanicFemale
+	/**	 The entity shortTermSuspensionsLatinxFemale
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Long shortTermSuspensionsHispanicFemale;
+	protected Long shortTermSuspensionsLatinxFemale;
 	@JsonIgnore
-	public Wrap<Long> shortTermSuspensionsHispanicFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsHispanicFemale").o(shortTermSuspensionsHispanicFemale);
+	public Wrap<Long> shortTermSuspensionsLatinxFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsLatinxFemale").o(shortTermSuspensionsLatinxFemale);
 
-	/**	<br/> The entity shortTermSuspensionsHispanicFemale
+	/**	<br/> The entity shortTermSuspensionsLatinxFemale
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsHispanicFemale">Find the entity shortTermSuspensionsHispanicFemale in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsLatinxFemale">Find the entity shortTermSuspensionsLatinxFemale in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _shortTermSuspensionsHispanicFemale(Wrap<Long> c);
+	protected abstract void _shortTermSuspensionsLatinxFemale(Wrap<Long> c);
 
-	public Long getShortTermSuspensionsHispanicFemale() {
-		return shortTermSuspensionsHispanicFemale;
+	public Long getShortTermSuspensionsLatinxFemale() {
+		return shortTermSuspensionsLatinxFemale;
 	}
 
-	public void setShortTermSuspensionsHispanicFemale(Long shortTermSuspensionsHispanicFemale) {
-		this.shortTermSuspensionsHispanicFemale = shortTermSuspensionsHispanicFemale;
-		this.shortTermSuspensionsHispanicFemaleWrap.alreadyInitialized = true;
+	public void setShortTermSuspensionsLatinxFemale(Long shortTermSuspensionsLatinxFemale) {
+		this.shortTermSuspensionsLatinxFemale = shortTermSuspensionsLatinxFemale;
+		this.shortTermSuspensionsLatinxFemaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsHispanicFemale(String o) {
+	public ReportCard setShortTermSuspensionsLatinxFemale(String o) {
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsHispanicFemale = Long.parseLong(o);
-		this.shortTermSuspensionsHispanicFemaleWrap.alreadyInitialized = true;
+			this.shortTermSuspensionsLatinxFemale = Long.parseLong(o);
+		this.shortTermSuspensionsLatinxFemaleWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard shortTermSuspensionsHispanicFemaleInit() {
-		if(!shortTermSuspensionsHispanicFemaleWrap.alreadyInitialized) {
-			_shortTermSuspensionsHispanicFemale(shortTermSuspensionsHispanicFemaleWrap);
-			if(shortTermSuspensionsHispanicFemale == null)
-				setShortTermSuspensionsHispanicFemale(shortTermSuspensionsHispanicFemaleWrap.o);
+	protected ReportCard shortTermSuspensionsLatinxFemaleInit() {
+		if(!shortTermSuspensionsLatinxFemaleWrap.alreadyInitialized) {
+			_shortTermSuspensionsLatinxFemale(shortTermSuspensionsLatinxFemaleWrap);
+			if(shortTermSuspensionsLatinxFemale == null)
+				setShortTermSuspensionsLatinxFemale(shortTermSuspensionsLatinxFemaleWrap.o);
 		}
-		shortTermSuspensionsHispanicFemaleWrap.alreadyInitialized(true);
+		shortTermSuspensionsLatinxFemaleWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Long solrShortTermSuspensionsHispanicFemale() {
-		return shortTermSuspensionsHispanicFemale;
+	public Long solrShortTermSuspensionsLatinxFemale() {
+		return shortTermSuspensionsLatinxFemale;
 	}
 
-	public String strShortTermSuspensionsHispanicFemale() {
-		return shortTermSuspensionsHispanicFemale == null ? "" : shortTermSuspensionsHispanicFemale.toString();
+	public String strShortTermSuspensionsLatinxFemale() {
+		return shortTermSuspensionsLatinxFemale == null ? "" : shortTermSuspensionsLatinxFemale.toString();
 	}
 
-	public String jsonShortTermSuspensionsHispanicFemale() {
-		return shortTermSuspensionsHispanicFemale == null ? "" : shortTermSuspensionsHispanicFemale.toString();
+	public String jsonShortTermSuspensionsLatinxFemale() {
+		return shortTermSuspensionsLatinxFemale == null ? "" : shortTermSuspensionsLatinxFemale.toString();
 	}
 
-	public String nomAffichageShortTermSuspensionsHispanicFemale() {
+	public String nomAffichageShortTermSuspensionsLatinxFemale() {
 		return "short-term suspensions Latinx female";
 	}
 
-	public String htmTooltipShortTermSuspensionsHispanicFemale() {
+	public String htmTooltipShortTermSuspensionsLatinxFemale() {
 		return null;
 	}
 
-	public String htmShortTermSuspensionsHispanicFemale() {
-		return shortTermSuspensionsHispanicFemale == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsHispanicFemale());
+	public String htmShortTermSuspensionsLatinxFemale() {
+		return shortTermSuspensionsLatinxFemale == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsLatinxFemale());
 	}
 
-	public void inputShortTermSuspensionsHispanicFemale(String classApiMethodMethod) {
+	public void inputShortTermSuspensionsLatinxFemale(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		if(
 				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -9156,39 +9156,39 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			e("input")
 				.a("type", "text")
 				.a("placeholder", "short-term suspensions Latinx female")
-				.a("id", classApiMethodMethod, "_shortTermSuspensionsHispanicFemale");
+				.a("id", classApiMethodMethod, "_shortTermSuspensionsLatinxFemale");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
-					a("class", "setShortTermSuspensionsHispanicFemale classReportCard inputReportCard", pk, "ShortTermSuspensionsHispanicFemale w3-input w3-border ");
-					a("name", "setShortTermSuspensionsHispanicFemale");
+					a("class", "setShortTermSuspensionsLatinxFemale classReportCard inputReportCard", pk, "ShortTermSuspensionsLatinxFemale w3-input w3-border ");
+					a("name", "setShortTermSuspensionsLatinxFemale");
 				} else {
-					a("class", "valueShortTermSuspensionsHispanicFemale w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsHispanicFemale w3-input w3-border ");
-					a("name", "shortTermSuspensionsHispanicFemale");
+					a("class", "valueShortTermSuspensionsLatinxFemale w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsLatinxFemale w3-input w3-border ");
+					a("name", "shortTermSuspensionsLatinxFemale");
 				}
 				if("Page".equals(classApiMethodMethod)) {
 					a("onclick", "removeGlow($(this)); ");
-					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsHispanicFemale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsHispanicFemale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsHispanicFemale')); }); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsLatinxFemale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsLatinxFemale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsLatinxFemale')); }); ");
 				}
-				a("value", strShortTermSuspensionsHispanicFemale())
+				a("value", strShortTermSuspensionsLatinxFemale())
 			.fg();
 
 		} else {
-			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsHispanicFemale ").f().sx(htmShortTermSuspensionsHispanicFemale()).g("span");
+			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsLatinxFemale ").f().sx(htmShortTermSuspensionsLatinxFemale()).g("span");
 		}
 	}
 
-	public void htmShortTermSuspensionsHispanicFemale(String classApiMethodMethod) {
+	public void htmShortTermSuspensionsLatinxFemale(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			{ e("div").a("class", "w3-padding ").f();
-				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsHispanicFemale").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsLatinxFemale").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsHispanicFemale").a("class", "").f().sx("short-term suspensions Latinx female").g("label");
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsLatinxFemale").a("class", "").f().sx("short-term suspensions Latinx female").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
 
-								inputShortTermSuspensionsHispanicFemale(classApiMethodMethod);
+								inputShortTermSuspensionsLatinxFemale(classApiMethodMethod);
 							} g("div");
 							if(
 									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -9199,7 +9199,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 										{ e("button")
 											.a("tabindex", "-1")
 											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
-										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsHispanicFemale')); $('#", classApiMethodMethod, "_shortTermSuspensionsHispanicFemale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsHispanicFemale', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsHispanicFemale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsHispanicFemale')); }); ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsLatinxFemale')); $('#", classApiMethodMethod, "_shortTermSuspensionsLatinxFemale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsLatinxFemale', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsLatinxFemale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsLatinxFemale')); }); ")
 											.f();
 											e("i").a("class", "far fa-eraser ").f().g("i");
 										} g("button");
@@ -9213,76 +9213,76 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	//////////////////////////////////////
-	// shortTermSuspensionsHispanicMale //
-	//////////////////////////////////////
+	////////////////////////////////////
+	// shortTermSuspensionsLatinxMale //
+	////////////////////////////////////
 
-	/**	 The entity shortTermSuspensionsHispanicMale
+	/**	 The entity shortTermSuspensionsLatinxMale
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Long shortTermSuspensionsHispanicMale;
+	protected Long shortTermSuspensionsLatinxMale;
 	@JsonIgnore
-	public Wrap<Long> shortTermSuspensionsHispanicMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsHispanicMale").o(shortTermSuspensionsHispanicMale);
+	public Wrap<Long> shortTermSuspensionsLatinxMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsLatinxMale").o(shortTermSuspensionsLatinxMale);
 
-	/**	<br/> The entity shortTermSuspensionsHispanicMale
+	/**	<br/> The entity shortTermSuspensionsLatinxMale
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsHispanicMale">Find the entity shortTermSuspensionsHispanicMale in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsLatinxMale">Find the entity shortTermSuspensionsLatinxMale in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _shortTermSuspensionsHispanicMale(Wrap<Long> c);
+	protected abstract void _shortTermSuspensionsLatinxMale(Wrap<Long> c);
 
-	public Long getShortTermSuspensionsHispanicMale() {
-		return shortTermSuspensionsHispanicMale;
+	public Long getShortTermSuspensionsLatinxMale() {
+		return shortTermSuspensionsLatinxMale;
 	}
 
-	public void setShortTermSuspensionsHispanicMale(Long shortTermSuspensionsHispanicMale) {
-		this.shortTermSuspensionsHispanicMale = shortTermSuspensionsHispanicMale;
-		this.shortTermSuspensionsHispanicMaleWrap.alreadyInitialized = true;
+	public void setShortTermSuspensionsLatinxMale(Long shortTermSuspensionsLatinxMale) {
+		this.shortTermSuspensionsLatinxMale = shortTermSuspensionsLatinxMale;
+		this.shortTermSuspensionsLatinxMaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsHispanicMale(String o) {
+	public ReportCard setShortTermSuspensionsLatinxMale(String o) {
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsHispanicMale = Long.parseLong(o);
-		this.shortTermSuspensionsHispanicMaleWrap.alreadyInitialized = true;
+			this.shortTermSuspensionsLatinxMale = Long.parseLong(o);
+		this.shortTermSuspensionsLatinxMaleWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard shortTermSuspensionsHispanicMaleInit() {
-		if(!shortTermSuspensionsHispanicMaleWrap.alreadyInitialized) {
-			_shortTermSuspensionsHispanicMale(shortTermSuspensionsHispanicMaleWrap);
-			if(shortTermSuspensionsHispanicMale == null)
-				setShortTermSuspensionsHispanicMale(shortTermSuspensionsHispanicMaleWrap.o);
+	protected ReportCard shortTermSuspensionsLatinxMaleInit() {
+		if(!shortTermSuspensionsLatinxMaleWrap.alreadyInitialized) {
+			_shortTermSuspensionsLatinxMale(shortTermSuspensionsLatinxMaleWrap);
+			if(shortTermSuspensionsLatinxMale == null)
+				setShortTermSuspensionsLatinxMale(shortTermSuspensionsLatinxMaleWrap.o);
 		}
-		shortTermSuspensionsHispanicMaleWrap.alreadyInitialized(true);
+		shortTermSuspensionsLatinxMaleWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Long solrShortTermSuspensionsHispanicMale() {
-		return shortTermSuspensionsHispanicMale;
+	public Long solrShortTermSuspensionsLatinxMale() {
+		return shortTermSuspensionsLatinxMale;
 	}
 
-	public String strShortTermSuspensionsHispanicMale() {
-		return shortTermSuspensionsHispanicMale == null ? "" : shortTermSuspensionsHispanicMale.toString();
+	public String strShortTermSuspensionsLatinxMale() {
+		return shortTermSuspensionsLatinxMale == null ? "" : shortTermSuspensionsLatinxMale.toString();
 	}
 
-	public String jsonShortTermSuspensionsHispanicMale() {
-		return shortTermSuspensionsHispanicMale == null ? "" : shortTermSuspensionsHispanicMale.toString();
+	public String jsonShortTermSuspensionsLatinxMale() {
+		return shortTermSuspensionsLatinxMale == null ? "" : shortTermSuspensionsLatinxMale.toString();
 	}
 
-	public String nomAffichageShortTermSuspensionsHispanicMale() {
+	public String nomAffichageShortTermSuspensionsLatinxMale() {
 		return "short-term suspensions Latinx male";
 	}
 
-	public String htmTooltipShortTermSuspensionsHispanicMale() {
+	public String htmTooltipShortTermSuspensionsLatinxMale() {
 		return null;
 	}
 
-	public String htmShortTermSuspensionsHispanicMale() {
-		return shortTermSuspensionsHispanicMale == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsHispanicMale());
+	public String htmShortTermSuspensionsLatinxMale() {
+		return shortTermSuspensionsLatinxMale == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsLatinxMale());
 	}
 
-	public void inputShortTermSuspensionsHispanicMale(String classApiMethodMethod) {
+	public void inputShortTermSuspensionsLatinxMale(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		if(
 				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -9291,39 +9291,39 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			e("input")
 				.a("type", "text")
 				.a("placeholder", "short-term suspensions Latinx male")
-				.a("id", classApiMethodMethod, "_shortTermSuspensionsHispanicMale");
+				.a("id", classApiMethodMethod, "_shortTermSuspensionsLatinxMale");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
-					a("class", "setShortTermSuspensionsHispanicMale classReportCard inputReportCard", pk, "ShortTermSuspensionsHispanicMale w3-input w3-border ");
-					a("name", "setShortTermSuspensionsHispanicMale");
+					a("class", "setShortTermSuspensionsLatinxMale classReportCard inputReportCard", pk, "ShortTermSuspensionsLatinxMale w3-input w3-border ");
+					a("name", "setShortTermSuspensionsLatinxMale");
 				} else {
-					a("class", "valueShortTermSuspensionsHispanicMale w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsHispanicMale w3-input w3-border ");
-					a("name", "shortTermSuspensionsHispanicMale");
+					a("class", "valueShortTermSuspensionsLatinxMale w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsLatinxMale w3-input w3-border ");
+					a("name", "shortTermSuspensionsLatinxMale");
 				}
 				if("Page".equals(classApiMethodMethod)) {
 					a("onclick", "removeGlow($(this)); ");
-					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsHispanicMale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsHispanicMale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsHispanicMale')); }); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsLatinxMale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsLatinxMale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsLatinxMale')); }); ");
 				}
-				a("value", strShortTermSuspensionsHispanicMale())
+				a("value", strShortTermSuspensionsLatinxMale())
 			.fg();
 
 		} else {
-			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsHispanicMale ").f().sx(htmShortTermSuspensionsHispanicMale()).g("span");
+			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsLatinxMale ").f().sx(htmShortTermSuspensionsLatinxMale()).g("span");
 		}
 	}
 
-	public void htmShortTermSuspensionsHispanicMale(String classApiMethodMethod) {
+	public void htmShortTermSuspensionsLatinxMale(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			{ e("div").a("class", "w3-padding ").f();
-				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsHispanicMale").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsLatinxMale").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsHispanicMale").a("class", "").f().sx("short-term suspensions Latinx male").g("label");
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsLatinxMale").a("class", "").f().sx("short-term suspensions Latinx male").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
 
-								inputShortTermSuspensionsHispanicMale(classApiMethodMethod);
+								inputShortTermSuspensionsLatinxMale(classApiMethodMethod);
 							} g("div");
 							if(
 									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -9334,7 +9334,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 										{ e("button")
 											.a("tabindex", "-1")
 											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
-										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsHispanicMale')); $('#", classApiMethodMethod, "_shortTermSuspensionsHispanicMale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsHispanicMale', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsHispanicMale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsHispanicMale')); }); ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsLatinxMale')); $('#", classApiMethodMethod, "_shortTermSuspensionsLatinxMale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsLatinxMale', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsLatinxMale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsLatinxMale')); }); ")
 											.f();
 											e("i").a("class", "far fa-eraser ").f().g("i");
 										} g("button");
@@ -9348,80 +9348,80 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	///////////////////////////////////////
-	// shortTermSuspensionsHispanicTotal //
-	///////////////////////////////////////
+	/////////////////////////////////////
+	// shortTermSuspensionsLatinxTotal //
+	/////////////////////////////////////
 
-	/**	 The entity shortTermSuspensionsHispanicTotal
+	/**	 The entity shortTermSuspensionsLatinxTotal
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Long shortTermSuspensionsHispanicTotal;
+	protected Long shortTermSuspensionsLatinxTotal;
 	@JsonIgnore
-	public Wrap<Long> shortTermSuspensionsHispanicTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsHispanicTotal").o(shortTermSuspensionsHispanicTotal);
+	public Wrap<Long> shortTermSuspensionsLatinxTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsLatinxTotal").o(shortTermSuspensionsLatinxTotal);
 
-	/**	<br/> The entity shortTermSuspensionsHispanicTotal
+	/**	<br/> The entity shortTermSuspensionsLatinxTotal
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsHispanicTotal">Find the entity shortTermSuspensionsHispanicTotal in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsLatinxTotal">Find the entity shortTermSuspensionsLatinxTotal in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _shortTermSuspensionsHispanicTotal(Wrap<Long> c);
+	protected abstract void _shortTermSuspensionsLatinxTotal(Wrap<Long> c);
 
-	public Long getShortTermSuspensionsHispanicTotal() {
-		return shortTermSuspensionsHispanicTotal;
+	public Long getShortTermSuspensionsLatinxTotal() {
+		return shortTermSuspensionsLatinxTotal;
 	}
 
-	public void setShortTermSuspensionsHispanicTotal(Long shortTermSuspensionsHispanicTotal) {
-		this.shortTermSuspensionsHispanicTotal = shortTermSuspensionsHispanicTotal;
-		this.shortTermSuspensionsHispanicTotalWrap.alreadyInitialized = true;
+	public void setShortTermSuspensionsLatinxTotal(Long shortTermSuspensionsLatinxTotal) {
+		this.shortTermSuspensionsLatinxTotal = shortTermSuspensionsLatinxTotal;
+		this.shortTermSuspensionsLatinxTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsHispanicTotal(String o) {
+	public ReportCard setShortTermSuspensionsLatinxTotal(String o) {
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsHispanicTotal = Long.parseLong(o);
-		this.shortTermSuspensionsHispanicTotalWrap.alreadyInitialized = true;
+			this.shortTermSuspensionsLatinxTotal = Long.parseLong(o);
+		this.shortTermSuspensionsLatinxTotalWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard shortTermSuspensionsHispanicTotalInit() {
-		if(!shortTermSuspensionsHispanicTotalWrap.alreadyInitialized) {
-			_shortTermSuspensionsHispanicTotal(shortTermSuspensionsHispanicTotalWrap);
-			if(shortTermSuspensionsHispanicTotal == null)
-				setShortTermSuspensionsHispanicTotal(shortTermSuspensionsHispanicTotalWrap.o);
+	protected ReportCard shortTermSuspensionsLatinxTotalInit() {
+		if(!shortTermSuspensionsLatinxTotalWrap.alreadyInitialized) {
+			_shortTermSuspensionsLatinxTotal(shortTermSuspensionsLatinxTotalWrap);
+			if(shortTermSuspensionsLatinxTotal == null)
+				setShortTermSuspensionsLatinxTotal(shortTermSuspensionsLatinxTotalWrap.o);
 		}
-		shortTermSuspensionsHispanicTotalWrap.alreadyInitialized(true);
+		shortTermSuspensionsLatinxTotalWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Long solrShortTermSuspensionsHispanicTotal() {
-		return shortTermSuspensionsHispanicTotal;
+	public Long solrShortTermSuspensionsLatinxTotal() {
+		return shortTermSuspensionsLatinxTotal;
 	}
 
-	public String strShortTermSuspensionsHispanicTotal() {
-		return shortTermSuspensionsHispanicTotal == null ? "" : shortTermSuspensionsHispanicTotal.toString();
+	public String strShortTermSuspensionsLatinxTotal() {
+		return shortTermSuspensionsLatinxTotal == null ? "" : shortTermSuspensionsLatinxTotal.toString();
 	}
 
-	public String jsonShortTermSuspensionsHispanicTotal() {
-		return shortTermSuspensionsHispanicTotal == null ? "" : shortTermSuspensionsHispanicTotal.toString();
+	public String jsonShortTermSuspensionsLatinxTotal() {
+		return shortTermSuspensionsLatinxTotal == null ? "" : shortTermSuspensionsLatinxTotal.toString();
 	}
 
-	public String nomAffichageShortTermSuspensionsHispanicTotal() {
+	public String nomAffichageShortTermSuspensionsLatinxTotal() {
 		return "short-term suspensions Latinx total";
 	}
 
-	public String htmTooltipShortTermSuspensionsHispanicTotal() {
+	public String htmTooltipShortTermSuspensionsLatinxTotal() {
 		return null;
 	}
 
-	public String htmShortTermSuspensionsHispanicTotal() {
-		return shortTermSuspensionsHispanicTotal == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsHispanicTotal());
+	public String htmShortTermSuspensionsLatinxTotal() {
+		return shortTermSuspensionsLatinxTotal == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsLatinxTotal());
 	}
 
-	public void inputShortTermSuspensionsHispanicTotal(String classApiMethodMethod) {
+	public void inputShortTermSuspensionsLatinxTotal(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 	}
 
-	public void htmShortTermSuspensionsHispanicTotal(String classApiMethodMethod) {
+	public void htmShortTermSuspensionsLatinxTotal(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			if("Page".equals(classApiMethodMethod)) {
@@ -9433,7 +9433,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
 								{ e("div").a("class", "w3-rest ").f();
-									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsHispanicTotal ").f().sx(strShortTermSuspensionsHispanicTotal()).g("span");
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsLatinxTotal ").f().sx(strShortTermSuspensionsLatinxTotal()).g("span");
 								} g("div");
 							} g("div");
 						} g("div");
@@ -9443,91 +9443,91 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	/////////////////////////////////////////
-	// shortTermSuspensionsHispanicPercent //
-	/////////////////////////////////////////
+	///////////////////////////////////////
+	// shortTermSuspensionsLatinxPercent //
+	///////////////////////////////////////
 
-	/**	 The entity shortTermSuspensionsHispanicPercent
+	/**	 The entity shortTermSuspensionsLatinxPercent
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected BigDecimal shortTermSuspensionsHispanicPercent;
+	protected BigDecimal shortTermSuspensionsLatinxPercent;
 	@JsonIgnore
-	public Wrap<BigDecimal> shortTermSuspensionsHispanicPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsHispanicPercent").o(shortTermSuspensionsHispanicPercent);
+	public Wrap<BigDecimal> shortTermSuspensionsLatinxPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsLatinxPercent").o(shortTermSuspensionsLatinxPercent);
 
-	/**	<br/> The entity shortTermSuspensionsHispanicPercent
+	/**	<br/> The entity shortTermSuspensionsLatinxPercent
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsHispanicPercent">Find the entity shortTermSuspensionsHispanicPercent in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsLatinxPercent">Find the entity shortTermSuspensionsLatinxPercent in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _shortTermSuspensionsHispanicPercent(Wrap<BigDecimal> c);
+	protected abstract void _shortTermSuspensionsLatinxPercent(Wrap<BigDecimal> c);
 
-	public BigDecimal getShortTermSuspensionsHispanicPercent() {
-		return shortTermSuspensionsHispanicPercent;
+	public BigDecimal getShortTermSuspensionsLatinxPercent() {
+		return shortTermSuspensionsLatinxPercent;
 	}
 
-	public void setShortTermSuspensionsHispanicPercent(BigDecimal shortTermSuspensionsHispanicPercent) {
-		this.shortTermSuspensionsHispanicPercent = shortTermSuspensionsHispanicPercent;
-		this.shortTermSuspensionsHispanicPercentWrap.alreadyInitialized = true;
+	public void setShortTermSuspensionsLatinxPercent(BigDecimal shortTermSuspensionsLatinxPercent) {
+		this.shortTermSuspensionsLatinxPercent = shortTermSuspensionsLatinxPercent;
+		this.shortTermSuspensionsLatinxPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsHispanicPercent(String o) {
+	public ReportCard setShortTermSuspensionsLatinxPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsHispanicPercentWrap.alreadyInitialized = true;
+			this.shortTermSuspensionsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.shortTermSuspensionsLatinxPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsHispanicPercent(Double o) {
-			this.shortTermSuspensionsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsHispanicPercentWrap.alreadyInitialized = true;
+	public ReportCard setShortTermSuspensionsLatinxPercent(Double o) {
+			this.shortTermSuspensionsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.shortTermSuspensionsLatinxPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsHispanicPercent(Integer o) {
-			this.shortTermSuspensionsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsHispanicPercentWrap.alreadyInitialized = true;
+	public ReportCard setShortTermSuspensionsLatinxPercent(Integer o) {
+			this.shortTermSuspensionsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.shortTermSuspensionsLatinxPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard shortTermSuspensionsHispanicPercentInit() {
-		if(!shortTermSuspensionsHispanicPercentWrap.alreadyInitialized) {
-			_shortTermSuspensionsHispanicPercent(shortTermSuspensionsHispanicPercentWrap);
-			if(shortTermSuspensionsHispanicPercent == null)
-				setShortTermSuspensionsHispanicPercent(shortTermSuspensionsHispanicPercentWrap.o);
+	protected ReportCard shortTermSuspensionsLatinxPercentInit() {
+		if(!shortTermSuspensionsLatinxPercentWrap.alreadyInitialized) {
+			_shortTermSuspensionsLatinxPercent(shortTermSuspensionsLatinxPercentWrap);
+			if(shortTermSuspensionsLatinxPercent == null)
+				setShortTermSuspensionsLatinxPercent(shortTermSuspensionsLatinxPercentWrap.o);
 		}
-		shortTermSuspensionsHispanicPercentWrap.alreadyInitialized(true);
+		shortTermSuspensionsLatinxPercentWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Double solrShortTermSuspensionsHispanicPercent() {
-		return shortTermSuspensionsHispanicPercent == null ? null : shortTermSuspensionsHispanicPercent.doubleValue();
+	public Double solrShortTermSuspensionsLatinxPercent() {
+		return shortTermSuspensionsLatinxPercent == null ? null : shortTermSuspensionsLatinxPercent.doubleValue();
 	}
 
-	public String strShortTermSuspensionsHispanicPercent() {
-		return shortTermSuspensionsHispanicPercent == null ? "" : shortTermSuspensionsHispanicPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	public String strShortTermSuspensionsLatinxPercent() {
+		return shortTermSuspensionsLatinxPercent == null ? "" : shortTermSuspensionsLatinxPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
-	public String jsonShortTermSuspensionsHispanicPercent() {
-		return shortTermSuspensionsHispanicPercent == null ? "" : shortTermSuspensionsHispanicPercent.toString();
+	public String jsonShortTermSuspensionsLatinxPercent() {
+		return shortTermSuspensionsLatinxPercent == null ? "" : shortTermSuspensionsLatinxPercent.toString();
 	}
 
-	public String nomAffichageShortTermSuspensionsHispanicPercent() {
+	public String nomAffichageShortTermSuspensionsLatinxPercent() {
 		return "short-term suspensions Latinx percent";
 	}
 
-	public String htmTooltipShortTermSuspensionsHispanicPercent() {
+	public String htmTooltipShortTermSuspensionsLatinxPercent() {
 		return null;
 	}
 
-	public String htmShortTermSuspensionsHispanicPercent() {
-		return shortTermSuspensionsHispanicPercent == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsHispanicPercent());
+	public String htmShortTermSuspensionsLatinxPercent() {
+		return shortTermSuspensionsLatinxPercent == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsLatinxPercent());
 	}
 
-	public void inputShortTermSuspensionsHispanicPercent(String classApiMethodMethod) {
+	public void inputShortTermSuspensionsLatinxPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 	}
 
-	public void htmShortTermSuspensionsHispanicPercent(String classApiMethodMethod) {
+	public void htmShortTermSuspensionsLatinxPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			if("Page".equals(classApiMethodMethod)) {
@@ -9539,7 +9539,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
 								{ e("div").a("class", "w3-rest ").f();
-									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsHispanicPercent ").f().sx(strShortTermSuspensionsHispanicPercent()).g("span");
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsLatinxPercent ").f().sx(strShortTermSuspensionsLatinxPercent()).g("span");
 								} g("div");
 							} g("div");
 						} g("div");
@@ -9549,91 +9549,91 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	//////////////////////////////////////
-	// shortTermSuspensionsHispanicRate //
-	//////////////////////////////////////
+	////////////////////////////////////
+	// shortTermSuspensionsLatinxRate //
+	////////////////////////////////////
 
-	/**	 The entity shortTermSuspensionsHispanicRate
+	/**	 The entity shortTermSuspensionsLatinxRate
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected BigDecimal shortTermSuspensionsHispanicRate;
+	protected BigDecimal shortTermSuspensionsLatinxRate;
 	@JsonIgnore
-	public Wrap<BigDecimal> shortTermSuspensionsHispanicRateWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsHispanicRate").o(shortTermSuspensionsHispanicRate);
+	public Wrap<BigDecimal> shortTermSuspensionsLatinxRateWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsLatinxRate").o(shortTermSuspensionsLatinxRate);
 
-	/**	<br/> The entity shortTermSuspensionsHispanicRate
+	/**	<br/> The entity shortTermSuspensionsLatinxRate
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsHispanicRate">Find the entity shortTermSuspensionsHispanicRate in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsLatinxRate">Find the entity shortTermSuspensionsLatinxRate in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _shortTermSuspensionsHispanicRate(Wrap<BigDecimal> c);
+	protected abstract void _shortTermSuspensionsLatinxRate(Wrap<BigDecimal> c);
 
-	public BigDecimal getShortTermSuspensionsHispanicRate() {
-		return shortTermSuspensionsHispanicRate;
+	public BigDecimal getShortTermSuspensionsLatinxRate() {
+		return shortTermSuspensionsLatinxRate;
 	}
 
-	public void setShortTermSuspensionsHispanicRate(BigDecimal shortTermSuspensionsHispanicRate) {
-		this.shortTermSuspensionsHispanicRate = shortTermSuspensionsHispanicRate;
-		this.shortTermSuspensionsHispanicRateWrap.alreadyInitialized = true;
+	public void setShortTermSuspensionsLatinxRate(BigDecimal shortTermSuspensionsLatinxRate) {
+		this.shortTermSuspensionsLatinxRate = shortTermSuspensionsLatinxRate;
+		this.shortTermSuspensionsLatinxRateWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsHispanicRate(String o) {
+	public ReportCard setShortTermSuspensionsLatinxRate(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsHispanicRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsHispanicRateWrap.alreadyInitialized = true;
+			this.shortTermSuspensionsLatinxRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.shortTermSuspensionsLatinxRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsHispanicRate(Double o) {
-			this.shortTermSuspensionsHispanicRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsHispanicRateWrap.alreadyInitialized = true;
+	public ReportCard setShortTermSuspensionsLatinxRate(Double o) {
+			this.shortTermSuspensionsLatinxRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.shortTermSuspensionsLatinxRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsHispanicRate(Integer o) {
-			this.shortTermSuspensionsHispanicRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsHispanicRateWrap.alreadyInitialized = true;
+	public ReportCard setShortTermSuspensionsLatinxRate(Integer o) {
+			this.shortTermSuspensionsLatinxRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.shortTermSuspensionsLatinxRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard shortTermSuspensionsHispanicRateInit() {
-		if(!shortTermSuspensionsHispanicRateWrap.alreadyInitialized) {
-			_shortTermSuspensionsHispanicRate(shortTermSuspensionsHispanicRateWrap);
-			if(shortTermSuspensionsHispanicRate == null)
-				setShortTermSuspensionsHispanicRate(shortTermSuspensionsHispanicRateWrap.o);
+	protected ReportCard shortTermSuspensionsLatinxRateInit() {
+		if(!shortTermSuspensionsLatinxRateWrap.alreadyInitialized) {
+			_shortTermSuspensionsLatinxRate(shortTermSuspensionsLatinxRateWrap);
+			if(shortTermSuspensionsLatinxRate == null)
+				setShortTermSuspensionsLatinxRate(shortTermSuspensionsLatinxRateWrap.o);
 		}
-		shortTermSuspensionsHispanicRateWrap.alreadyInitialized(true);
+		shortTermSuspensionsLatinxRateWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Double solrShortTermSuspensionsHispanicRate() {
-		return shortTermSuspensionsHispanicRate == null ? null : shortTermSuspensionsHispanicRate.doubleValue();
+	public Double solrShortTermSuspensionsLatinxRate() {
+		return shortTermSuspensionsLatinxRate == null ? null : shortTermSuspensionsLatinxRate.doubleValue();
 	}
 
-	public String strShortTermSuspensionsHispanicRate() {
-		return shortTermSuspensionsHispanicRate == null ? "" : shortTermSuspensionsHispanicRate.setScale(2, RoundingMode.HALF_UP).toString();
+	public String strShortTermSuspensionsLatinxRate() {
+		return shortTermSuspensionsLatinxRate == null ? "" : shortTermSuspensionsLatinxRate.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
-	public String jsonShortTermSuspensionsHispanicRate() {
-		return shortTermSuspensionsHispanicRate == null ? "" : shortTermSuspensionsHispanicRate.toString();
+	public String jsonShortTermSuspensionsLatinxRate() {
+		return shortTermSuspensionsLatinxRate == null ? "" : shortTermSuspensionsLatinxRate.toString();
 	}
 
-	public String nomAffichageShortTermSuspensionsHispanicRate() {
+	public String nomAffichageShortTermSuspensionsLatinxRate() {
 		return "short-term suspensions Latinx rate";
 	}
 
-	public String htmTooltipShortTermSuspensionsHispanicRate() {
+	public String htmTooltipShortTermSuspensionsLatinxRate() {
 		return null;
 	}
 
-	public String htmShortTermSuspensionsHispanicRate() {
-		return shortTermSuspensionsHispanicRate == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsHispanicRate());
+	public String htmShortTermSuspensionsLatinxRate() {
+		return shortTermSuspensionsLatinxRate == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsLatinxRate());
 	}
 
-	public void inputShortTermSuspensionsHispanicRate(String classApiMethodMethod) {
+	public void inputShortTermSuspensionsLatinxRate(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 	}
 
-	public void htmShortTermSuspensionsHispanicRate(String classApiMethodMethod) {
+	public void htmShortTermSuspensionsLatinxRate(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			if("Page".equals(classApiMethodMethod)) {
@@ -9645,7 +9645,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
 								{ e("div").a("class", "w3-rest ").f();
-									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsHispanicRate ").f().sx(strShortTermSuspensionsHispanicRate()).g("span");
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsLatinxRate ").f().sx(strShortTermSuspensionsLatinxRate()).g("span");
 								} g("div");
 							} g("div");
 						} g("div");
@@ -9655,76 +9655,76 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	//////////////////////////////////////
-	// shortTermSuspensionsIndianFemale //
-	//////////////////////////////////////
+	//////////////////////////////////////////
+	// shortTermSuspensionsIndigenousFemale //
+	//////////////////////////////////////////
 
-	/**	 The entity shortTermSuspensionsIndianFemale
+	/**	 The entity shortTermSuspensionsIndigenousFemale
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Long shortTermSuspensionsIndianFemale;
+	protected Long shortTermSuspensionsIndigenousFemale;
 	@JsonIgnore
-	public Wrap<Long> shortTermSuspensionsIndianFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsIndianFemale").o(shortTermSuspensionsIndianFemale);
+	public Wrap<Long> shortTermSuspensionsIndigenousFemaleWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsIndigenousFemale").o(shortTermSuspensionsIndigenousFemale);
 
-	/**	<br/> The entity shortTermSuspensionsIndianFemale
+	/**	<br/> The entity shortTermSuspensionsIndigenousFemale
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsIndianFemale">Find the entity shortTermSuspensionsIndianFemale in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsIndigenousFemale">Find the entity shortTermSuspensionsIndigenousFemale in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _shortTermSuspensionsIndianFemale(Wrap<Long> c);
+	protected abstract void _shortTermSuspensionsIndigenousFemale(Wrap<Long> c);
 
-	public Long getShortTermSuspensionsIndianFemale() {
-		return shortTermSuspensionsIndianFemale;
+	public Long getShortTermSuspensionsIndigenousFemale() {
+		return shortTermSuspensionsIndigenousFemale;
 	}
 
-	public void setShortTermSuspensionsIndianFemale(Long shortTermSuspensionsIndianFemale) {
-		this.shortTermSuspensionsIndianFemale = shortTermSuspensionsIndianFemale;
-		this.shortTermSuspensionsIndianFemaleWrap.alreadyInitialized = true;
+	public void setShortTermSuspensionsIndigenousFemale(Long shortTermSuspensionsIndigenousFemale) {
+		this.shortTermSuspensionsIndigenousFemale = shortTermSuspensionsIndigenousFemale;
+		this.shortTermSuspensionsIndigenousFemaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsIndianFemale(String o) {
+	public ReportCard setShortTermSuspensionsIndigenousFemale(String o) {
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsIndianFemale = Long.parseLong(o);
-		this.shortTermSuspensionsIndianFemaleWrap.alreadyInitialized = true;
+			this.shortTermSuspensionsIndigenousFemale = Long.parseLong(o);
+		this.shortTermSuspensionsIndigenousFemaleWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard shortTermSuspensionsIndianFemaleInit() {
-		if(!shortTermSuspensionsIndianFemaleWrap.alreadyInitialized) {
-			_shortTermSuspensionsIndianFemale(shortTermSuspensionsIndianFemaleWrap);
-			if(shortTermSuspensionsIndianFemale == null)
-				setShortTermSuspensionsIndianFemale(shortTermSuspensionsIndianFemaleWrap.o);
+	protected ReportCard shortTermSuspensionsIndigenousFemaleInit() {
+		if(!shortTermSuspensionsIndigenousFemaleWrap.alreadyInitialized) {
+			_shortTermSuspensionsIndigenousFemale(shortTermSuspensionsIndigenousFemaleWrap);
+			if(shortTermSuspensionsIndigenousFemale == null)
+				setShortTermSuspensionsIndigenousFemale(shortTermSuspensionsIndigenousFemaleWrap.o);
 		}
-		shortTermSuspensionsIndianFemaleWrap.alreadyInitialized(true);
+		shortTermSuspensionsIndigenousFemaleWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Long solrShortTermSuspensionsIndianFemale() {
-		return shortTermSuspensionsIndianFemale;
+	public Long solrShortTermSuspensionsIndigenousFemale() {
+		return shortTermSuspensionsIndigenousFemale;
 	}
 
-	public String strShortTermSuspensionsIndianFemale() {
-		return shortTermSuspensionsIndianFemale == null ? "" : shortTermSuspensionsIndianFemale.toString();
+	public String strShortTermSuspensionsIndigenousFemale() {
+		return shortTermSuspensionsIndigenousFemale == null ? "" : shortTermSuspensionsIndigenousFemale.toString();
 	}
 
-	public String jsonShortTermSuspensionsIndianFemale() {
-		return shortTermSuspensionsIndianFemale == null ? "" : shortTermSuspensionsIndianFemale.toString();
+	public String jsonShortTermSuspensionsIndigenousFemale() {
+		return shortTermSuspensionsIndigenousFemale == null ? "" : shortTermSuspensionsIndigenousFemale.toString();
 	}
 
-	public String nomAffichageShortTermSuspensionsIndianFemale() {
-		return "short-term suspensions First Nation female";
+	public String nomAffichageShortTermSuspensionsIndigenousFemale() {
+		return "short-term suspensions Indigenous female";
 	}
 
-	public String htmTooltipShortTermSuspensionsIndianFemale() {
+	public String htmTooltipShortTermSuspensionsIndigenousFemale() {
 		return null;
 	}
 
-	public String htmShortTermSuspensionsIndianFemale() {
-		return shortTermSuspensionsIndianFemale == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsIndianFemale());
+	public String htmShortTermSuspensionsIndigenousFemale() {
+		return shortTermSuspensionsIndigenousFemale == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsIndigenousFemale());
 	}
 
-	public void inputShortTermSuspensionsIndianFemale(String classApiMethodMethod) {
+	public void inputShortTermSuspensionsIndigenousFemale(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		if(
 				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -9732,40 +9732,40 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				) {
 			e("input")
 				.a("type", "text")
-				.a("placeholder", "short-term suspensions First Nation female")
-				.a("id", classApiMethodMethod, "_shortTermSuspensionsIndianFemale");
+				.a("placeholder", "short-term suspensions Indigenous female")
+				.a("id", classApiMethodMethod, "_shortTermSuspensionsIndigenousFemale");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
-					a("class", "setShortTermSuspensionsIndianFemale classReportCard inputReportCard", pk, "ShortTermSuspensionsIndianFemale w3-input w3-border ");
-					a("name", "setShortTermSuspensionsIndianFemale");
+					a("class", "setShortTermSuspensionsIndigenousFemale classReportCard inputReportCard", pk, "ShortTermSuspensionsIndigenousFemale w3-input w3-border ");
+					a("name", "setShortTermSuspensionsIndigenousFemale");
 				} else {
-					a("class", "valueShortTermSuspensionsIndianFemale w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsIndianFemale w3-input w3-border ");
-					a("name", "shortTermSuspensionsIndianFemale");
+					a("class", "valueShortTermSuspensionsIndigenousFemale w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsIndigenousFemale w3-input w3-border ");
+					a("name", "shortTermSuspensionsIndigenousFemale");
 				}
 				if("Page".equals(classApiMethodMethod)) {
 					a("onclick", "removeGlow($(this)); ");
-					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsIndianFemale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsIndianFemale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsIndianFemale')); }); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsIndigenousFemale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsIndigenousFemale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsIndigenousFemale')); }); ");
 				}
-				a("value", strShortTermSuspensionsIndianFemale())
+				a("value", strShortTermSuspensionsIndigenousFemale())
 			.fg();
 
 		} else {
-			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsIndianFemale ").f().sx(htmShortTermSuspensionsIndianFemale()).g("span");
+			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsIndigenousFemale ").f().sx(htmShortTermSuspensionsIndigenousFemale()).g("span");
 		}
 	}
 
-	public void htmShortTermSuspensionsIndianFemale(String classApiMethodMethod) {
+	public void htmShortTermSuspensionsIndigenousFemale(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			{ e("div").a("class", "w3-padding ").f();
-				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsIndianFemale").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsIndigenousFemale").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsIndianFemale").a("class", "").f().sx("short-term suspensions First Nation female").g("label");
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsIndigenousFemale").a("class", "").f().sx("short-term suspensions Indigenous female").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
 
-								inputShortTermSuspensionsIndianFemale(classApiMethodMethod);
+								inputShortTermSuspensionsIndigenousFemale(classApiMethodMethod);
 							} g("div");
 							if(
 									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -9776,7 +9776,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 										{ e("button")
 											.a("tabindex", "-1")
 											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
-										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsIndianFemale')); $('#", classApiMethodMethod, "_shortTermSuspensionsIndianFemale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsIndianFemale', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsIndianFemale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsIndianFemale')); }); ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsIndigenousFemale')); $('#", classApiMethodMethod, "_shortTermSuspensionsIndigenousFemale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsIndigenousFemale', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsIndigenousFemale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsIndigenousFemale')); }); ")
 											.f();
 											e("i").a("class", "far fa-eraser ").f().g("i");
 										} g("button");
@@ -9790,76 +9790,76 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	////////////////////////////////////
-	// shortTermSuspensionsIndianMale //
-	////////////////////////////////////
+	////////////////////////////////////////
+	// shortTermSuspensionsIndigenousMale //
+	////////////////////////////////////////
 
-	/**	 The entity shortTermSuspensionsIndianMale
+	/**	 The entity shortTermSuspensionsIndigenousMale
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Long shortTermSuspensionsIndianMale;
+	protected Long shortTermSuspensionsIndigenousMale;
 	@JsonIgnore
-	public Wrap<Long> shortTermSuspensionsIndianMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsIndianMale").o(shortTermSuspensionsIndianMale);
+	public Wrap<Long> shortTermSuspensionsIndigenousMaleWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsIndigenousMale").o(shortTermSuspensionsIndigenousMale);
 
-	/**	<br/> The entity shortTermSuspensionsIndianMale
+	/**	<br/> The entity shortTermSuspensionsIndigenousMale
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsIndianMale">Find the entity shortTermSuspensionsIndianMale in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsIndigenousMale">Find the entity shortTermSuspensionsIndigenousMale in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _shortTermSuspensionsIndianMale(Wrap<Long> c);
+	protected abstract void _shortTermSuspensionsIndigenousMale(Wrap<Long> c);
 
-	public Long getShortTermSuspensionsIndianMale() {
-		return shortTermSuspensionsIndianMale;
+	public Long getShortTermSuspensionsIndigenousMale() {
+		return shortTermSuspensionsIndigenousMale;
 	}
 
-	public void setShortTermSuspensionsIndianMale(Long shortTermSuspensionsIndianMale) {
-		this.shortTermSuspensionsIndianMale = shortTermSuspensionsIndianMale;
-		this.shortTermSuspensionsIndianMaleWrap.alreadyInitialized = true;
+	public void setShortTermSuspensionsIndigenousMale(Long shortTermSuspensionsIndigenousMale) {
+		this.shortTermSuspensionsIndigenousMale = shortTermSuspensionsIndigenousMale;
+		this.shortTermSuspensionsIndigenousMaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsIndianMale(String o) {
+	public ReportCard setShortTermSuspensionsIndigenousMale(String o) {
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsIndianMale = Long.parseLong(o);
-		this.shortTermSuspensionsIndianMaleWrap.alreadyInitialized = true;
+			this.shortTermSuspensionsIndigenousMale = Long.parseLong(o);
+		this.shortTermSuspensionsIndigenousMaleWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard shortTermSuspensionsIndianMaleInit() {
-		if(!shortTermSuspensionsIndianMaleWrap.alreadyInitialized) {
-			_shortTermSuspensionsIndianMale(shortTermSuspensionsIndianMaleWrap);
-			if(shortTermSuspensionsIndianMale == null)
-				setShortTermSuspensionsIndianMale(shortTermSuspensionsIndianMaleWrap.o);
+	protected ReportCard shortTermSuspensionsIndigenousMaleInit() {
+		if(!shortTermSuspensionsIndigenousMaleWrap.alreadyInitialized) {
+			_shortTermSuspensionsIndigenousMale(shortTermSuspensionsIndigenousMaleWrap);
+			if(shortTermSuspensionsIndigenousMale == null)
+				setShortTermSuspensionsIndigenousMale(shortTermSuspensionsIndigenousMaleWrap.o);
 		}
-		shortTermSuspensionsIndianMaleWrap.alreadyInitialized(true);
+		shortTermSuspensionsIndigenousMaleWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Long solrShortTermSuspensionsIndianMale() {
-		return shortTermSuspensionsIndianMale;
+	public Long solrShortTermSuspensionsIndigenousMale() {
+		return shortTermSuspensionsIndigenousMale;
 	}
 
-	public String strShortTermSuspensionsIndianMale() {
-		return shortTermSuspensionsIndianMale == null ? "" : shortTermSuspensionsIndianMale.toString();
+	public String strShortTermSuspensionsIndigenousMale() {
+		return shortTermSuspensionsIndigenousMale == null ? "" : shortTermSuspensionsIndigenousMale.toString();
 	}
 
-	public String jsonShortTermSuspensionsIndianMale() {
-		return shortTermSuspensionsIndianMale == null ? "" : shortTermSuspensionsIndianMale.toString();
+	public String jsonShortTermSuspensionsIndigenousMale() {
+		return shortTermSuspensionsIndigenousMale == null ? "" : shortTermSuspensionsIndigenousMale.toString();
 	}
 
-	public String nomAffichageShortTermSuspensionsIndianMale() {
-		return "short-term suspensions First Nation male";
+	public String nomAffichageShortTermSuspensionsIndigenousMale() {
+		return "short-term suspensions Indigenous male";
 	}
 
-	public String htmTooltipShortTermSuspensionsIndianMale() {
+	public String htmTooltipShortTermSuspensionsIndigenousMale() {
 		return null;
 	}
 
-	public String htmShortTermSuspensionsIndianMale() {
-		return shortTermSuspensionsIndianMale == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsIndianMale());
+	public String htmShortTermSuspensionsIndigenousMale() {
+		return shortTermSuspensionsIndigenousMale == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsIndigenousMale());
 	}
 
-	public void inputShortTermSuspensionsIndianMale(String classApiMethodMethod) {
+	public void inputShortTermSuspensionsIndigenousMale(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		if(
 				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -9867,40 +9867,40 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				) {
 			e("input")
 				.a("type", "text")
-				.a("placeholder", "short-term suspensions First Nation male")
-				.a("id", classApiMethodMethod, "_shortTermSuspensionsIndianMale");
+				.a("placeholder", "short-term suspensions Indigenous male")
+				.a("id", classApiMethodMethod, "_shortTermSuspensionsIndigenousMale");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
-					a("class", "setShortTermSuspensionsIndianMale classReportCard inputReportCard", pk, "ShortTermSuspensionsIndianMale w3-input w3-border ");
-					a("name", "setShortTermSuspensionsIndianMale");
+					a("class", "setShortTermSuspensionsIndigenousMale classReportCard inputReportCard", pk, "ShortTermSuspensionsIndigenousMale w3-input w3-border ");
+					a("name", "setShortTermSuspensionsIndigenousMale");
 				} else {
-					a("class", "valueShortTermSuspensionsIndianMale w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsIndianMale w3-input w3-border ");
-					a("name", "shortTermSuspensionsIndianMale");
+					a("class", "valueShortTermSuspensionsIndigenousMale w3-input w3-border classReportCard inputReportCard", pk, "ShortTermSuspensionsIndigenousMale w3-input w3-border ");
+					a("name", "shortTermSuspensionsIndigenousMale");
 				}
 				if("Page".equals(classApiMethodMethod)) {
 					a("onclick", "removeGlow($(this)); ");
-					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsIndianMale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsIndianMale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsIndianMale')); }); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setShortTermSuspensionsIndigenousMale', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsIndigenousMale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsIndigenousMale')); }); ");
 				}
-				a("value", strShortTermSuspensionsIndianMale())
+				a("value", strShortTermSuspensionsIndigenousMale())
 			.fg();
 
 		} else {
-			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsIndianMale ").f().sx(htmShortTermSuspensionsIndianMale()).g("span");
+			e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsIndigenousMale ").f().sx(htmShortTermSuspensionsIndigenousMale()).g("span");
 		}
 	}
 
-	public void htmShortTermSuspensionsIndianMale(String classApiMethodMethod) {
+	public void htmShortTermSuspensionsIndigenousMale(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			{ e("div").a("class", "w3-padding ").f();
-				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsIndianMale").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardShortTermSuspensionsIndigenousMale").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsIndianMale").a("class", "").f().sx("short-term suspensions First Nation male").g("label");
+							e("label").a("for", classApiMethodMethod, "_shortTermSuspensionsIndigenousMale").a("class", "").f().sx("short-term suspensions Indigenous male").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
 
-								inputShortTermSuspensionsIndianMale(classApiMethodMethod);
+								inputShortTermSuspensionsIndigenousMale(classApiMethodMethod);
 							} g("div");
 							if(
 									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -9911,7 +9911,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 										{ e("button")
 											.a("tabindex", "-1")
 											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
-										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsIndianMale')); $('#", classApiMethodMethod, "_shortTermSuspensionsIndianMale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsIndianMale', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsIndianMale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsIndianMale')); }); ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_shortTermSuspensionsIndigenousMale')); $('#", classApiMethodMethod, "_shortTermSuspensionsIndigenousMale').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setShortTermSuspensionsIndigenousMale', null, function() { addGlow($('#", classApiMethodMethod, "_shortTermSuspensionsIndigenousMale')); }, function() { addError($('#", classApiMethodMethod, "_shortTermSuspensionsIndigenousMale')); }); ")
 											.f();
 											e("i").a("class", "far fa-eraser ").f().g("i");
 										} g("button");
@@ -9925,92 +9925,92 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	/////////////////////////////////////
-	// shortTermSuspensionsIndianTotal //
-	/////////////////////////////////////
+	/////////////////////////////////////////
+	// shortTermSuspensionsIndigenousTotal //
+	/////////////////////////////////////////
 
-	/**	 The entity shortTermSuspensionsIndianTotal
+	/**	 The entity shortTermSuspensionsIndigenousTotal
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected Long shortTermSuspensionsIndianTotal;
+	protected Long shortTermSuspensionsIndigenousTotal;
 	@JsonIgnore
-	public Wrap<Long> shortTermSuspensionsIndianTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsIndianTotal").o(shortTermSuspensionsIndianTotal);
+	public Wrap<Long> shortTermSuspensionsIndigenousTotalWrap = new Wrap<Long>().p(this).c(Long.class).var("shortTermSuspensionsIndigenousTotal").o(shortTermSuspensionsIndigenousTotal);
 
-	/**	<br/> The entity shortTermSuspensionsIndianTotal
+	/**	<br/> The entity shortTermSuspensionsIndigenousTotal
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsIndianTotal">Find the entity shortTermSuspensionsIndianTotal in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsIndigenousTotal">Find the entity shortTermSuspensionsIndigenousTotal in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _shortTermSuspensionsIndianTotal(Wrap<Long> c);
+	protected abstract void _shortTermSuspensionsIndigenousTotal(Wrap<Long> c);
 
-	public Long getShortTermSuspensionsIndianTotal() {
-		return shortTermSuspensionsIndianTotal;
+	public Long getShortTermSuspensionsIndigenousTotal() {
+		return shortTermSuspensionsIndigenousTotal;
 	}
 
-	public void setShortTermSuspensionsIndianTotal(Long shortTermSuspensionsIndianTotal) {
-		this.shortTermSuspensionsIndianTotal = shortTermSuspensionsIndianTotal;
-		this.shortTermSuspensionsIndianTotalWrap.alreadyInitialized = true;
+	public void setShortTermSuspensionsIndigenousTotal(Long shortTermSuspensionsIndigenousTotal) {
+		this.shortTermSuspensionsIndigenousTotal = shortTermSuspensionsIndigenousTotal;
+		this.shortTermSuspensionsIndigenousTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsIndianTotal(String o) {
+	public ReportCard setShortTermSuspensionsIndigenousTotal(String o) {
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsIndianTotal = Long.parseLong(o);
-		this.shortTermSuspensionsIndianTotalWrap.alreadyInitialized = true;
+			this.shortTermSuspensionsIndigenousTotal = Long.parseLong(o);
+		this.shortTermSuspensionsIndigenousTotalWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard shortTermSuspensionsIndianTotalInit() {
-		if(!shortTermSuspensionsIndianTotalWrap.alreadyInitialized) {
-			_shortTermSuspensionsIndianTotal(shortTermSuspensionsIndianTotalWrap);
-			if(shortTermSuspensionsIndianTotal == null)
-				setShortTermSuspensionsIndianTotal(shortTermSuspensionsIndianTotalWrap.o);
+	protected ReportCard shortTermSuspensionsIndigenousTotalInit() {
+		if(!shortTermSuspensionsIndigenousTotalWrap.alreadyInitialized) {
+			_shortTermSuspensionsIndigenousTotal(shortTermSuspensionsIndigenousTotalWrap);
+			if(shortTermSuspensionsIndigenousTotal == null)
+				setShortTermSuspensionsIndigenousTotal(shortTermSuspensionsIndigenousTotalWrap.o);
 		}
-		shortTermSuspensionsIndianTotalWrap.alreadyInitialized(true);
+		shortTermSuspensionsIndigenousTotalWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Long solrShortTermSuspensionsIndianTotal() {
-		return shortTermSuspensionsIndianTotal;
+	public Long solrShortTermSuspensionsIndigenousTotal() {
+		return shortTermSuspensionsIndigenousTotal;
 	}
 
-	public String strShortTermSuspensionsIndianTotal() {
-		return shortTermSuspensionsIndianTotal == null ? "" : shortTermSuspensionsIndianTotal.toString();
+	public String strShortTermSuspensionsIndigenousTotal() {
+		return shortTermSuspensionsIndigenousTotal == null ? "" : shortTermSuspensionsIndigenousTotal.toString();
 	}
 
-	public String jsonShortTermSuspensionsIndianTotal() {
-		return shortTermSuspensionsIndianTotal == null ? "" : shortTermSuspensionsIndianTotal.toString();
+	public String jsonShortTermSuspensionsIndigenousTotal() {
+		return shortTermSuspensionsIndigenousTotal == null ? "" : shortTermSuspensionsIndigenousTotal.toString();
 	}
 
-	public String nomAffichageShortTermSuspensionsIndianTotal() {
-		return "short-term suspensions First Nation total";
+	public String nomAffichageShortTermSuspensionsIndigenousTotal() {
+		return "short-term suspensions Indigenous total";
 	}
 
-	public String htmTooltipShortTermSuspensionsIndianTotal() {
+	public String htmTooltipShortTermSuspensionsIndigenousTotal() {
 		return null;
 	}
 
-	public String htmShortTermSuspensionsIndianTotal() {
-		return shortTermSuspensionsIndianTotal == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsIndianTotal());
+	public String htmShortTermSuspensionsIndigenousTotal() {
+		return shortTermSuspensionsIndigenousTotal == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsIndigenousTotal());
 	}
 
-	public void inputShortTermSuspensionsIndianTotal(String classApiMethodMethod) {
+	public void inputShortTermSuspensionsIndigenousTotal(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 	}
 
-	public void htmShortTermSuspensionsIndianTotal(String classApiMethodMethod) {
+	public void htmShortTermSuspensionsIndigenousTotal(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			if("Page".equals(classApiMethodMethod)) {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("short-term suspensions First Nation total").g("label");
+							e("label").a("class", "").f().sx("short-term suspensions Indigenous total").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
 								{ e("div").a("class", "w3-rest ").f();
-									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsIndianTotal ").f().sx(strShortTermSuspensionsIndianTotal()).g("span");
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsIndigenousTotal ").f().sx(strShortTermSuspensionsIndigenousTotal()).g("span");
 								} g("div");
 							} g("div");
 						} g("div");
@@ -10020,103 +10020,103 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	///////////////////////////////////////
-	// shortTermSuspensionsIndianPercent //
-	///////////////////////////////////////
+	///////////////////////////////////////////
+	// shortTermSuspensionsIndigenousPercent //
+	///////////////////////////////////////////
 
-	/**	 The entity shortTermSuspensionsIndianPercent
+	/**	 The entity shortTermSuspensionsIndigenousPercent
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected BigDecimal shortTermSuspensionsIndianPercent;
+	protected BigDecimal shortTermSuspensionsIndigenousPercent;
 	@JsonIgnore
-	public Wrap<BigDecimal> shortTermSuspensionsIndianPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsIndianPercent").o(shortTermSuspensionsIndianPercent);
+	public Wrap<BigDecimal> shortTermSuspensionsIndigenousPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsIndigenousPercent").o(shortTermSuspensionsIndigenousPercent);
 
-	/**	<br/> The entity shortTermSuspensionsIndianPercent
+	/**	<br/> The entity shortTermSuspensionsIndigenousPercent
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsIndianPercent">Find the entity shortTermSuspensionsIndianPercent in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsIndigenousPercent">Find the entity shortTermSuspensionsIndigenousPercent in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _shortTermSuspensionsIndianPercent(Wrap<BigDecimal> c);
+	protected abstract void _shortTermSuspensionsIndigenousPercent(Wrap<BigDecimal> c);
 
-	public BigDecimal getShortTermSuspensionsIndianPercent() {
-		return shortTermSuspensionsIndianPercent;
+	public BigDecimal getShortTermSuspensionsIndigenousPercent() {
+		return shortTermSuspensionsIndigenousPercent;
 	}
 
-	public void setShortTermSuspensionsIndianPercent(BigDecimal shortTermSuspensionsIndianPercent) {
-		this.shortTermSuspensionsIndianPercent = shortTermSuspensionsIndianPercent;
-		this.shortTermSuspensionsIndianPercentWrap.alreadyInitialized = true;
+	public void setShortTermSuspensionsIndigenousPercent(BigDecimal shortTermSuspensionsIndigenousPercent) {
+		this.shortTermSuspensionsIndigenousPercent = shortTermSuspensionsIndigenousPercent;
+		this.shortTermSuspensionsIndigenousPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsIndianPercent(String o) {
+	public ReportCard setShortTermSuspensionsIndigenousPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsIndianPercentWrap.alreadyInitialized = true;
+			this.shortTermSuspensionsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.shortTermSuspensionsIndigenousPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsIndianPercent(Double o) {
-			this.shortTermSuspensionsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsIndianPercentWrap.alreadyInitialized = true;
+	public ReportCard setShortTermSuspensionsIndigenousPercent(Double o) {
+			this.shortTermSuspensionsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.shortTermSuspensionsIndigenousPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsIndianPercent(Integer o) {
-			this.shortTermSuspensionsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsIndianPercentWrap.alreadyInitialized = true;
+	public ReportCard setShortTermSuspensionsIndigenousPercent(Integer o) {
+			this.shortTermSuspensionsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.shortTermSuspensionsIndigenousPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard shortTermSuspensionsIndianPercentInit() {
-		if(!shortTermSuspensionsIndianPercentWrap.alreadyInitialized) {
-			_shortTermSuspensionsIndianPercent(shortTermSuspensionsIndianPercentWrap);
-			if(shortTermSuspensionsIndianPercent == null)
-				setShortTermSuspensionsIndianPercent(shortTermSuspensionsIndianPercentWrap.o);
+	protected ReportCard shortTermSuspensionsIndigenousPercentInit() {
+		if(!shortTermSuspensionsIndigenousPercentWrap.alreadyInitialized) {
+			_shortTermSuspensionsIndigenousPercent(shortTermSuspensionsIndigenousPercentWrap);
+			if(shortTermSuspensionsIndigenousPercent == null)
+				setShortTermSuspensionsIndigenousPercent(shortTermSuspensionsIndigenousPercentWrap.o);
 		}
-		shortTermSuspensionsIndianPercentWrap.alreadyInitialized(true);
+		shortTermSuspensionsIndigenousPercentWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Double solrShortTermSuspensionsIndianPercent() {
-		return shortTermSuspensionsIndianPercent == null ? null : shortTermSuspensionsIndianPercent.doubleValue();
+	public Double solrShortTermSuspensionsIndigenousPercent() {
+		return shortTermSuspensionsIndigenousPercent == null ? null : shortTermSuspensionsIndigenousPercent.doubleValue();
 	}
 
-	public String strShortTermSuspensionsIndianPercent() {
-		return shortTermSuspensionsIndianPercent == null ? "" : shortTermSuspensionsIndianPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	public String strShortTermSuspensionsIndigenousPercent() {
+		return shortTermSuspensionsIndigenousPercent == null ? "" : shortTermSuspensionsIndigenousPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
-	public String jsonShortTermSuspensionsIndianPercent() {
-		return shortTermSuspensionsIndianPercent == null ? "" : shortTermSuspensionsIndianPercent.toString();
+	public String jsonShortTermSuspensionsIndigenousPercent() {
+		return shortTermSuspensionsIndigenousPercent == null ? "" : shortTermSuspensionsIndigenousPercent.toString();
 	}
 
-	public String nomAffichageShortTermSuspensionsIndianPercent() {
-		return "short-term suspensions First Nation percent";
+	public String nomAffichageShortTermSuspensionsIndigenousPercent() {
+		return "short-term suspensions Indigenous percent";
 	}
 
-	public String htmTooltipShortTermSuspensionsIndianPercent() {
+	public String htmTooltipShortTermSuspensionsIndigenousPercent() {
 		return null;
 	}
 
-	public String htmShortTermSuspensionsIndianPercent() {
-		return shortTermSuspensionsIndianPercent == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsIndianPercent());
+	public String htmShortTermSuspensionsIndigenousPercent() {
+		return shortTermSuspensionsIndigenousPercent == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsIndigenousPercent());
 	}
 
-	public void inputShortTermSuspensionsIndianPercent(String classApiMethodMethod) {
+	public void inputShortTermSuspensionsIndigenousPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 	}
 
-	public void htmShortTermSuspensionsIndianPercent(String classApiMethodMethod) {
+	public void htmShortTermSuspensionsIndigenousPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			if("Page".equals(classApiMethodMethod)) {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("short-term suspensions First Nation percent").g("label");
+							e("label").a("class", "").f().sx("short-term suspensions Indigenous percent").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
 								{ e("div").a("class", "w3-rest ").f();
-									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsIndianPercent ").f().sx(strShortTermSuspensionsIndianPercent()).g("span");
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsIndigenousPercent ").f().sx(strShortTermSuspensionsIndigenousPercent()).g("span");
 								} g("div");
 							} g("div");
 						} g("div");
@@ -10126,103 +10126,103 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	////////////////////////////////////
-	// shortTermSuspensionsIndianRate //
-	////////////////////////////////////
+	////////////////////////////////////////
+	// shortTermSuspensionsIndigenousRate //
+	////////////////////////////////////////
 
-	/**	 The entity shortTermSuspensionsIndianRate
+	/**	 The entity shortTermSuspensionsIndigenousRate
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected BigDecimal shortTermSuspensionsIndianRate;
+	protected BigDecimal shortTermSuspensionsIndigenousRate;
 	@JsonIgnore
-	public Wrap<BigDecimal> shortTermSuspensionsIndianRateWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsIndianRate").o(shortTermSuspensionsIndianRate);
+	public Wrap<BigDecimal> shortTermSuspensionsIndigenousRateWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("shortTermSuspensionsIndigenousRate").o(shortTermSuspensionsIndigenousRate);
 
-	/**	<br/> The entity shortTermSuspensionsIndianRate
+	/**	<br/> The entity shortTermSuspensionsIndigenousRate
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsIndianRate">Find the entity shortTermSuspensionsIndianRate in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:shortTermSuspensionsIndigenousRate">Find the entity shortTermSuspensionsIndigenousRate in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _shortTermSuspensionsIndianRate(Wrap<BigDecimal> c);
+	protected abstract void _shortTermSuspensionsIndigenousRate(Wrap<BigDecimal> c);
 
-	public BigDecimal getShortTermSuspensionsIndianRate() {
-		return shortTermSuspensionsIndianRate;
+	public BigDecimal getShortTermSuspensionsIndigenousRate() {
+		return shortTermSuspensionsIndigenousRate;
 	}
 
-	public void setShortTermSuspensionsIndianRate(BigDecimal shortTermSuspensionsIndianRate) {
-		this.shortTermSuspensionsIndianRate = shortTermSuspensionsIndianRate;
-		this.shortTermSuspensionsIndianRateWrap.alreadyInitialized = true;
+	public void setShortTermSuspensionsIndigenousRate(BigDecimal shortTermSuspensionsIndigenousRate) {
+		this.shortTermSuspensionsIndigenousRate = shortTermSuspensionsIndigenousRate;
+		this.shortTermSuspensionsIndigenousRateWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsIndianRate(String o) {
+	public ReportCard setShortTermSuspensionsIndigenousRate(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsIndianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsIndianRateWrap.alreadyInitialized = true;
+			this.shortTermSuspensionsIndigenousRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.shortTermSuspensionsIndigenousRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsIndianRate(Double o) {
-			this.shortTermSuspensionsIndianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsIndianRateWrap.alreadyInitialized = true;
+	public ReportCard setShortTermSuspensionsIndigenousRate(Double o) {
+			this.shortTermSuspensionsIndigenousRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.shortTermSuspensionsIndigenousRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsIndianRate(Integer o) {
-			this.shortTermSuspensionsIndianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsIndianRateWrap.alreadyInitialized = true;
+	public ReportCard setShortTermSuspensionsIndigenousRate(Integer o) {
+			this.shortTermSuspensionsIndigenousRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.shortTermSuspensionsIndigenousRateWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard shortTermSuspensionsIndianRateInit() {
-		if(!shortTermSuspensionsIndianRateWrap.alreadyInitialized) {
-			_shortTermSuspensionsIndianRate(shortTermSuspensionsIndianRateWrap);
-			if(shortTermSuspensionsIndianRate == null)
-				setShortTermSuspensionsIndianRate(shortTermSuspensionsIndianRateWrap.o);
+	protected ReportCard shortTermSuspensionsIndigenousRateInit() {
+		if(!shortTermSuspensionsIndigenousRateWrap.alreadyInitialized) {
+			_shortTermSuspensionsIndigenousRate(shortTermSuspensionsIndigenousRateWrap);
+			if(shortTermSuspensionsIndigenousRate == null)
+				setShortTermSuspensionsIndigenousRate(shortTermSuspensionsIndigenousRateWrap.o);
 		}
-		shortTermSuspensionsIndianRateWrap.alreadyInitialized(true);
+		shortTermSuspensionsIndigenousRateWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Double solrShortTermSuspensionsIndianRate() {
-		return shortTermSuspensionsIndianRate == null ? null : shortTermSuspensionsIndianRate.doubleValue();
+	public Double solrShortTermSuspensionsIndigenousRate() {
+		return shortTermSuspensionsIndigenousRate == null ? null : shortTermSuspensionsIndigenousRate.doubleValue();
 	}
 
-	public String strShortTermSuspensionsIndianRate() {
-		return shortTermSuspensionsIndianRate == null ? "" : shortTermSuspensionsIndianRate.setScale(2, RoundingMode.HALF_UP).toString();
+	public String strShortTermSuspensionsIndigenousRate() {
+		return shortTermSuspensionsIndigenousRate == null ? "" : shortTermSuspensionsIndigenousRate.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
-	public String jsonShortTermSuspensionsIndianRate() {
-		return shortTermSuspensionsIndianRate == null ? "" : shortTermSuspensionsIndianRate.toString();
+	public String jsonShortTermSuspensionsIndigenousRate() {
+		return shortTermSuspensionsIndigenousRate == null ? "" : shortTermSuspensionsIndigenousRate.toString();
 	}
 
-	public String nomAffichageShortTermSuspensionsIndianRate() {
-		return "short-term suspensions First Nation rate";
+	public String nomAffichageShortTermSuspensionsIndigenousRate() {
+		return "short-term suspensions Indigenous rate";
 	}
 
-	public String htmTooltipShortTermSuspensionsIndianRate() {
+	public String htmTooltipShortTermSuspensionsIndigenousRate() {
 		return null;
 	}
 
-	public String htmShortTermSuspensionsIndianRate() {
-		return shortTermSuspensionsIndianRate == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsIndianRate());
+	public String htmShortTermSuspensionsIndigenousRate() {
+		return shortTermSuspensionsIndigenousRate == null ? "" : StringEscapeUtils.escapeHtml4(strShortTermSuspensionsIndigenousRate());
 	}
 
-	public void inputShortTermSuspensionsIndianRate(String classApiMethodMethod) {
+	public void inputShortTermSuspensionsIndigenousRate(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 	}
 
-	public void htmShortTermSuspensionsIndianRate(String classApiMethodMethod) {
+	public void htmShortTermSuspensionsIndigenousRate(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			if("Page".equals(classApiMethodMethod)) {
 				{ e("div").a("class", "w3-padding ").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("class", "").f().sx("short-term suspensions First Nation rate").g("label");
+							e("label").a("class", "").f().sx("short-term suspensions Indigenous rate").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row  ").f();
 							{ e("div").a("class", "w3-cell ").f();
 								{ e("div").a("class", "w3-rest ").f();
-									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsIndianRate ").f().sx(strShortTermSuspensionsIndianRate()).g("span");
+									e("span").a("class", "varReportCard", pk, "ShortTermSuspensionsIndigenousRate ").f().sx(strShortTermSuspensionsIndigenousRate()).g("span");
 								} g("div");
 							} g("div");
 						} g("div");
@@ -12321,87 +12321,87 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	////////////////////////////////////////////
-	// examsCollegeReadyGrades38IndianPercent //
-	////////////////////////////////////////////
+	////////////////////////////////////////////////
+	// examsCollegeReadyGrades38IndigenousPercent //
+	////////////////////////////////////////////////
 
-	/**	 The entity examsCollegeReadyGrades38IndianPercent
+	/**	 The entity examsCollegeReadyGrades38IndigenousPercent
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected BigDecimal examsCollegeReadyGrades38IndianPercent;
+	protected BigDecimal examsCollegeReadyGrades38IndigenousPercent;
 	@JsonIgnore
-	public Wrap<BigDecimal> examsCollegeReadyGrades38IndianPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades38IndianPercent").o(examsCollegeReadyGrades38IndianPercent);
+	public Wrap<BigDecimal> examsCollegeReadyGrades38IndigenousPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades38IndigenousPercent").o(examsCollegeReadyGrades38IndigenousPercent);
 
-	/**	<br/> The entity examsCollegeReadyGrades38IndianPercent
+	/**	<br/> The entity examsCollegeReadyGrades38IndigenousPercent
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades38IndianPercent">Find the entity examsCollegeReadyGrades38IndianPercent in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades38IndigenousPercent">Find the entity examsCollegeReadyGrades38IndigenousPercent in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _examsCollegeReadyGrades38IndianPercent(Wrap<BigDecimal> c);
+	protected abstract void _examsCollegeReadyGrades38IndigenousPercent(Wrap<BigDecimal> c);
 
-	public BigDecimal getExamsCollegeReadyGrades38IndianPercent() {
-		return examsCollegeReadyGrades38IndianPercent;
+	public BigDecimal getExamsCollegeReadyGrades38IndigenousPercent() {
+		return examsCollegeReadyGrades38IndigenousPercent;
 	}
 
-	public void setExamsCollegeReadyGrades38IndianPercent(BigDecimal examsCollegeReadyGrades38IndianPercent) {
-		this.examsCollegeReadyGrades38IndianPercent = examsCollegeReadyGrades38IndianPercent;
-		this.examsCollegeReadyGrades38IndianPercentWrap.alreadyInitialized = true;
+	public void setExamsCollegeReadyGrades38IndigenousPercent(BigDecimal examsCollegeReadyGrades38IndigenousPercent) {
+		this.examsCollegeReadyGrades38IndigenousPercent = examsCollegeReadyGrades38IndigenousPercent;
+		this.examsCollegeReadyGrades38IndigenousPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setExamsCollegeReadyGrades38IndianPercent(String o) {
+	public ReportCard setExamsCollegeReadyGrades38IndigenousPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.examsCollegeReadyGrades38IndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades38IndianPercentWrap.alreadyInitialized = true;
+			this.examsCollegeReadyGrades38IndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38IndigenousPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades38IndianPercent(Double o) {
-			this.examsCollegeReadyGrades38IndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades38IndianPercentWrap.alreadyInitialized = true;
+	public ReportCard setExamsCollegeReadyGrades38IndigenousPercent(Double o) {
+			this.examsCollegeReadyGrades38IndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38IndigenousPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades38IndianPercent(Integer o) {
-			this.examsCollegeReadyGrades38IndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades38IndianPercentWrap.alreadyInitialized = true;
+	public ReportCard setExamsCollegeReadyGrades38IndigenousPercent(Integer o) {
+			this.examsCollegeReadyGrades38IndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38IndigenousPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard examsCollegeReadyGrades38IndianPercentInit() {
-		if(!examsCollegeReadyGrades38IndianPercentWrap.alreadyInitialized) {
-			_examsCollegeReadyGrades38IndianPercent(examsCollegeReadyGrades38IndianPercentWrap);
-			if(examsCollegeReadyGrades38IndianPercent == null)
-				setExamsCollegeReadyGrades38IndianPercent(examsCollegeReadyGrades38IndianPercentWrap.o);
+	protected ReportCard examsCollegeReadyGrades38IndigenousPercentInit() {
+		if(!examsCollegeReadyGrades38IndigenousPercentWrap.alreadyInitialized) {
+			_examsCollegeReadyGrades38IndigenousPercent(examsCollegeReadyGrades38IndigenousPercentWrap);
+			if(examsCollegeReadyGrades38IndigenousPercent == null)
+				setExamsCollegeReadyGrades38IndigenousPercent(examsCollegeReadyGrades38IndigenousPercentWrap.o);
 		}
-		examsCollegeReadyGrades38IndianPercentWrap.alreadyInitialized(true);
+		examsCollegeReadyGrades38IndigenousPercentWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Double solrExamsCollegeReadyGrades38IndianPercent() {
-		return examsCollegeReadyGrades38IndianPercent == null ? null : examsCollegeReadyGrades38IndianPercent.doubleValue();
+	public Double solrExamsCollegeReadyGrades38IndigenousPercent() {
+		return examsCollegeReadyGrades38IndigenousPercent == null ? null : examsCollegeReadyGrades38IndigenousPercent.doubleValue();
 	}
 
-	public String strExamsCollegeReadyGrades38IndianPercent() {
-		return examsCollegeReadyGrades38IndianPercent == null ? "" : examsCollegeReadyGrades38IndianPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	public String strExamsCollegeReadyGrades38IndigenousPercent() {
+		return examsCollegeReadyGrades38IndigenousPercent == null ? "" : examsCollegeReadyGrades38IndigenousPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
-	public String jsonExamsCollegeReadyGrades38IndianPercent() {
-		return examsCollegeReadyGrades38IndianPercent == null ? "" : examsCollegeReadyGrades38IndianPercent.toString();
+	public String jsonExamsCollegeReadyGrades38IndigenousPercent() {
+		return examsCollegeReadyGrades38IndigenousPercent == null ? "" : examsCollegeReadyGrades38IndigenousPercent.toString();
 	}
 
-	public String nomAffichageExamsCollegeReadyGrades38IndianPercent() {
+	public String nomAffichageExamsCollegeReadyGrades38IndigenousPercent() {
 		return "College ready exams grades 3-8 first nation";
 	}
 
-	public String htmTooltipExamsCollegeReadyGrades38IndianPercent() {
+	public String htmTooltipExamsCollegeReadyGrades38IndigenousPercent() {
 		return null;
 	}
 
-	public String htmExamsCollegeReadyGrades38IndianPercent() {
-		return examsCollegeReadyGrades38IndianPercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades38IndianPercent());
+	public String htmExamsCollegeReadyGrades38IndigenousPercent() {
+		return examsCollegeReadyGrades38IndigenousPercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades38IndigenousPercent());
 	}
 
-	public void inputExamsCollegeReadyGrades38IndianPercent(String classApiMethodMethod) {
+	public void inputExamsCollegeReadyGrades38IndigenousPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		if(
 				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -12410,39 +12410,39 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			e("input")
 				.a("type", "text")
 				.a("placeholder", "College ready exams grades 3-8 first nation")
-				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades38IndianPercent");
+				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades38IndigenousPercent");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
-					a("class", "setExamsCollegeReadyGrades38IndianPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38IndianPercent w3-input w3-border ");
-					a("name", "setExamsCollegeReadyGrades38IndianPercent");
+					a("class", "setExamsCollegeReadyGrades38IndigenousPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38IndigenousPercent w3-input w3-border ");
+					a("name", "setExamsCollegeReadyGrades38IndigenousPercent");
 				} else {
-					a("class", "valueExamsCollegeReadyGrades38IndianPercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38IndianPercent w3-input w3-border ");
-					a("name", "examsCollegeReadyGrades38IndianPercent");
+					a("class", "valueExamsCollegeReadyGrades38IndigenousPercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38IndigenousPercent w3-input w3-border ");
+					a("name", "examsCollegeReadyGrades38IndigenousPercent");
 				}
 				if("Page".equals(classApiMethodMethod)) {
 					a("onclick", "removeGlow($(this)); ");
-					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades38IndianPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38IndianPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38IndianPercent')); }); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades38IndigenousPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38IndigenousPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38IndigenousPercent')); }); ");
 				}
-				a("value", strExamsCollegeReadyGrades38IndianPercent())
+				a("value", strExamsCollegeReadyGrades38IndigenousPercent())
 			.fg();
 
 		} else {
-			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades38IndianPercent ").f().sx(htmExamsCollegeReadyGrades38IndianPercent()).g("span");
+			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades38IndigenousPercent ").f().sx(htmExamsCollegeReadyGrades38IndigenousPercent()).g("span");
 		}
 	}
 
-	public void htmExamsCollegeReadyGrades38IndianPercent(String classApiMethodMethod) {
+	public void htmExamsCollegeReadyGrades38IndigenousPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			{ e("div").a("class", "w3-padding ").f();
-				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades38IndianPercent").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades38IndigenousPercent").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades38IndianPercent").a("class", "").f().sx("College ready exams grades 3-8 first nation").g("label");
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades38IndigenousPercent").a("class", "").f().sx("College ready exams grades 3-8 first nation").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
 
-								inputExamsCollegeReadyGrades38IndianPercent(classApiMethodMethod);
+								inputExamsCollegeReadyGrades38IndigenousPercent(classApiMethodMethod);
 							} g("div");
 							if(
 									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -12453,7 +12453,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 										{ e("button")
 											.a("tabindex", "-1")
 											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
-										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38IndianPercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades38IndianPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades38IndianPercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38IndianPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38IndianPercent')); }); ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38IndigenousPercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades38IndigenousPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades38IndigenousPercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38IndigenousPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38IndigenousPercent')); }); ")
 											.f();
 											e("i").a("class", "far fa-eraser ").f().g("i");
 										} g("button");
@@ -12759,87 +12759,87 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	//////////////////////////////////////////////
-	// examsCollegeReadyGrades38HispanicPercent //
-	//////////////////////////////////////////////
+	////////////////////////////////////////////
+	// examsCollegeReadyGrades38LatinxPercent //
+	////////////////////////////////////////////
 
-	/**	 The entity examsCollegeReadyGrades38HispanicPercent
+	/**	 The entity examsCollegeReadyGrades38LatinxPercent
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected BigDecimal examsCollegeReadyGrades38HispanicPercent;
+	protected BigDecimal examsCollegeReadyGrades38LatinxPercent;
 	@JsonIgnore
-	public Wrap<BigDecimal> examsCollegeReadyGrades38HispanicPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades38HispanicPercent").o(examsCollegeReadyGrades38HispanicPercent);
+	public Wrap<BigDecimal> examsCollegeReadyGrades38LatinxPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades38LatinxPercent").o(examsCollegeReadyGrades38LatinxPercent);
 
-	/**	<br/> The entity examsCollegeReadyGrades38HispanicPercent
+	/**	<br/> The entity examsCollegeReadyGrades38LatinxPercent
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades38HispanicPercent">Find the entity examsCollegeReadyGrades38HispanicPercent in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades38LatinxPercent">Find the entity examsCollegeReadyGrades38LatinxPercent in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _examsCollegeReadyGrades38HispanicPercent(Wrap<BigDecimal> c);
+	protected abstract void _examsCollegeReadyGrades38LatinxPercent(Wrap<BigDecimal> c);
 
-	public BigDecimal getExamsCollegeReadyGrades38HispanicPercent() {
-		return examsCollegeReadyGrades38HispanicPercent;
+	public BigDecimal getExamsCollegeReadyGrades38LatinxPercent() {
+		return examsCollegeReadyGrades38LatinxPercent;
 	}
 
-	public void setExamsCollegeReadyGrades38HispanicPercent(BigDecimal examsCollegeReadyGrades38HispanicPercent) {
-		this.examsCollegeReadyGrades38HispanicPercent = examsCollegeReadyGrades38HispanicPercent;
-		this.examsCollegeReadyGrades38HispanicPercentWrap.alreadyInitialized = true;
+	public void setExamsCollegeReadyGrades38LatinxPercent(BigDecimal examsCollegeReadyGrades38LatinxPercent) {
+		this.examsCollegeReadyGrades38LatinxPercent = examsCollegeReadyGrades38LatinxPercent;
+		this.examsCollegeReadyGrades38LatinxPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setExamsCollegeReadyGrades38HispanicPercent(String o) {
+	public ReportCard setExamsCollegeReadyGrades38LatinxPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.examsCollegeReadyGrades38HispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades38HispanicPercentWrap.alreadyInitialized = true;
+			this.examsCollegeReadyGrades38LatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38LatinxPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades38HispanicPercent(Double o) {
-			this.examsCollegeReadyGrades38HispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades38HispanicPercentWrap.alreadyInitialized = true;
+	public ReportCard setExamsCollegeReadyGrades38LatinxPercent(Double o) {
+			this.examsCollegeReadyGrades38LatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38LatinxPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades38HispanicPercent(Integer o) {
-			this.examsCollegeReadyGrades38HispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades38HispanicPercentWrap.alreadyInitialized = true;
+	public ReportCard setExamsCollegeReadyGrades38LatinxPercent(Integer o) {
+			this.examsCollegeReadyGrades38LatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38LatinxPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard examsCollegeReadyGrades38HispanicPercentInit() {
-		if(!examsCollegeReadyGrades38HispanicPercentWrap.alreadyInitialized) {
-			_examsCollegeReadyGrades38HispanicPercent(examsCollegeReadyGrades38HispanicPercentWrap);
-			if(examsCollegeReadyGrades38HispanicPercent == null)
-				setExamsCollegeReadyGrades38HispanicPercent(examsCollegeReadyGrades38HispanicPercentWrap.o);
+	protected ReportCard examsCollegeReadyGrades38LatinxPercentInit() {
+		if(!examsCollegeReadyGrades38LatinxPercentWrap.alreadyInitialized) {
+			_examsCollegeReadyGrades38LatinxPercent(examsCollegeReadyGrades38LatinxPercentWrap);
+			if(examsCollegeReadyGrades38LatinxPercent == null)
+				setExamsCollegeReadyGrades38LatinxPercent(examsCollegeReadyGrades38LatinxPercentWrap.o);
 		}
-		examsCollegeReadyGrades38HispanicPercentWrap.alreadyInitialized(true);
+		examsCollegeReadyGrades38LatinxPercentWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Double solrExamsCollegeReadyGrades38HispanicPercent() {
-		return examsCollegeReadyGrades38HispanicPercent == null ? null : examsCollegeReadyGrades38HispanicPercent.doubleValue();
+	public Double solrExamsCollegeReadyGrades38LatinxPercent() {
+		return examsCollegeReadyGrades38LatinxPercent == null ? null : examsCollegeReadyGrades38LatinxPercent.doubleValue();
 	}
 
-	public String strExamsCollegeReadyGrades38HispanicPercent() {
-		return examsCollegeReadyGrades38HispanicPercent == null ? "" : examsCollegeReadyGrades38HispanicPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	public String strExamsCollegeReadyGrades38LatinxPercent() {
+		return examsCollegeReadyGrades38LatinxPercent == null ? "" : examsCollegeReadyGrades38LatinxPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
-	public String jsonExamsCollegeReadyGrades38HispanicPercent() {
-		return examsCollegeReadyGrades38HispanicPercent == null ? "" : examsCollegeReadyGrades38HispanicPercent.toString();
+	public String jsonExamsCollegeReadyGrades38LatinxPercent() {
+		return examsCollegeReadyGrades38LatinxPercent == null ? "" : examsCollegeReadyGrades38LatinxPercent.toString();
 	}
 
-	public String nomAffichageExamsCollegeReadyGrades38HispanicPercent() {
+	public String nomAffichageExamsCollegeReadyGrades38LatinxPercent() {
 		return "College ready exams grades 3-8 hispanic";
 	}
 
-	public String htmTooltipExamsCollegeReadyGrades38HispanicPercent() {
+	public String htmTooltipExamsCollegeReadyGrades38LatinxPercent() {
 		return null;
 	}
 
-	public String htmExamsCollegeReadyGrades38HispanicPercent() {
-		return examsCollegeReadyGrades38HispanicPercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades38HispanicPercent());
+	public String htmExamsCollegeReadyGrades38LatinxPercent() {
+		return examsCollegeReadyGrades38LatinxPercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades38LatinxPercent());
 	}
 
-	public void inputExamsCollegeReadyGrades38HispanicPercent(String classApiMethodMethod) {
+	public void inputExamsCollegeReadyGrades38LatinxPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		if(
 				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -12848,39 +12848,39 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			e("input")
 				.a("type", "text")
 				.a("placeholder", "College ready exams grades 3-8 hispanic")
-				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades38HispanicPercent");
+				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades38LatinxPercent");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
-					a("class", "setExamsCollegeReadyGrades38HispanicPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38HispanicPercent w3-input w3-border ");
-					a("name", "setExamsCollegeReadyGrades38HispanicPercent");
+					a("class", "setExamsCollegeReadyGrades38LatinxPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38LatinxPercent w3-input w3-border ");
+					a("name", "setExamsCollegeReadyGrades38LatinxPercent");
 				} else {
-					a("class", "valueExamsCollegeReadyGrades38HispanicPercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38HispanicPercent w3-input w3-border ");
-					a("name", "examsCollegeReadyGrades38HispanicPercent");
+					a("class", "valueExamsCollegeReadyGrades38LatinxPercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38LatinxPercent w3-input w3-border ");
+					a("name", "examsCollegeReadyGrades38LatinxPercent");
 				}
 				if("Page".equals(classApiMethodMethod)) {
 					a("onclick", "removeGlow($(this)); ");
-					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades38HispanicPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38HispanicPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38HispanicPercent')); }); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades38LatinxPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38LatinxPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38LatinxPercent')); }); ");
 				}
-				a("value", strExamsCollegeReadyGrades38HispanicPercent())
+				a("value", strExamsCollegeReadyGrades38LatinxPercent())
 			.fg();
 
 		} else {
-			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades38HispanicPercent ").f().sx(htmExamsCollegeReadyGrades38HispanicPercent()).g("span");
+			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades38LatinxPercent ").f().sx(htmExamsCollegeReadyGrades38LatinxPercent()).g("span");
 		}
 	}
 
-	public void htmExamsCollegeReadyGrades38HispanicPercent(String classApiMethodMethod) {
+	public void htmExamsCollegeReadyGrades38LatinxPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			{ e("div").a("class", "w3-padding ").f();
-				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades38HispanicPercent").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades38LatinxPercent").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades38HispanicPercent").a("class", "").f().sx("College ready exams grades 3-8 hispanic").g("label");
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades38LatinxPercent").a("class", "").f().sx("College ready exams grades 3-8 hispanic").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
 
-								inputExamsCollegeReadyGrades38HispanicPercent(classApiMethodMethod);
+								inputExamsCollegeReadyGrades38LatinxPercent(classApiMethodMethod);
 							} g("div");
 							if(
 									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -12891,7 +12891,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 										{ e("button")
 											.a("tabindex", "-1")
 											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
-										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38HispanicPercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades38HispanicPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades38HispanicPercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38HispanicPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38HispanicPercent')); }); ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38LatinxPercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades38LatinxPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades38LatinxPercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades38LatinxPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades38LatinxPercent')); }); ")
 											.f();
 											e("i").a("class", "far fa-eraser ").f().g("i");
 										} g("button");
@@ -13489,87 +13489,87 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	/////////////////////////////////////////////
-	// examsCollegeReadyGrades912IndianPercent //
-	/////////////////////////////////////////////
+	/////////////////////////////////////////////////
+	// examsCollegeReadyGrades912IndigenousPercent //
+	/////////////////////////////////////////////////
 
-	/**	 The entity examsCollegeReadyGrades912IndianPercent
+	/**	 The entity examsCollegeReadyGrades912IndigenousPercent
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected BigDecimal examsCollegeReadyGrades912IndianPercent;
+	protected BigDecimal examsCollegeReadyGrades912IndigenousPercent;
 	@JsonIgnore
-	public Wrap<BigDecimal> examsCollegeReadyGrades912IndianPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades912IndianPercent").o(examsCollegeReadyGrades912IndianPercent);
+	public Wrap<BigDecimal> examsCollegeReadyGrades912IndigenousPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades912IndigenousPercent").o(examsCollegeReadyGrades912IndigenousPercent);
 
-	/**	<br/> The entity examsCollegeReadyGrades912IndianPercent
+	/**	<br/> The entity examsCollegeReadyGrades912IndigenousPercent
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades912IndianPercent">Find the entity examsCollegeReadyGrades912IndianPercent in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades912IndigenousPercent">Find the entity examsCollegeReadyGrades912IndigenousPercent in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _examsCollegeReadyGrades912IndianPercent(Wrap<BigDecimal> c);
+	protected abstract void _examsCollegeReadyGrades912IndigenousPercent(Wrap<BigDecimal> c);
 
-	public BigDecimal getExamsCollegeReadyGrades912IndianPercent() {
-		return examsCollegeReadyGrades912IndianPercent;
+	public BigDecimal getExamsCollegeReadyGrades912IndigenousPercent() {
+		return examsCollegeReadyGrades912IndigenousPercent;
 	}
 
-	public void setExamsCollegeReadyGrades912IndianPercent(BigDecimal examsCollegeReadyGrades912IndianPercent) {
-		this.examsCollegeReadyGrades912IndianPercent = examsCollegeReadyGrades912IndianPercent;
-		this.examsCollegeReadyGrades912IndianPercentWrap.alreadyInitialized = true;
+	public void setExamsCollegeReadyGrades912IndigenousPercent(BigDecimal examsCollegeReadyGrades912IndigenousPercent) {
+		this.examsCollegeReadyGrades912IndigenousPercent = examsCollegeReadyGrades912IndigenousPercent;
+		this.examsCollegeReadyGrades912IndigenousPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setExamsCollegeReadyGrades912IndianPercent(String o) {
+	public ReportCard setExamsCollegeReadyGrades912IndigenousPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.examsCollegeReadyGrades912IndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades912IndianPercentWrap.alreadyInitialized = true;
+			this.examsCollegeReadyGrades912IndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912IndigenousPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades912IndianPercent(Double o) {
-			this.examsCollegeReadyGrades912IndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades912IndianPercentWrap.alreadyInitialized = true;
+	public ReportCard setExamsCollegeReadyGrades912IndigenousPercent(Double o) {
+			this.examsCollegeReadyGrades912IndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912IndigenousPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades912IndianPercent(Integer o) {
-			this.examsCollegeReadyGrades912IndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades912IndianPercentWrap.alreadyInitialized = true;
+	public ReportCard setExamsCollegeReadyGrades912IndigenousPercent(Integer o) {
+			this.examsCollegeReadyGrades912IndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912IndigenousPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard examsCollegeReadyGrades912IndianPercentInit() {
-		if(!examsCollegeReadyGrades912IndianPercentWrap.alreadyInitialized) {
-			_examsCollegeReadyGrades912IndianPercent(examsCollegeReadyGrades912IndianPercentWrap);
-			if(examsCollegeReadyGrades912IndianPercent == null)
-				setExamsCollegeReadyGrades912IndianPercent(examsCollegeReadyGrades912IndianPercentWrap.o);
+	protected ReportCard examsCollegeReadyGrades912IndigenousPercentInit() {
+		if(!examsCollegeReadyGrades912IndigenousPercentWrap.alreadyInitialized) {
+			_examsCollegeReadyGrades912IndigenousPercent(examsCollegeReadyGrades912IndigenousPercentWrap);
+			if(examsCollegeReadyGrades912IndigenousPercent == null)
+				setExamsCollegeReadyGrades912IndigenousPercent(examsCollegeReadyGrades912IndigenousPercentWrap.o);
 		}
-		examsCollegeReadyGrades912IndianPercentWrap.alreadyInitialized(true);
+		examsCollegeReadyGrades912IndigenousPercentWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Double solrExamsCollegeReadyGrades912IndianPercent() {
-		return examsCollegeReadyGrades912IndianPercent == null ? null : examsCollegeReadyGrades912IndianPercent.doubleValue();
+	public Double solrExamsCollegeReadyGrades912IndigenousPercent() {
+		return examsCollegeReadyGrades912IndigenousPercent == null ? null : examsCollegeReadyGrades912IndigenousPercent.doubleValue();
 	}
 
-	public String strExamsCollegeReadyGrades912IndianPercent() {
-		return examsCollegeReadyGrades912IndianPercent == null ? "" : examsCollegeReadyGrades912IndianPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	public String strExamsCollegeReadyGrades912IndigenousPercent() {
+		return examsCollegeReadyGrades912IndigenousPercent == null ? "" : examsCollegeReadyGrades912IndigenousPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
-	public String jsonExamsCollegeReadyGrades912IndianPercent() {
-		return examsCollegeReadyGrades912IndianPercent == null ? "" : examsCollegeReadyGrades912IndianPercent.toString();
+	public String jsonExamsCollegeReadyGrades912IndigenousPercent() {
+		return examsCollegeReadyGrades912IndigenousPercent == null ? "" : examsCollegeReadyGrades912IndigenousPercent.toString();
 	}
 
-	public String nomAffichageExamsCollegeReadyGrades912IndianPercent() {
+	public String nomAffichageExamsCollegeReadyGrades912IndigenousPercent() {
 		return "College ready exams grades 9-12 first nation";
 	}
 
-	public String htmTooltipExamsCollegeReadyGrades912IndianPercent() {
+	public String htmTooltipExamsCollegeReadyGrades912IndigenousPercent() {
 		return null;
 	}
 
-	public String htmExamsCollegeReadyGrades912IndianPercent() {
-		return examsCollegeReadyGrades912IndianPercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades912IndianPercent());
+	public String htmExamsCollegeReadyGrades912IndigenousPercent() {
+		return examsCollegeReadyGrades912IndigenousPercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades912IndigenousPercent());
 	}
 
-	public void inputExamsCollegeReadyGrades912IndianPercent(String classApiMethodMethod) {
+	public void inputExamsCollegeReadyGrades912IndigenousPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		if(
 				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -13578,39 +13578,39 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			e("input")
 				.a("type", "text")
 				.a("placeholder", "College ready exams grades 9-12 first nation")
-				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades912IndianPercent");
+				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades912IndigenousPercent");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
-					a("class", "setExamsCollegeReadyGrades912IndianPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912IndianPercent w3-input w3-border ");
-					a("name", "setExamsCollegeReadyGrades912IndianPercent");
+					a("class", "setExamsCollegeReadyGrades912IndigenousPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912IndigenousPercent w3-input w3-border ");
+					a("name", "setExamsCollegeReadyGrades912IndigenousPercent");
 				} else {
-					a("class", "valueExamsCollegeReadyGrades912IndianPercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912IndianPercent w3-input w3-border ");
-					a("name", "examsCollegeReadyGrades912IndianPercent");
+					a("class", "valueExamsCollegeReadyGrades912IndigenousPercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912IndigenousPercent w3-input w3-border ");
+					a("name", "examsCollegeReadyGrades912IndigenousPercent");
 				}
 				if("Page".equals(classApiMethodMethod)) {
 					a("onclick", "removeGlow($(this)); ");
-					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades912IndianPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912IndianPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912IndianPercent')); }); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades912IndigenousPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912IndigenousPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912IndigenousPercent')); }); ");
 				}
-				a("value", strExamsCollegeReadyGrades912IndianPercent())
+				a("value", strExamsCollegeReadyGrades912IndigenousPercent())
 			.fg();
 
 		} else {
-			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades912IndianPercent ").f().sx(htmExamsCollegeReadyGrades912IndianPercent()).g("span");
+			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades912IndigenousPercent ").f().sx(htmExamsCollegeReadyGrades912IndigenousPercent()).g("span");
 		}
 	}
 
-	public void htmExamsCollegeReadyGrades912IndianPercent(String classApiMethodMethod) {
+	public void htmExamsCollegeReadyGrades912IndigenousPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			{ e("div").a("class", "w3-padding ").f();
-				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades912IndianPercent").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades912IndigenousPercent").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades912IndianPercent").a("class", "").f().sx("College ready exams grades 9-12 first nation").g("label");
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades912IndigenousPercent").a("class", "").f().sx("College ready exams grades 9-12 first nation").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
 
-								inputExamsCollegeReadyGrades912IndianPercent(classApiMethodMethod);
+								inputExamsCollegeReadyGrades912IndigenousPercent(classApiMethodMethod);
 							} g("div");
 							if(
 									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -13621,7 +13621,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 										{ e("button")
 											.a("tabindex", "-1")
 											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
-										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912IndianPercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades912IndianPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades912IndianPercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912IndianPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912IndianPercent')); }); ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912IndigenousPercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades912IndigenousPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades912IndigenousPercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912IndigenousPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912IndigenousPercent')); }); ")
 											.f();
 											e("i").a("class", "far fa-eraser ").f().g("i");
 										} g("button");
@@ -13927,87 +13927,87 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	///////////////////////////////////////////////
-	// examsCollegeReadyGrades912HispanicPercent //
-	///////////////////////////////////////////////
+	/////////////////////////////////////////////
+	// examsCollegeReadyGrades912LatinxPercent //
+	/////////////////////////////////////////////
 
-	/**	 The entity examsCollegeReadyGrades912HispanicPercent
+	/**	 The entity examsCollegeReadyGrades912LatinxPercent
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected BigDecimal examsCollegeReadyGrades912HispanicPercent;
+	protected BigDecimal examsCollegeReadyGrades912LatinxPercent;
 	@JsonIgnore
-	public Wrap<BigDecimal> examsCollegeReadyGrades912HispanicPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades912HispanicPercent").o(examsCollegeReadyGrades912HispanicPercent);
+	public Wrap<BigDecimal> examsCollegeReadyGrades912LatinxPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades912LatinxPercent").o(examsCollegeReadyGrades912LatinxPercent);
 
-	/**	<br/> The entity examsCollegeReadyGrades912HispanicPercent
+	/**	<br/> The entity examsCollegeReadyGrades912LatinxPercent
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades912HispanicPercent">Find the entity examsCollegeReadyGrades912HispanicPercent in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades912LatinxPercent">Find the entity examsCollegeReadyGrades912LatinxPercent in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _examsCollegeReadyGrades912HispanicPercent(Wrap<BigDecimal> c);
+	protected abstract void _examsCollegeReadyGrades912LatinxPercent(Wrap<BigDecimal> c);
 
-	public BigDecimal getExamsCollegeReadyGrades912HispanicPercent() {
-		return examsCollegeReadyGrades912HispanicPercent;
+	public BigDecimal getExamsCollegeReadyGrades912LatinxPercent() {
+		return examsCollegeReadyGrades912LatinxPercent;
 	}
 
-	public void setExamsCollegeReadyGrades912HispanicPercent(BigDecimal examsCollegeReadyGrades912HispanicPercent) {
-		this.examsCollegeReadyGrades912HispanicPercent = examsCollegeReadyGrades912HispanicPercent;
-		this.examsCollegeReadyGrades912HispanicPercentWrap.alreadyInitialized = true;
+	public void setExamsCollegeReadyGrades912LatinxPercent(BigDecimal examsCollegeReadyGrades912LatinxPercent) {
+		this.examsCollegeReadyGrades912LatinxPercent = examsCollegeReadyGrades912LatinxPercent;
+		this.examsCollegeReadyGrades912LatinxPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setExamsCollegeReadyGrades912HispanicPercent(String o) {
+	public ReportCard setExamsCollegeReadyGrades912LatinxPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.examsCollegeReadyGrades912HispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades912HispanicPercentWrap.alreadyInitialized = true;
+			this.examsCollegeReadyGrades912LatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912LatinxPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades912HispanicPercent(Double o) {
-			this.examsCollegeReadyGrades912HispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades912HispanicPercentWrap.alreadyInitialized = true;
+	public ReportCard setExamsCollegeReadyGrades912LatinxPercent(Double o) {
+			this.examsCollegeReadyGrades912LatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912LatinxPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades912HispanicPercent(Integer o) {
-			this.examsCollegeReadyGrades912HispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades912HispanicPercentWrap.alreadyInitialized = true;
+	public ReportCard setExamsCollegeReadyGrades912LatinxPercent(Integer o) {
+			this.examsCollegeReadyGrades912LatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades912LatinxPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard examsCollegeReadyGrades912HispanicPercentInit() {
-		if(!examsCollegeReadyGrades912HispanicPercentWrap.alreadyInitialized) {
-			_examsCollegeReadyGrades912HispanicPercent(examsCollegeReadyGrades912HispanicPercentWrap);
-			if(examsCollegeReadyGrades912HispanicPercent == null)
-				setExamsCollegeReadyGrades912HispanicPercent(examsCollegeReadyGrades912HispanicPercentWrap.o);
+	protected ReportCard examsCollegeReadyGrades912LatinxPercentInit() {
+		if(!examsCollegeReadyGrades912LatinxPercentWrap.alreadyInitialized) {
+			_examsCollegeReadyGrades912LatinxPercent(examsCollegeReadyGrades912LatinxPercentWrap);
+			if(examsCollegeReadyGrades912LatinxPercent == null)
+				setExamsCollegeReadyGrades912LatinxPercent(examsCollegeReadyGrades912LatinxPercentWrap.o);
 		}
-		examsCollegeReadyGrades912HispanicPercentWrap.alreadyInitialized(true);
+		examsCollegeReadyGrades912LatinxPercentWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Double solrExamsCollegeReadyGrades912HispanicPercent() {
-		return examsCollegeReadyGrades912HispanicPercent == null ? null : examsCollegeReadyGrades912HispanicPercent.doubleValue();
+	public Double solrExamsCollegeReadyGrades912LatinxPercent() {
+		return examsCollegeReadyGrades912LatinxPercent == null ? null : examsCollegeReadyGrades912LatinxPercent.doubleValue();
 	}
 
-	public String strExamsCollegeReadyGrades912HispanicPercent() {
-		return examsCollegeReadyGrades912HispanicPercent == null ? "" : examsCollegeReadyGrades912HispanicPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	public String strExamsCollegeReadyGrades912LatinxPercent() {
+		return examsCollegeReadyGrades912LatinxPercent == null ? "" : examsCollegeReadyGrades912LatinxPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
-	public String jsonExamsCollegeReadyGrades912HispanicPercent() {
-		return examsCollegeReadyGrades912HispanicPercent == null ? "" : examsCollegeReadyGrades912HispanicPercent.toString();
+	public String jsonExamsCollegeReadyGrades912LatinxPercent() {
+		return examsCollegeReadyGrades912LatinxPercent == null ? "" : examsCollegeReadyGrades912LatinxPercent.toString();
 	}
 
-	public String nomAffichageExamsCollegeReadyGrades912HispanicPercent() {
+	public String nomAffichageExamsCollegeReadyGrades912LatinxPercent() {
 		return "College ready exams grades 9-12 hispanic";
 	}
 
-	public String htmTooltipExamsCollegeReadyGrades912HispanicPercent() {
+	public String htmTooltipExamsCollegeReadyGrades912LatinxPercent() {
 		return null;
 	}
 
-	public String htmExamsCollegeReadyGrades912HispanicPercent() {
-		return examsCollegeReadyGrades912HispanicPercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades912HispanicPercent());
+	public String htmExamsCollegeReadyGrades912LatinxPercent() {
+		return examsCollegeReadyGrades912LatinxPercent == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades912LatinxPercent());
 	}
 
-	public void inputExamsCollegeReadyGrades912HispanicPercent(String classApiMethodMethod) {
+	public void inputExamsCollegeReadyGrades912LatinxPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		if(
 				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -14016,39 +14016,39 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			e("input")
 				.a("type", "text")
 				.a("placeholder", "College ready exams grades 9-12 hispanic")
-				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades912HispanicPercent");
+				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades912LatinxPercent");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
-					a("class", "setExamsCollegeReadyGrades912HispanicPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912HispanicPercent w3-input w3-border ");
-					a("name", "setExamsCollegeReadyGrades912HispanicPercent");
+					a("class", "setExamsCollegeReadyGrades912LatinxPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912LatinxPercent w3-input w3-border ");
+					a("name", "setExamsCollegeReadyGrades912LatinxPercent");
 				} else {
-					a("class", "valueExamsCollegeReadyGrades912HispanicPercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912HispanicPercent w3-input w3-border ");
-					a("name", "examsCollegeReadyGrades912HispanicPercent");
+					a("class", "valueExamsCollegeReadyGrades912LatinxPercent w3-input w3-border classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912LatinxPercent w3-input w3-border ");
+					a("name", "examsCollegeReadyGrades912LatinxPercent");
 				}
 				if("Page".equals(classApiMethodMethod)) {
 					a("onclick", "removeGlow($(this)); ");
-					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades912HispanicPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912HispanicPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912HispanicPercent')); }); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setExamsCollegeReadyGrades912LatinxPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912LatinxPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912LatinxPercent')); }); ");
 				}
-				a("value", strExamsCollegeReadyGrades912HispanicPercent())
+				a("value", strExamsCollegeReadyGrades912LatinxPercent())
 			.fg();
 
 		} else {
-			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades912HispanicPercent ").f().sx(htmExamsCollegeReadyGrades912HispanicPercent()).g("span");
+			e("span").a("class", "varReportCard", pk, "ExamsCollegeReadyGrades912LatinxPercent ").f().sx(htmExamsCollegeReadyGrades912LatinxPercent()).g("span");
 		}
 	}
 
-	public void htmExamsCollegeReadyGrades912HispanicPercent(String classApiMethodMethod) {
+	public void htmExamsCollegeReadyGrades912LatinxPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			{ e("div").a("class", "w3-padding ").f();
-				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades912HispanicPercent").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades912LatinxPercent").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades912HispanicPercent").a("class", "").f().sx("College ready exams grades 9-12 hispanic").g("label");
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades912LatinxPercent").a("class", "").f().sx("College ready exams grades 9-12 hispanic").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
 
-								inputExamsCollegeReadyGrades912HispanicPercent(classApiMethodMethod);
+								inputExamsCollegeReadyGrades912LatinxPercent(classApiMethodMethod);
 							} g("div");
 							if(
 									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -14059,7 +14059,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 										{ e("button")
 											.a("tabindex", "-1")
 											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
-										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912HispanicPercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades912HispanicPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades912HispanicPercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912HispanicPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912HispanicPercent')); }); ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912LatinxPercent')); $('#", classApiMethodMethod, "_examsCollegeReadyGrades912LatinxPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setExamsCollegeReadyGrades912LatinxPercent', null, function() { addGlow($('#", classApiMethodMethod, "_examsCollegeReadyGrades912LatinxPercent')); }, function() { addError($('#", classApiMethodMethod, "_examsCollegeReadyGrades912LatinxPercent')); }); ")
 											.f();
 											e("i").a("class", "far fa-eraser ").f().g("i");
 										} g("button");
@@ -14657,87 +14657,87 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	///////////////////////////////////////
-	// graduateWithin4YearsIndianPercent //
-	///////////////////////////////////////
+	///////////////////////////////////////////
+	// graduateWithin4YearsIndigenousPercent //
+	///////////////////////////////////////////
 
-	/**	 The entity graduateWithin4YearsIndianPercent
+	/**	 The entity graduateWithin4YearsIndigenousPercent
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected BigDecimal graduateWithin4YearsIndianPercent;
+	protected BigDecimal graduateWithin4YearsIndigenousPercent;
 	@JsonIgnore
-	public Wrap<BigDecimal> graduateWithin4YearsIndianPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("graduateWithin4YearsIndianPercent").o(graduateWithin4YearsIndianPercent);
+	public Wrap<BigDecimal> graduateWithin4YearsIndigenousPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("graduateWithin4YearsIndigenousPercent").o(graduateWithin4YearsIndigenousPercent);
 
-	/**	<br/> The entity graduateWithin4YearsIndianPercent
+	/**	<br/> The entity graduateWithin4YearsIndigenousPercent
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:graduateWithin4YearsIndianPercent">Find the entity graduateWithin4YearsIndianPercent in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:graduateWithin4YearsIndigenousPercent">Find the entity graduateWithin4YearsIndigenousPercent in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _graduateWithin4YearsIndianPercent(Wrap<BigDecimal> c);
+	protected abstract void _graduateWithin4YearsIndigenousPercent(Wrap<BigDecimal> c);
 
-	public BigDecimal getGraduateWithin4YearsIndianPercent() {
-		return graduateWithin4YearsIndianPercent;
+	public BigDecimal getGraduateWithin4YearsIndigenousPercent() {
+		return graduateWithin4YearsIndigenousPercent;
 	}
 
-	public void setGraduateWithin4YearsIndianPercent(BigDecimal graduateWithin4YearsIndianPercent) {
-		this.graduateWithin4YearsIndianPercent = graduateWithin4YearsIndianPercent;
-		this.graduateWithin4YearsIndianPercentWrap.alreadyInitialized = true;
+	public void setGraduateWithin4YearsIndigenousPercent(BigDecimal graduateWithin4YearsIndigenousPercent) {
+		this.graduateWithin4YearsIndigenousPercent = graduateWithin4YearsIndigenousPercent;
+		this.graduateWithin4YearsIndigenousPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setGraduateWithin4YearsIndianPercent(String o) {
+	public ReportCard setGraduateWithin4YearsIndigenousPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.graduateWithin4YearsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.graduateWithin4YearsIndianPercentWrap.alreadyInitialized = true;
+			this.graduateWithin4YearsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsIndigenousPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setGraduateWithin4YearsIndianPercent(Double o) {
-			this.graduateWithin4YearsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.graduateWithin4YearsIndianPercentWrap.alreadyInitialized = true;
+	public ReportCard setGraduateWithin4YearsIndigenousPercent(Double o) {
+			this.graduateWithin4YearsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsIndigenousPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setGraduateWithin4YearsIndianPercent(Integer o) {
-			this.graduateWithin4YearsIndianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.graduateWithin4YearsIndianPercentWrap.alreadyInitialized = true;
+	public ReportCard setGraduateWithin4YearsIndigenousPercent(Integer o) {
+			this.graduateWithin4YearsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsIndigenousPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard graduateWithin4YearsIndianPercentInit() {
-		if(!graduateWithin4YearsIndianPercentWrap.alreadyInitialized) {
-			_graduateWithin4YearsIndianPercent(graduateWithin4YearsIndianPercentWrap);
-			if(graduateWithin4YearsIndianPercent == null)
-				setGraduateWithin4YearsIndianPercent(graduateWithin4YearsIndianPercentWrap.o);
+	protected ReportCard graduateWithin4YearsIndigenousPercentInit() {
+		if(!graduateWithin4YearsIndigenousPercentWrap.alreadyInitialized) {
+			_graduateWithin4YearsIndigenousPercent(graduateWithin4YearsIndigenousPercentWrap);
+			if(graduateWithin4YearsIndigenousPercent == null)
+				setGraduateWithin4YearsIndigenousPercent(graduateWithin4YearsIndigenousPercentWrap.o);
 		}
-		graduateWithin4YearsIndianPercentWrap.alreadyInitialized(true);
+		graduateWithin4YearsIndigenousPercentWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Double solrGraduateWithin4YearsIndianPercent() {
-		return graduateWithin4YearsIndianPercent == null ? null : graduateWithin4YearsIndianPercent.doubleValue();
+	public Double solrGraduateWithin4YearsIndigenousPercent() {
+		return graduateWithin4YearsIndigenousPercent == null ? null : graduateWithin4YearsIndigenousPercent.doubleValue();
 	}
 
-	public String strGraduateWithin4YearsIndianPercent() {
-		return graduateWithin4YearsIndianPercent == null ? "" : graduateWithin4YearsIndianPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	public String strGraduateWithin4YearsIndigenousPercent() {
+		return graduateWithin4YearsIndigenousPercent == null ? "" : graduateWithin4YearsIndigenousPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
-	public String jsonGraduateWithin4YearsIndianPercent() {
-		return graduateWithin4YearsIndianPercent == null ? "" : graduateWithin4YearsIndianPercent.toString();
+	public String jsonGraduateWithin4YearsIndigenousPercent() {
+		return graduateWithin4YearsIndigenousPercent == null ? "" : graduateWithin4YearsIndigenousPercent.toString();
 	}
 
-	public String nomAffichageGraduateWithin4YearsIndianPercent() {
+	public String nomAffichageGraduateWithin4YearsIndigenousPercent() {
 		return "Graduate HS within 4 years first nation";
 	}
 
-	public String htmTooltipGraduateWithin4YearsIndianPercent() {
+	public String htmTooltipGraduateWithin4YearsIndigenousPercent() {
 		return null;
 	}
 
-	public String htmGraduateWithin4YearsIndianPercent() {
-		return graduateWithin4YearsIndianPercent == null ? "" : StringEscapeUtils.escapeHtml4(strGraduateWithin4YearsIndianPercent());
+	public String htmGraduateWithin4YearsIndigenousPercent() {
+		return graduateWithin4YearsIndigenousPercent == null ? "" : StringEscapeUtils.escapeHtml4(strGraduateWithin4YearsIndigenousPercent());
 	}
 
-	public void inputGraduateWithin4YearsIndianPercent(String classApiMethodMethod) {
+	public void inputGraduateWithin4YearsIndigenousPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		if(
 				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -14746,39 +14746,39 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			e("input")
 				.a("type", "text")
 				.a("placeholder", "Graduate HS within 4 years first nation")
-				.a("id", classApiMethodMethod, "_graduateWithin4YearsIndianPercent");
+				.a("id", classApiMethodMethod, "_graduateWithin4YearsIndigenousPercent");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
-					a("class", "setGraduateWithin4YearsIndianPercent classReportCard inputReportCard", pk, "GraduateWithin4YearsIndianPercent w3-input w3-border ");
-					a("name", "setGraduateWithin4YearsIndianPercent");
+					a("class", "setGraduateWithin4YearsIndigenousPercent classReportCard inputReportCard", pk, "GraduateWithin4YearsIndigenousPercent w3-input w3-border ");
+					a("name", "setGraduateWithin4YearsIndigenousPercent");
 				} else {
-					a("class", "valueGraduateWithin4YearsIndianPercent w3-input w3-border classReportCard inputReportCard", pk, "GraduateWithin4YearsIndianPercent w3-input w3-border ");
-					a("name", "graduateWithin4YearsIndianPercent");
+					a("class", "valueGraduateWithin4YearsIndigenousPercent w3-input w3-border classReportCard inputReportCard", pk, "GraduateWithin4YearsIndigenousPercent w3-input w3-border ");
+					a("name", "graduateWithin4YearsIndigenousPercent");
 				}
 				if("Page".equals(classApiMethodMethod)) {
 					a("onclick", "removeGlow($(this)); ");
-					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setGraduateWithin4YearsIndianPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsIndianPercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsIndianPercent')); }); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setGraduateWithin4YearsIndigenousPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsIndigenousPercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsIndigenousPercent')); }); ");
 				}
-				a("value", strGraduateWithin4YearsIndianPercent())
+				a("value", strGraduateWithin4YearsIndigenousPercent())
 			.fg();
 
 		} else {
-			e("span").a("class", "varReportCard", pk, "GraduateWithin4YearsIndianPercent ").f().sx(htmGraduateWithin4YearsIndianPercent()).g("span");
+			e("span").a("class", "varReportCard", pk, "GraduateWithin4YearsIndigenousPercent ").f().sx(htmGraduateWithin4YearsIndigenousPercent()).g("span");
 		}
 	}
 
-	public void htmGraduateWithin4YearsIndianPercent(String classApiMethodMethod) {
+	public void htmGraduateWithin4YearsIndigenousPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			{ e("div").a("class", "w3-padding ").f();
-				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardGraduateWithin4YearsIndianPercent").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardGraduateWithin4YearsIndigenousPercent").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_graduateWithin4YearsIndianPercent").a("class", "").f().sx("Graduate HS within 4 years first nation").g("label");
+							e("label").a("for", classApiMethodMethod, "_graduateWithin4YearsIndigenousPercent").a("class", "").f().sx("Graduate HS within 4 years first nation").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
 
-								inputGraduateWithin4YearsIndianPercent(classApiMethodMethod);
+								inputGraduateWithin4YearsIndigenousPercent(classApiMethodMethod);
 							} g("div");
 							if(
 									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -14789,7 +14789,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 										{ e("button")
 											.a("tabindex", "-1")
 											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
-										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_graduateWithin4YearsIndianPercent')); $('#", classApiMethodMethod, "_graduateWithin4YearsIndianPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setGraduateWithin4YearsIndianPercent', null, function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsIndianPercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsIndianPercent')); }); ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_graduateWithin4YearsIndigenousPercent')); $('#", classApiMethodMethod, "_graduateWithin4YearsIndigenousPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setGraduateWithin4YearsIndigenousPercent', null, function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsIndigenousPercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsIndigenousPercent')); }); ")
 											.f();
 											e("i").a("class", "far fa-eraser ").f().g("i");
 										} g("button");
@@ -15095,87 +15095,87 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
-	/////////////////////////////////////////
-	// graduateWithin4YearsHispanicPercent //
-	/////////////////////////////////////////
+	///////////////////////////////////////
+	// graduateWithin4YearsLatinxPercent //
+	///////////////////////////////////////
 
-	/**	 The entity graduateWithin4YearsHispanicPercent
+	/**	 The entity graduateWithin4YearsLatinxPercent
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonSerialize(using = ToStringSerializer.class)
 	@JsonInclude(Include.NON_NULL)
-	protected BigDecimal graduateWithin4YearsHispanicPercent;
+	protected BigDecimal graduateWithin4YearsLatinxPercent;
 	@JsonIgnore
-	public Wrap<BigDecimal> graduateWithin4YearsHispanicPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("graduateWithin4YearsHispanicPercent").o(graduateWithin4YearsHispanicPercent);
+	public Wrap<BigDecimal> graduateWithin4YearsLatinxPercentWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("graduateWithin4YearsLatinxPercent").o(graduateWithin4YearsLatinxPercent);
 
-	/**	<br/> The entity graduateWithin4YearsHispanicPercent
+	/**	<br/> The entity graduateWithin4YearsLatinxPercent
 	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:graduateWithin4YearsHispanicPercent">Find the entity graduateWithin4YearsHispanicPercent in Solr</a>
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:graduateWithin4YearsLatinxPercent">Find the entity graduateWithin4YearsLatinxPercent in Solr</a>
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _graduateWithin4YearsHispanicPercent(Wrap<BigDecimal> c);
+	protected abstract void _graduateWithin4YearsLatinxPercent(Wrap<BigDecimal> c);
 
-	public BigDecimal getGraduateWithin4YearsHispanicPercent() {
-		return graduateWithin4YearsHispanicPercent;
+	public BigDecimal getGraduateWithin4YearsLatinxPercent() {
+		return graduateWithin4YearsLatinxPercent;
 	}
 
-	public void setGraduateWithin4YearsHispanicPercent(BigDecimal graduateWithin4YearsHispanicPercent) {
-		this.graduateWithin4YearsHispanicPercent = graduateWithin4YearsHispanicPercent;
-		this.graduateWithin4YearsHispanicPercentWrap.alreadyInitialized = true;
+	public void setGraduateWithin4YearsLatinxPercent(BigDecimal graduateWithin4YearsLatinxPercent) {
+		this.graduateWithin4YearsLatinxPercent = graduateWithin4YearsLatinxPercent;
+		this.graduateWithin4YearsLatinxPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setGraduateWithin4YearsHispanicPercent(String o) {
+	public ReportCard setGraduateWithin4YearsLatinxPercent(String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.graduateWithin4YearsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.graduateWithin4YearsHispanicPercentWrap.alreadyInitialized = true;
+			this.graduateWithin4YearsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsLatinxPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setGraduateWithin4YearsHispanicPercent(Double o) {
-			this.graduateWithin4YearsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.graduateWithin4YearsHispanicPercentWrap.alreadyInitialized = true;
+	public ReportCard setGraduateWithin4YearsLatinxPercent(Double o) {
+			this.graduateWithin4YearsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsLatinxPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	public ReportCard setGraduateWithin4YearsHispanicPercent(Integer o) {
-			this.graduateWithin4YearsHispanicPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.graduateWithin4YearsHispanicPercentWrap.alreadyInitialized = true;
+	public ReportCard setGraduateWithin4YearsLatinxPercent(Integer o) {
+			this.graduateWithin4YearsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.graduateWithin4YearsLatinxPercentWrap.alreadyInitialized = true;
 		return (ReportCard)this;
 	}
-	protected ReportCard graduateWithin4YearsHispanicPercentInit() {
-		if(!graduateWithin4YearsHispanicPercentWrap.alreadyInitialized) {
-			_graduateWithin4YearsHispanicPercent(graduateWithin4YearsHispanicPercentWrap);
-			if(graduateWithin4YearsHispanicPercent == null)
-				setGraduateWithin4YearsHispanicPercent(graduateWithin4YearsHispanicPercentWrap.o);
+	protected ReportCard graduateWithin4YearsLatinxPercentInit() {
+		if(!graduateWithin4YearsLatinxPercentWrap.alreadyInitialized) {
+			_graduateWithin4YearsLatinxPercent(graduateWithin4YearsLatinxPercentWrap);
+			if(graduateWithin4YearsLatinxPercent == null)
+				setGraduateWithin4YearsLatinxPercent(graduateWithin4YearsLatinxPercentWrap.o);
 		}
-		graduateWithin4YearsHispanicPercentWrap.alreadyInitialized(true);
+		graduateWithin4YearsLatinxPercentWrap.alreadyInitialized(true);
 		return (ReportCard)this;
 	}
 
-	public Double solrGraduateWithin4YearsHispanicPercent() {
-		return graduateWithin4YearsHispanicPercent == null ? null : graduateWithin4YearsHispanicPercent.doubleValue();
+	public Double solrGraduateWithin4YearsLatinxPercent() {
+		return graduateWithin4YearsLatinxPercent == null ? null : graduateWithin4YearsLatinxPercent.doubleValue();
 	}
 
-	public String strGraduateWithin4YearsHispanicPercent() {
-		return graduateWithin4YearsHispanicPercent == null ? "" : graduateWithin4YearsHispanicPercent.setScale(2, RoundingMode.HALF_UP).toString();
+	public String strGraduateWithin4YearsLatinxPercent() {
+		return graduateWithin4YearsLatinxPercent == null ? "" : graduateWithin4YearsLatinxPercent.setScale(2, RoundingMode.HALF_UP).toString();
 	}
 
-	public String jsonGraduateWithin4YearsHispanicPercent() {
-		return graduateWithin4YearsHispanicPercent == null ? "" : graduateWithin4YearsHispanicPercent.toString();
+	public String jsonGraduateWithin4YearsLatinxPercent() {
+		return graduateWithin4YearsLatinxPercent == null ? "" : graduateWithin4YearsLatinxPercent.toString();
 	}
 
-	public String nomAffichageGraduateWithin4YearsHispanicPercent() {
+	public String nomAffichageGraduateWithin4YearsLatinxPercent() {
 		return "Graduate HS within 4 years hispanic";
 	}
 
-	public String htmTooltipGraduateWithin4YearsHispanicPercent() {
+	public String htmTooltipGraduateWithin4YearsLatinxPercent() {
 		return null;
 	}
 
-	public String htmGraduateWithin4YearsHispanicPercent() {
-		return graduateWithin4YearsHispanicPercent == null ? "" : StringEscapeUtils.escapeHtml4(strGraduateWithin4YearsHispanicPercent());
+	public String htmGraduateWithin4YearsLatinxPercent() {
+		return graduateWithin4YearsLatinxPercent == null ? "" : StringEscapeUtils.escapeHtml4(strGraduateWithin4YearsLatinxPercent());
 	}
 
-	public void inputGraduateWithin4YearsHispanicPercent(String classApiMethodMethod) {
+	public void inputGraduateWithin4YearsLatinxPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		if(
 				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -15184,39 +15184,39 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			e("input")
 				.a("type", "text")
 				.a("placeholder", "Graduate HS within 4 years hispanic")
-				.a("id", classApiMethodMethod, "_graduateWithin4YearsHispanicPercent");
+				.a("id", classApiMethodMethod, "_graduateWithin4YearsLatinxPercent");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
-					a("class", "setGraduateWithin4YearsHispanicPercent classReportCard inputReportCard", pk, "GraduateWithin4YearsHispanicPercent w3-input w3-border ");
-					a("name", "setGraduateWithin4YearsHispanicPercent");
+					a("class", "setGraduateWithin4YearsLatinxPercent classReportCard inputReportCard", pk, "GraduateWithin4YearsLatinxPercent w3-input w3-border ");
+					a("name", "setGraduateWithin4YearsLatinxPercent");
 				} else {
-					a("class", "valueGraduateWithin4YearsHispanicPercent w3-input w3-border classReportCard inputReportCard", pk, "GraduateWithin4YearsHispanicPercent w3-input w3-border ");
-					a("name", "graduateWithin4YearsHispanicPercent");
+					a("class", "valueGraduateWithin4YearsLatinxPercent w3-input w3-border classReportCard inputReportCard", pk, "GraduateWithin4YearsLatinxPercent w3-input w3-border ");
+					a("name", "graduateWithin4YearsLatinxPercent");
 				}
 				if("Page".equals(classApiMethodMethod)) {
 					a("onclick", "removeGlow($(this)); ");
-					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setGraduateWithin4YearsHispanicPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsHispanicPercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsHispanicPercent')); }); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setGraduateWithin4YearsLatinxPercent', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsLatinxPercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsLatinxPercent')); }); ");
 				}
-				a("value", strGraduateWithin4YearsHispanicPercent())
+				a("value", strGraduateWithin4YearsLatinxPercent())
 			.fg();
 
 		} else {
-			e("span").a("class", "varReportCard", pk, "GraduateWithin4YearsHispanicPercent ").f().sx(htmGraduateWithin4YearsHispanicPercent()).g("span");
+			e("span").a("class", "varReportCard", pk, "GraduateWithin4YearsLatinxPercent ").f().sx(htmGraduateWithin4YearsLatinxPercent()).g("span");
 		}
 	}
 
-	public void htmGraduateWithin4YearsHispanicPercent(String classApiMethodMethod) {
+	public void htmGraduateWithin4YearsLatinxPercent(String classApiMethodMethod) {
 		ReportCard s = (ReportCard)this;
 		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
 			{ e("div").a("class", "w3-padding ").f();
-				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardGraduateWithin4YearsHispanicPercent").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardGraduateWithin4YearsLatinxPercent").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_graduateWithin4YearsHispanicPercent").a("class", "").f().sx("Graduate HS within 4 years hispanic").g("label");
+							e("label").a("for", classApiMethodMethod, "_graduateWithin4YearsLatinxPercent").a("class", "").f().sx("Graduate HS within 4 years hispanic").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
 
-								inputGraduateWithin4YearsHispanicPercent(classApiMethodMethod);
+								inputGraduateWithin4YearsLatinxPercent(classApiMethodMethod);
 							} g("div");
 							if(
 									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
@@ -15227,7 +15227,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 										{ e("button")
 											.a("tabindex", "-1")
 											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-green ")
-										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_graduateWithin4YearsHispanicPercent')); $('#", classApiMethodMethod, "_graduateWithin4YearsHispanicPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setGraduateWithin4YearsHispanicPercent', null, function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsHispanicPercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsHispanicPercent')); }); ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_graduateWithin4YearsLatinxPercent')); $('#", classApiMethodMethod, "_graduateWithin4YearsLatinxPercent').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#ReportCardForm :input[name=pk]').val() }], 'setGraduateWithin4YearsLatinxPercent', null, function() { addGlow($('#", classApiMethodMethod, "_graduateWithin4YearsLatinxPercent')); }, function() { addError($('#", classApiMethodMethod, "_graduateWithin4YearsLatinxPercent')); }); ")
 											.f();
 											e("i").a("class", "far fa-eraser ").f().g("i");
 										} g("button");
@@ -16136,6 +16136,137 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 
 	public String htmAgencyName() {
 		return agencyName == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyName());
+	}
+
+	//////////////////
+	// agencyCoords //
+	//////////////////
+
+	/**	 The entity agencyCoords
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String agencyCoords;
+	@JsonIgnore
+	public Wrap<String> agencyCoordsWrap = new Wrap<String>().p(this).c(String.class).var("agencyCoords").o(agencyCoords);
+
+	/**	<br/> The entity agencyCoords
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyCoords">Find the entity agencyCoords in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _agencyCoords(Wrap<String> c);
+
+	public String getAgencyCoords() {
+		return agencyCoords;
+	}
+
+	public void setAgencyCoords(String agencyCoords) {
+		this.agencyCoords = agencyCoords;
+		this.agencyCoordsWrap.alreadyInitialized = true;
+	}
+	protected ReportCard agencyCoordsInit() {
+		if(!agencyCoordsWrap.alreadyInitialized) {
+			_agencyCoords(agencyCoordsWrap);
+			if(agencyCoords == null)
+				setAgencyCoords(agencyCoordsWrap.o);
+		}
+		agencyCoordsWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public String solrAgencyCoords() {
+		return agencyCoords;
+	}
+
+	public String strAgencyCoords() {
+		return agencyCoords == null ? "" : agencyCoords;
+	}
+
+	public String jsonAgencyCoords() {
+		return agencyCoords == null ? "" : agencyCoords;
+	}
+
+	public String nomAffichageAgencyCoords() {
+		return null;
+	}
+
+	public String htmTooltipAgencyCoords() {
+		return null;
+	}
+
+	public String htmAgencyCoords() {
+		return agencyCoords == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyCoords());
+	}
+
+	////////////////
+	// agencyLeft //
+	////////////////
+
+	/**	 The entity agencyLeft
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Integer agencyLeft;
+	@JsonIgnore
+	public Wrap<Integer> agencyLeftWrap = new Wrap<Integer>().p(this).c(Integer.class).var("agencyLeft").o(agencyLeft);
+
+	/**	<br/> The entity agencyLeft
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyLeft">Find the entity agencyLeft in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _agencyLeft(Wrap<Integer> c);
+
+	public Integer getAgencyLeft() {
+		return agencyLeft;
+	}
+
+	public void setAgencyLeft(Integer agencyLeft) {
+		this.agencyLeft = agencyLeft;
+		this.agencyLeftWrap.alreadyInitialized = true;
+	}
+	public ReportCard setAgencyLeft(String o) {
+		if(NumberUtils.isParsable(o))
+			this.agencyLeft = Integer.parseInt(o);
+		this.agencyLeftWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard agencyLeftInit() {
+		if(!agencyLeftWrap.alreadyInitialized) {
+			_agencyLeft(agencyLeftWrap);
+			if(agencyLeft == null)
+				setAgencyLeft(agencyLeftWrap.o);
+		}
+		agencyLeftWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Integer solrAgencyLeft() {
+		return agencyLeft;
+	}
+
+	public String strAgencyLeft() {
+		return agencyLeft == null ? "" : agencyLeft.toString();
+	}
+
+	public String jsonAgencyLeft() {
+		return agencyLeft == null ? "" : agencyLeft.toString();
+	}
+
+	public String nomAffichageAgencyLeft() {
+		return null;
+	}
+
+	public String htmTooltipAgencyLeft() {
+		return null;
+	}
+
+	public String htmAgencyLeft() {
+		return agencyLeft == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyLeft());
 	}
 
 	////////////////////////////
@@ -17122,18 +17253,18 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		agency_Init();
 		agencyKeyInit();
 		pupilsTotalInit();
-		pupilsIndianFemaleInit();
-		pupilsIndianMaleInit();
-		pupilsIndianTotalInit();
-		pupilsIndianPercentInit();
+		pupilsIndigenousFemaleInit();
+		pupilsIndigenousMaleInit();
+		pupilsIndigenousTotalInit();
+		pupilsIndigenousPercentInit();
 		pupilsAsianFemaleInit();
 		pupilsAsianMaleInit();
 		pupilsAsianTotalInit();
 		pupilsAsianPercentInit();
-		pupilsHispanicFemaleInit();
-		pupilsHispanicMaleInit();
-		pupilsHispanicTotalInit();
-		pupilsHispanicPercentInit();
+		pupilsLatinxFemaleInit();
+		pupilsLatinxMaleInit();
+		pupilsLatinxTotalInit();
+		pupilsLatinxPercentInit();
 		pupilsBlackFemaleInit();
 		pupilsBlackMaleInit();
 		pupilsBlackTotalInit();
@@ -17167,12 +17298,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		delinquentComplaintsAsianPercentInit();
 		delinquentComplaintsBlackInit();
 		delinquentComplaintsBlackPercentInit();
-		delinquentComplaintsHispanicInit();
-		delinquentComplaintsHispanicPercentInit();
+		delinquentComplaintsLatinxInit();
+		delinquentComplaintsLatinxPercentInit();
 		delinquentComplaintsMultiRacialInit();
 		delinquentComplaintsMultiRacialPercentInit();
-		delinquentComplaintsIndianInit();
-		delinquentComplaintsIndianPercentInit();
+		delinquentComplaintsIndigenousInit();
+		delinquentComplaintsIndigenousPercentInit();
 		delinquentComplaintsWhiteInit();
 		delinquentComplaintsWhitePercentInit();
 		delinquentComplaintsPacificIslanderInit();
@@ -17191,16 +17322,16 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		shortTermSuspensionsBlackTotalInit();
 		shortTermSuspensionsBlackPercentInit();
 		shortTermSuspensionsBlackRateInit();
-		shortTermSuspensionsHispanicFemaleInit();
-		shortTermSuspensionsHispanicMaleInit();
-		shortTermSuspensionsHispanicTotalInit();
-		shortTermSuspensionsHispanicPercentInit();
-		shortTermSuspensionsHispanicRateInit();
-		shortTermSuspensionsIndianFemaleInit();
-		shortTermSuspensionsIndianMaleInit();
-		shortTermSuspensionsIndianTotalInit();
-		shortTermSuspensionsIndianPercentInit();
-		shortTermSuspensionsIndianRateInit();
+		shortTermSuspensionsLatinxFemaleInit();
+		shortTermSuspensionsLatinxMaleInit();
+		shortTermSuspensionsLatinxTotalInit();
+		shortTermSuspensionsLatinxPercentInit();
+		shortTermSuspensionsLatinxRateInit();
+		shortTermSuspensionsIndigenousFemaleInit();
+		shortTermSuspensionsIndigenousMaleInit();
+		shortTermSuspensionsIndigenousTotalInit();
+		shortTermSuspensionsIndigenousPercentInit();
+		shortTermSuspensionsIndigenousRateInit();
 		shortTermSuspensionsMultiRacialFemaleInit();
 		shortTermSuspensionsMultiRacialMaleInit();
 		shortTermSuspensionsMultiRacialTotalInit();
@@ -17219,26 +17350,26 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		shortTermSuspensionsAllRateInit();
 		shortTermSuspensionsBlackVsWhiteInit();
 		examsCollegeReadyGrades38OverallPercentInit();
-		examsCollegeReadyGrades38IndianPercentInit();
+		examsCollegeReadyGrades38IndigenousPercentInit();
 		examsCollegeReadyGrades38AsianPercentInit();
 		examsCollegeReadyGrades38BlackPercentInit();
-		examsCollegeReadyGrades38HispanicPercentInit();
+		examsCollegeReadyGrades38LatinxPercentInit();
 		examsCollegeReadyGrades38MultiRacialPercentInit();
 		examsCollegeReadyGrades38PacificIslanderPercentInit();
 		examsCollegeReadyGrades38WhitePercentInit();
 		examsCollegeReadyGrades912OverallPercentInit();
-		examsCollegeReadyGrades912IndianPercentInit();
+		examsCollegeReadyGrades912IndigenousPercentInit();
 		examsCollegeReadyGrades912AsianPercentInit();
 		examsCollegeReadyGrades912BlackPercentInit();
-		examsCollegeReadyGrades912HispanicPercentInit();
+		examsCollegeReadyGrades912LatinxPercentInit();
 		examsCollegeReadyGrades912MultiRacialPercentInit();
 		examsCollegeReadyGrades912PacificIslanderPercentInit();
 		examsCollegeReadyGrades912WhitePercentInit();
 		graduateWithin4YearsOverallPercentInit();
-		graduateWithin4YearsIndianPercentInit();
+		graduateWithin4YearsIndigenousPercentInit();
 		graduateWithin4YearsAsianPercentInit();
 		graduateWithin4YearsBlackPercentInit();
-		graduateWithin4YearsHispanicPercentInit();
+		graduateWithin4YearsLatinxPercentInit();
 		graduateWithin4YearsMultiRacialPercentInit();
 		graduateWithin4YearsPacificIslanderPercentInit();
 		graduateWithin4YearsWhitePercentInit();
@@ -17249,6 +17380,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		stateNameInit();
 		stateAbbreviationInit();
 		agencyNameInit();
+		agencyCoordsInit();
+		agencyLeftInit();
 		reportCardCompleteNameInit();
 		reportCardNumber_Init();
 		reportCardStates_Init();
@@ -17323,14 +17456,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.agencyKey;
 			case "pupilsTotal":
 				return oReportCard.pupilsTotal;
-			case "pupilsIndianFemale":
-				return oReportCard.pupilsIndianFemale;
-			case "pupilsIndianMale":
-				return oReportCard.pupilsIndianMale;
-			case "pupilsIndianTotal":
-				return oReportCard.pupilsIndianTotal;
-			case "pupilsIndianPercent":
-				return oReportCard.pupilsIndianPercent;
+			case "pupilsIndigenousFemale":
+				return oReportCard.pupilsIndigenousFemale;
+			case "pupilsIndigenousMale":
+				return oReportCard.pupilsIndigenousMale;
+			case "pupilsIndigenousTotal":
+				return oReportCard.pupilsIndigenousTotal;
+			case "pupilsIndigenousPercent":
+				return oReportCard.pupilsIndigenousPercent;
 			case "pupilsAsianFemale":
 				return oReportCard.pupilsAsianFemale;
 			case "pupilsAsianMale":
@@ -17339,14 +17472,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.pupilsAsianTotal;
 			case "pupilsAsianPercent":
 				return oReportCard.pupilsAsianPercent;
-			case "pupilsHispanicFemale":
-				return oReportCard.pupilsHispanicFemale;
-			case "pupilsHispanicMale":
-				return oReportCard.pupilsHispanicMale;
-			case "pupilsHispanicTotal":
-				return oReportCard.pupilsHispanicTotal;
-			case "pupilsHispanicPercent":
-				return oReportCard.pupilsHispanicPercent;
+			case "pupilsLatinxFemale":
+				return oReportCard.pupilsLatinxFemale;
+			case "pupilsLatinxMale":
+				return oReportCard.pupilsLatinxMale;
+			case "pupilsLatinxTotal":
+				return oReportCard.pupilsLatinxTotal;
+			case "pupilsLatinxPercent":
+				return oReportCard.pupilsLatinxPercent;
 			case "pupilsBlackFemale":
 				return oReportCard.pupilsBlackFemale;
 			case "pupilsBlackMale":
@@ -17413,18 +17546,18 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.delinquentComplaintsBlack;
 			case "delinquentComplaintsBlackPercent":
 				return oReportCard.delinquentComplaintsBlackPercent;
-			case "delinquentComplaintsHispanic":
-				return oReportCard.delinquentComplaintsHispanic;
-			case "delinquentComplaintsHispanicPercent":
-				return oReportCard.delinquentComplaintsHispanicPercent;
+			case "delinquentComplaintsLatinx":
+				return oReportCard.delinquentComplaintsLatinx;
+			case "delinquentComplaintsLatinxPercent":
+				return oReportCard.delinquentComplaintsLatinxPercent;
 			case "delinquentComplaintsMultiRacial":
 				return oReportCard.delinquentComplaintsMultiRacial;
 			case "delinquentComplaintsMultiRacialPercent":
 				return oReportCard.delinquentComplaintsMultiRacialPercent;
-			case "delinquentComplaintsIndian":
-				return oReportCard.delinquentComplaintsIndian;
-			case "delinquentComplaintsIndianPercent":
-				return oReportCard.delinquentComplaintsIndianPercent;
+			case "delinquentComplaintsIndigenous":
+				return oReportCard.delinquentComplaintsIndigenous;
+			case "delinquentComplaintsIndigenousPercent":
+				return oReportCard.delinquentComplaintsIndigenousPercent;
 			case "delinquentComplaintsWhite":
 				return oReportCard.delinquentComplaintsWhite;
 			case "delinquentComplaintsWhitePercent":
@@ -17461,26 +17594,26 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.shortTermSuspensionsBlackPercent;
 			case "shortTermSuspensionsBlackRate":
 				return oReportCard.shortTermSuspensionsBlackRate;
-			case "shortTermSuspensionsHispanicFemale":
-				return oReportCard.shortTermSuspensionsHispanicFemale;
-			case "shortTermSuspensionsHispanicMale":
-				return oReportCard.shortTermSuspensionsHispanicMale;
-			case "shortTermSuspensionsHispanicTotal":
-				return oReportCard.shortTermSuspensionsHispanicTotal;
-			case "shortTermSuspensionsHispanicPercent":
-				return oReportCard.shortTermSuspensionsHispanicPercent;
-			case "shortTermSuspensionsHispanicRate":
-				return oReportCard.shortTermSuspensionsHispanicRate;
-			case "shortTermSuspensionsIndianFemale":
-				return oReportCard.shortTermSuspensionsIndianFemale;
-			case "shortTermSuspensionsIndianMale":
-				return oReportCard.shortTermSuspensionsIndianMale;
-			case "shortTermSuspensionsIndianTotal":
-				return oReportCard.shortTermSuspensionsIndianTotal;
-			case "shortTermSuspensionsIndianPercent":
-				return oReportCard.shortTermSuspensionsIndianPercent;
-			case "shortTermSuspensionsIndianRate":
-				return oReportCard.shortTermSuspensionsIndianRate;
+			case "shortTermSuspensionsLatinxFemale":
+				return oReportCard.shortTermSuspensionsLatinxFemale;
+			case "shortTermSuspensionsLatinxMale":
+				return oReportCard.shortTermSuspensionsLatinxMale;
+			case "shortTermSuspensionsLatinxTotal":
+				return oReportCard.shortTermSuspensionsLatinxTotal;
+			case "shortTermSuspensionsLatinxPercent":
+				return oReportCard.shortTermSuspensionsLatinxPercent;
+			case "shortTermSuspensionsLatinxRate":
+				return oReportCard.shortTermSuspensionsLatinxRate;
+			case "shortTermSuspensionsIndigenousFemale":
+				return oReportCard.shortTermSuspensionsIndigenousFemale;
+			case "shortTermSuspensionsIndigenousMale":
+				return oReportCard.shortTermSuspensionsIndigenousMale;
+			case "shortTermSuspensionsIndigenousTotal":
+				return oReportCard.shortTermSuspensionsIndigenousTotal;
+			case "shortTermSuspensionsIndigenousPercent":
+				return oReportCard.shortTermSuspensionsIndigenousPercent;
+			case "shortTermSuspensionsIndigenousRate":
+				return oReportCard.shortTermSuspensionsIndigenousRate;
 			case "shortTermSuspensionsMultiRacialFemale":
 				return oReportCard.shortTermSuspensionsMultiRacialFemale;
 			case "shortTermSuspensionsMultiRacialMale":
@@ -17517,14 +17650,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.shortTermSuspensionsBlackVsWhite;
 			case "examsCollegeReadyGrades38OverallPercent":
 				return oReportCard.examsCollegeReadyGrades38OverallPercent;
-			case "examsCollegeReadyGrades38IndianPercent":
-				return oReportCard.examsCollegeReadyGrades38IndianPercent;
+			case "examsCollegeReadyGrades38IndigenousPercent":
+				return oReportCard.examsCollegeReadyGrades38IndigenousPercent;
 			case "examsCollegeReadyGrades38AsianPercent":
 				return oReportCard.examsCollegeReadyGrades38AsianPercent;
 			case "examsCollegeReadyGrades38BlackPercent":
 				return oReportCard.examsCollegeReadyGrades38BlackPercent;
-			case "examsCollegeReadyGrades38HispanicPercent":
-				return oReportCard.examsCollegeReadyGrades38HispanicPercent;
+			case "examsCollegeReadyGrades38LatinxPercent":
+				return oReportCard.examsCollegeReadyGrades38LatinxPercent;
 			case "examsCollegeReadyGrades38MultiRacialPercent":
 				return oReportCard.examsCollegeReadyGrades38MultiRacialPercent;
 			case "examsCollegeReadyGrades38PacificIslanderPercent":
@@ -17533,14 +17666,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.examsCollegeReadyGrades38WhitePercent;
 			case "examsCollegeReadyGrades912OverallPercent":
 				return oReportCard.examsCollegeReadyGrades912OverallPercent;
-			case "examsCollegeReadyGrades912IndianPercent":
-				return oReportCard.examsCollegeReadyGrades912IndianPercent;
+			case "examsCollegeReadyGrades912IndigenousPercent":
+				return oReportCard.examsCollegeReadyGrades912IndigenousPercent;
 			case "examsCollegeReadyGrades912AsianPercent":
 				return oReportCard.examsCollegeReadyGrades912AsianPercent;
 			case "examsCollegeReadyGrades912BlackPercent":
 				return oReportCard.examsCollegeReadyGrades912BlackPercent;
-			case "examsCollegeReadyGrades912HispanicPercent":
-				return oReportCard.examsCollegeReadyGrades912HispanicPercent;
+			case "examsCollegeReadyGrades912LatinxPercent":
+				return oReportCard.examsCollegeReadyGrades912LatinxPercent;
 			case "examsCollegeReadyGrades912MultiRacialPercent":
 				return oReportCard.examsCollegeReadyGrades912MultiRacialPercent;
 			case "examsCollegeReadyGrades912PacificIslanderPercent":
@@ -17549,14 +17682,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.examsCollegeReadyGrades912WhitePercent;
 			case "graduateWithin4YearsOverallPercent":
 				return oReportCard.graduateWithin4YearsOverallPercent;
-			case "graduateWithin4YearsIndianPercent":
-				return oReportCard.graduateWithin4YearsIndianPercent;
+			case "graduateWithin4YearsIndigenousPercent":
+				return oReportCard.graduateWithin4YearsIndigenousPercent;
 			case "graduateWithin4YearsAsianPercent":
 				return oReportCard.graduateWithin4YearsAsianPercent;
 			case "graduateWithin4YearsBlackPercent":
 				return oReportCard.graduateWithin4YearsBlackPercent;
-			case "graduateWithin4YearsHispanicPercent":
-				return oReportCard.graduateWithin4YearsHispanicPercent;
+			case "graduateWithin4YearsLatinxPercent":
+				return oReportCard.graduateWithin4YearsLatinxPercent;
 			case "graduateWithin4YearsMultiRacialPercent":
 				return oReportCard.graduateWithin4YearsMultiRacialPercent;
 			case "graduateWithin4YearsPacificIslanderPercent":
@@ -17577,6 +17710,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.stateAbbreviation;
 			case "agencyName":
 				return oReportCard.agencyName;
+			case "agencyCoords":
+				return oReportCard.agencyCoords;
+			case "agencyLeft":
+				return oReportCard.agencyLeft;
 			case "reportCardCompleteName":
 				return oReportCard.reportCardCompleteName;
 			case "reportCardNumber_":
@@ -17676,14 +17813,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					setPupilsTotal(val);
 				saves.add(var);
 				return val;
-			case "pupilsIndianFemale":
+			case "pupilsIndigenousFemale":
 				if(val != null)
-					setPupilsIndianFemale(val);
+					setPupilsIndigenousFemale(val);
 				saves.add(var);
 				return val;
-			case "pupilsIndianMale":
+			case "pupilsIndigenousMale":
 				if(val != null)
-					setPupilsIndianMale(val);
+					setPupilsIndigenousMale(val);
 				saves.add(var);
 				return val;
 			case "pupilsAsianFemale":
@@ -17696,14 +17833,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					setPupilsAsianMale(val);
 				saves.add(var);
 				return val;
-			case "pupilsHispanicFemale":
+			case "pupilsLatinxFemale":
 				if(val != null)
-					setPupilsHispanicFemale(val);
+					setPupilsLatinxFemale(val);
 				saves.add(var);
 				return val;
-			case "pupilsHispanicMale":
+			case "pupilsLatinxMale":
 				if(val != null)
-					setPupilsHispanicMale(val);
+					setPupilsLatinxMale(val);
 				saves.add(var);
 				return val;
 			case "pupilsBlackFemale":
@@ -17791,9 +17928,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					setDelinquentComplaintsBlack(val);
 				saves.add(var);
 				return val;
-			case "delinquentComplaintsHispanic":
+			case "delinquentComplaintsLatinx":
 				if(val != null)
-					setDelinquentComplaintsHispanic(val);
+					setDelinquentComplaintsLatinx(val);
 				saves.add(var);
 				return val;
 			case "delinquentComplaintsMultiRacial":
@@ -17801,9 +17938,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					setDelinquentComplaintsMultiRacial(val);
 				saves.add(var);
 				return val;
-			case "delinquentComplaintsIndian":
+			case "delinquentComplaintsIndigenous":
 				if(val != null)
-					setDelinquentComplaintsIndian(val);
+					setDelinquentComplaintsIndigenous(val);
 				saves.add(var);
 				return val;
 			case "delinquentComplaintsWhite":
@@ -17856,24 +17993,24 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					setShortTermSuspensionsBlackMale(val);
 				saves.add(var);
 				return val;
-			case "shortTermSuspensionsHispanicFemale":
+			case "shortTermSuspensionsLatinxFemale":
 				if(val != null)
-					setShortTermSuspensionsHispanicFemale(val);
+					setShortTermSuspensionsLatinxFemale(val);
 				saves.add(var);
 				return val;
-			case "shortTermSuspensionsHispanicMale":
+			case "shortTermSuspensionsLatinxMale":
 				if(val != null)
-					setShortTermSuspensionsHispanicMale(val);
+					setShortTermSuspensionsLatinxMale(val);
 				saves.add(var);
 				return val;
-			case "shortTermSuspensionsIndianFemale":
+			case "shortTermSuspensionsIndigenousFemale":
 				if(val != null)
-					setShortTermSuspensionsIndianFemale(val);
+					setShortTermSuspensionsIndigenousFemale(val);
 				saves.add(var);
 				return val;
-			case "shortTermSuspensionsIndianMale":
+			case "shortTermSuspensionsIndigenousMale":
 				if(val != null)
-					setShortTermSuspensionsIndianMale(val);
+					setShortTermSuspensionsIndigenousMale(val);
 				saves.add(var);
 				return val;
 			case "shortTermSuspensionsMultiRacialFemale":
@@ -17911,9 +18048,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					setExamsCollegeReadyGrades38OverallPercent(val);
 				saves.add(var);
 				return val;
-			case "examsCollegeReadyGrades38IndianPercent":
+			case "examsCollegeReadyGrades38IndigenousPercent":
 				if(val != null)
-					setExamsCollegeReadyGrades38IndianPercent(val);
+					setExamsCollegeReadyGrades38IndigenousPercent(val);
 				saves.add(var);
 				return val;
 			case "examsCollegeReadyGrades38AsianPercent":
@@ -17926,9 +18063,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					setExamsCollegeReadyGrades38BlackPercent(val);
 				saves.add(var);
 				return val;
-			case "examsCollegeReadyGrades38HispanicPercent":
+			case "examsCollegeReadyGrades38LatinxPercent":
 				if(val != null)
-					setExamsCollegeReadyGrades38HispanicPercent(val);
+					setExamsCollegeReadyGrades38LatinxPercent(val);
 				saves.add(var);
 				return val;
 			case "examsCollegeReadyGrades38MultiRacialPercent":
@@ -17951,9 +18088,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					setExamsCollegeReadyGrades912OverallPercent(val);
 				saves.add(var);
 				return val;
-			case "examsCollegeReadyGrades912IndianPercent":
+			case "examsCollegeReadyGrades912IndigenousPercent":
 				if(val != null)
-					setExamsCollegeReadyGrades912IndianPercent(val);
+					setExamsCollegeReadyGrades912IndigenousPercent(val);
 				saves.add(var);
 				return val;
 			case "examsCollegeReadyGrades912AsianPercent":
@@ -17966,9 +18103,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					setExamsCollegeReadyGrades912BlackPercent(val);
 				saves.add(var);
 				return val;
-			case "examsCollegeReadyGrades912HispanicPercent":
+			case "examsCollegeReadyGrades912LatinxPercent":
 				if(val != null)
-					setExamsCollegeReadyGrades912HispanicPercent(val);
+					setExamsCollegeReadyGrades912LatinxPercent(val);
 				saves.add(var);
 				return val;
 			case "examsCollegeReadyGrades912MultiRacialPercent":
@@ -17991,9 +18128,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					setGraduateWithin4YearsOverallPercent(val);
 				saves.add(var);
 				return val;
-			case "graduateWithin4YearsIndianPercent":
+			case "graduateWithin4YearsIndigenousPercent":
 				if(val != null)
-					setGraduateWithin4YearsIndianPercent(val);
+					setGraduateWithin4YearsIndigenousPercent(val);
 				saves.add(var);
 				return val;
 			case "graduateWithin4YearsAsianPercent":
@@ -18006,9 +18143,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					setGraduateWithin4YearsBlackPercent(val);
 				saves.add(var);
 				return val;
-			case "graduateWithin4YearsHispanicPercent":
+			case "graduateWithin4YearsLatinxPercent":
 				if(val != null)
-					setGraduateWithin4YearsHispanicPercent(val);
+					setGraduateWithin4YearsLatinxPercent(val);
 				saves.add(var);
 				return val;
 			case "graduateWithin4YearsMultiRacialPercent":
@@ -18077,28 +18214,28 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					oReportCard.setPupilsTotal(pupilsTotal);
 			}
 
-			if(saves.contains("pupilsIndianFemale")) {
-				Long pupilsIndianFemale = (Long)solrDocument.get("pupilsIndianFemale_stored_long");
-				if(pupilsIndianFemale != null)
-					oReportCard.setPupilsIndianFemale(pupilsIndianFemale);
+			if(saves.contains("pupilsIndigenousFemale")) {
+				Long pupilsIndigenousFemale = (Long)solrDocument.get("pupilsIndigenousFemale_stored_long");
+				if(pupilsIndigenousFemale != null)
+					oReportCard.setPupilsIndigenousFemale(pupilsIndigenousFemale);
 			}
 
-			if(saves.contains("pupilsIndianMale")) {
-				Long pupilsIndianMale = (Long)solrDocument.get("pupilsIndianMale_stored_long");
-				if(pupilsIndianMale != null)
-					oReportCard.setPupilsIndianMale(pupilsIndianMale);
+			if(saves.contains("pupilsIndigenousMale")) {
+				Long pupilsIndigenousMale = (Long)solrDocument.get("pupilsIndigenousMale_stored_long");
+				if(pupilsIndigenousMale != null)
+					oReportCard.setPupilsIndigenousMale(pupilsIndigenousMale);
 			}
 
-			if(saves.contains("pupilsIndianTotal")) {
-				Long pupilsIndianTotal = (Long)solrDocument.get("pupilsIndianTotal_stored_long");
-				if(pupilsIndianTotal != null)
-					oReportCard.setPupilsIndianTotal(pupilsIndianTotal);
+			if(saves.contains("pupilsIndigenousTotal")) {
+				Long pupilsIndigenousTotal = (Long)solrDocument.get("pupilsIndigenousTotal_stored_long");
+				if(pupilsIndigenousTotal != null)
+					oReportCard.setPupilsIndigenousTotal(pupilsIndigenousTotal);
 			}
 
-			if(saves.contains("pupilsIndianPercent")) {
-				Double pupilsIndianPercent = (Double)solrDocument.get("pupilsIndianPercent_stored_double");
-				if(pupilsIndianPercent != null)
-					oReportCard.setPupilsIndianPercent(pupilsIndianPercent);
+			if(saves.contains("pupilsIndigenousPercent")) {
+				Double pupilsIndigenousPercent = (Double)solrDocument.get("pupilsIndigenousPercent_stored_double");
+				if(pupilsIndigenousPercent != null)
+					oReportCard.setPupilsIndigenousPercent(pupilsIndigenousPercent);
 			}
 
 			if(saves.contains("pupilsAsianFemale")) {
@@ -18125,28 +18262,28 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					oReportCard.setPupilsAsianPercent(pupilsAsianPercent);
 			}
 
-			if(saves.contains("pupilsHispanicFemale")) {
-				Long pupilsHispanicFemale = (Long)solrDocument.get("pupilsHispanicFemale_stored_long");
-				if(pupilsHispanicFemale != null)
-					oReportCard.setPupilsHispanicFemale(pupilsHispanicFemale);
+			if(saves.contains("pupilsLatinxFemale")) {
+				Long pupilsLatinxFemale = (Long)solrDocument.get("pupilsLatinxFemale_stored_long");
+				if(pupilsLatinxFemale != null)
+					oReportCard.setPupilsLatinxFemale(pupilsLatinxFemale);
 			}
 
-			if(saves.contains("pupilsHispanicMale")) {
-				Long pupilsHispanicMale = (Long)solrDocument.get("pupilsHispanicMale_stored_long");
-				if(pupilsHispanicMale != null)
-					oReportCard.setPupilsHispanicMale(pupilsHispanicMale);
+			if(saves.contains("pupilsLatinxMale")) {
+				Long pupilsLatinxMale = (Long)solrDocument.get("pupilsLatinxMale_stored_long");
+				if(pupilsLatinxMale != null)
+					oReportCard.setPupilsLatinxMale(pupilsLatinxMale);
 			}
 
-			if(saves.contains("pupilsHispanicTotal")) {
-				Long pupilsHispanicTotal = (Long)solrDocument.get("pupilsHispanicTotal_stored_long");
-				if(pupilsHispanicTotal != null)
-					oReportCard.setPupilsHispanicTotal(pupilsHispanicTotal);
+			if(saves.contains("pupilsLatinxTotal")) {
+				Long pupilsLatinxTotal = (Long)solrDocument.get("pupilsLatinxTotal_stored_long");
+				if(pupilsLatinxTotal != null)
+					oReportCard.setPupilsLatinxTotal(pupilsLatinxTotal);
 			}
 
-			if(saves.contains("pupilsHispanicPercent")) {
-				Double pupilsHispanicPercent = (Double)solrDocument.get("pupilsHispanicPercent_stored_double");
-				if(pupilsHispanicPercent != null)
-					oReportCard.setPupilsHispanicPercent(pupilsHispanicPercent);
+			if(saves.contains("pupilsLatinxPercent")) {
+				Double pupilsLatinxPercent = (Double)solrDocument.get("pupilsLatinxPercent_stored_double");
+				if(pupilsLatinxPercent != null)
+					oReportCard.setPupilsLatinxPercent(pupilsLatinxPercent);
 			}
 
 			if(saves.contains("pupilsBlackFemale")) {
@@ -18347,16 +18484,16 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					oReportCard.setDelinquentComplaintsBlackPercent(delinquentComplaintsBlackPercent);
 			}
 
-			if(saves.contains("delinquentComplaintsHispanic")) {
-				Long delinquentComplaintsHispanic = (Long)solrDocument.get("delinquentComplaintsHispanic_stored_long");
-				if(delinquentComplaintsHispanic != null)
-					oReportCard.setDelinquentComplaintsHispanic(delinquentComplaintsHispanic);
+			if(saves.contains("delinquentComplaintsLatinx")) {
+				Long delinquentComplaintsLatinx = (Long)solrDocument.get("delinquentComplaintsLatinx_stored_long");
+				if(delinquentComplaintsLatinx != null)
+					oReportCard.setDelinquentComplaintsLatinx(delinquentComplaintsLatinx);
 			}
 
-			if(saves.contains("delinquentComplaintsHispanicPercent")) {
-				Double delinquentComplaintsHispanicPercent = (Double)solrDocument.get("delinquentComplaintsHispanicPercent_stored_double");
-				if(delinquentComplaintsHispanicPercent != null)
-					oReportCard.setDelinquentComplaintsHispanicPercent(delinquentComplaintsHispanicPercent);
+			if(saves.contains("delinquentComplaintsLatinxPercent")) {
+				Double delinquentComplaintsLatinxPercent = (Double)solrDocument.get("delinquentComplaintsLatinxPercent_stored_double");
+				if(delinquentComplaintsLatinxPercent != null)
+					oReportCard.setDelinquentComplaintsLatinxPercent(delinquentComplaintsLatinxPercent);
 			}
 
 			if(saves.contains("delinquentComplaintsMultiRacial")) {
@@ -18371,16 +18508,16 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					oReportCard.setDelinquentComplaintsMultiRacialPercent(delinquentComplaintsMultiRacialPercent);
 			}
 
-			if(saves.contains("delinquentComplaintsIndian")) {
-				Long delinquentComplaintsIndian = (Long)solrDocument.get("delinquentComplaintsIndian_stored_long");
-				if(delinquentComplaintsIndian != null)
-					oReportCard.setDelinquentComplaintsIndian(delinquentComplaintsIndian);
+			if(saves.contains("delinquentComplaintsIndigenous")) {
+				Long delinquentComplaintsIndigenous = (Long)solrDocument.get("delinquentComplaintsIndigenous_stored_long");
+				if(delinquentComplaintsIndigenous != null)
+					oReportCard.setDelinquentComplaintsIndigenous(delinquentComplaintsIndigenous);
 			}
 
-			if(saves.contains("delinquentComplaintsIndianPercent")) {
-				Double delinquentComplaintsIndianPercent = (Double)solrDocument.get("delinquentComplaintsIndianPercent_stored_double");
-				if(delinquentComplaintsIndianPercent != null)
-					oReportCard.setDelinquentComplaintsIndianPercent(delinquentComplaintsIndianPercent);
+			if(saves.contains("delinquentComplaintsIndigenousPercent")) {
+				Double delinquentComplaintsIndigenousPercent = (Double)solrDocument.get("delinquentComplaintsIndigenousPercent_stored_double");
+				if(delinquentComplaintsIndigenousPercent != null)
+					oReportCard.setDelinquentComplaintsIndigenousPercent(delinquentComplaintsIndigenousPercent);
 			}
 
 			if(saves.contains("delinquentComplaintsWhite")) {
@@ -18491,64 +18628,64 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					oReportCard.setShortTermSuspensionsBlackRate(shortTermSuspensionsBlackRate);
 			}
 
-			if(saves.contains("shortTermSuspensionsHispanicFemale")) {
-				Long shortTermSuspensionsHispanicFemale = (Long)solrDocument.get("shortTermSuspensionsHispanicFemale_stored_long");
-				if(shortTermSuspensionsHispanicFemale != null)
-					oReportCard.setShortTermSuspensionsHispanicFemale(shortTermSuspensionsHispanicFemale);
+			if(saves.contains("shortTermSuspensionsLatinxFemale")) {
+				Long shortTermSuspensionsLatinxFemale = (Long)solrDocument.get("shortTermSuspensionsLatinxFemale_stored_long");
+				if(shortTermSuspensionsLatinxFemale != null)
+					oReportCard.setShortTermSuspensionsLatinxFemale(shortTermSuspensionsLatinxFemale);
 			}
 
-			if(saves.contains("shortTermSuspensionsHispanicMale")) {
-				Long shortTermSuspensionsHispanicMale = (Long)solrDocument.get("shortTermSuspensionsHispanicMale_stored_long");
-				if(shortTermSuspensionsHispanicMale != null)
-					oReportCard.setShortTermSuspensionsHispanicMale(shortTermSuspensionsHispanicMale);
+			if(saves.contains("shortTermSuspensionsLatinxMale")) {
+				Long shortTermSuspensionsLatinxMale = (Long)solrDocument.get("shortTermSuspensionsLatinxMale_stored_long");
+				if(shortTermSuspensionsLatinxMale != null)
+					oReportCard.setShortTermSuspensionsLatinxMale(shortTermSuspensionsLatinxMale);
 			}
 
-			if(saves.contains("shortTermSuspensionsHispanicTotal")) {
-				Long shortTermSuspensionsHispanicTotal = (Long)solrDocument.get("shortTermSuspensionsHispanicTotal_stored_long");
-				if(shortTermSuspensionsHispanicTotal != null)
-					oReportCard.setShortTermSuspensionsHispanicTotal(shortTermSuspensionsHispanicTotal);
+			if(saves.contains("shortTermSuspensionsLatinxTotal")) {
+				Long shortTermSuspensionsLatinxTotal = (Long)solrDocument.get("shortTermSuspensionsLatinxTotal_stored_long");
+				if(shortTermSuspensionsLatinxTotal != null)
+					oReportCard.setShortTermSuspensionsLatinxTotal(shortTermSuspensionsLatinxTotal);
 			}
 
-			if(saves.contains("shortTermSuspensionsHispanicPercent")) {
-				Double shortTermSuspensionsHispanicPercent = (Double)solrDocument.get("shortTermSuspensionsHispanicPercent_stored_double");
-				if(shortTermSuspensionsHispanicPercent != null)
-					oReportCard.setShortTermSuspensionsHispanicPercent(shortTermSuspensionsHispanicPercent);
+			if(saves.contains("shortTermSuspensionsLatinxPercent")) {
+				Double shortTermSuspensionsLatinxPercent = (Double)solrDocument.get("shortTermSuspensionsLatinxPercent_stored_double");
+				if(shortTermSuspensionsLatinxPercent != null)
+					oReportCard.setShortTermSuspensionsLatinxPercent(shortTermSuspensionsLatinxPercent);
 			}
 
-			if(saves.contains("shortTermSuspensionsHispanicRate")) {
-				Double shortTermSuspensionsHispanicRate = (Double)solrDocument.get("shortTermSuspensionsHispanicRate_stored_double");
-				if(shortTermSuspensionsHispanicRate != null)
-					oReportCard.setShortTermSuspensionsHispanicRate(shortTermSuspensionsHispanicRate);
+			if(saves.contains("shortTermSuspensionsLatinxRate")) {
+				Double shortTermSuspensionsLatinxRate = (Double)solrDocument.get("shortTermSuspensionsLatinxRate_stored_double");
+				if(shortTermSuspensionsLatinxRate != null)
+					oReportCard.setShortTermSuspensionsLatinxRate(shortTermSuspensionsLatinxRate);
 			}
 
-			if(saves.contains("shortTermSuspensionsIndianFemale")) {
-				Long shortTermSuspensionsIndianFemale = (Long)solrDocument.get("shortTermSuspensionsIndianFemale_stored_long");
-				if(shortTermSuspensionsIndianFemale != null)
-					oReportCard.setShortTermSuspensionsIndianFemale(shortTermSuspensionsIndianFemale);
+			if(saves.contains("shortTermSuspensionsIndigenousFemale")) {
+				Long shortTermSuspensionsIndigenousFemale = (Long)solrDocument.get("shortTermSuspensionsIndigenousFemale_stored_long");
+				if(shortTermSuspensionsIndigenousFemale != null)
+					oReportCard.setShortTermSuspensionsIndigenousFemale(shortTermSuspensionsIndigenousFemale);
 			}
 
-			if(saves.contains("shortTermSuspensionsIndianMale")) {
-				Long shortTermSuspensionsIndianMale = (Long)solrDocument.get("shortTermSuspensionsIndianMale_stored_long");
-				if(shortTermSuspensionsIndianMale != null)
-					oReportCard.setShortTermSuspensionsIndianMale(shortTermSuspensionsIndianMale);
+			if(saves.contains("shortTermSuspensionsIndigenousMale")) {
+				Long shortTermSuspensionsIndigenousMale = (Long)solrDocument.get("shortTermSuspensionsIndigenousMale_stored_long");
+				if(shortTermSuspensionsIndigenousMale != null)
+					oReportCard.setShortTermSuspensionsIndigenousMale(shortTermSuspensionsIndigenousMale);
 			}
 
-			if(saves.contains("shortTermSuspensionsIndianTotal")) {
-				Long shortTermSuspensionsIndianTotal = (Long)solrDocument.get("shortTermSuspensionsIndianTotal_stored_long");
-				if(shortTermSuspensionsIndianTotal != null)
-					oReportCard.setShortTermSuspensionsIndianTotal(shortTermSuspensionsIndianTotal);
+			if(saves.contains("shortTermSuspensionsIndigenousTotal")) {
+				Long shortTermSuspensionsIndigenousTotal = (Long)solrDocument.get("shortTermSuspensionsIndigenousTotal_stored_long");
+				if(shortTermSuspensionsIndigenousTotal != null)
+					oReportCard.setShortTermSuspensionsIndigenousTotal(shortTermSuspensionsIndigenousTotal);
 			}
 
-			if(saves.contains("shortTermSuspensionsIndianPercent")) {
-				Double shortTermSuspensionsIndianPercent = (Double)solrDocument.get("shortTermSuspensionsIndianPercent_stored_double");
-				if(shortTermSuspensionsIndianPercent != null)
-					oReportCard.setShortTermSuspensionsIndianPercent(shortTermSuspensionsIndianPercent);
+			if(saves.contains("shortTermSuspensionsIndigenousPercent")) {
+				Double shortTermSuspensionsIndigenousPercent = (Double)solrDocument.get("shortTermSuspensionsIndigenousPercent_stored_double");
+				if(shortTermSuspensionsIndigenousPercent != null)
+					oReportCard.setShortTermSuspensionsIndigenousPercent(shortTermSuspensionsIndigenousPercent);
 			}
 
-			if(saves.contains("shortTermSuspensionsIndianRate")) {
-				Double shortTermSuspensionsIndianRate = (Double)solrDocument.get("shortTermSuspensionsIndianRate_stored_double");
-				if(shortTermSuspensionsIndianRate != null)
-					oReportCard.setShortTermSuspensionsIndianRate(shortTermSuspensionsIndianRate);
+			if(saves.contains("shortTermSuspensionsIndigenousRate")) {
+				Double shortTermSuspensionsIndigenousRate = (Double)solrDocument.get("shortTermSuspensionsIndigenousRate_stored_double");
+				if(shortTermSuspensionsIndigenousRate != null)
+					oReportCard.setShortTermSuspensionsIndigenousRate(shortTermSuspensionsIndigenousRate);
 			}
 
 			if(saves.contains("shortTermSuspensionsMultiRacialFemale")) {
@@ -18659,10 +18796,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					oReportCard.setExamsCollegeReadyGrades38OverallPercent(examsCollegeReadyGrades38OverallPercent);
 			}
 
-			if(saves.contains("examsCollegeReadyGrades38IndianPercent")) {
-				Double examsCollegeReadyGrades38IndianPercent = (Double)solrDocument.get("examsCollegeReadyGrades38IndianPercent_stored_double");
-				if(examsCollegeReadyGrades38IndianPercent != null)
-					oReportCard.setExamsCollegeReadyGrades38IndianPercent(examsCollegeReadyGrades38IndianPercent);
+			if(saves.contains("examsCollegeReadyGrades38IndigenousPercent")) {
+				Double examsCollegeReadyGrades38IndigenousPercent = (Double)solrDocument.get("examsCollegeReadyGrades38IndigenousPercent_stored_double");
+				if(examsCollegeReadyGrades38IndigenousPercent != null)
+					oReportCard.setExamsCollegeReadyGrades38IndigenousPercent(examsCollegeReadyGrades38IndigenousPercent);
 			}
 
 			if(saves.contains("examsCollegeReadyGrades38AsianPercent")) {
@@ -18677,10 +18814,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					oReportCard.setExamsCollegeReadyGrades38BlackPercent(examsCollegeReadyGrades38BlackPercent);
 			}
 
-			if(saves.contains("examsCollegeReadyGrades38HispanicPercent")) {
-				Double examsCollegeReadyGrades38HispanicPercent = (Double)solrDocument.get("examsCollegeReadyGrades38HispanicPercent_stored_double");
-				if(examsCollegeReadyGrades38HispanicPercent != null)
-					oReportCard.setExamsCollegeReadyGrades38HispanicPercent(examsCollegeReadyGrades38HispanicPercent);
+			if(saves.contains("examsCollegeReadyGrades38LatinxPercent")) {
+				Double examsCollegeReadyGrades38LatinxPercent = (Double)solrDocument.get("examsCollegeReadyGrades38LatinxPercent_stored_double");
+				if(examsCollegeReadyGrades38LatinxPercent != null)
+					oReportCard.setExamsCollegeReadyGrades38LatinxPercent(examsCollegeReadyGrades38LatinxPercent);
 			}
 
 			if(saves.contains("examsCollegeReadyGrades38MultiRacialPercent")) {
@@ -18707,10 +18844,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					oReportCard.setExamsCollegeReadyGrades912OverallPercent(examsCollegeReadyGrades912OverallPercent);
 			}
 
-			if(saves.contains("examsCollegeReadyGrades912IndianPercent")) {
-				Double examsCollegeReadyGrades912IndianPercent = (Double)solrDocument.get("examsCollegeReadyGrades912IndianPercent_stored_double");
-				if(examsCollegeReadyGrades912IndianPercent != null)
-					oReportCard.setExamsCollegeReadyGrades912IndianPercent(examsCollegeReadyGrades912IndianPercent);
+			if(saves.contains("examsCollegeReadyGrades912IndigenousPercent")) {
+				Double examsCollegeReadyGrades912IndigenousPercent = (Double)solrDocument.get("examsCollegeReadyGrades912IndigenousPercent_stored_double");
+				if(examsCollegeReadyGrades912IndigenousPercent != null)
+					oReportCard.setExamsCollegeReadyGrades912IndigenousPercent(examsCollegeReadyGrades912IndigenousPercent);
 			}
 
 			if(saves.contains("examsCollegeReadyGrades912AsianPercent")) {
@@ -18725,10 +18862,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					oReportCard.setExamsCollegeReadyGrades912BlackPercent(examsCollegeReadyGrades912BlackPercent);
 			}
 
-			if(saves.contains("examsCollegeReadyGrades912HispanicPercent")) {
-				Double examsCollegeReadyGrades912HispanicPercent = (Double)solrDocument.get("examsCollegeReadyGrades912HispanicPercent_stored_double");
-				if(examsCollegeReadyGrades912HispanicPercent != null)
-					oReportCard.setExamsCollegeReadyGrades912HispanicPercent(examsCollegeReadyGrades912HispanicPercent);
+			if(saves.contains("examsCollegeReadyGrades912LatinxPercent")) {
+				Double examsCollegeReadyGrades912LatinxPercent = (Double)solrDocument.get("examsCollegeReadyGrades912LatinxPercent_stored_double");
+				if(examsCollegeReadyGrades912LatinxPercent != null)
+					oReportCard.setExamsCollegeReadyGrades912LatinxPercent(examsCollegeReadyGrades912LatinxPercent);
 			}
 
 			if(saves.contains("examsCollegeReadyGrades912MultiRacialPercent")) {
@@ -18755,10 +18892,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					oReportCard.setGraduateWithin4YearsOverallPercent(graduateWithin4YearsOverallPercent);
 			}
 
-			if(saves.contains("graduateWithin4YearsIndianPercent")) {
-				Double graduateWithin4YearsIndianPercent = (Double)solrDocument.get("graduateWithin4YearsIndianPercent_stored_double");
-				if(graduateWithin4YearsIndianPercent != null)
-					oReportCard.setGraduateWithin4YearsIndianPercent(graduateWithin4YearsIndianPercent);
+			if(saves.contains("graduateWithin4YearsIndigenousPercent")) {
+				Double graduateWithin4YearsIndigenousPercent = (Double)solrDocument.get("graduateWithin4YearsIndigenousPercent_stored_double");
+				if(graduateWithin4YearsIndigenousPercent != null)
+					oReportCard.setGraduateWithin4YearsIndigenousPercent(graduateWithin4YearsIndigenousPercent);
 			}
 
 			if(saves.contains("graduateWithin4YearsAsianPercent")) {
@@ -18773,10 +18910,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					oReportCard.setGraduateWithin4YearsBlackPercent(graduateWithin4YearsBlackPercent);
 			}
 
-			if(saves.contains("graduateWithin4YearsHispanicPercent")) {
-				Double graduateWithin4YearsHispanicPercent = (Double)solrDocument.get("graduateWithin4YearsHispanicPercent_stored_double");
-				if(graduateWithin4YearsHispanicPercent != null)
-					oReportCard.setGraduateWithin4YearsHispanicPercent(graduateWithin4YearsHispanicPercent);
+			if(saves.contains("graduateWithin4YearsLatinxPercent")) {
+				Double graduateWithin4YearsLatinxPercent = (Double)solrDocument.get("graduateWithin4YearsLatinxPercent_stored_double");
+				if(graduateWithin4YearsLatinxPercent != null)
+					oReportCard.setGraduateWithin4YearsLatinxPercent(graduateWithin4YearsLatinxPercent);
 			}
 
 			if(saves.contains("graduateWithin4YearsMultiRacialPercent")) {
@@ -18837,6 +18974,18 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				String agencyName = (String)solrDocument.get("agencyName_stored_string");
 				if(agencyName != null)
 					oReportCard.setAgencyName(agencyName);
+			}
+
+			if(saves.contains("agencyCoords")) {
+				String agencyCoords = (String)solrDocument.get("agencyCoords_stored_string");
+				if(agencyCoords != null)
+					oReportCard.setAgencyCoords(agencyCoords);
+			}
+
+			if(saves.contains("agencyLeft")) {
+				Integer agencyLeft = (Integer)solrDocument.get("agencyLeft_stored_int");
+				if(agencyLeft != null)
+					oReportCard.setAgencyLeft(agencyLeft);
 			}
 
 			if(saves.contains("reportCardCompleteName")) {
@@ -19001,21 +19150,21 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			document.addField("pupilsTotal_indexed_long", pupilsTotal);
 			document.addField("pupilsTotal_stored_long", pupilsTotal);
 		}
-		if(pupilsIndianFemale != null) {
-			document.addField("pupilsIndianFemale_indexed_long", pupilsIndianFemale);
-			document.addField("pupilsIndianFemale_stored_long", pupilsIndianFemale);
+		if(pupilsIndigenousFemale != null) {
+			document.addField("pupilsIndigenousFemale_indexed_long", pupilsIndigenousFemale);
+			document.addField("pupilsIndigenousFemale_stored_long", pupilsIndigenousFemale);
 		}
-		if(pupilsIndianMale != null) {
-			document.addField("pupilsIndianMale_indexed_long", pupilsIndianMale);
-			document.addField("pupilsIndianMale_stored_long", pupilsIndianMale);
+		if(pupilsIndigenousMale != null) {
+			document.addField("pupilsIndigenousMale_indexed_long", pupilsIndigenousMale);
+			document.addField("pupilsIndigenousMale_stored_long", pupilsIndigenousMale);
 		}
-		if(pupilsIndianTotal != null) {
-			document.addField("pupilsIndianTotal_indexed_long", pupilsIndianTotal);
-			document.addField("pupilsIndianTotal_stored_long", pupilsIndianTotal);
+		if(pupilsIndigenousTotal != null) {
+			document.addField("pupilsIndigenousTotal_indexed_long", pupilsIndigenousTotal);
+			document.addField("pupilsIndigenousTotal_stored_long", pupilsIndigenousTotal);
 		}
-		if(pupilsIndianPercent != null) {
-			document.addField("pupilsIndianPercent_indexed_double", pupilsIndianPercent.doubleValue());
-			document.addField("pupilsIndianPercent_stored_double", pupilsIndianPercent.doubleValue());
+		if(pupilsIndigenousPercent != null) {
+			document.addField("pupilsIndigenousPercent_indexed_double", pupilsIndigenousPercent.doubleValue());
+			document.addField("pupilsIndigenousPercent_stored_double", pupilsIndigenousPercent.doubleValue());
 		}
 		if(pupilsAsianFemale != null) {
 			document.addField("pupilsAsianFemale_indexed_long", pupilsAsianFemale);
@@ -19033,21 +19182,21 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			document.addField("pupilsAsianPercent_indexed_double", pupilsAsianPercent.doubleValue());
 			document.addField("pupilsAsianPercent_stored_double", pupilsAsianPercent.doubleValue());
 		}
-		if(pupilsHispanicFemale != null) {
-			document.addField("pupilsHispanicFemale_indexed_long", pupilsHispanicFemale);
-			document.addField("pupilsHispanicFemale_stored_long", pupilsHispanicFemale);
+		if(pupilsLatinxFemale != null) {
+			document.addField("pupilsLatinxFemale_indexed_long", pupilsLatinxFemale);
+			document.addField("pupilsLatinxFemale_stored_long", pupilsLatinxFemale);
 		}
-		if(pupilsHispanicMale != null) {
-			document.addField("pupilsHispanicMale_indexed_long", pupilsHispanicMale);
-			document.addField("pupilsHispanicMale_stored_long", pupilsHispanicMale);
+		if(pupilsLatinxMale != null) {
+			document.addField("pupilsLatinxMale_indexed_long", pupilsLatinxMale);
+			document.addField("pupilsLatinxMale_stored_long", pupilsLatinxMale);
 		}
-		if(pupilsHispanicTotal != null) {
-			document.addField("pupilsHispanicTotal_indexed_long", pupilsHispanicTotal);
-			document.addField("pupilsHispanicTotal_stored_long", pupilsHispanicTotal);
+		if(pupilsLatinxTotal != null) {
+			document.addField("pupilsLatinxTotal_indexed_long", pupilsLatinxTotal);
+			document.addField("pupilsLatinxTotal_stored_long", pupilsLatinxTotal);
 		}
-		if(pupilsHispanicPercent != null) {
-			document.addField("pupilsHispanicPercent_indexed_double", pupilsHispanicPercent.doubleValue());
-			document.addField("pupilsHispanicPercent_stored_double", pupilsHispanicPercent.doubleValue());
+		if(pupilsLatinxPercent != null) {
+			document.addField("pupilsLatinxPercent_indexed_double", pupilsLatinxPercent.doubleValue());
+			document.addField("pupilsLatinxPercent_stored_double", pupilsLatinxPercent.doubleValue());
 		}
 		if(pupilsBlackFemale != null) {
 			document.addField("pupilsBlackFemale_indexed_long", pupilsBlackFemale);
@@ -19181,13 +19330,13 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			document.addField("delinquentComplaintsBlackPercent_indexed_double", delinquentComplaintsBlackPercent.doubleValue());
 			document.addField("delinquentComplaintsBlackPercent_stored_double", delinquentComplaintsBlackPercent.doubleValue());
 		}
-		if(delinquentComplaintsHispanic != null) {
-			document.addField("delinquentComplaintsHispanic_indexed_long", delinquentComplaintsHispanic);
-			document.addField("delinquentComplaintsHispanic_stored_long", delinquentComplaintsHispanic);
+		if(delinquentComplaintsLatinx != null) {
+			document.addField("delinquentComplaintsLatinx_indexed_long", delinquentComplaintsLatinx);
+			document.addField("delinquentComplaintsLatinx_stored_long", delinquentComplaintsLatinx);
 		}
-		if(delinquentComplaintsHispanicPercent != null) {
-			document.addField("delinquentComplaintsHispanicPercent_indexed_double", delinquentComplaintsHispanicPercent.doubleValue());
-			document.addField("delinquentComplaintsHispanicPercent_stored_double", delinquentComplaintsHispanicPercent.doubleValue());
+		if(delinquentComplaintsLatinxPercent != null) {
+			document.addField("delinquentComplaintsLatinxPercent_indexed_double", delinquentComplaintsLatinxPercent.doubleValue());
+			document.addField("delinquentComplaintsLatinxPercent_stored_double", delinquentComplaintsLatinxPercent.doubleValue());
 		}
 		if(delinquentComplaintsMultiRacial != null) {
 			document.addField("delinquentComplaintsMultiRacial_indexed_long", delinquentComplaintsMultiRacial);
@@ -19197,13 +19346,13 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			document.addField("delinquentComplaintsMultiRacialPercent_indexed_double", delinquentComplaintsMultiRacialPercent.doubleValue());
 			document.addField("delinquentComplaintsMultiRacialPercent_stored_double", delinquentComplaintsMultiRacialPercent.doubleValue());
 		}
-		if(delinquentComplaintsIndian != null) {
-			document.addField("delinquentComplaintsIndian_indexed_long", delinquentComplaintsIndian);
-			document.addField("delinquentComplaintsIndian_stored_long", delinquentComplaintsIndian);
+		if(delinquentComplaintsIndigenous != null) {
+			document.addField("delinquentComplaintsIndigenous_indexed_long", delinquentComplaintsIndigenous);
+			document.addField("delinquentComplaintsIndigenous_stored_long", delinquentComplaintsIndigenous);
 		}
-		if(delinquentComplaintsIndianPercent != null) {
-			document.addField("delinquentComplaintsIndianPercent_indexed_double", delinquentComplaintsIndianPercent.doubleValue());
-			document.addField("delinquentComplaintsIndianPercent_stored_double", delinquentComplaintsIndianPercent.doubleValue());
+		if(delinquentComplaintsIndigenousPercent != null) {
+			document.addField("delinquentComplaintsIndigenousPercent_indexed_double", delinquentComplaintsIndigenousPercent.doubleValue());
+			document.addField("delinquentComplaintsIndigenousPercent_stored_double", delinquentComplaintsIndigenousPercent.doubleValue());
 		}
 		if(delinquentComplaintsWhite != null) {
 			document.addField("delinquentComplaintsWhite_indexed_long", delinquentComplaintsWhite);
@@ -19277,45 +19426,45 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			document.addField("shortTermSuspensionsBlackRate_indexed_double", shortTermSuspensionsBlackRate.doubleValue());
 			document.addField("shortTermSuspensionsBlackRate_stored_double", shortTermSuspensionsBlackRate.doubleValue());
 		}
-		if(shortTermSuspensionsHispanicFemale != null) {
-			document.addField("shortTermSuspensionsHispanicFemale_indexed_long", shortTermSuspensionsHispanicFemale);
-			document.addField("shortTermSuspensionsHispanicFemale_stored_long", shortTermSuspensionsHispanicFemale);
+		if(shortTermSuspensionsLatinxFemale != null) {
+			document.addField("shortTermSuspensionsLatinxFemale_indexed_long", shortTermSuspensionsLatinxFemale);
+			document.addField("shortTermSuspensionsLatinxFemale_stored_long", shortTermSuspensionsLatinxFemale);
 		}
-		if(shortTermSuspensionsHispanicMale != null) {
-			document.addField("shortTermSuspensionsHispanicMale_indexed_long", shortTermSuspensionsHispanicMale);
-			document.addField("shortTermSuspensionsHispanicMale_stored_long", shortTermSuspensionsHispanicMale);
+		if(shortTermSuspensionsLatinxMale != null) {
+			document.addField("shortTermSuspensionsLatinxMale_indexed_long", shortTermSuspensionsLatinxMale);
+			document.addField("shortTermSuspensionsLatinxMale_stored_long", shortTermSuspensionsLatinxMale);
 		}
-		if(shortTermSuspensionsHispanicTotal != null) {
-			document.addField("shortTermSuspensionsHispanicTotal_indexed_long", shortTermSuspensionsHispanicTotal);
-			document.addField("shortTermSuspensionsHispanicTotal_stored_long", shortTermSuspensionsHispanicTotal);
+		if(shortTermSuspensionsLatinxTotal != null) {
+			document.addField("shortTermSuspensionsLatinxTotal_indexed_long", shortTermSuspensionsLatinxTotal);
+			document.addField("shortTermSuspensionsLatinxTotal_stored_long", shortTermSuspensionsLatinxTotal);
 		}
-		if(shortTermSuspensionsHispanicPercent != null) {
-			document.addField("shortTermSuspensionsHispanicPercent_indexed_double", shortTermSuspensionsHispanicPercent.doubleValue());
-			document.addField("shortTermSuspensionsHispanicPercent_stored_double", shortTermSuspensionsHispanicPercent.doubleValue());
+		if(shortTermSuspensionsLatinxPercent != null) {
+			document.addField("shortTermSuspensionsLatinxPercent_indexed_double", shortTermSuspensionsLatinxPercent.doubleValue());
+			document.addField("shortTermSuspensionsLatinxPercent_stored_double", shortTermSuspensionsLatinxPercent.doubleValue());
 		}
-		if(shortTermSuspensionsHispanicRate != null) {
-			document.addField("shortTermSuspensionsHispanicRate_indexed_double", shortTermSuspensionsHispanicRate.doubleValue());
-			document.addField("shortTermSuspensionsHispanicRate_stored_double", shortTermSuspensionsHispanicRate.doubleValue());
+		if(shortTermSuspensionsLatinxRate != null) {
+			document.addField("shortTermSuspensionsLatinxRate_indexed_double", shortTermSuspensionsLatinxRate.doubleValue());
+			document.addField("shortTermSuspensionsLatinxRate_stored_double", shortTermSuspensionsLatinxRate.doubleValue());
 		}
-		if(shortTermSuspensionsIndianFemale != null) {
-			document.addField("shortTermSuspensionsIndianFemale_indexed_long", shortTermSuspensionsIndianFemale);
-			document.addField("shortTermSuspensionsIndianFemale_stored_long", shortTermSuspensionsIndianFemale);
+		if(shortTermSuspensionsIndigenousFemale != null) {
+			document.addField("shortTermSuspensionsIndigenousFemale_indexed_long", shortTermSuspensionsIndigenousFemale);
+			document.addField("shortTermSuspensionsIndigenousFemale_stored_long", shortTermSuspensionsIndigenousFemale);
 		}
-		if(shortTermSuspensionsIndianMale != null) {
-			document.addField("shortTermSuspensionsIndianMale_indexed_long", shortTermSuspensionsIndianMale);
-			document.addField("shortTermSuspensionsIndianMale_stored_long", shortTermSuspensionsIndianMale);
+		if(shortTermSuspensionsIndigenousMale != null) {
+			document.addField("shortTermSuspensionsIndigenousMale_indexed_long", shortTermSuspensionsIndigenousMale);
+			document.addField("shortTermSuspensionsIndigenousMale_stored_long", shortTermSuspensionsIndigenousMale);
 		}
-		if(shortTermSuspensionsIndianTotal != null) {
-			document.addField("shortTermSuspensionsIndianTotal_indexed_long", shortTermSuspensionsIndianTotal);
-			document.addField("shortTermSuspensionsIndianTotal_stored_long", shortTermSuspensionsIndianTotal);
+		if(shortTermSuspensionsIndigenousTotal != null) {
+			document.addField("shortTermSuspensionsIndigenousTotal_indexed_long", shortTermSuspensionsIndigenousTotal);
+			document.addField("shortTermSuspensionsIndigenousTotal_stored_long", shortTermSuspensionsIndigenousTotal);
 		}
-		if(shortTermSuspensionsIndianPercent != null) {
-			document.addField("shortTermSuspensionsIndianPercent_indexed_double", shortTermSuspensionsIndianPercent.doubleValue());
-			document.addField("shortTermSuspensionsIndianPercent_stored_double", shortTermSuspensionsIndianPercent.doubleValue());
+		if(shortTermSuspensionsIndigenousPercent != null) {
+			document.addField("shortTermSuspensionsIndigenousPercent_indexed_double", shortTermSuspensionsIndigenousPercent.doubleValue());
+			document.addField("shortTermSuspensionsIndigenousPercent_stored_double", shortTermSuspensionsIndigenousPercent.doubleValue());
 		}
-		if(shortTermSuspensionsIndianRate != null) {
-			document.addField("shortTermSuspensionsIndianRate_indexed_double", shortTermSuspensionsIndianRate.doubleValue());
-			document.addField("shortTermSuspensionsIndianRate_stored_double", shortTermSuspensionsIndianRate.doubleValue());
+		if(shortTermSuspensionsIndigenousRate != null) {
+			document.addField("shortTermSuspensionsIndigenousRate_indexed_double", shortTermSuspensionsIndigenousRate.doubleValue());
+			document.addField("shortTermSuspensionsIndigenousRate_stored_double", shortTermSuspensionsIndigenousRate.doubleValue());
 		}
 		if(shortTermSuspensionsMultiRacialFemale != null) {
 			document.addField("shortTermSuspensionsMultiRacialFemale_indexed_long", shortTermSuspensionsMultiRacialFemale);
@@ -19389,9 +19538,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			document.addField("examsCollegeReadyGrades38OverallPercent_indexed_double", examsCollegeReadyGrades38OverallPercent.doubleValue());
 			document.addField("examsCollegeReadyGrades38OverallPercent_stored_double", examsCollegeReadyGrades38OverallPercent.doubleValue());
 		}
-		if(examsCollegeReadyGrades38IndianPercent != null) {
-			document.addField("examsCollegeReadyGrades38IndianPercent_indexed_double", examsCollegeReadyGrades38IndianPercent.doubleValue());
-			document.addField("examsCollegeReadyGrades38IndianPercent_stored_double", examsCollegeReadyGrades38IndianPercent.doubleValue());
+		if(examsCollegeReadyGrades38IndigenousPercent != null) {
+			document.addField("examsCollegeReadyGrades38IndigenousPercent_indexed_double", examsCollegeReadyGrades38IndigenousPercent.doubleValue());
+			document.addField("examsCollegeReadyGrades38IndigenousPercent_stored_double", examsCollegeReadyGrades38IndigenousPercent.doubleValue());
 		}
 		if(examsCollegeReadyGrades38AsianPercent != null) {
 			document.addField("examsCollegeReadyGrades38AsianPercent_indexed_double", examsCollegeReadyGrades38AsianPercent.doubleValue());
@@ -19401,9 +19550,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			document.addField("examsCollegeReadyGrades38BlackPercent_indexed_double", examsCollegeReadyGrades38BlackPercent.doubleValue());
 			document.addField("examsCollegeReadyGrades38BlackPercent_stored_double", examsCollegeReadyGrades38BlackPercent.doubleValue());
 		}
-		if(examsCollegeReadyGrades38HispanicPercent != null) {
-			document.addField("examsCollegeReadyGrades38HispanicPercent_indexed_double", examsCollegeReadyGrades38HispanicPercent.doubleValue());
-			document.addField("examsCollegeReadyGrades38HispanicPercent_stored_double", examsCollegeReadyGrades38HispanicPercent.doubleValue());
+		if(examsCollegeReadyGrades38LatinxPercent != null) {
+			document.addField("examsCollegeReadyGrades38LatinxPercent_indexed_double", examsCollegeReadyGrades38LatinxPercent.doubleValue());
+			document.addField("examsCollegeReadyGrades38LatinxPercent_stored_double", examsCollegeReadyGrades38LatinxPercent.doubleValue());
 		}
 		if(examsCollegeReadyGrades38MultiRacialPercent != null) {
 			document.addField("examsCollegeReadyGrades38MultiRacialPercent_indexed_double", examsCollegeReadyGrades38MultiRacialPercent.doubleValue());
@@ -19421,9 +19570,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			document.addField("examsCollegeReadyGrades912OverallPercent_indexed_double", examsCollegeReadyGrades912OverallPercent.doubleValue());
 			document.addField("examsCollegeReadyGrades912OverallPercent_stored_double", examsCollegeReadyGrades912OverallPercent.doubleValue());
 		}
-		if(examsCollegeReadyGrades912IndianPercent != null) {
-			document.addField("examsCollegeReadyGrades912IndianPercent_indexed_double", examsCollegeReadyGrades912IndianPercent.doubleValue());
-			document.addField("examsCollegeReadyGrades912IndianPercent_stored_double", examsCollegeReadyGrades912IndianPercent.doubleValue());
+		if(examsCollegeReadyGrades912IndigenousPercent != null) {
+			document.addField("examsCollegeReadyGrades912IndigenousPercent_indexed_double", examsCollegeReadyGrades912IndigenousPercent.doubleValue());
+			document.addField("examsCollegeReadyGrades912IndigenousPercent_stored_double", examsCollegeReadyGrades912IndigenousPercent.doubleValue());
 		}
 		if(examsCollegeReadyGrades912AsianPercent != null) {
 			document.addField("examsCollegeReadyGrades912AsianPercent_indexed_double", examsCollegeReadyGrades912AsianPercent.doubleValue());
@@ -19433,9 +19582,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			document.addField("examsCollegeReadyGrades912BlackPercent_indexed_double", examsCollegeReadyGrades912BlackPercent.doubleValue());
 			document.addField("examsCollegeReadyGrades912BlackPercent_stored_double", examsCollegeReadyGrades912BlackPercent.doubleValue());
 		}
-		if(examsCollegeReadyGrades912HispanicPercent != null) {
-			document.addField("examsCollegeReadyGrades912HispanicPercent_indexed_double", examsCollegeReadyGrades912HispanicPercent.doubleValue());
-			document.addField("examsCollegeReadyGrades912HispanicPercent_stored_double", examsCollegeReadyGrades912HispanicPercent.doubleValue());
+		if(examsCollegeReadyGrades912LatinxPercent != null) {
+			document.addField("examsCollegeReadyGrades912LatinxPercent_indexed_double", examsCollegeReadyGrades912LatinxPercent.doubleValue());
+			document.addField("examsCollegeReadyGrades912LatinxPercent_stored_double", examsCollegeReadyGrades912LatinxPercent.doubleValue());
 		}
 		if(examsCollegeReadyGrades912MultiRacialPercent != null) {
 			document.addField("examsCollegeReadyGrades912MultiRacialPercent_indexed_double", examsCollegeReadyGrades912MultiRacialPercent.doubleValue());
@@ -19453,9 +19602,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			document.addField("graduateWithin4YearsOverallPercent_indexed_double", graduateWithin4YearsOverallPercent.doubleValue());
 			document.addField("graduateWithin4YearsOverallPercent_stored_double", graduateWithin4YearsOverallPercent.doubleValue());
 		}
-		if(graduateWithin4YearsIndianPercent != null) {
-			document.addField("graduateWithin4YearsIndianPercent_indexed_double", graduateWithin4YearsIndianPercent.doubleValue());
-			document.addField("graduateWithin4YearsIndianPercent_stored_double", graduateWithin4YearsIndianPercent.doubleValue());
+		if(graduateWithin4YearsIndigenousPercent != null) {
+			document.addField("graduateWithin4YearsIndigenousPercent_indexed_double", graduateWithin4YearsIndigenousPercent.doubleValue());
+			document.addField("graduateWithin4YearsIndigenousPercent_stored_double", graduateWithin4YearsIndigenousPercent.doubleValue());
 		}
 		if(graduateWithin4YearsAsianPercent != null) {
 			document.addField("graduateWithin4YearsAsianPercent_indexed_double", graduateWithin4YearsAsianPercent.doubleValue());
@@ -19465,9 +19614,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			document.addField("graduateWithin4YearsBlackPercent_indexed_double", graduateWithin4YearsBlackPercent.doubleValue());
 			document.addField("graduateWithin4YearsBlackPercent_stored_double", graduateWithin4YearsBlackPercent.doubleValue());
 		}
-		if(graduateWithin4YearsHispanicPercent != null) {
-			document.addField("graduateWithin4YearsHispanicPercent_indexed_double", graduateWithin4YearsHispanicPercent.doubleValue());
-			document.addField("graduateWithin4YearsHispanicPercent_stored_double", graduateWithin4YearsHispanicPercent.doubleValue());
+		if(graduateWithin4YearsLatinxPercent != null) {
+			document.addField("graduateWithin4YearsLatinxPercent_indexed_double", graduateWithin4YearsLatinxPercent.doubleValue());
+			document.addField("graduateWithin4YearsLatinxPercent_stored_double", graduateWithin4YearsLatinxPercent.doubleValue());
 		}
 		if(graduateWithin4YearsMultiRacialPercent != null) {
 			document.addField("graduateWithin4YearsMultiRacialPercent_indexed_double", graduateWithin4YearsMultiRacialPercent.doubleValue());
@@ -19508,6 +19657,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(agencyName != null) {
 			document.addField("agencyName_indexed_string", agencyName);
 			document.addField("agencyName_stored_string", agencyName);
+		}
+		if(agencyCoords != null) {
+			document.addField("agencyCoords_stored_string", agencyCoords);
+		}
+		if(agencyLeft != null) {
+			document.addField("agencyLeft_stored_int", agencyLeft);
 		}
 		if(reportCardCompleteName != null) {
 			document.addField("reportCardCompleteName_indexed_string", reportCardCompleteName);
@@ -19581,14 +19736,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return "agencyKey_indexed_long";
 			case "pupilsTotal":
 				return "pupilsTotal_indexed_long";
-			case "pupilsIndianFemale":
-				return "pupilsIndianFemale_indexed_long";
-			case "pupilsIndianMale":
-				return "pupilsIndianMale_indexed_long";
-			case "pupilsIndianTotal":
-				return "pupilsIndianTotal_indexed_long";
-			case "pupilsIndianPercent":
-				return "pupilsIndianPercent_indexed_double";
+			case "pupilsIndigenousFemale":
+				return "pupilsIndigenousFemale_indexed_long";
+			case "pupilsIndigenousMale":
+				return "pupilsIndigenousMale_indexed_long";
+			case "pupilsIndigenousTotal":
+				return "pupilsIndigenousTotal_indexed_long";
+			case "pupilsIndigenousPercent":
+				return "pupilsIndigenousPercent_indexed_double";
 			case "pupilsAsianFemale":
 				return "pupilsAsianFemale_indexed_long";
 			case "pupilsAsianMale":
@@ -19597,14 +19752,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return "pupilsAsianTotal_indexed_long";
 			case "pupilsAsianPercent":
 				return "pupilsAsianPercent_indexed_double";
-			case "pupilsHispanicFemale":
-				return "pupilsHispanicFemale_indexed_long";
-			case "pupilsHispanicMale":
-				return "pupilsHispanicMale_indexed_long";
-			case "pupilsHispanicTotal":
-				return "pupilsHispanicTotal_indexed_long";
-			case "pupilsHispanicPercent":
-				return "pupilsHispanicPercent_indexed_double";
+			case "pupilsLatinxFemale":
+				return "pupilsLatinxFemale_indexed_long";
+			case "pupilsLatinxMale":
+				return "pupilsLatinxMale_indexed_long";
+			case "pupilsLatinxTotal":
+				return "pupilsLatinxTotal_indexed_long";
+			case "pupilsLatinxPercent":
+				return "pupilsLatinxPercent_indexed_double";
 			case "pupilsBlackFemale":
 				return "pupilsBlackFemale_indexed_long";
 			case "pupilsBlackMale":
@@ -19671,18 +19826,18 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return "delinquentComplaintsBlack_indexed_long";
 			case "delinquentComplaintsBlackPercent":
 				return "delinquentComplaintsBlackPercent_indexed_double";
-			case "delinquentComplaintsHispanic":
-				return "delinquentComplaintsHispanic_indexed_long";
-			case "delinquentComplaintsHispanicPercent":
-				return "delinquentComplaintsHispanicPercent_indexed_double";
+			case "delinquentComplaintsLatinx":
+				return "delinquentComplaintsLatinx_indexed_long";
+			case "delinquentComplaintsLatinxPercent":
+				return "delinquentComplaintsLatinxPercent_indexed_double";
 			case "delinquentComplaintsMultiRacial":
 				return "delinquentComplaintsMultiRacial_indexed_long";
 			case "delinquentComplaintsMultiRacialPercent":
 				return "delinquentComplaintsMultiRacialPercent_indexed_double";
-			case "delinquentComplaintsIndian":
-				return "delinquentComplaintsIndian_indexed_long";
-			case "delinquentComplaintsIndianPercent":
-				return "delinquentComplaintsIndianPercent_indexed_double";
+			case "delinquentComplaintsIndigenous":
+				return "delinquentComplaintsIndigenous_indexed_long";
+			case "delinquentComplaintsIndigenousPercent":
+				return "delinquentComplaintsIndigenousPercent_indexed_double";
 			case "delinquentComplaintsWhite":
 				return "delinquentComplaintsWhite_indexed_long";
 			case "delinquentComplaintsWhitePercent":
@@ -19719,26 +19874,26 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return "shortTermSuspensionsBlackPercent_indexed_double";
 			case "shortTermSuspensionsBlackRate":
 				return "shortTermSuspensionsBlackRate_indexed_double";
-			case "shortTermSuspensionsHispanicFemale":
-				return "shortTermSuspensionsHispanicFemale_indexed_long";
-			case "shortTermSuspensionsHispanicMale":
-				return "shortTermSuspensionsHispanicMale_indexed_long";
-			case "shortTermSuspensionsHispanicTotal":
-				return "shortTermSuspensionsHispanicTotal_indexed_long";
-			case "shortTermSuspensionsHispanicPercent":
-				return "shortTermSuspensionsHispanicPercent_indexed_double";
-			case "shortTermSuspensionsHispanicRate":
-				return "shortTermSuspensionsHispanicRate_indexed_double";
-			case "shortTermSuspensionsIndianFemale":
-				return "shortTermSuspensionsIndianFemale_indexed_long";
-			case "shortTermSuspensionsIndianMale":
-				return "shortTermSuspensionsIndianMale_indexed_long";
-			case "shortTermSuspensionsIndianTotal":
-				return "shortTermSuspensionsIndianTotal_indexed_long";
-			case "shortTermSuspensionsIndianPercent":
-				return "shortTermSuspensionsIndianPercent_indexed_double";
-			case "shortTermSuspensionsIndianRate":
-				return "shortTermSuspensionsIndianRate_indexed_double";
+			case "shortTermSuspensionsLatinxFemale":
+				return "shortTermSuspensionsLatinxFemale_indexed_long";
+			case "shortTermSuspensionsLatinxMale":
+				return "shortTermSuspensionsLatinxMale_indexed_long";
+			case "shortTermSuspensionsLatinxTotal":
+				return "shortTermSuspensionsLatinxTotal_indexed_long";
+			case "shortTermSuspensionsLatinxPercent":
+				return "shortTermSuspensionsLatinxPercent_indexed_double";
+			case "shortTermSuspensionsLatinxRate":
+				return "shortTermSuspensionsLatinxRate_indexed_double";
+			case "shortTermSuspensionsIndigenousFemale":
+				return "shortTermSuspensionsIndigenousFemale_indexed_long";
+			case "shortTermSuspensionsIndigenousMale":
+				return "shortTermSuspensionsIndigenousMale_indexed_long";
+			case "shortTermSuspensionsIndigenousTotal":
+				return "shortTermSuspensionsIndigenousTotal_indexed_long";
+			case "shortTermSuspensionsIndigenousPercent":
+				return "shortTermSuspensionsIndigenousPercent_indexed_double";
+			case "shortTermSuspensionsIndigenousRate":
+				return "shortTermSuspensionsIndigenousRate_indexed_double";
 			case "shortTermSuspensionsMultiRacialFemale":
 				return "shortTermSuspensionsMultiRacialFemale_indexed_long";
 			case "shortTermSuspensionsMultiRacialMale":
@@ -19775,14 +19930,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return "shortTermSuspensionsBlackVsWhite_indexed_double";
 			case "examsCollegeReadyGrades38OverallPercent":
 				return "examsCollegeReadyGrades38OverallPercent_indexed_double";
-			case "examsCollegeReadyGrades38IndianPercent":
-				return "examsCollegeReadyGrades38IndianPercent_indexed_double";
+			case "examsCollegeReadyGrades38IndigenousPercent":
+				return "examsCollegeReadyGrades38IndigenousPercent_indexed_double";
 			case "examsCollegeReadyGrades38AsianPercent":
 				return "examsCollegeReadyGrades38AsianPercent_indexed_double";
 			case "examsCollegeReadyGrades38BlackPercent":
 				return "examsCollegeReadyGrades38BlackPercent_indexed_double";
-			case "examsCollegeReadyGrades38HispanicPercent":
-				return "examsCollegeReadyGrades38HispanicPercent_indexed_double";
+			case "examsCollegeReadyGrades38LatinxPercent":
+				return "examsCollegeReadyGrades38LatinxPercent_indexed_double";
 			case "examsCollegeReadyGrades38MultiRacialPercent":
 				return "examsCollegeReadyGrades38MultiRacialPercent_indexed_double";
 			case "examsCollegeReadyGrades38PacificIslanderPercent":
@@ -19791,14 +19946,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return "examsCollegeReadyGrades38WhitePercent_indexed_double";
 			case "examsCollegeReadyGrades912OverallPercent":
 				return "examsCollegeReadyGrades912OverallPercent_indexed_double";
-			case "examsCollegeReadyGrades912IndianPercent":
-				return "examsCollegeReadyGrades912IndianPercent_indexed_double";
+			case "examsCollegeReadyGrades912IndigenousPercent":
+				return "examsCollegeReadyGrades912IndigenousPercent_indexed_double";
 			case "examsCollegeReadyGrades912AsianPercent":
 				return "examsCollegeReadyGrades912AsianPercent_indexed_double";
 			case "examsCollegeReadyGrades912BlackPercent":
 				return "examsCollegeReadyGrades912BlackPercent_indexed_double";
-			case "examsCollegeReadyGrades912HispanicPercent":
-				return "examsCollegeReadyGrades912HispanicPercent_indexed_double";
+			case "examsCollegeReadyGrades912LatinxPercent":
+				return "examsCollegeReadyGrades912LatinxPercent_indexed_double";
 			case "examsCollegeReadyGrades912MultiRacialPercent":
 				return "examsCollegeReadyGrades912MultiRacialPercent_indexed_double";
 			case "examsCollegeReadyGrades912PacificIslanderPercent":
@@ -19807,14 +19962,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return "examsCollegeReadyGrades912WhitePercent_indexed_double";
 			case "graduateWithin4YearsOverallPercent":
 				return "graduateWithin4YearsOverallPercent_indexed_double";
-			case "graduateWithin4YearsIndianPercent":
-				return "graduateWithin4YearsIndianPercent_indexed_double";
+			case "graduateWithin4YearsIndigenousPercent":
+				return "graduateWithin4YearsIndigenousPercent_indexed_double";
 			case "graduateWithin4YearsAsianPercent":
 				return "graduateWithin4YearsAsianPercent_indexed_double";
 			case "graduateWithin4YearsBlackPercent":
 				return "graduateWithin4YearsBlackPercent_indexed_double";
-			case "graduateWithin4YearsHispanicPercent":
-				return "graduateWithin4YearsHispanicPercent_indexed_double";
+			case "graduateWithin4YearsLatinxPercent":
+				return "graduateWithin4YearsLatinxPercent_indexed_double";
 			case "graduateWithin4YearsMultiRacialPercent":
 				return "graduateWithin4YearsMultiRacialPercent_indexed_double";
 			case "graduateWithin4YearsPacificIslanderPercent":
@@ -19890,21 +20045,21 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(pupilsTotal != null)
 			oReportCard.setPupilsTotal(pupilsTotal);
 
-		Long pupilsIndianFemale = (Long)solrDocument.get("pupilsIndianFemale_stored_long");
-		if(pupilsIndianFemale != null)
-			oReportCard.setPupilsIndianFemale(pupilsIndianFemale);
+		Long pupilsIndigenousFemale = (Long)solrDocument.get("pupilsIndigenousFemale_stored_long");
+		if(pupilsIndigenousFemale != null)
+			oReportCard.setPupilsIndigenousFemale(pupilsIndigenousFemale);
 
-		Long pupilsIndianMale = (Long)solrDocument.get("pupilsIndianMale_stored_long");
-		if(pupilsIndianMale != null)
-			oReportCard.setPupilsIndianMale(pupilsIndianMale);
+		Long pupilsIndigenousMale = (Long)solrDocument.get("pupilsIndigenousMale_stored_long");
+		if(pupilsIndigenousMale != null)
+			oReportCard.setPupilsIndigenousMale(pupilsIndigenousMale);
 
-		Long pupilsIndianTotal = (Long)solrDocument.get("pupilsIndianTotal_stored_long");
-		if(pupilsIndianTotal != null)
-			oReportCard.setPupilsIndianTotal(pupilsIndianTotal);
+		Long pupilsIndigenousTotal = (Long)solrDocument.get("pupilsIndigenousTotal_stored_long");
+		if(pupilsIndigenousTotal != null)
+			oReportCard.setPupilsIndigenousTotal(pupilsIndigenousTotal);
 
-		Double pupilsIndianPercent = (Double)solrDocument.get("pupilsIndianPercent_stored_double");
-		if(pupilsIndianPercent != null)
-			oReportCard.setPupilsIndianPercent(pupilsIndianPercent);
+		Double pupilsIndigenousPercent = (Double)solrDocument.get("pupilsIndigenousPercent_stored_double");
+		if(pupilsIndigenousPercent != null)
+			oReportCard.setPupilsIndigenousPercent(pupilsIndigenousPercent);
 
 		Long pupilsAsianFemale = (Long)solrDocument.get("pupilsAsianFemale_stored_long");
 		if(pupilsAsianFemale != null)
@@ -19922,21 +20077,21 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(pupilsAsianPercent != null)
 			oReportCard.setPupilsAsianPercent(pupilsAsianPercent);
 
-		Long pupilsHispanicFemale = (Long)solrDocument.get("pupilsHispanicFemale_stored_long");
-		if(pupilsHispanicFemale != null)
-			oReportCard.setPupilsHispanicFemale(pupilsHispanicFemale);
+		Long pupilsLatinxFemale = (Long)solrDocument.get("pupilsLatinxFemale_stored_long");
+		if(pupilsLatinxFemale != null)
+			oReportCard.setPupilsLatinxFemale(pupilsLatinxFemale);
 
-		Long pupilsHispanicMale = (Long)solrDocument.get("pupilsHispanicMale_stored_long");
-		if(pupilsHispanicMale != null)
-			oReportCard.setPupilsHispanicMale(pupilsHispanicMale);
+		Long pupilsLatinxMale = (Long)solrDocument.get("pupilsLatinxMale_stored_long");
+		if(pupilsLatinxMale != null)
+			oReportCard.setPupilsLatinxMale(pupilsLatinxMale);
 
-		Long pupilsHispanicTotal = (Long)solrDocument.get("pupilsHispanicTotal_stored_long");
-		if(pupilsHispanicTotal != null)
-			oReportCard.setPupilsHispanicTotal(pupilsHispanicTotal);
+		Long pupilsLatinxTotal = (Long)solrDocument.get("pupilsLatinxTotal_stored_long");
+		if(pupilsLatinxTotal != null)
+			oReportCard.setPupilsLatinxTotal(pupilsLatinxTotal);
 
-		Double pupilsHispanicPercent = (Double)solrDocument.get("pupilsHispanicPercent_stored_double");
-		if(pupilsHispanicPercent != null)
-			oReportCard.setPupilsHispanicPercent(pupilsHispanicPercent);
+		Double pupilsLatinxPercent = (Double)solrDocument.get("pupilsLatinxPercent_stored_double");
+		if(pupilsLatinxPercent != null)
+			oReportCard.setPupilsLatinxPercent(pupilsLatinxPercent);
 
 		Long pupilsBlackFemale = (Long)solrDocument.get("pupilsBlackFemale_stored_long");
 		if(pupilsBlackFemale != null)
@@ -20070,13 +20225,13 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(delinquentComplaintsBlackPercent != null)
 			oReportCard.setDelinquentComplaintsBlackPercent(delinquentComplaintsBlackPercent);
 
-		Long delinquentComplaintsHispanic = (Long)solrDocument.get("delinquentComplaintsHispanic_stored_long");
-		if(delinquentComplaintsHispanic != null)
-			oReportCard.setDelinquentComplaintsHispanic(delinquentComplaintsHispanic);
+		Long delinquentComplaintsLatinx = (Long)solrDocument.get("delinquentComplaintsLatinx_stored_long");
+		if(delinquentComplaintsLatinx != null)
+			oReportCard.setDelinquentComplaintsLatinx(delinquentComplaintsLatinx);
 
-		Double delinquentComplaintsHispanicPercent = (Double)solrDocument.get("delinquentComplaintsHispanicPercent_stored_double");
-		if(delinquentComplaintsHispanicPercent != null)
-			oReportCard.setDelinquentComplaintsHispanicPercent(delinquentComplaintsHispanicPercent);
+		Double delinquentComplaintsLatinxPercent = (Double)solrDocument.get("delinquentComplaintsLatinxPercent_stored_double");
+		if(delinquentComplaintsLatinxPercent != null)
+			oReportCard.setDelinquentComplaintsLatinxPercent(delinquentComplaintsLatinxPercent);
 
 		Long delinquentComplaintsMultiRacial = (Long)solrDocument.get("delinquentComplaintsMultiRacial_stored_long");
 		if(delinquentComplaintsMultiRacial != null)
@@ -20086,13 +20241,13 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(delinquentComplaintsMultiRacialPercent != null)
 			oReportCard.setDelinquentComplaintsMultiRacialPercent(delinquentComplaintsMultiRacialPercent);
 
-		Long delinquentComplaintsIndian = (Long)solrDocument.get("delinquentComplaintsIndian_stored_long");
-		if(delinquentComplaintsIndian != null)
-			oReportCard.setDelinquentComplaintsIndian(delinquentComplaintsIndian);
+		Long delinquentComplaintsIndigenous = (Long)solrDocument.get("delinquentComplaintsIndigenous_stored_long");
+		if(delinquentComplaintsIndigenous != null)
+			oReportCard.setDelinquentComplaintsIndigenous(delinquentComplaintsIndigenous);
 
-		Double delinquentComplaintsIndianPercent = (Double)solrDocument.get("delinquentComplaintsIndianPercent_stored_double");
-		if(delinquentComplaintsIndianPercent != null)
-			oReportCard.setDelinquentComplaintsIndianPercent(delinquentComplaintsIndianPercent);
+		Double delinquentComplaintsIndigenousPercent = (Double)solrDocument.get("delinquentComplaintsIndigenousPercent_stored_double");
+		if(delinquentComplaintsIndigenousPercent != null)
+			oReportCard.setDelinquentComplaintsIndigenousPercent(delinquentComplaintsIndigenousPercent);
 
 		Long delinquentComplaintsWhite = (Long)solrDocument.get("delinquentComplaintsWhite_stored_long");
 		if(delinquentComplaintsWhite != null)
@@ -20166,45 +20321,45 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(shortTermSuspensionsBlackRate != null)
 			oReportCard.setShortTermSuspensionsBlackRate(shortTermSuspensionsBlackRate);
 
-		Long shortTermSuspensionsHispanicFemale = (Long)solrDocument.get("shortTermSuspensionsHispanicFemale_stored_long");
-		if(shortTermSuspensionsHispanicFemale != null)
-			oReportCard.setShortTermSuspensionsHispanicFemale(shortTermSuspensionsHispanicFemale);
+		Long shortTermSuspensionsLatinxFemale = (Long)solrDocument.get("shortTermSuspensionsLatinxFemale_stored_long");
+		if(shortTermSuspensionsLatinxFemale != null)
+			oReportCard.setShortTermSuspensionsLatinxFemale(shortTermSuspensionsLatinxFemale);
 
-		Long shortTermSuspensionsHispanicMale = (Long)solrDocument.get("shortTermSuspensionsHispanicMale_stored_long");
-		if(shortTermSuspensionsHispanicMale != null)
-			oReportCard.setShortTermSuspensionsHispanicMale(shortTermSuspensionsHispanicMale);
+		Long shortTermSuspensionsLatinxMale = (Long)solrDocument.get("shortTermSuspensionsLatinxMale_stored_long");
+		if(shortTermSuspensionsLatinxMale != null)
+			oReportCard.setShortTermSuspensionsLatinxMale(shortTermSuspensionsLatinxMale);
 
-		Long shortTermSuspensionsHispanicTotal = (Long)solrDocument.get("shortTermSuspensionsHispanicTotal_stored_long");
-		if(shortTermSuspensionsHispanicTotal != null)
-			oReportCard.setShortTermSuspensionsHispanicTotal(shortTermSuspensionsHispanicTotal);
+		Long shortTermSuspensionsLatinxTotal = (Long)solrDocument.get("shortTermSuspensionsLatinxTotal_stored_long");
+		if(shortTermSuspensionsLatinxTotal != null)
+			oReportCard.setShortTermSuspensionsLatinxTotal(shortTermSuspensionsLatinxTotal);
 
-		Double shortTermSuspensionsHispanicPercent = (Double)solrDocument.get("shortTermSuspensionsHispanicPercent_stored_double");
-		if(shortTermSuspensionsHispanicPercent != null)
-			oReportCard.setShortTermSuspensionsHispanicPercent(shortTermSuspensionsHispanicPercent);
+		Double shortTermSuspensionsLatinxPercent = (Double)solrDocument.get("shortTermSuspensionsLatinxPercent_stored_double");
+		if(shortTermSuspensionsLatinxPercent != null)
+			oReportCard.setShortTermSuspensionsLatinxPercent(shortTermSuspensionsLatinxPercent);
 
-		Double shortTermSuspensionsHispanicRate = (Double)solrDocument.get("shortTermSuspensionsHispanicRate_stored_double");
-		if(shortTermSuspensionsHispanicRate != null)
-			oReportCard.setShortTermSuspensionsHispanicRate(shortTermSuspensionsHispanicRate);
+		Double shortTermSuspensionsLatinxRate = (Double)solrDocument.get("shortTermSuspensionsLatinxRate_stored_double");
+		if(shortTermSuspensionsLatinxRate != null)
+			oReportCard.setShortTermSuspensionsLatinxRate(shortTermSuspensionsLatinxRate);
 
-		Long shortTermSuspensionsIndianFemale = (Long)solrDocument.get("shortTermSuspensionsIndianFemale_stored_long");
-		if(shortTermSuspensionsIndianFemale != null)
-			oReportCard.setShortTermSuspensionsIndianFemale(shortTermSuspensionsIndianFemale);
+		Long shortTermSuspensionsIndigenousFemale = (Long)solrDocument.get("shortTermSuspensionsIndigenousFemale_stored_long");
+		if(shortTermSuspensionsIndigenousFemale != null)
+			oReportCard.setShortTermSuspensionsIndigenousFemale(shortTermSuspensionsIndigenousFemale);
 
-		Long shortTermSuspensionsIndianMale = (Long)solrDocument.get("shortTermSuspensionsIndianMale_stored_long");
-		if(shortTermSuspensionsIndianMale != null)
-			oReportCard.setShortTermSuspensionsIndianMale(shortTermSuspensionsIndianMale);
+		Long shortTermSuspensionsIndigenousMale = (Long)solrDocument.get("shortTermSuspensionsIndigenousMale_stored_long");
+		if(shortTermSuspensionsIndigenousMale != null)
+			oReportCard.setShortTermSuspensionsIndigenousMale(shortTermSuspensionsIndigenousMale);
 
-		Long shortTermSuspensionsIndianTotal = (Long)solrDocument.get("shortTermSuspensionsIndianTotal_stored_long");
-		if(shortTermSuspensionsIndianTotal != null)
-			oReportCard.setShortTermSuspensionsIndianTotal(shortTermSuspensionsIndianTotal);
+		Long shortTermSuspensionsIndigenousTotal = (Long)solrDocument.get("shortTermSuspensionsIndigenousTotal_stored_long");
+		if(shortTermSuspensionsIndigenousTotal != null)
+			oReportCard.setShortTermSuspensionsIndigenousTotal(shortTermSuspensionsIndigenousTotal);
 
-		Double shortTermSuspensionsIndianPercent = (Double)solrDocument.get("shortTermSuspensionsIndianPercent_stored_double");
-		if(shortTermSuspensionsIndianPercent != null)
-			oReportCard.setShortTermSuspensionsIndianPercent(shortTermSuspensionsIndianPercent);
+		Double shortTermSuspensionsIndigenousPercent = (Double)solrDocument.get("shortTermSuspensionsIndigenousPercent_stored_double");
+		if(shortTermSuspensionsIndigenousPercent != null)
+			oReportCard.setShortTermSuspensionsIndigenousPercent(shortTermSuspensionsIndigenousPercent);
 
-		Double shortTermSuspensionsIndianRate = (Double)solrDocument.get("shortTermSuspensionsIndianRate_stored_double");
-		if(shortTermSuspensionsIndianRate != null)
-			oReportCard.setShortTermSuspensionsIndianRate(shortTermSuspensionsIndianRate);
+		Double shortTermSuspensionsIndigenousRate = (Double)solrDocument.get("shortTermSuspensionsIndigenousRate_stored_double");
+		if(shortTermSuspensionsIndigenousRate != null)
+			oReportCard.setShortTermSuspensionsIndigenousRate(shortTermSuspensionsIndigenousRate);
 
 		Long shortTermSuspensionsMultiRacialFemale = (Long)solrDocument.get("shortTermSuspensionsMultiRacialFemale_stored_long");
 		if(shortTermSuspensionsMultiRacialFemale != null)
@@ -20278,9 +20433,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(examsCollegeReadyGrades38OverallPercent != null)
 			oReportCard.setExamsCollegeReadyGrades38OverallPercent(examsCollegeReadyGrades38OverallPercent);
 
-		Double examsCollegeReadyGrades38IndianPercent = (Double)solrDocument.get("examsCollegeReadyGrades38IndianPercent_stored_double");
-		if(examsCollegeReadyGrades38IndianPercent != null)
-			oReportCard.setExamsCollegeReadyGrades38IndianPercent(examsCollegeReadyGrades38IndianPercent);
+		Double examsCollegeReadyGrades38IndigenousPercent = (Double)solrDocument.get("examsCollegeReadyGrades38IndigenousPercent_stored_double");
+		if(examsCollegeReadyGrades38IndigenousPercent != null)
+			oReportCard.setExamsCollegeReadyGrades38IndigenousPercent(examsCollegeReadyGrades38IndigenousPercent);
 
 		Double examsCollegeReadyGrades38AsianPercent = (Double)solrDocument.get("examsCollegeReadyGrades38AsianPercent_stored_double");
 		if(examsCollegeReadyGrades38AsianPercent != null)
@@ -20290,9 +20445,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(examsCollegeReadyGrades38BlackPercent != null)
 			oReportCard.setExamsCollegeReadyGrades38BlackPercent(examsCollegeReadyGrades38BlackPercent);
 
-		Double examsCollegeReadyGrades38HispanicPercent = (Double)solrDocument.get("examsCollegeReadyGrades38HispanicPercent_stored_double");
-		if(examsCollegeReadyGrades38HispanicPercent != null)
-			oReportCard.setExamsCollegeReadyGrades38HispanicPercent(examsCollegeReadyGrades38HispanicPercent);
+		Double examsCollegeReadyGrades38LatinxPercent = (Double)solrDocument.get("examsCollegeReadyGrades38LatinxPercent_stored_double");
+		if(examsCollegeReadyGrades38LatinxPercent != null)
+			oReportCard.setExamsCollegeReadyGrades38LatinxPercent(examsCollegeReadyGrades38LatinxPercent);
 
 		Double examsCollegeReadyGrades38MultiRacialPercent = (Double)solrDocument.get("examsCollegeReadyGrades38MultiRacialPercent_stored_double");
 		if(examsCollegeReadyGrades38MultiRacialPercent != null)
@@ -20310,9 +20465,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(examsCollegeReadyGrades912OverallPercent != null)
 			oReportCard.setExamsCollegeReadyGrades912OverallPercent(examsCollegeReadyGrades912OverallPercent);
 
-		Double examsCollegeReadyGrades912IndianPercent = (Double)solrDocument.get("examsCollegeReadyGrades912IndianPercent_stored_double");
-		if(examsCollegeReadyGrades912IndianPercent != null)
-			oReportCard.setExamsCollegeReadyGrades912IndianPercent(examsCollegeReadyGrades912IndianPercent);
+		Double examsCollegeReadyGrades912IndigenousPercent = (Double)solrDocument.get("examsCollegeReadyGrades912IndigenousPercent_stored_double");
+		if(examsCollegeReadyGrades912IndigenousPercent != null)
+			oReportCard.setExamsCollegeReadyGrades912IndigenousPercent(examsCollegeReadyGrades912IndigenousPercent);
 
 		Double examsCollegeReadyGrades912AsianPercent = (Double)solrDocument.get("examsCollegeReadyGrades912AsianPercent_stored_double");
 		if(examsCollegeReadyGrades912AsianPercent != null)
@@ -20322,9 +20477,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(examsCollegeReadyGrades912BlackPercent != null)
 			oReportCard.setExamsCollegeReadyGrades912BlackPercent(examsCollegeReadyGrades912BlackPercent);
 
-		Double examsCollegeReadyGrades912HispanicPercent = (Double)solrDocument.get("examsCollegeReadyGrades912HispanicPercent_stored_double");
-		if(examsCollegeReadyGrades912HispanicPercent != null)
-			oReportCard.setExamsCollegeReadyGrades912HispanicPercent(examsCollegeReadyGrades912HispanicPercent);
+		Double examsCollegeReadyGrades912LatinxPercent = (Double)solrDocument.get("examsCollegeReadyGrades912LatinxPercent_stored_double");
+		if(examsCollegeReadyGrades912LatinxPercent != null)
+			oReportCard.setExamsCollegeReadyGrades912LatinxPercent(examsCollegeReadyGrades912LatinxPercent);
 
 		Double examsCollegeReadyGrades912MultiRacialPercent = (Double)solrDocument.get("examsCollegeReadyGrades912MultiRacialPercent_stored_double");
 		if(examsCollegeReadyGrades912MultiRacialPercent != null)
@@ -20342,9 +20497,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(graduateWithin4YearsOverallPercent != null)
 			oReportCard.setGraduateWithin4YearsOverallPercent(graduateWithin4YearsOverallPercent);
 
-		Double graduateWithin4YearsIndianPercent = (Double)solrDocument.get("graduateWithin4YearsIndianPercent_stored_double");
-		if(graduateWithin4YearsIndianPercent != null)
-			oReportCard.setGraduateWithin4YearsIndianPercent(graduateWithin4YearsIndianPercent);
+		Double graduateWithin4YearsIndigenousPercent = (Double)solrDocument.get("graduateWithin4YearsIndigenousPercent_stored_double");
+		if(graduateWithin4YearsIndigenousPercent != null)
+			oReportCard.setGraduateWithin4YearsIndigenousPercent(graduateWithin4YearsIndigenousPercent);
 
 		Double graduateWithin4YearsAsianPercent = (Double)solrDocument.get("graduateWithin4YearsAsianPercent_stored_double");
 		if(graduateWithin4YearsAsianPercent != null)
@@ -20354,9 +20509,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(graduateWithin4YearsBlackPercent != null)
 			oReportCard.setGraduateWithin4YearsBlackPercent(graduateWithin4YearsBlackPercent);
 
-		Double graduateWithin4YearsHispanicPercent = (Double)solrDocument.get("graduateWithin4YearsHispanicPercent_stored_double");
-		if(graduateWithin4YearsHispanicPercent != null)
-			oReportCard.setGraduateWithin4YearsHispanicPercent(graduateWithin4YearsHispanicPercent);
+		Double graduateWithin4YearsLatinxPercent = (Double)solrDocument.get("graduateWithin4YearsLatinxPercent_stored_double");
+		if(graduateWithin4YearsLatinxPercent != null)
+			oReportCard.setGraduateWithin4YearsLatinxPercent(graduateWithin4YearsLatinxPercent);
 
 		Double graduateWithin4YearsMultiRacialPercent = (Double)solrDocument.get("graduateWithin4YearsMultiRacialPercent_stored_double");
 		if(graduateWithin4YearsMultiRacialPercent != null)
@@ -20397,6 +20552,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		String agencyName = (String)solrDocument.get("agencyName_stored_string");
 		if(agencyName != null)
 			oReportCard.setAgencyName(agencyName);
+
+		String agencyCoords = (String)solrDocument.get("agencyCoords_stored_string");
+		if(agencyCoords != null)
+			oReportCard.setAgencyCoords(agencyCoords);
+
+		Integer agencyLeft = (Integer)solrDocument.get("agencyLeft_stored_int");
+		if(agencyLeft != null)
+			oReportCard.setAgencyLeft(agencyLeft);
 
 		String reportCardCompleteName = (String)solrDocument.get("reportCardCompleteName_stored_string");
 		if(reportCardCompleteName != null)
@@ -20470,14 +20633,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("agencyKey");
 			if(!Objects.equals(pupilsTotal, original.getPupilsTotal()))
 				apiRequest.addVars("pupilsTotal");
-			if(!Objects.equals(pupilsIndianFemale, original.getPupilsIndianFemale()))
-				apiRequest.addVars("pupilsIndianFemale");
-			if(!Objects.equals(pupilsIndianMale, original.getPupilsIndianMale()))
-				apiRequest.addVars("pupilsIndianMale");
-			if(!Objects.equals(pupilsIndianTotal, original.getPupilsIndianTotal()))
-				apiRequest.addVars("pupilsIndianTotal");
-			if(!Objects.equals(pupilsIndianPercent, original.getPupilsIndianPercent()))
-				apiRequest.addVars("pupilsIndianPercent");
+			if(!Objects.equals(pupilsIndigenousFemale, original.getPupilsIndigenousFemale()))
+				apiRequest.addVars("pupilsIndigenousFemale");
+			if(!Objects.equals(pupilsIndigenousMale, original.getPupilsIndigenousMale()))
+				apiRequest.addVars("pupilsIndigenousMale");
+			if(!Objects.equals(pupilsIndigenousTotal, original.getPupilsIndigenousTotal()))
+				apiRequest.addVars("pupilsIndigenousTotal");
+			if(!Objects.equals(pupilsIndigenousPercent, original.getPupilsIndigenousPercent()))
+				apiRequest.addVars("pupilsIndigenousPercent");
 			if(!Objects.equals(pupilsAsianFemale, original.getPupilsAsianFemale()))
 				apiRequest.addVars("pupilsAsianFemale");
 			if(!Objects.equals(pupilsAsianMale, original.getPupilsAsianMale()))
@@ -20486,14 +20649,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("pupilsAsianTotal");
 			if(!Objects.equals(pupilsAsianPercent, original.getPupilsAsianPercent()))
 				apiRequest.addVars("pupilsAsianPercent");
-			if(!Objects.equals(pupilsHispanicFemale, original.getPupilsHispanicFemale()))
-				apiRequest.addVars("pupilsHispanicFemale");
-			if(!Objects.equals(pupilsHispanicMale, original.getPupilsHispanicMale()))
-				apiRequest.addVars("pupilsHispanicMale");
-			if(!Objects.equals(pupilsHispanicTotal, original.getPupilsHispanicTotal()))
-				apiRequest.addVars("pupilsHispanicTotal");
-			if(!Objects.equals(pupilsHispanicPercent, original.getPupilsHispanicPercent()))
-				apiRequest.addVars("pupilsHispanicPercent");
+			if(!Objects.equals(pupilsLatinxFemale, original.getPupilsLatinxFemale()))
+				apiRequest.addVars("pupilsLatinxFemale");
+			if(!Objects.equals(pupilsLatinxMale, original.getPupilsLatinxMale()))
+				apiRequest.addVars("pupilsLatinxMale");
+			if(!Objects.equals(pupilsLatinxTotal, original.getPupilsLatinxTotal()))
+				apiRequest.addVars("pupilsLatinxTotal");
+			if(!Objects.equals(pupilsLatinxPercent, original.getPupilsLatinxPercent()))
+				apiRequest.addVars("pupilsLatinxPercent");
 			if(!Objects.equals(pupilsBlackFemale, original.getPupilsBlackFemale()))
 				apiRequest.addVars("pupilsBlackFemale");
 			if(!Objects.equals(pupilsBlackMale, original.getPupilsBlackMale()))
@@ -20560,18 +20723,18 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("delinquentComplaintsBlack");
 			if(!Objects.equals(delinquentComplaintsBlackPercent, original.getDelinquentComplaintsBlackPercent()))
 				apiRequest.addVars("delinquentComplaintsBlackPercent");
-			if(!Objects.equals(delinquentComplaintsHispanic, original.getDelinquentComplaintsHispanic()))
-				apiRequest.addVars("delinquentComplaintsHispanic");
-			if(!Objects.equals(delinquentComplaintsHispanicPercent, original.getDelinquentComplaintsHispanicPercent()))
-				apiRequest.addVars("delinquentComplaintsHispanicPercent");
+			if(!Objects.equals(delinquentComplaintsLatinx, original.getDelinquentComplaintsLatinx()))
+				apiRequest.addVars("delinquentComplaintsLatinx");
+			if(!Objects.equals(delinquentComplaintsLatinxPercent, original.getDelinquentComplaintsLatinxPercent()))
+				apiRequest.addVars("delinquentComplaintsLatinxPercent");
 			if(!Objects.equals(delinquentComplaintsMultiRacial, original.getDelinquentComplaintsMultiRacial()))
 				apiRequest.addVars("delinquentComplaintsMultiRacial");
 			if(!Objects.equals(delinquentComplaintsMultiRacialPercent, original.getDelinquentComplaintsMultiRacialPercent()))
 				apiRequest.addVars("delinquentComplaintsMultiRacialPercent");
-			if(!Objects.equals(delinquentComplaintsIndian, original.getDelinquentComplaintsIndian()))
-				apiRequest.addVars("delinquentComplaintsIndian");
-			if(!Objects.equals(delinquentComplaintsIndianPercent, original.getDelinquentComplaintsIndianPercent()))
-				apiRequest.addVars("delinquentComplaintsIndianPercent");
+			if(!Objects.equals(delinquentComplaintsIndigenous, original.getDelinquentComplaintsIndigenous()))
+				apiRequest.addVars("delinquentComplaintsIndigenous");
+			if(!Objects.equals(delinquentComplaintsIndigenousPercent, original.getDelinquentComplaintsIndigenousPercent()))
+				apiRequest.addVars("delinquentComplaintsIndigenousPercent");
 			if(!Objects.equals(delinquentComplaintsWhite, original.getDelinquentComplaintsWhite()))
 				apiRequest.addVars("delinquentComplaintsWhite");
 			if(!Objects.equals(delinquentComplaintsWhitePercent, original.getDelinquentComplaintsWhitePercent()))
@@ -20608,26 +20771,26 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("shortTermSuspensionsBlackPercent");
 			if(!Objects.equals(shortTermSuspensionsBlackRate, original.getShortTermSuspensionsBlackRate()))
 				apiRequest.addVars("shortTermSuspensionsBlackRate");
-			if(!Objects.equals(shortTermSuspensionsHispanicFemale, original.getShortTermSuspensionsHispanicFemale()))
-				apiRequest.addVars("shortTermSuspensionsHispanicFemale");
-			if(!Objects.equals(shortTermSuspensionsHispanicMale, original.getShortTermSuspensionsHispanicMale()))
-				apiRequest.addVars("shortTermSuspensionsHispanicMale");
-			if(!Objects.equals(shortTermSuspensionsHispanicTotal, original.getShortTermSuspensionsHispanicTotal()))
-				apiRequest.addVars("shortTermSuspensionsHispanicTotal");
-			if(!Objects.equals(shortTermSuspensionsHispanicPercent, original.getShortTermSuspensionsHispanicPercent()))
-				apiRequest.addVars("shortTermSuspensionsHispanicPercent");
-			if(!Objects.equals(shortTermSuspensionsHispanicRate, original.getShortTermSuspensionsHispanicRate()))
-				apiRequest.addVars("shortTermSuspensionsHispanicRate");
-			if(!Objects.equals(shortTermSuspensionsIndianFemale, original.getShortTermSuspensionsIndianFemale()))
-				apiRequest.addVars("shortTermSuspensionsIndianFemale");
-			if(!Objects.equals(shortTermSuspensionsIndianMale, original.getShortTermSuspensionsIndianMale()))
-				apiRequest.addVars("shortTermSuspensionsIndianMale");
-			if(!Objects.equals(shortTermSuspensionsIndianTotal, original.getShortTermSuspensionsIndianTotal()))
-				apiRequest.addVars("shortTermSuspensionsIndianTotal");
-			if(!Objects.equals(shortTermSuspensionsIndianPercent, original.getShortTermSuspensionsIndianPercent()))
-				apiRequest.addVars("shortTermSuspensionsIndianPercent");
-			if(!Objects.equals(shortTermSuspensionsIndianRate, original.getShortTermSuspensionsIndianRate()))
-				apiRequest.addVars("shortTermSuspensionsIndianRate");
+			if(!Objects.equals(shortTermSuspensionsLatinxFemale, original.getShortTermSuspensionsLatinxFemale()))
+				apiRequest.addVars("shortTermSuspensionsLatinxFemale");
+			if(!Objects.equals(shortTermSuspensionsLatinxMale, original.getShortTermSuspensionsLatinxMale()))
+				apiRequest.addVars("shortTermSuspensionsLatinxMale");
+			if(!Objects.equals(shortTermSuspensionsLatinxTotal, original.getShortTermSuspensionsLatinxTotal()))
+				apiRequest.addVars("shortTermSuspensionsLatinxTotal");
+			if(!Objects.equals(shortTermSuspensionsLatinxPercent, original.getShortTermSuspensionsLatinxPercent()))
+				apiRequest.addVars("shortTermSuspensionsLatinxPercent");
+			if(!Objects.equals(shortTermSuspensionsLatinxRate, original.getShortTermSuspensionsLatinxRate()))
+				apiRequest.addVars("shortTermSuspensionsLatinxRate");
+			if(!Objects.equals(shortTermSuspensionsIndigenousFemale, original.getShortTermSuspensionsIndigenousFemale()))
+				apiRequest.addVars("shortTermSuspensionsIndigenousFemale");
+			if(!Objects.equals(shortTermSuspensionsIndigenousMale, original.getShortTermSuspensionsIndigenousMale()))
+				apiRequest.addVars("shortTermSuspensionsIndigenousMale");
+			if(!Objects.equals(shortTermSuspensionsIndigenousTotal, original.getShortTermSuspensionsIndigenousTotal()))
+				apiRequest.addVars("shortTermSuspensionsIndigenousTotal");
+			if(!Objects.equals(shortTermSuspensionsIndigenousPercent, original.getShortTermSuspensionsIndigenousPercent()))
+				apiRequest.addVars("shortTermSuspensionsIndigenousPercent");
+			if(!Objects.equals(shortTermSuspensionsIndigenousRate, original.getShortTermSuspensionsIndigenousRate()))
+				apiRequest.addVars("shortTermSuspensionsIndigenousRate");
 			if(!Objects.equals(shortTermSuspensionsMultiRacialFemale, original.getShortTermSuspensionsMultiRacialFemale()))
 				apiRequest.addVars("shortTermSuspensionsMultiRacialFemale");
 			if(!Objects.equals(shortTermSuspensionsMultiRacialMale, original.getShortTermSuspensionsMultiRacialMale()))
@@ -20664,14 +20827,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("shortTermSuspensionsBlackVsWhite");
 			if(!Objects.equals(examsCollegeReadyGrades38OverallPercent, original.getExamsCollegeReadyGrades38OverallPercent()))
 				apiRequest.addVars("examsCollegeReadyGrades38OverallPercent");
-			if(!Objects.equals(examsCollegeReadyGrades38IndianPercent, original.getExamsCollegeReadyGrades38IndianPercent()))
-				apiRequest.addVars("examsCollegeReadyGrades38IndianPercent");
+			if(!Objects.equals(examsCollegeReadyGrades38IndigenousPercent, original.getExamsCollegeReadyGrades38IndigenousPercent()))
+				apiRequest.addVars("examsCollegeReadyGrades38IndigenousPercent");
 			if(!Objects.equals(examsCollegeReadyGrades38AsianPercent, original.getExamsCollegeReadyGrades38AsianPercent()))
 				apiRequest.addVars("examsCollegeReadyGrades38AsianPercent");
 			if(!Objects.equals(examsCollegeReadyGrades38BlackPercent, original.getExamsCollegeReadyGrades38BlackPercent()))
 				apiRequest.addVars("examsCollegeReadyGrades38BlackPercent");
-			if(!Objects.equals(examsCollegeReadyGrades38HispanicPercent, original.getExamsCollegeReadyGrades38HispanicPercent()))
-				apiRequest.addVars("examsCollegeReadyGrades38HispanicPercent");
+			if(!Objects.equals(examsCollegeReadyGrades38LatinxPercent, original.getExamsCollegeReadyGrades38LatinxPercent()))
+				apiRequest.addVars("examsCollegeReadyGrades38LatinxPercent");
 			if(!Objects.equals(examsCollegeReadyGrades38MultiRacialPercent, original.getExamsCollegeReadyGrades38MultiRacialPercent()))
 				apiRequest.addVars("examsCollegeReadyGrades38MultiRacialPercent");
 			if(!Objects.equals(examsCollegeReadyGrades38PacificIslanderPercent, original.getExamsCollegeReadyGrades38PacificIslanderPercent()))
@@ -20680,14 +20843,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("examsCollegeReadyGrades38WhitePercent");
 			if(!Objects.equals(examsCollegeReadyGrades912OverallPercent, original.getExamsCollegeReadyGrades912OverallPercent()))
 				apiRequest.addVars("examsCollegeReadyGrades912OverallPercent");
-			if(!Objects.equals(examsCollegeReadyGrades912IndianPercent, original.getExamsCollegeReadyGrades912IndianPercent()))
-				apiRequest.addVars("examsCollegeReadyGrades912IndianPercent");
+			if(!Objects.equals(examsCollegeReadyGrades912IndigenousPercent, original.getExamsCollegeReadyGrades912IndigenousPercent()))
+				apiRequest.addVars("examsCollegeReadyGrades912IndigenousPercent");
 			if(!Objects.equals(examsCollegeReadyGrades912AsianPercent, original.getExamsCollegeReadyGrades912AsianPercent()))
 				apiRequest.addVars("examsCollegeReadyGrades912AsianPercent");
 			if(!Objects.equals(examsCollegeReadyGrades912BlackPercent, original.getExamsCollegeReadyGrades912BlackPercent()))
 				apiRequest.addVars("examsCollegeReadyGrades912BlackPercent");
-			if(!Objects.equals(examsCollegeReadyGrades912HispanicPercent, original.getExamsCollegeReadyGrades912HispanicPercent()))
-				apiRequest.addVars("examsCollegeReadyGrades912HispanicPercent");
+			if(!Objects.equals(examsCollegeReadyGrades912LatinxPercent, original.getExamsCollegeReadyGrades912LatinxPercent()))
+				apiRequest.addVars("examsCollegeReadyGrades912LatinxPercent");
 			if(!Objects.equals(examsCollegeReadyGrades912MultiRacialPercent, original.getExamsCollegeReadyGrades912MultiRacialPercent()))
 				apiRequest.addVars("examsCollegeReadyGrades912MultiRacialPercent");
 			if(!Objects.equals(examsCollegeReadyGrades912PacificIslanderPercent, original.getExamsCollegeReadyGrades912PacificIslanderPercent()))
@@ -20696,14 +20859,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("examsCollegeReadyGrades912WhitePercent");
 			if(!Objects.equals(graduateWithin4YearsOverallPercent, original.getGraduateWithin4YearsOverallPercent()))
 				apiRequest.addVars("graduateWithin4YearsOverallPercent");
-			if(!Objects.equals(graduateWithin4YearsIndianPercent, original.getGraduateWithin4YearsIndianPercent()))
-				apiRequest.addVars("graduateWithin4YearsIndianPercent");
+			if(!Objects.equals(graduateWithin4YearsIndigenousPercent, original.getGraduateWithin4YearsIndigenousPercent()))
+				apiRequest.addVars("graduateWithin4YearsIndigenousPercent");
 			if(!Objects.equals(graduateWithin4YearsAsianPercent, original.getGraduateWithin4YearsAsianPercent()))
 				apiRequest.addVars("graduateWithin4YearsAsianPercent");
 			if(!Objects.equals(graduateWithin4YearsBlackPercent, original.getGraduateWithin4YearsBlackPercent()))
 				apiRequest.addVars("graduateWithin4YearsBlackPercent");
-			if(!Objects.equals(graduateWithin4YearsHispanicPercent, original.getGraduateWithin4YearsHispanicPercent()))
-				apiRequest.addVars("graduateWithin4YearsHispanicPercent");
+			if(!Objects.equals(graduateWithin4YearsLatinxPercent, original.getGraduateWithin4YearsLatinxPercent()))
+				apiRequest.addVars("graduateWithin4YearsLatinxPercent");
 			if(!Objects.equals(graduateWithin4YearsMultiRacialPercent, original.getGraduateWithin4YearsMultiRacialPercent()))
 				apiRequest.addVars("graduateWithin4YearsMultiRacialPercent");
 			if(!Objects.equals(graduateWithin4YearsPacificIslanderPercent, original.getGraduateWithin4YearsPacificIslanderPercent()))
@@ -20724,6 +20887,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("stateAbbreviation");
 			if(!Objects.equals(agencyName, original.getAgencyName()))
 				apiRequest.addVars("agencyName");
+			if(!Objects.equals(agencyCoords, original.getAgencyCoords()))
+				apiRequest.addVars("agencyCoords");
+			if(!Objects.equals(agencyLeft, original.getAgencyLeft()))
+				apiRequest.addVars("agencyLeft");
 			if(!Objects.equals(reportCardCompleteName, original.getReportCardCompleteName()))
 				apiRequest.addVars("reportCardCompleteName");
 			if(!Objects.equals(agencyDemographicsGraph, original.getAgencyDemographicsGraph()))
@@ -20757,7 +20924,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	//////////////
 
 	@Override public int hashCode() {
-		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, reportCardYearsStr, agencyKey, pupilsTotal, pupilsIndianFemale, pupilsIndianMale, pupilsIndianTotal, pupilsIndianPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsHispanicFemale, pupilsHispanicMale, pupilsHispanicTotal, pupilsHispanicPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, pupilsOtherPercent, teachersMale, teachersFemale, teachersTotal, teachersWhiteTotal, teachersWhitePercent, teachersBlackTotal, teachersBlackPercent, teachersOtherTotal, teachersOtherPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, delinquentComplaintsAsian, delinquentComplaintsAsianPercent, delinquentComplaintsBlack, delinquentComplaintsBlackPercent, delinquentComplaintsHispanic, delinquentComplaintsHispanicPercent, delinquentComplaintsMultiRacial, delinquentComplaintsMultiRacialPercent, delinquentComplaintsIndian, delinquentComplaintsIndianPercent, delinquentComplaintsWhite, delinquentComplaintsWhitePercent, delinquentComplaintsPacificIslander, delinquentComplaintsPacificIslanderPercent, shortTermSuspensionRate, shortTermSuspensionsTotal, longTermSuspensionsTotal, expulsionsTotal, shortTermSuspensionsAsianFemale, shortTermSuspensionsAsianMale, shortTermSuspensionsAsianTotal, shortTermSuspensionsAsianPercent, shortTermSuspensionsAsianRate, shortTermSuspensionsBlackFemale, shortTermSuspensionsBlackMale, shortTermSuspensionsBlackTotal, shortTermSuspensionsBlackPercent, shortTermSuspensionsBlackRate, shortTermSuspensionsHispanicFemale, shortTermSuspensionsHispanicMale, shortTermSuspensionsHispanicTotal, shortTermSuspensionsHispanicPercent, shortTermSuspensionsHispanicRate, shortTermSuspensionsIndianFemale, shortTermSuspensionsIndianMale, shortTermSuspensionsIndianTotal, shortTermSuspensionsIndianPercent, shortTermSuspensionsIndianRate, shortTermSuspensionsMultiRacialFemale, shortTermSuspensionsMultiRacialMale, shortTermSuspensionsMultiRacialTotal, shortTermSuspensionsMultiRacialPercent, shortTermSuspensionsMultiRacialRate, shortTermSuspensionsPacificIslanderFemale, shortTermSuspensionsPacificIslanderMale, shortTermSuspensionsPacificIslanderTotal, shortTermSuspensionsPacificIslanderPercent, shortTermSuspensionsPacificIslanderRate, shortTermSuspensionsWhiteFemale, shortTermSuspensionsWhiteMale, shortTermSuspensionsWhiteTotal, shortTermSuspensionsWhitePercent, shortTermSuspensionsWhiteRate, shortTermSuspensionsAllRate, shortTermSuspensionsBlackVsWhite, examsCollegeReadyGrades38OverallPercent, examsCollegeReadyGrades38IndianPercent, examsCollegeReadyGrades38AsianPercent, examsCollegeReadyGrades38BlackPercent, examsCollegeReadyGrades38HispanicPercent, examsCollegeReadyGrades38MultiRacialPercent, examsCollegeReadyGrades38PacificIslanderPercent, examsCollegeReadyGrades38WhitePercent, examsCollegeReadyGrades912OverallPercent, examsCollegeReadyGrades912IndianPercent, examsCollegeReadyGrades912AsianPercent, examsCollegeReadyGrades912BlackPercent, examsCollegeReadyGrades912HispanicPercent, examsCollegeReadyGrades912MultiRacialPercent, examsCollegeReadyGrades912PacificIslanderPercent, examsCollegeReadyGrades912WhitePercent, graduateWithin4YearsOverallPercent, graduateWithin4YearsIndianPercent, graduateWithin4YearsAsianPercent, graduateWithin4YearsBlackPercent, graduateWithin4YearsHispanicPercent, graduateWithin4YearsMultiRacialPercent, graduateWithin4YearsPacificIslanderPercent, graduateWithin4YearsWhitePercent, examsCollegeReadyGrades38BlackVsWhite, stateKey, stateId, agencyId, stateName, stateAbbreviation, agencyName, reportCardCompleteName, agencyDemographicsGraph, agencyStudentsByRaceGraph, agencyTeachersByRaceGraph, agencyGrades3To8Graph, agencyGrades9To12Graph, agencyGraduatesWithin4YearsGraph, suspensionsByRaceGraph, suspensionRatesByRaceGraph, countySchoolBasedComplaintsGraph, schoolBasedComplaintsGraph, agencyStudentsByRaceGraph2);
+		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, reportCardYearsStr, agencyKey, pupilsTotal, pupilsIndigenousFemale, pupilsIndigenousMale, pupilsIndigenousTotal, pupilsIndigenousPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsLatinxFemale, pupilsLatinxMale, pupilsLatinxTotal, pupilsLatinxPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, pupilsOtherPercent, teachersMale, teachersFemale, teachersTotal, teachersWhiteTotal, teachersWhitePercent, teachersBlackTotal, teachersBlackPercent, teachersOtherTotal, teachersOtherPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, delinquentComplaintsAsian, delinquentComplaintsAsianPercent, delinquentComplaintsBlack, delinquentComplaintsBlackPercent, delinquentComplaintsLatinx, delinquentComplaintsLatinxPercent, delinquentComplaintsMultiRacial, delinquentComplaintsMultiRacialPercent, delinquentComplaintsIndigenous, delinquentComplaintsIndigenousPercent, delinquentComplaintsWhite, delinquentComplaintsWhitePercent, delinquentComplaintsPacificIslander, delinquentComplaintsPacificIslanderPercent, shortTermSuspensionRate, shortTermSuspensionsTotal, longTermSuspensionsTotal, expulsionsTotal, shortTermSuspensionsAsianFemale, shortTermSuspensionsAsianMale, shortTermSuspensionsAsianTotal, shortTermSuspensionsAsianPercent, shortTermSuspensionsAsianRate, shortTermSuspensionsBlackFemale, shortTermSuspensionsBlackMale, shortTermSuspensionsBlackTotal, shortTermSuspensionsBlackPercent, shortTermSuspensionsBlackRate, shortTermSuspensionsLatinxFemale, shortTermSuspensionsLatinxMale, shortTermSuspensionsLatinxTotal, shortTermSuspensionsLatinxPercent, shortTermSuspensionsLatinxRate, shortTermSuspensionsIndigenousFemale, shortTermSuspensionsIndigenousMale, shortTermSuspensionsIndigenousTotal, shortTermSuspensionsIndigenousPercent, shortTermSuspensionsIndigenousRate, shortTermSuspensionsMultiRacialFemale, shortTermSuspensionsMultiRacialMale, shortTermSuspensionsMultiRacialTotal, shortTermSuspensionsMultiRacialPercent, shortTermSuspensionsMultiRacialRate, shortTermSuspensionsPacificIslanderFemale, shortTermSuspensionsPacificIslanderMale, shortTermSuspensionsPacificIslanderTotal, shortTermSuspensionsPacificIslanderPercent, shortTermSuspensionsPacificIslanderRate, shortTermSuspensionsWhiteFemale, shortTermSuspensionsWhiteMale, shortTermSuspensionsWhiteTotal, shortTermSuspensionsWhitePercent, shortTermSuspensionsWhiteRate, shortTermSuspensionsAllRate, shortTermSuspensionsBlackVsWhite, examsCollegeReadyGrades38OverallPercent, examsCollegeReadyGrades38IndigenousPercent, examsCollegeReadyGrades38AsianPercent, examsCollegeReadyGrades38BlackPercent, examsCollegeReadyGrades38LatinxPercent, examsCollegeReadyGrades38MultiRacialPercent, examsCollegeReadyGrades38PacificIslanderPercent, examsCollegeReadyGrades38WhitePercent, examsCollegeReadyGrades912OverallPercent, examsCollegeReadyGrades912IndigenousPercent, examsCollegeReadyGrades912AsianPercent, examsCollegeReadyGrades912BlackPercent, examsCollegeReadyGrades912LatinxPercent, examsCollegeReadyGrades912MultiRacialPercent, examsCollegeReadyGrades912PacificIslanderPercent, examsCollegeReadyGrades912WhitePercent, graduateWithin4YearsOverallPercent, graduateWithin4YearsIndigenousPercent, graduateWithin4YearsAsianPercent, graduateWithin4YearsBlackPercent, graduateWithin4YearsLatinxPercent, graduateWithin4YearsMultiRacialPercent, graduateWithin4YearsPacificIslanderPercent, graduateWithin4YearsWhitePercent, examsCollegeReadyGrades38BlackVsWhite, stateKey, stateId, agencyId, stateName, stateAbbreviation, agencyName, agencyCoords, agencyLeft, reportCardCompleteName, agencyDemographicsGraph, agencyStudentsByRaceGraph, agencyTeachersByRaceGraph, agencyGrades3To8Graph, agencyGrades9To12Graph, agencyGraduatesWithin4YearsGraph, suspensionsByRaceGraph, suspensionRatesByRaceGraph, countySchoolBasedComplaintsGraph, schoolBasedComplaintsGraph, agencyStudentsByRaceGraph2);
 	}
 
 	////////////
@@ -20777,18 +20944,18 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				&& Objects.equals( reportCardYearsStr, that.reportCardYearsStr )
 				&& Objects.equals( agencyKey, that.agencyKey )
 				&& Objects.equals( pupilsTotal, that.pupilsTotal )
-				&& Objects.equals( pupilsIndianFemale, that.pupilsIndianFemale )
-				&& Objects.equals( pupilsIndianMale, that.pupilsIndianMale )
-				&& Objects.equals( pupilsIndianTotal, that.pupilsIndianTotal )
-				&& Objects.equals( pupilsIndianPercent, that.pupilsIndianPercent )
+				&& Objects.equals( pupilsIndigenousFemale, that.pupilsIndigenousFemale )
+				&& Objects.equals( pupilsIndigenousMale, that.pupilsIndigenousMale )
+				&& Objects.equals( pupilsIndigenousTotal, that.pupilsIndigenousTotal )
+				&& Objects.equals( pupilsIndigenousPercent, that.pupilsIndigenousPercent )
 				&& Objects.equals( pupilsAsianFemale, that.pupilsAsianFemale )
 				&& Objects.equals( pupilsAsianMale, that.pupilsAsianMale )
 				&& Objects.equals( pupilsAsianTotal, that.pupilsAsianTotal )
 				&& Objects.equals( pupilsAsianPercent, that.pupilsAsianPercent )
-				&& Objects.equals( pupilsHispanicFemale, that.pupilsHispanicFemale )
-				&& Objects.equals( pupilsHispanicMale, that.pupilsHispanicMale )
-				&& Objects.equals( pupilsHispanicTotal, that.pupilsHispanicTotal )
-				&& Objects.equals( pupilsHispanicPercent, that.pupilsHispanicPercent )
+				&& Objects.equals( pupilsLatinxFemale, that.pupilsLatinxFemale )
+				&& Objects.equals( pupilsLatinxMale, that.pupilsLatinxMale )
+				&& Objects.equals( pupilsLatinxTotal, that.pupilsLatinxTotal )
+				&& Objects.equals( pupilsLatinxPercent, that.pupilsLatinxPercent )
 				&& Objects.equals( pupilsBlackFemale, that.pupilsBlackFemale )
 				&& Objects.equals( pupilsBlackMale, that.pupilsBlackMale )
 				&& Objects.equals( pupilsBlackTotal, that.pupilsBlackTotal )
@@ -20822,12 +20989,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				&& Objects.equals( delinquentComplaintsAsianPercent, that.delinquentComplaintsAsianPercent )
 				&& Objects.equals( delinquentComplaintsBlack, that.delinquentComplaintsBlack )
 				&& Objects.equals( delinquentComplaintsBlackPercent, that.delinquentComplaintsBlackPercent )
-				&& Objects.equals( delinquentComplaintsHispanic, that.delinquentComplaintsHispanic )
-				&& Objects.equals( delinquentComplaintsHispanicPercent, that.delinquentComplaintsHispanicPercent )
+				&& Objects.equals( delinquentComplaintsLatinx, that.delinquentComplaintsLatinx )
+				&& Objects.equals( delinquentComplaintsLatinxPercent, that.delinquentComplaintsLatinxPercent )
 				&& Objects.equals( delinquentComplaintsMultiRacial, that.delinquentComplaintsMultiRacial )
 				&& Objects.equals( delinquentComplaintsMultiRacialPercent, that.delinquentComplaintsMultiRacialPercent )
-				&& Objects.equals( delinquentComplaintsIndian, that.delinquentComplaintsIndian )
-				&& Objects.equals( delinquentComplaintsIndianPercent, that.delinquentComplaintsIndianPercent )
+				&& Objects.equals( delinquentComplaintsIndigenous, that.delinquentComplaintsIndigenous )
+				&& Objects.equals( delinquentComplaintsIndigenousPercent, that.delinquentComplaintsIndigenousPercent )
 				&& Objects.equals( delinquentComplaintsWhite, that.delinquentComplaintsWhite )
 				&& Objects.equals( delinquentComplaintsWhitePercent, that.delinquentComplaintsWhitePercent )
 				&& Objects.equals( delinquentComplaintsPacificIslander, that.delinquentComplaintsPacificIslander )
@@ -20846,16 +21013,16 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				&& Objects.equals( shortTermSuspensionsBlackTotal, that.shortTermSuspensionsBlackTotal )
 				&& Objects.equals( shortTermSuspensionsBlackPercent, that.shortTermSuspensionsBlackPercent )
 				&& Objects.equals( shortTermSuspensionsBlackRate, that.shortTermSuspensionsBlackRate )
-				&& Objects.equals( shortTermSuspensionsHispanicFemale, that.shortTermSuspensionsHispanicFemale )
-				&& Objects.equals( shortTermSuspensionsHispanicMale, that.shortTermSuspensionsHispanicMale )
-				&& Objects.equals( shortTermSuspensionsHispanicTotal, that.shortTermSuspensionsHispanicTotal )
-				&& Objects.equals( shortTermSuspensionsHispanicPercent, that.shortTermSuspensionsHispanicPercent )
-				&& Objects.equals( shortTermSuspensionsHispanicRate, that.shortTermSuspensionsHispanicRate )
-				&& Objects.equals( shortTermSuspensionsIndianFemale, that.shortTermSuspensionsIndianFemale )
-				&& Objects.equals( shortTermSuspensionsIndianMale, that.shortTermSuspensionsIndianMale )
-				&& Objects.equals( shortTermSuspensionsIndianTotal, that.shortTermSuspensionsIndianTotal )
-				&& Objects.equals( shortTermSuspensionsIndianPercent, that.shortTermSuspensionsIndianPercent )
-				&& Objects.equals( shortTermSuspensionsIndianRate, that.shortTermSuspensionsIndianRate )
+				&& Objects.equals( shortTermSuspensionsLatinxFemale, that.shortTermSuspensionsLatinxFemale )
+				&& Objects.equals( shortTermSuspensionsLatinxMale, that.shortTermSuspensionsLatinxMale )
+				&& Objects.equals( shortTermSuspensionsLatinxTotal, that.shortTermSuspensionsLatinxTotal )
+				&& Objects.equals( shortTermSuspensionsLatinxPercent, that.shortTermSuspensionsLatinxPercent )
+				&& Objects.equals( shortTermSuspensionsLatinxRate, that.shortTermSuspensionsLatinxRate )
+				&& Objects.equals( shortTermSuspensionsIndigenousFemale, that.shortTermSuspensionsIndigenousFemale )
+				&& Objects.equals( shortTermSuspensionsIndigenousMale, that.shortTermSuspensionsIndigenousMale )
+				&& Objects.equals( shortTermSuspensionsIndigenousTotal, that.shortTermSuspensionsIndigenousTotal )
+				&& Objects.equals( shortTermSuspensionsIndigenousPercent, that.shortTermSuspensionsIndigenousPercent )
+				&& Objects.equals( shortTermSuspensionsIndigenousRate, that.shortTermSuspensionsIndigenousRate )
 				&& Objects.equals( shortTermSuspensionsMultiRacialFemale, that.shortTermSuspensionsMultiRacialFemale )
 				&& Objects.equals( shortTermSuspensionsMultiRacialMale, that.shortTermSuspensionsMultiRacialMale )
 				&& Objects.equals( shortTermSuspensionsMultiRacialTotal, that.shortTermSuspensionsMultiRacialTotal )
@@ -20874,26 +21041,26 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				&& Objects.equals( shortTermSuspensionsAllRate, that.shortTermSuspensionsAllRate )
 				&& Objects.equals( shortTermSuspensionsBlackVsWhite, that.shortTermSuspensionsBlackVsWhite )
 				&& Objects.equals( examsCollegeReadyGrades38OverallPercent, that.examsCollegeReadyGrades38OverallPercent )
-				&& Objects.equals( examsCollegeReadyGrades38IndianPercent, that.examsCollegeReadyGrades38IndianPercent )
+				&& Objects.equals( examsCollegeReadyGrades38IndigenousPercent, that.examsCollegeReadyGrades38IndigenousPercent )
 				&& Objects.equals( examsCollegeReadyGrades38AsianPercent, that.examsCollegeReadyGrades38AsianPercent )
 				&& Objects.equals( examsCollegeReadyGrades38BlackPercent, that.examsCollegeReadyGrades38BlackPercent )
-				&& Objects.equals( examsCollegeReadyGrades38HispanicPercent, that.examsCollegeReadyGrades38HispanicPercent )
+				&& Objects.equals( examsCollegeReadyGrades38LatinxPercent, that.examsCollegeReadyGrades38LatinxPercent )
 				&& Objects.equals( examsCollegeReadyGrades38MultiRacialPercent, that.examsCollegeReadyGrades38MultiRacialPercent )
 				&& Objects.equals( examsCollegeReadyGrades38PacificIslanderPercent, that.examsCollegeReadyGrades38PacificIslanderPercent )
 				&& Objects.equals( examsCollegeReadyGrades38WhitePercent, that.examsCollegeReadyGrades38WhitePercent )
 				&& Objects.equals( examsCollegeReadyGrades912OverallPercent, that.examsCollegeReadyGrades912OverallPercent )
-				&& Objects.equals( examsCollegeReadyGrades912IndianPercent, that.examsCollegeReadyGrades912IndianPercent )
+				&& Objects.equals( examsCollegeReadyGrades912IndigenousPercent, that.examsCollegeReadyGrades912IndigenousPercent )
 				&& Objects.equals( examsCollegeReadyGrades912AsianPercent, that.examsCollegeReadyGrades912AsianPercent )
 				&& Objects.equals( examsCollegeReadyGrades912BlackPercent, that.examsCollegeReadyGrades912BlackPercent )
-				&& Objects.equals( examsCollegeReadyGrades912HispanicPercent, that.examsCollegeReadyGrades912HispanicPercent )
+				&& Objects.equals( examsCollegeReadyGrades912LatinxPercent, that.examsCollegeReadyGrades912LatinxPercent )
 				&& Objects.equals( examsCollegeReadyGrades912MultiRacialPercent, that.examsCollegeReadyGrades912MultiRacialPercent )
 				&& Objects.equals( examsCollegeReadyGrades912PacificIslanderPercent, that.examsCollegeReadyGrades912PacificIslanderPercent )
 				&& Objects.equals( examsCollegeReadyGrades912WhitePercent, that.examsCollegeReadyGrades912WhitePercent )
 				&& Objects.equals( graduateWithin4YearsOverallPercent, that.graduateWithin4YearsOverallPercent )
-				&& Objects.equals( graduateWithin4YearsIndianPercent, that.graduateWithin4YearsIndianPercent )
+				&& Objects.equals( graduateWithin4YearsIndigenousPercent, that.graduateWithin4YearsIndigenousPercent )
 				&& Objects.equals( graduateWithin4YearsAsianPercent, that.graduateWithin4YearsAsianPercent )
 				&& Objects.equals( graduateWithin4YearsBlackPercent, that.graduateWithin4YearsBlackPercent )
-				&& Objects.equals( graduateWithin4YearsHispanicPercent, that.graduateWithin4YearsHispanicPercent )
+				&& Objects.equals( graduateWithin4YearsLatinxPercent, that.graduateWithin4YearsLatinxPercent )
 				&& Objects.equals( graduateWithin4YearsMultiRacialPercent, that.graduateWithin4YearsMultiRacialPercent )
 				&& Objects.equals( graduateWithin4YearsPacificIslanderPercent, that.graduateWithin4YearsPacificIslanderPercent )
 				&& Objects.equals( graduateWithin4YearsWhitePercent, that.graduateWithin4YearsWhitePercent )
@@ -20904,6 +21071,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				&& Objects.equals( stateName, that.stateName )
 				&& Objects.equals( stateAbbreviation, that.stateAbbreviation )
 				&& Objects.equals( agencyName, that.agencyName )
+				&& Objects.equals( agencyCoords, that.agencyCoords )
+				&& Objects.equals( agencyLeft, that.agencyLeft )
 				&& Objects.equals( reportCardCompleteName, that.reportCardCompleteName )
 				&& Objects.equals( agencyDemographicsGraph, that.agencyDemographicsGraph )
 				&& Objects.equals( agencyStudentsByRaceGraph, that.agencyStudentsByRaceGraph )
@@ -20932,18 +21101,18 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		sb.append( ", reportCardYearsStr: \"" ).append(reportCardYearsStr).append( "\"" );
 		sb.append( ", agencyKey: " ).append(agencyKey);
 		sb.append( ", pupilsTotal: " ).append(pupilsTotal);
-		sb.append( ", pupilsIndianFemale: " ).append(pupilsIndianFemale);
-		sb.append( ", pupilsIndianMale: " ).append(pupilsIndianMale);
-		sb.append( ", pupilsIndianTotal: " ).append(pupilsIndianTotal);
-		sb.append( ", pupilsIndianPercent: " ).append(pupilsIndianPercent);
+		sb.append( ", pupilsIndigenousFemale: " ).append(pupilsIndigenousFemale);
+		sb.append( ", pupilsIndigenousMale: " ).append(pupilsIndigenousMale);
+		sb.append( ", pupilsIndigenousTotal: " ).append(pupilsIndigenousTotal);
+		sb.append( ", pupilsIndigenousPercent: " ).append(pupilsIndigenousPercent);
 		sb.append( ", pupilsAsianFemale: " ).append(pupilsAsianFemale);
 		sb.append( ", pupilsAsianMale: " ).append(pupilsAsianMale);
 		sb.append( ", pupilsAsianTotal: " ).append(pupilsAsianTotal);
 		sb.append( ", pupilsAsianPercent: " ).append(pupilsAsianPercent);
-		sb.append( ", pupilsHispanicFemale: " ).append(pupilsHispanicFemale);
-		sb.append( ", pupilsHispanicMale: " ).append(pupilsHispanicMale);
-		sb.append( ", pupilsHispanicTotal: " ).append(pupilsHispanicTotal);
-		sb.append( ", pupilsHispanicPercent: " ).append(pupilsHispanicPercent);
+		sb.append( ", pupilsLatinxFemale: " ).append(pupilsLatinxFemale);
+		sb.append( ", pupilsLatinxMale: " ).append(pupilsLatinxMale);
+		sb.append( ", pupilsLatinxTotal: " ).append(pupilsLatinxTotal);
+		sb.append( ", pupilsLatinxPercent: " ).append(pupilsLatinxPercent);
 		sb.append( ", pupilsBlackFemale: " ).append(pupilsBlackFemale);
 		sb.append( ", pupilsBlackMale: " ).append(pupilsBlackMale);
 		sb.append( ", pupilsBlackTotal: " ).append(pupilsBlackTotal);
@@ -20977,12 +21146,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		sb.append( ", delinquentComplaintsAsianPercent: " ).append(delinquentComplaintsAsianPercent);
 		sb.append( ", delinquentComplaintsBlack: " ).append(delinquentComplaintsBlack);
 		sb.append( ", delinquentComplaintsBlackPercent: " ).append(delinquentComplaintsBlackPercent);
-		sb.append( ", delinquentComplaintsHispanic: " ).append(delinquentComplaintsHispanic);
-		sb.append( ", delinquentComplaintsHispanicPercent: " ).append(delinquentComplaintsHispanicPercent);
+		sb.append( ", delinquentComplaintsLatinx: " ).append(delinquentComplaintsLatinx);
+		sb.append( ", delinquentComplaintsLatinxPercent: " ).append(delinquentComplaintsLatinxPercent);
 		sb.append( ", delinquentComplaintsMultiRacial: " ).append(delinquentComplaintsMultiRacial);
 		sb.append( ", delinquentComplaintsMultiRacialPercent: " ).append(delinquentComplaintsMultiRacialPercent);
-		sb.append( ", delinquentComplaintsIndian: " ).append(delinquentComplaintsIndian);
-		sb.append( ", delinquentComplaintsIndianPercent: " ).append(delinquentComplaintsIndianPercent);
+		sb.append( ", delinquentComplaintsIndigenous: " ).append(delinquentComplaintsIndigenous);
+		sb.append( ", delinquentComplaintsIndigenousPercent: " ).append(delinquentComplaintsIndigenousPercent);
 		sb.append( ", delinquentComplaintsWhite: " ).append(delinquentComplaintsWhite);
 		sb.append( ", delinquentComplaintsWhitePercent: " ).append(delinquentComplaintsWhitePercent);
 		sb.append( ", delinquentComplaintsPacificIslander: " ).append(delinquentComplaintsPacificIslander);
@@ -21001,16 +21170,16 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		sb.append( ", shortTermSuspensionsBlackTotal: " ).append(shortTermSuspensionsBlackTotal);
 		sb.append( ", shortTermSuspensionsBlackPercent: " ).append(shortTermSuspensionsBlackPercent);
 		sb.append( ", shortTermSuspensionsBlackRate: " ).append(shortTermSuspensionsBlackRate);
-		sb.append( ", shortTermSuspensionsHispanicFemale: " ).append(shortTermSuspensionsHispanicFemale);
-		sb.append( ", shortTermSuspensionsHispanicMale: " ).append(shortTermSuspensionsHispanicMale);
-		sb.append( ", shortTermSuspensionsHispanicTotal: " ).append(shortTermSuspensionsHispanicTotal);
-		sb.append( ", shortTermSuspensionsHispanicPercent: " ).append(shortTermSuspensionsHispanicPercent);
-		sb.append( ", shortTermSuspensionsHispanicRate: " ).append(shortTermSuspensionsHispanicRate);
-		sb.append( ", shortTermSuspensionsIndianFemale: " ).append(shortTermSuspensionsIndianFemale);
-		sb.append( ", shortTermSuspensionsIndianMale: " ).append(shortTermSuspensionsIndianMale);
-		sb.append( ", shortTermSuspensionsIndianTotal: " ).append(shortTermSuspensionsIndianTotal);
-		sb.append( ", shortTermSuspensionsIndianPercent: " ).append(shortTermSuspensionsIndianPercent);
-		sb.append( ", shortTermSuspensionsIndianRate: " ).append(shortTermSuspensionsIndianRate);
+		sb.append( ", shortTermSuspensionsLatinxFemale: " ).append(shortTermSuspensionsLatinxFemale);
+		sb.append( ", shortTermSuspensionsLatinxMale: " ).append(shortTermSuspensionsLatinxMale);
+		sb.append( ", shortTermSuspensionsLatinxTotal: " ).append(shortTermSuspensionsLatinxTotal);
+		sb.append( ", shortTermSuspensionsLatinxPercent: " ).append(shortTermSuspensionsLatinxPercent);
+		sb.append( ", shortTermSuspensionsLatinxRate: " ).append(shortTermSuspensionsLatinxRate);
+		sb.append( ", shortTermSuspensionsIndigenousFemale: " ).append(shortTermSuspensionsIndigenousFemale);
+		sb.append( ", shortTermSuspensionsIndigenousMale: " ).append(shortTermSuspensionsIndigenousMale);
+		sb.append( ", shortTermSuspensionsIndigenousTotal: " ).append(shortTermSuspensionsIndigenousTotal);
+		sb.append( ", shortTermSuspensionsIndigenousPercent: " ).append(shortTermSuspensionsIndigenousPercent);
+		sb.append( ", shortTermSuspensionsIndigenousRate: " ).append(shortTermSuspensionsIndigenousRate);
 		sb.append( ", shortTermSuspensionsMultiRacialFemale: " ).append(shortTermSuspensionsMultiRacialFemale);
 		sb.append( ", shortTermSuspensionsMultiRacialMale: " ).append(shortTermSuspensionsMultiRacialMale);
 		sb.append( ", shortTermSuspensionsMultiRacialTotal: " ).append(shortTermSuspensionsMultiRacialTotal);
@@ -21029,26 +21198,26 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		sb.append( ", shortTermSuspensionsAllRate: " ).append(shortTermSuspensionsAllRate);
 		sb.append( ", shortTermSuspensionsBlackVsWhite: " ).append(shortTermSuspensionsBlackVsWhite);
 		sb.append( ", examsCollegeReadyGrades38OverallPercent: " ).append(examsCollegeReadyGrades38OverallPercent);
-		sb.append( ", examsCollegeReadyGrades38IndianPercent: " ).append(examsCollegeReadyGrades38IndianPercent);
+		sb.append( ", examsCollegeReadyGrades38IndigenousPercent: " ).append(examsCollegeReadyGrades38IndigenousPercent);
 		sb.append( ", examsCollegeReadyGrades38AsianPercent: " ).append(examsCollegeReadyGrades38AsianPercent);
 		sb.append( ", examsCollegeReadyGrades38BlackPercent: " ).append(examsCollegeReadyGrades38BlackPercent);
-		sb.append( ", examsCollegeReadyGrades38HispanicPercent: " ).append(examsCollegeReadyGrades38HispanicPercent);
+		sb.append( ", examsCollegeReadyGrades38LatinxPercent: " ).append(examsCollegeReadyGrades38LatinxPercent);
 		sb.append( ", examsCollegeReadyGrades38MultiRacialPercent: " ).append(examsCollegeReadyGrades38MultiRacialPercent);
 		sb.append( ", examsCollegeReadyGrades38PacificIslanderPercent: " ).append(examsCollegeReadyGrades38PacificIslanderPercent);
 		sb.append( ", examsCollegeReadyGrades38WhitePercent: " ).append(examsCollegeReadyGrades38WhitePercent);
 		sb.append( ", examsCollegeReadyGrades912OverallPercent: " ).append(examsCollegeReadyGrades912OverallPercent);
-		sb.append( ", examsCollegeReadyGrades912IndianPercent: " ).append(examsCollegeReadyGrades912IndianPercent);
+		sb.append( ", examsCollegeReadyGrades912IndigenousPercent: " ).append(examsCollegeReadyGrades912IndigenousPercent);
 		sb.append( ", examsCollegeReadyGrades912AsianPercent: " ).append(examsCollegeReadyGrades912AsianPercent);
 		sb.append( ", examsCollegeReadyGrades912BlackPercent: " ).append(examsCollegeReadyGrades912BlackPercent);
-		sb.append( ", examsCollegeReadyGrades912HispanicPercent: " ).append(examsCollegeReadyGrades912HispanicPercent);
+		sb.append( ", examsCollegeReadyGrades912LatinxPercent: " ).append(examsCollegeReadyGrades912LatinxPercent);
 		sb.append( ", examsCollegeReadyGrades912MultiRacialPercent: " ).append(examsCollegeReadyGrades912MultiRacialPercent);
 		sb.append( ", examsCollegeReadyGrades912PacificIslanderPercent: " ).append(examsCollegeReadyGrades912PacificIslanderPercent);
 		sb.append( ", examsCollegeReadyGrades912WhitePercent: " ).append(examsCollegeReadyGrades912WhitePercent);
 		sb.append( ", graduateWithin4YearsOverallPercent: " ).append(graduateWithin4YearsOverallPercent);
-		sb.append( ", graduateWithin4YearsIndianPercent: " ).append(graduateWithin4YearsIndianPercent);
+		sb.append( ", graduateWithin4YearsIndigenousPercent: " ).append(graduateWithin4YearsIndigenousPercent);
 		sb.append( ", graduateWithin4YearsAsianPercent: " ).append(graduateWithin4YearsAsianPercent);
 		sb.append( ", graduateWithin4YearsBlackPercent: " ).append(graduateWithin4YearsBlackPercent);
-		sb.append( ", graduateWithin4YearsHispanicPercent: " ).append(graduateWithin4YearsHispanicPercent);
+		sb.append( ", graduateWithin4YearsLatinxPercent: " ).append(graduateWithin4YearsLatinxPercent);
 		sb.append( ", graduateWithin4YearsMultiRacialPercent: " ).append(graduateWithin4YearsMultiRacialPercent);
 		sb.append( ", graduateWithin4YearsPacificIslanderPercent: " ).append(graduateWithin4YearsPacificIslanderPercent);
 		sb.append( ", graduateWithin4YearsWhitePercent: " ).append(graduateWithin4YearsWhitePercent);
@@ -21059,6 +21228,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		sb.append( ", stateName: \"" ).append(stateName).append( "\"" );
 		sb.append( ", stateAbbreviation: \"" ).append(stateAbbreviation).append( "\"" );
 		sb.append( ", agencyName: \"" ).append(agencyName).append( "\"" );
+		sb.append( ", agencyCoords: \"" ).append(agencyCoords).append( "\"" );
+		sb.append( ", agencyLeft: " ).append(agencyLeft);
 		sb.append( ", reportCardCompleteName: \"" ).append(reportCardCompleteName).append( "\"" );
 		sb.append( ", agencyDemographicsGraph: \"" ).append(agencyDemographicsGraph).append( "\"" );
 		sb.append( ", agencyStudentsByRaceGraph: \"" ).append(agencyStudentsByRaceGraph).append( "\"" );

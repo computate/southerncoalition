@@ -8,6 +8,7 @@ import java.util.Date;
 import java.util.HashMap;
 import org.apache.commons.lang3.StringUtils;
 import org.southerncoalition.enus.state.SiteState;
+import java.lang.Integer;
 import io.vertx.core.logging.LoggerFactory;
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -493,6 +494,402 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		} g("div");
 	}
 
+	///////////////
+	// imageLeft //
+	///////////////
+
+	/**	 The entity imageLeft
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Integer imageLeft;
+	@JsonIgnore
+	public Wrap<Integer> imageLeftWrap = new Wrap<Integer>().p(this).c(Integer.class).var("imageLeft").o(imageLeft);
+
+	/**	<br/> The entity imageLeft
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.agency.SiteAgency&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:imageLeft">Find the entity imageLeft in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _imageLeft(Wrap<Integer> c);
+
+	public Integer getImageLeft() {
+		return imageLeft;
+	}
+
+	public void setImageLeft(Integer imageLeft) {
+		this.imageLeft = imageLeft;
+		this.imageLeftWrap.alreadyInitialized = true;
+	}
+	public SiteAgency setImageLeft(String o) {
+		if(NumberUtils.isParsable(o))
+			this.imageLeft = Integer.parseInt(o);
+		this.imageLeftWrap.alreadyInitialized = true;
+		return (SiteAgency)this;
+	}
+	protected SiteAgency imageLeftInit() {
+		if(!imageLeftWrap.alreadyInitialized) {
+			_imageLeft(imageLeftWrap);
+			if(imageLeft == null)
+				setImageLeft(imageLeftWrap.o);
+		}
+		imageLeftWrap.alreadyInitialized(true);
+		return (SiteAgency)this;
+	}
+
+	public Integer solrImageLeft() {
+		return imageLeft;
+	}
+
+	public String strImageLeft() {
+		return imageLeft == null ? "" : imageLeft.toString();
+	}
+
+	public String jsonImageLeft() {
+		return imageLeft == null ? "" : imageLeft.toString();
+	}
+
+	public String nomAffichageImageLeft() {
+		return "image left pixels";
+	}
+
+	public String htmTooltipImageLeft() {
+		return null;
+	}
+
+	public String htmImageLeft() {
+		return imageLeft == null ? "" : StringEscapeUtils.escapeHtml4(strImageLeft());
+	}
+
+	public void inputImageLeft(String classApiMethodMethod) {
+		SiteAgency s = (SiteAgency)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "image left pixels")
+				.a("id", classApiMethodMethod, "_imageLeft");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setImageLeft classSiteAgency inputSiteAgency", pk, "ImageLeft w3-input w3-border ");
+					a("name", "setImageLeft");
+				} else {
+					a("class", "valueImageLeft w3-input w3-border classSiteAgency inputSiteAgency", pk, "ImageLeft w3-input w3-border ");
+					a("name", "imageLeft");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setImageLeft', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_imageLeft')); }, function() { addError($('#", classApiMethodMethod, "_imageLeft')); }); ");
+				}
+				a("value", strImageLeft())
+			.fg();
+
+		} else {
+			e("span").a("class", "varSiteAgency", pk, "ImageLeft ").f().sx(htmImageLeft()).g("span");
+		}
+	}
+
+	public void htmImageLeft(String classApiMethodMethod) {
+		SiteAgency s = (SiteAgency)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "SiteAgencyImageLeft").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-yellow ").f();
+							e("label").a("for", classApiMethodMethod, "_imageLeft").a("class", "").f().sx("image left pixels").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputImageLeft(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-yellow ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_imageLeft')); $('#", classApiMethodMethod, "_imageLeft').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#SiteAgencyForm :input[name=pk]').val() }], 'setImageLeft', null, function() { addGlow($('#", classApiMethodMethod, "_imageLeft')); }, function() { addError($('#", classApiMethodMethod, "_imageLeft')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	//////////////
+	// imageTop //
+	//////////////
+
+	/**	 The entity imageTop
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Integer imageTop;
+	@JsonIgnore
+	public Wrap<Integer> imageTopWrap = new Wrap<Integer>().p(this).c(Integer.class).var("imageTop").o(imageTop);
+
+	/**	<br/> The entity imageTop
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.agency.SiteAgency&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:imageTop">Find the entity imageTop in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _imageTop(Wrap<Integer> c);
+
+	public Integer getImageTop() {
+		return imageTop;
+	}
+
+	public void setImageTop(Integer imageTop) {
+		this.imageTop = imageTop;
+		this.imageTopWrap.alreadyInitialized = true;
+	}
+	public SiteAgency setImageTop(String o) {
+		if(NumberUtils.isParsable(o))
+			this.imageTop = Integer.parseInt(o);
+		this.imageTopWrap.alreadyInitialized = true;
+		return (SiteAgency)this;
+	}
+	protected SiteAgency imageTopInit() {
+		if(!imageTopWrap.alreadyInitialized) {
+			_imageTop(imageTopWrap);
+			if(imageTop == null)
+				setImageTop(imageTopWrap.o);
+		}
+		imageTopWrap.alreadyInitialized(true);
+		return (SiteAgency)this;
+	}
+
+	public Integer solrImageTop() {
+		return imageTop;
+	}
+
+	public String strImageTop() {
+		return imageTop == null ? "" : imageTop.toString();
+	}
+
+	public String jsonImageTop() {
+		return imageTop == null ? "" : imageTop.toString();
+	}
+
+	public String nomAffichageImageTop() {
+		return "image top pixels";
+	}
+
+	public String htmTooltipImageTop() {
+		return null;
+	}
+
+	public String htmImageTop() {
+		return imageTop == null ? "" : StringEscapeUtils.escapeHtml4(strImageTop());
+	}
+
+	public void inputImageTop(String classApiMethodMethod) {
+		SiteAgency s = (SiteAgency)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "image top pixels")
+				.a("id", classApiMethodMethod, "_imageTop");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setImageTop classSiteAgency inputSiteAgency", pk, "ImageTop w3-input w3-border ");
+					a("name", "setImageTop");
+				} else {
+					a("class", "valueImageTop w3-input w3-border classSiteAgency inputSiteAgency", pk, "ImageTop w3-input w3-border ");
+					a("name", "imageTop");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setImageTop', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_imageTop')); }, function() { addError($('#", classApiMethodMethod, "_imageTop')); }); ");
+				}
+				a("value", strImageTop())
+			.fg();
+
+		} else {
+			e("span").a("class", "varSiteAgency", pk, "ImageTop ").f().sx(htmImageTop()).g("span");
+		}
+	}
+
+	public void htmImageTop(String classApiMethodMethod) {
+		SiteAgency s = (SiteAgency)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "SiteAgencyImageTop").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-yellow ").f();
+							e("label").a("for", classApiMethodMethod, "_imageTop").a("class", "").f().sx("image top pixels").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputImageTop(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-yellow ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_imageTop')); $('#", classApiMethodMethod, "_imageTop').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#SiteAgencyForm :input[name=pk]').val() }], 'setImageTop', null, function() { addGlow($('#", classApiMethodMethod, "_imageTop')); }, function() { addError($('#", classApiMethodMethod, "_imageTop')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
+	/////////////////
+	// imageCoords //
+	/////////////////
+
+	/**	 The entity imageCoords
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String imageCoords;
+	@JsonIgnore
+	public Wrap<String> imageCoordsWrap = new Wrap<String>().p(this).c(String.class).var("imageCoords").o(imageCoords);
+
+	/**	<br/> The entity imageCoords
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.agency.SiteAgency&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:imageCoords">Find the entity imageCoords in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _imageCoords(Wrap<String> c);
+
+	public String getImageCoords() {
+		return imageCoords;
+	}
+
+	public void setImageCoords(String imageCoords) {
+		this.imageCoords = imageCoords;
+		this.imageCoordsWrap.alreadyInitialized = true;
+	}
+	protected SiteAgency imageCoordsInit() {
+		if(!imageCoordsWrap.alreadyInitialized) {
+			_imageCoords(imageCoordsWrap);
+			if(imageCoords == null)
+				setImageCoords(imageCoordsWrap.o);
+		}
+		imageCoordsWrap.alreadyInitialized(true);
+		return (SiteAgency)this;
+	}
+
+	public String solrImageCoords() {
+		return imageCoords;
+	}
+
+	public String strImageCoords() {
+		return imageCoords == null ? "" : imageCoords;
+	}
+
+	public String jsonImageCoords() {
+		return imageCoords == null ? "" : imageCoords;
+	}
+
+	public String nomAffichageImageCoords() {
+		return "image map coordinates";
+	}
+
+	public String htmTooltipImageCoords() {
+		return null;
+	}
+
+	public String htmImageCoords() {
+		return imageCoords == null ? "" : StringEscapeUtils.escapeHtml4(strImageCoords());
+	}
+
+	public void inputImageCoords(String classApiMethodMethod) {
+		SiteAgency s = (SiteAgency)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("textarea")
+				.a("placeholder", "image map coordinates")
+				.a("id", classApiMethodMethod, "_imageCoords");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setImageCoords classSiteAgency inputSiteAgency", pk, "ImageCoords w3-input w3-border ");
+					a("name", "setImageCoords");
+				} else {
+					a("class", "valueImageCoords w3-input w3-border classSiteAgency inputSiteAgency", pk, "ImageCoords w3-input w3-border ");
+					a("name", "imageCoords");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setImageCoords', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_imageCoords')); }, function() { addError($('#", classApiMethodMethod, "_imageCoords')); }); ");
+				}
+			f().sx(strImageCoords()).g("textarea");
+
+		} else {
+			e("span").a("class", "varSiteAgency", pk, "ImageCoords ").f().sx(htmImageCoords()).g("span");
+		}
+	}
+
+	public void htmImageCoords(String classApiMethodMethod) {
+		SiteAgency s = (SiteAgency)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "SiteAgencyImageCoords").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-pale-yellow ").f();
+							e("label").a("for", classApiMethodMethod, "_imageCoords").a("class", "").f().sx("image map coordinates").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputImageCoords(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-pale-yellow ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_imageCoords')); $('#", classApiMethodMethod, "_imageCoords').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#SiteAgencyForm :input[name=pk]').val() }], 'setImageCoords', null, function() { addGlow($('#", classApiMethodMethod, "_imageCoords')); }, function() { addError($('#", classApiMethodMethod, "_imageCoords')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
 	////////////////////
 	// reportCardKeys //
 	////////////////////
@@ -926,6 +1323,9 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		stateSearchInit();
 		state_Init();
 		stateKeyInit();
+		imageLeftInit();
+		imageTopInit();
+		imageCoordsInit();
 		reportCardKeysInit();
 		stateIdInit();
 		stateNameInit();
@@ -981,6 +1381,12 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 				return oSiteAgency.state_;
 			case "stateKey":
 				return oSiteAgency.stateKey;
+			case "imageLeft":
+				return oSiteAgency.imageLeft;
+			case "imageTop":
+				return oSiteAgency.imageTop;
+			case "imageCoords":
+				return oSiteAgency.imageCoords;
 			case "reportCardKeys":
 				return oSiteAgency.reportCardKeys;
 			case "stateId":
@@ -1058,6 +1464,21 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 					setAgencyName(val);
 				saves.add(var);
 				return val;
+			case "imageLeft":
+				if(val != null)
+					setImageLeft(val);
+				saves.add(var);
+				return val;
+			case "imageTop":
+				if(val != null)
+					setImageTop(val);
+				saves.add(var);
+				return val;
+			case "imageCoords":
+				if(val != null)
+					setImageCoords(val);
+				saves.add(var);
+				return val;
 			default:
 				return super.defineCluster(var, val);
 		}
@@ -1090,6 +1511,24 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 			Long stateKey = (Long)solrDocument.get("stateKey_stored_long");
 			if(stateKey != null)
 				oSiteAgency.setStateKey(stateKey);
+
+			if(saves.contains("imageLeft")) {
+				Integer imageLeft = (Integer)solrDocument.get("imageLeft_stored_int");
+				if(imageLeft != null)
+					oSiteAgency.setImageLeft(imageLeft);
+			}
+
+			if(saves.contains("imageTop")) {
+				Integer imageTop = (Integer)solrDocument.get("imageTop_stored_int");
+				if(imageTop != null)
+					oSiteAgency.setImageTop(imageTop);
+			}
+
+			if(saves.contains("imageCoords")) {
+				String imageCoords = (String)solrDocument.get("imageCoords_stored_string");
+				if(imageCoords != null)
+					oSiteAgency.setImageCoords(imageCoords);
+			}
 
 			List<Long> reportCardKeys = (List<Long>)solrDocument.get("reportCardKeys_stored_longs");
 			if(reportCardKeys != null)
@@ -1197,6 +1636,18 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 			document.addField("stateKey_indexed_long", stateKey);
 			document.addField("stateKey_stored_long", stateKey);
 		}
+		if(imageLeft != null) {
+			document.addField("imageLeft_indexed_int", imageLeft);
+			document.addField("imageLeft_stored_int", imageLeft);
+		}
+		if(imageTop != null) {
+			document.addField("imageTop_indexed_int", imageTop);
+			document.addField("imageTop_stored_int", imageTop);
+		}
+		if(imageCoords != null) {
+			document.addField("imageCoords_indexed_string", imageCoords);
+			document.addField("imageCoords_stored_string", imageCoords);
+		}
 		if(reportCardKeys != null) {
 			for(java.lang.Long o : reportCardKeys) {
 				document.addField("reportCardKeys_indexed_longs", o);
@@ -1250,6 +1701,12 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 				return "agencyName_indexed_string";
 			case "stateKey":
 				return "stateKey_indexed_long";
+			case "imageLeft":
+				return "imageLeft_indexed_int";
+			case "imageTop":
+				return "imageTop_indexed_int";
+			case "imageCoords":
+				return "imageCoords_indexed_string";
 			case "reportCardKeys":
 				return "reportCardKeys_indexed_longs";
 			case "stateId":
@@ -1301,6 +1758,18 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		if(stateKey != null)
 			oSiteAgency.setStateKey(stateKey);
 
+		Integer imageLeft = (Integer)solrDocument.get("imageLeft_stored_int");
+		if(imageLeft != null)
+			oSiteAgency.setImageLeft(imageLeft);
+
+		Integer imageTop = (Integer)solrDocument.get("imageTop_stored_int");
+		if(imageTop != null)
+			oSiteAgency.setImageTop(imageTop);
+
+		String imageCoords = (String)solrDocument.get("imageCoords_stored_string");
+		if(imageCoords != null)
+			oSiteAgency.setImageCoords(imageCoords);
+
 		List<Long> reportCardKeys = (List<Long>)solrDocument.get("reportCardKeys_stored_longs");
 		if(reportCardKeys != null)
 			oSiteAgency.reportCardKeys.addAll(reportCardKeys);
@@ -1339,6 +1808,12 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 				apiRequest.addVars("agencyName");
 			if(!Objects.equals(stateKey, original.getStateKey()))
 				apiRequest.addVars("stateKey");
+			if(!Objects.equals(imageLeft, original.getImageLeft()))
+				apiRequest.addVars("imageLeft");
+			if(!Objects.equals(imageTop, original.getImageTop()))
+				apiRequest.addVars("imageTop");
+			if(!Objects.equals(imageCoords, original.getImageCoords()))
+				apiRequest.addVars("imageCoords");
 			if(!Objects.equals(reportCardKeys, original.getReportCardKeys()))
 				apiRequest.addVars("reportCardKeys");
 			if(!Objects.equals(stateId, original.getStateId()))
@@ -1358,7 +1833,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	//////////////
 
 	@Override public int hashCode() {
-		return Objects.hash(super.hashCode(), agencyKey, agencyName, stateKey, reportCardKeys, stateId, stateName, stateAbbreviation, agencyCompleteName);
+		return Objects.hash(super.hashCode(), agencyKey, agencyName, stateKey, imageLeft, imageTop, imageCoords, reportCardKeys, stateId, stateName, stateAbbreviation, agencyCompleteName);
 	}
 
 	////////////
@@ -1375,6 +1850,9 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 				&& Objects.equals( agencyKey, that.agencyKey )
 				&& Objects.equals( agencyName, that.agencyName )
 				&& Objects.equals( stateKey, that.stateKey )
+				&& Objects.equals( imageLeft, that.imageLeft )
+				&& Objects.equals( imageTop, that.imageTop )
+				&& Objects.equals( imageCoords, that.imageCoords )
 				&& Objects.equals( reportCardKeys, that.reportCardKeys )
 				&& Objects.equals( stateId, that.stateId )
 				&& Objects.equals( stateName, that.stateName )
@@ -1393,6 +1871,9 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		sb.append( "agencyKey: " ).append(agencyKey);
 		sb.append( ", agencyName: \"" ).append(agencyName).append( "\"" );
 		sb.append( ", stateKey: " ).append(stateKey);
+		sb.append( ", imageLeft: " ).append(imageLeft);
+		sb.append( ", imageTop: " ).append(imageTop);
+		sb.append( ", imageCoords: \"" ).append(imageCoords).append( "\"" );
 		sb.append( ", reportCardKeys: " ).append(reportCardKeys);
 		sb.append( ", stateId: \"" ).append(stateId).append( "\"" );
 		sb.append( ", stateName: \"" ).append(stateName).append( "\"" );

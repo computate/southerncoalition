@@ -206,9 +206,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 5
 	 * HtmlCell: 3
-	 * DisplayName.enUS: First Nation female
+	 * DisplayName.enUS: Indigenous female
 	 */ 
-	protected void _pupilsIndianFemale(Wrap<Long> c) {
+	protected void _pupilsIndigenousFemale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -218,9 +218,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 5
 	 * HtmlCell: 2
-	 * DisplayName.enUS: First Nation male
+	 * DisplayName.enUS: Indigenous male
 	 */  
-	protected void _pupilsIndianMale(Wrap<Long> c) {
+	protected void _pupilsIndigenousMale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -229,11 +229,11 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 5
 	 * HtmlCell: 4
-	 * DisplayName.enUS: First Nation total
+	 * DisplayName.enUS: Indigenous total
 	 */ 
-	protected void _pupilsIndianTotal(Wrap<Long> c) {
-		if(pupilsIndianFemale != null  && pupilsIndianMale != null)
-			c.o(pupilsIndianFemale + pupilsIndianMale);
+	protected void _pupilsIndigenousTotal(Wrap<Long> c) {
+		if(pupilsIndigenousFemale != null  && pupilsIndigenousMale != null)
+			c.o(pupilsIndigenousFemale + pupilsIndigenousMale);
 	}
 
 	/**   
@@ -242,15 +242,15 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 5
 	 * HtmlCell: 5
-	 * DisplayName.enUS: First Nation percent
+	 * DisplayName.enUS: Indigenous percent
 	 */ 
-	protected void _pupilsIndianPercent(Wrap<BigDecimal> c) {
-		if(pupilsIndianFemale != null  && pupilsIndianMale != null
+	protected void _pupilsIndigenousPercent(Wrap<BigDecimal> c) {
+		if(pupilsIndigenousFemale != null  && pupilsIndigenousMale != null
 				&& pupilsTotal != null && pupilsTotal > 0)
-			c.o(new BigDecimal(pupilsIndianFemale).add(new BigDecimal(pupilsIndianMale)).divide(new BigDecimal(pupilsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+			c.o(new BigDecimal(pupilsIndigenousFemale).add(new BigDecimal(pupilsIndigenousMale)).divide(new BigDecimal(pupilsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
-	@Override public String strPupilsIndianPercent() {
-		return pupilsIndianPercent == null ? "" : pupilsIndianPercent.setScale(1, RoundingMode.CEILING).toString();
+	@Override public String strPupilsIndigenousPercent() {
+		return pupilsIndigenousPercent == null ? "" : pupilsIndigenousPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -316,7 +316,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 2
 	 * DisplayName.enUS: Latinx female
 	 */ 
-	protected void _pupilsHispanicFemale(Wrap<Long> c) {
+	protected void _pupilsLatinxFemale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -328,7 +328,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 1
 	 * DisplayName.enUS: Latinx male
 	 */ 
-	protected void _pupilsHispanicMale(Wrap<Long> c) {
+	protected void _pupilsLatinxMale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -339,9 +339,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 3
 	 * DisplayName.enUS: Latinx total
 	 */ 
-	protected void _pupilsHispanicTotal(Wrap<Long> c) {
-		if(pupilsHispanicFemale != null  && pupilsHispanicMale != null)
-			c.o(pupilsHispanicFemale + pupilsHispanicMale);
+	protected void _pupilsLatinxTotal(Wrap<Long> c) {
+		if(pupilsLatinxFemale != null  && pupilsLatinxMale != null)
+			c.o(pupilsLatinxFemale + pupilsLatinxMale);
 	}
 
 	/**   
@@ -352,13 +352,13 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 4
 	 * DisplayName.enUS: Latinx percent
 	 */ 
-	protected void _pupilsHispanicPercent(Wrap<BigDecimal> c) {
-		if(pupilsHispanicFemale != null  && pupilsHispanicMale != null
+	protected void _pupilsLatinxPercent(Wrap<BigDecimal> c) {
+		if(pupilsLatinxFemale != null  && pupilsLatinxMale != null
 				&& pupilsTotal != null && pupilsTotal > 0)
-			c.o(new BigDecimal(pupilsHispanicFemale).add(new BigDecimal(pupilsHispanicMale)).divide(new BigDecimal(pupilsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+			c.o(new BigDecimal(pupilsLatinxFemale).add(new BigDecimal(pupilsLatinxMale)).divide(new BigDecimal(pupilsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
-	@Override public String strPupilsHispanicPercent() {
-		return pupilsHispanicPercent == null ? "" : pupilsHispanicPercent.setScale(1, RoundingMode.CEILING).toString();
+	@Override public String strPupilsLatinxPercent() {
+		return pupilsLatinxPercent == null ? "" : pupilsLatinxPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -589,12 +589,12 @@ public class ReportCard extends ReportCardGen<Cluster> {
 				othersTotal = othersTotal.add(new BigDecimal(pupilsMultiRacialFemale)).add(new BigDecimal(pupilsMultiRacialMale));
 			if(pupilsAsianFemale != null  && pupilsAsianMale != null)
 				othersTotal = othersTotal.add(new BigDecimal(pupilsAsianFemale)).add(new BigDecimal(pupilsAsianMale));
-			if(pupilsHispanicFemale != null  && pupilsHispanicMale != null)
-				othersTotal = othersTotal.add(new BigDecimal(pupilsHispanicFemale)).add(new BigDecimal(pupilsHispanicMale));
+			if(pupilsLatinxFemale != null  && pupilsLatinxMale != null)
+				othersTotal = othersTotal.add(new BigDecimal(pupilsLatinxFemale)).add(new BigDecimal(pupilsLatinxMale));
 			if(pupilsPacificIslanderFemale != null  && pupilsPacificIslanderMale != null)
 				othersTotal = othersTotal.add(new BigDecimal(pupilsPacificIslanderFemale)).add(new BigDecimal(pupilsPacificIslanderMale));
-			if(pupilsIndianFemale != null  && pupilsIndianMale != null)
-				othersTotal = othersTotal.add(new BigDecimal(pupilsIndianFemale)).add(new BigDecimal(pupilsIndianMale));
+			if(pupilsIndigenousFemale != null  && pupilsIndigenousMale != null)
+				othersTotal = othersTotal.add(new BigDecimal(pupilsIndigenousFemale)).add(new BigDecimal(pupilsIndigenousMale));
 			c.o(othersTotal.divide(new BigDecimal(pupilsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 		}
 	}
@@ -846,7 +846,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 1
 	 * DisplayName.enUS: Latinx complaints
 	 */ 
-	protected void _delinquentComplaintsHispanic(Wrap<Long> c) {
+	protected void _delinquentComplaintsLatinx(Wrap<Long> c) {
 	}
 
 	/**   
@@ -857,13 +857,13 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 2
 	 * DisplayName.enUS: Latinx complaints percent
 	 */ 
-	protected void _delinquentComplaintsHispanicPercent(Wrap<BigDecimal> c) {
-		if(delinquentComplaintsHispanic != null 
+	protected void _delinquentComplaintsLatinxPercent(Wrap<BigDecimal> c) {
+		if(delinquentComplaintsLatinx != null 
 				&& delinquentComplaintsTotal != null && delinquentComplaintsTotal > 0)
-			c.o(new BigDecimal(delinquentComplaintsHispanic).divide(new BigDecimal(delinquentComplaintsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+			c.o(new BigDecimal(delinquentComplaintsLatinx).divide(new BigDecimal(delinquentComplaintsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
-	@Override public String strDelinquentComplaintsHispanicPercent() {
-		return delinquentComplaintsHispanicPercent == null ? "" : delinquentComplaintsHispanicPercent.setScale(1, RoundingMode.CEILING).toString();
+	@Override public String strDelinquentComplaintsLatinxPercent() {
+		return delinquentComplaintsLatinxPercent == null ? "" : delinquentComplaintsLatinxPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -902,9 +902,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 16
 	 * HtmlCell: 5
-	 * DisplayName.enUS: First Nation complaints
+	 * DisplayName.enUS: Indigenous complaints
 	 */ 
-	protected void _delinquentComplaintsIndian(Wrap<Long> c) {
+	protected void _delinquentComplaintsIndigenous(Wrap<Long> c) {
 	}
 
 	/**   
@@ -913,15 +913,15 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 16
 	 * HtmlCell: 6
-	 * DisplayName.enUS: First Nation complaints percent
+	 * DisplayName.enUS: Indigenous complaints percent
 	 */ 
-	protected void _delinquentComplaintsIndianPercent(Wrap<BigDecimal> c) {
-		if(delinquentComplaintsIndian != null 
+	protected void _delinquentComplaintsIndigenousPercent(Wrap<BigDecimal> c) {
+		if(delinquentComplaintsIndigenous != null 
 				&& delinquentComplaintsTotal != null && delinquentComplaintsTotal > 0)
-			c.o(new BigDecimal(delinquentComplaintsIndian).divide(new BigDecimal(delinquentComplaintsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+			c.o(new BigDecimal(delinquentComplaintsIndigenous).divide(new BigDecimal(delinquentComplaintsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
-	@Override public String strDelinquentComplaintsIndianPercent() {
-		return delinquentComplaintsIndianPercent == null ? "" : delinquentComplaintsIndianPercent.setScale(1, RoundingMode.CEILING).toString();
+	@Override public String strDelinquentComplaintsIndigenousPercent() {
+		return delinquentComplaintsIndigenousPercent == null ? "" : delinquentComplaintsIndigenousPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1195,7 +1195,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 1
 	 * DisplayName.enUS: short-term suspensions Latinx female
 	 */ 
-	protected void _shortTermSuspensionsHispanicFemale(Wrap<Long> c) {
+	protected void _shortTermSuspensionsLatinxFemale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -1207,7 +1207,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 2
 	 * DisplayName.enUS: short-term suspensions Latinx male
 	 */ 
-	protected void _shortTermSuspensionsHispanicMale(Wrap<Long> c) {
+	protected void _shortTermSuspensionsLatinxMale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -1218,9 +1218,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 3
 	 * DisplayName.enUS: short-term suspensions Latinx total
 	 */ 
-	protected void _shortTermSuspensionsHispanicTotal(Wrap<Long> c) {
-		if(shortTermSuspensionsHispanicFemale != null  && shortTermSuspensionsHispanicMale != null)
-			c.o(shortTermSuspensionsHispanicFemale + shortTermSuspensionsHispanicMale);
+	protected void _shortTermSuspensionsLatinxTotal(Wrap<Long> c) {
+		if(shortTermSuspensionsLatinxFemale != null  && shortTermSuspensionsLatinxMale != null)
+			c.o(shortTermSuspensionsLatinxFemale + shortTermSuspensionsLatinxMale);
 	}
 
 	/**   
@@ -1231,13 +1231,13 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 4
 	 * DisplayName.enUS: short-term suspensions Latinx percent
 	 */ 
-	protected void _shortTermSuspensionsHispanicPercent(Wrap<BigDecimal> c) {
-		if(shortTermSuspensionsHispanicFemale != null  && shortTermSuspensionsHispanicMale != null
+	protected void _shortTermSuspensionsLatinxPercent(Wrap<BigDecimal> c) {
+		if(shortTermSuspensionsLatinxFemale != null  && shortTermSuspensionsLatinxMale != null
 				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
-			c.o(new BigDecimal(shortTermSuspensionsHispanicFemale).add(new BigDecimal(shortTermSuspensionsHispanicMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+			c.o(new BigDecimal(shortTermSuspensionsLatinxFemale).add(new BigDecimal(shortTermSuspensionsLatinxMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
-	@Override public String strShortTermSuspensionsHispanicPercent() {
-		return shortTermSuspensionsHispanicPercent == null ? "" : shortTermSuspensionsHispanicPercent.setScale(1, RoundingMode.CEILING).toString();
+	@Override public String strShortTermSuspensionsLatinxPercent() {
+		return shortTermSuspensionsLatinxPercent == null ? "" : shortTermSuspensionsLatinxPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1248,12 +1248,12 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 5
 	 * DisplayName.enUS: short-term suspensions Latinx rate
 	 */ 
-	protected void _shortTermSuspensionsHispanicRate(Wrap<BigDecimal> c) {
-		if(shortTermSuspensionsHispanicTotal != null && pupilsHispanicTotal != null && pupilsHispanicTotal > 0)
-			c.o(new BigDecimal(shortTermSuspensionsHispanicTotal).divide(new BigDecimal(pupilsHispanicTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	protected void _shortTermSuspensionsLatinxRate(Wrap<BigDecimal> c) {
+		if(shortTermSuspensionsLatinxTotal != null && pupilsLatinxTotal != null && pupilsLatinxTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsLatinxTotal).divide(new BigDecimal(pupilsLatinxTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
-	@Override public String strShortTermSuspensionsHispanicRate() {
-		return shortTermSuspensionsHispanicRate == null ? "" : shortTermSuspensionsHispanicRate.setScale(1, RoundingMode.CEILING).toString();
+	@Override public String strShortTermSuspensionsLatinxRate() {
+		return shortTermSuspensionsLatinxRate == null ? "" : shortTermSuspensionsLatinxRate.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1263,9 +1263,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 22
 	 * HtmlCell: 1
-	 * DisplayName.enUS: short-term suspensions First Nation female
+	 * DisplayName.enUS: short-term suspensions Indigenous female
 	 */ 
-	protected void _shortTermSuspensionsIndianFemale(Wrap<Long> c) {
+	protected void _shortTermSuspensionsIndigenousFemale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -1275,9 +1275,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 22
 	 * HtmlCell: 2
-	 * DisplayName.enUS: short-term suspensions First Nation male
+	 * DisplayName.enUS: short-term suspensions Indigenous male
 	 */  
-	protected void _shortTermSuspensionsIndianMale(Wrap<Long> c) {
+	protected void _shortTermSuspensionsIndigenousMale(Wrap<Long> c) {
 	}
 
 	/**   
@@ -1286,11 +1286,11 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 22
 	 * HtmlCell: 3
-	 * DisplayName.enUS: short-term suspensions First Nation total
+	 * DisplayName.enUS: short-term suspensions Indigenous total
 	 */ 
-	protected void _shortTermSuspensionsIndianTotal(Wrap<Long> c) {
-		if(shortTermSuspensionsIndianFemale != null  && shortTermSuspensionsIndianMale != null)
-			c.o(shortTermSuspensionsIndianFemale + shortTermSuspensionsIndianMale);
+	protected void _shortTermSuspensionsIndigenousTotal(Wrap<Long> c) {
+		if(shortTermSuspensionsIndigenousFemale != null  && shortTermSuspensionsIndigenousMale != null)
+			c.o(shortTermSuspensionsIndigenousFemale + shortTermSuspensionsIndigenousMale);
 	}
 
 	/**   
@@ -1299,15 +1299,15 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 22
 	 * HtmlCell: 4
-	 * DisplayName.enUS: short-term suspensions First Nation percent
+	 * DisplayName.enUS: short-term suspensions Indigenous percent
 	 */ 
-	protected void _shortTermSuspensionsIndianPercent(Wrap<BigDecimal> c) {
-		if(shortTermSuspensionsIndianFemale != null  && shortTermSuspensionsIndianMale != null
+	protected void _shortTermSuspensionsIndigenousPercent(Wrap<BigDecimal> c) {
+		if(shortTermSuspensionsIndigenousFemale != null  && shortTermSuspensionsIndigenousMale != null
 				&& shortTermSuspensionsTotal != null && shortTermSuspensionsTotal > 0)
-			c.o(new BigDecimal(shortTermSuspensionsIndianFemale).add(new BigDecimal(shortTermSuspensionsIndianMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+			c.o(new BigDecimal(shortTermSuspensionsIndigenousFemale).add(new BigDecimal(shortTermSuspensionsIndigenousMale)).divide(new BigDecimal(shortTermSuspensionsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
-	@Override public String strShortTermSuspensionsIndianPercent() {
-		return shortTermSuspensionsIndianPercent == null ? "" : shortTermSuspensionsIndianPercent.setScale(1, RoundingMode.CEILING).toString();
+	@Override public String strShortTermSuspensionsIndigenousPercent() {
+		return shortTermSuspensionsIndigenousPercent == null ? "" : shortTermSuspensionsIndigenousPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1316,14 +1316,14 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Stored: true
 	 * HtmlRow: 22
 	 * HtmlCell: 5
-	 * DisplayName.enUS: short-term suspensions First Nation rate
+	 * DisplayName.enUS: short-term suspensions Indigenous rate
 	 */ 
-	protected void _shortTermSuspensionsIndianRate(Wrap<BigDecimal> c) {
-		if(shortTermSuspensionsIndianTotal != null && pupilsIndianTotal != null && pupilsIndianTotal > 0)
-			c.o(new BigDecimal(shortTermSuspensionsIndianTotal).divide(new BigDecimal(pupilsIndianTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+	protected void _shortTermSuspensionsIndigenousRate(Wrap<BigDecimal> c) {
+		if(shortTermSuspensionsIndigenousTotal != null && pupilsIndigenousTotal != null && pupilsIndigenousTotal > 0)
+			c.o(new BigDecimal(shortTermSuspensionsIndigenousTotal).divide(new BigDecimal(pupilsIndigenousTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
-	@Override public String strShortTermSuspensionsIndianRate() {
-		return shortTermSuspensionsIndianRate == null ? "" : shortTermSuspensionsIndianRate.setScale(1, RoundingMode.CEILING).toString();
+	@Override public String strShortTermSuspensionsIndigenousRate() {
+		return shortTermSuspensionsIndigenousRate == null ? "" : shortTermSuspensionsIndigenousRate.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1596,10 +1596,10 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 2
 	 * DisplayName.enUS: College ready exams grades 3-8 first nation
 	 */ 
-	protected void _examsCollegeReadyGrades38IndianPercent(Wrap<BigDecimal> c) {
+	protected void _examsCollegeReadyGrades38IndigenousPercent(Wrap<BigDecimal> c) {
 	}
-	@Override public String strExamsCollegeReadyGrades38IndianPercent() {
-		return examsCollegeReadyGrades38IndianPercent == null ? "" : examsCollegeReadyGrades38IndianPercent.setScale(1, RoundingMode.CEILING).toString();
+	@Override public String strExamsCollegeReadyGrades38IndigenousPercent() {
+		return examsCollegeReadyGrades38IndigenousPercent == null ? "" : examsCollegeReadyGrades38IndigenousPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1641,10 +1641,10 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 1
 	 * DisplayName.enUS: College ready exams grades 3-8 hispanic
 	 */ 
-	protected void _examsCollegeReadyGrades38HispanicPercent(Wrap<BigDecimal> c) {
+	protected void _examsCollegeReadyGrades38LatinxPercent(Wrap<BigDecimal> c) {
 	}
-	@Override public String strExamsCollegeReadyGrades38HispanicPercent() {
-		return examsCollegeReadyGrades38HispanicPercent == null ? "" : examsCollegeReadyGrades38HispanicPercent.setScale(1, RoundingMode.CEILING).toString();
+	@Override public String strExamsCollegeReadyGrades38LatinxPercent() {
+		return examsCollegeReadyGrades38LatinxPercent == null ? "" : examsCollegeReadyGrades38LatinxPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1716,10 +1716,10 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 2
 	 * DisplayName.enUS: College ready exams grades 9-12 first nation
 	 */ 
-	protected void _examsCollegeReadyGrades912IndianPercent(Wrap<BigDecimal> c) {
+	protected void _examsCollegeReadyGrades912IndigenousPercent(Wrap<BigDecimal> c) {
 	}
-	@Override public String strExamsCollegeReadyGrades912IndianPercent() {
-		return examsCollegeReadyGrades912IndianPercent == null ? "" : examsCollegeReadyGrades912IndianPercent.setScale(1, RoundingMode.CEILING).toString();
+	@Override public String strExamsCollegeReadyGrades912IndigenousPercent() {
+		return examsCollegeReadyGrades912IndigenousPercent == null ? "" : examsCollegeReadyGrades912IndigenousPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1761,10 +1761,10 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 1
 	 * DisplayName.enUS: College ready exams grades 9-12 hispanic
 	 */ 
-	protected void _examsCollegeReadyGrades912HispanicPercent(Wrap<BigDecimal> c) {
+	protected void _examsCollegeReadyGrades912LatinxPercent(Wrap<BigDecimal> c) {
 	}
-	@Override public String strExamsCollegeReadyGrades912HispanicPercent() {
-		return examsCollegeReadyGrades912HispanicPercent == null ? "" : examsCollegeReadyGrades912HispanicPercent.setScale(1, RoundingMode.CEILING).toString();
+	@Override public String strExamsCollegeReadyGrades912LatinxPercent() {
+		return examsCollegeReadyGrades912LatinxPercent == null ? "" : examsCollegeReadyGrades912LatinxPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1836,10 +1836,10 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 2
 	 * DisplayName.enUS: Graduate HS within 4 years first nation
 	 */ 
-	protected void _graduateWithin4YearsIndianPercent(Wrap<BigDecimal> c) {
+	protected void _graduateWithin4YearsIndigenousPercent(Wrap<BigDecimal> c) {
 	}
-	@Override public String strGraduateWithin4YearsIndianPercent() {
-		return graduateWithin4YearsIndianPercent == null ? "" : graduateWithin4YearsIndianPercent.setScale(1, RoundingMode.CEILING).toString();
+	@Override public String strGraduateWithin4YearsIndigenousPercent() {
+		return graduateWithin4YearsIndigenousPercent == null ? "" : graduateWithin4YearsIndigenousPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -1881,10 +1881,10 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * HtmlCell: 1
 	 * DisplayName.enUS: Graduate HS within 4 years hispanic
 	 */ 
-	protected void _graduateWithin4YearsHispanicPercent(Wrap<BigDecimal> c) {
+	protected void _graduateWithin4YearsLatinxPercent(Wrap<BigDecimal> c) {
 	}
-	@Override public String strGraduateWithin4YearsHispanicPercent() {
-		return graduateWithin4YearsHispanicPercent == null ? "" : graduateWithin4YearsHispanicPercent.setScale(1, RoundingMode.CEILING).toString();
+	@Override public String strGraduateWithin4YearsLatinxPercent() {
+		return graduateWithin4YearsLatinxPercent == null ? "" : graduateWithin4YearsLatinxPercent.setScale(1, RoundingMode.CEILING).toString();
 	}
 
 	/**   
@@ -2008,6 +2008,24 @@ public class ReportCard extends ReportCardGen<Cluster> {
 
 	/**   
 	 * {@inheritDoc}
+	 * Stored: true
+	 */ 
+	protected void _agencyCoords(Wrap<String> c) {
+		if(agency_ != null)
+			c.o(agency_.getImageCoords());
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Stored: true
+	 */ 
+	protected void _agencyLeft(Wrap<Integer> c) {
+		if(agency_ != null)
+			c.o(agency_.getImageLeft());
+	}
+
+	/**   
+	 * {@inheritDoc}
 	 * Indexed: true
 	 * Stored: true
 	 * VarH2: true
@@ -2048,10 +2066,10 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	protected void _agencyDemographicsGraph(Wrap<String> w) {
 		try {
 			DefaultPieDataset dataset = new DefaultPieDataset();
-			dataset.setValue( String.format("%s (%s%%)", "American Indian", pupilsIndianPercent), pupilsIndianPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "Indigenous", pupilsIndigenousPercent), pupilsIndigenousPercent );  
 			dataset.setValue( String.format("%s (%s%%)", "Asian", pupilsAsianPercent), pupilsAsianPercent );  
 			dataset.setValue( String.format("%s (%s%%)", "Black", pupilsBlackPercent), pupilsBlackPercent );  
-			dataset.setValue( String.format("%s (%s%%)", "Hispanic", pupilsHispanicPercent), pupilsHispanicPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "Latinx", pupilsLatinxPercent), pupilsLatinxPercent );  
 			dataset.setValue( String.format("%s (%s%%)", "Multi-Racial", pupilsMultiRacialPercent), pupilsMultiRacialPercent );  
 			dataset.setValue( String.format("%s (%s%%)", "Pacific Islander", pupilsPacificIslanderPercent), pupilsPacificIslanderPercent );  
 			dataset.setValue( String.format("%s (%s%%)", "White", pupilsWhitePercent), pupilsWhitePercent );  
@@ -2180,7 +2198,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	
 				StringBuilder b = new StringBuilder();
 				b.append("                  ").append(imageMap).append("\n");
-				b.append("                  <img usemap=\"#map_").append(w.var).append("\" style=\"width: 200px; \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
+				b.append("                  <img usemap=\"#map_").append(w.var).append("\" style=\"width: 180px; \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
 				w.o(b.toString());
 			} catch (NumberFormatException | IOException ex) {
 				ExceptionUtils.rethrow(ex);
@@ -2253,7 +2271,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	
 				StringBuilder b = new StringBuilder();
 				b.append("                  ").append(imageMap).append("\n");
-				b.append("                  <img usemap=\"#map_").append(w.var).append("\" style=\"width: 200px; \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
+				b.append("                  <img usemap=\"#map_").append(w.var).append("\" style=\"width: 180px; \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
 				w.o(b.toString());
 			} catch (NumberFormatException | IOException ex) {
 				ExceptionUtils.rethrow(ex);
@@ -2269,10 +2287,10 @@ public class ReportCard extends ReportCardGen<Cluster> {
 		try {
 			DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
-			dataset.addValue( examsCollegeReadyGrades38IndianPercent, "First Nation", "First Nation" );  
+			dataset.addValue( examsCollegeReadyGrades38IndigenousPercent, "Indigenous", "Indigenous" );  
 			dataset.addValue( examsCollegeReadyGrades38AsianPercent, "Asian", "Asian" );  
 			dataset.addValue( examsCollegeReadyGrades38BlackPercent, "Black", "Black" );  
-			dataset.addValue( examsCollegeReadyGrades38HispanicPercent, "Hispanic", "Hispanic" );  
+			dataset.addValue( examsCollegeReadyGrades38LatinxPercent, "Latinx", "Latinx" );  
 			dataset.addValue( examsCollegeReadyGrades38MultiRacialPercent, "Multi-Racial", "Multi-Racial" );  
 			dataset.addValue( examsCollegeReadyGrades38PacificIslanderPercent, "Pacific Islander", "Pacific Islander" );  
 			dataset.addValue( examsCollegeReadyGrades38WhitePercent, "White", "White" );  
@@ -2359,10 +2377,10 @@ public class ReportCard extends ReportCardGen<Cluster> {
 		try {
 			DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
-			dataset.addValue( examsCollegeReadyGrades912IndianPercent, "First Nation", "First Nation" );  
+			dataset.addValue( examsCollegeReadyGrades912IndigenousPercent, "Indigenous", "Indigenous" );  
 			dataset.addValue( examsCollegeReadyGrades912AsianPercent, "Asian", "Asian" );  
 			dataset.addValue( examsCollegeReadyGrades912BlackPercent, "Black", "Black" );  
-			dataset.addValue( examsCollegeReadyGrades912HispanicPercent, "Hispanic", "Hispanic" );  
+			dataset.addValue( examsCollegeReadyGrades912LatinxPercent, "Latinx", "Latinx" );  
 			dataset.addValue( examsCollegeReadyGrades912MultiRacialPercent, "Multi-Racial", "Multi-Racial" );  
 			dataset.addValue( examsCollegeReadyGrades912PacificIslanderPercent, "Pacific Islander", "Pacific Islander" );  
 			dataset.addValue( examsCollegeReadyGrades912WhitePercent, "White", "White" );  
@@ -2449,10 +2467,10 @@ public class ReportCard extends ReportCardGen<Cluster> {
 		try {
 			DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
-			dataset.addValue( graduateWithin4YearsIndianPercent, "First Nation", "First Nation" );  
+			dataset.addValue( graduateWithin4YearsIndigenousPercent, "Indigenous", "Indigenous" );  
 			dataset.addValue( graduateWithin4YearsAsianPercent, "Asian", "Asian" );  
 			dataset.addValue( graduateWithin4YearsBlackPercent, "Black", "Black" );  
-			dataset.addValue( graduateWithin4YearsHispanicPercent, "Hispanic", "Hispanic" );  
+			dataset.addValue( graduateWithin4YearsLatinxPercent, "Latinx", "Latinx" );  
 			dataset.addValue( graduateWithin4YearsMultiRacialPercent, "Multi-Racial", "Multi-Racial" );  
 			dataset.addValue( graduateWithin4YearsPacificIslanderPercent, "Pacific Islander", "Pacific Islander" );  
 			dataset.addValue( graduateWithin4YearsWhitePercent, "White", "White" );  
@@ -2539,10 +2557,10 @@ public class ReportCard extends ReportCardGen<Cluster> {
 		try {
 			DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
-			dataset.addValue( shortTermSuspensionsIndianPercent, "First Nation", "First Nation" );  
+			dataset.addValue( shortTermSuspensionsIndigenousPercent, "Indigenous", "Indigenous" );  
 			dataset.addValue( shortTermSuspensionsAsianPercent, "Asian", "Asian" );  
 			dataset.addValue( shortTermSuspensionsBlackPercent, "Black", "Black" );  
-			dataset.addValue( shortTermSuspensionsHispanicPercent, "Hispanic", "Hispanic" );  
+			dataset.addValue( shortTermSuspensionsLatinxPercent, "Latinx", "Latinx" );  
 			dataset.addValue( shortTermSuspensionsMultiRacialPercent, "Multi-Racial", "Multi-Racial" );  
 			dataset.addValue( shortTermSuspensionsPacificIslanderPercent, "Pacific Islander", "Pacific Islander" );  
 			dataset.addValue( shortTermSuspensionsWhitePercent, "White", "White" );  
@@ -2627,10 +2645,10 @@ public class ReportCard extends ReportCardGen<Cluster> {
 		try {
 			DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
-			dataset.addValue( shortTermSuspensionsIndianRate, "First Nation", "First Nation" );  
+			dataset.addValue( shortTermSuspensionsIndigenousRate, "Indigenous", "Indigenous" );  
 			dataset.addValue( shortTermSuspensionsAsianRate, "Asian", "Asian" );  
 			dataset.addValue( shortTermSuspensionsBlackRate, "Black", "Black" );  
-			dataset.addValue( shortTermSuspensionsHispanicRate, "Hispanic", "Hispanic" );  
+			dataset.addValue( shortTermSuspensionsLatinxRate, "Latinx", "Latinx" );  
 			dataset.addValue( shortTermSuspensionsMultiRacialRate, "Multi-Racial", "Multi-Racial" );  
 			dataset.addValue( shortTermSuspensionsPacificIslanderRate, "Pacific Islander", "Pacific Islander" );  
 			dataset.addValue( shortTermSuspensionsWhiteRate, "White", "White" );  
@@ -2808,10 +2826,10 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	protected void _schoolBasedComplaintsGraph(Wrap<String> w) {
 		try {
 			DefaultPieDataset dataset = new DefaultPieDataset();
-			dataset.setValue( String.format("%s (%s%%)", "American Indian", delinquentComplaintsIndianPercent), delinquentComplaintsIndianPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "Indigenous", delinquentComplaintsIndigenousPercent), delinquentComplaintsIndigenousPercent );  
 			dataset.setValue( String.format("%s (%s%%)", "Asian", delinquentComplaintsAsianPercent), delinquentComplaintsAsianPercent );  
 			dataset.setValue( String.format("%s (%s%%)", "Black", delinquentComplaintsBlackPercent), delinquentComplaintsBlackPercent );  
-			dataset.setValue( String.format("%s (%s%%)", "Hispanic", delinquentComplaintsHispanicPercent), delinquentComplaintsHispanicPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "Latinx", delinquentComplaintsLatinxPercent), delinquentComplaintsLatinxPercent );  
 			dataset.setValue( String.format("%s (%s%%)", "Multi-Racial", delinquentComplaintsMultiRacialPercent), delinquentComplaintsMultiRacialPercent );  
 			dataset.setValue( String.format("%s (%s%%)", "Pacific Islander", delinquentComplaintsPacificIslanderPercent), delinquentComplaintsPacificIslanderPercent );  
 			dataset.setValue( String.format("%s (%s%%)", "White", delinquentComplaintsWhitePercent), delinquentComplaintsWhitePercent );  
@@ -2888,10 +2906,10 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	protected void _agencyStudentsByRaceGraph2(Wrap<String> w) {
 		try {
 			DefaultPieDataset dataset = new DefaultPieDataset();
-			dataset.setValue( String.format("%s (%s%%)", "American Indian", pupilsIndianPercent), pupilsIndianPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "Indigenous", pupilsIndigenousPercent), pupilsIndigenousPercent );  
 			dataset.setValue( String.format("%s (%s%%)", "Asian", pupilsAsianPercent), pupilsAsianPercent );  
 			dataset.setValue( String.format("%s (%s%%)", "Black", pupilsBlackPercent), pupilsBlackPercent );  
-			dataset.setValue( String.format("%s (%s%%)", "Hispanic", pupilsHispanicPercent), pupilsHispanicPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "Latinx", pupilsLatinxPercent), pupilsLatinxPercent );  
 			dataset.setValue( String.format("%s (%s%%)", "Multi-Racial", pupilsMultiRacialPercent), pupilsMultiRacialPercent );  
 			dataset.setValue( String.format("%s (%s%%)", "Pacific Islander", pupilsPacificIslanderPercent), pupilsPacificIslanderPercent );  
 			dataset.setValue( String.format("%s (%s%%)", "White", pupilsWhitePercent), pupilsWhitePercent );  

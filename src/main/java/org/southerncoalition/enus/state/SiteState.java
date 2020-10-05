@@ -82,12 +82,36 @@ public class SiteState extends SiteStateGen<Cluster> {
 	protected void _stateAbbreviation(Wrap<String> c) {
 	}
 
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 4
+	 * HtmlCell: 1
+	 * DisplayName.enUS: image left pixels
+	 */ 
+	protected void _imageLeft(Wrap<Integer> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 4
+	 * HtmlCell: 2
+	 * DisplayName.enUS: image top pixels
+	 */ 
+	protected void _imageTop(Wrap<Integer> c) {
+	}
+
 	/**  
 	 * {@inheritDoc}
 	 * Indexed: true
 	 * Stored: true
 	 * Attribute: SiteAgency.stateKey
-	 * HtmlRow: 4
+	 * HtmlRow: 5
 	 * HtmlCell: 1
 	 * DisplayName.enUS: agencies
 	 */          

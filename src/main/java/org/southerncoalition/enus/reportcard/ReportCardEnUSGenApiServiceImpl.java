@@ -768,29 +768,29 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "pupilsIndianFemale":
+					case "pupilsIndigenousFemale":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "pupilsIndianFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "pupilsIndigenousFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsIndianFemale failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsIndigenousFemale failed", b.cause())));
 							});
 						}));
 						break;
-					case "pupilsIndianMale":
+					case "pupilsIndigenousMale":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "pupilsIndianMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "pupilsIndigenousMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsIndianMale failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsIndigenousMale failed", b.cause())));
 							});
 						}));
 						break;
@@ -820,29 +820,29 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "pupilsHispanicFemale":
+					case "pupilsLatinxFemale":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "pupilsHispanicFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "pupilsLatinxFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsHispanicFemale failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsLatinxFemale failed", b.cause())));
 							});
 						}));
 						break;
-					case "pupilsHispanicMale":
+					case "pupilsLatinxMale":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "pupilsHispanicMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "pupilsLatinxMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsHispanicMale failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsLatinxMale failed", b.cause())));
 							});
 						}));
 						break;
@@ -1067,16 +1067,16 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "delinquentComplaintsHispanic":
+					case "delinquentComplaintsLatinx":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "delinquentComplaintsHispanic", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "delinquentComplaintsLatinx", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsHispanic failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsLatinx failed", b.cause())));
 							});
 						}));
 						break;
@@ -1093,16 +1093,16 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "delinquentComplaintsIndian":
+					case "delinquentComplaintsIndigenous":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "delinquentComplaintsIndian", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "delinquentComplaintsIndigenous", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsIndian failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsIndigenous failed", b.cause())));
 							});
 						}));
 						break;
@@ -1236,55 +1236,55 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "shortTermSuspensionsHispanicFemale":
+					case "shortTermSuspensionsLatinxFemale":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "shortTermSuspensionsHispanicFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "shortTermSuspensionsLatinxFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsHispanicFemale failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsLatinxFemale failed", b.cause())));
 							});
 						}));
 						break;
-					case "shortTermSuspensionsHispanicMale":
+					case "shortTermSuspensionsLatinxMale":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "shortTermSuspensionsHispanicMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "shortTermSuspensionsLatinxMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsHispanicMale failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsLatinxMale failed", b.cause())));
 							});
 						}));
 						break;
-					case "shortTermSuspensionsIndianFemale":
+					case "shortTermSuspensionsIndigenousFemale":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "shortTermSuspensionsIndianFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "shortTermSuspensionsIndigenousFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndianFemale failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndigenousFemale failed", b.cause())));
 							});
 						}));
 						break;
-					case "shortTermSuspensionsIndianMale":
+					case "shortTermSuspensionsIndigenousMale":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "shortTermSuspensionsIndianMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "shortTermSuspensionsIndigenousMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndianMale failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndigenousMale failed", b.cause())));
 							});
 						}));
 						break;
@@ -1379,16 +1379,16 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "examsCollegeReadyGrades38IndianPercent":
+					case "examsCollegeReadyGrades38IndigenousPercent":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "examsCollegeReadyGrades38IndianPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "examsCollegeReadyGrades38IndigenousPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38IndianPercent failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38IndigenousPercent failed", b.cause())));
 							});
 						}));
 						break;
@@ -1418,16 +1418,16 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "examsCollegeReadyGrades38HispanicPercent":
+					case "examsCollegeReadyGrades38LatinxPercent":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "examsCollegeReadyGrades38HispanicPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "examsCollegeReadyGrades38LatinxPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38HispanicPercent failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38LatinxPercent failed", b.cause())));
 							});
 						}));
 						break;
@@ -1483,16 +1483,16 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "examsCollegeReadyGrades912IndianPercent":
+					case "examsCollegeReadyGrades912IndigenousPercent":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "examsCollegeReadyGrades912IndianPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "examsCollegeReadyGrades912IndigenousPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912IndianPercent failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912IndigenousPercent failed", b.cause())));
 							});
 						}));
 						break;
@@ -1522,16 +1522,16 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "examsCollegeReadyGrades912HispanicPercent":
+					case "examsCollegeReadyGrades912LatinxPercent":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "examsCollegeReadyGrades912HispanicPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "examsCollegeReadyGrades912LatinxPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912HispanicPercent failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912LatinxPercent failed", b.cause())));
 							});
 						}));
 						break;
@@ -1587,16 +1587,16 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "graduateWithin4YearsIndianPercent":
+					case "graduateWithin4YearsIndigenousPercent":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "graduateWithin4YearsIndianPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "graduateWithin4YearsIndigenousPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsIndianPercent failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsIndigenousPercent failed", b.cause())));
 							});
 						}));
 						break;
@@ -1626,16 +1626,16 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "graduateWithin4YearsHispanicPercent":
+					case "graduateWithin4YearsLatinxPercent":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "graduateWithin4YearsHispanicPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "graduateWithin4YearsLatinxPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsHispanicPercent failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsLatinxPercent failed", b.cause())));
 							});
 						}));
 						break;
@@ -1994,29 +1994,29 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "pupilsIndianFemale":
+					case "pupilsIndigenousFemale":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "pupilsIndianFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "pupilsIndigenousFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsIndianFemale failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsIndigenousFemale failed", b.cause())));
 							});
 						}));
 						break;
-					case "pupilsIndianMale":
+					case "pupilsIndigenousMale":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "pupilsIndianMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "pupilsIndigenousMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsIndianMale failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsIndigenousMale failed", b.cause())));
 							});
 						}));
 						break;
@@ -2046,29 +2046,29 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "pupilsHispanicFemale":
+					case "pupilsLatinxFemale":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "pupilsHispanicFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "pupilsLatinxFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsHispanicFemale failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsLatinxFemale failed", b.cause())));
 							});
 						}));
 						break;
-					case "pupilsHispanicMale":
+					case "pupilsLatinxMale":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "pupilsHispanicMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "pupilsLatinxMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsHispanicMale failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsLatinxMale failed", b.cause())));
 							});
 						}));
 						break;
@@ -2293,16 +2293,16 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "delinquentComplaintsHispanic":
+					case "delinquentComplaintsLatinx":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "delinquentComplaintsHispanic", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "delinquentComplaintsLatinx", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsHispanic failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsLatinx failed", b.cause())));
 							});
 						}));
 						break;
@@ -2319,16 +2319,16 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "delinquentComplaintsIndian":
+					case "delinquentComplaintsIndigenous":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "delinquentComplaintsIndian", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "delinquentComplaintsIndigenous", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsIndian failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsIndigenous failed", b.cause())));
 							});
 						}));
 						break;
@@ -2462,55 +2462,55 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "shortTermSuspensionsHispanicFemale":
+					case "shortTermSuspensionsLatinxFemale":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "shortTermSuspensionsHispanicFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "shortTermSuspensionsLatinxFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsHispanicFemale failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsLatinxFemale failed", b.cause())));
 							});
 						}));
 						break;
-					case "shortTermSuspensionsHispanicMale":
+					case "shortTermSuspensionsLatinxMale":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "shortTermSuspensionsHispanicMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "shortTermSuspensionsLatinxMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsHispanicMale failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsLatinxMale failed", b.cause())));
 							});
 						}));
 						break;
-					case "shortTermSuspensionsIndianFemale":
+					case "shortTermSuspensionsIndigenousFemale":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "shortTermSuspensionsIndianFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "shortTermSuspensionsIndigenousFemale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndianFemale failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndigenousFemale failed", b.cause())));
 							});
 						}));
 						break;
-					case "shortTermSuspensionsIndianMale":
+					case "shortTermSuspensionsIndigenousMale":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "shortTermSuspensionsIndianMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "shortTermSuspensionsIndigenousMale", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndianMale failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndigenousMale failed", b.cause())));
 							});
 						}));
 						break;
@@ -2605,16 +2605,16 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "examsCollegeReadyGrades38IndianPercent":
+					case "examsCollegeReadyGrades38IndigenousPercent":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "examsCollegeReadyGrades38IndianPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "examsCollegeReadyGrades38IndigenousPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38IndianPercent failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38IndigenousPercent failed", b.cause())));
 							});
 						}));
 						break;
@@ -2644,16 +2644,16 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "examsCollegeReadyGrades38HispanicPercent":
+					case "examsCollegeReadyGrades38LatinxPercent":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "examsCollegeReadyGrades38HispanicPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "examsCollegeReadyGrades38LatinxPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38HispanicPercent failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38LatinxPercent failed", b.cause())));
 							});
 						}));
 						break;
@@ -2709,16 +2709,16 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "examsCollegeReadyGrades912IndianPercent":
+					case "examsCollegeReadyGrades912IndigenousPercent":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "examsCollegeReadyGrades912IndianPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "examsCollegeReadyGrades912IndigenousPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912IndianPercent failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912IndigenousPercent failed", b.cause())));
 							});
 						}));
 						break;
@@ -2748,16 +2748,16 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "examsCollegeReadyGrades912HispanicPercent":
+					case "examsCollegeReadyGrades912LatinxPercent":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "examsCollegeReadyGrades912HispanicPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "examsCollegeReadyGrades912LatinxPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912HispanicPercent failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912LatinxPercent failed", b.cause())));
 							});
 						}));
 						break;
@@ -2813,16 +2813,16 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "graduateWithin4YearsIndianPercent":
+					case "graduateWithin4YearsIndigenousPercent":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "graduateWithin4YearsIndianPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "graduateWithin4YearsIndigenousPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsIndianPercent failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsIndigenousPercent failed", b.cause())));
 							});
 						}));
 						break;
@@ -2852,16 +2852,16 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							});
 						}));
 						break;
-					case "graduateWithin4YearsHispanicPercent":
+					case "graduateWithin4YearsLatinxPercent":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
-									, Tuple.of(pk, "graduateWithin4YearsHispanicPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, Tuple.of(pk, "graduateWithin4YearsLatinxPercent", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
 									, b
 							-> {
 								if(b.succeeded())
 									a.handle(Future.succeededFuture());
 								else
-									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsHispanicPercent failed", b.cause())));
+									a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsLatinxPercent failed", b.cause())));
 							});
 						}));
 						break;
@@ -3390,58 +3390,58 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							}));
 						}
 						break;
-					case "setPupilsIndianFemale":
+					case "setPupilsIndigenousFemale":
 						if(jsonObject.getString(methodName) == null) {
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_removeD
-										, Tuple.of(pk, "pupilsIndianFemale")
+										, Tuple.of(pk, "pupilsIndigenousFemale")
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsIndianFemale failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsIndigenousFemale failed", b.cause())));
 								});
 							}));
 						} else {
-							o2.setPupilsIndianFemale(jsonObject.getString(methodName));
+							o2.setPupilsIndigenousFemale(jsonObject.getString(methodName));
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_setD
-										, Tuple.of(pk, "pupilsIndianFemale", o2.jsonPupilsIndianFemale())
+										, Tuple.of(pk, "pupilsIndigenousFemale", o2.jsonPupilsIndigenousFemale())
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsIndianFemale failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsIndigenousFemale failed", b.cause())));
 								});
 							}));
 						}
 						break;
-					case "setPupilsIndianMale":
+					case "setPupilsIndigenousMale":
 						if(jsonObject.getString(methodName) == null) {
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_removeD
-										, Tuple.of(pk, "pupilsIndianMale")
+										, Tuple.of(pk, "pupilsIndigenousMale")
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsIndianMale failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsIndigenousMale failed", b.cause())));
 								});
 							}));
 						} else {
-							o2.setPupilsIndianMale(jsonObject.getString(methodName));
+							o2.setPupilsIndigenousMale(jsonObject.getString(methodName));
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_setD
-										, Tuple.of(pk, "pupilsIndianMale", o2.jsonPupilsIndianMale())
+										, Tuple.of(pk, "pupilsIndigenousMale", o2.jsonPupilsIndigenousMale())
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsIndianMale failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsIndigenousMale failed", b.cause())));
 								});
 							}));
 						}
@@ -3502,58 +3502,58 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							}));
 						}
 						break;
-					case "setPupilsHispanicFemale":
+					case "setPupilsLatinxFemale":
 						if(jsonObject.getString(methodName) == null) {
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_removeD
-										, Tuple.of(pk, "pupilsHispanicFemale")
+										, Tuple.of(pk, "pupilsLatinxFemale")
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsHispanicFemale failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsLatinxFemale failed", b.cause())));
 								});
 							}));
 						} else {
-							o2.setPupilsHispanicFemale(jsonObject.getString(methodName));
+							o2.setPupilsLatinxFemale(jsonObject.getString(methodName));
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_setD
-										, Tuple.of(pk, "pupilsHispanicFemale", o2.jsonPupilsHispanicFemale())
+										, Tuple.of(pk, "pupilsLatinxFemale", o2.jsonPupilsLatinxFemale())
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsHispanicFemale failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsLatinxFemale failed", b.cause())));
 								});
 							}));
 						}
 						break;
-					case "setPupilsHispanicMale":
+					case "setPupilsLatinxMale":
 						if(jsonObject.getString(methodName) == null) {
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_removeD
-										, Tuple.of(pk, "pupilsHispanicMale")
+										, Tuple.of(pk, "pupilsLatinxMale")
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsHispanicMale failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsLatinxMale failed", b.cause())));
 								});
 							}));
 						} else {
-							o2.setPupilsHispanicMale(jsonObject.getString(methodName));
+							o2.setPupilsLatinxMale(jsonObject.getString(methodName));
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_setD
-										, Tuple.of(pk, "pupilsHispanicMale", o2.jsonPupilsHispanicMale())
+										, Tuple.of(pk, "pupilsLatinxMale", o2.jsonPupilsLatinxMale())
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsHispanicMale failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.pupilsLatinxMale failed", b.cause())));
 								});
 							}));
 						}
@@ -4034,30 +4034,30 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							}));
 						}
 						break;
-					case "setDelinquentComplaintsHispanic":
+					case "setDelinquentComplaintsLatinx":
 						if(jsonObject.getString(methodName) == null) {
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_removeD
-										, Tuple.of(pk, "delinquentComplaintsHispanic")
+										, Tuple.of(pk, "delinquentComplaintsLatinx")
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsHispanic failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsLatinx failed", b.cause())));
 								});
 							}));
 						} else {
-							o2.setDelinquentComplaintsHispanic(jsonObject.getString(methodName));
+							o2.setDelinquentComplaintsLatinx(jsonObject.getString(methodName));
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_setD
-										, Tuple.of(pk, "delinquentComplaintsHispanic", o2.jsonDelinquentComplaintsHispanic())
+										, Tuple.of(pk, "delinquentComplaintsLatinx", o2.jsonDelinquentComplaintsLatinx())
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsHispanic failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsLatinx failed", b.cause())));
 								});
 							}));
 						}
@@ -4090,30 +4090,30 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							}));
 						}
 						break;
-					case "setDelinquentComplaintsIndian":
+					case "setDelinquentComplaintsIndigenous":
 						if(jsonObject.getString(methodName) == null) {
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_removeD
-										, Tuple.of(pk, "delinquentComplaintsIndian")
+										, Tuple.of(pk, "delinquentComplaintsIndigenous")
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsIndian failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsIndigenous failed", b.cause())));
 								});
 							}));
 						} else {
-							o2.setDelinquentComplaintsIndian(jsonObject.getString(methodName));
+							o2.setDelinquentComplaintsIndigenous(jsonObject.getString(methodName));
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_setD
-										, Tuple.of(pk, "delinquentComplaintsIndian", o2.jsonDelinquentComplaintsIndian())
+										, Tuple.of(pk, "delinquentComplaintsIndigenous", o2.jsonDelinquentComplaintsIndigenous())
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsIndian failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.delinquentComplaintsIndigenous failed", b.cause())));
 								});
 							}));
 						}
@@ -4398,114 +4398,114 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							}));
 						}
 						break;
-					case "setShortTermSuspensionsHispanicFemale":
+					case "setShortTermSuspensionsLatinxFemale":
 						if(jsonObject.getString(methodName) == null) {
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_removeD
-										, Tuple.of(pk, "shortTermSuspensionsHispanicFemale")
+										, Tuple.of(pk, "shortTermSuspensionsLatinxFemale")
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsHispanicFemale failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsLatinxFemale failed", b.cause())));
 								});
 							}));
 						} else {
-							o2.setShortTermSuspensionsHispanicFemale(jsonObject.getString(methodName));
+							o2.setShortTermSuspensionsLatinxFemale(jsonObject.getString(methodName));
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_setD
-										, Tuple.of(pk, "shortTermSuspensionsHispanicFemale", o2.jsonShortTermSuspensionsHispanicFemale())
+										, Tuple.of(pk, "shortTermSuspensionsLatinxFemale", o2.jsonShortTermSuspensionsLatinxFemale())
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsHispanicFemale failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsLatinxFemale failed", b.cause())));
 								});
 							}));
 						}
 						break;
-					case "setShortTermSuspensionsHispanicMale":
+					case "setShortTermSuspensionsLatinxMale":
 						if(jsonObject.getString(methodName) == null) {
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_removeD
-										, Tuple.of(pk, "shortTermSuspensionsHispanicMale")
+										, Tuple.of(pk, "shortTermSuspensionsLatinxMale")
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsHispanicMale failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsLatinxMale failed", b.cause())));
 								});
 							}));
 						} else {
-							o2.setShortTermSuspensionsHispanicMale(jsonObject.getString(methodName));
+							o2.setShortTermSuspensionsLatinxMale(jsonObject.getString(methodName));
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_setD
-										, Tuple.of(pk, "shortTermSuspensionsHispanicMale", o2.jsonShortTermSuspensionsHispanicMale())
+										, Tuple.of(pk, "shortTermSuspensionsLatinxMale", o2.jsonShortTermSuspensionsLatinxMale())
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsHispanicMale failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsLatinxMale failed", b.cause())));
 								});
 							}));
 						}
 						break;
-					case "setShortTermSuspensionsIndianFemale":
+					case "setShortTermSuspensionsIndigenousFemale":
 						if(jsonObject.getString(methodName) == null) {
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_removeD
-										, Tuple.of(pk, "shortTermSuspensionsIndianFemale")
+										, Tuple.of(pk, "shortTermSuspensionsIndigenousFemale")
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndianFemale failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndigenousFemale failed", b.cause())));
 								});
 							}));
 						} else {
-							o2.setShortTermSuspensionsIndianFemale(jsonObject.getString(methodName));
+							o2.setShortTermSuspensionsIndigenousFemale(jsonObject.getString(methodName));
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_setD
-										, Tuple.of(pk, "shortTermSuspensionsIndianFemale", o2.jsonShortTermSuspensionsIndianFemale())
+										, Tuple.of(pk, "shortTermSuspensionsIndigenousFemale", o2.jsonShortTermSuspensionsIndigenousFemale())
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndianFemale failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndigenousFemale failed", b.cause())));
 								});
 							}));
 						}
 						break;
-					case "setShortTermSuspensionsIndianMale":
+					case "setShortTermSuspensionsIndigenousMale":
 						if(jsonObject.getString(methodName) == null) {
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_removeD
-										, Tuple.of(pk, "shortTermSuspensionsIndianMale")
+										, Tuple.of(pk, "shortTermSuspensionsIndigenousMale")
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndianMale failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndigenousMale failed", b.cause())));
 								});
 							}));
 						} else {
-							o2.setShortTermSuspensionsIndianMale(jsonObject.getString(methodName));
+							o2.setShortTermSuspensionsIndigenousMale(jsonObject.getString(methodName));
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_setD
-										, Tuple.of(pk, "shortTermSuspensionsIndianMale", o2.jsonShortTermSuspensionsIndianMale())
+										, Tuple.of(pk, "shortTermSuspensionsIndigenousMale", o2.jsonShortTermSuspensionsIndigenousMale())
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndianMale failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.shortTermSuspensionsIndigenousMale failed", b.cause())));
 								});
 							}));
 						}
@@ -4706,30 +4706,30 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							}));
 						}
 						break;
-					case "setExamsCollegeReadyGrades38IndianPercent":
+					case "setExamsCollegeReadyGrades38IndigenousPercent":
 						if(jsonObject.getString(methodName) == null) {
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_removeD
-										, Tuple.of(pk, "examsCollegeReadyGrades38IndianPercent")
+										, Tuple.of(pk, "examsCollegeReadyGrades38IndigenousPercent")
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38IndianPercent failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38IndigenousPercent failed", b.cause())));
 								});
 							}));
 						} else {
-							o2.setExamsCollegeReadyGrades38IndianPercent(jsonObject.getString(methodName));
+							o2.setExamsCollegeReadyGrades38IndigenousPercent(jsonObject.getString(methodName));
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_setD
-										, Tuple.of(pk, "examsCollegeReadyGrades38IndianPercent", o2.jsonExamsCollegeReadyGrades38IndianPercent())
+										, Tuple.of(pk, "examsCollegeReadyGrades38IndigenousPercent", o2.jsonExamsCollegeReadyGrades38IndigenousPercent())
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38IndianPercent failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38IndigenousPercent failed", b.cause())));
 								});
 							}));
 						}
@@ -4790,30 +4790,30 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							}));
 						}
 						break;
-					case "setExamsCollegeReadyGrades38HispanicPercent":
+					case "setExamsCollegeReadyGrades38LatinxPercent":
 						if(jsonObject.getString(methodName) == null) {
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_removeD
-										, Tuple.of(pk, "examsCollegeReadyGrades38HispanicPercent")
+										, Tuple.of(pk, "examsCollegeReadyGrades38LatinxPercent")
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38HispanicPercent failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38LatinxPercent failed", b.cause())));
 								});
 							}));
 						} else {
-							o2.setExamsCollegeReadyGrades38HispanicPercent(jsonObject.getString(methodName));
+							o2.setExamsCollegeReadyGrades38LatinxPercent(jsonObject.getString(methodName));
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_setD
-										, Tuple.of(pk, "examsCollegeReadyGrades38HispanicPercent", o2.jsonExamsCollegeReadyGrades38HispanicPercent())
+										, Tuple.of(pk, "examsCollegeReadyGrades38LatinxPercent", o2.jsonExamsCollegeReadyGrades38LatinxPercent())
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38HispanicPercent failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades38LatinxPercent failed", b.cause())));
 								});
 							}));
 						}
@@ -4930,30 +4930,30 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							}));
 						}
 						break;
-					case "setExamsCollegeReadyGrades912IndianPercent":
+					case "setExamsCollegeReadyGrades912IndigenousPercent":
 						if(jsonObject.getString(methodName) == null) {
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_removeD
-										, Tuple.of(pk, "examsCollegeReadyGrades912IndianPercent")
+										, Tuple.of(pk, "examsCollegeReadyGrades912IndigenousPercent")
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912IndianPercent failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912IndigenousPercent failed", b.cause())));
 								});
 							}));
 						} else {
-							o2.setExamsCollegeReadyGrades912IndianPercent(jsonObject.getString(methodName));
+							o2.setExamsCollegeReadyGrades912IndigenousPercent(jsonObject.getString(methodName));
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_setD
-										, Tuple.of(pk, "examsCollegeReadyGrades912IndianPercent", o2.jsonExamsCollegeReadyGrades912IndianPercent())
+										, Tuple.of(pk, "examsCollegeReadyGrades912IndigenousPercent", o2.jsonExamsCollegeReadyGrades912IndigenousPercent())
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912IndianPercent failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912IndigenousPercent failed", b.cause())));
 								});
 							}));
 						}
@@ -5014,30 +5014,30 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							}));
 						}
 						break;
-					case "setExamsCollegeReadyGrades912HispanicPercent":
+					case "setExamsCollegeReadyGrades912LatinxPercent":
 						if(jsonObject.getString(methodName) == null) {
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_removeD
-										, Tuple.of(pk, "examsCollegeReadyGrades912HispanicPercent")
+										, Tuple.of(pk, "examsCollegeReadyGrades912LatinxPercent")
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912HispanicPercent failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912LatinxPercent failed", b.cause())));
 								});
 							}));
 						} else {
-							o2.setExamsCollegeReadyGrades912HispanicPercent(jsonObject.getString(methodName));
+							o2.setExamsCollegeReadyGrades912LatinxPercent(jsonObject.getString(methodName));
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_setD
-										, Tuple.of(pk, "examsCollegeReadyGrades912HispanicPercent", o2.jsonExamsCollegeReadyGrades912HispanicPercent())
+										, Tuple.of(pk, "examsCollegeReadyGrades912LatinxPercent", o2.jsonExamsCollegeReadyGrades912LatinxPercent())
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912HispanicPercent failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.examsCollegeReadyGrades912LatinxPercent failed", b.cause())));
 								});
 							}));
 						}
@@ -5154,30 +5154,30 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							}));
 						}
 						break;
-					case "setGraduateWithin4YearsIndianPercent":
+					case "setGraduateWithin4YearsIndigenousPercent":
 						if(jsonObject.getString(methodName) == null) {
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_removeD
-										, Tuple.of(pk, "graduateWithin4YearsIndianPercent")
+										, Tuple.of(pk, "graduateWithin4YearsIndigenousPercent")
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsIndianPercent failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsIndigenousPercent failed", b.cause())));
 								});
 							}));
 						} else {
-							o2.setGraduateWithin4YearsIndianPercent(jsonObject.getString(methodName));
+							o2.setGraduateWithin4YearsIndigenousPercent(jsonObject.getString(methodName));
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_setD
-										, Tuple.of(pk, "graduateWithin4YearsIndianPercent", o2.jsonGraduateWithin4YearsIndianPercent())
+										, Tuple.of(pk, "graduateWithin4YearsIndigenousPercent", o2.jsonGraduateWithin4YearsIndigenousPercent())
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsIndianPercent failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsIndigenousPercent failed", b.cause())));
 								});
 							}));
 						}
@@ -5238,30 +5238,30 @@ public class ReportCardEnUSGenApiServiceImpl implements ReportCardEnUSGenApiServ
 							}));
 						}
 						break;
-					case "setGraduateWithin4YearsHispanicPercent":
+					case "setGraduateWithin4YearsLatinxPercent":
 						if(jsonObject.getString(methodName) == null) {
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_removeD
-										, Tuple.of(pk, "graduateWithin4YearsHispanicPercent")
+										, Tuple.of(pk, "graduateWithin4YearsLatinxPercent")
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsHispanicPercent failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsLatinxPercent failed", b.cause())));
 								});
 							}));
 						} else {
-							o2.setGraduateWithin4YearsHispanicPercent(jsonObject.getString(methodName));
+							o2.setGraduateWithin4YearsLatinxPercent(jsonObject.getString(methodName));
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_setD
-										, Tuple.of(pk, "graduateWithin4YearsHispanicPercent", o2.jsonGraduateWithin4YearsHispanicPercent())
+										, Tuple.of(pk, "graduateWithin4YearsLatinxPercent", o2.jsonGraduateWithin4YearsLatinxPercent())
 										, b
 								-> {
 									if(b.succeeded())
 										a.handle(Future.succeededFuture());
 									else
-										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsHispanicPercent failed", b.cause())));
+										a.handle(Future.failedFuture(new Exception("value ReportCard.graduateWithin4YearsLatinxPercent failed", b.cause())));
 								});
 							}));
 						}
