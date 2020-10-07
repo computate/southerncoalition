@@ -96,7 +96,7 @@ import org.southerncoalition.enus.wrap.Wrap;
  * Sort.asc: agencyName
  * 
  * Lines: 100
- **/      
+ **/     
 public class ReportCard extends ReportCardGen<Cluster> {
 
 	/**
@@ -2141,9 +2141,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 		if(pupilsWhitePercent != null && pupilsBlackPercent != null && pupilsOtherPercent != null) {
 			try {
 				DefaultPieDataset dataset = new DefaultPieDataset();
-				dataset.setValue( String.format("%s%%", pupilsWhitePercent.setScale(0, RoundingMode.HALF_UP)), pupilsWhitePercent );  
-				dataset.setValue( String.format("%s%%", pupilsBlackPercent.setScale(0, RoundingMode.HALF_UP)), pupilsBlackPercent );  
-				dataset.setValue( String.format("%s%%", pupilsOtherPercent.setScale(0, RoundingMode.HALF_UP)), pupilsOtherPercent );  
+				dataset.setValue( String.format("%s%% White", pupilsWhitePercent.setScale(0, RoundingMode.HALF_UP)), pupilsWhitePercent );  
+				dataset.setValue( String.format("%s%% Black", pupilsBlackPercent.setScale(0, RoundingMode.HALF_UP)), pupilsBlackPercent );  
+				dataset.setValue( String.format("%s%% Other", pupilsOtherPercent.setScale(0, RoundingMode.HALF_UP)), pupilsOtherPercent );  
 	
 				JFreeChart chart = ChartFactory.createRingChart(null, dataset, true, false, false);
 				RingPlot plot = (RingPlot)chart.getPlot();
@@ -2214,9 +2214,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 		if(teachersWhitePercent != null && teachersBlackPercent != null && teachersOtherPercent != null) {
 			try {
 				DefaultPieDataset dataset = new DefaultPieDataset();
-				dataset.setValue( String.format("%s%%", teachersWhitePercent.setScale(0, RoundingMode.HALF_UP)), teachersWhitePercent );  
-				dataset.setValue( String.format("%s%%", teachersBlackPercent.setScale(0, RoundingMode.HALF_UP)), teachersBlackPercent );  
-				dataset.setValue( String.format("%s%%", teachersOtherPercent.setScale(0, RoundingMode.HALF_UP)), teachersOtherPercent );  
+				dataset.setValue( String.format("%s%% White", teachersWhitePercent.setScale(0, RoundingMode.HALF_UP)), teachersWhitePercent );  
+				dataset.setValue( String.format("%s%% Black", teachersBlackPercent.setScale(0, RoundingMode.HALF_UP)), teachersBlackPercent );  
+				dataset.setValue( String.format("%s%% Other", teachersOtherPercent.setScale(0, RoundingMode.HALF_UP)), teachersOtherPercent );  
 	
 				JFreeChart chart = ChartFactory.createRingChart(null, dataset, true, false, false);
 				RingPlot plot = (RingPlot)chart.getPlot();

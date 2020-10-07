@@ -49,7 +49,7 @@ import org.southerncoalition.enus.wrap.Wrap;
  * Sort.asc: agencyName
  * 
  * Lines: 100
- **/   
+ **/  
 public class SiteAgency extends SiteAgencyGen<Cluster> {
 
 	/**
