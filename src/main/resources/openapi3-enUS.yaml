@@ -4302,6 +4302,1181 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/requestBodies/ErrorResponse'
+  /api/admin/reportcard:
+    get:
+      operationId: adminsearchReportCard
+      x-vertx-event-bus: southerncoalition-enUS-ReportCard
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/AdminSearchReportCardResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/reportcard:
+    post:
+      operationId: postReportCard
+      x-vertx-event-bus: southerncoalition-enUS-ReportCard
+      security:
+        - openIdConnect:
+          - DefaultAuthScope
+      description: >+
+      summary: >+
+      tags:
+        - State
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/POSTReportCardRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/POSTReportCardResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+    patch:
+      operationId: patchReportCard
+      x-vertx-event-bus: southerncoalition-enUS-ReportCard
+      security:
+        - openIdConnect:
+          - DefaultAuthScope
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PATCHReportCardRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PATCHReportCardResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+    get:
+      operationId: searchReportCard
+      x-vertx-event-bus: southerncoalition-enUS-ReportCard
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/SearchReportCardResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/reportcard/copy:
+    put:
+      operationId: putcopyReportCard
+      x-vertx-event-bus: southerncoalition-enUS-ReportCard
+      security:
+        - openIdConnect:
+          - DefaultAuthScope
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PUTCopyReportCardRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PUTCopyReportCardResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/reportcard/import:
+    put:
+      operationId: putimportReportCard
+      x-vertx-event-bus: southerncoalition-enUS-ReportCard
+      security:
+        - openIdConnect:
+          - DefaultAuthScope
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PUTImportReportCardRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PUTImportReportCardResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/reportcard/merge:
+    put:
+      operationId: putmergeReportCard
+      x-vertx-event-bus: southerncoalition-enUS-ReportCard
+      security:
+        - openIdConnect:
+          - DefaultAuthScope
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      requestBody:
+        description: >+
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PUTMergeReportCardRequest'
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/PUTMergeReportCardResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /api/reportcard/{id}:
+    get:
+      operationId: getReportCard
+      x-vertx-event-bus: southerncoalition-enUS-ReportCard
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: >+
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            application/json; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/GETReportCardResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /reportcard:
+    get:
+      operationId: searchpageReportCard
+      x-vertx-event-bus: southerncoalition-enUS-ReportCard
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            text/html; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/SearchPageReportCardResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+  /reportcard/{id}:
+    get:
+      operationId: searchpageReportCardId
+      x-vertx-event-bus: southerncoalition-enUS-ReportCard
+      description: >+
+      summary: >+
+      tags:
+        - State
+      parameters:
+        - name: vertx-web.session
+          in: cookie
+          schema:
+            type: string
+        - name: sessionIdBefore
+          in: cookie
+          schema:
+            type: string
+        - name: id
+          in: path
+          description: >+
+          required: true
+          schema:
+            type: string
+        - in: query
+          name: q
+          description: ''
+          required: false
+          schema:
+            type: string
+            default: '*:*'
+        - in: query
+          name: fq
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: fl
+          description: ''
+          required: false
+          schema:
+            type: string
+        - in: query
+          name: sort
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+        - in: query
+          name: start
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 0
+            minimum: 0
+        - in: query
+          name: rows
+          description: ''
+          required: false
+          schema:
+            type: integer
+            default: 10
+            minimum: 0
+        - in: query
+          name: var
+          description: ''
+          required: false
+          schema:
+            type: array
+            items:
+                type: string
+      responses:
+        '200':
+          description: >+
+          content:
+            text/html; charset=utf-8:
+              schema:
+                $ref: '#/components/requestBodies/SearchPageReportCardResponse'
+        '400':
+          description: >+
+                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
+                or invalid Parameters</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '401':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
+                credentials are missing or invalid</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '403':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
+                request operation is not configured to access this
+                resource</td><td>Channel/Country/Business provided in the request is
+                not supported currently</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '404':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
+                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
+                requested resource was not found</td><td>Empty resource/resource not
+                found</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
+        '500':
+          description: >+
+                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
+                request failed due to an internal error/server
+                unavailability</td></tr></table>
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/requestBodies/ErrorResponse'
   /api/admin/state:
     get:
       operationId: adminsearchSiteState
@@ -6652,1181 +7827,6 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/requestBodies/ErrorResponse'
-  /api/admin/reportcard:
-    get:
-      operationId: adminsearchReportCard
-      x-vertx-event-bus: southerncoalition-enUS-ReportCard
-      description: >+
-      summary: >+
-      tags:
-        - State
-      parameters:
-        - name: vertx-web.session
-          in: cookie
-          schema:
-            type: string
-        - name: sessionIdBefore
-          in: cookie
-          schema:
-            type: string
-        - in: query
-          name: q
-          description: ''
-          required: false
-          schema:
-            type: string
-            default: '*:*'
-        - in: query
-          name: fq
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-        - in: query
-          name: fl
-          description: ''
-          required: false
-          schema:
-            type: string
-        - in: query
-          name: sort
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-        - in: query
-          name: start
-          description: ''
-          required: false
-          schema:
-            type: integer
-            default: 0
-            minimum: 0
-        - in: query
-          name: rows
-          description: ''
-          required: false
-          schema:
-            type: integer
-            default: 10
-            minimum: 0
-        - in: query
-          name: var
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-      responses:
-        '200':
-          description: >+
-          content:
-            application/json; charset=utf-8:
-              schema:
-                $ref: '#/components/requestBodies/AdminSearchReportCardResponse'
-        '400':
-          description: >+
-                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
-                or invalid Parameters</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '401':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
-                credentials are missing or invalid</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '403':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
-                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
-                request operation is not configured to access this
-                resource</td><td>Channel/Country/Business provided in the request is
-                not supported currently</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '404':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
-                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
-                requested resource was not found</td><td>Empty resource/resource not
-                found</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '500':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
-                request failed due to an internal error/server
-                unavailability</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-  /api/reportcard:
-    post:
-      operationId: postReportCard
-      x-vertx-event-bus: southerncoalition-enUS-ReportCard
-      security:
-        - openIdConnect:
-          - DefaultAuthScope
-      description: >+
-      summary: >+
-      tags:
-        - State
-      requestBody:
-        description: >+
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/POSTReportCardRequest'
-      responses:
-        '200':
-          description: >+
-          content:
-            application/json; charset=utf-8:
-              schema:
-                $ref: '#/components/requestBodies/POSTReportCardResponse'
-        '400':
-          description: >+
-                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
-                or invalid Parameters</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '401':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
-                credentials are missing or invalid</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '403':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
-                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
-                request operation is not configured to access this
-                resource</td><td>Channel/Country/Business provided in the request is
-                not supported currently</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '404':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
-                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
-                requested resource was not found</td><td>Empty resource/resource not
-                found</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '500':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
-                request failed due to an internal error/server
-                unavailability</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-    patch:
-      operationId: patchReportCard
-      x-vertx-event-bus: southerncoalition-enUS-ReportCard
-      security:
-        - openIdConnect:
-          - DefaultAuthScope
-      description: >+
-      summary: >+
-      tags:
-        - State
-      parameters:
-        - name: vertx-web.session
-          in: cookie
-          schema:
-            type: string
-        - name: sessionIdBefore
-          in: cookie
-          schema:
-            type: string
-        - in: query
-          name: q
-          description: ''
-          required: false
-          schema:
-            type: string
-            default: '*:*'
-        - in: query
-          name: fq
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-        - in: query
-          name: fl
-          description: ''
-          required: false
-          schema:
-            type: string
-        - in: query
-          name: sort
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-        - in: query
-          name: start
-          description: ''
-          required: false
-          schema:
-            type: integer
-            default: 0
-            minimum: 0
-        - in: query
-          name: rows
-          description: ''
-          required: false
-          schema:
-            type: integer
-            default: 10
-            minimum: 0
-        - in: query
-          name: var
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-      requestBody:
-        description: >+
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PATCHReportCardRequest'
-      responses:
-        '200':
-          description: >+
-          content:
-            application/json; charset=utf-8:
-              schema:
-                $ref: '#/components/requestBodies/PATCHReportCardResponse'
-        '400':
-          description: >+
-                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
-                or invalid Parameters</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '401':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
-                credentials are missing or invalid</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '403':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
-                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
-                request operation is not configured to access this
-                resource</td><td>Channel/Country/Business provided in the request is
-                not supported currently</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '404':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
-                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
-                requested resource was not found</td><td>Empty resource/resource not
-                found</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '500':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
-                request failed due to an internal error/server
-                unavailability</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-    get:
-      operationId: searchReportCard
-      x-vertx-event-bus: southerncoalition-enUS-ReportCard
-      description: >+
-      summary: >+
-      tags:
-        - State
-      parameters:
-        - name: vertx-web.session
-          in: cookie
-          schema:
-            type: string
-        - name: sessionIdBefore
-          in: cookie
-          schema:
-            type: string
-        - in: query
-          name: q
-          description: ''
-          required: false
-          schema:
-            type: string
-            default: '*:*'
-        - in: query
-          name: fq
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-        - in: query
-          name: fl
-          description: ''
-          required: false
-          schema:
-            type: string
-        - in: query
-          name: sort
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-        - in: query
-          name: start
-          description: ''
-          required: false
-          schema:
-            type: integer
-            default: 0
-            minimum: 0
-        - in: query
-          name: rows
-          description: ''
-          required: false
-          schema:
-            type: integer
-            default: 10
-            minimum: 0
-        - in: query
-          name: var
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-      responses:
-        '200':
-          description: >+
-          content:
-            application/json; charset=utf-8:
-              schema:
-                $ref: '#/components/requestBodies/SearchReportCardResponse'
-        '400':
-          description: >+
-                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
-                or invalid Parameters</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '401':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
-                credentials are missing or invalid</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '403':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
-                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
-                request operation is not configured to access this
-                resource</td><td>Channel/Country/Business provided in the request is
-                not supported currently</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '404':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
-                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
-                requested resource was not found</td><td>Empty resource/resource not
-                found</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '500':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
-                request failed due to an internal error/server
-                unavailability</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-  /api/reportcard/copy:
-    put:
-      operationId: putcopyReportCard
-      x-vertx-event-bus: southerncoalition-enUS-ReportCard
-      security:
-        - openIdConnect:
-          - DefaultAuthScope
-      description: >+
-      summary: >+
-      tags:
-        - State
-      parameters:
-        - name: vertx-web.session
-          in: cookie
-          schema:
-            type: string
-        - name: sessionIdBefore
-          in: cookie
-          schema:
-            type: string
-        - in: query
-          name: q
-          description: ''
-          required: false
-          schema:
-            type: string
-            default: '*:*'
-        - in: query
-          name: fq
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-        - in: query
-          name: fl
-          description: ''
-          required: false
-          schema:
-            type: string
-        - in: query
-          name: sort
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-        - in: query
-          name: start
-          description: ''
-          required: false
-          schema:
-            type: integer
-            default: 0
-            minimum: 0
-        - in: query
-          name: rows
-          description: ''
-          required: false
-          schema:
-            type: integer
-            default: 10
-            minimum: 0
-        - in: query
-          name: var
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-      requestBody:
-        description: >+
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PUTCopyReportCardRequest'
-      responses:
-        '200':
-          description: >+
-          content:
-            application/json; charset=utf-8:
-              schema:
-                $ref: '#/components/requestBodies/PUTCopyReportCardResponse'
-        '400':
-          description: >+
-                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
-                or invalid Parameters</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '401':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
-                credentials are missing or invalid</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '403':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
-                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
-                request operation is not configured to access this
-                resource</td><td>Channel/Country/Business provided in the request is
-                not supported currently</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '404':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
-                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
-                requested resource was not found</td><td>Empty resource/resource not
-                found</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '500':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
-                request failed due to an internal error/server
-                unavailability</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-  /api/reportcard/import:
-    put:
-      operationId: putimportReportCard
-      x-vertx-event-bus: southerncoalition-enUS-ReportCard
-      security:
-        - openIdConnect:
-          - DefaultAuthScope
-      description: >+
-      summary: >+
-      tags:
-        - State
-      parameters:
-        - name: vertx-web.session
-          in: cookie
-          schema:
-            type: string
-        - name: sessionIdBefore
-          in: cookie
-          schema:
-            type: string
-        - in: query
-          name: q
-          description: ''
-          required: false
-          schema:
-            type: string
-            default: '*:*'
-        - in: query
-          name: fq
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-        - in: query
-          name: fl
-          description: ''
-          required: false
-          schema:
-            type: string
-        - in: query
-          name: sort
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-        - in: query
-          name: start
-          description: ''
-          required: false
-          schema:
-            type: integer
-            default: 0
-            minimum: 0
-        - in: query
-          name: rows
-          description: ''
-          required: false
-          schema:
-            type: integer
-            default: 10
-            minimum: 0
-        - in: query
-          name: var
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-      requestBody:
-        description: >+
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PUTImportReportCardRequest'
-      responses:
-        '200':
-          description: >+
-          content:
-            application/json; charset=utf-8:
-              schema:
-                $ref: '#/components/requestBodies/PUTImportReportCardResponse'
-        '400':
-          description: >+
-                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
-                or invalid Parameters</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '401':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
-                credentials are missing or invalid</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '403':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
-                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
-                request operation is not configured to access this
-                resource</td><td>Channel/Country/Business provided in the request is
-                not supported currently</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '404':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
-                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
-                requested resource was not found</td><td>Empty resource/resource not
-                found</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '500':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
-                request failed due to an internal error/server
-                unavailability</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-  /api/reportcard/merge:
-    put:
-      operationId: putmergeReportCard
-      x-vertx-event-bus: southerncoalition-enUS-ReportCard
-      security:
-        - openIdConnect:
-          - DefaultAuthScope
-      description: >+
-      summary: >+
-      tags:
-        - State
-      parameters:
-        - name: vertx-web.session
-          in: cookie
-          schema:
-            type: string
-        - name: sessionIdBefore
-          in: cookie
-          schema:
-            type: string
-        - in: query
-          name: q
-          description: ''
-          required: false
-          schema:
-            type: string
-            default: '*:*'
-        - in: query
-          name: fq
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-        - in: query
-          name: fl
-          description: ''
-          required: false
-          schema:
-            type: string
-        - in: query
-          name: sort
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-        - in: query
-          name: start
-          description: ''
-          required: false
-          schema:
-            type: integer
-            default: 0
-            minimum: 0
-        - in: query
-          name: rows
-          description: ''
-          required: false
-          schema:
-            type: integer
-            default: 10
-            minimum: 0
-        - in: query
-          name: var
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-      requestBody:
-        description: >+
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/PUTMergeReportCardRequest'
-      responses:
-        '200':
-          description: >+
-          content:
-            application/json; charset=utf-8:
-              schema:
-                $ref: '#/components/requestBodies/PUTMergeReportCardResponse'
-        '400':
-          description: >+
-                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
-                or invalid Parameters</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '401':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
-                credentials are missing or invalid</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '403':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
-                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
-                request operation is not configured to access this
-                resource</td><td>Channel/Country/Business provided in the request is
-                not supported currently</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '404':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
-                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
-                requested resource was not found</td><td>Empty resource/resource not
-                found</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '500':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
-                request failed due to an internal error/server
-                unavailability</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-  /api/reportcard/{id}:
-    get:
-      operationId: getReportCard
-      x-vertx-event-bus: southerncoalition-enUS-ReportCard
-      description: >+
-      summary: >+
-      tags:
-        - State
-      parameters:
-        - name: vertx-web.session
-          in: cookie
-          schema:
-            type: string
-        - name: sessionIdBefore
-          in: cookie
-          schema:
-            type: string
-        - name: id
-          in: path
-          description: >+
-          required: true
-          schema:
-            type: string
-      responses:
-        '200':
-          description: >+
-          content:
-            application/json; charset=utf-8:
-              schema:
-                $ref: '#/components/requestBodies/GETReportCardResponse'
-        '400':
-          description: >+
-                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
-                or invalid Parameters</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '401':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
-                credentials are missing or invalid</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '403':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
-                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
-                request operation is not configured to access this
-                resource</td><td>Channel/Country/Business provided in the request is
-                not supported currently</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '404':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
-                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
-                requested resource was not found</td><td>Empty resource/resource not
-                found</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '500':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
-                request failed due to an internal error/server
-                unavailability</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-  /reportcard:
-    get:
-      operationId: searchpageReportCard
-      x-vertx-event-bus: southerncoalition-enUS-ReportCard
-      description: >+
-      summary: >+
-      tags:
-        - State
-      parameters:
-        - name: vertx-web.session
-          in: cookie
-          schema:
-            type: string
-        - name: sessionIdBefore
-          in: cookie
-          schema:
-            type: string
-        - in: query
-          name: q
-          description: ''
-          required: false
-          schema:
-            type: string
-            default: '*:*'
-        - in: query
-          name: fq
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-        - in: query
-          name: fl
-          description: ''
-          required: false
-          schema:
-            type: string
-        - in: query
-          name: sort
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-        - in: query
-          name: start
-          description: ''
-          required: false
-          schema:
-            type: integer
-            default: 0
-            minimum: 0
-        - in: query
-          name: rows
-          description: ''
-          required: false
-          schema:
-            type: integer
-            default: 10
-            minimum: 0
-        - in: query
-          name: var
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-      responses:
-        '200':
-          description: >+
-          content:
-            text/html; charset=utf-8:
-              schema:
-                $ref: '#/components/requestBodies/SearchPageReportCardResponse'
-        '400':
-          description: >+
-                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
-                or invalid Parameters</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '401':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
-                credentials are missing or invalid</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '403':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
-                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
-                request operation is not configured to access this
-                resource</td><td>Channel/Country/Business provided in the request is
-                not supported currently</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '404':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
-                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
-                requested resource was not found</td><td>Empty resource/resource not
-                found</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '500':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
-                request failed due to an internal error/server
-                unavailability</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-  /reportcard/{id}:
-    get:
-      operationId: searchpageReportCardId
-      x-vertx-event-bus: southerncoalition-enUS-ReportCard
-      description: >+
-      summary: >+
-      tags:
-        - State
-      parameters:
-        - name: vertx-web.session
-          in: cookie
-          schema:
-            type: string
-        - name: sessionIdBefore
-          in: cookie
-          schema:
-            type: string
-        - name: id
-          in: path
-          description: >+
-          required: true
-          schema:
-            type: string
-        - in: query
-          name: q
-          description: ''
-          required: false
-          schema:
-            type: string
-            default: '*:*'
-        - in: query
-          name: fq
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-        - in: query
-          name: fl
-          description: ''
-          required: false
-          schema:
-            type: string
-        - in: query
-          name: sort
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-        - in: query
-          name: start
-          description: ''
-          required: false
-          schema:
-            type: integer
-            default: 0
-            minimum: 0
-        - in: query
-          name: rows
-          description: ''
-          required: false
-          schema:
-            type: integer
-            default: 10
-            minimum: 0
-        - in: query
-          name: var
-          description: ''
-          required: false
-          schema:
-            type: array
-            items:
-                type: string
-      responses:
-        '200':
-          description: >+
-          content:
-            text/html; charset=utf-8:
-              schema:
-                $ref: '#/components/requestBodies/SearchPageReportCardResponse'
-        '400':
-          description: >+
-                <table><table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>invalidRequest</td><td>Missing
-                or invalid Parameters</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '401':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>error</td><td>unAuthorized</td><td>Authorization
-                credentials are missing or invalid</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '403':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
-                Info</td></tr><tr><td>error</td><td>accessNotConfigured</td><td>The
-                request operation is not configured to access this
-                resource</td><td>Channel/Country/Business provided in the request is
-                not supported currently</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '404':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td><td>More
-                Info</td></tr><tr><td>error</td><td>resourceNotFound</td><td>The
-                requested resource was not found</td><td>Empty resource/resource not
-                found</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
-        '500':
-          description: >+
-                <table><tr><td>Type</td><td>Code</td><td>Details</td></tr><tr><td>fatal</td><td>serverUnavailable</td><td>The
-                request failed due to an internal error/server
-                unavailability</td></tr></table>
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/requestBodies/ErrorResponse'
 components:
   securitySchemes:
     openIdConnect:
@@ -8063,6 +8063,76 @@ components:
         application/json; charset=utf-8:
           schema:
             $ref: '#/components/schemas/GETClusterResponse'
+    AdminSearchReportCardResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/AdminSearchReportCardResponse'
+    POSTReportCardRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/POSTReportCardRequest'
+    POSTReportCardResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/POSTReportCardResponse'
+    PATCHReportCardRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PATCHReportCardRequest'
+    PATCHReportCardResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PATCHReportCardResponse'
+    SearchReportCardResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/SearchReportCardResponse'
+    PUTCopyReportCardRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PUTCopyReportCardRequest'
+    PUTCopyReportCardResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PUTCopyReportCardResponse'
+    PUTImportReportCardRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PUTImportReportCardRequest'
+    PUTImportReportCardResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PUTImportReportCardResponse'
+    PUTMergeReportCardRequest:
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/PUTMergeReportCardRequest'
+    PUTMergeReportCardResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/PUTMergeReportCardResponse'
+    GETReportCardResponse:
+      content:
+        application/json; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/GETReportCardResponse'
+    SearchPageReportCardResponse:
+      content:
+        text/html; charset=utf-8:
+          schema:
+            $ref: '#/components/schemas/SearchPageReportCardResponse'
     AdminSearchSiteStateResponse:
       content:
         application/json; charset=utf-8:
@@ -8203,76 +8273,6 @@ components:
         application/json; charset=utf-8:
           schema:
             $ref: '#/components/schemas/GETSiteAgencyResponse'
-    AdminSearchReportCardResponse:
-      content:
-        application/json; charset=utf-8:
-          schema:
-            $ref: '#/components/schemas/AdminSearchReportCardResponse'
-    POSTReportCardRequest:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/POSTReportCardRequest'
-    POSTReportCardResponse:
-      content:
-        application/json; charset=utf-8:
-          schema:
-            $ref: '#/components/schemas/POSTReportCardResponse'
-    PATCHReportCardRequest:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PATCHReportCardRequest'
-    PATCHReportCardResponse:
-      content:
-        application/json; charset=utf-8:
-          schema:
-            $ref: '#/components/schemas/PATCHReportCardResponse'
-    SearchReportCardResponse:
-      content:
-        application/json; charset=utf-8:
-          schema:
-            $ref: '#/components/schemas/SearchReportCardResponse'
-    PUTCopyReportCardRequest:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PUTCopyReportCardRequest'
-    PUTCopyReportCardResponse:
-      content:
-        application/json; charset=utf-8:
-          schema:
-            $ref: '#/components/schemas/PUTCopyReportCardResponse'
-    PUTImportReportCardRequest:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PUTImportReportCardRequest'
-    PUTImportReportCardResponse:
-      content:
-        application/json; charset=utf-8:
-          schema:
-            $ref: '#/components/schemas/PUTImportReportCardResponse'
-    PUTMergeReportCardRequest:
-      content:
-        application/json:
-          schema:
-            $ref: '#/components/schemas/PUTMergeReportCardRequest'
-    PUTMergeReportCardResponse:
-      content:
-        application/json; charset=utf-8:
-          schema:
-            $ref: '#/components/schemas/PUTMergeReportCardResponse'
-    GETReportCardResponse:
-      content:
-        application/json; charset=utf-8:
-          schema:
-            $ref: '#/components/schemas/GETReportCardResponse'
-    SearchPageReportCardResponse:
-      content:
-        text/html; charset=utf-8:
-          schema:
-            $ref: '#/components/schemas/SearchPageReportCardResponse'
   schemas:
     HomePageSearchPagePageDesignResponse:
       allOf:
@@ -10791,868 +10791,6 @@ components:
               type: string
             pageH1:
               type: string
-    AdminSearchSiteStateResponse:
-      allOf:
-        - type: array
-          items:
-            type: object
-            properties:
-              stateKey:
-                type: string
-              stateName:
-                type: string
-              stateAbbreviation:
-                type: string
-              imageLeft:
-                type: string
-              imageTop:
-                type: string
-              agencyKeys:
-                type: array
-                items:
-                  type: string
-              stateCompleteName:
-                type: string
-    POSTSiteStateRequest:
-      allOf:
-        - $ref: "#/components/schemas/POSTClusterRequest"
-        - type: object
-          properties:
-            stateKey:
-              type: string
-            stateName:
-              type: string
-            stateAbbreviation:
-              type: string
-            imageLeft:
-              type: string
-            imageTop:
-              type: string
-            agencyKeys:
-              type: array
-              items:
-                type: string
-            stateCompleteName:
-              type: string
-    POSTSiteStateResponse:
-      allOf:
-        - $ref: "#/components/schemas/POSTClusterResponse"
-        - type: object
-          properties:
-            stateKey:
-              type: string
-            stateName:
-              type: string
-            stateAbbreviation:
-              type: string
-            imageLeft:
-              type: string
-            imageTop:
-              type: string
-            agencyKeys:
-              type: array
-              items:
-                type: string
-            stateCompleteName:
-              type: string
-    PATCHSiteStateRequest:
-      allOf:
-        - $ref: "#/components/schemas/PATCHClusterRequest"
-        - type: object
-          properties:
-            setStateKey:
-              type: string
-              nullable: true
-            removeStateKey:
-              type: string
-            removeAllStateKey:
-              type: string
-            setStateName:
-              type: string
-              nullable: true
-            removeStateName:
-              type: string
-            removeAllStateName:
-              type: string
-            setStateAbbreviation:
-              type: string
-              nullable: true
-            removeStateAbbreviation:
-              type: string
-            removeAllStateAbbreviation:
-              type: string
-            setImageLeft:
-              type: string
-              nullable: true
-            removeImageLeft:
-              type: string
-            removeAllImageLeft:
-              type: string
-            setImageTop:
-              type: string
-              nullable: true
-            removeImageTop:
-              type: string
-            removeAllImageTop:
-              type: string
-            setAgencyKeys:
-              type: array
-              nullable: true
-              items:
-                type: string
-            removeAgencyKeys:
-              type: string
-            removeAllAgencyKeys:
-              type: array
-              items:
-                type: string
-            addAgencyKeys:
-              type: string
-            addAllAgencyKeys:
-              type: array
-              items:
-                type: string
-            setStateCompleteName:
-              type: string
-              nullable: true
-            removeStateCompleteName:
-              type: string
-            removeAllStateCompleteName:
-              type: string
-    PATCHSiteStateResponse:
-      allOf:
-        - $ref: "#/components/schemas/PATCHClusterResponse"
-        - type: object
-          properties:
-            setStateKey:
-              type: string
-              nullable: true
-            removeStateKey:
-              type: string
-            removeAllStateKey:
-              type: string
-            setStateName:
-              type: string
-              nullable: true
-            removeStateName:
-              type: string
-            removeAllStateName:
-              type: string
-            setStateAbbreviation:
-              type: string
-              nullable: true
-            removeStateAbbreviation:
-              type: string
-            removeAllStateAbbreviation:
-              type: string
-            setImageLeft:
-              type: string
-              nullable: true
-            removeImageLeft:
-              type: string
-            removeAllImageLeft:
-              type: string
-            setImageTop:
-              type: string
-              nullable: true
-            removeImageTop:
-              type: string
-            removeAllImageTop:
-              type: string
-            setAgencyKeys:
-              type: array
-              nullable: true
-              items:
-                type: string
-            removeAgencyKeys:
-              type: string
-            removeAllAgencyKeys:
-              type: array
-              items:
-                type: string
-            addAgencyKeys:
-              type: string
-            addAllAgencyKeys:
-              type: array
-              items:
-                type: string
-            setStateCompleteName:
-              type: string
-              nullable: true
-            removeStateCompleteName:
-              type: string
-            removeAllStateCompleteName:
-              type: string
-    SearchSiteStateResponse:
-      allOf:
-        - $ref: "#/components/schemas/SearchClusterResponse"
-        - type: array
-          items:
-            type: object
-            properties:
-              stateKey:
-                type: string
-              stateName:
-                type: string
-              stateAbbreviation:
-                type: string
-              imageLeft:
-                type: string
-              imageTop:
-                type: string
-              agencyKeys:
-                type: array
-                items:
-                  type: string
-              stateCompleteName:
-                type: string
-    PUTCopySiteStateRequest:
-      allOf:
-        - type: object
-          properties:
-            stateKey:
-              type: string
-            stateName:
-              type: string
-            stateAbbreviation:
-              type: string
-            imageLeft:
-              type: string
-            imageTop:
-              type: string
-            agencyKeys:
-              type: array
-              items:
-                type: string
-            stateCompleteName:
-              type: string
-    PUTCopySiteStateResponse:
-      allOf:
-        - type: object
-          properties:
-            stateKey:
-              type: string
-            stateName:
-              type: string
-            stateAbbreviation:
-              type: string
-            imageLeft:
-              type: string
-            imageTop:
-              type: string
-            agencyKeys:
-              type: array
-              items:
-                type: string
-            stateCompleteName:
-              type: string
-    PUTImportSiteStateRequest:
-      allOf:
-        - type: object
-          properties:
-            stateKey:
-              type: string
-            stateName:
-              type: string
-            stateAbbreviation:
-              type: string
-            imageLeft:
-              type: string
-            imageTop:
-              type: string
-            agencyKeys:
-              type: array
-              items:
-                type: string
-            stateCompleteName:
-              type: string
-    PUTImportSiteStateResponse:
-      allOf:
-        - type: object
-          properties:
-            stateKey:
-              type: string
-            stateName:
-              type: string
-            stateAbbreviation:
-              type: string
-            imageLeft:
-              type: string
-            imageTop:
-              type: string
-            agencyKeys:
-              type: array
-              items:
-                type: string
-            stateCompleteName:
-              type: string
-    PUTMergeSiteStateRequest:
-      allOf:
-        - type: object
-          properties:
-            stateKey:
-              type: string
-            stateName:
-              type: string
-            stateAbbreviation:
-              type: string
-            imageLeft:
-              type: string
-            imageTop:
-              type: string
-            agencyKeys:
-              type: array
-              items:
-                type: string
-            stateCompleteName:
-              type: string
-    PUTMergeSiteStateResponse:
-      allOf:
-        - type: object
-          properties:
-            stateKey:
-              type: string
-            stateName:
-              type: string
-            stateAbbreviation:
-              type: string
-            imageLeft:
-              type: string
-            imageTop:
-              type: string
-            agencyKeys:
-              type: array
-              items:
-                type: string
-            stateCompleteName:
-              type: string
-    GETSiteStateResponse:
-      allOf:
-        - $ref: "#/components/schemas/GETClusterResponse"
-        - type: object
-          properties:
-            stateKey:
-              type: string
-            stateName:
-              type: string
-            stateAbbreviation:
-              type: string
-            imageLeft:
-              type: string
-            imageTop:
-              type: string
-            agencyKeys:
-              type: array
-              items:
-                type: string
-            stateCompleteName:
-              type: string
-    SearchPageSiteStateResponse:
-      allOf:
-        - type: string
-    SearchPageSiteAgencyResponse:
-      allOf:
-        - type: string
-    AdminSearchSiteAgencyResponse:
-      allOf:
-        - type: array
-          items:
-            type: object
-            properties:
-              agencyKey:
-                type: string
-              agencyName:
-                type: string
-              stateKey:
-                type: string
-              imageLeft:
-                type: string
-              imageTop:
-                type: string
-              imageCoords:
-                type: string
-              reportCardKeys:
-                type: array
-                items:
-                  type: string
-              stateId:
-                type: string
-              stateName:
-                type: string
-              stateAbbreviation:
-                type: string
-              agencyCompleteName:
-                type: string
-    POSTSiteAgencyRequest:
-      allOf:
-        - $ref: "#/components/schemas/POSTClusterRequest"
-        - type: object
-          properties:
-            agencyKey:
-              type: string
-            agencyName:
-              type: string
-            stateKey:
-              type: string
-            imageLeft:
-              type: string
-            imageTop:
-              type: string
-            imageCoords:
-              type: string
-            reportCardKeys:
-              type: array
-              items:
-                type: string
-            stateId:
-              type: string
-            stateName:
-              type: string
-            stateAbbreviation:
-              type: string
-            agencyCompleteName:
-              type: string
-    POSTSiteAgencyResponse:
-      allOf:
-        - $ref: "#/components/schemas/POSTClusterResponse"
-        - type: object
-          properties:
-            agencyKey:
-              type: string
-            agencyName:
-              type: string
-            stateKey:
-              type: string
-            imageLeft:
-              type: string
-            imageTop:
-              type: string
-            imageCoords:
-              type: string
-            reportCardKeys:
-              type: array
-              items:
-                type: string
-            stateId:
-              type: string
-            stateName:
-              type: string
-            stateAbbreviation:
-              type: string
-            agencyCompleteName:
-              type: string
-    PATCHSiteAgencyRequest:
-      allOf:
-        - $ref: "#/components/schemas/PATCHClusterRequest"
-        - type: object
-          properties:
-            setAgencyKey:
-              type: string
-              nullable: true
-            removeAgencyKey:
-              type: string
-            removeAllAgencyKey:
-              type: string
-            setAgencyName:
-              type: string
-              nullable: true
-            removeAgencyName:
-              type: string
-            removeAllAgencyName:
-              type: string
-            setStateKey:
-              type: string
-              nullable: true
-            removeStateKey:
-              type: string
-            removeAllStateKey:
-              type: string
-            setImageLeft:
-              type: string
-              nullable: true
-            removeImageLeft:
-              type: string
-            removeAllImageLeft:
-              type: string
-            setImageTop:
-              type: string
-              nullable: true
-            removeImageTop:
-              type: string
-            removeAllImageTop:
-              type: string
-            setImageCoords:
-              type: string
-              nullable: true
-            removeImageCoords:
-              type: string
-            removeAllImageCoords:
-              type: string
-            setReportCardKeys:
-              type: array
-              nullable: true
-              items:
-                type: string
-            removeReportCardKeys:
-              type: string
-            removeAllReportCardKeys:
-              type: array
-              items:
-                type: string
-            addReportCardKeys:
-              type: string
-            addAllReportCardKeys:
-              type: array
-              items:
-                type: string
-            setStateId:
-              type: string
-              nullable: true
-            removeStateId:
-              type: string
-            removeAllStateId:
-              type: string
-            setStateName:
-              type: string
-              nullable: true
-            removeStateName:
-              type: string
-            removeAllStateName:
-              type: string
-            setStateAbbreviation:
-              type: string
-              nullable: true
-            removeStateAbbreviation:
-              type: string
-            removeAllStateAbbreviation:
-              type: string
-            setAgencyCompleteName:
-              type: string
-              nullable: true
-            removeAgencyCompleteName:
-              type: string
-            removeAllAgencyCompleteName:
-              type: string
-    PATCHSiteAgencyResponse:
-      allOf:
-        - $ref: "#/components/schemas/PATCHClusterResponse"
-        - type: object
-          properties:
-            setAgencyKey:
-              type: string
-              nullable: true
-            removeAgencyKey:
-              type: string
-            removeAllAgencyKey:
-              type: string
-            setAgencyName:
-              type: string
-              nullable: true
-            removeAgencyName:
-              type: string
-            removeAllAgencyName:
-              type: string
-            setStateKey:
-              type: string
-              nullable: true
-            removeStateKey:
-              type: string
-            removeAllStateKey:
-              type: string
-            setImageLeft:
-              type: string
-              nullable: true
-            removeImageLeft:
-              type: string
-            removeAllImageLeft:
-              type: string
-            setImageTop:
-              type: string
-              nullable: true
-            removeImageTop:
-              type: string
-            removeAllImageTop:
-              type: string
-            setImageCoords:
-              type: string
-              nullable: true
-            removeImageCoords:
-              type: string
-            removeAllImageCoords:
-              type: string
-            setReportCardKeys:
-              type: array
-              nullable: true
-              items:
-                type: string
-            removeReportCardKeys:
-              type: string
-            removeAllReportCardKeys:
-              type: array
-              items:
-                type: string
-            addReportCardKeys:
-              type: string
-            addAllReportCardKeys:
-              type: array
-              items:
-                type: string
-            setStateId:
-              type: string
-              nullable: true
-            removeStateId:
-              type: string
-            removeAllStateId:
-              type: string
-            setStateName:
-              type: string
-              nullable: true
-            removeStateName:
-              type: string
-            removeAllStateName:
-              type: string
-            setStateAbbreviation:
-              type: string
-              nullable: true
-            removeStateAbbreviation:
-              type: string
-            removeAllStateAbbreviation:
-              type: string
-            setAgencyCompleteName:
-              type: string
-              nullable: true
-            removeAgencyCompleteName:
-              type: string
-            removeAllAgencyCompleteName:
-              type: string
-    SearchSiteAgencyResponse:
-      allOf:
-        - $ref: "#/components/schemas/SearchClusterResponse"
-        - type: array
-          items:
-            type: object
-            properties:
-              agencyKey:
-                type: string
-              agencyName:
-                type: string
-              stateKey:
-                type: string
-              imageLeft:
-                type: string
-              imageTop:
-                type: string
-              imageCoords:
-                type: string
-              reportCardKeys:
-                type: array
-                items:
-                  type: string
-              stateId:
-                type: string
-              stateName:
-                type: string
-              stateAbbreviation:
-                type: string
-              agencyCompleteName:
-                type: string
-    PUTCopySiteAgencyRequest:
-      allOf:
-        - type: object
-          properties:
-            agencyKey:
-              type: string
-            agencyName:
-              type: string
-            stateKey:
-              type: string
-            imageLeft:
-              type: string
-            imageTop:
-              type: string
-            imageCoords:
-              type: string
-            reportCardKeys:
-              type: array
-              items:
-                type: string
-            stateId:
-              type: string
-            stateName:
-              type: string
-            stateAbbreviation:
-              type: string
-            agencyCompleteName:
-              type: string
-    PUTCopySiteAgencyResponse:
-      allOf:
-        - type: object
-          properties:
-            agencyKey:
-              type: string
-            agencyName:
-              type: string
-            stateKey:
-              type: string
-            imageLeft:
-              type: string
-            imageTop:
-              type: string
-            imageCoords:
-              type: string
-            reportCardKeys:
-              type: array
-              items:
-                type: string
-            stateId:
-              type: string
-            stateName:
-              type: string
-            stateAbbreviation:
-              type: string
-            agencyCompleteName:
-              type: string
-    PUTImportSiteAgencyRequest:
-      allOf:
-        - type: object
-          properties:
-            agencyKey:
-              type: string
-            agencyName:
-              type: string
-            stateKey:
-              type: string
-            imageLeft:
-              type: string
-            imageTop:
-              type: string
-            imageCoords:
-              type: string
-            reportCardKeys:
-              type: array
-              items:
-                type: string
-            stateId:
-              type: string
-            stateName:
-              type: string
-            stateAbbreviation:
-              type: string
-            agencyCompleteName:
-              type: string
-    PUTImportSiteAgencyResponse:
-      allOf:
-        - type: object
-          properties:
-            agencyKey:
-              type: string
-            agencyName:
-              type: string
-            stateKey:
-              type: string
-            imageLeft:
-              type: string
-            imageTop:
-              type: string
-            imageCoords:
-              type: string
-            reportCardKeys:
-              type: array
-              items:
-                type: string
-            stateId:
-              type: string
-            stateName:
-              type: string
-            stateAbbreviation:
-              type: string
-            agencyCompleteName:
-              type: string
-    PUTMergeSiteAgencyRequest:
-      allOf:
-        - type: object
-          properties:
-            agencyKey:
-              type: string
-            agencyName:
-              type: string
-            stateKey:
-              type: string
-            imageLeft:
-              type: string
-            imageTop:
-              type: string
-            imageCoords:
-              type: string
-            reportCardKeys:
-              type: array
-              items:
-                type: string
-            stateId:
-              type: string
-            stateName:
-              type: string
-            stateAbbreviation:
-              type: string
-            agencyCompleteName:
-              type: string
-    PUTMergeSiteAgencyResponse:
-      allOf:
-        - type: object
-          properties:
-            agencyKey:
-              type: string
-            agencyName:
-              type: string
-            stateKey:
-              type: string
-            imageLeft:
-              type: string
-            imageTop:
-              type: string
-            imageCoords:
-              type: string
-            reportCardKeys:
-              type: array
-              items:
-                type: string
-            stateId:
-              type: string
-            stateName:
-              type: string
-            stateAbbreviation:
-              type: string
-            agencyCompleteName:
-              type: string
-    GETSiteAgencyResponse:
-      allOf:
-        - $ref: "#/components/schemas/GETClusterResponse"
-        - type: object
-          properties:
-            agencyKey:
-              type: string
-            agencyName:
-              type: string
-            stateKey:
-              type: string
-            imageLeft:
-              type: string
-            imageTop:
-              type: string
-            imageCoords:
-              type: string
-            reportCardKeys:
-              type: array
-              items:
-                type: string
-            stateId:
-              type: string
-            stateName:
-              type: string
-            stateAbbreviation:
-              type: string
-            agencyCompleteName:
-              type: string
     AdminSearchReportCardResponse:
       allOf:
         - type: array
@@ -17082,6 +16220,868 @@ components:
     SearchPageReportCardResponse:
       allOf:
         - type: string
+    AdminSearchSiteStateResponse:
+      allOf:
+        - type: array
+          items:
+            type: object
+            properties:
+              stateKey:
+                type: string
+              stateName:
+                type: string
+              stateAbbreviation:
+                type: string
+              imageLeft:
+                type: string
+              imageTop:
+                type: string
+              agencyKeys:
+                type: array
+                items:
+                  type: string
+              stateCompleteName:
+                type: string
+    POSTSiteStateRequest:
+      allOf:
+        - $ref: "#/components/schemas/POSTClusterRequest"
+        - type: object
+          properties:
+            stateKey:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
+              type: string
+            agencyKeys:
+              type: array
+              items:
+                type: string
+            stateCompleteName:
+              type: string
+    POSTSiteStateResponse:
+      allOf:
+        - $ref: "#/components/schemas/POSTClusterResponse"
+        - type: object
+          properties:
+            stateKey:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
+              type: string
+            agencyKeys:
+              type: array
+              items:
+                type: string
+            stateCompleteName:
+              type: string
+    PATCHSiteStateRequest:
+      allOf:
+        - $ref: "#/components/schemas/PATCHClusterRequest"
+        - type: object
+          properties:
+            setStateKey:
+              type: string
+              nullable: true
+            removeStateKey:
+              type: string
+            removeAllStateKey:
+              type: string
+            setStateName:
+              type: string
+              nullable: true
+            removeStateName:
+              type: string
+            removeAllStateName:
+              type: string
+            setStateAbbreviation:
+              type: string
+              nullable: true
+            removeStateAbbreviation:
+              type: string
+            removeAllStateAbbreviation:
+              type: string
+            setImageLeft:
+              type: string
+              nullable: true
+            removeImageLeft:
+              type: string
+            removeAllImageLeft:
+              type: string
+            setImageTop:
+              type: string
+              nullable: true
+            removeImageTop:
+              type: string
+            removeAllImageTop:
+              type: string
+            setAgencyKeys:
+              type: array
+              nullable: true
+              items:
+                type: string
+            removeAgencyKeys:
+              type: string
+            removeAllAgencyKeys:
+              type: array
+              items:
+                type: string
+            addAgencyKeys:
+              type: string
+            addAllAgencyKeys:
+              type: array
+              items:
+                type: string
+            setStateCompleteName:
+              type: string
+              nullable: true
+            removeStateCompleteName:
+              type: string
+            removeAllStateCompleteName:
+              type: string
+    PATCHSiteStateResponse:
+      allOf:
+        - $ref: "#/components/schemas/PATCHClusterResponse"
+        - type: object
+          properties:
+            setStateKey:
+              type: string
+              nullable: true
+            removeStateKey:
+              type: string
+            removeAllStateKey:
+              type: string
+            setStateName:
+              type: string
+              nullable: true
+            removeStateName:
+              type: string
+            removeAllStateName:
+              type: string
+            setStateAbbreviation:
+              type: string
+              nullable: true
+            removeStateAbbreviation:
+              type: string
+            removeAllStateAbbreviation:
+              type: string
+            setImageLeft:
+              type: string
+              nullable: true
+            removeImageLeft:
+              type: string
+            removeAllImageLeft:
+              type: string
+            setImageTop:
+              type: string
+              nullable: true
+            removeImageTop:
+              type: string
+            removeAllImageTop:
+              type: string
+            setAgencyKeys:
+              type: array
+              nullable: true
+              items:
+                type: string
+            removeAgencyKeys:
+              type: string
+            removeAllAgencyKeys:
+              type: array
+              items:
+                type: string
+            addAgencyKeys:
+              type: string
+            addAllAgencyKeys:
+              type: array
+              items:
+                type: string
+            setStateCompleteName:
+              type: string
+              nullable: true
+            removeStateCompleteName:
+              type: string
+            removeAllStateCompleteName:
+              type: string
+    SearchSiteStateResponse:
+      allOf:
+        - $ref: "#/components/schemas/SearchClusterResponse"
+        - type: array
+          items:
+            type: object
+            properties:
+              stateKey:
+                type: string
+              stateName:
+                type: string
+              stateAbbreviation:
+                type: string
+              imageLeft:
+                type: string
+              imageTop:
+                type: string
+              agencyKeys:
+                type: array
+                items:
+                  type: string
+              stateCompleteName:
+                type: string
+    PUTCopySiteStateRequest:
+      allOf:
+        - type: object
+          properties:
+            stateKey:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
+              type: string
+            agencyKeys:
+              type: array
+              items:
+                type: string
+            stateCompleteName:
+              type: string
+    PUTCopySiteStateResponse:
+      allOf:
+        - type: object
+          properties:
+            stateKey:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
+              type: string
+            agencyKeys:
+              type: array
+              items:
+                type: string
+            stateCompleteName:
+              type: string
+    PUTImportSiteStateRequest:
+      allOf:
+        - type: object
+          properties:
+            stateKey:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
+              type: string
+            agencyKeys:
+              type: array
+              items:
+                type: string
+            stateCompleteName:
+              type: string
+    PUTImportSiteStateResponse:
+      allOf:
+        - type: object
+          properties:
+            stateKey:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
+              type: string
+            agencyKeys:
+              type: array
+              items:
+                type: string
+            stateCompleteName:
+              type: string
+    PUTMergeSiteStateRequest:
+      allOf:
+        - type: object
+          properties:
+            stateKey:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
+              type: string
+            agencyKeys:
+              type: array
+              items:
+                type: string
+            stateCompleteName:
+              type: string
+    PUTMergeSiteStateResponse:
+      allOf:
+        - type: object
+          properties:
+            stateKey:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
+              type: string
+            agencyKeys:
+              type: array
+              items:
+                type: string
+            stateCompleteName:
+              type: string
+    GETSiteStateResponse:
+      allOf:
+        - $ref: "#/components/schemas/GETClusterResponse"
+        - type: object
+          properties:
+            stateKey:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
+              type: string
+            agencyKeys:
+              type: array
+              items:
+                type: string
+            stateCompleteName:
+              type: string
+    SearchPageSiteStateResponse:
+      allOf:
+        - type: string
+    SearchPageSiteAgencyResponse:
+      allOf:
+        - type: string
+    AdminSearchSiteAgencyResponse:
+      allOf:
+        - type: array
+          items:
+            type: object
+            properties:
+              agencyKey:
+                type: string
+              agencyName:
+                type: string
+              stateKey:
+                type: string
+              imageLeft:
+                type: string
+              imageTop:
+                type: string
+              imageCoords:
+                type: string
+              reportCardKeys:
+                type: array
+                items:
+                  type: string
+              stateId:
+                type: string
+              stateName:
+                type: string
+              stateAbbreviation:
+                type: string
+              agencyCompleteName:
+                type: string
+    POSTSiteAgencyRequest:
+      allOf:
+        - $ref: "#/components/schemas/POSTClusterRequest"
+        - type: object
+          properties:
+            agencyKey:
+              type: string
+            agencyName:
+              type: string
+            stateKey:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
+              type: string
+            imageCoords:
+              type: string
+            reportCardKeys:
+              type: array
+              items:
+                type: string
+            stateId:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            agencyCompleteName:
+              type: string
+    POSTSiteAgencyResponse:
+      allOf:
+        - $ref: "#/components/schemas/POSTClusterResponse"
+        - type: object
+          properties:
+            agencyKey:
+              type: string
+            agencyName:
+              type: string
+            stateKey:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
+              type: string
+            imageCoords:
+              type: string
+            reportCardKeys:
+              type: array
+              items:
+                type: string
+            stateId:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            agencyCompleteName:
+              type: string
+    PATCHSiteAgencyRequest:
+      allOf:
+        - $ref: "#/components/schemas/PATCHClusterRequest"
+        - type: object
+          properties:
+            setAgencyKey:
+              type: string
+              nullable: true
+            removeAgencyKey:
+              type: string
+            removeAllAgencyKey:
+              type: string
+            setAgencyName:
+              type: string
+              nullable: true
+            removeAgencyName:
+              type: string
+            removeAllAgencyName:
+              type: string
+            setStateKey:
+              type: string
+              nullable: true
+            removeStateKey:
+              type: string
+            removeAllStateKey:
+              type: string
+            setImageLeft:
+              type: string
+              nullable: true
+            removeImageLeft:
+              type: string
+            removeAllImageLeft:
+              type: string
+            setImageTop:
+              type: string
+              nullable: true
+            removeImageTop:
+              type: string
+            removeAllImageTop:
+              type: string
+            setImageCoords:
+              type: string
+              nullable: true
+            removeImageCoords:
+              type: string
+            removeAllImageCoords:
+              type: string
+            setReportCardKeys:
+              type: array
+              nullable: true
+              items:
+                type: string
+            removeReportCardKeys:
+              type: string
+            removeAllReportCardKeys:
+              type: array
+              items:
+                type: string
+            addReportCardKeys:
+              type: string
+            addAllReportCardKeys:
+              type: array
+              items:
+                type: string
+            setStateId:
+              type: string
+              nullable: true
+            removeStateId:
+              type: string
+            removeAllStateId:
+              type: string
+            setStateName:
+              type: string
+              nullable: true
+            removeStateName:
+              type: string
+            removeAllStateName:
+              type: string
+            setStateAbbreviation:
+              type: string
+              nullable: true
+            removeStateAbbreviation:
+              type: string
+            removeAllStateAbbreviation:
+              type: string
+            setAgencyCompleteName:
+              type: string
+              nullable: true
+            removeAgencyCompleteName:
+              type: string
+            removeAllAgencyCompleteName:
+              type: string
+    PATCHSiteAgencyResponse:
+      allOf:
+        - $ref: "#/components/schemas/PATCHClusterResponse"
+        - type: object
+          properties:
+            setAgencyKey:
+              type: string
+              nullable: true
+            removeAgencyKey:
+              type: string
+            removeAllAgencyKey:
+              type: string
+            setAgencyName:
+              type: string
+              nullable: true
+            removeAgencyName:
+              type: string
+            removeAllAgencyName:
+              type: string
+            setStateKey:
+              type: string
+              nullable: true
+            removeStateKey:
+              type: string
+            removeAllStateKey:
+              type: string
+            setImageLeft:
+              type: string
+              nullable: true
+            removeImageLeft:
+              type: string
+            removeAllImageLeft:
+              type: string
+            setImageTop:
+              type: string
+              nullable: true
+            removeImageTop:
+              type: string
+            removeAllImageTop:
+              type: string
+            setImageCoords:
+              type: string
+              nullable: true
+            removeImageCoords:
+              type: string
+            removeAllImageCoords:
+              type: string
+            setReportCardKeys:
+              type: array
+              nullable: true
+              items:
+                type: string
+            removeReportCardKeys:
+              type: string
+            removeAllReportCardKeys:
+              type: array
+              items:
+                type: string
+            addReportCardKeys:
+              type: string
+            addAllReportCardKeys:
+              type: array
+              items:
+                type: string
+            setStateId:
+              type: string
+              nullable: true
+            removeStateId:
+              type: string
+            removeAllStateId:
+              type: string
+            setStateName:
+              type: string
+              nullable: true
+            removeStateName:
+              type: string
+            removeAllStateName:
+              type: string
+            setStateAbbreviation:
+              type: string
+              nullable: true
+            removeStateAbbreviation:
+              type: string
+            removeAllStateAbbreviation:
+              type: string
+            setAgencyCompleteName:
+              type: string
+              nullable: true
+            removeAgencyCompleteName:
+              type: string
+            removeAllAgencyCompleteName:
+              type: string
+    SearchSiteAgencyResponse:
+      allOf:
+        - $ref: "#/components/schemas/SearchClusterResponse"
+        - type: array
+          items:
+            type: object
+            properties:
+              agencyKey:
+                type: string
+              agencyName:
+                type: string
+              stateKey:
+                type: string
+              imageLeft:
+                type: string
+              imageTop:
+                type: string
+              imageCoords:
+                type: string
+              reportCardKeys:
+                type: array
+                items:
+                  type: string
+              stateId:
+                type: string
+              stateName:
+                type: string
+              stateAbbreviation:
+                type: string
+              agencyCompleteName:
+                type: string
+    PUTCopySiteAgencyRequest:
+      allOf:
+        - type: object
+          properties:
+            agencyKey:
+              type: string
+            agencyName:
+              type: string
+            stateKey:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
+              type: string
+            imageCoords:
+              type: string
+            reportCardKeys:
+              type: array
+              items:
+                type: string
+            stateId:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            agencyCompleteName:
+              type: string
+    PUTCopySiteAgencyResponse:
+      allOf:
+        - type: object
+          properties:
+            agencyKey:
+              type: string
+            agencyName:
+              type: string
+            stateKey:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
+              type: string
+            imageCoords:
+              type: string
+            reportCardKeys:
+              type: array
+              items:
+                type: string
+            stateId:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            agencyCompleteName:
+              type: string
+    PUTImportSiteAgencyRequest:
+      allOf:
+        - type: object
+          properties:
+            agencyKey:
+              type: string
+            agencyName:
+              type: string
+            stateKey:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
+              type: string
+            imageCoords:
+              type: string
+            reportCardKeys:
+              type: array
+              items:
+                type: string
+            stateId:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            agencyCompleteName:
+              type: string
+    PUTImportSiteAgencyResponse:
+      allOf:
+        - type: object
+          properties:
+            agencyKey:
+              type: string
+            agencyName:
+              type: string
+            stateKey:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
+              type: string
+            imageCoords:
+              type: string
+            reportCardKeys:
+              type: array
+              items:
+                type: string
+            stateId:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            agencyCompleteName:
+              type: string
+    PUTMergeSiteAgencyRequest:
+      allOf:
+        - type: object
+          properties:
+            agencyKey:
+              type: string
+            agencyName:
+              type: string
+            stateKey:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
+              type: string
+            imageCoords:
+              type: string
+            reportCardKeys:
+              type: array
+              items:
+                type: string
+            stateId:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            agencyCompleteName:
+              type: string
+    PUTMergeSiteAgencyResponse:
+      allOf:
+        - type: object
+          properties:
+            agencyKey:
+              type: string
+            agencyName:
+              type: string
+            stateKey:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
+              type: string
+            imageCoords:
+              type: string
+            reportCardKeys:
+              type: array
+              items:
+                type: string
+            stateId:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            agencyCompleteName:
+              type: string
+    GETSiteAgencyResponse:
+      allOf:
+        - $ref: "#/components/schemas/GETClusterResponse"
+        - type: object
+          properties:
+            agencyKey:
+              type: string
+            agencyName:
+              type: string
+            stateKey:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
+              type: string
+            imageCoords:
+              type: string
+            reportCardKeys:
+              type: array
+              items:
+                type: string
+            stateId:
+              type: string
+            stateName:
+              type: string
+            stateAbbreviation:
+              type: string
+            agencyCompleteName:
+              type: string
     ErrorResponse:
       required:
         - type
