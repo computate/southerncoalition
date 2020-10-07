@@ -11671,6 +11671,10 @@ components:
                 type: string
               agencyKey:
                 type: string
+              imageLeft:
+                type: string
+              imageTop:
+                type: string
               pupilsTotal:
                 type: string
               pupilsIndigenousFemale:
@@ -11974,6 +11978,10 @@ components:
               type: string
             agencyKey:
               type: string
+            imageLeft:
+              type: string
+            imageTop:
+              type: string
             pupilsTotal:
               type: string
             pupilsIndigenousFemale:
@@ -12276,6 +12284,10 @@ components:
             reportCardYearsStr:
               type: string
             agencyKey:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
               type: string
             pupilsTotal:
               type: string
@@ -12609,6 +12621,20 @@ components:
             removeAgencyKey:
               type: string
             removeAllAgencyKey:
+              type: string
+            setImageLeft:
+              type: string
+              nullable: true
+            removeImageLeft:
+              type: string
+            removeAllImageLeft:
+              type: string
+            setImageTop:
+              type: string
+              nullable: true
+            removeImageTop:
+              type: string
+            removeAllImageTop:
               type: string
             setPupilsTotal:
               type: string
@@ -13658,6 +13684,20 @@ components:
               type: string
             removeAllAgencyKey:
               type: string
+            setImageLeft:
+              type: string
+              nullable: true
+            removeImageLeft:
+              type: string
+            removeAllImageLeft:
+              type: string
+            setImageTop:
+              type: string
+              nullable: true
+            removeImageTop:
+              type: string
+            removeAllImageTop:
+              type: string
             setPupilsTotal:
               type: string
               nullable: true
@@ -14678,6 +14718,10 @@ components:
                 type: string
               agencyKey:
                 type: string
+              imageLeft:
+                type: string
+              imageTop:
+                type: string
               pupilsTotal:
                 type: string
               pupilsIndigenousFemale:
@@ -14979,6 +15023,10 @@ components:
             reportCardYearsStr:
               type: string
             agencyKey:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
               type: string
             pupilsTotal:
               type: string
@@ -15282,6 +15330,10 @@ components:
               type: string
             agencyKey:
               type: string
+            imageLeft:
+              type: string
+            imageTop:
+              type: string
             pupilsTotal:
               type: string
             pupilsIndigenousFemale:
@@ -15583,6 +15635,10 @@ components:
             reportCardYearsStr:
               type: string
             agencyKey:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
               type: string
             pupilsTotal:
               type: string
@@ -15886,6 +15942,10 @@ components:
               type: string
             agencyKey:
               type: string
+            imageLeft:
+              type: string
+            imageTop:
+              type: string
             pupilsTotal:
               type: string
             pupilsIndigenousFemale:
@@ -16187,6 +16247,10 @@ components:
             reportCardYearsStr:
               type: string
             agencyKey:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
               type: string
             pupilsTotal:
               type: string
@@ -16490,6 +16554,10 @@ components:
               type: string
             agencyKey:
               type: string
+            imageLeft:
+              type: string
+            imageTop:
+              type: string
             pupilsTotal:
               type: string
             pupilsIndigenousFemale:
@@ -16792,6 +16860,10 @@ components:
             reportCardYearsStr:
               type: string
             agencyKey:
+              type: string
+            imageLeft:
+              type: string
+            imageTop:
               type: string
             pupilsTotal:
               type: string

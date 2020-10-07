@@ -721,6 +721,144 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		} g("div");
 	}
 
+	///////////////
+	// imageLeft //
+	///////////////
+
+	/**	 The entity imageLeft
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Integer imageLeft;
+	@JsonIgnore
+	public Wrap<Integer> imageLeftWrap = new Wrap<Integer>().p(this).c(Integer.class).var("imageLeft").o(imageLeft);
+
+	/**	<br/> The entity imageLeft
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:imageLeft">Find the entity imageLeft in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _imageLeft(Wrap<Integer> c);
+
+	public Integer getImageLeft() {
+		return imageLeft;
+	}
+
+	public void setImageLeft(Integer imageLeft) {
+		this.imageLeft = imageLeft;
+		this.imageLeftWrap.alreadyInitialized = true;
+	}
+	public ReportCard setImageLeft(String o) {
+		if(NumberUtils.isParsable(o))
+			this.imageLeft = Integer.parseInt(o);
+		this.imageLeftWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard imageLeftInit() {
+		if(!imageLeftWrap.alreadyInitialized) {
+			_imageLeft(imageLeftWrap);
+			if(imageLeft == null)
+				setImageLeft(imageLeftWrap.o);
+		}
+		imageLeftWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Integer solrImageLeft() {
+		return imageLeft;
+	}
+
+	public String strImageLeft() {
+		return imageLeft == null ? "" : imageLeft.toString();
+	}
+
+	public String jsonImageLeft() {
+		return imageLeft == null ? "" : imageLeft.toString();
+	}
+
+	public String nomAffichageImageLeft() {
+		return null;
+	}
+
+	public String htmTooltipImageLeft() {
+		return null;
+	}
+
+	public String htmImageLeft() {
+		return imageLeft == null ? "" : StringEscapeUtils.escapeHtml4(strImageLeft());
+	}
+
+	//////////////
+	// imageTop //
+	//////////////
+
+	/**	 The entity imageTop
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Integer imageTop;
+	@JsonIgnore
+	public Wrap<Integer> imageTopWrap = new Wrap<Integer>().p(this).c(Integer.class).var("imageTop").o(imageTop);
+
+	/**	<br/> The entity imageTop
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:imageTop">Find the entity imageTop in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _imageTop(Wrap<Integer> c);
+
+	public Integer getImageTop() {
+		return imageTop;
+	}
+
+	public void setImageTop(Integer imageTop) {
+		this.imageTop = imageTop;
+		this.imageTopWrap.alreadyInitialized = true;
+	}
+	public ReportCard setImageTop(String o) {
+		if(NumberUtils.isParsable(o))
+			this.imageTop = Integer.parseInt(o);
+		this.imageTopWrap.alreadyInitialized = true;
+		return (ReportCard)this;
+	}
+	protected ReportCard imageTopInit() {
+		if(!imageTopWrap.alreadyInitialized) {
+			_imageTop(imageTopWrap);
+			if(imageTop == null)
+				setImageTop(imageTopWrap.o);
+		}
+		imageTopWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public Integer solrImageTop() {
+		return imageTop;
+	}
+
+	public String strImageTop() {
+		return imageTop == null ? "" : imageTop.toString();
+	}
+
+	public String jsonImageTop() {
+		return imageTop == null ? "" : imageTop.toString();
+	}
+
+	public String nomAffichageImageTop() {
+		return null;
+	}
+
+	public String htmTooltipImageTop() {
+		return null;
+	}
+
+	public String htmImageTop() {
+		return imageTop == null ? "" : StringEscapeUtils.escapeHtml4(strImageTop());
+	}
+
 	/////////////////
 	// pupilsTotal //
 	/////////////////
@@ -17252,6 +17390,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		agencySearchInit();
 		agency_Init();
 		agencyKeyInit();
+		imageLeftInit();
+		imageTopInit();
 		pupilsTotalInit();
 		pupilsIndigenousFemaleInit();
 		pupilsIndigenousMaleInit();
@@ -17454,6 +17594,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.agency_;
 			case "agencyKey":
 				return oReportCard.agencyKey;
+			case "imageLeft":
+				return oReportCard.imageLeft;
+			case "imageTop":
+				return oReportCard.imageTop;
 			case "pupilsTotal":
 				return oReportCard.pupilsTotal;
 			case "pupilsIndigenousFemale":
@@ -18207,6 +18351,18 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			Long agencyKey = (Long)solrDocument.get("agencyKey_stored_long");
 			if(agencyKey != null)
 				oReportCard.setAgencyKey(agencyKey);
+
+			if(saves.contains("imageLeft")) {
+				Integer imageLeft = (Integer)solrDocument.get("imageLeft_stored_int");
+				if(imageLeft != null)
+					oReportCard.setImageLeft(imageLeft);
+			}
+
+			if(saves.contains("imageTop")) {
+				Integer imageTop = (Integer)solrDocument.get("imageTop_stored_int");
+				if(imageTop != null)
+					oReportCard.setImageTop(imageTop);
+			}
 
 			if(saves.contains("pupilsTotal")) {
 				Long pupilsTotal = (Long)solrDocument.get("pupilsTotal_stored_long");
@@ -19146,6 +19302,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			document.addField("agencyKey_indexed_long", agencyKey);
 			document.addField("agencyKey_stored_long", agencyKey);
 		}
+		if(imageLeft != null) {
+			document.addField("imageLeft_indexed_int", imageLeft);
+			document.addField("imageLeft_stored_int", imageLeft);
+		}
+		if(imageTop != null) {
+			document.addField("imageTop_indexed_int", imageTop);
+			document.addField("imageTop_stored_int", imageTop);
+		}
 		if(pupilsTotal != null) {
 			document.addField("pupilsTotal_indexed_long", pupilsTotal);
 			document.addField("pupilsTotal_stored_long", pupilsTotal);
@@ -19734,6 +19898,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return "reportCardYearsStr_indexed_string";
 			case "agencyKey":
 				return "agencyKey_indexed_long";
+			case "imageLeft":
+				return "imageLeft_indexed_int";
+			case "imageTop":
+				return "imageTop_indexed_int";
 			case "pupilsTotal":
 				return "pupilsTotal_indexed_long";
 			case "pupilsIndigenousFemale":
@@ -20040,6 +20208,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		Long agencyKey = (Long)solrDocument.get("agencyKey_stored_long");
 		if(agencyKey != null)
 			oReportCard.setAgencyKey(agencyKey);
+
+		Integer imageLeft = (Integer)solrDocument.get("imageLeft_stored_int");
+		if(imageLeft != null)
+			oReportCard.setImageLeft(imageLeft);
+
+		Integer imageTop = (Integer)solrDocument.get("imageTop_stored_int");
+		if(imageTop != null)
+			oReportCard.setImageTop(imageTop);
 
 		Long pupilsTotal = (Long)solrDocument.get("pupilsTotal_stored_long");
 		if(pupilsTotal != null)
@@ -20631,6 +20807,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("reportCardYearsStr");
 			if(!Objects.equals(agencyKey, original.getAgencyKey()))
 				apiRequest.addVars("agencyKey");
+			if(!Objects.equals(imageLeft, original.getImageLeft()))
+				apiRequest.addVars("imageLeft");
+			if(!Objects.equals(imageTop, original.getImageTop()))
+				apiRequest.addVars("imageTop");
 			if(!Objects.equals(pupilsTotal, original.getPupilsTotal()))
 				apiRequest.addVars("pupilsTotal");
 			if(!Objects.equals(pupilsIndigenousFemale, original.getPupilsIndigenousFemale()))
@@ -20924,7 +21104,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	//////////////
 
 	@Override public int hashCode() {
-		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, reportCardYearsStr, agencyKey, pupilsTotal, pupilsIndigenousFemale, pupilsIndigenousMale, pupilsIndigenousTotal, pupilsIndigenousPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsLatinxFemale, pupilsLatinxMale, pupilsLatinxTotal, pupilsLatinxPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, pupilsOtherPercent, teachersMale, teachersFemale, teachersTotal, teachersWhiteTotal, teachersWhitePercent, teachersBlackTotal, teachersBlackPercent, teachersOtherTotal, teachersOtherPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, delinquentComplaintsAsian, delinquentComplaintsAsianPercent, delinquentComplaintsBlack, delinquentComplaintsBlackPercent, delinquentComplaintsLatinx, delinquentComplaintsLatinxPercent, delinquentComplaintsMultiRacial, delinquentComplaintsMultiRacialPercent, delinquentComplaintsIndigenous, delinquentComplaintsIndigenousPercent, delinquentComplaintsWhite, delinquentComplaintsWhitePercent, delinquentComplaintsPacificIslander, delinquentComplaintsPacificIslanderPercent, shortTermSuspensionRate, shortTermSuspensionsTotal, longTermSuspensionsTotal, expulsionsTotal, shortTermSuspensionsAsianFemale, shortTermSuspensionsAsianMale, shortTermSuspensionsAsianTotal, shortTermSuspensionsAsianPercent, shortTermSuspensionsAsianRate, shortTermSuspensionsBlackFemale, shortTermSuspensionsBlackMale, shortTermSuspensionsBlackTotal, shortTermSuspensionsBlackPercent, shortTermSuspensionsBlackRate, shortTermSuspensionsLatinxFemale, shortTermSuspensionsLatinxMale, shortTermSuspensionsLatinxTotal, shortTermSuspensionsLatinxPercent, shortTermSuspensionsLatinxRate, shortTermSuspensionsIndigenousFemale, shortTermSuspensionsIndigenousMale, shortTermSuspensionsIndigenousTotal, shortTermSuspensionsIndigenousPercent, shortTermSuspensionsIndigenousRate, shortTermSuspensionsMultiRacialFemale, shortTermSuspensionsMultiRacialMale, shortTermSuspensionsMultiRacialTotal, shortTermSuspensionsMultiRacialPercent, shortTermSuspensionsMultiRacialRate, shortTermSuspensionsPacificIslanderFemale, shortTermSuspensionsPacificIslanderMale, shortTermSuspensionsPacificIslanderTotal, shortTermSuspensionsPacificIslanderPercent, shortTermSuspensionsPacificIslanderRate, shortTermSuspensionsWhiteFemale, shortTermSuspensionsWhiteMale, shortTermSuspensionsWhiteTotal, shortTermSuspensionsWhitePercent, shortTermSuspensionsWhiteRate, shortTermSuspensionsAllRate, shortTermSuspensionsBlackVsWhite, examsCollegeReadyGrades38OverallPercent, examsCollegeReadyGrades38IndigenousPercent, examsCollegeReadyGrades38AsianPercent, examsCollegeReadyGrades38BlackPercent, examsCollegeReadyGrades38LatinxPercent, examsCollegeReadyGrades38MultiRacialPercent, examsCollegeReadyGrades38PacificIslanderPercent, examsCollegeReadyGrades38WhitePercent, examsCollegeReadyGrades912OverallPercent, examsCollegeReadyGrades912IndigenousPercent, examsCollegeReadyGrades912AsianPercent, examsCollegeReadyGrades912BlackPercent, examsCollegeReadyGrades912LatinxPercent, examsCollegeReadyGrades912MultiRacialPercent, examsCollegeReadyGrades912PacificIslanderPercent, examsCollegeReadyGrades912WhitePercent, graduateWithin4YearsOverallPercent, graduateWithin4YearsIndigenousPercent, graduateWithin4YearsAsianPercent, graduateWithin4YearsBlackPercent, graduateWithin4YearsLatinxPercent, graduateWithin4YearsMultiRacialPercent, graduateWithin4YearsPacificIslanderPercent, graduateWithin4YearsWhitePercent, examsCollegeReadyGrades38BlackVsWhite, stateKey, stateId, agencyId, stateName, stateAbbreviation, agencyName, agencyCoords, agencyLeft, reportCardCompleteName, agencyDemographicsGraph, agencyStudentsByRaceGraph, agencyTeachersByRaceGraph, agencyGrades3To8Graph, agencyGrades9To12Graph, agencyGraduatesWithin4YearsGraph, suspensionsByRaceGraph, suspensionRatesByRaceGraph, countySchoolBasedComplaintsGraph, schoolBasedComplaintsGraph, agencyStudentsByRaceGraph2);
+		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, reportCardYearsStr, agencyKey, imageLeft, imageTop, pupilsTotal, pupilsIndigenousFemale, pupilsIndigenousMale, pupilsIndigenousTotal, pupilsIndigenousPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsLatinxFemale, pupilsLatinxMale, pupilsLatinxTotal, pupilsLatinxPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, pupilsOtherPercent, teachersMale, teachersFemale, teachersTotal, teachersWhiteTotal, teachersWhitePercent, teachersBlackTotal, teachersBlackPercent, teachersOtherTotal, teachersOtherPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, delinquentComplaintsAsian, delinquentComplaintsAsianPercent, delinquentComplaintsBlack, delinquentComplaintsBlackPercent, delinquentComplaintsLatinx, delinquentComplaintsLatinxPercent, delinquentComplaintsMultiRacial, delinquentComplaintsMultiRacialPercent, delinquentComplaintsIndigenous, delinquentComplaintsIndigenousPercent, delinquentComplaintsWhite, delinquentComplaintsWhitePercent, delinquentComplaintsPacificIslander, delinquentComplaintsPacificIslanderPercent, shortTermSuspensionRate, shortTermSuspensionsTotal, longTermSuspensionsTotal, expulsionsTotal, shortTermSuspensionsAsianFemale, shortTermSuspensionsAsianMale, shortTermSuspensionsAsianTotal, shortTermSuspensionsAsianPercent, shortTermSuspensionsAsianRate, shortTermSuspensionsBlackFemale, shortTermSuspensionsBlackMale, shortTermSuspensionsBlackTotal, shortTermSuspensionsBlackPercent, shortTermSuspensionsBlackRate, shortTermSuspensionsLatinxFemale, shortTermSuspensionsLatinxMale, shortTermSuspensionsLatinxTotal, shortTermSuspensionsLatinxPercent, shortTermSuspensionsLatinxRate, shortTermSuspensionsIndigenousFemale, shortTermSuspensionsIndigenousMale, shortTermSuspensionsIndigenousTotal, shortTermSuspensionsIndigenousPercent, shortTermSuspensionsIndigenousRate, shortTermSuspensionsMultiRacialFemale, shortTermSuspensionsMultiRacialMale, shortTermSuspensionsMultiRacialTotal, shortTermSuspensionsMultiRacialPercent, shortTermSuspensionsMultiRacialRate, shortTermSuspensionsPacificIslanderFemale, shortTermSuspensionsPacificIslanderMale, shortTermSuspensionsPacificIslanderTotal, shortTermSuspensionsPacificIslanderPercent, shortTermSuspensionsPacificIslanderRate, shortTermSuspensionsWhiteFemale, shortTermSuspensionsWhiteMale, shortTermSuspensionsWhiteTotal, shortTermSuspensionsWhitePercent, shortTermSuspensionsWhiteRate, shortTermSuspensionsAllRate, shortTermSuspensionsBlackVsWhite, examsCollegeReadyGrades38OverallPercent, examsCollegeReadyGrades38IndigenousPercent, examsCollegeReadyGrades38AsianPercent, examsCollegeReadyGrades38BlackPercent, examsCollegeReadyGrades38LatinxPercent, examsCollegeReadyGrades38MultiRacialPercent, examsCollegeReadyGrades38PacificIslanderPercent, examsCollegeReadyGrades38WhitePercent, examsCollegeReadyGrades912OverallPercent, examsCollegeReadyGrades912IndigenousPercent, examsCollegeReadyGrades912AsianPercent, examsCollegeReadyGrades912BlackPercent, examsCollegeReadyGrades912LatinxPercent, examsCollegeReadyGrades912MultiRacialPercent, examsCollegeReadyGrades912PacificIslanderPercent, examsCollegeReadyGrades912WhitePercent, graduateWithin4YearsOverallPercent, graduateWithin4YearsIndigenousPercent, graduateWithin4YearsAsianPercent, graduateWithin4YearsBlackPercent, graduateWithin4YearsLatinxPercent, graduateWithin4YearsMultiRacialPercent, graduateWithin4YearsPacificIslanderPercent, graduateWithin4YearsWhitePercent, examsCollegeReadyGrades38BlackVsWhite, stateKey, stateId, agencyId, stateName, stateAbbreviation, agencyName, agencyCoords, agencyLeft, reportCardCompleteName, agencyDemographicsGraph, agencyStudentsByRaceGraph, agencyTeachersByRaceGraph, agencyGrades3To8Graph, agencyGrades9To12Graph, agencyGraduatesWithin4YearsGraph, suspensionsByRaceGraph, suspensionRatesByRaceGraph, countySchoolBasedComplaintsGraph, schoolBasedComplaintsGraph, agencyStudentsByRaceGraph2);
 	}
 
 	////////////
@@ -20943,6 +21123,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				&& Objects.equals( reportCardEndYear, that.reportCardEndYear )
 				&& Objects.equals( reportCardYearsStr, that.reportCardYearsStr )
 				&& Objects.equals( agencyKey, that.agencyKey )
+				&& Objects.equals( imageLeft, that.imageLeft )
+				&& Objects.equals( imageTop, that.imageTop )
 				&& Objects.equals( pupilsTotal, that.pupilsTotal )
 				&& Objects.equals( pupilsIndigenousFemale, that.pupilsIndigenousFemale )
 				&& Objects.equals( pupilsIndigenousMale, that.pupilsIndigenousMale )
@@ -21100,6 +21282,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		sb.append( ", reportCardEndYear: " ).append(reportCardEndYear);
 		sb.append( ", reportCardYearsStr: \"" ).append(reportCardYearsStr).append( "\"" );
 		sb.append( ", agencyKey: " ).append(agencyKey);
+		sb.append( ", imageLeft: " ).append(imageLeft);
+		sb.append( ", imageTop: " ).append(imageTop);
 		sb.append( ", pupilsTotal: " ).append(pupilsTotal);
 		sb.append( ", pupilsIndigenousFemale: " ).append(pupilsIndigenousFemale);
 		sb.append( ", pupilsIndigenousMale: " ).append(pupilsIndigenousMale);

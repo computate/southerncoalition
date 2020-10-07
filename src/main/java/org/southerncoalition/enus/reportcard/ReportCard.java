@@ -179,6 +179,26 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	protected void _agencyKey(Wrap<Long> c) {
 	}
 
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 */ 
+	protected void _imageLeft(Wrap<Integer> c) {
+		if(agency_ != null)
+			c.o(agency_.getImageLeft());
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 */ 
+	protected void _imageTop(Wrap<Integer> c) {
+		if(agency_ != null)
+			c.o(agency_.getImageTop());
+	}
+
 	////////////////////////////////////////////////////////
 	// http://apps.schools.nc.gov/ords/f?p=145:15:::NO::: //
 	////////////////////////////////////////////////////////
