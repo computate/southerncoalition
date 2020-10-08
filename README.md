@@ -119,16 +119,16 @@ localhost
 [southerncoalition]
 localhost
 
-[southerncoalition_login]
+[southerncoalition_login_enUS]
 localhost
 
-[southerncoalition_refresh]
+[southerncoalition_refresh_enUS]
 localhost
 
-[southerncoalition_backup]
+[southerncoalition_backup_enUS]
 localhost
 
-[southerncoalition_restore]
+[southerncoalition_restore_enUS]
 localhost
 " > /usr/local/src/southerncoalition-ansible/inventories/$USER-localhost/hosts
 ```

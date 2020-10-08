@@ -308,7 +308,7 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 	 * Ignore: true
 	 */ 
 	protected void _stateReportCardSearch(SearchList<ReportCard> l) {
-		if(stateKey != null) {
+		if(stateKey != null && stateName != null) {
 			l.setQuery("*:*");
 			l.addFilterQuery("stateKey_indexed_long:" + stateKey);
 			l.addFilterQuery("agencyName_indexed_string:" + ClientUtils.escapeQueryChars(stateName));

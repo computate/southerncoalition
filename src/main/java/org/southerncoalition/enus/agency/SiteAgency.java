@@ -49,7 +49,7 @@ import org.southerncoalition.enus.wrap.Wrap;
  * Sort.asc: agencyName
  * 
  * Lines: 100
- **/   
+ **/  
 public class SiteAgency extends SiteAgencyGen<Cluster> {
 
 	/**
@@ -96,11 +96,52 @@ public class SiteAgency extends SiteAgencyGen<Cluster> {
 	 * Indexed: true
 	 * Stored: true
 	 * Attribute: SiteState.agencyKeys
-	 * HtmlRow: 4
+	 * HtmlRow: 5
 	 * HtmlCell: 1
 	 * DisplayName.enUS: state
 	 */         
 	protected void _stateKey(Wrap<Long> c) {
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 4
+	 * HtmlCell: 1
+	 * DisplayName.enUS: image left pixels
+	 */ 
+	protected void _imageLeft(Wrap<Integer> c) {
+		if(state_ != null)
+			c.o(state_.getImageLeft());
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 4
+	 * HtmlCell: 2
+	 * DisplayName.enUS: image top pixels
+	 */ 
+	protected void _imageTop(Wrap<Integer> c) {
+		if(state_ != null)
+			c.o(state_.getImageTop());
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 4
+	 * HtmlCell: 3
+	 * Multiline: true
+	 * DisplayName.enUS: image map coordinates
+	 */ 
+	protected void _imageCoords(Wrap<String> c) {
 	}
 
 	/**  
@@ -108,7 +149,7 @@ public class SiteAgency extends SiteAgencyGen<Cluster> {
 	 * Indexed: true
 	 * Stored: true
 	 * Attribute: ReportCard.agencyKey
-	 * HtmlRow: 4
+	 * HtmlRow: 5
 	 * HtmlCell: 2
 	 * DisplayName.enUS: report cards
 	 */          

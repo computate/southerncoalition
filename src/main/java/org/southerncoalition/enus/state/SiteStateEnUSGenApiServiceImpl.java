@@ -752,6 +752,32 @@ public class SiteStateEnUSGenApiServiceImpl implements SiteStateEnUSGenApiServic
 							});
 						}));
 						break;
+					case "imageLeft":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "imageLeft", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value SiteState.imageLeft failed", b.cause())));
+							});
+						}));
+						break;
+					case "imageTop":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "imageTop", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value SiteState.imageTop failed", b.cause())));
+							});
+						}));
+						break;
 					case "agencyKeys":
 						for(Long l : jsonObject.getJsonArray(entityVar).stream().map(a -> Long.parseLong((String)a)).collect(Collectors.toList())) {
 							futures.add(Future.future(a -> {
@@ -1051,6 +1077,32 @@ public class SiteStateEnUSGenApiServiceImpl implements SiteStateEnUSGenApiServic
 									a.handle(Future.succeededFuture());
 								else
 									a.handle(Future.failedFuture(new Exception("value SiteState.stateAbbreviation failed", b.cause())));
+							});
+						}));
+						break;
+					case "imageLeft":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "imageLeft", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value SiteState.imageLeft failed", b.cause())));
+							});
+						}));
+						break;
+					case "imageTop":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "imageTop", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value SiteState.imageTop failed", b.cause())));
 							});
 						}));
 						break;
@@ -1500,6 +1552,62 @@ public class SiteStateEnUSGenApiServiceImpl implements SiteStateEnUSGenApiServic
 										a.handle(Future.succeededFuture());
 									else
 										a.handle(Future.failedFuture(new Exception("value SiteState.stateAbbreviation failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setImageLeft":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "imageLeft")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value SiteState.imageLeft failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setImageLeft(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "imageLeft", o2.jsonImageLeft())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value SiteState.imageLeft failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setImageTop":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "imageTop")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value SiteState.imageTop failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setImageTop(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "imageTop", o2.jsonImageTop())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value SiteState.imageTop failed", b.cause())));
 								});
 							}));
 						}

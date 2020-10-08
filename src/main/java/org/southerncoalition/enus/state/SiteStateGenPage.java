@@ -153,6 +153,10 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 			o.htmStateAbbreviation("Page");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmImageLeft("Page");
+			o.htmImageTop("Page");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmAgencyKeys("Page");
 		} g("div");
 	}
@@ -171,6 +175,10 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmStateName("POST");
 			o.htmStateAbbreviation("POST");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmImageLeft("POST");
+			o.htmImageTop("POST");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmAgencyKeys("POST");
@@ -215,6 +223,10 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 			o.htmStateAbbreviation("PUTCopy");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmImageLeft("PUTCopy");
+			o.htmImageTop("PUTCopy");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmAgencyKeys("PUTCopy");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
@@ -236,6 +248,10 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmStateName("PATCH");
 			o.htmStateAbbreviation("PATCH");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmImageLeft("PATCH");
+			o.htmImageTop("PATCH");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmAgencyKeys("PATCH");
@@ -261,6 +277,10 @@ public class SiteStateGenPage extends SiteStateGenPageGen<PageLayout> {
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmStateName("Search");
 			o.htmStateAbbreviation("Search");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmImageLeft("Search");
+			o.htmImageTop("Search");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmAgencyKeys("Search");
