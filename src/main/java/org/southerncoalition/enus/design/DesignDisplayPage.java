@@ -8,6 +8,7 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.solr.client.solrj.SolrQuery.ORDER;
 import org.apache.solr.client.solrj.util.ClientUtils;
 import org.southerncoalition.enus.agency.SiteAgency;
@@ -50,7 +51,7 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 		Integer o = null;
 		for(String var : siteRequest_.getRequestVars().keySet()) {
 			String val = siteRequest_.getRequestVars().get(var);
-			if("reportCardStartYear".equals(var)) {
+			if("reportCardStartYear".equals(var) && StringUtils.isNotBlank(val)) {
 				o = Integer.parseInt(val);
 			}
 		}
@@ -72,31 +73,33 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 	}
 
 	protected void _reportCardSearch(SearchList<ReportCard> l) {
-		OperationRequest operationRequest = siteRequest_.getOperationRequest();
-		l.setStore(true);
-		l.setQuery("*:*");
-		l.setC(ReportCard.class);
-
-		l.addSort("stateName_indexed_int", ORDER.asc);
-		l.addSort("agencyName_indexed_int", ORDER.asc);
-		l.addSort("reportCardStartAgency_indexed_int", ORDER.desc);
-		l.addFacetField("reportCardStartYear_indexed_int");
-
-		Boolean filtered = false;
-		for(String var : siteRequest_.getRequestVars().keySet()) {
-			String val = siteRequest_.getRequestVars().get(var);
-			if(!"design".equals(var)) {
-				String varIndexed = ReportCard.varIndexedReportCard(var);
-				if(varIndexed != null) {
-					filtered = true;
-					l.addFilterQuery(varIndexed + ":" + ClientUtils.escapeQueryChars(val));
+		if(reportCardStartYear != null) {
+			OperationRequest operationRequest = siteRequest_.getOperationRequest();
+			l.setStore(true);
+			l.setQuery("*:*");
+			l.setC(ReportCard.class);
+	
+			l.addSort("stateName_indexed_int", ORDER.asc);
+			l.addSort("agencyName_indexed_int", ORDER.asc);
+			l.addSort("reportCardStartAgency_indexed_int", ORDER.desc);
+			l.addFacetField("reportCardStartYear_indexed_int");
+	
+			Boolean filtered = false;
+			for(String var : siteRequest_.getRequestVars().keySet()) {
+				String val = siteRequest_.getRequestVars().get(var);
+				if(!"design".equals(var) && StringUtils.isNotBlank(val)) {
+					String varIndexed = ReportCard.varIndexedReportCard(var);
+					if(varIndexed != null) {
+						filtered = true;
+						l.addFilterQuery(varIndexed + ":" + ClientUtils.escapeQueryChars(val));
+					}
 				}
 			}
+			if(filtered)
+				l.setRows(1000);
+			else
+				l.setRows(0);
 		}
-		if(filtered)
-			l.setRows(1000);
-		else
-			l.setRows(0);
 	}
 
 	protected void _reportCardStartYears(List<ReportCard> l) {
