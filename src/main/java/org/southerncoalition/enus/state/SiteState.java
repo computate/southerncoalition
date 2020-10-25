@@ -44,7 +44,7 @@ import org.southerncoalition.enus.wrap.Wrap;
  * 
  * Sort.asc: stateName
  * 
- * Lines: 100
+ * Rows: 100
  **/  
 public class SiteState extends SiteStateGen<Cluster> {
 

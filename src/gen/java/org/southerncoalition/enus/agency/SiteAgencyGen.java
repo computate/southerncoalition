@@ -79,6 +79,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	public static final String SiteAgency_Color = "pale-yellow";
 	public static final String SiteAgency_IconGroup = "regular";
 	public static final String SiteAgency_IconName = "road";
+	public static final Integer SiteAgency_Rows = 300;
 
 	///////////////
 	// agencyKey //
@@ -1235,6 +1236,68 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		return stateAbbreviation == null ? "" : StringEscapeUtils.escapeHtml4(strStateAbbreviation());
 	}
 
+	////////////////////
+	// agencyOnlyName //
+	////////////////////
+
+	/**	 The entity agencyOnlyName
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String agencyOnlyName;
+	@JsonIgnore
+	public Wrap<String> agencyOnlyNameWrap = new Wrap<String>().p(this).c(String.class).var("agencyOnlyName").o(agencyOnlyName);
+
+	/**	<br/> The entity agencyOnlyName
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.agency.SiteAgency&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyOnlyName">Find the entity agencyOnlyName in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _agencyOnlyName(Wrap<String> c);
+
+	public String getAgencyOnlyName() {
+		return agencyOnlyName;
+	}
+
+	public void setAgencyOnlyName(String agencyOnlyName) {
+		this.agencyOnlyName = agencyOnlyName;
+		this.agencyOnlyNameWrap.alreadyInitialized = true;
+	}
+	protected SiteAgency agencyOnlyNameInit() {
+		if(!agencyOnlyNameWrap.alreadyInitialized) {
+			_agencyOnlyName(agencyOnlyNameWrap);
+			if(agencyOnlyName == null)
+				setAgencyOnlyName(agencyOnlyNameWrap.o);
+		}
+		agencyOnlyNameWrap.alreadyInitialized(true);
+		return (SiteAgency)this;
+	}
+
+	public String solrAgencyOnlyName() {
+		return agencyOnlyName;
+	}
+
+	public String strAgencyOnlyName() {
+		return agencyOnlyName == null ? "" : agencyOnlyName;
+	}
+
+	public String jsonAgencyOnlyName() {
+		return agencyOnlyName == null ? "" : agencyOnlyName;
+	}
+
+	public String nomAffichageAgencyOnlyName() {
+		return null;
+	}
+
+	public String htmTooltipAgencyOnlyName() {
+		return null;
+	}
+
+	public String htmAgencyOnlyName() {
+		return agencyOnlyName == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyOnlyName());
+	}
+
 	////////////////////////
 	// agencyCompleteName //
 	////////////////////////
@@ -1330,6 +1393,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		stateIdInit();
 		stateNameInit();
 		stateAbbreviationInit();
+		agencyOnlyNameInit();
 		agencyCompleteNameInit();
 	}
 
@@ -1395,6 +1459,8 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 				return oSiteAgency.stateName;
 			case "stateAbbreviation":
 				return oSiteAgency.stateAbbreviation;
+			case "agencyOnlyName":
+				return oSiteAgency.agencyOnlyName;
 			case "agencyCompleteName":
 				return oSiteAgency.agencyCompleteName;
 			default:
@@ -1552,6 +1618,12 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 					oSiteAgency.setStateAbbreviation(stateAbbreviation);
 			}
 
+			if(saves.contains("agencyOnlyName")) {
+				String agencyOnlyName = (String)solrDocument.get("agencyOnlyName_stored_string");
+				if(agencyOnlyName != null)
+					oSiteAgency.setAgencyOnlyName(agencyOnlyName);
+			}
+
 			if(saves.contains("agencyCompleteName")) {
 				String agencyCompleteName = (String)solrDocument.get("agencyCompleteName_stored_string");
 				if(agencyCompleteName != null)
@@ -1668,6 +1740,10 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 			document.addField("stateAbbreviation_indexed_string", stateAbbreviation);
 			document.addField("stateAbbreviation_stored_string", stateAbbreviation);
 		}
+		if(agencyOnlyName != null) {
+			document.addField("agencyOnlyName_indexed_string", agencyOnlyName);
+			document.addField("agencyOnlyName_stored_string", agencyOnlyName);
+		}
 		if(agencyCompleteName != null) {
 			document.addField("agencyCompleteName_indexed_string", agencyCompleteName);
 			document.addField("agencyCompleteName_stored_string", agencyCompleteName);
@@ -1715,6 +1791,8 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 				return "stateName_indexed_string";
 			case "stateAbbreviation":
 				return "stateAbbreviation_indexed_string";
+			case "agencyOnlyName":
+				return "agencyOnlyName_indexed_string";
 			case "agencyCompleteName":
 				return "agencyCompleteName_indexed_string";
 			default:
@@ -1786,6 +1864,10 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		if(stateAbbreviation != null)
 			oSiteAgency.setStateAbbreviation(stateAbbreviation);
 
+		String agencyOnlyName = (String)solrDocument.get("agencyOnlyName_stored_string");
+		if(agencyOnlyName != null)
+			oSiteAgency.setAgencyOnlyName(agencyOnlyName);
+
 		String agencyCompleteName = (String)solrDocument.get("agencyCompleteName_stored_string");
 		if(agencyCompleteName != null)
 			oSiteAgency.setAgencyCompleteName(agencyCompleteName);
@@ -1822,6 +1904,8 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 				apiRequest.addVars("stateName");
 			if(!Objects.equals(stateAbbreviation, original.getStateAbbreviation()))
 				apiRequest.addVars("stateAbbreviation");
+			if(!Objects.equals(agencyOnlyName, original.getAgencyOnlyName()))
+				apiRequest.addVars("agencyOnlyName");
 			if(!Objects.equals(agencyCompleteName, original.getAgencyCompleteName()))
 				apiRequest.addVars("agencyCompleteName");
 			super.apiRequestCluster();
@@ -1833,7 +1917,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	//////////////
 
 	@Override public int hashCode() {
-		return Objects.hash(super.hashCode(), agencyKey, agencyName, stateKey, imageLeft, imageTop, imageCoords, reportCardKeys, stateId, stateName, stateAbbreviation, agencyCompleteName);
+		return Objects.hash(super.hashCode(), agencyKey, agencyName, stateKey, imageLeft, imageTop, imageCoords, reportCardKeys, stateId, stateName, stateAbbreviation, agencyOnlyName, agencyCompleteName);
 	}
 
 	////////////
@@ -1857,6 +1941,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 				&& Objects.equals( stateId, that.stateId )
 				&& Objects.equals( stateName, that.stateName )
 				&& Objects.equals( stateAbbreviation, that.stateAbbreviation )
+				&& Objects.equals( agencyOnlyName, that.agencyOnlyName )
 				&& Objects.equals( agencyCompleteName, that.agencyCompleteName );
 	}
 
@@ -1878,6 +1963,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		sb.append( ", stateId: \"" ).append(stateId).append( "\"" );
 		sb.append( ", stateName: \"" ).append(stateName).append( "\"" );
 		sb.append( ", stateAbbreviation: \"" ).append(stateAbbreviation).append( "\"" );
+		sb.append( ", agencyOnlyName: \"" ).append(agencyOnlyName).append( "\"" );
 		sb.append( ", agencyCompleteName: \"" ).append(agencyCompleteName).append( "\"" );
 		sb.append(" }");
 		return sb.toString();

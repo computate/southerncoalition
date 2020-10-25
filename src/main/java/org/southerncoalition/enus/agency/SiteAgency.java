@@ -48,8 +48,8 @@ import org.southerncoalition.enus.wrap.Wrap;
  * 
  * Sort.asc: agencyName
  * 
- * Lines: 100
- **/  
+ * Rows: 300
+ **/   
 public class SiteAgency extends SiteAgencyGen<Cluster> {
 
 	/**
@@ -184,6 +184,18 @@ public class SiteAgency extends SiteAgencyGen<Cluster> {
 	protected void _stateAbbreviation(Wrap<String> c) {
 		if(state_ != null)
 			c.o(state_.getStateAbbreviation());
+	}
+
+	/**    
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 */ 
+	protected void _agencyOnlyName(Wrap<String> c) {
+		if(StringUtils.equals(agencyName, stateName))
+			c.o("");
+		else
+			c.o(agencyName + " in " + stateName + " (" + stateAbbreviation + ")");
 	}
 
 	/**   

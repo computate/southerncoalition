@@ -80,6 +80,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public static final String ReportCard_Color = "pale-green";
 	public static final String ReportCard_IconGroup = "regular";
 	public static final String ReportCard_IconName = "newspaper";
+	public static final Integer ReportCard_Rows = 100;
 
 	///////////////////
 	// reportCardKey //
@@ -16214,6 +16215,68 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return stateAbbreviation == null ? "" : StringEscapeUtils.escapeHtml4(strStateAbbreviation());
 	}
 
+	////////////////////
+	// agencyOnlyName //
+	////////////////////
+
+	/**	 The entity agencyOnlyName
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String agencyOnlyName;
+	@JsonIgnore
+	public Wrap<String> agencyOnlyNameWrap = new Wrap<String>().p(this).c(String.class).var("agencyOnlyName").o(agencyOnlyName);
+
+	/**	<br/> The entity agencyOnlyName
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyOnlyName">Find the entity agencyOnlyName in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _agencyOnlyName(Wrap<String> c);
+
+	public String getAgencyOnlyName() {
+		return agencyOnlyName;
+	}
+
+	public void setAgencyOnlyName(String agencyOnlyName) {
+		this.agencyOnlyName = agencyOnlyName;
+		this.agencyOnlyNameWrap.alreadyInitialized = true;
+	}
+	protected ReportCard agencyOnlyNameInit() {
+		if(!agencyOnlyNameWrap.alreadyInitialized) {
+			_agencyOnlyName(agencyOnlyNameWrap);
+			if(agencyOnlyName == null)
+				setAgencyOnlyName(agencyOnlyNameWrap.o);
+		}
+		agencyOnlyNameWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public String solrAgencyOnlyName() {
+		return agencyOnlyName;
+	}
+
+	public String strAgencyOnlyName() {
+		return agencyOnlyName == null ? "" : agencyOnlyName;
+	}
+
+	public String jsonAgencyOnlyName() {
+		return agencyOnlyName == null ? "" : agencyOnlyName;
+	}
+
+	public String nomAffichageAgencyOnlyName() {
+		return null;
+	}
+
+	public String htmTooltipAgencyOnlyName() {
+		return null;
+	}
+
+	public String htmAgencyOnlyName() {
+		return agencyOnlyName == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyOnlyName());
+	}
+
 	////////////////
 	// agencyName //
 	////////////////
@@ -17519,6 +17582,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		agencyIdInit();
 		stateNameInit();
 		stateAbbreviationInit();
+		agencyOnlyNameInit();
 		agencyNameInit();
 		agencyCoordsInit();
 		agencyLeftInit();
@@ -17852,6 +17916,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.stateName;
 			case "stateAbbreviation":
 				return oReportCard.stateAbbreviation;
+			case "agencyOnlyName":
+				return oReportCard.agencyOnlyName;
 			case "agencyName":
 				return oReportCard.agencyName;
 			case "agencyCoords":
@@ -19126,6 +19192,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					oReportCard.setStateAbbreviation(stateAbbreviation);
 			}
 
+			if(saves.contains("agencyOnlyName")) {
+				String agencyOnlyName = (String)solrDocument.get("agencyOnlyName_stored_string");
+				if(agencyOnlyName != null)
+					oReportCard.setAgencyOnlyName(agencyOnlyName);
+			}
+
 			if(saves.contains("agencyName")) {
 				String agencyName = (String)solrDocument.get("agencyName_stored_string");
 				if(agencyName != null)
@@ -19818,6 +19890,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			document.addField("stateAbbreviation_indexed_string", stateAbbreviation);
 			document.addField("stateAbbreviation_stored_string", stateAbbreviation);
 		}
+		if(agencyOnlyName != null) {
+			document.addField("agencyOnlyName_indexed_string", agencyOnlyName);
+			document.addField("agencyOnlyName_stored_string", agencyOnlyName);
+		}
 		if(agencyName != null) {
 			document.addField("agencyName_indexed_string", agencyName);
 			document.addField("agencyName_stored_string", agencyName);
@@ -20156,6 +20232,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return "stateName_indexed_string";
 			case "stateAbbreviation":
 				return "stateAbbreviation_indexed_string";
+			case "agencyOnlyName":
+				return "agencyOnlyName_indexed_string";
 			case "agencyName":
 				return "agencyName_indexed_string";
 			case "reportCardCompleteName":
@@ -20725,6 +20803,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(stateAbbreviation != null)
 			oReportCard.setStateAbbreviation(stateAbbreviation);
 
+		String agencyOnlyName = (String)solrDocument.get("agencyOnlyName_stored_string");
+		if(agencyOnlyName != null)
+			oReportCard.setAgencyOnlyName(agencyOnlyName);
+
 		String agencyName = (String)solrDocument.get("agencyName_stored_string");
 		if(agencyName != null)
 			oReportCard.setAgencyName(agencyName);
@@ -21065,6 +21147,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("stateName");
 			if(!Objects.equals(stateAbbreviation, original.getStateAbbreviation()))
 				apiRequest.addVars("stateAbbreviation");
+			if(!Objects.equals(agencyOnlyName, original.getAgencyOnlyName()))
+				apiRequest.addVars("agencyOnlyName");
 			if(!Objects.equals(agencyName, original.getAgencyName()))
 				apiRequest.addVars("agencyName");
 			if(!Objects.equals(agencyCoords, original.getAgencyCoords()))
@@ -21104,7 +21188,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	//////////////
 
 	@Override public int hashCode() {
-		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, reportCardYearsStr, agencyKey, imageLeft, imageTop, pupilsTotal, pupilsIndigenousFemale, pupilsIndigenousMale, pupilsIndigenousTotal, pupilsIndigenousPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsLatinxFemale, pupilsLatinxMale, pupilsLatinxTotal, pupilsLatinxPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, pupilsOtherPercent, teachersMale, teachersFemale, teachersTotal, teachersWhiteTotal, teachersWhitePercent, teachersBlackTotal, teachersBlackPercent, teachersOtherTotal, teachersOtherPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, delinquentComplaintsAsian, delinquentComplaintsAsianPercent, delinquentComplaintsBlack, delinquentComplaintsBlackPercent, delinquentComplaintsLatinx, delinquentComplaintsLatinxPercent, delinquentComplaintsMultiRacial, delinquentComplaintsMultiRacialPercent, delinquentComplaintsIndigenous, delinquentComplaintsIndigenousPercent, delinquentComplaintsWhite, delinquentComplaintsWhitePercent, delinquentComplaintsPacificIslander, delinquentComplaintsPacificIslanderPercent, shortTermSuspensionRate, shortTermSuspensionsTotal, longTermSuspensionsTotal, expulsionsTotal, shortTermSuspensionsAsianFemale, shortTermSuspensionsAsianMale, shortTermSuspensionsAsianTotal, shortTermSuspensionsAsianPercent, shortTermSuspensionsAsianRate, shortTermSuspensionsBlackFemale, shortTermSuspensionsBlackMale, shortTermSuspensionsBlackTotal, shortTermSuspensionsBlackPercent, shortTermSuspensionsBlackRate, shortTermSuspensionsLatinxFemale, shortTermSuspensionsLatinxMale, shortTermSuspensionsLatinxTotal, shortTermSuspensionsLatinxPercent, shortTermSuspensionsLatinxRate, shortTermSuspensionsIndigenousFemale, shortTermSuspensionsIndigenousMale, shortTermSuspensionsIndigenousTotal, shortTermSuspensionsIndigenousPercent, shortTermSuspensionsIndigenousRate, shortTermSuspensionsMultiRacialFemale, shortTermSuspensionsMultiRacialMale, shortTermSuspensionsMultiRacialTotal, shortTermSuspensionsMultiRacialPercent, shortTermSuspensionsMultiRacialRate, shortTermSuspensionsPacificIslanderFemale, shortTermSuspensionsPacificIslanderMale, shortTermSuspensionsPacificIslanderTotal, shortTermSuspensionsPacificIslanderPercent, shortTermSuspensionsPacificIslanderRate, shortTermSuspensionsWhiteFemale, shortTermSuspensionsWhiteMale, shortTermSuspensionsWhiteTotal, shortTermSuspensionsWhitePercent, shortTermSuspensionsWhiteRate, shortTermSuspensionsAllRate, shortTermSuspensionsBlackVsWhite, examsCollegeReadyGrades38OverallPercent, examsCollegeReadyGrades38IndigenousPercent, examsCollegeReadyGrades38AsianPercent, examsCollegeReadyGrades38BlackPercent, examsCollegeReadyGrades38LatinxPercent, examsCollegeReadyGrades38MultiRacialPercent, examsCollegeReadyGrades38PacificIslanderPercent, examsCollegeReadyGrades38WhitePercent, examsCollegeReadyGrades912OverallPercent, examsCollegeReadyGrades912IndigenousPercent, examsCollegeReadyGrades912AsianPercent, examsCollegeReadyGrades912BlackPercent, examsCollegeReadyGrades912LatinxPercent, examsCollegeReadyGrades912MultiRacialPercent, examsCollegeReadyGrades912PacificIslanderPercent, examsCollegeReadyGrades912WhitePercent, graduateWithin4YearsOverallPercent, graduateWithin4YearsIndigenousPercent, graduateWithin4YearsAsianPercent, graduateWithin4YearsBlackPercent, graduateWithin4YearsLatinxPercent, graduateWithin4YearsMultiRacialPercent, graduateWithin4YearsPacificIslanderPercent, graduateWithin4YearsWhitePercent, examsCollegeReadyGrades38BlackVsWhite, stateKey, stateId, agencyId, stateName, stateAbbreviation, agencyName, agencyCoords, agencyLeft, reportCardCompleteName, agencyDemographicsGraph, agencyStudentsByRaceGraph, agencyTeachersByRaceGraph, agencyGrades3To8Graph, agencyGrades9To12Graph, agencyGraduatesWithin4YearsGraph, suspensionsByRaceGraph, suspensionRatesByRaceGraph, countySchoolBasedComplaintsGraph, schoolBasedComplaintsGraph, agencyStudentsByRaceGraph2);
+		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, reportCardYearsStr, agencyKey, imageLeft, imageTop, pupilsTotal, pupilsIndigenousFemale, pupilsIndigenousMale, pupilsIndigenousTotal, pupilsIndigenousPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsLatinxFemale, pupilsLatinxMale, pupilsLatinxTotal, pupilsLatinxPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, pupilsOtherPercent, teachersMale, teachersFemale, teachersTotal, teachersWhiteTotal, teachersWhitePercent, teachersBlackTotal, teachersBlackPercent, teachersOtherTotal, teachersOtherPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, delinquentComplaintsAsian, delinquentComplaintsAsianPercent, delinquentComplaintsBlack, delinquentComplaintsBlackPercent, delinquentComplaintsLatinx, delinquentComplaintsLatinxPercent, delinquentComplaintsMultiRacial, delinquentComplaintsMultiRacialPercent, delinquentComplaintsIndigenous, delinquentComplaintsIndigenousPercent, delinquentComplaintsWhite, delinquentComplaintsWhitePercent, delinquentComplaintsPacificIslander, delinquentComplaintsPacificIslanderPercent, shortTermSuspensionRate, shortTermSuspensionsTotal, longTermSuspensionsTotal, expulsionsTotal, shortTermSuspensionsAsianFemale, shortTermSuspensionsAsianMale, shortTermSuspensionsAsianTotal, shortTermSuspensionsAsianPercent, shortTermSuspensionsAsianRate, shortTermSuspensionsBlackFemale, shortTermSuspensionsBlackMale, shortTermSuspensionsBlackTotal, shortTermSuspensionsBlackPercent, shortTermSuspensionsBlackRate, shortTermSuspensionsLatinxFemale, shortTermSuspensionsLatinxMale, shortTermSuspensionsLatinxTotal, shortTermSuspensionsLatinxPercent, shortTermSuspensionsLatinxRate, shortTermSuspensionsIndigenousFemale, shortTermSuspensionsIndigenousMale, shortTermSuspensionsIndigenousTotal, shortTermSuspensionsIndigenousPercent, shortTermSuspensionsIndigenousRate, shortTermSuspensionsMultiRacialFemale, shortTermSuspensionsMultiRacialMale, shortTermSuspensionsMultiRacialTotal, shortTermSuspensionsMultiRacialPercent, shortTermSuspensionsMultiRacialRate, shortTermSuspensionsPacificIslanderFemale, shortTermSuspensionsPacificIslanderMale, shortTermSuspensionsPacificIslanderTotal, shortTermSuspensionsPacificIslanderPercent, shortTermSuspensionsPacificIslanderRate, shortTermSuspensionsWhiteFemale, shortTermSuspensionsWhiteMale, shortTermSuspensionsWhiteTotal, shortTermSuspensionsWhitePercent, shortTermSuspensionsWhiteRate, shortTermSuspensionsAllRate, shortTermSuspensionsBlackVsWhite, examsCollegeReadyGrades38OverallPercent, examsCollegeReadyGrades38IndigenousPercent, examsCollegeReadyGrades38AsianPercent, examsCollegeReadyGrades38BlackPercent, examsCollegeReadyGrades38LatinxPercent, examsCollegeReadyGrades38MultiRacialPercent, examsCollegeReadyGrades38PacificIslanderPercent, examsCollegeReadyGrades38WhitePercent, examsCollegeReadyGrades912OverallPercent, examsCollegeReadyGrades912IndigenousPercent, examsCollegeReadyGrades912AsianPercent, examsCollegeReadyGrades912BlackPercent, examsCollegeReadyGrades912LatinxPercent, examsCollegeReadyGrades912MultiRacialPercent, examsCollegeReadyGrades912PacificIslanderPercent, examsCollegeReadyGrades912WhitePercent, graduateWithin4YearsOverallPercent, graduateWithin4YearsIndigenousPercent, graduateWithin4YearsAsianPercent, graduateWithin4YearsBlackPercent, graduateWithin4YearsLatinxPercent, graduateWithin4YearsMultiRacialPercent, graduateWithin4YearsPacificIslanderPercent, graduateWithin4YearsWhitePercent, examsCollegeReadyGrades38BlackVsWhite, stateKey, stateId, agencyId, stateName, stateAbbreviation, agencyOnlyName, agencyName, agencyCoords, agencyLeft, reportCardCompleteName, agencyDemographicsGraph, agencyStudentsByRaceGraph, agencyTeachersByRaceGraph, agencyGrades3To8Graph, agencyGrades9To12Graph, agencyGraduatesWithin4YearsGraph, suspensionsByRaceGraph, suspensionRatesByRaceGraph, countySchoolBasedComplaintsGraph, schoolBasedComplaintsGraph, agencyStudentsByRaceGraph2);
 	}
 
 	////////////
@@ -21252,6 +21336,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				&& Objects.equals( agencyId, that.agencyId )
 				&& Objects.equals( stateName, that.stateName )
 				&& Objects.equals( stateAbbreviation, that.stateAbbreviation )
+				&& Objects.equals( agencyOnlyName, that.agencyOnlyName )
 				&& Objects.equals( agencyName, that.agencyName )
 				&& Objects.equals( agencyCoords, that.agencyCoords )
 				&& Objects.equals( agencyLeft, that.agencyLeft )
@@ -21411,6 +21496,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		sb.append( ", agencyId: \"" ).append(agencyId).append( "\"" );
 		sb.append( ", stateName: \"" ).append(stateName).append( "\"" );
 		sb.append( ", stateAbbreviation: \"" ).append(stateAbbreviation).append( "\"" );
+		sb.append( ", agencyOnlyName: \"" ).append(agencyOnlyName).append( "\"" );
 		sb.append( ", agencyName: \"" ).append(agencyName).append( "\"" );
 		sb.append( ", agencyCoords: \"" ).append(agencyCoords).append( "\"" );
 		sb.append( ", agencyLeft: " ).append(agencyLeft);
