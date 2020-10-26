@@ -79,10 +79,12 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 			l.setQuery("*:*");
 			l.setC(ReportCard.class);
 	
-			l.addSort("stateName_indexed_int", ORDER.asc);
-			l.addSort("agencyName_indexed_int", ORDER.asc);
-			l.addSort("reportCardStartAgency_indexed_int", ORDER.desc);
+			l.addSort("reportCardStartYear_indexed_int", ORDER.desc);
+			l.addSort("stateName_indexed_string", ORDER.asc);
+			l.addSort("agencyOnlyName_indexed_string", ORDER.asc);
 			l.addFacetField("reportCardStartYear_indexed_int");
+			l.addFilterQuery("stateKey_indexed_long:[* TO *]");
+			l.addFilterQuery("agencyKey_indexed_long:[* TO *]");
 	
 			Boolean filtered = false;
 			for(String var : siteRequest_.getRequestVars().keySet()) {
@@ -214,7 +216,10 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 
 		Long agencyKey = Optional.ofNullable(reportCardSearch.first()).map(ReportCard::getAgencyKey).orElse(null);
 		if(agencyKey != null) {
+			l.addSort("stateName_indexed_string", ORDER.asc);
+			l.addSort("agencyOnlyName_indexed_string", ORDER.asc);
 			l.addFilterQuery("pk_indexed_long:" + agencyKey);
+			l.addFilterQuery("stateKey_indexed_long:[* TO *]");
 		} else {
 			for(String var : siteRequest_.getRequestVars().keySet()) {
 				String val = siteRequest_.getRequestVars().get(var);

@@ -95,7 +95,7 @@ import org.southerncoalition.enus.wrap.Wrap;
  * Sort.asc: stateName
  * Sort.asc: agencyName
  * 
- * Lines: 100
+ * Rows: 100
  **/     
 public class ReportCard extends ReportCardGen<Cluster> {
 
@@ -2017,6 +2017,16 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	}
 
 	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 */ 
+	protected void _agencyOnlyName(Wrap<String> c) {
+		if(agency_ != null)
+			c.o(agency_.getAgencyOnlyName());
+	}
+
+	/**  
 	 * {@inheritDoc}
 	 * Indexed: true
 	 * Stored: true

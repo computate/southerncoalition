@@ -2924,7 +2924,7 @@ public class SiteAgencyEnUSGenApiServiceImpl implements SiteAgencyEnUSGenApiServ
 					eventHandler.handle(Future.failedFuture(e));
 				}
 			});
-			if("*".equals(searchList.getQuery()) && searchList.getSorts().size() == 0) {
+			if("*:*".equals(searchList.getQuery()) && searchList.getSorts().size() == 0) {
 				searchList.addSort("agencyName_indexed_string", ORDER.asc);
 			}
 			searchList.initDeepForClass(siteRequest);

@@ -2805,7 +2805,7 @@ public class SiteStateEnUSGenApiServiceImpl implements SiteStateEnUSGenApiServic
 					eventHandler.handle(Future.failedFuture(e));
 				}
 			});
-			if("*".equals(searchList.getQuery()) && searchList.getSorts().size() == 0) {
+			if("*:*".equals(searchList.getQuery()) && searchList.getSorts().size() == 0) {
 				searchList.addSort("stateName_indexed_string", ORDER.asc);
 			}
 			searchList.initDeepForClass(siteRequest);

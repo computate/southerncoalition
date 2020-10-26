@@ -3997,7 +3997,7 @@ public class HtmlPartEnUSGenApiServiceImpl implements HtmlPartEnUSGenApiService 
 					eventHandler.handle(Future.failedFuture(e));
 				}
 			});
-			if("*".equals(searchList.getQuery()) && searchList.getSorts().size() == 0) {
+			if("*:*".equals(searchList.getQuery()) && searchList.getSorts().size() == 0) {
 				searchList.addSort("sort1_indexed_double", ORDER.asc);
 				searchList.addSort("sort2_indexed_double", ORDER.asc);
 				searchList.addSort("sort3_indexed_double", ORDER.asc);

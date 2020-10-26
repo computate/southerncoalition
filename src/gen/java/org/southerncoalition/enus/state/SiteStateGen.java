@@ -77,6 +77,7 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 	public static final String SiteState_Color = "pale-blue";
 	public static final String SiteState_IconGroup = "regular";
 	public static final String SiteState_IconName = "globe-americas";
+	public static final Integer SiteState_Rows = 100;
 
 	//////////////
 	// stateKey //

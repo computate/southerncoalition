@@ -16,7 +16,6 @@ touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/
 touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/vertx/AppRestore.java
 touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/vertx/AppSwagger2.java
 touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/vertx/AppVertx.java
-touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/vertx/RunnerVertx.java
 touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/user/SiteUser.java
 touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/cluster/Cluster.java
 touch /usr/local/src/southerncoalition/src/main/java/org/southerncoalition/enus/state/SiteState.java
