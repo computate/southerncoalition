@@ -3,6 +3,7 @@ package org.southerncoalition.enus.cluster;
 import java.text.Normalizer;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Collections;
 import java.util.List;
 
@@ -112,6 +113,15 @@ public class Cluster extends ClusterGen<Object> {
 	 */ 
 	protected void _modified(Wrap<ZonedDateTime> c) {
 		c.o(ZonedDateTime.now(ZoneId.of(siteRequest_.getSiteConfig_().getSiteZone())));
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Stored: true
+	 */ 
+	protected void  _modifiedIsoOffsetDateTime(Wrap<String> c) {
+		if(modified != null)
+			c.o(modified.format(DateTimeFormatter.ISO_OFFSET_DATE_TIME));
 	}
 
 	/**

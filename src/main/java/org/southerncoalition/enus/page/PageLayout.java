@@ -8,6 +8,7 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
+import java.util.Base64;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.Date;
@@ -851,6 +852,7 @@ public class PageLayout extends PageLayoutGen<Object> {
 				String htmlVarInput = htmlPart.getHtmlVarInput();
 				String htmlVarForm = htmlPart.getHtmlVarForm();
 				String htmlVarForEach = htmlPart.getHtmlVarForEach();
+				String htmlVarBase64Decode = htmlPart.getHtmlVarBase64Decode();
 				Boolean pdfExclude = htmlPart.getPdfExclude();
 				Boolean htmlExclude = htmlPart.getHtmlExclude();
 
@@ -998,6 +1000,21 @@ public class PageLayout extends PageLayoutGen<Object> {
 							throw e;
 						} catch (Exception e) {
 							throw new RuntimeException(String.format("Could not call method %s of var %s and object: %s", "htm" + StringUtils.capitalize(var), htmlVarInput, parent), e);
+						}
+					}
+					if(htmlVarBase64Decode != null) {
+						Object parent = StringUtils.contains(htmlVarBase64Decode, ".") ? obtainForClass(StringUtils.substringBeforeLast(htmlVarBase64Decode, ".")) : null;
+						if(parent == null)
+							parent = this;
+						String var = StringUtils.substringAfterLast(htmlVarBase64Decode, ".");
+						if(StringUtils.isBlank(var))
+							var = htmlVarBase64Decode;
+	
+						try {
+							String s = (String)MethodUtils.invokeExactMethod(parent, "get" + StringUtils.capitalize(var));
+							w.getBuffer().appendBytes(Base64.getDecoder().decode(s));
+						} catch (Exception e) {
+							s(obtainForClass(htmlVarBase64Decode));
 						}
 					}
 					if(htmlPart.getLoginLogout()) {

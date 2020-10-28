@@ -67,8 +67,10 @@ public class DesignPdfPage extends DesignPdfPageGen<DesignPdfGenPage> {
 	 * 
 	 **/
 	protected void _pageDesign(Wrap<PageDesign> c) {
-		if(listPageDesign.size() == 1)
-			c.o(listPageDesign.get(0));
+		if(listPageDesign.size() == 1) {
+			PageDesign o = listPageDesign.get(0);
+			c.o(o);
+		}
 	}
 
 	/**
@@ -291,32 +293,19 @@ public class DesignPdfPage extends DesignPdfPageGen<DesignPdfGenPage> {
 		l.setQuery("*:*");
 		l.setC(SiteState.class);
 
-		Long stateKey = Optional.ofNullable(reportCardSearch.first()).map(ReportCard::getStateKey).orElse(null);
-		if(pageDesignId != null && pageDesignId.endsWith("-reportCard-form") && stateKey != null) {
-			l.addFilterQuery("pk_indexed_long:" + stateKey);
-		} else {
-			for(String var : siteRequest_.getRequestVars().keySet()) {
-				String val = siteRequest_.getRequestVars().get(var);
-				if(!"design".equals(var)) {
-					String varIndexed = SiteState.varIndexedSiteState(var);
-					if(varIndexed != null)
-						l.addFilterQuery(varIndexed + ":" + ClientUtils.escapeQueryChars(val));
-				}
+		for(String var : siteRequest_.getRequestVars().keySet()) {
+			String val = siteRequest_.getRequestVars().get(var);
+			if(!"design".equals(var)) {
+				String varIndexed = SiteState.varIndexedSiteState(var);
+				if(varIndexed != null)
+					l.addFilterQuery(varIndexed + ":" + ClientUtils.escapeQueryChars(val));
 			}
 		}
 	}
 
 	protected void _state_(Wrap<SiteState> c) {
-		if(pageDesignId != null && pageDesignId.endsWith("-reportCard-form")) {
-			if(stateSearch.size() == 0) {
-				throw new RuntimeException("No state was found for the query: " + siteRequest_.getOperationRequest().getParams().getJsonObject("query").encode());
-			}
-			else if(stateSearch.size() == 1) {
-				c.o(stateSearch.get(0));
-			}
-			else  {
-				throw new RuntimeException("More than one state was found for the query: " + siteRequest_.getOperationRequest().getParams().getJsonObject("query").encode());
-			}
+		if(stateSearch.size() == 1) {
+			c.o(stateSearch.get(0));
 		}
 	}
 
