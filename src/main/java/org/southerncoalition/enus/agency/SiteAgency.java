@@ -1,5 +1,6 @@
 package org.southerncoalition.enus.agency;
 
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.apache.commons.lang3.StringUtils;
@@ -193,7 +194,7 @@ public class SiteAgency extends SiteAgencyGen<Cluster> {
 	 */ 
 	protected void _agencyOnlyName(Wrap<String> c) {
 		if(StringUtils.equals(agencyName, stateName))
-			c.o("");
+			c.o("A A A " + stateName);
 		else
 			c.o(agencyName + " in " + stateName + " (" + stateAbbreviation + ")");
 	}

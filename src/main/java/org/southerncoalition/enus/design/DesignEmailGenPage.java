@@ -311,6 +311,9 @@ public class DesignEmailGenPage extends DesignEmailGenPageGen<PageLayout> {
 			o.htmDesignHidden("Page");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmPageContentType("Page");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmParentDesignKeys("Page");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
@@ -332,6 +335,9 @@ public class DesignEmailGenPage extends DesignEmailGenPageGen<PageLayout> {
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmPageDesignCompleteName("POST");
 			o.htmDesignHidden("POST");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmPageContentType("POST");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmParentDesignKeys("POST");
@@ -379,6 +385,9 @@ public class DesignEmailGenPage extends DesignEmailGenPageGen<PageLayout> {
 			o.htmDesignHidden("PUTCopy");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmPageContentType("PUTCopy");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmParentDesignKeys("PUTCopy");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
@@ -403,6 +412,9 @@ public class DesignEmailGenPage extends DesignEmailGenPageGen<PageLayout> {
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmPageDesignCompleteName("PATCH");
 			o.htmDesignHidden("PATCH");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmPageContentType("PATCH");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmParentDesignKeys("PATCH");
@@ -431,6 +443,9 @@ public class DesignEmailGenPage extends DesignEmailGenPageGen<PageLayout> {
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmPageDesignCompleteName("Search");
 			o.htmDesignHidden("Search");
+		} g("div");
+		{ e("div").a("class", "w3-cell-row ").f();
+			o.htmPageContentType("Search");
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmParentDesignKeys("Search");

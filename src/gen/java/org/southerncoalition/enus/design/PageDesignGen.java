@@ -812,6 +812,134 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 		} g("div");
 	}
 
+	/////////////////////
+	// pageContentType //
+	/////////////////////
+
+	/**	 The entity pageContentType
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String pageContentType;
+	@JsonIgnore
+	public Wrap<String> pageContentTypeWrap = new Wrap<String>().p(this).c(String.class).var("pageContentType").o(pageContentType);
+
+	/**	<br/> The entity pageContentType
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.PageDesign&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:pageContentType">Find the entity pageContentType in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _pageContentType(Wrap<String> c);
+
+	public String getPageContentType() {
+		return pageContentType;
+	}
+
+	public void setPageContentType(String pageContentType) {
+		this.pageContentType = pageContentType;
+		this.pageContentTypeWrap.alreadyInitialized = true;
+	}
+	protected PageDesign pageContentTypeInit() {
+		if(!pageContentTypeWrap.alreadyInitialized) {
+			_pageContentType(pageContentTypeWrap);
+			if(pageContentType == null)
+				setPageContentType(pageContentTypeWrap.o);
+		}
+		pageContentTypeWrap.alreadyInitialized(true);
+		return (PageDesign)this;
+	}
+
+	public String solrPageContentType() {
+		return pageContentType;
+	}
+
+	public String strPageContentType() {
+		return pageContentType == null ? "" : pageContentType;
+	}
+
+	public String jsonPageContentType() {
+		return pageContentType == null ? "" : pageContentType;
+	}
+
+	public String nomAffichagePageContentType() {
+		return "content type";
+	}
+
+	public String htmTooltipPageContentType() {
+		return null;
+	}
+
+	public String htmPageContentType() {
+		return pageContentType == null ? "" : StringEscapeUtils.escapeHtml4(strPageContentType());
+	}
+
+	public void inputPageContentType(String classApiMethodMethod) {
+		PageDesign s = (PageDesign)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "content type")
+				.a("id", classApiMethodMethod, "_pageContentType");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setPageContentType classPageDesign inputPageDesign", pk, "PageContentType w3-input w3-border ");
+					a("name", "setPageContentType");
+				} else {
+					a("class", "valuePageContentType w3-input w3-border classPageDesign inputPageDesign", pk, "PageContentType w3-input w3-border ");
+					a("name", "pageContentType");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setPageContentType', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_pageContentType')); }, function() { addError($('#", classApiMethodMethod, "_pageContentType')); }); ");
+				}
+				a("value", strPageContentType())
+			.fg();
+
+		} else {
+			e("span").a("class", "varPageDesign", pk, "PageContentType ").f().sx(htmPageContentType()).g("span");
+		}
+	}
+
+	public void htmPageContentType(String classApiMethodMethod) {
+		PageDesign s = (PageDesign)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "PageDesignPageContentType").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-khaki ").f();
+							e("label").a("for", classApiMethodMethod, "_pageContentType").a("class", "").f().sx("content type").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputPageContentType(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-khaki ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_pageContentType')); $('#", classApiMethodMethod, "_pageContentType').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#PageDesignForm :input[name=pk]').val() }], 'setPageContentType', null, function() { addGlow($('#", classApiMethodMethod, "_pageContentType')); }, function() { addError($('#", classApiMethodMethod, "_pageContentType')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
 	//////////////
 	// initDeep //
 	//////////////
@@ -839,6 +967,7 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 		htmlPartKeysInit();
 		pageDesignCompleteNameInit();
 		designHiddenInit();
+		pageContentTypeInit();
 	}
 
 	@Override public void initDeepForClass(SiteRequestEnUS siteRequest_) {
@@ -889,6 +1018,8 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 				return oPageDesign.pageDesignCompleteName;
 			case "designHidden":
 				return oPageDesign.designHidden;
+			case "pageContentType":
+				return oPageDesign.pageContentType;
 			default:
 				return super.obtainCluster(var);
 		}
@@ -965,6 +1096,11 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 					setDesignHidden(val);
 				saves.add(var);
 				return val;
+			case "pageContentType":
+				if(val != null)
+					setPageContentType(val);
+				saves.add(var);
+				return val;
 			default:
 				return super.defineCluster(var, val);
 		}
@@ -1010,6 +1146,12 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 				Boolean designHidden = (Boolean)solrDocument.get("designHidden_stored_boolean");
 				if(designHidden != null)
 					oPageDesign.setDesignHidden(designHidden);
+			}
+
+			if(saves.contains("pageContentType")) {
+				String pageContentType = (String)solrDocument.get("pageContentType_stored_string");
+				if(pageContentType != null)
+					oPageDesign.setPageContentType(pageContentType);
 			}
 		}
 
@@ -1114,6 +1256,10 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 			document.addField("designHidden_indexed_boolean", designHidden);
 			document.addField("designHidden_stored_boolean", designHidden);
 		}
+		if(pageContentType != null) {
+			document.addField("pageContentType_indexed_string", pageContentType);
+			document.addField("pageContentType_stored_string", pageContentType);
+		}
 		super.indexCluster(document);
 
 	}
@@ -1149,6 +1295,8 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 				return "pageDesignCompleteName_indexed_string";
 			case "designHidden":
 				return "designHidden_indexed_boolean";
+			case "pageContentType":
+				return "pageContentType_indexed_string";
 			default:
 				return Cluster.varIndexedCluster(entityVar);
 		}
@@ -1202,6 +1350,10 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 		if(designHidden != null)
 			oPageDesign.setDesignHidden(designHidden);
 
+		String pageContentType = (String)solrDocument.get("pageContentType_stored_string");
+		if(pageContentType != null)
+			oPageDesign.setPageContentType(pageContentType);
+
 		super.storeCluster(solrDocument);
 	}
 
@@ -1226,6 +1378,8 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 				apiRequest.addVars("pageDesignCompleteName");
 			if(!Objects.equals(designHidden, original.getDesignHidden()))
 				apiRequest.addVars("designHidden");
+			if(!Objects.equals(pageContentType, original.getPageContentType()))
+				apiRequest.addVars("pageContentType");
 			super.apiRequestCluster();
 		}
 	}
@@ -1235,7 +1389,7 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 	//////////////
 
 	@Override public int hashCode() {
-		return Objects.hash(super.hashCode(), pageDesignKey, childDesignKeys, parentDesignKeys, htmlPartKeys, pageDesignCompleteName, designHidden);
+		return Objects.hash(super.hashCode(), pageDesignKey, childDesignKeys, parentDesignKeys, htmlPartKeys, pageDesignCompleteName, designHidden, pageContentType);
 	}
 
 	////////////
@@ -1254,7 +1408,8 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 				&& Objects.equals( parentDesignKeys, that.parentDesignKeys )
 				&& Objects.equals( htmlPartKeys, that.htmlPartKeys )
 				&& Objects.equals( pageDesignCompleteName, that.pageDesignCompleteName )
-				&& Objects.equals( designHidden, that.designHidden );
+				&& Objects.equals( designHidden, that.designHidden )
+				&& Objects.equals( pageContentType, that.pageContentType );
 	}
 
 	//////////////
@@ -1271,6 +1426,7 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 		sb.append( ", htmlPartKeys: " ).append(htmlPartKeys);
 		sb.append( ", pageDesignCompleteName: \"" ).append(pageDesignCompleteName).append( "\"" );
 		sb.append( ", designHidden: " ).append(designHidden);
+		sb.append( ", pageContentType: \"" ).append(pageContentType).append( "\"" );
 		sb.append(" }");
 		return sb.toString();
 	}

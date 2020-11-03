@@ -12,6 +12,7 @@ import java.math.RoundingMode;
 import java.nio.charset.Charset;
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
+import java.time.format.DateTimeFormatter;
 import java.util.Base64;
 import java.util.List;
 
@@ -3004,6 +3005,67 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			b.append("                  ").append(imageMap).append("\n");
 			b.append("                  <img usemap=\"#map_").append(w.var).append("\" style=\"width: 300px; \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
 			w.o(b.toString());
+		} catch (IOException ex) {
+			ExceptionUtils.rethrow(ex);
+		}
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Stored: true
+	 */ 
+	protected void _reportCardImage(Wrap<String> w) {
+		try {
+			DefaultPieDataset dataset = new DefaultPieDataset();
+			dataset.setValue( String.format("%s (%s%%)", "Indigenous", pupilsIndigenousPercent), pupilsIndigenousPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "Asian", pupilsAsianPercent), pupilsAsianPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "Black", pupilsBlackPercent), pupilsBlackPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "Latinx", pupilsLatinxPercent), pupilsLatinxPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "Multi-Racial", pupilsMultiRacialPercent), pupilsMultiRacialPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "Pacific Islander", pupilsPacificIslanderPercent), pupilsPacificIslanderPercent );  
+			dataset.setValue( String.format("%s (%s%%)", "White", pupilsWhitePercent), pupilsWhitePercent );  
+	
+			JFreeChart chart = ChartFactory.createPieChart(null, dataset, true, true, true);
+			PiePlot plot = (PiePlot)chart.getPlot();
+	
+			LegendTitle legendOld = chart.getLegend();
+			LegendTitle legendNew = new LegendTitle(plot, new ColumnArrangement(), new ColumnArrangement());
+			legendNew.setPosition(RectangleEdge.RIGHT);
+			legendNew.setBackgroundPaint(legendOld.getBackgroundPaint());
+			legendNew.setItemFont(new Font("DejaVu Sans", 0, 24));
+			plot.setLegendItemShape(new Rectangle(24, 24));
+			chart.removeLegend();
+			chart.addLegend(legendNew);
+			plot.setBackgroundPaint(null);
+			plot.setOutlinePaint(null);
+			plot.setURLGenerator(new PieURLGenerator() {
+				
+				@Override
+				public String generateURL(PieDataset dataset, Comparable key, int pieIndex) {
+					Number value = dataset.getValue(pieIndex);
+					return null;
+				}
+			});
+	
+			plot.setLabelGenerator(null);
+			plot.setSectionPaint(dataset.getKey(0), Color.decode("#8064a2"));
+			plot.setSectionPaint(dataset.getKey(1), Color.decode("#308399"));
+			plot.setSectionPaint(dataset.getKey(2), Color.decode("#e97000"));
+			plot.setSectionPaint(dataset.getKey(3), Color.decode("#77933c"));
+			plot.setSectionPaint(dataset.getKey(4), Color.decode("#254061"));
+			plot.setSectionPaint(dataset.getKey(5), Color.decode("#edda38"));
+			plot.setSectionPaint(dataset.getKey(6), Color.decode("#a84039"));
+			ChartRenderingInfo chartRenderingInfo = new ChartRenderingInfo(new StandardEntityCollection());
+			BufferedImage image = chart.createBufferedImage(600, 400, chartRenderingInfo);
+
+			ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			ImageIO.write(image, "png", baos);
+			baos.flush();
+			byte[] imageInByte = baos.toByteArray();
+			baos.close();
+
+			String imageStr = new String(Base64.getEncoder().encode(imageInByte), Charset.forName("UTF-8"));
+			w.o(imageStr);
 		} catch (IOException ex) {
 			ExceptionUtils.rethrow(ex);
 		}

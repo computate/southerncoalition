@@ -96,7 +96,7 @@ public class PageDesign extends PageDesignGen<Cluster> {
 	 * Indexed: true
 	 * Stored: true
 	 * Attribute: PageDesign.childDesignKeys
-	 * HtmlRow: 4
+	 * HtmlRow: 5
 	 * HtmlCell: 1
 	 * DisplayName.enUS: parent designs
 	*/  
@@ -108,7 +108,7 @@ public class PageDesign extends PageDesignGen<Cluster> {
 	 * Indexed: true
 	 * Stored: true
 	 * Attribute: HtmlPart.pageDesignKeys
-	 * HtmlRow: 5
+	 * HtmlRow: 6
 	 * HtmlCell: 1
 	 * DisplayName.enUS: parts
 	 */           
@@ -140,6 +140,19 @@ public class PageDesign extends PageDesignGen<Cluster> {
 	 */                
 	protected void _designHidden(Wrap<Boolean> c) {
 		c.o(false);
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * Define: true
+	 * HtmlRow: 4
+	 * HtmlCell: 1
+	 * DisplayName.enUS: content type
+	 */ 
+	protected void _pageContentType(Wrap<String> c) {
+		c.o("text/html;charset=UTF-8");
 	}
 
 	/**

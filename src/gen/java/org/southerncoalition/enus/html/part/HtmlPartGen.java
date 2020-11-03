@@ -2169,6 +2169,139 @@ public abstract class HtmlPartGen<DEV> extends Cluster {
 		} g("div");
 	}
 
+	/////////////////////////
+	// htmlVarBase64Decode //
+	/////////////////////////
+
+	/**	 The entity htmlVarBase64Decode
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String htmlVarBase64Decode;
+	@JsonIgnore
+	public Wrap<String> htmlVarBase64DecodeWrap = new Wrap<String>().p(this).c(String.class).var("htmlVarBase64Decode").o(htmlVarBase64Decode);
+
+	/**	<br/> The entity htmlVarBase64Decode
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.html.part.HtmlPart&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:htmlVarBase64Decode">Find the entity htmlVarBase64Decode in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _htmlVarBase64Decode(Wrap<String> c);
+
+	public String getHtmlVarBase64Decode() {
+		return htmlVarBase64Decode;
+	}
+
+	public void setHtmlVarBase64Decode(String htmlVarBase64Decode) {
+		this.htmlVarBase64Decode = htmlVarBase64Decode;
+		this.htmlVarBase64DecodeWrap.alreadyInitialized = true;
+	}
+	protected HtmlPart htmlVarBase64DecodeInit() {
+		if(!htmlVarBase64DecodeWrap.alreadyInitialized) {
+			_htmlVarBase64Decode(htmlVarBase64DecodeWrap);
+			if(htmlVarBase64Decode == null)
+				setHtmlVarBase64Decode(htmlVarBase64DecodeWrap.o);
+		}
+		htmlVarBase64DecodeWrap.alreadyInitialized(true);
+		return (HtmlPart)this;
+	}
+
+	public String solrHtmlVarBase64Decode() {
+		return htmlVarBase64Decode;
+	}
+
+	public String strHtmlVarBase64Decode() {
+		return htmlVarBase64Decode == null ? "" : htmlVarBase64Decode;
+	}
+
+	public String jsonHtmlVarBase64Decode() {
+		return htmlVarBase64Decode == null ? "" : htmlVarBase64Decode;
+	}
+
+	public String nomAffichageHtmlVarBase64Decode() {
+		return "var base64 decode";
+	}
+
+	public String htmTooltipHtmlVarBase64Decode() {
+		return null;
+	}
+
+	public String htmHtmlVarBase64Decode() {
+		return htmlVarBase64Decode == null ? "" : StringEscapeUtils.escapeHtml4(strHtmlVarBase64Decode());
+	}
+
+	public void inputHtmlVarBase64Decode(String classApiMethodMethod) {
+		HtmlPart s = (HtmlPart)this;
+		if(
+				CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "var base64 decode")
+				.a("id", classApiMethodMethod, "_htmlVarBase64Decode");
+				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
+					a("class", "setHtmlVarBase64Decode classHtmlPart inputHtmlPart", pk, "HtmlVarBase64Decode w3-input w3-border ");
+					a("name", "setHtmlVarBase64Decode");
+				} else {
+					a("class", "valueHtmlVarBase64Decode w3-input w3-border classHtmlPart inputHtmlPart", pk, "HtmlVarBase64Decode w3-input w3-border ");
+					a("name", "htmlVarBase64Decode");
+				}
+				if("Page".equals(classApiMethodMethod)) {
+					a("onclick", "removeGlow($(this)); ");
+					a("onchange", "patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:", pk, "' }], 'setHtmlVarBase64Decode', $(this).val(), function() { addGlow($('#", classApiMethodMethod, "_htmlVarBase64Decode')); }, function() { addError($('#", classApiMethodMethod, "_htmlVarBase64Decode')); }); ");
+				}
+				a("value", strHtmlVarBase64Decode())
+			.fg();
+
+		} else {
+			if(
+					CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+					|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+				) {
+				e("span").a("class", "varHtmlPart", pk, "HtmlVarBase64Decode ").f().sx(htmHtmlVarBase64Decode()).g("span");
+			}
+		}
+	}
+
+	public void htmHtmlVarBase64Decode(String classApiMethodMethod) {
+		HtmlPart s = (HtmlPart)this;
+		{ e("div").a("class", "w3-cell w3-cell-top w3-center w3-mobile ").f();
+			{ e("div").a("class", "w3-padding ").f();
+				{ e("div").a("id", "suggest", classApiMethodMethod, "HtmlPartHtmlVarBase64Decode").f();
+					{ e("div").a("class", "w3-card ").f();
+						{ e("div").a("class", "w3-cell-row w3-khaki ").f();
+							e("label").a("for", classApiMethodMethod, "_htmlVarBase64Decode").a("class", "").f().sx("var base64 decode").g("label");
+						} g("div");
+						{ e("div").a("class", "w3-cell-row w3-padding ").f();
+							{ e("div").a("class", "w3-cell ").f();
+
+								inputHtmlVarBase64Decode(classApiMethodMethod);
+							} g("div");
+							if(
+									CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ROLES)
+									|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
+									) {
+								if("Page".equals(classApiMethodMethod)) {
+									{ e("div").a("class", "w3-cell w3-left-align w3-cell-top ").f();
+										{ e("button")
+											.a("tabindex", "-1")
+											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-bar-item w3-khaki ")
+										.a("onclick", "removeGlow($('#", classApiMethodMethod, "_htmlVarBase64Decode')); $('#", classApiMethodMethod, "_htmlVarBase64Decode').val(null); patch", getClass().getSimpleName(), "Val([{ name: 'fq', value: 'pk:' + $('#HtmlPartForm :input[name=pk]').val() }], 'setHtmlVarBase64Decode', null, function() { addGlow($('#", classApiMethodMethod, "_htmlVarBase64Decode')); }, function() { addError($('#", classApiMethodMethod, "_htmlVarBase64Decode')); }); ")
+											.f();
+											e("i").a("class", "far fa-eraser ").f().g("i");
+										} g("button");
+									} g("div");
+								}
+							}
+						} g("div");
+					} g("div");
+				} g("div");
+			} g("div");
+		} g("div");
+	}
+
 	/////////////////
 	// htmlExclude //
 	/////////////////
@@ -4011,6 +4144,7 @@ public abstract class HtmlPartGen<DEV> extends Cluster {
 		htmlVarInputInit();
 		htmlVarForEachInit();
 		htmlVarHtmlInit();
+		htmlVarBase64DecodeInit();
 		htmlExcludeInit();
 		pdfExcludeInit();
 		loginLogoutInit();
@@ -4094,6 +4228,8 @@ public abstract class HtmlPartGen<DEV> extends Cluster {
 				return oHtmlPart.htmlVarForEach;
 			case "htmlVarHtml":
 				return oHtmlPart.htmlVarHtml;
+			case "htmlVarBase64Decode":
+				return oHtmlPart.htmlVarBase64Decode;
 			case "htmlExclude":
 				return oHtmlPart.htmlExclude;
 			case "pdfExclude":
@@ -4244,6 +4380,11 @@ public abstract class HtmlPartGen<DEV> extends Cluster {
 			case "htmlVarHtml":
 				if(val != null)
 					setHtmlVarHtml(val);
+				saves.add(var);
+				return val;
+			case "htmlVarBase64Decode":
+				if(val != null)
+					setHtmlVarBase64Decode(val);
 				saves.add(var);
 				return val;
 			case "htmlExclude":
@@ -4420,6 +4561,12 @@ public abstract class HtmlPartGen<DEV> extends Cluster {
 				String htmlVarHtml = (String)solrDocument.get("htmlVarHtml_stored_string");
 				if(htmlVarHtml != null)
 					oHtmlPart.setHtmlVarHtml(htmlVarHtml);
+			}
+
+			if(saves.contains("htmlVarBase64Decode")) {
+				String htmlVarBase64Decode = (String)solrDocument.get("htmlVarBase64Decode_stored_string");
+				if(htmlVarBase64Decode != null)
+					oHtmlPart.setHtmlVarBase64Decode(htmlVarBase64Decode);
 			}
 
 			if(saves.contains("htmlExclude")) {
@@ -4631,6 +4778,10 @@ public abstract class HtmlPartGen<DEV> extends Cluster {
 			document.addField("htmlVarHtml_indexed_string", htmlVarHtml);
 			document.addField("htmlVarHtml_stored_string", htmlVarHtml);
 		}
+		if(htmlVarBase64Decode != null) {
+			document.addField("htmlVarBase64Decode_indexed_string", htmlVarBase64Decode);
+			document.addField("htmlVarBase64Decode_stored_string", htmlVarBase64Decode);
+		}
 		if(htmlExclude != null) {
 			document.addField("htmlExclude_indexed_boolean", htmlExclude);
 			document.addField("htmlExclude_stored_boolean", htmlExclude);
@@ -4732,6 +4883,8 @@ public abstract class HtmlPartGen<DEV> extends Cluster {
 				return "htmlVarForEach_indexed_string";
 			case "htmlVarHtml":
 				return "htmlVarHtml_indexed_string";
+			case "htmlVarBase64Decode":
+				return "htmlVarBase64Decode_indexed_string";
 			case "htmlExclude":
 				return "htmlExclude_indexed_boolean";
 			case "pdfExclude":
@@ -4851,6 +5004,10 @@ public abstract class HtmlPartGen<DEV> extends Cluster {
 		if(htmlVarHtml != null)
 			oHtmlPart.setHtmlVarHtml(htmlVarHtml);
 
+		String htmlVarBase64Decode = (String)solrDocument.get("htmlVarBase64Decode_stored_string");
+		if(htmlVarBase64Decode != null)
+			oHtmlPart.setHtmlVarBase64Decode(htmlVarBase64Decode);
+
 		Boolean htmlExclude = (Boolean)solrDocument.get("htmlExclude_stored_boolean");
 		if(htmlExclude != null)
 			oHtmlPart.setHtmlExclude(htmlExclude);
@@ -4947,6 +5104,8 @@ public abstract class HtmlPartGen<DEV> extends Cluster {
 				apiRequest.addVars("htmlVarForEach");
 			if(!Objects.equals(htmlVarHtml, original.getHtmlVarHtml()))
 				apiRequest.addVars("htmlVarHtml");
+			if(!Objects.equals(htmlVarBase64Decode, original.getHtmlVarBase64Decode()))
+				apiRequest.addVars("htmlVarBase64Decode");
 			if(!Objects.equals(htmlExclude, original.getHtmlExclude()))
 				apiRequest.addVars("htmlExclude");
 			if(!Objects.equals(pdfExclude, original.getPdfExclude()))
@@ -4982,7 +5141,7 @@ public abstract class HtmlPartGen<DEV> extends Cluster {
 	//////////////
 
 	@Override public int hashCode() {
-		return Objects.hash(super.hashCode(), htmlPartKey, pageDesignKeys, htmlLink, htmlElement, htmlId, htmlClasses, htmlStyle, htmlBefore, htmlAfter, htmlText, htmlVar, htmlVarSpan, htmlVarForm, htmlVarInput, htmlVarForEach, htmlVarHtml, htmlExclude, pdfExclude, loginLogout, sort1, sort2, sort3, sort4, sort5, sort6, sort7, sort8, sort9, sort10);
+		return Objects.hash(super.hashCode(), htmlPartKey, pageDesignKeys, htmlLink, htmlElement, htmlId, htmlClasses, htmlStyle, htmlBefore, htmlAfter, htmlText, htmlVar, htmlVarSpan, htmlVarForm, htmlVarInput, htmlVarForEach, htmlVarHtml, htmlVarBase64Decode, htmlExclude, pdfExclude, loginLogout, sort1, sort2, sort3, sort4, sort5, sort6, sort7, sort8, sort9, sort10);
 	}
 
 	////////////
@@ -5012,6 +5171,7 @@ public abstract class HtmlPartGen<DEV> extends Cluster {
 				&& Objects.equals( htmlVarInput, that.htmlVarInput )
 				&& Objects.equals( htmlVarForEach, that.htmlVarForEach )
 				&& Objects.equals( htmlVarHtml, that.htmlVarHtml )
+				&& Objects.equals( htmlVarBase64Decode, that.htmlVarBase64Decode )
 				&& Objects.equals( htmlExclude, that.htmlExclude )
 				&& Objects.equals( pdfExclude, that.pdfExclude )
 				&& Objects.equals( loginLogout, that.loginLogout )
@@ -5051,6 +5211,7 @@ public abstract class HtmlPartGen<DEV> extends Cluster {
 		sb.append( ", htmlVarInput: \"" ).append(htmlVarInput).append( "\"" );
 		sb.append( ", htmlVarForEach: \"" ).append(htmlVarForEach).append( "\"" );
 		sb.append( ", htmlVarHtml: \"" ).append(htmlVarHtml).append( "\"" );
+		sb.append( ", htmlVarBase64Decode: \"" ).append(htmlVarBase64Decode).append( "\"" );
 		sb.append( ", htmlExclude: " ).append(htmlExclude);
 		sb.append( ", pdfExclude: " ).append(pdfExclude);
 		sb.append( ", loginLogout: " ).append(loginLogout);

@@ -530,6 +530,19 @@ public class HtmlPartEnUSGenApiServiceImpl implements HtmlPartEnUSGenApiService 
 							});
 						}));
 						break;
+					case "htmlVarBase64Decode":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "htmlVarBase64Decode", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value HtmlPart.htmlVarBase64Decode failed", b.cause())));
+							});
+						}));
+						break;
 					case "htmlExclude":
 						futures.add(Future.future(a -> {
 							tx.preparedQuery(SiteContextEnUS.SQL_setD
@@ -1566,6 +1579,19 @@ public class HtmlPartEnUSGenApiServiceImpl implements HtmlPartEnUSGenApiService 
 									a.handle(Future.succeededFuture());
 								else
 									a.handle(Future.failedFuture(new Exception("value HtmlPart.htmlVarHtml failed", b.cause())));
+							});
+						}));
+						break;
+					case "htmlVarBase64Decode":
+						futures.add(Future.future(a -> {
+							tx.preparedQuery(SiteContextEnUS.SQL_setD
+									, Tuple.of(pk, "htmlVarBase64Decode", Optional.ofNullable(jsonObject.getValue(entityVar)).map(s -> s.toString()).orElse(null))
+									, b
+							-> {
+								if(b.succeeded())
+									a.handle(Future.succeededFuture());
+								else
+									a.handle(Future.failedFuture(new Exception("value HtmlPart.htmlVarBase64Decode failed", b.cause())));
 							});
 						}));
 						break;
@@ -2644,6 +2670,34 @@ public class HtmlPartEnUSGenApiServiceImpl implements HtmlPartEnUSGenApiService 
 										a.handle(Future.succeededFuture());
 									else
 										a.handle(Future.failedFuture(new Exception("value HtmlPart.htmlVarHtml failed", b.cause())));
+								});
+							}));
+						}
+						break;
+					case "setHtmlVarBase64Decode":
+						if(jsonObject.getString(methodName) == null) {
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_removeD
+										, Tuple.of(pk, "htmlVarBase64Decode")
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value HtmlPart.htmlVarBase64Decode failed", b.cause())));
+								});
+							}));
+						} else {
+							o2.setHtmlVarBase64Decode(jsonObject.getString(methodName));
+							futures.add(Future.future(a -> {
+								tx.preparedQuery(SiteContextEnUS.SQL_setD
+										, Tuple.of(pk, "htmlVarBase64Decode", o2.jsonHtmlVarBase64Decode())
+										, b
+								-> {
+									if(b.succeeded())
+										a.handle(Future.succeededFuture());
+									else
+										a.handle(Future.failedFuture(new Exception("value HtmlPart.htmlVarBase64Decode failed", b.cause())));
 								});
 							}));
 						}
