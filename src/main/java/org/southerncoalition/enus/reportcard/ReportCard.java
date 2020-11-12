@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.nio.charset.Charset;
+import java.text.AttributedString;
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
 import java.time.format.DateTimeFormatter;
@@ -34,6 +35,7 @@ import org.jfree.chart.imagemap.ToolTipTagFragmentGenerator;
 import org.jfree.chart.imagemap.URLTagFragmentGenerator;
 import org.jfree.chart.labels.ItemLabelAnchor;
 import org.jfree.chart.labels.ItemLabelPosition;
+import org.jfree.chart.labels.PieSectionLabelGenerator;
 import org.jfree.chart.labels.StandardCategoryItemLabelGenerator;
 import org.jfree.chart.labels.StandardPieSectionLabelGenerator;
 import org.jfree.chart.plot.CategoryPlot;
@@ -1967,6 +1969,20 @@ public class ReportCard extends ReportCardGen<Cluster> {
 		return examsCollegeReadyGrades38BlackVsWhite == null ? "" : examsCollegeReadyGrades38BlackVsWhite.setScale(1, RoundingMode.CEILING).toString();
 	}
 
+	/** 
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 * DisplayName.enUS: short-term suspensions Latinx vs white
+	 */
+	protected void _examsCollegeReadyGrades38LatinxVsWhite(Wrap<BigDecimal> c) {
+		if(examsCollegeReadyGrades38LatinxPercent != null  && examsCollegeReadyGrades38WhitePercent != null)
+			c.o(examsCollegeReadyGrades38WhitePercent.divide(examsCollegeReadyGrades38LatinxPercent, 4, RoundingMode.HALF_UP).setScale(1, RoundingMode.HALF_UP));
+	}
+	@Override public String strExamsCollegeReadyGrades38LatinxVsWhite() {
+		return examsCollegeReadyGrades38LatinxVsWhite == null ? "" : examsCollegeReadyGrades38LatinxVsWhite.setScale(1, RoundingMode.CEILING).toString();
+	}
+
 	/**  
 	 * {@inheritDoc}
 	 * Indexed: true
@@ -2182,6 +2198,16 @@ public class ReportCard extends ReportCardGen<Cluster> {
 				chart.removeLegend();
 				plot.setBackgroundPaint(null);
 				plot.setOutlinePaint(null);
+				plot.setLabelGenerator(new PieSectionLabelGenerator() {
+					@Override
+					public String generateSectionLabel(PieDataset dataset, Comparable key) {
+						return StringUtils.substringBefore(key.toString(), " ");
+					}
+					@Override
+					public AttributedString generateAttributedSectionLabel(PieDataset dataset, Comparable key) {
+						return null;
+					}
+				});
 	
 				plot.setLabelGap(0D);
 				plot.setSimpleLabels(true);
@@ -2255,6 +2281,16 @@ public class ReportCard extends ReportCardGen<Cluster> {
 				chart.removeLegend();
 				plot.setBackgroundPaint(null);
 				plot.setOutlinePaint(null);
+				plot.setLabelGenerator(new PieSectionLabelGenerator() {
+					@Override
+					public String generateSectionLabel(PieDataset dataset, Comparable key) {
+						return StringUtils.substringBefore(key.toString(), " ");
+					}
+					@Override
+					public AttributedString generateAttributedSectionLabel(PieDataset dataset, Comparable key) {
+						return null;
+					}
+				});
 	
 				plot.setLabelGap(0D);
 				plot.setSimpleLabels(true);
@@ -2366,7 +2402,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			renderer.setDefaultItemLabelFont(new Font("DejaVu Sans", 0, 18));
 
 			ChartRenderingInfo chartRenderingInfo = new ChartRenderingInfo(new StandardEntityCollection());
-			BufferedImage image = chart.createBufferedImage(1000, 280, chartRenderingInfo);
+			BufferedImage image = chart.createBufferedImage(1100, 280, chartRenderingInfo);
 
 			ToolTipTagFragmentGenerator toolTipFragmentGenerator = new StandardToolTipTagFragmentGenerator() {
 				@Override
@@ -2456,7 +2492,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			renderer.setDefaultItemLabelFont(new Font("DejaVu Sans", 0, 18));
 
 			ChartRenderingInfo chartRenderingInfo = new ChartRenderingInfo(new StandardEntityCollection());
-			BufferedImage image = chart.createBufferedImage(1000, 280, chartRenderingInfo);
+			BufferedImage image = chart.createBufferedImage(1100, 280, chartRenderingInfo);
 
 			ToolTipTagFragmentGenerator toolTipFragmentGenerator = new StandardToolTipTagFragmentGenerator() {
 				@Override
@@ -2546,7 +2582,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			renderer.setDefaultItemLabelFont(new Font("DejaVu Sans", 0, 18));
 
 			ChartRenderingInfo chartRenderingInfo = new ChartRenderingInfo(new StandardEntityCollection());
-			BufferedImage image = chart.createBufferedImage(1000, 280, chartRenderingInfo);
+			BufferedImage image = chart.createBufferedImage(1100, 280, chartRenderingInfo);
 
 			ToolTipTagFragmentGenerator toolTipFragmentGenerator = new StandardToolTipTagFragmentGenerator() {
 				@Override

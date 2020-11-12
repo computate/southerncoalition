@@ -204,14 +204,6 @@ public class SiteUserGenPage extends SiteUserGenPageGen<PageLayout> {
 			o.htmSeeDeleted("PUTCopy");
 			o.htmCustomerProfileId("PUTCopy");
 		} g("div");
-		{ e("div").a("class", "w3-cell-row ").f();
-			o.htmInheritPk("PUTCopy");
-			o.htmUserId("PUTCopy");
-			o.htmUserKey("PUTCopy");
-			o.htmUserId("PUTCopy");
-			o.htmUserKey("PUTCopy");
-			o.htmUserName("PUTCopy");
-		} g("div");
 	}
 
 	public void htmlFormPATCHSiteUser(SiteUser o) {
@@ -228,14 +220,6 @@ public class SiteUserGenPage extends SiteUserGenPageGen<PageLayout> {
 			o.htmSeeArchived("PATCH");
 			o.htmSeeDeleted("PATCH");
 			o.htmCustomerProfileId("PATCH");
-		} g("div");
-		{ e("div").a("class", "w3-cell-row ").f();
-			o.htmInheritPk("PATCH");
-			o.htmUserId("PATCH");
-			o.htmUserKey("PATCH");
-			o.htmUserId("PATCH");
-			o.htmUserKey("PATCH");
-			o.htmUserName("PATCH");
 		} g("div");
 	}
 

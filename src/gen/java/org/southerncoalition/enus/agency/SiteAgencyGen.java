@@ -111,10 +111,14 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		this.agencyKeyWrap.alreadyInitialized = true;
 	}
 	public SiteAgency setAgencyKey(String o) {
-		if(NumberUtils.isParsable(o))
-			this.agencyKey = Long.parseLong(o);
+		this.agencyKey = SiteAgency.staticSetAgencyKey(siteRequest_, o);
 		this.agencyKeyWrap.alreadyInitialized = true;
 		return (SiteAgency)this;
+	}
+	public static Long staticSetAgencyKey(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected SiteAgency agencyKeyInit() {
 		if(!agencyKeyWrap.alreadyInitialized) {
@@ -126,8 +130,20 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		return (SiteAgency)this;
 	}
 
+	public static Long staticSolrAgencyKey(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyKey(SiteRequestEnUS siteRequest_, Long o) {
+			return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyKey(SiteRequestEnUS siteRequest_, String o) {
+		return SiteAgency.staticSolrStrAgencyKey(siteRequest_, SiteAgency.staticSolrAgencyKey(siteRequest_, SiteAgency.staticSetAgencyKey(siteRequest_, o)));
+	}
+
 	public Long solrAgencyKey() {
-		return agencyKey;
+		return SiteAgency.staticSolrAgencyKey(siteRequest_, agencyKey);
 	}
 
 	public String strAgencyKey() {
@@ -173,10 +189,13 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	public String getAgencyName() {
 		return agencyName;
 	}
-
-	public void setAgencyName(String agencyName) {
-		this.agencyName = agencyName;
+	public SiteAgency setAgencyName(String o) {
+		this.agencyName = SiteAgency.staticSetAgencyName(siteRequest_, o);
 		this.agencyNameWrap.alreadyInitialized = true;
+		return (SiteAgency)this;
+	}
+	public static String staticSetAgencyName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteAgency agencyNameInit() {
 		if(!agencyNameWrap.alreadyInitialized) {
@@ -188,8 +207,20 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		return (SiteAgency)this;
 	}
 
+	public static String staticSolrAgencyName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyName(SiteRequestEnUS siteRequest_, String o) {
+			return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyName(SiteRequestEnUS siteRequest_, String o) {
+		return SiteAgency.staticSolrStrAgencyName(siteRequest_, SiteAgency.staticSolrAgencyName(siteRequest_, SiteAgency.staticSetAgencyName(siteRequest_, o)));
+	}
+
 	public String solrAgencyName() {
-		return agencyName;
+		return SiteAgency.staticSolrAgencyName(siteRequest_, agencyName);
 	}
 
 	public String strAgencyName() {
@@ -307,6 +338,9 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		this.stateSearch = stateSearch;
 		this.stateSearchWrap.alreadyInitialized = true;
 	}
+	public static SearchList<SiteState> staticSetStateSearch(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected SiteAgency stateSearchInit() {
 		if(!stateSearchWrap.alreadyInitialized) {
 			_stateSearch(stateSearch);
@@ -343,6 +377,9 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	public void setState_(SiteState state_) {
 		this.state_ = state_;
 		this.state_Wrap.alreadyInitialized = true;
+	}
+	public static SiteState staticSetState_(SiteRequestEnUS siteRequest_, String o) {
+		return null;
 	}
 	protected SiteAgency state_Init() {
 		if(!state_Wrap.alreadyInitialized) {
@@ -384,10 +421,14 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		this.stateKeyWrap.alreadyInitialized = true;
 	}
 	public SiteAgency setStateKey(String o) {
-		if(NumberUtils.isParsable(o))
-			this.stateKey = Long.parseLong(o);
+		this.stateKey = SiteAgency.staticSetStateKey(siteRequest_, o);
 		this.stateKeyWrap.alreadyInitialized = true;
 		return (SiteAgency)this;
+	}
+	public static Long staticSetStateKey(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected SiteAgency stateKeyInit() {
 		if(!stateKeyWrap.alreadyInitialized) {
@@ -399,8 +440,20 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		return (SiteAgency)this;
 	}
 
+	public static Long staticSolrStateKey(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrStateKey(SiteRequestEnUS siteRequest_, Long o) {
+			return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqStateKey(SiteRequestEnUS siteRequest_, String o) {
+		return SiteAgency.staticSolrStrStateKey(siteRequest_, SiteAgency.staticSolrStateKey(siteRequest_, SiteAgency.staticSetStateKey(siteRequest_, o)));
+	}
+
 	public Long solrStateKey() {
-		return stateKey;
+		return SiteAgency.staticSolrStateKey(siteRequest_, stateKey);
 	}
 
 	public String strStateKey() {
@@ -436,9 +489,12 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 					.a("class", "value suggestStateKey w3-input w3-border w3-cell w3-cell-middle ")
 					.a("name", "setStateKey")
 					.a("id", classApiMethodMethod, "_stateKey")
-					.a("autocomplete", "off")
-					.a("oninput", "suggestSiteAgencyStateKey($(this).val() ? searchSiteStateFilters($(this.parentElement)) : [", pk == null ? "" : "{'name':'fq','value':'agencyKeys:" + pk + "'}", "], $('#listSiteAgencyStateKey_", classApiMethodMethod, "'), ", pk, "); ")
-				.fg();
+					.a("autocomplete", "off");
+					if("Page".equals(classApiMethodMethod)) {
+						a("oninput", "suggestSiteAgencyStateKey($(this).val() ? searchSiteStateFilters($(this.parentElement)) : [", pk == null ? "" : "{'name':'fq','value':'agencyKeys:" + pk + "'}", "], $('#listSiteAgencyStateKey_", classApiMethodMethod, "'), ", pk, "); ");
+					}
+
+				fg();
 
 		} else {
 			e("span").a("class", "varSiteAgency", pk, "StateKey ").f().sx(htmStateKey()).g("span");
@@ -525,10 +581,14 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		this.imageLeftWrap.alreadyInitialized = true;
 	}
 	public SiteAgency setImageLeft(String o) {
-		if(NumberUtils.isParsable(o))
-			this.imageLeft = Integer.parseInt(o);
+		this.imageLeft = SiteAgency.staticSetImageLeft(siteRequest_, o);
 		this.imageLeftWrap.alreadyInitialized = true;
 		return (SiteAgency)this;
+	}
+	public static Integer staticSetImageLeft(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected SiteAgency imageLeftInit() {
 		if(!imageLeftWrap.alreadyInitialized) {
@@ -540,8 +600,20 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		return (SiteAgency)this;
 	}
 
+	public static Integer staticSolrImageLeft(SiteRequestEnUS siteRequest_, Integer o) {
+		return o;
+	}
+
+	public static String staticSolrStrImageLeft(SiteRequestEnUS siteRequest_, Integer o) {
+			return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqImageLeft(SiteRequestEnUS siteRequest_, String o) {
+		return SiteAgency.staticSolrStrImageLeft(siteRequest_, SiteAgency.staticSolrImageLeft(siteRequest_, SiteAgency.staticSetImageLeft(siteRequest_, o)));
+	}
+
 	public Integer solrImageLeft() {
-		return imageLeft;
+		return SiteAgency.staticSolrImageLeft(siteRequest_, imageLeft);
 	}
 
 	public String strImageLeft() {
@@ -660,10 +732,14 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		this.imageTopWrap.alreadyInitialized = true;
 	}
 	public SiteAgency setImageTop(String o) {
-		if(NumberUtils.isParsable(o))
-			this.imageTop = Integer.parseInt(o);
+		this.imageTop = SiteAgency.staticSetImageTop(siteRequest_, o);
 		this.imageTopWrap.alreadyInitialized = true;
 		return (SiteAgency)this;
+	}
+	public static Integer staticSetImageTop(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected SiteAgency imageTopInit() {
 		if(!imageTopWrap.alreadyInitialized) {
@@ -675,8 +751,20 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		return (SiteAgency)this;
 	}
 
+	public static Integer staticSolrImageTop(SiteRequestEnUS siteRequest_, Integer o) {
+		return o;
+	}
+
+	public static String staticSolrStrImageTop(SiteRequestEnUS siteRequest_, Integer o) {
+			return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqImageTop(SiteRequestEnUS siteRequest_, String o) {
+		return SiteAgency.staticSolrStrImageTop(siteRequest_, SiteAgency.staticSolrImageTop(siteRequest_, SiteAgency.staticSetImageTop(siteRequest_, o)));
+	}
+
 	public Integer solrImageTop() {
-		return imageTop;
+		return SiteAgency.staticSolrImageTop(siteRequest_, imageTop);
 	}
 
 	public String strImageTop() {
@@ -788,10 +876,13 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	public String getImageCoords() {
 		return imageCoords;
 	}
-
-	public void setImageCoords(String imageCoords) {
-		this.imageCoords = imageCoords;
+	public SiteAgency setImageCoords(String o) {
+		this.imageCoords = SiteAgency.staticSetImageCoords(siteRequest_, o);
 		this.imageCoordsWrap.alreadyInitialized = true;
+		return (SiteAgency)this;
+	}
+	public static String staticSetImageCoords(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteAgency imageCoordsInit() {
 		if(!imageCoordsWrap.alreadyInitialized) {
@@ -803,8 +894,20 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		return (SiteAgency)this;
 	}
 
+	public static String staticSolrImageCoords(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrImageCoords(SiteRequestEnUS siteRequest_, String o) {
+			return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqImageCoords(SiteRequestEnUS siteRequest_, String o) {
+		return SiteAgency.staticSolrStrImageCoords(siteRequest_, SiteAgency.staticSolrImageCoords(siteRequest_, SiteAgency.staticSetImageCoords(siteRequest_, o)));
+	}
+
 	public String solrImageCoords() {
-		return imageCoords;
+		return SiteAgency.staticSolrImageCoords(siteRequest_, imageCoords);
 	}
 
 	public String strImageCoords() {
@@ -920,6 +1023,9 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		this.reportCardKeys = reportCardKeys;
 		this.reportCardKeysWrap.alreadyInitialized = true;
 	}
+	public static List<Long> staticSetReportCardKeys(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	public SiteAgency addReportCardKeys(Long...objets) {
 		for(Long o : objets) {
 			addReportCardKeys(o);
@@ -954,8 +1060,20 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		return (SiteAgency)this;
 	}
 
+	public static List<Long> staticSolrReportCardKeys(SiteRequestEnUS siteRequest_, List<Long> o) {
+		return o;
+	}
+
+	public static String staticSolrStrReportCardKeys(SiteRequestEnUS siteRequest_, List<Long> o) {
+			return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqReportCardKeys(SiteRequestEnUS siteRequest_, String o) {
+		return SiteAgency.staticSolrStrReportCardKeys(siteRequest_, SiteAgency.staticSolrReportCardKeys(siteRequest_, SiteAgency.staticSetReportCardKeys(siteRequest_, o)));
+	}
+
 	public List<Long> solrReportCardKeys() {
-		return reportCardKeys;
+		return SiteAgency.staticSolrReportCardKeys(siteRequest_, reportCardKeys);
 	}
 
 	public String strReportCardKeys() {
@@ -991,9 +1109,12 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 					.a("class", "value suggestReportCardKeys w3-input w3-border w3-cell w3-cell-middle ")
 					.a("name", "setReportCardKeys")
 					.a("id", classApiMethodMethod, "_reportCardKeys")
-					.a("autocomplete", "off")
-					.a("oninput", "suggestSiteAgencyReportCardKeys($(this).val() ? searchReportCardFilters($(this.parentElement)) : [", pk == null ? "" : "{'name':'fq','value':'agencyKey:" + pk + "'}", "], $('#listSiteAgencyReportCardKeys_", classApiMethodMethod, "'), ", pk, "); ")
-				.fg();
+					.a("autocomplete", "off");
+					if("Page".equals(classApiMethodMethod)) {
+						a("oninput", "suggestSiteAgencyReportCardKeys($(this).val() ? searchReportCardFilters($(this.parentElement)) : [", pk == null ? "" : "{'name':'fq','value':'agencyKey:" + pk + "'}", "], $('#listSiteAgencyReportCardKeys_", classApiMethodMethod, "'), ", pk, "); ");
+					}
+
+				fg();
 
 		} else {
 			e("span").a("class", "varSiteAgency", pk, "ReportCardKeys ").f().sx(htmReportCardKeys()).g("span");
@@ -1073,10 +1194,13 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	public String getStateId() {
 		return stateId;
 	}
-
-	public void setStateId(String stateId) {
-		this.stateId = stateId;
+	public SiteAgency setStateId(String o) {
+		this.stateId = SiteAgency.staticSetStateId(siteRequest_, o);
 		this.stateIdWrap.alreadyInitialized = true;
+		return (SiteAgency)this;
+	}
+	public static String staticSetStateId(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteAgency stateIdInit() {
 		if(!stateIdWrap.alreadyInitialized) {
@@ -1088,8 +1212,20 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		return (SiteAgency)this;
 	}
 
+	public static String staticSolrStateId(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrStateId(SiteRequestEnUS siteRequest_, String o) {
+			return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqStateId(SiteRequestEnUS siteRequest_, String o) {
+		return SiteAgency.staticSolrStrStateId(siteRequest_, SiteAgency.staticSolrStateId(siteRequest_, SiteAgency.staticSetStateId(siteRequest_, o)));
+	}
+
 	public String solrStateId() {
-		return stateId;
+		return SiteAgency.staticSolrStateId(siteRequest_, stateId);
 	}
 
 	public String strStateId() {
@@ -1135,10 +1271,13 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	public String getStateName() {
 		return stateName;
 	}
-
-	public void setStateName(String stateName) {
-		this.stateName = stateName;
+	public SiteAgency setStateName(String o) {
+		this.stateName = SiteAgency.staticSetStateName(siteRequest_, o);
 		this.stateNameWrap.alreadyInitialized = true;
+		return (SiteAgency)this;
+	}
+	public static String staticSetStateName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteAgency stateNameInit() {
 		if(!stateNameWrap.alreadyInitialized) {
@@ -1150,8 +1289,20 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		return (SiteAgency)this;
 	}
 
+	public static String staticSolrStateName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrStateName(SiteRequestEnUS siteRequest_, String o) {
+			return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqStateName(SiteRequestEnUS siteRequest_, String o) {
+		return SiteAgency.staticSolrStrStateName(siteRequest_, SiteAgency.staticSolrStateName(siteRequest_, SiteAgency.staticSetStateName(siteRequest_, o)));
+	}
+
 	public String solrStateName() {
-		return stateName;
+		return SiteAgency.staticSolrStateName(siteRequest_, stateName);
 	}
 
 	public String strStateName() {
@@ -1197,10 +1348,13 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	public String getStateAbbreviation() {
 		return stateAbbreviation;
 	}
-
-	public void setStateAbbreviation(String stateAbbreviation) {
-		this.stateAbbreviation = stateAbbreviation;
+	public SiteAgency setStateAbbreviation(String o) {
+		this.stateAbbreviation = SiteAgency.staticSetStateAbbreviation(siteRequest_, o);
 		this.stateAbbreviationWrap.alreadyInitialized = true;
+		return (SiteAgency)this;
+	}
+	public static String staticSetStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteAgency stateAbbreviationInit() {
 		if(!stateAbbreviationWrap.alreadyInitialized) {
@@ -1212,8 +1366,20 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		return (SiteAgency)this;
 	}
 
+	public static String staticSolrStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
+			return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
+		return SiteAgency.staticSolrStrStateAbbreviation(siteRequest_, SiteAgency.staticSolrStateAbbreviation(siteRequest_, SiteAgency.staticSetStateAbbreviation(siteRequest_, o)));
+	}
+
 	public String solrStateAbbreviation() {
-		return stateAbbreviation;
+		return SiteAgency.staticSolrStateAbbreviation(siteRequest_, stateAbbreviation);
 	}
 
 	public String strStateAbbreviation() {
@@ -1259,10 +1425,13 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	public String getAgencyOnlyName() {
 		return agencyOnlyName;
 	}
-
-	public void setAgencyOnlyName(String agencyOnlyName) {
-		this.agencyOnlyName = agencyOnlyName;
+	public SiteAgency setAgencyOnlyName(String o) {
+		this.agencyOnlyName = SiteAgency.staticSetAgencyOnlyName(siteRequest_, o);
 		this.agencyOnlyNameWrap.alreadyInitialized = true;
+		return (SiteAgency)this;
+	}
+	public static String staticSetAgencyOnlyName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteAgency agencyOnlyNameInit() {
 		if(!agencyOnlyNameWrap.alreadyInitialized) {
@@ -1274,8 +1443,20 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		return (SiteAgency)this;
 	}
 
+	public static String staticSolrAgencyOnlyName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyOnlyName(SiteRequestEnUS siteRequest_, String o) {
+			return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyOnlyName(SiteRequestEnUS siteRequest_, String o) {
+		return SiteAgency.staticSolrStrAgencyOnlyName(siteRequest_, SiteAgency.staticSolrAgencyOnlyName(siteRequest_, SiteAgency.staticSetAgencyOnlyName(siteRequest_, o)));
+	}
+
 	public String solrAgencyOnlyName() {
-		return agencyOnlyName;
+		return SiteAgency.staticSolrAgencyOnlyName(siteRequest_, agencyOnlyName);
 	}
 
 	public String strAgencyOnlyName() {
@@ -1321,10 +1502,13 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	public String getAgencyCompleteName() {
 		return agencyCompleteName;
 	}
-
-	public void setAgencyCompleteName(String agencyCompleteName) {
-		this.agencyCompleteName = agencyCompleteName;
+	public SiteAgency setAgencyCompleteName(String o) {
+		this.agencyCompleteName = SiteAgency.staticSetAgencyCompleteName(siteRequest_, o);
 		this.agencyCompleteNameWrap.alreadyInitialized = true;
+		return (SiteAgency)this;
+	}
+	public static String staticSetAgencyCompleteName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteAgency agencyCompleteNameInit() {
 		if(!agencyCompleteNameWrap.alreadyInitialized) {
@@ -1336,8 +1520,20 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		return (SiteAgency)this;
 	}
 
+	public static String staticSolrAgencyCompleteName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyCompleteName(SiteRequestEnUS siteRequest_, String o) {
+			return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyCompleteName(SiteRequestEnUS siteRequest_, String o) {
+		return SiteAgency.staticSolrStrAgencyCompleteName(siteRequest_, SiteAgency.staticSolrAgencyCompleteName(siteRequest_, SiteAgency.staticSetAgencyCompleteName(siteRequest_, o)));
+	}
+
 	public String solrAgencyCompleteName() {
-		return agencyCompleteName;
+		return SiteAgency.staticSolrAgencyCompleteName(siteRequest_, agencyCompleteName);
 	}
 
 	public String strAgencyCompleteName() {
@@ -1501,6 +1697,158 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 				return val;
 			default:
 				return super.attributeCluster(var, val);
+		}
+	}
+
+	///////////////
+	// staticSet //
+	///////////////
+
+	public static Object staticSetForClass(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		return staticSetSiteAgency(entityVar,  siteRequest_, o);
+	}
+	public static Object staticSetSiteAgency(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		switch(entityVar) {
+		case "agencyKey":
+			return SiteAgency.staticSetAgencyKey(siteRequest_, o);
+		case "agencyName":
+			return SiteAgency.staticSetAgencyName(siteRequest_, o);
+		case "stateKey":
+			return SiteAgency.staticSetStateKey(siteRequest_, o);
+		case "imageLeft":
+			return SiteAgency.staticSetImageLeft(siteRequest_, o);
+		case "imageTop":
+			return SiteAgency.staticSetImageTop(siteRequest_, o);
+		case "imageCoords":
+			return SiteAgency.staticSetImageCoords(siteRequest_, o);
+		case "reportCardKeys":
+			return SiteAgency.staticSetReportCardKeys(siteRequest_, o);
+		case "stateId":
+			return SiteAgency.staticSetStateId(siteRequest_, o);
+		case "stateName":
+			return SiteAgency.staticSetStateName(siteRequest_, o);
+		case "stateAbbreviation":
+			return SiteAgency.staticSetStateAbbreviation(siteRequest_, o);
+		case "agencyOnlyName":
+			return SiteAgency.staticSetAgencyOnlyName(siteRequest_, o);
+		case "agencyCompleteName":
+			return SiteAgency.staticSetAgencyCompleteName(siteRequest_, o);
+			default:
+				return Cluster.staticSetCluster(entityVar,  siteRequest_, o);
+		}
+	}
+
+	////////////////
+	// staticSolr //
+	////////////////
+
+	public static Object staticSolrForClass(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		return staticSolrSiteAgency(entityVar,  siteRequest_, o);
+	}
+	public static Object staticSolrSiteAgency(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		switch(entityVar) {
+		case "agencyKey":
+			return SiteAgency.staticSolrAgencyKey(siteRequest_, (Long)o);
+		case "agencyName":
+			return SiteAgency.staticSolrAgencyName(siteRequest_, (String)o);
+		case "stateKey":
+			return SiteAgency.staticSolrStateKey(siteRequest_, (Long)o);
+		case "imageLeft":
+			return SiteAgency.staticSolrImageLeft(siteRequest_, (Integer)o);
+		case "imageTop":
+			return SiteAgency.staticSolrImageTop(siteRequest_, (Integer)o);
+		case "imageCoords":
+			return SiteAgency.staticSolrImageCoords(siteRequest_, (String)o);
+		case "reportCardKeys":
+			return SiteAgency.staticSolrReportCardKeys(siteRequest_, (List<Long>)o);
+		case "stateId":
+			return SiteAgency.staticSolrStateId(siteRequest_, (String)o);
+		case "stateName":
+			return SiteAgency.staticSolrStateName(siteRequest_, (String)o);
+		case "stateAbbreviation":
+			return SiteAgency.staticSolrStateAbbreviation(siteRequest_, (String)o);
+		case "agencyOnlyName":
+			return SiteAgency.staticSolrAgencyOnlyName(siteRequest_, (String)o);
+		case "agencyCompleteName":
+			return SiteAgency.staticSolrAgencyCompleteName(siteRequest_, (String)o);
+			default:
+				return Cluster.staticSolrCluster(entityVar,  siteRequest_, o);
+		}
+	}
+
+	///////////////////
+	// staticSolrStr //
+	///////////////////
+
+	public static String staticSolrStrForClass(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		return staticSolrStrSiteAgency(entityVar,  siteRequest_, o);
+	}
+	public static String staticSolrStrSiteAgency(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		switch(entityVar) {
+		case "agencyKey":
+			return SiteAgency.staticSolrStrAgencyKey(siteRequest_, (Long)o);
+		case "agencyName":
+			return SiteAgency.staticSolrStrAgencyName(siteRequest_, (String)o);
+		case "stateKey":
+			return SiteAgency.staticSolrStrStateKey(siteRequest_, (Long)o);
+		case "imageLeft":
+			return SiteAgency.staticSolrStrImageLeft(siteRequest_, (Integer)o);
+		case "imageTop":
+			return SiteAgency.staticSolrStrImageTop(siteRequest_, (Integer)o);
+		case "imageCoords":
+			return SiteAgency.staticSolrStrImageCoords(siteRequest_, (String)o);
+		case "reportCardKeys":
+			return SiteAgency.staticSolrStrReportCardKeys(siteRequest_, (List<Long>)o);
+		case "stateId":
+			return SiteAgency.staticSolrStrStateId(siteRequest_, (String)o);
+		case "stateName":
+			return SiteAgency.staticSolrStrStateName(siteRequest_, (String)o);
+		case "stateAbbreviation":
+			return SiteAgency.staticSolrStrStateAbbreviation(siteRequest_, (String)o);
+		case "agencyOnlyName":
+			return SiteAgency.staticSolrStrAgencyOnlyName(siteRequest_, (String)o);
+		case "agencyCompleteName":
+			return SiteAgency.staticSolrStrAgencyCompleteName(siteRequest_, (String)o);
+			default:
+				return Cluster.staticSolrStrCluster(entityVar,  siteRequest_, o);
+		}
+	}
+
+	//////////////////
+	// staticSolrFq //
+	//////////////////
+
+	public static String staticSolrFqForClass(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		return staticSolrFqSiteAgency(entityVar,  siteRequest_, o);
+	}
+	public static String staticSolrFqSiteAgency(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		switch(entityVar) {
+		case "agencyKey":
+			return SiteAgency.staticSolrFqAgencyKey(siteRequest_, o);
+		case "agencyName":
+			return SiteAgency.staticSolrFqAgencyName(siteRequest_, o);
+		case "stateKey":
+			return SiteAgency.staticSolrFqStateKey(siteRequest_, o);
+		case "imageLeft":
+			return SiteAgency.staticSolrFqImageLeft(siteRequest_, o);
+		case "imageTop":
+			return SiteAgency.staticSolrFqImageTop(siteRequest_, o);
+		case "imageCoords":
+			return SiteAgency.staticSolrFqImageCoords(siteRequest_, o);
+		case "reportCardKeys":
+			return SiteAgency.staticSolrFqReportCardKeys(siteRequest_, o);
+		case "stateId":
+			return SiteAgency.staticSolrFqStateId(siteRequest_, o);
+		case "stateName":
+			return SiteAgency.staticSolrFqStateName(siteRequest_, o);
+		case "stateAbbreviation":
+			return SiteAgency.staticSolrFqStateAbbreviation(siteRequest_, o);
+		case "agencyOnlyName":
+			return SiteAgency.staticSolrFqAgencyOnlyName(siteRequest_, o);
+		case "agencyCompleteName":
+			return SiteAgency.staticSolrFqAgencyCompleteName(siteRequest_, o);
+			default:
+				return Cluster.staticSolrFqCluster(entityVar,  siteRequest_, o);
 		}
 	}
 

@@ -127,6 +127,62 @@ public abstract class DesignEmailPageGen<DEV> extends DesignEmailGenPage {
 		}
 	}
 
+	///////////////
+	// staticSet //
+	///////////////
+
+	public static Object staticSetForClass(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		return staticSetDesignEmailPage(entityVar,  siteRequest_, o);
+	}
+	public static Object staticSetDesignEmailPage(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		switch(entityVar) {
+			default:
+				return DesignEmailGenPage.staticSetDesignEmailGenPage(entityVar,  siteRequest_, o);
+		}
+	}
+
+	////////////////
+	// staticSolr //
+	////////////////
+
+	public static Object staticSolrForClass(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		return staticSolrDesignEmailPage(entityVar,  siteRequest_, o);
+	}
+	public static Object staticSolrDesignEmailPage(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		switch(entityVar) {
+			default:
+				return DesignEmailGenPage.staticSolrDesignEmailGenPage(entityVar,  siteRequest_, o);
+		}
+	}
+
+	///////////////////
+	// staticSolrStr //
+	///////////////////
+
+	public static String staticSolrStrForClass(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		return staticSolrStrDesignEmailPage(entityVar,  siteRequest_, o);
+	}
+	public static String staticSolrStrDesignEmailPage(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		switch(entityVar) {
+			default:
+				return DesignEmailGenPage.staticSolrStrDesignEmailGenPage(entityVar,  siteRequest_, o);
+		}
+	}
+
+	//////////////////
+	// staticSolrFq //
+	//////////////////
+
+	public static String staticSolrFqForClass(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		return staticSolrFqDesignEmailPage(entityVar,  siteRequest_, o);
+	}
+	public static String staticSolrFqDesignEmailPage(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		switch(entityVar) {
+			default:
+				return DesignEmailGenPage.staticSolrFqDesignEmailGenPage(entityVar,  siteRequest_, o);
+		}
+	}
+
 	/////////////
 	// define //
 	/////////////

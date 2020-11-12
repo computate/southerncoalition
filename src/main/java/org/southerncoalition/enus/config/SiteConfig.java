@@ -1,4 +1,4 @@
-package org.southerncoalition.enus.config;    
+package org.southerncoalition.enus.config;
 
 import java.io.File;
 import java.io.Serializable;

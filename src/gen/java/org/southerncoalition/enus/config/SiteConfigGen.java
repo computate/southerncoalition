@@ -65,10 +65,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getConfigPath() {
 		return configPath;
 	}
-
-	public void setConfigPath(String configPath) {
-		this.configPath = configPath;
+	public SiteConfig setConfigPath(String o) {
+		this.configPath = SiteConfig.staticSetConfigPath(null, o);
 		this.configPathWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetConfigPath(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig configPathInit() {
 		if(!configPathWrap.alreadyInitialized) {
@@ -78,6 +81,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		configPathWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrConfigPath(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrConfigPath(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqConfigPath(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrConfigPath(siteRequest_, SiteConfig.staticSolrConfigPath(siteRequest_, SiteConfig.staticSetConfigPath(siteRequest_, o)));
 	}
 
 	////////////
@@ -107,6 +122,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public void setConfig(INIConfiguration config) {
 		this.config = config;
 		this.configWrap.alreadyInitialized = true;
+	}
+	public static INIConfiguration staticSetConfig(SiteRequestEnUS siteRequest_, String o) {
+		return null;
 	}
 	protected SiteConfig configInit() {
 		if(!configWrap.alreadyInitialized) {
@@ -141,10 +159,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getSiteIdentifier() {
 		return siteIdentifier;
 	}
-
-	public void setSiteIdentifier(String siteIdentifier) {
-		this.siteIdentifier = siteIdentifier;
+	public SiteConfig setSiteIdentifier(String o) {
+		this.siteIdentifier = SiteConfig.staticSetSiteIdentifier(null, o);
 		this.siteIdentifierWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetSiteIdentifier(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig siteIdentifierInit() {
 		if(!siteIdentifierWrap.alreadyInitialized) {
@@ -154,6 +175,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		siteIdentifierWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrSiteIdentifier(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrSiteIdentifier(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqSiteIdentifier(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrSiteIdentifier(siteRequest_, SiteConfig.staticSolrSiteIdentifier(siteRequest_, SiteConfig.staticSetSiteIdentifier(siteRequest_, o)));
 	}
 
 	///////////////////
@@ -179,10 +212,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getPrefixEscaped() {
 		return prefixEscaped;
 	}
-
-	public void setPrefixEscaped(String prefixEscaped) {
-		this.prefixEscaped = prefixEscaped;
+	public SiteConfig setPrefixEscaped(String o) {
+		this.prefixEscaped = SiteConfig.staticSetPrefixEscaped(null, o);
 		this.prefixEscapedWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetPrefixEscaped(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig prefixEscapedInit() {
 		if(!prefixEscapedWrap.alreadyInitialized) {
@@ -192,6 +228,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		prefixEscapedWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrPrefixEscaped(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrPrefixEscaped(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqPrefixEscaped(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrPrefixEscaped(siteRequest_, SiteConfig.staticSolrPrefixEscaped(siteRequest_, SiteConfig.staticSetPrefixEscaped(siteRequest_, o)));
 	}
 
 	/////////////
@@ -217,10 +265,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAppPath() {
 		return appPath;
 	}
-
-	public void setAppPath(String appPath) {
-		this.appPath = appPath;
+	public SiteConfig setAppPath(String o) {
+		this.appPath = SiteConfig.staticSetAppPath(null, o);
 		this.appPathWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetAppPath(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig appPathInit() {
 		if(!appPathWrap.alreadyInitialized) {
@@ -230,6 +281,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		appPathWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrAppPath(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrAppPath(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqAppPath(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrAppPath(siteRequest_, SiteConfig.staticSolrAppPath(siteRequest_, SiteConfig.staticSetAppPath(siteRequest_, o)));
 	}
 
 	/////////////
@@ -255,10 +318,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getDocRoot() {
 		return docRoot;
 	}
-
-	public void setDocRoot(String docRoot) {
-		this.docRoot = docRoot;
+	public SiteConfig setDocRoot(String o) {
+		this.docRoot = SiteConfig.staticSetDocRoot(null, o);
 		this.docRootWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetDocRoot(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig docRootInit() {
 		if(!docRootWrap.alreadyInitialized) {
@@ -268,6 +334,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		docRootWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrDocRoot(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrDocRoot(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqDocRoot(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrDocRoot(siteRequest_, SiteConfig.staticSolrDocRoot(siteRequest_, SiteConfig.staticSetDocRoot(siteRequest_, o)));
 	}
 
 	/////////////////
@@ -293,10 +371,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getCompanyName() {
 		return companyName;
 	}
-
-	public void setCompanyName(String companyName) {
-		this.companyName = companyName;
+	public SiteConfig setCompanyName(String o) {
+		this.companyName = SiteConfig.staticSetCompanyName(null, o);
 		this.companyNameWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetCompanyName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig companyNameInit() {
 		if(!companyNameWrap.alreadyInitialized) {
@@ -306,6 +387,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		companyNameWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrCompanyName(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrCompanyName(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqCompanyName(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrCompanyName(siteRequest_, SiteConfig.staticSolrCompanyName(siteRequest_, SiteConfig.staticSetCompanyName(siteRequest_, o)));
 	}
 
 	////////////////
@@ -331,10 +424,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getDomainName() {
 		return domainName;
 	}
-
-	public void setDomainName(String domainName) {
-		this.domainName = domainName;
+	public SiteConfig setDomainName(String o) {
+		this.domainName = SiteConfig.staticSetDomainName(null, o);
 		this.domainNameWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetDomainName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig domainNameInit() {
 		if(!domainNameWrap.alreadyInitialized) {
@@ -344,6 +440,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		domainNameWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrDomainName(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrDomainName(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqDomainName(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrDomainName(siteRequest_, SiteConfig.staticSolrDomainName(siteRequest_, SiteConfig.staticSetDomainName(siteRequest_, o)));
 	}
 
 	//////////////////
@@ -369,10 +477,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getSiteHostName() {
 		return siteHostName;
 	}
-
-	public void setSiteHostName(String siteHostName) {
-		this.siteHostName = siteHostName;
+	public SiteConfig setSiteHostName(String o) {
+		this.siteHostName = SiteConfig.staticSetSiteHostName(null, o);
 		this.siteHostNameWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetSiteHostName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig siteHostNameInit() {
 		if(!siteHostNameWrap.alreadyInitialized) {
@@ -382,6 +493,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		siteHostNameWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrSiteHostName(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrSiteHostName(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqSiteHostName(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrSiteHostName(siteRequest_, SiteConfig.staticSolrSiteHostName(siteRequest_, SiteConfig.staticSetSiteHostName(siteRequest_, o)));
 	}
 
 	//////////////
@@ -414,10 +537,14 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.sitePortWrap.alreadyInitialized = true;
 	}
 	public SiteConfig setSitePort(String o) {
-		if(NumberUtils.isParsable(o))
-			this.sitePort = Integer.parseInt(o);
+		this.sitePort = SiteConfig.staticSetSitePort(null, o);
 		this.sitePortWrap.alreadyInitialized = true;
 		return (SiteConfig)this;
+	}
+	public static Integer staticSetSitePort(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected SiteConfig sitePortInit() {
 		if(!sitePortWrap.alreadyInitialized) {
@@ -427,6 +554,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		sitePortWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrSitePort(SiteRequestEnUS siteRequest_, Integer o) {
+		return null;
+	}
+
+	public static String staticSolrStrSitePort(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqSitePort(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrSitePort(siteRequest_, SiteConfig.staticSolrSitePort(siteRequest_, SiteConfig.staticSetSitePort(siteRequest_, o)));
 	}
 
 	///////////////////
@@ -459,10 +598,14 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.siteInstancesWrap.alreadyInitialized = true;
 	}
 	public SiteConfig setSiteInstances(String o) {
-		if(NumberUtils.isParsable(o))
-			this.siteInstances = Integer.parseInt(o);
+		this.siteInstances = SiteConfig.staticSetSiteInstances(null, o);
 		this.siteInstancesWrap.alreadyInitialized = true;
 		return (SiteConfig)this;
+	}
+	public static Integer staticSetSiteInstances(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected SiteConfig siteInstancesInit() {
 		if(!siteInstancesWrap.alreadyInitialized) {
@@ -472,6 +615,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		siteInstancesWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrSiteInstances(SiteRequestEnUS siteRequest_, Integer o) {
+		return null;
+	}
+
+	public static String staticSolrStrSiteInstances(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqSiteInstances(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrSiteInstances(siteRequest_, SiteConfig.staticSolrSiteInstances(siteRequest_, SiteConfig.staticSetSiteInstances(siteRequest_, o)));
 	}
 
 	///////////////
@@ -497,10 +652,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAuthRealm() {
 		return authRealm;
 	}
-
-	public void setAuthRealm(String authRealm) {
-		this.authRealm = authRealm;
+	public SiteConfig setAuthRealm(String o) {
+		this.authRealm = SiteConfig.staticSetAuthRealm(null, o);
 		this.authRealmWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetAuthRealm(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig authRealmInit() {
 		if(!authRealmWrap.alreadyInitialized) {
@@ -510,6 +668,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		authRealmWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrAuthRealm(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrAuthRealm(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqAuthRealm(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrAuthRealm(siteRequest_, SiteConfig.staticSolrAuthRealm(siteRequest_, SiteConfig.staticSetAuthRealm(siteRequest_, o)));
 	}
 
 	//////////////////
@@ -535,10 +705,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAuthResource() {
 		return authResource;
 	}
-
-	public void setAuthResource(String authResource) {
-		this.authResource = authResource;
+	public SiteConfig setAuthResource(String o) {
+		this.authResource = SiteConfig.staticSetAuthResource(null, o);
 		this.authResourceWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetAuthResource(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig authResourceInit() {
 		if(!authResourceWrap.alreadyInitialized) {
@@ -548,6 +721,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		authResourceWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrAuthResource(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrAuthResource(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqAuthResource(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrAuthResource(siteRequest_, SiteConfig.staticSolrAuthResource(siteRequest_, SiteConfig.staticSetAuthResource(siteRequest_, o)));
 	}
 
 	////////////////
@@ -573,10 +758,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAuthSecret() {
 		return authSecret;
 	}
-
-	public void setAuthSecret(String authSecret) {
-		this.authSecret = authSecret;
+	public SiteConfig setAuthSecret(String o) {
+		this.authSecret = SiteConfig.staticSetAuthSecret(null, o);
 		this.authSecretWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetAuthSecret(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig authSecretInit() {
 		if(!authSecretWrap.alreadyInitialized) {
@@ -586,6 +774,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		authSecretWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrAuthSecret(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrAuthSecret(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqAuthSecret(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrAuthSecret(siteRequest_, SiteConfig.staticSolrAuthSecret(siteRequest_, SiteConfig.staticSetAuthSecret(siteRequest_, o)));
 	}
 
 	/////////////////////
@@ -611,10 +811,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAuthSslRequired() {
 		return authSslRequired;
 	}
-
-	public void setAuthSslRequired(String authSslRequired) {
-		this.authSslRequired = authSslRequired;
+	public SiteConfig setAuthSslRequired(String o) {
+		this.authSslRequired = SiteConfig.staticSetAuthSslRequired(null, o);
 		this.authSslRequiredWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetAuthSslRequired(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig authSslRequiredInit() {
 		if(!authSslRequiredWrap.alreadyInitialized) {
@@ -624,6 +827,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		authSslRequiredWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrAuthSslRequired(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrAuthSslRequired(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqAuthSslRequired(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrAuthSslRequired(siteRequest_, SiteConfig.staticSolrAuthSslRequired(siteRequest_, SiteConfig.staticSetAuthSslRequired(siteRequest_, o)));
 	}
 
 	////////////////
@@ -649,10 +864,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getSslJksPath() {
 		return sslJksPath;
 	}
-
-	public void setSslJksPath(String sslJksPath) {
-		this.sslJksPath = sslJksPath;
+	public SiteConfig setSslJksPath(String o) {
+		this.sslJksPath = SiteConfig.staticSetSslJksPath(null, o);
 		this.sslJksPathWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetSslJksPath(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig sslJksPathInit() {
 		if(!sslJksPathWrap.alreadyInitialized) {
@@ -662,6 +880,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		sslJksPathWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrSslJksPath(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrSslJksPath(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqSslJksPath(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrSslJksPath(siteRequest_, SiteConfig.staticSolrSslJksPath(siteRequest_, SiteConfig.staticSetSslJksPath(siteRequest_, o)));
 	}
 
 	////////////////////
@@ -687,10 +917,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getSslJksPassword() {
 		return sslJksPassword;
 	}
-
-	public void setSslJksPassword(String sslJksPassword) {
-		this.sslJksPassword = sslJksPassword;
+	public SiteConfig setSslJksPassword(String o) {
+		this.sslJksPassword = SiteConfig.staticSetSslJksPassword(null, o);
 		this.sslJksPasswordWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetSslJksPassword(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig sslJksPasswordInit() {
 		if(!sslJksPasswordWrap.alreadyInitialized) {
@@ -700,6 +933,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		sslJksPasswordWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrSslJksPassword(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrSslJksPassword(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqSslJksPassword(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrSslJksPassword(siteRequest_, SiteConfig.staticSolrSslJksPassword(siteRequest_, SiteConfig.staticSetSslJksPassword(siteRequest_, o)));
 	}
 
 	/////////////
@@ -725,10 +970,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAuthUrl() {
 		return authUrl;
 	}
-
-	public void setAuthUrl(String authUrl) {
-		this.authUrl = authUrl;
+	public SiteConfig setAuthUrl(String o) {
+		this.authUrl = SiteConfig.staticSetAuthUrl(null, o);
 		this.authUrlWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetAuthUrl(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig authUrlInit() {
 		if(!authUrlWrap.alreadyInitialized) {
@@ -738,6 +986,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		authUrlWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrAuthUrl(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrAuthUrl(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqAuthUrl(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrAuthUrl(siteRequest_, SiteConfig.staticSolrAuthUrl(siteRequest_, SiteConfig.staticSetAuthUrl(siteRequest_, o)));
 	}
 
 	////////////////////
@@ -763,10 +1023,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getEncryptionSalt() {
 		return encryptionSalt;
 	}
-
-	public void setEncryptionSalt(String encryptionSalt) {
-		this.encryptionSalt = encryptionSalt;
+	public SiteConfig setEncryptionSalt(String o) {
+		this.encryptionSalt = SiteConfig.staticSetEncryptionSalt(null, o);
 		this.encryptionSaltWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetEncryptionSalt(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig encryptionSaltInit() {
 		if(!encryptionSaltWrap.alreadyInitialized) {
@@ -776,6 +1039,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		encryptionSaltWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrEncryptionSalt(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrEncryptionSalt(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqEncryptionSalt(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrEncryptionSalt(siteRequest_, SiteConfig.staticSolrEncryptionSalt(siteRequest_, SiteConfig.staticSetEncryptionSalt(siteRequest_, o)));
 	}
 
 	////////////////////////
@@ -801,10 +1076,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getEncryptionPassword() {
 		return encryptionPassword;
 	}
-
-	public void setEncryptionPassword(String encryptionPassword) {
-		this.encryptionPassword = encryptionPassword;
+	public SiteConfig setEncryptionPassword(String o) {
+		this.encryptionPassword = SiteConfig.staticSetEncryptionPassword(null, o);
 		this.encryptionPasswordWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetEncryptionPassword(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig encryptionPasswordInit() {
 		if(!encryptionPasswordWrap.alreadyInitialized) {
@@ -814,6 +1092,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		encryptionPasswordWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrEncryptionPassword(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrEncryptionPassword(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqEncryptionPassword(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrEncryptionPassword(siteRequest_, SiteConfig.staticSolrEncryptionPassword(siteRequest_, SiteConfig.staticSetEncryptionPassword(siteRequest_, o)));
 	}
 
 	/////////////////
@@ -839,10 +1129,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getSiteBaseUrl() {
 		return siteBaseUrl;
 	}
-
-	public void setSiteBaseUrl(String siteBaseUrl) {
-		this.siteBaseUrl = siteBaseUrl;
+	public SiteConfig setSiteBaseUrl(String o) {
+		this.siteBaseUrl = SiteConfig.staticSetSiteBaseUrl(null, o);
 		this.siteBaseUrlWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetSiteBaseUrl(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig siteBaseUrlInit() {
 		if(!siteBaseUrlWrap.alreadyInitialized) {
@@ -852,6 +1145,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		siteBaseUrlWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrSiteBaseUrl(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrSiteBaseUrl(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqSiteBaseUrl(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrSiteBaseUrl(siteRequest_, SiteConfig.staticSolrSiteBaseUrl(siteRequest_, SiteConfig.staticSetSiteBaseUrl(siteRequest_, o)));
 	}
 
 	/////////////////////
@@ -877,10 +1182,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getSiteDisplayName() {
 		return siteDisplayName;
 	}
-
-	public void setSiteDisplayName(String siteDisplayName) {
-		this.siteDisplayName = siteDisplayName;
+	public SiteConfig setSiteDisplayName(String o) {
+		this.siteDisplayName = SiteConfig.staticSetSiteDisplayName(null, o);
 		this.siteDisplayNameWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetSiteDisplayName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig siteDisplayNameInit() {
 		if(!siteDisplayNameWrap.alreadyInitialized) {
@@ -890,6 +1198,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		siteDisplayNameWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrSiteDisplayName(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrSiteDisplayName(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqSiteDisplayName(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrSiteDisplayName(siteRequest_, SiteConfig.staticSolrSiteDisplayName(siteRequest_, SiteConfig.staticSetSiteDisplayName(siteRequest_, o)));
 	}
 
 	/////////////////////
@@ -915,10 +1235,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getJdbcDriverClass() {
 		return jdbcDriverClass;
 	}
-
-	public void setJdbcDriverClass(String jdbcDriverClass) {
-		this.jdbcDriverClass = jdbcDriverClass;
+	public SiteConfig setJdbcDriverClass(String o) {
+		this.jdbcDriverClass = SiteConfig.staticSetJdbcDriverClass(null, o);
 		this.jdbcDriverClassWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetJdbcDriverClass(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig jdbcDriverClassInit() {
 		if(!jdbcDriverClassWrap.alreadyInitialized) {
@@ -928,6 +1251,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		jdbcDriverClassWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrJdbcDriverClass(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrJdbcDriverClass(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqJdbcDriverClass(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrJdbcDriverClass(siteRequest_, SiteConfig.staticSolrJdbcDriverClass(siteRequest_, SiteConfig.staticSetJdbcDriverClass(siteRequest_, o)));
 	}
 
 	//////////////////
@@ -953,10 +1288,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getJdbcUsername() {
 		return jdbcUsername;
 	}
-
-	public void setJdbcUsername(String jdbcUsername) {
-		this.jdbcUsername = jdbcUsername;
+	public SiteConfig setJdbcUsername(String o) {
+		this.jdbcUsername = SiteConfig.staticSetJdbcUsername(null, o);
 		this.jdbcUsernameWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetJdbcUsername(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig jdbcUsernameInit() {
 		if(!jdbcUsernameWrap.alreadyInitialized) {
@@ -966,6 +1304,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		jdbcUsernameWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrJdbcUsername(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrJdbcUsername(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqJdbcUsername(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrJdbcUsername(siteRequest_, SiteConfig.staticSolrJdbcUsername(siteRequest_, SiteConfig.staticSetJdbcUsername(siteRequest_, o)));
 	}
 
 	//////////////////
@@ -991,10 +1341,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getJdbcPassword() {
 		return jdbcPassword;
 	}
-
-	public void setJdbcPassword(String jdbcPassword) {
-		this.jdbcPassword = jdbcPassword;
+	public SiteConfig setJdbcPassword(String o) {
+		this.jdbcPassword = SiteConfig.staticSetJdbcPassword(null, o);
 		this.jdbcPasswordWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetJdbcPassword(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig jdbcPasswordInit() {
 		if(!jdbcPasswordWrap.alreadyInitialized) {
@@ -1004,6 +1357,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		jdbcPasswordWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrJdbcPassword(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrJdbcPassword(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqJdbcPassword(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrJdbcPassword(siteRequest_, SiteConfig.staticSolrJdbcPassword(siteRequest_, SiteConfig.staticSetJdbcPassword(siteRequest_, o)));
 	}
 
 	/////////////////////
@@ -1036,10 +1401,14 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.jdbcMaxPoolSizeWrap.alreadyInitialized = true;
 	}
 	public SiteConfig setJdbcMaxPoolSize(String o) {
-		if(NumberUtils.isParsable(o))
-			this.jdbcMaxPoolSize = Integer.parseInt(o);
+		this.jdbcMaxPoolSize = SiteConfig.staticSetJdbcMaxPoolSize(null, o);
 		this.jdbcMaxPoolSizeWrap.alreadyInitialized = true;
 		return (SiteConfig)this;
+	}
+	public static Integer staticSetJdbcMaxPoolSize(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected SiteConfig jdbcMaxPoolSizeInit() {
 		if(!jdbcMaxPoolSizeWrap.alreadyInitialized) {
@@ -1049,6 +1418,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		jdbcMaxPoolSizeWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrJdbcMaxPoolSize(SiteRequestEnUS siteRequest_, Integer o) {
+		return null;
+	}
+
+	public static String staticSolrStrJdbcMaxPoolSize(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqJdbcMaxPoolSize(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrJdbcMaxPoolSize(siteRequest_, SiteConfig.staticSolrJdbcMaxPoolSize(siteRequest_, SiteConfig.staticSetJdbcMaxPoolSize(siteRequest_, o)));
 	}
 
 	//////////////////////////
@@ -1081,10 +1462,14 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.jdbcMaxWaitQueueSizeWrap.alreadyInitialized = true;
 	}
 	public SiteConfig setJdbcMaxWaitQueueSize(String o) {
-		if(NumberUtils.isParsable(o))
-			this.jdbcMaxWaitQueueSize = Integer.parseInt(o);
+		this.jdbcMaxWaitQueueSize = SiteConfig.staticSetJdbcMaxWaitQueueSize(null, o);
 		this.jdbcMaxWaitQueueSizeWrap.alreadyInitialized = true;
 		return (SiteConfig)this;
+	}
+	public static Integer staticSetJdbcMaxWaitQueueSize(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected SiteConfig jdbcMaxWaitQueueSizeInit() {
 		if(!jdbcMaxWaitQueueSizeWrap.alreadyInitialized) {
@@ -1094,6 +1479,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		jdbcMaxWaitQueueSizeWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrJdbcMaxWaitQueueSize(SiteRequestEnUS siteRequest_, Integer o) {
+		return null;
+	}
+
+	public static String staticSolrStrJdbcMaxWaitQueueSize(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqJdbcMaxWaitQueueSize(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrJdbcMaxWaitQueueSize(siteRequest_, SiteConfig.staticSolrJdbcMaxWaitQueueSize(siteRequest_, SiteConfig.staticSetJdbcMaxWaitQueueSize(siteRequest_, o)));
 	}
 
 	/////////////////////
@@ -1126,10 +1523,14 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.jdbcMinPoolSizeWrap.alreadyInitialized = true;
 	}
 	public SiteConfig setJdbcMinPoolSize(String o) {
-		if(NumberUtils.isParsable(o))
-			this.jdbcMinPoolSize = Integer.parseInt(o);
+		this.jdbcMinPoolSize = SiteConfig.staticSetJdbcMinPoolSize(null, o);
 		this.jdbcMinPoolSizeWrap.alreadyInitialized = true;
 		return (SiteConfig)this;
+	}
+	public static Integer staticSetJdbcMinPoolSize(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected SiteConfig jdbcMinPoolSizeInit() {
 		if(!jdbcMinPoolSizeWrap.alreadyInitialized) {
@@ -1139,6 +1540,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		jdbcMinPoolSizeWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrJdbcMinPoolSize(SiteRequestEnUS siteRequest_, Integer o) {
+		return null;
+	}
+
+	public static String staticSolrStrJdbcMinPoolSize(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqJdbcMinPoolSize(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrJdbcMinPoolSize(siteRequest_, SiteConfig.staticSolrJdbcMinPoolSize(siteRequest_, SiteConfig.staticSetJdbcMinPoolSize(siteRequest_, o)));
 	}
 
 	///////////////////////
@@ -1171,10 +1584,14 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.jdbcMaxStatementsWrap.alreadyInitialized = true;
 	}
 	public SiteConfig setJdbcMaxStatements(String o) {
-		if(NumberUtils.isParsable(o))
-			this.jdbcMaxStatements = Integer.parseInt(o);
+		this.jdbcMaxStatements = SiteConfig.staticSetJdbcMaxStatements(null, o);
 		this.jdbcMaxStatementsWrap.alreadyInitialized = true;
 		return (SiteConfig)this;
+	}
+	public static Integer staticSetJdbcMaxStatements(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected SiteConfig jdbcMaxStatementsInit() {
 		if(!jdbcMaxStatementsWrap.alreadyInitialized) {
@@ -1184,6 +1601,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		jdbcMaxStatementsWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrJdbcMaxStatements(SiteRequestEnUS siteRequest_, Integer o) {
+		return null;
+	}
+
+	public static String staticSolrStrJdbcMaxStatements(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqJdbcMaxStatements(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrJdbcMaxStatements(siteRequest_, SiteConfig.staticSolrJdbcMaxStatements(siteRequest_, SiteConfig.staticSetJdbcMaxStatements(siteRequest_, o)));
 	}
 
 	////////////////////////////////////
@@ -1216,10 +1645,14 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.jdbcMaxStatementsPerConnectionWrap.alreadyInitialized = true;
 	}
 	public SiteConfig setJdbcMaxStatementsPerConnection(String o) {
-		if(NumberUtils.isParsable(o))
-			this.jdbcMaxStatementsPerConnection = Integer.parseInt(o);
+		this.jdbcMaxStatementsPerConnection = SiteConfig.staticSetJdbcMaxStatementsPerConnection(null, o);
 		this.jdbcMaxStatementsPerConnectionWrap.alreadyInitialized = true;
 		return (SiteConfig)this;
+	}
+	public static Integer staticSetJdbcMaxStatementsPerConnection(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected SiteConfig jdbcMaxStatementsPerConnectionInit() {
 		if(!jdbcMaxStatementsPerConnectionWrap.alreadyInitialized) {
@@ -1229,6 +1662,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		jdbcMaxStatementsPerConnectionWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrJdbcMaxStatementsPerConnection(SiteRequestEnUS siteRequest_, Integer o) {
+		return null;
+	}
+
+	public static String staticSolrStrJdbcMaxStatementsPerConnection(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqJdbcMaxStatementsPerConnection(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrJdbcMaxStatementsPerConnection(siteRequest_, SiteConfig.staticSolrJdbcMaxStatementsPerConnection(siteRequest_, SiteConfig.staticSetJdbcMaxStatementsPerConnection(siteRequest_, o)));
 	}
 
 	/////////////////////
@@ -1261,10 +1706,14 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.jdbcMaxIdleTimeWrap.alreadyInitialized = true;
 	}
 	public SiteConfig setJdbcMaxIdleTime(String o) {
-		if(NumberUtils.isParsable(o))
-			this.jdbcMaxIdleTime = Integer.parseInt(o);
+		this.jdbcMaxIdleTime = SiteConfig.staticSetJdbcMaxIdleTime(null, o);
 		this.jdbcMaxIdleTimeWrap.alreadyInitialized = true;
 		return (SiteConfig)this;
+	}
+	public static Integer staticSetJdbcMaxIdleTime(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected SiteConfig jdbcMaxIdleTimeInit() {
 		if(!jdbcMaxIdleTimeWrap.alreadyInitialized) {
@@ -1274,6 +1723,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		jdbcMaxIdleTimeWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrJdbcMaxIdleTime(SiteRequestEnUS siteRequest_, Integer o) {
+		return null;
+	}
+
+	public static String staticSolrStrJdbcMaxIdleTime(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqJdbcMaxIdleTime(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrJdbcMaxIdleTime(siteRequest_, SiteConfig.staticSolrJdbcMaxIdleTime(siteRequest_, SiteConfig.staticSetJdbcMaxIdleTime(siteRequest_, o)));
 	}
 
 	////////////////////////
@@ -1306,10 +1767,14 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.jdbcConnectTimeoutWrap.alreadyInitialized = true;
 	}
 	public SiteConfig setJdbcConnectTimeout(String o) {
-		if(NumberUtils.isParsable(o))
-			this.jdbcConnectTimeout = Integer.parseInt(o);
+		this.jdbcConnectTimeout = SiteConfig.staticSetJdbcConnectTimeout(null, o);
 		this.jdbcConnectTimeoutWrap.alreadyInitialized = true;
 		return (SiteConfig)this;
+	}
+	public static Integer staticSetJdbcConnectTimeout(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected SiteConfig jdbcConnectTimeoutInit() {
 		if(!jdbcConnectTimeoutWrap.alreadyInitialized) {
@@ -1319,6 +1784,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		jdbcConnectTimeoutWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrJdbcConnectTimeout(SiteRequestEnUS siteRequest_, Integer o) {
+		return null;
+	}
+
+	public static String staticSolrStrJdbcConnectTimeout(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqJdbcConnectTimeout(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrJdbcConnectTimeout(siteRequest_, SiteConfig.staticSolrJdbcConnectTimeout(siteRequest_, SiteConfig.staticSetJdbcConnectTimeout(siteRequest_, o)));
 	}
 
 	//////////////
@@ -1344,10 +1821,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getJdbcHost() {
 		return jdbcHost;
 	}
-
-	public void setJdbcHost(String jdbcHost) {
-		this.jdbcHost = jdbcHost;
+	public SiteConfig setJdbcHost(String o) {
+		this.jdbcHost = SiteConfig.staticSetJdbcHost(null, o);
 		this.jdbcHostWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetJdbcHost(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig jdbcHostInit() {
 		if(!jdbcHostWrap.alreadyInitialized) {
@@ -1357,6 +1837,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		jdbcHostWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrJdbcHost(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrJdbcHost(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqJdbcHost(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrJdbcHost(siteRequest_, SiteConfig.staticSolrJdbcHost(siteRequest_, SiteConfig.staticSetJdbcHost(siteRequest_, o)));
 	}
 
 	//////////////
@@ -1389,10 +1881,14 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.jdbcPortWrap.alreadyInitialized = true;
 	}
 	public SiteConfig setJdbcPort(String o) {
-		if(NumberUtils.isParsable(o))
-			this.jdbcPort = Integer.parseInt(o);
+		this.jdbcPort = SiteConfig.staticSetJdbcPort(null, o);
 		this.jdbcPortWrap.alreadyInitialized = true;
 		return (SiteConfig)this;
+	}
+	public static Integer staticSetJdbcPort(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected SiteConfig jdbcPortInit() {
 		if(!jdbcPortWrap.alreadyInitialized) {
@@ -1402,6 +1898,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		jdbcPortWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrJdbcPort(SiteRequestEnUS siteRequest_, Integer o) {
+		return null;
+	}
+
+	public static String staticSolrStrJdbcPort(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqJdbcPort(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrJdbcPort(siteRequest_, SiteConfig.staticSolrJdbcPort(siteRequest_, SiteConfig.staticSetJdbcPort(siteRequest_, o)));
 	}
 
 	//////////////////
@@ -1427,10 +1935,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getJdbcDatabase() {
 		return jdbcDatabase;
 	}
-
-	public void setJdbcDatabase(String jdbcDatabase) {
-		this.jdbcDatabase = jdbcDatabase;
+	public SiteConfig setJdbcDatabase(String o) {
+		this.jdbcDatabase = SiteConfig.staticSetJdbcDatabase(null, o);
 		this.jdbcDatabaseWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetJdbcDatabase(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig jdbcDatabaseInit() {
 		if(!jdbcDatabaseWrap.alreadyInitialized) {
@@ -1440,6 +1951,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		jdbcDatabaseWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrJdbcDatabase(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrJdbcDatabase(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqJdbcDatabase(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrJdbcDatabase(siteRequest_, SiteConfig.staticSolrJdbcDatabase(siteRequest_, SiteConfig.staticSetJdbcDatabase(siteRequest_, o)));
 	}
 
 	/////////////
@@ -1465,10 +1988,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getSolrUrl() {
 		return solrUrl;
 	}
-
-	public void setSolrUrl(String solrUrl) {
-		this.solrUrl = solrUrl;
+	public SiteConfig setSolrUrl(String o) {
+		this.solrUrl = SiteConfig.staticSetSolrUrl(null, o);
 		this.solrUrlWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetSolrUrl(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig solrUrlInit() {
 		if(!solrUrlWrap.alreadyInitialized) {
@@ -1478,6 +2004,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		solrUrlWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrSolrUrl(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrSolrUrl(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqSolrUrl(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrSolrUrl(siteRequest_, SiteConfig.staticSolrSolrUrl(siteRequest_, SiteConfig.staticSetSolrUrl(siteRequest_, o)));
 	}
 
 	//////////////////////
@@ -1503,10 +2041,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getSolrUrlComputate() {
 		return solrUrlComputate;
 	}
-
-	public void setSolrUrlComputate(String solrUrlComputate) {
-		this.solrUrlComputate = solrUrlComputate;
+	public SiteConfig setSolrUrlComputate(String o) {
+		this.solrUrlComputate = SiteConfig.staticSetSolrUrlComputate(null, o);
 		this.solrUrlComputateWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetSolrUrlComputate(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig solrUrlComputateInit() {
 		if(!solrUrlComputateWrap.alreadyInitialized) {
@@ -1516,6 +2057,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		solrUrlComputateWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrSolrUrlComputate(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrSolrUrlComputate(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqSolrUrlComputate(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrSolrUrlComputate(siteRequest_, SiteConfig.staticSolrSolrUrlComputate(siteRequest_, SiteConfig.staticSetSolrUrlComputate(siteRequest_, o)));
 	}
 
 	/////////////////////
@@ -1541,10 +2094,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAccountFacebook() {
 		return accountFacebook;
 	}
-
-	public void setAccountFacebook(String accountFacebook) {
-		this.accountFacebook = accountFacebook;
+	public SiteConfig setAccountFacebook(String o) {
+		this.accountFacebook = SiteConfig.staticSetAccountFacebook(null, o);
 		this.accountFacebookWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetAccountFacebook(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig accountFacebookInit() {
 		if(!accountFacebookWrap.alreadyInitialized) {
@@ -1554,6 +2110,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		accountFacebookWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrAccountFacebook(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrAccountFacebook(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqAccountFacebook(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrAccountFacebook(siteRequest_, SiteConfig.staticSolrAccountFacebook(siteRequest_, SiteConfig.staticSetAccountFacebook(siteRequest_, o)));
 	}
 
 	////////////////////
@@ -1579,10 +2147,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAccountTwitter() {
 		return accountTwitter;
 	}
-
-	public void setAccountTwitter(String accountTwitter) {
-		this.accountTwitter = accountTwitter;
+	public SiteConfig setAccountTwitter(String o) {
+		this.accountTwitter = SiteConfig.staticSetAccountTwitter(null, o);
 		this.accountTwitterWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetAccountTwitter(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig accountTwitterInit() {
 		if(!accountTwitterWrap.alreadyInitialized) {
@@ -1592,6 +2163,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		accountTwitterWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrAccountTwitter(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrAccountTwitter(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqAccountTwitter(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrAccountTwitter(siteRequest_, SiteConfig.staticSolrAccountTwitter(siteRequest_, SiteConfig.staticSetAccountTwitter(siteRequest_, o)));
 	}
 
 	//////////////////////
@@ -1617,10 +2200,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAccountInstagram() {
 		return accountInstagram;
 	}
-
-	public void setAccountInstagram(String accountInstagram) {
-		this.accountInstagram = accountInstagram;
+	public SiteConfig setAccountInstagram(String o) {
+		this.accountInstagram = SiteConfig.staticSetAccountInstagram(null, o);
 		this.accountInstagramWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetAccountInstagram(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig accountInstagramInit() {
 		if(!accountInstagramWrap.alreadyInitialized) {
@@ -1630,6 +2216,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		accountInstagramWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrAccountInstagram(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrAccountInstagram(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqAccountInstagram(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrAccountInstagram(siteRequest_, SiteConfig.staticSolrAccountInstagram(siteRequest_, SiteConfig.staticSetAccountInstagram(siteRequest_, o)));
 	}
 
 	////////////////////
@@ -1655,10 +2253,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAccountYoutube() {
 		return accountYoutube;
 	}
-
-	public void setAccountYoutube(String accountYoutube) {
-		this.accountYoutube = accountYoutube;
+	public SiteConfig setAccountYoutube(String o) {
+		this.accountYoutube = SiteConfig.staticSetAccountYoutube(null, o);
 		this.accountYoutubeWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetAccountYoutube(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig accountYoutubeInit() {
 		if(!accountYoutubeWrap.alreadyInitialized) {
@@ -1668,6 +2269,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		accountYoutubeWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrAccountYoutube(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrAccountYoutube(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqAccountYoutube(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrAccountYoutube(siteRequest_, SiteConfig.staticSolrAccountYoutube(siteRequest_, SiteConfig.staticSetAccountYoutube(siteRequest_, o)));
 	}
 
 	//////////////////////
@@ -1693,10 +2306,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAccountPinterest() {
 		return accountPinterest;
 	}
-
-	public void setAccountPinterest(String accountPinterest) {
-		this.accountPinterest = accountPinterest;
+	public SiteConfig setAccountPinterest(String o) {
+		this.accountPinterest = SiteConfig.staticSetAccountPinterest(null, o);
 		this.accountPinterestWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetAccountPinterest(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig accountPinterestInit() {
 		if(!accountPinterestWrap.alreadyInitialized) {
@@ -1706,6 +2322,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		accountPinterestWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrAccountPinterest(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrAccountPinterest(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqAccountPinterest(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrAccountPinterest(siteRequest_, SiteConfig.staticSolrAccountPinterest(siteRequest_, SiteConfig.staticSetAccountPinterest(siteRequest_, o)));
 	}
 
 	//////////////////
@@ -1731,10 +2359,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAccountEmail() {
 		return accountEmail;
 	}
-
-	public void setAccountEmail(String accountEmail) {
-		this.accountEmail = accountEmail;
+	public SiteConfig setAccountEmail(String o) {
+		this.accountEmail = SiteConfig.staticSetAccountEmail(null, o);
 		this.accountEmailWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetAccountEmail(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig accountEmailInit() {
 		if(!accountEmailWrap.alreadyInitialized) {
@@ -1744,6 +2375,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		accountEmailWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrAccountEmail(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrAccountEmail(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqAccountEmail(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrAccountEmail(siteRequest_, SiteConfig.staticSolrAccountEmail(siteRequest_, SiteConfig.staticSetAccountEmail(siteRequest_, o)));
 	}
 
 	///////////////
@@ -1769,10 +2412,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getRoleAdmin() {
 		return roleAdmin;
 	}
-
-	public void setRoleAdmin(String roleAdmin) {
-		this.roleAdmin = roleAdmin;
+	public SiteConfig setRoleAdmin(String o) {
+		this.roleAdmin = SiteConfig.staticSetRoleAdmin(null, o);
 		this.roleAdminWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetRoleAdmin(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig roleAdminInit() {
 		if(!roleAdminWrap.alreadyInitialized) {
@@ -1782,6 +2428,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		roleAdminWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrRoleAdmin(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrRoleAdmin(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqRoleAdmin(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrRoleAdmin(siteRequest_, SiteConfig.staticSolrRoleAdmin(siteRequest_, SiteConfig.staticSetRoleAdmin(siteRequest_, o)));
 	}
 
 	////////////////
@@ -1807,10 +2465,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getEmailAdmin() {
 		return emailAdmin;
 	}
-
-	public void setEmailAdmin(String emailAdmin) {
-		this.emailAdmin = emailAdmin;
+	public SiteConfig setEmailAdmin(String o) {
+		this.emailAdmin = SiteConfig.staticSetEmailAdmin(null, o);
 		this.emailAdminWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetEmailAdmin(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig emailAdminInit() {
 		if(!emailAdminWrap.alreadyInitialized) {
@@ -1820,6 +2481,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		emailAdminWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrEmailAdmin(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrEmailAdmin(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqEmailAdmin(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrEmailAdmin(siteRequest_, SiteConfig.staticSolrEmailAdmin(siteRequest_, SiteConfig.staticSetEmailAdmin(siteRequest_, o)));
 	}
 
 	/////////////////////
@@ -1852,10 +2525,14 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.numberExecutorsWrap.alreadyInitialized = true;
 	}
 	public SiteConfig setNumberExecutors(String o) {
-		if(NumberUtils.isParsable(o))
-			this.numberExecutors = Integer.parseInt(o);
+		this.numberExecutors = SiteConfig.staticSetNumberExecutors(null, o);
 		this.numberExecutorsWrap.alreadyInitialized = true;
 		return (SiteConfig)this;
+	}
+	public static Integer staticSetNumberExecutors(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected SiteConfig numberExecutorsInit() {
 		if(!numberExecutorsWrap.alreadyInitialized) {
@@ -1865,6 +2542,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		numberExecutorsWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrNumberExecutors(SiteRequestEnUS siteRequest_, Integer o) {
+		return null;
+	}
+
+	public static String staticSolrStrNumberExecutors(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqNumberExecutors(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrNumberExecutors(siteRequest_, SiteConfig.staticSolrNumberExecutors(siteRequest_, SiteConfig.staticSetNumberExecutors(siteRequest_, o)));
 	}
 
 	////////////////////
@@ -1890,10 +2579,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getOpenApiVersion() {
 		return openApiVersion;
 	}
-
-	public void setOpenApiVersion(String openApiVersion) {
-		this.openApiVersion = openApiVersion;
+	public SiteConfig setOpenApiVersion(String o) {
+		this.openApiVersion = SiteConfig.staticSetOpenApiVersion(null, o);
 		this.openApiVersionWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetOpenApiVersion(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig openApiVersionInit() {
 		if(!openApiVersionWrap.alreadyInitialized) {
@@ -1903,6 +2595,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		openApiVersionWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrOpenApiVersion(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrOpenApiVersion(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqOpenApiVersion(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrOpenApiVersion(siteRequest_, SiteConfig.staticSolrOpenApiVersion(siteRequest_, SiteConfig.staticSetOpenApiVersion(siteRequest_, o)));
 	}
 
 	////////////////////
@@ -1928,10 +2632,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getApiDescription() {
 		return apiDescription;
 	}
-
-	public void setApiDescription(String apiDescription) {
-		this.apiDescription = apiDescription;
+	public SiteConfig setApiDescription(String o) {
+		this.apiDescription = SiteConfig.staticSetApiDescription(null, o);
 		this.apiDescriptionWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetApiDescription(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig apiDescriptionInit() {
 		if(!apiDescriptionWrap.alreadyInitialized) {
@@ -1941,6 +2648,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		apiDescriptionWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrApiDescription(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrApiDescription(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqApiDescription(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrApiDescription(siteRequest_, SiteConfig.staticSolrApiDescription(siteRequest_, SiteConfig.staticSetApiDescription(siteRequest_, o)));
 	}
 
 	//////////////
@@ -1966,10 +2685,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getApiTitle() {
 		return apiTitle;
 	}
-
-	public void setApiTitle(String apiTitle) {
-		this.apiTitle = apiTitle;
+	public SiteConfig setApiTitle(String o) {
+		this.apiTitle = SiteConfig.staticSetApiTitle(null, o);
 		this.apiTitleWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetApiTitle(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig apiTitleInit() {
 		if(!apiTitleWrap.alreadyInitialized) {
@@ -1979,6 +2701,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		apiTitleWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrApiTitle(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrApiTitle(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqApiTitle(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrApiTitle(siteRequest_, SiteConfig.staticSolrApiTitle(siteRequest_, SiteConfig.staticSetApiTitle(siteRequest_, o)));
 	}
 
 	/////////////////////
@@ -2004,10 +2738,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getApiTermsService() {
 		return apiTermsService;
 	}
-
-	public void setApiTermsService(String apiTermsService) {
-		this.apiTermsService = apiTermsService;
+	public SiteConfig setApiTermsService(String o) {
+		this.apiTermsService = SiteConfig.staticSetApiTermsService(null, o);
 		this.apiTermsServiceWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetApiTermsService(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig apiTermsServiceInit() {
 		if(!apiTermsServiceWrap.alreadyInitialized) {
@@ -2017,6 +2754,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		apiTermsServiceWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrApiTermsService(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrApiTermsService(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqApiTermsService(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrApiTermsService(siteRequest_, SiteConfig.staticSolrApiTermsService(siteRequest_, SiteConfig.staticSetApiTermsService(siteRequest_, o)));
 	}
 
 	////////////////
@@ -2042,10 +2791,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getApiVersion() {
 		return apiVersion;
 	}
-
-	public void setApiVersion(String apiVersion) {
-		this.apiVersion = apiVersion;
+	public SiteConfig setApiVersion(String o) {
+		this.apiVersion = SiteConfig.staticSetApiVersion(null, o);
 		this.apiVersionWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetApiVersion(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig apiVersionInit() {
 		if(!apiVersionWrap.alreadyInitialized) {
@@ -2055,6 +2807,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		apiVersionWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrApiVersion(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrApiVersion(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqApiVersion(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrApiVersion(siteRequest_, SiteConfig.staticSolrApiVersion(siteRequest_, SiteConfig.staticSetApiVersion(siteRequest_, o)));
 	}
 
 	/////////////////////
@@ -2080,10 +2844,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getApiContactEmail() {
 		return apiContactEmail;
 	}
-
-	public void setApiContactEmail(String apiContactEmail) {
-		this.apiContactEmail = apiContactEmail;
+	public SiteConfig setApiContactEmail(String o) {
+		this.apiContactEmail = SiteConfig.staticSetApiContactEmail(null, o);
 		this.apiContactEmailWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetApiContactEmail(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig apiContactEmailInit() {
 		if(!apiContactEmailWrap.alreadyInitialized) {
@@ -2093,6 +2860,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		apiContactEmailWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrApiContactEmail(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrApiContactEmail(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqApiContactEmail(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrApiContactEmail(siteRequest_, SiteConfig.staticSolrApiContactEmail(siteRequest_, SiteConfig.staticSetApiContactEmail(siteRequest_, o)));
 	}
 
 	////////////////////
@@ -2118,10 +2897,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getApiLicenseName() {
 		return apiLicenseName;
 	}
-
-	public void setApiLicenseName(String apiLicenseName) {
-		this.apiLicenseName = apiLicenseName;
+	public SiteConfig setApiLicenseName(String o) {
+		this.apiLicenseName = SiteConfig.staticSetApiLicenseName(null, o);
 		this.apiLicenseNameWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetApiLicenseName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig apiLicenseNameInit() {
 		if(!apiLicenseNameWrap.alreadyInitialized) {
@@ -2131,6 +2913,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		apiLicenseNameWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrApiLicenseName(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrApiLicenseName(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqApiLicenseName(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrApiLicenseName(siteRequest_, SiteConfig.staticSolrApiLicenseName(siteRequest_, SiteConfig.staticSetApiLicenseName(siteRequest_, o)));
 	}
 
 	///////////////////
@@ -2156,10 +2950,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getApiLicenseUrl() {
 		return apiLicenseUrl;
 	}
-
-	public void setApiLicenseUrl(String apiLicenseUrl) {
-		this.apiLicenseUrl = apiLicenseUrl;
+	public SiteConfig setApiLicenseUrl(String o) {
+		this.apiLicenseUrl = SiteConfig.staticSetApiLicenseUrl(null, o);
 		this.apiLicenseUrlWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetApiLicenseUrl(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig apiLicenseUrlInit() {
 		if(!apiLicenseUrlWrap.alreadyInitialized) {
@@ -2169,6 +2966,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		apiLicenseUrlWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrApiLicenseUrl(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrApiLicenseUrl(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqApiLicenseUrl(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrApiLicenseUrl(siteRequest_, SiteConfig.staticSolrApiLicenseUrl(siteRequest_, SiteConfig.staticSetApiLicenseUrl(siteRequest_, o)));
 	}
 
 	/////////////////
@@ -2194,10 +3003,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getApiHostName() {
 		return apiHostName;
 	}
-
-	public void setApiHostName(String apiHostName) {
-		this.apiHostName = apiHostName;
+	public SiteConfig setApiHostName(String o) {
+		this.apiHostName = SiteConfig.staticSetApiHostName(null, o);
 		this.apiHostNameWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetApiHostName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig apiHostNameInit() {
 		if(!apiHostNameWrap.alreadyInitialized) {
@@ -2207,6 +3019,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		apiHostNameWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrApiHostName(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrApiHostName(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqApiHostName(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrApiHostName(siteRequest_, SiteConfig.staticSolrApiHostName(siteRequest_, SiteConfig.staticSetApiHostName(siteRequest_, o)));
 	}
 
 	/////////////////
@@ -2232,10 +3056,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getApiBasePath() {
 		return apiBasePath;
 	}
-
-	public void setApiBasePath(String apiBasePath) {
-		this.apiBasePath = apiBasePath;
+	public SiteConfig setApiBasePath(String o) {
+		this.apiBasePath = SiteConfig.staticSetApiBasePath(null, o);
 		this.apiBasePathWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetApiBasePath(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig apiBasePathInit() {
 		if(!apiBasePathWrap.alreadyInitialized) {
@@ -2245,6 +3072,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		apiBasePathWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrApiBasePath(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrApiBasePath(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqApiBasePath(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrApiBasePath(siteRequest_, SiteConfig.staticSolrApiBasePath(siteRequest_, SiteConfig.staticSetApiBasePath(siteRequest_, o)));
 	}
 
 	///////////////////
@@ -2270,10 +3109,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getStaticBaseUrl() {
 		return staticBaseUrl;
 	}
-
-	public void setStaticBaseUrl(String staticBaseUrl) {
-		this.staticBaseUrl = staticBaseUrl;
+	public SiteConfig setStaticBaseUrl(String o) {
+		this.staticBaseUrl = SiteConfig.staticSetStaticBaseUrl(null, o);
 		this.staticBaseUrlWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetStaticBaseUrl(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig staticBaseUrlInit() {
 		if(!staticBaseUrlWrap.alreadyInitialized) {
@@ -2283,6 +3125,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		staticBaseUrlWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrStaticBaseUrl(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrStaticBaseUrl(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqStaticBaseUrl(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrStaticBaseUrl(siteRequest_, SiteConfig.staticSolrStaticBaseUrl(siteRequest_, SiteConfig.staticSetStaticBaseUrl(siteRequest_, o)));
 	}
 
 	///////////////
@@ -2308,10 +3162,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getEmailHost() {
 		return emailHost;
 	}
-
-	public void setEmailHost(String emailHost) {
-		this.emailHost = emailHost;
+	public SiteConfig setEmailHost(String o) {
+		this.emailHost = SiteConfig.staticSetEmailHost(null, o);
 		this.emailHostWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetEmailHost(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig emailHostInit() {
 		if(!emailHostWrap.alreadyInitialized) {
@@ -2321,6 +3178,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		emailHostWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrEmailHost(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrEmailHost(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqEmailHost(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrEmailHost(siteRequest_, SiteConfig.staticSolrEmailHost(siteRequest_, SiteConfig.staticSetEmailHost(siteRequest_, o)));
 	}
 
 	///////////////
@@ -2353,10 +3222,14 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.emailPortWrap.alreadyInitialized = true;
 	}
 	public SiteConfig setEmailPort(String o) {
-		if(NumberUtils.isParsable(o))
-			this.emailPort = Integer.parseInt(o);
+		this.emailPort = SiteConfig.staticSetEmailPort(null, o);
 		this.emailPortWrap.alreadyInitialized = true;
 		return (SiteConfig)this;
+	}
+	public static Integer staticSetEmailPort(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected SiteConfig emailPortInit() {
 		if(!emailPortWrap.alreadyInitialized) {
@@ -2366,6 +3239,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		emailPortWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrEmailPort(SiteRequestEnUS siteRequest_, Integer o) {
+		return null;
+	}
+
+	public static String staticSolrStrEmailPort(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqEmailPort(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrEmailPort(siteRequest_, SiteConfig.staticSolrEmailPort(siteRequest_, SiteConfig.staticSetEmailPort(siteRequest_, o)));
 	}
 
 	///////////////////
@@ -2391,10 +3276,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getEmailUsername() {
 		return emailUsername;
 	}
-
-	public void setEmailUsername(String emailUsername) {
-		this.emailUsername = emailUsername;
+	public SiteConfig setEmailUsername(String o) {
+		this.emailUsername = SiteConfig.staticSetEmailUsername(null, o);
 		this.emailUsernameWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetEmailUsername(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig emailUsernameInit() {
 		if(!emailUsernameWrap.alreadyInitialized) {
@@ -2404,6 +3292,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		emailUsernameWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrEmailUsername(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrEmailUsername(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqEmailUsername(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrEmailUsername(siteRequest_, SiteConfig.staticSolrEmailUsername(siteRequest_, SiteConfig.staticSetEmailUsername(siteRequest_, o)));
 	}
 
 	///////////////////
@@ -2429,10 +3329,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getEmailPassword() {
 		return emailPassword;
 	}
-
-	public void setEmailPassword(String emailPassword) {
-		this.emailPassword = emailPassword;
+	public SiteConfig setEmailPassword(String o) {
+		this.emailPassword = SiteConfig.staticSetEmailPassword(null, o);
 		this.emailPasswordWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetEmailPassword(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig emailPasswordInit() {
 		if(!emailPasswordWrap.alreadyInitialized) {
@@ -2442,6 +3345,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		emailPasswordWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrEmailPassword(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrEmailPassword(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqEmailPassword(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrEmailPassword(siteRequest_, SiteConfig.staticSolrEmailPassword(siteRequest_, SiteConfig.staticSetEmailPassword(siteRequest_, o)));
 	}
 
 	///////////////
@@ -2467,10 +3382,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getEmailFrom() {
 		return emailFrom;
 	}
-
-	public void setEmailFrom(String emailFrom) {
-		this.emailFrom = emailFrom;
+	public SiteConfig setEmailFrom(String o) {
+		this.emailFrom = SiteConfig.staticSetEmailFrom(null, o);
 		this.emailFromWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetEmailFrom(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig emailFromInit() {
 		if(!emailFromWrap.alreadyInitialized) {
@@ -2480,6 +3398,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		emailFromWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrEmailFrom(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrEmailFrom(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqEmailFrom(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrEmailFrom(siteRequest_, SiteConfig.staticSolrEmailFrom(siteRequest_, SiteConfig.staticSetEmailFrom(siteRequest_, o)));
 	}
 
 	///////////////
@@ -2511,9 +3441,12 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.emailAuthWrap.alreadyInitialized = true;
 	}
 	public SiteConfig setEmailAuth(String o) {
-		this.emailAuth = Boolean.parseBoolean(o);
+		this.emailAuth = SiteConfig.staticSetEmailAuth(null, o);
 		this.emailAuthWrap.alreadyInitialized = true;
 		return (SiteConfig)this;
+	}
+	public static Boolean staticSetEmailAuth(SiteRequestEnUS siteRequest_, String o) {
+		return Boolean.parseBoolean(o);
 	}
 	protected SiteConfig emailAuthInit() {
 		if(!emailAuthWrap.alreadyInitialized) {
@@ -2523,6 +3456,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		emailAuthWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrEmailAuth(SiteRequestEnUS siteRequest_, Boolean o) {
+		return null;
+	}
+
+	public static String staticSolrStrEmailAuth(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqEmailAuth(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrEmailAuth(siteRequest_, SiteConfig.staticSolrEmailAuth(siteRequest_, SiteConfig.staticSetEmailAuth(siteRequest_, o)));
 	}
 
 	//////////////
@@ -2554,9 +3499,12 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.emailSslWrap.alreadyInitialized = true;
 	}
 	public SiteConfig setEmailSsl(String o) {
-		this.emailSsl = Boolean.parseBoolean(o);
+		this.emailSsl = SiteConfig.staticSetEmailSsl(null, o);
 		this.emailSslWrap.alreadyInitialized = true;
 		return (SiteConfig)this;
+	}
+	public static Boolean staticSetEmailSsl(SiteRequestEnUS siteRequest_, String o) {
+		return Boolean.parseBoolean(o);
 	}
 	protected SiteConfig emailSslInit() {
 		if(!emailSslWrap.alreadyInitialized) {
@@ -2566,6 +3514,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		emailSslWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrEmailSsl(SiteRequestEnUS siteRequest_, Boolean o) {
+		return null;
+	}
+
+	public static String staticSolrStrEmailSsl(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqEmailSsl(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrEmailSsl(siteRequest_, SiteConfig.staticSolrEmailSsl(siteRequest_, SiteConfig.staticSetEmailSsl(siteRequest_, o)));
 	}
 
 	//////////////
@@ -2591,10 +3551,13 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getSiteZone() {
 		return siteZone;
 	}
-
-	public void setSiteZone(String siteZone) {
-		this.siteZone = siteZone;
+	public SiteConfig setSiteZone(String o) {
+		this.siteZone = SiteConfig.staticSetSiteZone(null, o);
 		this.siteZoneWrap.alreadyInitialized = true;
+		return (SiteConfig)this;
+	}
+	public static String staticSetSiteZone(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteConfig siteZoneInit() {
 		if(!siteZoneWrap.alreadyInitialized) {
@@ -2604,6 +3567,18 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		}
 		siteZoneWrap.alreadyInitialized(true);
 		return (SiteConfig)this;
+	}
+
+	public static Object staticSolrSiteZone(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+
+	public static String staticSolrStrSiteZone(SiteRequestEnUS siteRequest_, Object o) {
+		return null;
+	}
+
+	public static String staticSolrFqSiteZone(SiteRequestEnUS siteRequest_, String o) {
+		return SiteConfig.staticSolrStrSiteZone(siteRequest_, SiteConfig.staticSolrSiteZone(siteRequest_, SiteConfig.staticSetSiteZone(siteRequest_, o)));
 	}
 
 	//////////////
@@ -2871,6 +3846,574 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public Object attributeSiteConfig(String var, Object val) {
 		SiteConfig oSiteConfig = (SiteConfig)this;
 		switch(var) {
+			default:
+				return null;
+		}
+	}
+
+	///////////////
+	// staticSet //
+	///////////////
+
+	public static Object staticSetForClass(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		return staticSetSiteConfig(entityVar,  siteRequest_, o);
+	}
+	public static Object staticSetSiteConfig(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		switch(entityVar) {
+		case "configPath":
+			return SiteConfig.staticSetConfigPath(siteRequest_, o);
+		case "siteIdentifier":
+			return SiteConfig.staticSetSiteIdentifier(siteRequest_, o);
+		case "prefixEscaped":
+			return SiteConfig.staticSetPrefixEscaped(siteRequest_, o);
+		case "appPath":
+			return SiteConfig.staticSetAppPath(siteRequest_, o);
+		case "docRoot":
+			return SiteConfig.staticSetDocRoot(siteRequest_, o);
+		case "companyName":
+			return SiteConfig.staticSetCompanyName(siteRequest_, o);
+		case "domainName":
+			return SiteConfig.staticSetDomainName(siteRequest_, o);
+		case "siteHostName":
+			return SiteConfig.staticSetSiteHostName(siteRequest_, o);
+		case "sitePort":
+			return SiteConfig.staticSetSitePort(siteRequest_, o);
+		case "siteInstances":
+			return SiteConfig.staticSetSiteInstances(siteRequest_, o);
+		case "authRealm":
+			return SiteConfig.staticSetAuthRealm(siteRequest_, o);
+		case "authResource":
+			return SiteConfig.staticSetAuthResource(siteRequest_, o);
+		case "authSecret":
+			return SiteConfig.staticSetAuthSecret(siteRequest_, o);
+		case "authSslRequired":
+			return SiteConfig.staticSetAuthSslRequired(siteRequest_, o);
+		case "sslJksPath":
+			return SiteConfig.staticSetSslJksPath(siteRequest_, o);
+		case "sslJksPassword":
+			return SiteConfig.staticSetSslJksPassword(siteRequest_, o);
+		case "authUrl":
+			return SiteConfig.staticSetAuthUrl(siteRequest_, o);
+		case "encryptionSalt":
+			return SiteConfig.staticSetEncryptionSalt(siteRequest_, o);
+		case "encryptionPassword":
+			return SiteConfig.staticSetEncryptionPassword(siteRequest_, o);
+		case "siteBaseUrl":
+			return SiteConfig.staticSetSiteBaseUrl(siteRequest_, o);
+		case "siteDisplayName":
+			return SiteConfig.staticSetSiteDisplayName(siteRequest_, o);
+		case "jdbcDriverClass":
+			return SiteConfig.staticSetJdbcDriverClass(siteRequest_, o);
+		case "jdbcUsername":
+			return SiteConfig.staticSetJdbcUsername(siteRequest_, o);
+		case "jdbcPassword":
+			return SiteConfig.staticSetJdbcPassword(siteRequest_, o);
+		case "jdbcMaxPoolSize":
+			return SiteConfig.staticSetJdbcMaxPoolSize(siteRequest_, o);
+		case "jdbcMaxWaitQueueSize":
+			return SiteConfig.staticSetJdbcMaxWaitQueueSize(siteRequest_, o);
+		case "jdbcMinPoolSize":
+			return SiteConfig.staticSetJdbcMinPoolSize(siteRequest_, o);
+		case "jdbcMaxStatements":
+			return SiteConfig.staticSetJdbcMaxStatements(siteRequest_, o);
+		case "jdbcMaxStatementsPerConnection":
+			return SiteConfig.staticSetJdbcMaxStatementsPerConnection(siteRequest_, o);
+		case "jdbcMaxIdleTime":
+			return SiteConfig.staticSetJdbcMaxIdleTime(siteRequest_, o);
+		case "jdbcConnectTimeout":
+			return SiteConfig.staticSetJdbcConnectTimeout(siteRequest_, o);
+		case "jdbcHost":
+			return SiteConfig.staticSetJdbcHost(siteRequest_, o);
+		case "jdbcPort":
+			return SiteConfig.staticSetJdbcPort(siteRequest_, o);
+		case "jdbcDatabase":
+			return SiteConfig.staticSetJdbcDatabase(siteRequest_, o);
+		case "solrUrl":
+			return SiteConfig.staticSetSolrUrl(siteRequest_, o);
+		case "solrUrlComputate":
+			return SiteConfig.staticSetSolrUrlComputate(siteRequest_, o);
+		case "accountFacebook":
+			return SiteConfig.staticSetAccountFacebook(siteRequest_, o);
+		case "accountTwitter":
+			return SiteConfig.staticSetAccountTwitter(siteRequest_, o);
+		case "accountInstagram":
+			return SiteConfig.staticSetAccountInstagram(siteRequest_, o);
+		case "accountYoutube":
+			return SiteConfig.staticSetAccountYoutube(siteRequest_, o);
+		case "accountPinterest":
+			return SiteConfig.staticSetAccountPinterest(siteRequest_, o);
+		case "accountEmail":
+			return SiteConfig.staticSetAccountEmail(siteRequest_, o);
+		case "roleAdmin":
+			return SiteConfig.staticSetRoleAdmin(siteRequest_, o);
+		case "emailAdmin":
+			return SiteConfig.staticSetEmailAdmin(siteRequest_, o);
+		case "numberExecutors":
+			return SiteConfig.staticSetNumberExecutors(siteRequest_, o);
+		case "openApiVersion":
+			return SiteConfig.staticSetOpenApiVersion(siteRequest_, o);
+		case "apiDescription":
+			return SiteConfig.staticSetApiDescription(siteRequest_, o);
+		case "apiTitle":
+			return SiteConfig.staticSetApiTitle(siteRequest_, o);
+		case "apiTermsService":
+			return SiteConfig.staticSetApiTermsService(siteRequest_, o);
+		case "apiVersion":
+			return SiteConfig.staticSetApiVersion(siteRequest_, o);
+		case "apiContactEmail":
+			return SiteConfig.staticSetApiContactEmail(siteRequest_, o);
+		case "apiLicenseName":
+			return SiteConfig.staticSetApiLicenseName(siteRequest_, o);
+		case "apiLicenseUrl":
+			return SiteConfig.staticSetApiLicenseUrl(siteRequest_, o);
+		case "apiHostName":
+			return SiteConfig.staticSetApiHostName(siteRequest_, o);
+		case "apiBasePath":
+			return SiteConfig.staticSetApiBasePath(siteRequest_, o);
+		case "staticBaseUrl":
+			return SiteConfig.staticSetStaticBaseUrl(siteRequest_, o);
+		case "emailHost":
+			return SiteConfig.staticSetEmailHost(siteRequest_, o);
+		case "emailPort":
+			return SiteConfig.staticSetEmailPort(siteRequest_, o);
+		case "emailUsername":
+			return SiteConfig.staticSetEmailUsername(siteRequest_, o);
+		case "emailPassword":
+			return SiteConfig.staticSetEmailPassword(siteRequest_, o);
+		case "emailFrom":
+			return SiteConfig.staticSetEmailFrom(siteRequest_, o);
+		case "emailAuth":
+			return SiteConfig.staticSetEmailAuth(siteRequest_, o);
+		case "emailSsl":
+			return SiteConfig.staticSetEmailSsl(siteRequest_, o);
+		case "siteZone":
+			return SiteConfig.staticSetSiteZone(siteRequest_, o);
+			default:
+				return null;
+		}
+	}
+
+	////////////////
+	// staticSolr //
+	////////////////
+
+	public static Object staticSolrForClass(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		return staticSolrSiteConfig(entityVar,  siteRequest_, o);
+	}
+	public static Object staticSolrSiteConfig(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		switch(entityVar) {
+		case "configPath":
+			return SiteConfig.staticSolrConfigPath(siteRequest_, (String)o);
+		case "siteIdentifier":
+			return SiteConfig.staticSolrSiteIdentifier(siteRequest_, (String)o);
+		case "prefixEscaped":
+			return SiteConfig.staticSolrPrefixEscaped(siteRequest_, (String)o);
+		case "appPath":
+			return SiteConfig.staticSolrAppPath(siteRequest_, (String)o);
+		case "docRoot":
+			return SiteConfig.staticSolrDocRoot(siteRequest_, (String)o);
+		case "companyName":
+			return SiteConfig.staticSolrCompanyName(siteRequest_, (String)o);
+		case "domainName":
+			return SiteConfig.staticSolrDomainName(siteRequest_, (String)o);
+		case "siteHostName":
+			return SiteConfig.staticSolrSiteHostName(siteRequest_, (String)o);
+		case "sitePort":
+			return SiteConfig.staticSolrSitePort(siteRequest_, (Integer)o);
+		case "siteInstances":
+			return SiteConfig.staticSolrSiteInstances(siteRequest_, (Integer)o);
+		case "authRealm":
+			return SiteConfig.staticSolrAuthRealm(siteRequest_, (String)o);
+		case "authResource":
+			return SiteConfig.staticSolrAuthResource(siteRequest_, (String)o);
+		case "authSecret":
+			return SiteConfig.staticSolrAuthSecret(siteRequest_, (String)o);
+		case "authSslRequired":
+			return SiteConfig.staticSolrAuthSslRequired(siteRequest_, (String)o);
+		case "sslJksPath":
+			return SiteConfig.staticSolrSslJksPath(siteRequest_, (String)o);
+		case "sslJksPassword":
+			return SiteConfig.staticSolrSslJksPassword(siteRequest_, (String)o);
+		case "authUrl":
+			return SiteConfig.staticSolrAuthUrl(siteRequest_, (String)o);
+		case "encryptionSalt":
+			return SiteConfig.staticSolrEncryptionSalt(siteRequest_, (String)o);
+		case "encryptionPassword":
+			return SiteConfig.staticSolrEncryptionPassword(siteRequest_, (String)o);
+		case "siteBaseUrl":
+			return SiteConfig.staticSolrSiteBaseUrl(siteRequest_, (String)o);
+		case "siteDisplayName":
+			return SiteConfig.staticSolrSiteDisplayName(siteRequest_, (String)o);
+		case "jdbcDriverClass":
+			return SiteConfig.staticSolrJdbcDriverClass(siteRequest_, (String)o);
+		case "jdbcUsername":
+			return SiteConfig.staticSolrJdbcUsername(siteRequest_, (String)o);
+		case "jdbcPassword":
+			return SiteConfig.staticSolrJdbcPassword(siteRequest_, (String)o);
+		case "jdbcMaxPoolSize":
+			return SiteConfig.staticSolrJdbcMaxPoolSize(siteRequest_, (Integer)o);
+		case "jdbcMaxWaitQueueSize":
+			return SiteConfig.staticSolrJdbcMaxWaitQueueSize(siteRequest_, (Integer)o);
+		case "jdbcMinPoolSize":
+			return SiteConfig.staticSolrJdbcMinPoolSize(siteRequest_, (Integer)o);
+		case "jdbcMaxStatements":
+			return SiteConfig.staticSolrJdbcMaxStatements(siteRequest_, (Integer)o);
+		case "jdbcMaxStatementsPerConnection":
+			return SiteConfig.staticSolrJdbcMaxStatementsPerConnection(siteRequest_, (Integer)o);
+		case "jdbcMaxIdleTime":
+			return SiteConfig.staticSolrJdbcMaxIdleTime(siteRequest_, (Integer)o);
+		case "jdbcConnectTimeout":
+			return SiteConfig.staticSolrJdbcConnectTimeout(siteRequest_, (Integer)o);
+		case "jdbcHost":
+			return SiteConfig.staticSolrJdbcHost(siteRequest_, (String)o);
+		case "jdbcPort":
+			return SiteConfig.staticSolrJdbcPort(siteRequest_, (Integer)o);
+		case "jdbcDatabase":
+			return SiteConfig.staticSolrJdbcDatabase(siteRequest_, (String)o);
+		case "solrUrl":
+			return SiteConfig.staticSolrSolrUrl(siteRequest_, (String)o);
+		case "solrUrlComputate":
+			return SiteConfig.staticSolrSolrUrlComputate(siteRequest_, (String)o);
+		case "accountFacebook":
+			return SiteConfig.staticSolrAccountFacebook(siteRequest_, (String)o);
+		case "accountTwitter":
+			return SiteConfig.staticSolrAccountTwitter(siteRequest_, (String)o);
+		case "accountInstagram":
+			return SiteConfig.staticSolrAccountInstagram(siteRequest_, (String)o);
+		case "accountYoutube":
+			return SiteConfig.staticSolrAccountYoutube(siteRequest_, (String)o);
+		case "accountPinterest":
+			return SiteConfig.staticSolrAccountPinterest(siteRequest_, (String)o);
+		case "accountEmail":
+			return SiteConfig.staticSolrAccountEmail(siteRequest_, (String)o);
+		case "roleAdmin":
+			return SiteConfig.staticSolrRoleAdmin(siteRequest_, (String)o);
+		case "emailAdmin":
+			return SiteConfig.staticSolrEmailAdmin(siteRequest_, (String)o);
+		case "numberExecutors":
+			return SiteConfig.staticSolrNumberExecutors(siteRequest_, (Integer)o);
+		case "openApiVersion":
+			return SiteConfig.staticSolrOpenApiVersion(siteRequest_, (String)o);
+		case "apiDescription":
+			return SiteConfig.staticSolrApiDescription(siteRequest_, (String)o);
+		case "apiTitle":
+			return SiteConfig.staticSolrApiTitle(siteRequest_, (String)o);
+		case "apiTermsService":
+			return SiteConfig.staticSolrApiTermsService(siteRequest_, (String)o);
+		case "apiVersion":
+			return SiteConfig.staticSolrApiVersion(siteRequest_, (String)o);
+		case "apiContactEmail":
+			return SiteConfig.staticSolrApiContactEmail(siteRequest_, (String)o);
+		case "apiLicenseName":
+			return SiteConfig.staticSolrApiLicenseName(siteRequest_, (String)o);
+		case "apiLicenseUrl":
+			return SiteConfig.staticSolrApiLicenseUrl(siteRequest_, (String)o);
+		case "apiHostName":
+			return SiteConfig.staticSolrApiHostName(siteRequest_, (String)o);
+		case "apiBasePath":
+			return SiteConfig.staticSolrApiBasePath(siteRequest_, (String)o);
+		case "staticBaseUrl":
+			return SiteConfig.staticSolrStaticBaseUrl(siteRequest_, (String)o);
+		case "emailHost":
+			return SiteConfig.staticSolrEmailHost(siteRequest_, (String)o);
+		case "emailPort":
+			return SiteConfig.staticSolrEmailPort(siteRequest_, (Integer)o);
+		case "emailUsername":
+			return SiteConfig.staticSolrEmailUsername(siteRequest_, (String)o);
+		case "emailPassword":
+			return SiteConfig.staticSolrEmailPassword(siteRequest_, (String)o);
+		case "emailFrom":
+			return SiteConfig.staticSolrEmailFrom(siteRequest_, (String)o);
+		case "emailAuth":
+			return SiteConfig.staticSolrEmailAuth(siteRequest_, (Boolean)o);
+		case "emailSsl":
+			return SiteConfig.staticSolrEmailSsl(siteRequest_, (Boolean)o);
+		case "siteZone":
+			return SiteConfig.staticSolrSiteZone(siteRequest_, (String)o);
+			default:
+				return null;
+		}
+	}
+
+	///////////////////
+	// staticSolrStr //
+	///////////////////
+
+	public static String staticSolrStrForClass(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		return staticSolrStrSiteConfig(entityVar,  siteRequest_, o);
+	}
+	public static String staticSolrStrSiteConfig(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		switch(entityVar) {
+		case "configPath":
+			return SiteConfig.staticSolrStrConfigPath(siteRequest_, (String)o);
+		case "siteIdentifier":
+			return SiteConfig.staticSolrStrSiteIdentifier(siteRequest_, (String)o);
+		case "prefixEscaped":
+			return SiteConfig.staticSolrStrPrefixEscaped(siteRequest_, (String)o);
+		case "appPath":
+			return SiteConfig.staticSolrStrAppPath(siteRequest_, (String)o);
+		case "docRoot":
+			return SiteConfig.staticSolrStrDocRoot(siteRequest_, (String)o);
+		case "companyName":
+			return SiteConfig.staticSolrStrCompanyName(siteRequest_, (String)o);
+		case "domainName":
+			return SiteConfig.staticSolrStrDomainName(siteRequest_, (String)o);
+		case "siteHostName":
+			return SiteConfig.staticSolrStrSiteHostName(siteRequest_, (String)o);
+		case "sitePort":
+			return SiteConfig.staticSolrStrSitePort(siteRequest_, (Integer)o);
+		case "siteInstances":
+			return SiteConfig.staticSolrStrSiteInstances(siteRequest_, (Integer)o);
+		case "authRealm":
+			return SiteConfig.staticSolrStrAuthRealm(siteRequest_, (String)o);
+		case "authResource":
+			return SiteConfig.staticSolrStrAuthResource(siteRequest_, (String)o);
+		case "authSecret":
+			return SiteConfig.staticSolrStrAuthSecret(siteRequest_, (String)o);
+		case "authSslRequired":
+			return SiteConfig.staticSolrStrAuthSslRequired(siteRequest_, (String)o);
+		case "sslJksPath":
+			return SiteConfig.staticSolrStrSslJksPath(siteRequest_, (String)o);
+		case "sslJksPassword":
+			return SiteConfig.staticSolrStrSslJksPassword(siteRequest_, (String)o);
+		case "authUrl":
+			return SiteConfig.staticSolrStrAuthUrl(siteRequest_, (String)o);
+		case "encryptionSalt":
+			return SiteConfig.staticSolrStrEncryptionSalt(siteRequest_, (String)o);
+		case "encryptionPassword":
+			return SiteConfig.staticSolrStrEncryptionPassword(siteRequest_, (String)o);
+		case "siteBaseUrl":
+			return SiteConfig.staticSolrStrSiteBaseUrl(siteRequest_, (String)o);
+		case "siteDisplayName":
+			return SiteConfig.staticSolrStrSiteDisplayName(siteRequest_, (String)o);
+		case "jdbcDriverClass":
+			return SiteConfig.staticSolrStrJdbcDriverClass(siteRequest_, (String)o);
+		case "jdbcUsername":
+			return SiteConfig.staticSolrStrJdbcUsername(siteRequest_, (String)o);
+		case "jdbcPassword":
+			return SiteConfig.staticSolrStrJdbcPassword(siteRequest_, (String)o);
+		case "jdbcMaxPoolSize":
+			return SiteConfig.staticSolrStrJdbcMaxPoolSize(siteRequest_, (Integer)o);
+		case "jdbcMaxWaitQueueSize":
+			return SiteConfig.staticSolrStrJdbcMaxWaitQueueSize(siteRequest_, (Integer)o);
+		case "jdbcMinPoolSize":
+			return SiteConfig.staticSolrStrJdbcMinPoolSize(siteRequest_, (Integer)o);
+		case "jdbcMaxStatements":
+			return SiteConfig.staticSolrStrJdbcMaxStatements(siteRequest_, (Integer)o);
+		case "jdbcMaxStatementsPerConnection":
+			return SiteConfig.staticSolrStrJdbcMaxStatementsPerConnection(siteRequest_, (Integer)o);
+		case "jdbcMaxIdleTime":
+			return SiteConfig.staticSolrStrJdbcMaxIdleTime(siteRequest_, (Integer)o);
+		case "jdbcConnectTimeout":
+			return SiteConfig.staticSolrStrJdbcConnectTimeout(siteRequest_, (Integer)o);
+		case "jdbcHost":
+			return SiteConfig.staticSolrStrJdbcHost(siteRequest_, (String)o);
+		case "jdbcPort":
+			return SiteConfig.staticSolrStrJdbcPort(siteRequest_, (Integer)o);
+		case "jdbcDatabase":
+			return SiteConfig.staticSolrStrJdbcDatabase(siteRequest_, (String)o);
+		case "solrUrl":
+			return SiteConfig.staticSolrStrSolrUrl(siteRequest_, (String)o);
+		case "solrUrlComputate":
+			return SiteConfig.staticSolrStrSolrUrlComputate(siteRequest_, (String)o);
+		case "accountFacebook":
+			return SiteConfig.staticSolrStrAccountFacebook(siteRequest_, (String)o);
+		case "accountTwitter":
+			return SiteConfig.staticSolrStrAccountTwitter(siteRequest_, (String)o);
+		case "accountInstagram":
+			return SiteConfig.staticSolrStrAccountInstagram(siteRequest_, (String)o);
+		case "accountYoutube":
+			return SiteConfig.staticSolrStrAccountYoutube(siteRequest_, (String)o);
+		case "accountPinterest":
+			return SiteConfig.staticSolrStrAccountPinterest(siteRequest_, (String)o);
+		case "accountEmail":
+			return SiteConfig.staticSolrStrAccountEmail(siteRequest_, (String)o);
+		case "roleAdmin":
+			return SiteConfig.staticSolrStrRoleAdmin(siteRequest_, (String)o);
+		case "emailAdmin":
+			return SiteConfig.staticSolrStrEmailAdmin(siteRequest_, (String)o);
+		case "numberExecutors":
+			return SiteConfig.staticSolrStrNumberExecutors(siteRequest_, (Integer)o);
+		case "openApiVersion":
+			return SiteConfig.staticSolrStrOpenApiVersion(siteRequest_, (String)o);
+		case "apiDescription":
+			return SiteConfig.staticSolrStrApiDescription(siteRequest_, (String)o);
+		case "apiTitle":
+			return SiteConfig.staticSolrStrApiTitle(siteRequest_, (String)o);
+		case "apiTermsService":
+			return SiteConfig.staticSolrStrApiTermsService(siteRequest_, (String)o);
+		case "apiVersion":
+			return SiteConfig.staticSolrStrApiVersion(siteRequest_, (String)o);
+		case "apiContactEmail":
+			return SiteConfig.staticSolrStrApiContactEmail(siteRequest_, (String)o);
+		case "apiLicenseName":
+			return SiteConfig.staticSolrStrApiLicenseName(siteRequest_, (String)o);
+		case "apiLicenseUrl":
+			return SiteConfig.staticSolrStrApiLicenseUrl(siteRequest_, (String)o);
+		case "apiHostName":
+			return SiteConfig.staticSolrStrApiHostName(siteRequest_, (String)o);
+		case "apiBasePath":
+			return SiteConfig.staticSolrStrApiBasePath(siteRequest_, (String)o);
+		case "staticBaseUrl":
+			return SiteConfig.staticSolrStrStaticBaseUrl(siteRequest_, (String)o);
+		case "emailHost":
+			return SiteConfig.staticSolrStrEmailHost(siteRequest_, (String)o);
+		case "emailPort":
+			return SiteConfig.staticSolrStrEmailPort(siteRequest_, (Integer)o);
+		case "emailUsername":
+			return SiteConfig.staticSolrStrEmailUsername(siteRequest_, (String)o);
+		case "emailPassword":
+			return SiteConfig.staticSolrStrEmailPassword(siteRequest_, (String)o);
+		case "emailFrom":
+			return SiteConfig.staticSolrStrEmailFrom(siteRequest_, (String)o);
+		case "emailAuth":
+			return SiteConfig.staticSolrStrEmailAuth(siteRequest_, (Boolean)o);
+		case "emailSsl":
+			return SiteConfig.staticSolrStrEmailSsl(siteRequest_, (Boolean)o);
+		case "siteZone":
+			return SiteConfig.staticSolrStrSiteZone(siteRequest_, (String)o);
+			default:
+				return null;
+		}
+	}
+
+	//////////////////
+	// staticSolrFq //
+	//////////////////
+
+	public static String staticSolrFqForClass(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		return staticSolrFqSiteConfig(entityVar,  siteRequest_, o);
+	}
+	public static String staticSolrFqSiteConfig(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		switch(entityVar) {
+		case "configPath":
+			return SiteConfig.staticSolrFqConfigPath(siteRequest_, o);
+		case "siteIdentifier":
+			return SiteConfig.staticSolrFqSiteIdentifier(siteRequest_, o);
+		case "prefixEscaped":
+			return SiteConfig.staticSolrFqPrefixEscaped(siteRequest_, o);
+		case "appPath":
+			return SiteConfig.staticSolrFqAppPath(siteRequest_, o);
+		case "docRoot":
+			return SiteConfig.staticSolrFqDocRoot(siteRequest_, o);
+		case "companyName":
+			return SiteConfig.staticSolrFqCompanyName(siteRequest_, o);
+		case "domainName":
+			return SiteConfig.staticSolrFqDomainName(siteRequest_, o);
+		case "siteHostName":
+			return SiteConfig.staticSolrFqSiteHostName(siteRequest_, o);
+		case "sitePort":
+			return SiteConfig.staticSolrFqSitePort(siteRequest_, o);
+		case "siteInstances":
+			return SiteConfig.staticSolrFqSiteInstances(siteRequest_, o);
+		case "authRealm":
+			return SiteConfig.staticSolrFqAuthRealm(siteRequest_, o);
+		case "authResource":
+			return SiteConfig.staticSolrFqAuthResource(siteRequest_, o);
+		case "authSecret":
+			return SiteConfig.staticSolrFqAuthSecret(siteRequest_, o);
+		case "authSslRequired":
+			return SiteConfig.staticSolrFqAuthSslRequired(siteRequest_, o);
+		case "sslJksPath":
+			return SiteConfig.staticSolrFqSslJksPath(siteRequest_, o);
+		case "sslJksPassword":
+			return SiteConfig.staticSolrFqSslJksPassword(siteRequest_, o);
+		case "authUrl":
+			return SiteConfig.staticSolrFqAuthUrl(siteRequest_, o);
+		case "encryptionSalt":
+			return SiteConfig.staticSolrFqEncryptionSalt(siteRequest_, o);
+		case "encryptionPassword":
+			return SiteConfig.staticSolrFqEncryptionPassword(siteRequest_, o);
+		case "siteBaseUrl":
+			return SiteConfig.staticSolrFqSiteBaseUrl(siteRequest_, o);
+		case "siteDisplayName":
+			return SiteConfig.staticSolrFqSiteDisplayName(siteRequest_, o);
+		case "jdbcDriverClass":
+			return SiteConfig.staticSolrFqJdbcDriverClass(siteRequest_, o);
+		case "jdbcUsername":
+			return SiteConfig.staticSolrFqJdbcUsername(siteRequest_, o);
+		case "jdbcPassword":
+			return SiteConfig.staticSolrFqJdbcPassword(siteRequest_, o);
+		case "jdbcMaxPoolSize":
+			return SiteConfig.staticSolrFqJdbcMaxPoolSize(siteRequest_, o);
+		case "jdbcMaxWaitQueueSize":
+			return SiteConfig.staticSolrFqJdbcMaxWaitQueueSize(siteRequest_, o);
+		case "jdbcMinPoolSize":
+			return SiteConfig.staticSolrFqJdbcMinPoolSize(siteRequest_, o);
+		case "jdbcMaxStatements":
+			return SiteConfig.staticSolrFqJdbcMaxStatements(siteRequest_, o);
+		case "jdbcMaxStatementsPerConnection":
+			return SiteConfig.staticSolrFqJdbcMaxStatementsPerConnection(siteRequest_, o);
+		case "jdbcMaxIdleTime":
+			return SiteConfig.staticSolrFqJdbcMaxIdleTime(siteRequest_, o);
+		case "jdbcConnectTimeout":
+			return SiteConfig.staticSolrFqJdbcConnectTimeout(siteRequest_, o);
+		case "jdbcHost":
+			return SiteConfig.staticSolrFqJdbcHost(siteRequest_, o);
+		case "jdbcPort":
+			return SiteConfig.staticSolrFqJdbcPort(siteRequest_, o);
+		case "jdbcDatabase":
+			return SiteConfig.staticSolrFqJdbcDatabase(siteRequest_, o);
+		case "solrUrl":
+			return SiteConfig.staticSolrFqSolrUrl(siteRequest_, o);
+		case "solrUrlComputate":
+			return SiteConfig.staticSolrFqSolrUrlComputate(siteRequest_, o);
+		case "accountFacebook":
+			return SiteConfig.staticSolrFqAccountFacebook(siteRequest_, o);
+		case "accountTwitter":
+			return SiteConfig.staticSolrFqAccountTwitter(siteRequest_, o);
+		case "accountInstagram":
+			return SiteConfig.staticSolrFqAccountInstagram(siteRequest_, o);
+		case "accountYoutube":
+			return SiteConfig.staticSolrFqAccountYoutube(siteRequest_, o);
+		case "accountPinterest":
+			return SiteConfig.staticSolrFqAccountPinterest(siteRequest_, o);
+		case "accountEmail":
+			return SiteConfig.staticSolrFqAccountEmail(siteRequest_, o);
+		case "roleAdmin":
+			return SiteConfig.staticSolrFqRoleAdmin(siteRequest_, o);
+		case "emailAdmin":
+			return SiteConfig.staticSolrFqEmailAdmin(siteRequest_, o);
+		case "numberExecutors":
+			return SiteConfig.staticSolrFqNumberExecutors(siteRequest_, o);
+		case "openApiVersion":
+			return SiteConfig.staticSolrFqOpenApiVersion(siteRequest_, o);
+		case "apiDescription":
+			return SiteConfig.staticSolrFqApiDescription(siteRequest_, o);
+		case "apiTitle":
+			return SiteConfig.staticSolrFqApiTitle(siteRequest_, o);
+		case "apiTermsService":
+			return SiteConfig.staticSolrFqApiTermsService(siteRequest_, o);
+		case "apiVersion":
+			return SiteConfig.staticSolrFqApiVersion(siteRequest_, o);
+		case "apiContactEmail":
+			return SiteConfig.staticSolrFqApiContactEmail(siteRequest_, o);
+		case "apiLicenseName":
+			return SiteConfig.staticSolrFqApiLicenseName(siteRequest_, o);
+		case "apiLicenseUrl":
+			return SiteConfig.staticSolrFqApiLicenseUrl(siteRequest_, o);
+		case "apiHostName":
+			return SiteConfig.staticSolrFqApiHostName(siteRequest_, o);
+		case "apiBasePath":
+			return SiteConfig.staticSolrFqApiBasePath(siteRequest_, o);
+		case "staticBaseUrl":
+			return SiteConfig.staticSolrFqStaticBaseUrl(siteRequest_, o);
+		case "emailHost":
+			return SiteConfig.staticSolrFqEmailHost(siteRequest_, o);
+		case "emailPort":
+			return SiteConfig.staticSolrFqEmailPort(siteRequest_, o);
+		case "emailUsername":
+			return SiteConfig.staticSolrFqEmailUsername(siteRequest_, o);
+		case "emailPassword":
+			return SiteConfig.staticSolrFqEmailPassword(siteRequest_, o);
+		case "emailFrom":
+			return SiteConfig.staticSolrFqEmailFrom(siteRequest_, o);
+		case "emailAuth":
+			return SiteConfig.staticSolrFqEmailAuth(siteRequest_, o);
+		case "emailSsl":
+			return SiteConfig.staticSolrFqEmailSsl(siteRequest_, o);
+		case "siteZone":
+			return SiteConfig.staticSolrFqSiteZone(siteRequest_, o);
 			default:
 				return null;
 		}

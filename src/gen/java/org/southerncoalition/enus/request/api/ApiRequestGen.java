@@ -81,6 +81,9 @@ public abstract class ApiRequestGen<DEV> extends Object {
 		this.siteRequest_ = siteRequest_;
 		this.siteRequest_Wrap.alreadyInitialized = true;
 	}
+	public static SiteRequestEnUS staticSetSiteRequest_(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected ApiRequest siteRequest_Init() {
 		if(!siteRequest_Wrap.alreadyInitialized) {
 			_siteRequest_(siteRequest_Wrap);
@@ -127,9 +130,12 @@ public abstract class ApiRequestGen<DEV> extends Object {
 	}
 	/** Example: 2011-12-03T10:15:30+01:00 **/
 	public ApiRequest setCreated(String o) {
-		this.created = o == null ? null : ZonedDateTime.parse(o, DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneId.of(siteRequest_.getSiteConfig_().getSiteZone()))).truncatedTo(ChronoUnit.MILLIS);
+		this.created = ApiRequest.staticSetCreated(siteRequest_, o);
 		this.createdWrap.alreadyInitialized = true;
 		return (ApiRequest)this;
+	}
+	public static ZonedDateTime staticSetCreated(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : ZonedDateTime.parse(o, DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneId.of(siteRequest_.getSiteConfig_().getSiteZone()))).truncatedTo(ChronoUnit.MILLIS);
 	}
 	public ApiRequest setCreated(Date o) {
 		this.created = o == null ? null : ZonedDateTime.ofInstant(o.toInstant(), ZoneId.of(siteRequest_.getSiteConfig_().getSiteZone())).truncatedTo(ChronoUnit.MILLIS);
@@ -146,8 +152,20 @@ public abstract class ApiRequestGen<DEV> extends Object {
 		return (ApiRequest)this;
 	}
 
+	public static Date staticSolrCreated(SiteRequestEnUS siteRequest_, ZonedDateTime o) {
+		return o == null ? null : Date.from(o.toInstant());
+	}
+
+	public static String staticSolrStrCreated(SiteRequestEnUS siteRequest_, Date o) {
+		return "\"" + DateTimeFormatter.ISO_DATE_TIME.format(o.toInstant().atOffset(ZoneOffset.UTC)) + "\"";
+	}
+
+	public static String staticSolrFqCreated(SiteRequestEnUS siteRequest_, String o) {
+		return ApiRequest.staticSolrStrCreated(siteRequest_, ApiRequest.staticSolrCreated(siteRequest_, ApiRequest.staticSetCreated(siteRequest_, o)));
+	}
+
 	public Date solrCreated() {
-		return created == null ? null : Date.from(created.toInstant());
+		return ApiRequest.staticSolrCreated(siteRequest_, created);
 	}
 
 	public String strCreated() {
@@ -200,10 +218,14 @@ public abstract class ApiRequestGen<DEV> extends Object {
 		this.rowsWrap.alreadyInitialized = true;
 	}
 	public ApiRequest setRows(String o) {
-		if(NumberUtils.isParsable(o))
-			this.rows = Integer.parseInt(o);
+		this.rows = ApiRequest.staticSetRows(siteRequest_, o);
 		this.rowsWrap.alreadyInitialized = true;
 		return (ApiRequest)this;
+	}
+	public static Integer staticSetRows(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected ApiRequest rowsInit() {
 		if(!rowsWrap.alreadyInitialized) {
@@ -215,8 +237,20 @@ public abstract class ApiRequestGen<DEV> extends Object {
 		return (ApiRequest)this;
 	}
 
+	public static Integer staticSolrRows(SiteRequestEnUS siteRequest_, Integer o) {
+		return o;
+	}
+
+	public static String staticSolrStrRows(SiteRequestEnUS siteRequest_, Integer o) {
+			return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqRows(SiteRequestEnUS siteRequest_, String o) {
+		return ApiRequest.staticSolrStrRows(siteRequest_, ApiRequest.staticSolrRows(siteRequest_, ApiRequest.staticSetRows(siteRequest_, o)));
+	}
+
 	public Integer solrRows() {
-		return rows;
+		return ApiRequest.staticSolrRows(siteRequest_, rows);
 	}
 
 	public String strRows() {
@@ -269,10 +303,14 @@ public abstract class ApiRequestGen<DEV> extends Object {
 		this.numFoundWrap.alreadyInitialized = true;
 	}
 	public ApiRequest setNumFound(String o) {
-		if(NumberUtils.isParsable(o))
-			this.numFound = Long.parseLong(o);
+		this.numFound = ApiRequest.staticSetNumFound(siteRequest_, o);
 		this.numFoundWrap.alreadyInitialized = true;
 		return (ApiRequest)this;
+	}
+	public static Long staticSetNumFound(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ApiRequest numFoundInit() {
 		if(!numFoundWrap.alreadyInitialized) {
@@ -284,8 +322,20 @@ public abstract class ApiRequestGen<DEV> extends Object {
 		return (ApiRequest)this;
 	}
 
+	public static Long staticSolrNumFound(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrNumFound(SiteRequestEnUS siteRequest_, Long o) {
+			return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqNumFound(SiteRequestEnUS siteRequest_, String o) {
+		return ApiRequest.staticSolrStrNumFound(siteRequest_, ApiRequest.staticSolrNumFound(siteRequest_, ApiRequest.staticSetNumFound(siteRequest_, o)));
+	}
+
 	public Long solrNumFound() {
-		return numFound;
+		return ApiRequest.staticSolrNumFound(siteRequest_, numFound);
 	}
 
 	public String strNumFound() {
@@ -338,10 +388,14 @@ public abstract class ApiRequestGen<DEV> extends Object {
 		this.numPATCHWrap.alreadyInitialized = true;
 	}
 	public ApiRequest setNumPATCH(String o) {
-		if(NumberUtils.isParsable(o))
-			this.numPATCH = Long.parseLong(o);
+		this.numPATCH = ApiRequest.staticSetNumPATCH(siteRequest_, o);
 		this.numPATCHWrap.alreadyInitialized = true;
 		return (ApiRequest)this;
+	}
+	public static Long staticSetNumPATCH(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ApiRequest numPATCHInit() {
 		if(!numPATCHWrap.alreadyInitialized) {
@@ -353,8 +407,20 @@ public abstract class ApiRequestGen<DEV> extends Object {
 		return (ApiRequest)this;
 	}
 
+	public static Long staticSolrNumPATCH(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrNumPATCH(SiteRequestEnUS siteRequest_, Long o) {
+			return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqNumPATCH(SiteRequestEnUS siteRequest_, String o) {
+		return ApiRequest.staticSolrStrNumPATCH(siteRequest_, ApiRequest.staticSolrNumPATCH(siteRequest_, ApiRequest.staticSetNumPATCH(siteRequest_, o)));
+	}
+
 	public Long solrNumPATCH() {
-		return numPATCH;
+		return ApiRequest.staticSolrNumPATCH(siteRequest_, numPATCH);
 	}
 
 	public String strNumPATCH() {
@@ -400,10 +466,13 @@ public abstract class ApiRequestGen<DEV> extends Object {
 	public String getUuid() {
 		return uuid;
 	}
-
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
+	public ApiRequest setUuid(String o) {
+		this.uuid = ApiRequest.staticSetUuid(siteRequest_, o);
 		this.uuidWrap.alreadyInitialized = true;
+		return (ApiRequest)this;
+	}
+	public static String staticSetUuid(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ApiRequest uuidInit() {
 		if(!uuidWrap.alreadyInitialized) {
@@ -415,8 +484,20 @@ public abstract class ApiRequestGen<DEV> extends Object {
 		return (ApiRequest)this;
 	}
 
+	public static String staticSolrUuid(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrUuid(SiteRequestEnUS siteRequest_, String o) {
+			return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqUuid(SiteRequestEnUS siteRequest_, String o) {
+		return ApiRequest.staticSolrStrUuid(siteRequest_, ApiRequest.staticSolrUuid(siteRequest_, ApiRequest.staticSetUuid(siteRequest_, o)));
+	}
+
 	public String solrUuid() {
-		return uuid;
+		return ApiRequest.staticSolrUuid(siteRequest_, uuid);
 	}
 
 	public String strUuid() {
@@ -462,10 +543,13 @@ public abstract class ApiRequestGen<DEV> extends Object {
 	public String getId() {
 		return id;
 	}
-
-	public void setId(String id) {
-		this.id = id;
+	public ApiRequest setId(String o) {
+		this.id = ApiRequest.staticSetId(siteRequest_, o);
 		this.idWrap.alreadyInitialized = true;
+		return (ApiRequest)this;
+	}
+	public static String staticSetId(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ApiRequest idInit() {
 		if(!idWrap.alreadyInitialized) {
@@ -477,8 +561,20 @@ public abstract class ApiRequestGen<DEV> extends Object {
 		return (ApiRequest)this;
 	}
 
+	public static String staticSolrId(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrId(SiteRequestEnUS siteRequest_, String o) {
+			return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqId(SiteRequestEnUS siteRequest_, String o) {
+		return ApiRequest.staticSolrStrId(siteRequest_, ApiRequest.staticSolrId(siteRequest_, ApiRequest.staticSetId(siteRequest_, o)));
+	}
+
 	public String solrId() {
-		return id;
+		return ApiRequest.staticSolrId(siteRequest_, id);
 	}
 
 	public String strId() {
@@ -530,9 +626,12 @@ public abstract class ApiRequestGen<DEV> extends Object {
 		this.emptyWrap.alreadyInitialized = true;
 	}
 	public ApiRequest setEmpty(String o) {
-		this.empty = Boolean.parseBoolean(o);
+		this.empty = ApiRequest.staticSetEmpty(siteRequest_, o);
 		this.emptyWrap.alreadyInitialized = true;
 		return (ApiRequest)this;
+	}
+	public static Boolean staticSetEmpty(SiteRequestEnUS siteRequest_, String o) {
+		return Boolean.parseBoolean(o);
 	}
 	protected ApiRequest emptyInit() {
 		if(!emptyWrap.alreadyInitialized) {
@@ -544,8 +643,20 @@ public abstract class ApiRequestGen<DEV> extends Object {
 		return (ApiRequest)this;
 	}
 
+	public static Boolean staticSolrEmpty(SiteRequestEnUS siteRequest_, Boolean o) {
+		return o;
+	}
+
+	public static String staticSolrStrEmpty(SiteRequestEnUS siteRequest_, Boolean o) {
+			return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqEmpty(SiteRequestEnUS siteRequest_, String o) {
+		return ApiRequest.staticSolrStrEmpty(siteRequest_, ApiRequest.staticSolrEmpty(siteRequest_, ApiRequest.staticSetEmpty(siteRequest_, o)));
+	}
+
 	public Boolean solrEmpty() {
-		return empty;
+		return ApiRequest.staticSolrEmpty(siteRequest_, empty);
 	}
 
 	public String strEmpty() {
@@ -598,10 +709,14 @@ public abstract class ApiRequestGen<DEV> extends Object {
 		this.pkWrap.alreadyInitialized = true;
 	}
 	public ApiRequest setPk(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pk = Long.parseLong(o);
+		this.pk = ApiRequest.staticSetPk(siteRequest_, o);
 		this.pkWrap.alreadyInitialized = true;
 		return (ApiRequest)this;
+	}
+	public static Long staticSetPk(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ApiRequest pkInit() {
 		if(!pkWrap.alreadyInitialized) {
@@ -613,8 +728,20 @@ public abstract class ApiRequestGen<DEV> extends Object {
 		return (ApiRequest)this;
 	}
 
+	public static Long staticSolrPk(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPk(SiteRequestEnUS siteRequest_, Long o) {
+			return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPk(SiteRequestEnUS siteRequest_, String o) {
+		return ApiRequest.staticSolrStrPk(siteRequest_, ApiRequest.staticSolrPk(siteRequest_, ApiRequest.staticSetPk(siteRequest_, o)));
+	}
+
 	public Long solrPk() {
-		return pk;
+		return ApiRequest.staticSolrPk(siteRequest_, pk);
 	}
 
 	public String strPk() {
@@ -665,6 +792,9 @@ public abstract class ApiRequestGen<DEV> extends Object {
 		this.original = original;
 		this.originalWrap.alreadyInitialized = true;
 	}
+	public static Object staticSetOriginal(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected ApiRequest originalInit() {
 		if(!originalWrap.alreadyInitialized) {
 			_original(originalWrap);
@@ -704,6 +834,9 @@ public abstract class ApiRequestGen<DEV> extends Object {
 		this.pks = pks;
 		this.pksWrap.alreadyInitialized = true;
 	}
+	public static List<Long> staticSetPks(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	public ApiRequest addPks(Long...objets) {
 		for(Long o : objets) {
 			addPks(o);
@@ -738,8 +871,20 @@ public abstract class ApiRequestGen<DEV> extends Object {
 		return (ApiRequest)this;
 	}
 
+	public static List<Long> staticSolrPks(SiteRequestEnUS siteRequest_, List<Long> o) {
+		return o;
+	}
+
+	public static String staticSolrStrPks(SiteRequestEnUS siteRequest_, List<Long> o) {
+			return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPks(SiteRequestEnUS siteRequest_, String o) {
+		return ApiRequest.staticSolrStrPks(siteRequest_, ApiRequest.staticSolrPks(siteRequest_, ApiRequest.staticSetPks(siteRequest_, o)));
+	}
+
 	public List<Long> solrPks() {
-		return pks;
+		return ApiRequest.staticSolrPks(siteRequest_, pks);
 	}
 
 	public String strPks() {
@@ -790,6 +935,9 @@ public abstract class ApiRequestGen<DEV> extends Object {
 		this.classes = classes;
 		this.classesWrap.alreadyInitialized = true;
 	}
+	public static List<String> staticSetClasses(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	public ApiRequest addClasses(String...objets) {
 		for(String o : objets) {
 			addClasses(o);
@@ -817,8 +965,20 @@ public abstract class ApiRequestGen<DEV> extends Object {
 		return (ApiRequest)this;
 	}
 
+	public static List<String> staticSolrClasses(SiteRequestEnUS siteRequest_, List<String> o) {
+		return o;
+	}
+
+	public static String staticSolrStrClasses(SiteRequestEnUS siteRequest_, List<String> o) {
+			return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqClasses(SiteRequestEnUS siteRequest_, String o) {
+		return ApiRequest.staticSolrStrClasses(siteRequest_, ApiRequest.staticSolrClasses(siteRequest_, ApiRequest.staticSetClasses(siteRequest_, o)));
+	}
+
 	public List<String> solrClasses() {
-		return classes;
+		return ApiRequest.staticSolrClasses(siteRequest_, classes);
 	}
 
 	public String strClasses() {
@@ -869,6 +1029,9 @@ public abstract class ApiRequestGen<DEV> extends Object {
 		this.vars = vars;
 		this.varsWrap.alreadyInitialized = true;
 	}
+	public static List<String> staticSetVars(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	public ApiRequest addVars(String...objets) {
 		for(String o : objets) {
 			addVars(o);
@@ -896,8 +1059,20 @@ public abstract class ApiRequestGen<DEV> extends Object {
 		return (ApiRequest)this;
 	}
 
+	public static List<String> staticSolrVars(SiteRequestEnUS siteRequest_, List<String> o) {
+		return o;
+	}
+
+	public static String staticSolrStrVars(SiteRequestEnUS siteRequest_, List<String> o) {
+			return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqVars(SiteRequestEnUS siteRequest_, String o) {
+		return ApiRequest.staticSolrStrVars(siteRequest_, ApiRequest.staticSolrVars(siteRequest_, ApiRequest.staticSetVars(siteRequest_, o)));
+	}
+
 	public List<String> solrVars() {
-		return vars;
+		return ApiRequest.staticSolrVars(siteRequest_, vars);
 	}
 
 	public String strVars() {
@@ -1041,6 +1216,150 @@ public abstract class ApiRequestGen<DEV> extends Object {
 	public Object attributeApiRequest(String var, Object val) {
 		ApiRequest oApiRequest = (ApiRequest)this;
 		switch(var) {
+			default:
+				return null;
+		}
+	}
+
+	///////////////
+	// staticSet //
+	///////////////
+
+	public static Object staticSetForClass(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		return staticSetApiRequest(entityVar,  siteRequest_, o);
+	}
+	public static Object staticSetApiRequest(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		switch(entityVar) {
+		case "created":
+			return ApiRequest.staticSetCreated(siteRequest_, o);
+		case "rows":
+			return ApiRequest.staticSetRows(siteRequest_, o);
+		case "numFound":
+			return ApiRequest.staticSetNumFound(siteRequest_, o);
+		case "numPATCH":
+			return ApiRequest.staticSetNumPATCH(siteRequest_, o);
+		case "uuid":
+			return ApiRequest.staticSetUuid(siteRequest_, o);
+		case "id":
+			return ApiRequest.staticSetId(siteRequest_, o);
+		case "empty":
+			return ApiRequest.staticSetEmpty(siteRequest_, o);
+		case "pk":
+			return ApiRequest.staticSetPk(siteRequest_, o);
+		case "pks":
+			return ApiRequest.staticSetPks(siteRequest_, o);
+		case "classes":
+			return ApiRequest.staticSetClasses(siteRequest_, o);
+		case "vars":
+			return ApiRequest.staticSetVars(siteRequest_, o);
+			default:
+				return null;
+		}
+	}
+
+	////////////////
+	// staticSolr //
+	////////////////
+
+	public static Object staticSolrForClass(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		return staticSolrApiRequest(entityVar,  siteRequest_, o);
+	}
+	public static Object staticSolrApiRequest(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		switch(entityVar) {
+		case "created":
+			return ApiRequest.staticSolrCreated(siteRequest_, (ZonedDateTime)o);
+		case "rows":
+			return ApiRequest.staticSolrRows(siteRequest_, (Integer)o);
+		case "numFound":
+			return ApiRequest.staticSolrNumFound(siteRequest_, (Long)o);
+		case "numPATCH":
+			return ApiRequest.staticSolrNumPATCH(siteRequest_, (Long)o);
+		case "uuid":
+			return ApiRequest.staticSolrUuid(siteRequest_, (String)o);
+		case "id":
+			return ApiRequest.staticSolrId(siteRequest_, (String)o);
+		case "empty":
+			return ApiRequest.staticSolrEmpty(siteRequest_, (Boolean)o);
+		case "pk":
+			return ApiRequest.staticSolrPk(siteRequest_, (Long)o);
+		case "pks":
+			return ApiRequest.staticSolrPks(siteRequest_, (List<Long>)o);
+		case "classes":
+			return ApiRequest.staticSolrClasses(siteRequest_, (List<String>)o);
+		case "vars":
+			return ApiRequest.staticSolrVars(siteRequest_, (List<String>)o);
+			default:
+				return null;
+		}
+	}
+
+	///////////////////
+	// staticSolrStr //
+	///////////////////
+
+	public static String staticSolrStrForClass(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		return staticSolrStrApiRequest(entityVar,  siteRequest_, o);
+	}
+	public static String staticSolrStrApiRequest(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		switch(entityVar) {
+		case "created":
+			return ApiRequest.staticSolrStrCreated(siteRequest_, (Date)o);
+		case "rows":
+			return ApiRequest.staticSolrStrRows(siteRequest_, (Integer)o);
+		case "numFound":
+			return ApiRequest.staticSolrStrNumFound(siteRequest_, (Long)o);
+		case "numPATCH":
+			return ApiRequest.staticSolrStrNumPATCH(siteRequest_, (Long)o);
+		case "uuid":
+			return ApiRequest.staticSolrStrUuid(siteRequest_, (String)o);
+		case "id":
+			return ApiRequest.staticSolrStrId(siteRequest_, (String)o);
+		case "empty":
+			return ApiRequest.staticSolrStrEmpty(siteRequest_, (Boolean)o);
+		case "pk":
+			return ApiRequest.staticSolrStrPk(siteRequest_, (Long)o);
+		case "pks":
+			return ApiRequest.staticSolrStrPks(siteRequest_, (List<Long>)o);
+		case "classes":
+			return ApiRequest.staticSolrStrClasses(siteRequest_, (List<String>)o);
+		case "vars":
+			return ApiRequest.staticSolrStrVars(siteRequest_, (List<String>)o);
+			default:
+				return null;
+		}
+	}
+
+	//////////////////
+	// staticSolrFq //
+	//////////////////
+
+	public static String staticSolrFqForClass(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		return staticSolrFqApiRequest(entityVar,  siteRequest_, o);
+	}
+	public static String staticSolrFqApiRequest(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		switch(entityVar) {
+		case "created":
+			return ApiRequest.staticSolrFqCreated(siteRequest_, o);
+		case "rows":
+			return ApiRequest.staticSolrFqRows(siteRequest_, o);
+		case "numFound":
+			return ApiRequest.staticSolrFqNumFound(siteRequest_, o);
+		case "numPATCH":
+			return ApiRequest.staticSolrFqNumPATCH(siteRequest_, o);
+		case "uuid":
+			return ApiRequest.staticSolrFqUuid(siteRequest_, o);
+		case "id":
+			return ApiRequest.staticSolrFqId(siteRequest_, o);
+		case "empty":
+			return ApiRequest.staticSolrFqEmpty(siteRequest_, o);
+		case "pk":
+			return ApiRequest.staticSolrFqPk(siteRequest_, o);
+		case "pks":
+			return ApiRequest.staticSolrFqPks(siteRequest_, o);
+		case "classes":
+			return ApiRequest.staticSolrFqClasses(siteRequest_, o);
+		case "vars":
+			return ApiRequest.staticSolrFqVars(siteRequest_, o);
 			default:
 				return null;
 		}

@@ -67,6 +67,9 @@ public abstract class AllWritersGen<DEV> extends Object {
 		this.siteRequest_ = siteRequest_;
 		this.siteRequest_Wrap.alreadyInitialized = true;
 	}
+	public static SiteRequestEnUS staticSetSiteRequest_(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected AllWriters siteRequest_Init() {
 		if(!siteRequest_Wrap.alreadyInitialized) {
 			_siteRequest_(siteRequest_Wrap);
@@ -104,6 +107,9 @@ public abstract class AllWritersGen<DEV> extends Object {
 	public void setWriters(List<AllWriter> writers) {
 		this.writers = writers;
 		this.writersWrap.alreadyInitialized = true;
+	}
+	public static List<AllWriter> staticSetWriters(SiteRequestEnUS siteRequest_, String o) {
+		return null;
 	}
 	public AllWriters addWriters(AllWriter...objets) {
 		for(AllWriter o : objets) {
@@ -212,6 +218,62 @@ public abstract class AllWritersGen<DEV> extends Object {
 	public Object attributeAllWriters(String var, Object val) {
 		AllWriters oAllWriters = (AllWriters)this;
 		switch(var) {
+			default:
+				return null;
+		}
+	}
+
+	///////////////
+	// staticSet //
+	///////////////
+
+	public static Object staticSetForClass(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		return staticSetAllWriters(entityVar,  siteRequest_, o);
+	}
+	public static Object staticSetAllWriters(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		switch(entityVar) {
+			default:
+				return null;
+		}
+	}
+
+	////////////////
+	// staticSolr //
+	////////////////
+
+	public static Object staticSolrForClass(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		return staticSolrAllWriters(entityVar,  siteRequest_, o);
+	}
+	public static Object staticSolrAllWriters(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		switch(entityVar) {
+			default:
+				return null;
+		}
+	}
+
+	///////////////////
+	// staticSolrStr //
+	///////////////////
+
+	public static String staticSolrStrForClass(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		return staticSolrStrAllWriters(entityVar,  siteRequest_, o);
+	}
+	public static String staticSolrStrAllWriters(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		switch(entityVar) {
+			default:
+				return null;
+		}
+	}
+
+	//////////////////
+	// staticSolrFq //
+	//////////////////
+
+	public static String staticSolrFqForClass(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		return staticSolrFqAllWriters(entityVar,  siteRequest_, o);
+	}
+	public static String staticSolrFqAllWriters(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		switch(entityVar) {
 			default:
 				return null;
 		}
