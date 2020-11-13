@@ -68,6 +68,9 @@ public abstract class ReportCardGenPageGen<DEV> extends PageLayout {
 		this.listReportCard = listReportCard;
 		this.listReportCardWrap.alreadyInitialized = true;
 	}
+	public static SearchList<ReportCard> staticSetListReportCard(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected ReportCardGenPage listReportCardInit() {
 		if(!listReportCardWrap.alreadyInitialized) {
 			_listReportCard(listReportCardWrap);
@@ -107,6 +110,9 @@ public abstract class ReportCardGenPageGen<DEV> extends PageLayout {
 	public void setReportCard_(ReportCard reportCard_) {
 		this.reportCard_ = reportCard_;
 		this.reportCard_Wrap.alreadyInitialized = true;
+	}
+	public static ReportCard staticSetReportCard_(SiteRequestEnUS siteRequest_, String o) {
+		return null;
 	}
 	protected ReportCardGenPage reportCard_Init() {
 		if(!reportCard_Wrap.alreadyInitialized) {
@@ -212,6 +218,62 @@ public abstract class ReportCardGenPageGen<DEV> extends PageLayout {
 		switch(var) {
 			default:
 				return super.attributePageLayout(var, val);
+		}
+	}
+
+	///////////////
+	// staticSet //
+	///////////////
+
+	public static Object staticSetForClass(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		return staticSetReportCardGenPage(entityVar,  siteRequest_, o);
+	}
+	public static Object staticSetReportCardGenPage(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		switch(entityVar) {
+			default:
+				return PageLayout.staticSetPageLayout(entityVar,  siteRequest_, o);
+		}
+	}
+
+	////////////////
+	// staticSolr //
+	////////////////
+
+	public static Object staticSolrForClass(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		return staticSolrReportCardGenPage(entityVar,  siteRequest_, o);
+	}
+	public static Object staticSolrReportCardGenPage(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		switch(entityVar) {
+			default:
+				return PageLayout.staticSolrPageLayout(entityVar,  siteRequest_, o);
+		}
+	}
+
+	///////////////////
+	// staticSolrStr //
+	///////////////////
+
+	public static String staticSolrStrForClass(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		return staticSolrStrReportCardGenPage(entityVar,  siteRequest_, o);
+	}
+	public static String staticSolrStrReportCardGenPage(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		switch(entityVar) {
+			default:
+				return PageLayout.staticSolrStrPageLayout(entityVar,  siteRequest_, o);
+		}
+	}
+
+	//////////////////
+	// staticSolrFq //
+	//////////////////
+
+	public static String staticSolrFqForClass(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		return staticSolrFqReportCardGenPage(entityVar,  siteRequest_, o);
+	}
+	public static String staticSolrFqReportCardGenPage(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		switch(entityVar) {
+			default:
+				return PageLayout.staticSolrFqPageLayout(entityVar,  siteRequest_, o);
 		}
 	}
 

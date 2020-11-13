@@ -22,7 +22,7 @@ import org.southerncoalition.enus.request.SiteRequestEnUS;
 import org.southerncoalition.enus.user.SiteUser;
 import org.southerncoalition.enus.wrap.Wrap;
 
-/**
+/** 
  * Keyword: classSimpleNameSearchList
  */
 public class SearchList<DEV> extends SearchListGen<DEV> {

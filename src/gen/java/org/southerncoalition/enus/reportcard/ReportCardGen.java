@@ -111,11 +111,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.reportCardKey = reportCardKey;
 		this.reportCardKeyWrap.alreadyInitialized = true;
 	}
-	public ReportCard setReportCardKey(String o) {
-		if(NumberUtils.isParsable(o))
-			this.reportCardKey = Long.parseLong(o);
+	public void setReportCardKey(String o) {
+		this.reportCardKey = ReportCard.staticSetReportCardKey(siteRequest_, o);
 		this.reportCardKeyWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetReportCardKey(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard reportCardKeyInit() {
 		if(!reportCardKeyWrap.alreadyInitialized) {
@@ -127,8 +130,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrReportCardKey(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrReportCardKey(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqReportCardKey(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrReportCardKey(siteRequest_, ReportCard.staticSolrReportCardKey(siteRequest_, ReportCard.staticSetReportCardKey(siteRequest_, o)));
+	}
+
 	public Long solrReportCardKey() {
-		return reportCardKey;
+		return ReportCard.staticSolrReportCardKey(siteRequest_, reportCardKey);
 	}
 
 	public String strReportCardKey() {
@@ -180,11 +195,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.reportCardStartYear = reportCardStartYear;
 		this.reportCardStartYearWrap.alreadyInitialized = true;
 	}
-	public ReportCard setReportCardStartYear(String o) {
-		if(NumberUtils.isParsable(o))
-			this.reportCardStartYear = Integer.parseInt(o);
+	public void setReportCardStartYear(String o) {
+		this.reportCardStartYear = ReportCard.staticSetReportCardStartYear(siteRequest_, o);
 		this.reportCardStartYearWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Integer staticSetReportCardStartYear(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected ReportCard reportCardStartYearInit() {
 		if(!reportCardStartYearWrap.alreadyInitialized) {
@@ -196,8 +214,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Integer staticSolrReportCardStartYear(SiteRequestEnUS siteRequest_, Integer o) {
+		return o;
+	}
+
+	public static String staticSolrStrReportCardStartYear(SiteRequestEnUS siteRequest_, Integer o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqReportCardStartYear(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrReportCardStartYear(siteRequest_, ReportCard.staticSolrReportCardStartYear(siteRequest_, ReportCard.staticSetReportCardStartYear(siteRequest_, o)));
+	}
+
 	public Integer solrReportCardStartYear() {
-		return reportCardStartYear;
+		return ReportCard.staticSolrReportCardStartYear(siteRequest_, reportCardStartYear);
 	}
 
 	public String strReportCardStartYear() {
@@ -309,10 +339,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public String getReportCardStartYearStr() {
 		return reportCardStartYearStr;
 	}
-
-	public void setReportCardStartYearStr(String reportCardStartYearStr) {
-		this.reportCardStartYearStr = reportCardStartYearStr;
+	public void setReportCardStartYearStr(String o) {
+		this.reportCardStartYearStr = ReportCard.staticSetReportCardStartYearStr(siteRequest_, o);
 		this.reportCardStartYearStrWrap.alreadyInitialized = true;
+	}
+	public static String staticSetReportCardStartYearStr(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ReportCard reportCardStartYearStrInit() {
 		if(!reportCardStartYearStrWrap.alreadyInitialized) {
@@ -324,8 +356,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static String staticSolrReportCardStartYearStr(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrReportCardStartYearStr(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqReportCardStartYearStr(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrReportCardStartYearStr(siteRequest_, ReportCard.staticSolrReportCardStartYearStr(siteRequest_, ReportCard.staticSetReportCardStartYearStr(siteRequest_, o)));
+	}
+
 	public String solrReportCardStartYearStr() {
-		return reportCardStartYearStr;
+		return ReportCard.staticSolrReportCardStartYearStr(siteRequest_, reportCardStartYearStr);
 	}
 
 	public String strReportCardStartYearStr() {
@@ -377,11 +421,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.reportCardEndYear = reportCardEndYear;
 		this.reportCardEndYearWrap.alreadyInitialized = true;
 	}
-	public ReportCard setReportCardEndYear(String o) {
-		if(NumberUtils.isParsable(o))
-			this.reportCardEndYear = Integer.parseInt(o);
+	public void setReportCardEndYear(String o) {
+		this.reportCardEndYear = ReportCard.staticSetReportCardEndYear(siteRequest_, o);
 		this.reportCardEndYearWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Integer staticSetReportCardEndYear(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected ReportCard reportCardEndYearInit() {
 		if(!reportCardEndYearWrap.alreadyInitialized) {
@@ -393,8 +440,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Integer staticSolrReportCardEndYear(SiteRequestEnUS siteRequest_, Integer o) {
+		return o;
+	}
+
+	public static String staticSolrStrReportCardEndYear(SiteRequestEnUS siteRequest_, Integer o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqReportCardEndYear(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrReportCardEndYear(siteRequest_, ReportCard.staticSolrReportCardEndYear(siteRequest_, ReportCard.staticSetReportCardEndYear(siteRequest_, o)));
+	}
+
 	public Integer solrReportCardEndYear() {
-		return reportCardEndYear;
+		return ReportCard.staticSolrReportCardEndYear(siteRequest_, reportCardEndYear);
 	}
 
 	public String strReportCardEndYear() {
@@ -466,10 +525,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public String getReportCardYearsStr() {
 		return reportCardYearsStr;
 	}
-
-	public void setReportCardYearsStr(String reportCardYearsStr) {
-		this.reportCardYearsStr = reportCardYearsStr;
+	public void setReportCardYearsStr(String o) {
+		this.reportCardYearsStr = ReportCard.staticSetReportCardYearsStr(siteRequest_, o);
 		this.reportCardYearsStrWrap.alreadyInitialized = true;
+	}
+	public static String staticSetReportCardYearsStr(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ReportCard reportCardYearsStrInit() {
 		if(!reportCardYearsStrWrap.alreadyInitialized) {
@@ -481,8 +542,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static String staticSolrReportCardYearsStr(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrReportCardYearsStr(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqReportCardYearsStr(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrReportCardYearsStr(siteRequest_, ReportCard.staticSolrReportCardYearsStr(siteRequest_, ReportCard.staticSetReportCardYearsStr(siteRequest_, o)));
+	}
+
 	public String solrReportCardYearsStr() {
-		return reportCardYearsStr;
+		return ReportCard.staticSolrReportCardYearsStr(siteRequest_, reportCardYearsStr);
 	}
 
 	public String strReportCardYearsStr() {
@@ -534,6 +607,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.agencySearch = agencySearch;
 		this.agencySearchWrap.alreadyInitialized = true;
 	}
+	public static SearchList<SiteAgency> staticSetAgencySearch(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected ReportCard agencySearchInit() {
 		if(!agencySearchWrap.alreadyInitialized) {
 			_agencySearch(agencySearch);
@@ -570,6 +646,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public void setAgency_(SiteAgency agency_) {
 		this.agency_ = agency_;
 		this.agency_Wrap.alreadyInitialized = true;
+	}
+	public static SiteAgency staticSetAgency_(SiteRequestEnUS siteRequest_, String o) {
+		return null;
 	}
 	protected ReportCard agency_Init() {
 		if(!agency_Wrap.alreadyInitialized) {
@@ -610,11 +689,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.agencyKey = agencyKey;
 		this.agencyKeyWrap.alreadyInitialized = true;
 	}
-	public ReportCard setAgencyKey(String o) {
-		if(NumberUtils.isParsable(o))
-			this.agencyKey = Long.parseLong(o);
+	public void setAgencyKey(String o) {
+		this.agencyKey = ReportCard.staticSetAgencyKey(siteRequest_, o);
 		this.agencyKeyWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetAgencyKey(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard agencyKeyInit() {
 		if(!agencyKeyWrap.alreadyInitialized) {
@@ -626,8 +708,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrAgencyKey(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyKey(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyKey(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrAgencyKey(siteRequest_, ReportCard.staticSolrAgencyKey(siteRequest_, ReportCard.staticSetAgencyKey(siteRequest_, o)));
+	}
+
 	public Long solrAgencyKey() {
-		return agencyKey;
+		return ReportCard.staticSolrAgencyKey(siteRequest_, agencyKey);
 	}
 
 	public String strAgencyKey() {
@@ -663,9 +757,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					.a("class", "value suggestAgencyKey w3-input w3-border w3-cell w3-cell-middle ")
 					.a("name", "setAgencyKey")
 					.a("id", classApiMethodMethod, "_agencyKey")
-					.a("autocomplete", "off")
-					.a("oninput", "suggestReportCardAgencyKey($(this).val() ? searchSiteAgencyFilters($(this.parentElement)) : [", pk == null ? "" : "{'name':'fq','value':'reportCardKeys:" + pk + "'}", "], $('#listReportCardAgencyKey_", classApiMethodMethod, "'), ", pk, "); ")
-				.fg();
+					.a("autocomplete", "off");
+					if("Page".equals(classApiMethodMethod)) {
+						a("oninput", "suggestReportCardAgencyKey($(this).val() ? searchSiteAgencyFilters($(this.parentElement)) : [", pk == null ? "" : "{'name':'fq','value':'reportCardKeys:" + pk + "'}", "], $('#listReportCardAgencyKey_", classApiMethodMethod, "'), ", pk, "); ");
+					}
+
+				fg();
 
 		} else {
 			e("span").a("class", "varReportCard", pk, "AgencyKey ").f().sx(htmAgencyKey()).g("span");
@@ -751,11 +848,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.imageLeft = imageLeft;
 		this.imageLeftWrap.alreadyInitialized = true;
 	}
-	public ReportCard setImageLeft(String o) {
-		if(NumberUtils.isParsable(o))
-			this.imageLeft = Integer.parseInt(o);
+	public void setImageLeft(String o) {
+		this.imageLeft = ReportCard.staticSetImageLeft(siteRequest_, o);
 		this.imageLeftWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Integer staticSetImageLeft(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected ReportCard imageLeftInit() {
 		if(!imageLeftWrap.alreadyInitialized) {
@@ -767,8 +867,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Integer staticSolrImageLeft(SiteRequestEnUS siteRequest_, Integer o) {
+		return o;
+	}
+
+	public static String staticSolrStrImageLeft(SiteRequestEnUS siteRequest_, Integer o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqImageLeft(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrImageLeft(siteRequest_, ReportCard.staticSolrImageLeft(siteRequest_, ReportCard.staticSetImageLeft(siteRequest_, o)));
+	}
+
 	public Integer solrImageLeft() {
-		return imageLeft;
+		return ReportCard.staticSolrImageLeft(siteRequest_, imageLeft);
 	}
 
 	public String strImageLeft() {
@@ -820,11 +932,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.imageTop = imageTop;
 		this.imageTopWrap.alreadyInitialized = true;
 	}
-	public ReportCard setImageTop(String o) {
-		if(NumberUtils.isParsable(o))
-			this.imageTop = Integer.parseInt(o);
+	public void setImageTop(String o) {
+		this.imageTop = ReportCard.staticSetImageTop(siteRequest_, o);
 		this.imageTopWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Integer staticSetImageTop(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected ReportCard imageTopInit() {
 		if(!imageTopWrap.alreadyInitialized) {
@@ -836,8 +951,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Integer staticSolrImageTop(SiteRequestEnUS siteRequest_, Integer o) {
+		return o;
+	}
+
+	public static String staticSolrStrImageTop(SiteRequestEnUS siteRequest_, Integer o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqImageTop(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrImageTop(siteRequest_, ReportCard.staticSolrImageTop(siteRequest_, ReportCard.staticSetImageTop(siteRequest_, o)));
+	}
+
 	public Integer solrImageTop() {
-		return imageTop;
+		return ReportCard.staticSolrImageTop(siteRequest_, imageTop);
 	}
 
 	public String strImageTop() {
@@ -889,11 +1016,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsTotal = pupilsTotal;
 		this.pupilsTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pupilsTotal = Long.parseLong(o);
+	public void setPupilsTotal(String o) {
+		this.pupilsTotal = ReportCard.staticSetPupilsTotal(siteRequest_, o);
 		this.pupilsTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetPupilsTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard pupilsTotalInit() {
 		if(!pupilsTotalWrap.alreadyInitialized) {
@@ -905,8 +1035,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrPupilsTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPupilsTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsTotal(siteRequest_, ReportCard.staticSolrPupilsTotal(siteRequest_, ReportCard.staticSetPupilsTotal(siteRequest_, o)));
+	}
+
 	public Long solrPupilsTotal() {
-		return pupilsTotal;
+		return ReportCard.staticSolrPupilsTotal(siteRequest_, pupilsTotal);
 	}
 
 	public String strPupilsTotal() {
@@ -1024,11 +1166,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsIndigenousFemale = pupilsIndigenousFemale;
 		this.pupilsIndigenousFemaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsIndigenousFemale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pupilsIndigenousFemale = Long.parseLong(o);
+	public void setPupilsIndigenousFemale(String o) {
+		this.pupilsIndigenousFemale = ReportCard.staticSetPupilsIndigenousFemale(siteRequest_, o);
 		this.pupilsIndigenousFemaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetPupilsIndigenousFemale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard pupilsIndigenousFemaleInit() {
 		if(!pupilsIndigenousFemaleWrap.alreadyInitialized) {
@@ -1040,8 +1185,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrPupilsIndigenousFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPupilsIndigenousFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsIndigenousFemale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsIndigenousFemale(siteRequest_, ReportCard.staticSolrPupilsIndigenousFemale(siteRequest_, ReportCard.staticSetPupilsIndigenousFemale(siteRequest_, o)));
+	}
+
 	public Long solrPupilsIndigenousFemale() {
-		return pupilsIndigenousFemale;
+		return ReportCard.staticSolrPupilsIndigenousFemale(siteRequest_, pupilsIndigenousFemale);
 	}
 
 	public String strPupilsIndigenousFemale() {
@@ -1159,11 +1316,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsIndigenousMale = pupilsIndigenousMale;
 		this.pupilsIndigenousMaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsIndigenousMale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pupilsIndigenousMale = Long.parseLong(o);
+	public void setPupilsIndigenousMale(String o) {
+		this.pupilsIndigenousMale = ReportCard.staticSetPupilsIndigenousMale(siteRequest_, o);
 		this.pupilsIndigenousMaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetPupilsIndigenousMale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard pupilsIndigenousMaleInit() {
 		if(!pupilsIndigenousMaleWrap.alreadyInitialized) {
@@ -1175,8 +1335,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrPupilsIndigenousMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPupilsIndigenousMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsIndigenousMale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsIndigenousMale(siteRequest_, ReportCard.staticSolrPupilsIndigenousMale(siteRequest_, ReportCard.staticSetPupilsIndigenousMale(siteRequest_, o)));
+	}
+
 	public Long solrPupilsIndigenousMale() {
-		return pupilsIndigenousMale;
+		return ReportCard.staticSolrPupilsIndigenousMale(siteRequest_, pupilsIndigenousMale);
 	}
 
 	public String strPupilsIndigenousMale() {
@@ -1294,11 +1466,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsIndigenousTotal = pupilsIndigenousTotal;
 		this.pupilsIndigenousTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsIndigenousTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pupilsIndigenousTotal = Long.parseLong(o);
+	public void setPupilsIndigenousTotal(String o) {
+		this.pupilsIndigenousTotal = ReportCard.staticSetPupilsIndigenousTotal(siteRequest_, o);
 		this.pupilsIndigenousTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetPupilsIndigenousTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard pupilsIndigenousTotalInit() {
 		if(!pupilsIndigenousTotalWrap.alreadyInitialized) {
@@ -1310,8 +1485,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrPupilsIndigenousTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPupilsIndigenousTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsIndigenousTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsIndigenousTotal(siteRequest_, ReportCard.staticSolrPupilsIndigenousTotal(siteRequest_, ReportCard.staticSetPupilsIndigenousTotal(siteRequest_, o)));
+	}
+
 	public Long solrPupilsIndigenousTotal() {
-		return pupilsIndigenousTotal;
+		return ReportCard.staticSolrPupilsIndigenousTotal(siteRequest_, pupilsIndigenousTotal);
 	}
 
 	public String strPupilsIndigenousTotal() {
@@ -1389,22 +1576,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsIndigenousPercent = pupilsIndigenousPercent;
 		this.pupilsIndigenousPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsIndigenousPercent(String o) {
+	public void setPupilsIndigenousPercent(String o) {
+		this.pupilsIndigenousPercent = ReportCard.staticSetPupilsIndigenousPercent(siteRequest_, o);
+		this.pupilsIndigenousPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetPupilsIndigenousPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.pupilsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.pupilsIndigenousPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setPupilsIndigenousPercent(Double o) {
+	public void setPupilsIndigenousPercent(Double o) {
 			this.pupilsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsIndigenousPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setPupilsIndigenousPercent(Integer o) {
+	public void setPupilsIndigenousPercent(Integer o) {
 			this.pupilsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsIndigenousPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard pupilsIndigenousPercentInit() {
 		if(!pupilsIndigenousPercentWrap.alreadyInitialized) {
@@ -1416,8 +1604,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrPupilsIndigenousPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrPupilsIndigenousPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsIndigenousPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsIndigenousPercent(siteRequest_, ReportCard.staticSolrPupilsIndigenousPercent(siteRequest_, ReportCard.staticSetPupilsIndigenousPercent(siteRequest_, o)));
+	}
+
 	public Double solrPupilsIndigenousPercent() {
-		return pupilsIndigenousPercent == null ? null : pupilsIndigenousPercent.doubleValue();
+		return ReportCard.staticSolrPupilsIndigenousPercent(siteRequest_, pupilsIndigenousPercent);
 	}
 
 	public String strPupilsIndigenousPercent() {
@@ -1495,11 +1695,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsAsianFemale = pupilsAsianFemale;
 		this.pupilsAsianFemaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsAsianFemale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pupilsAsianFemale = Long.parseLong(o);
+	public void setPupilsAsianFemale(String o) {
+		this.pupilsAsianFemale = ReportCard.staticSetPupilsAsianFemale(siteRequest_, o);
 		this.pupilsAsianFemaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetPupilsAsianFemale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard pupilsAsianFemaleInit() {
 		if(!pupilsAsianFemaleWrap.alreadyInitialized) {
@@ -1511,8 +1714,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrPupilsAsianFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPupilsAsianFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsAsianFemale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsAsianFemale(siteRequest_, ReportCard.staticSolrPupilsAsianFemale(siteRequest_, ReportCard.staticSetPupilsAsianFemale(siteRequest_, o)));
+	}
+
 	public Long solrPupilsAsianFemale() {
-		return pupilsAsianFemale;
+		return ReportCard.staticSolrPupilsAsianFemale(siteRequest_, pupilsAsianFemale);
 	}
 
 	public String strPupilsAsianFemale() {
@@ -1630,11 +1845,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsAsianMale = pupilsAsianMale;
 		this.pupilsAsianMaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsAsianMale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pupilsAsianMale = Long.parseLong(o);
+	public void setPupilsAsianMale(String o) {
+		this.pupilsAsianMale = ReportCard.staticSetPupilsAsianMale(siteRequest_, o);
 		this.pupilsAsianMaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetPupilsAsianMale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard pupilsAsianMaleInit() {
 		if(!pupilsAsianMaleWrap.alreadyInitialized) {
@@ -1646,8 +1864,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrPupilsAsianMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPupilsAsianMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsAsianMale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsAsianMale(siteRequest_, ReportCard.staticSolrPupilsAsianMale(siteRequest_, ReportCard.staticSetPupilsAsianMale(siteRequest_, o)));
+	}
+
 	public Long solrPupilsAsianMale() {
-		return pupilsAsianMale;
+		return ReportCard.staticSolrPupilsAsianMale(siteRequest_, pupilsAsianMale);
 	}
 
 	public String strPupilsAsianMale() {
@@ -1765,11 +1995,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsAsianTotal = pupilsAsianTotal;
 		this.pupilsAsianTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsAsianTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pupilsAsianTotal = Long.parseLong(o);
+	public void setPupilsAsianTotal(String o) {
+		this.pupilsAsianTotal = ReportCard.staticSetPupilsAsianTotal(siteRequest_, o);
 		this.pupilsAsianTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetPupilsAsianTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard pupilsAsianTotalInit() {
 		if(!pupilsAsianTotalWrap.alreadyInitialized) {
@@ -1781,8 +2014,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrPupilsAsianTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPupilsAsianTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsAsianTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsAsianTotal(siteRequest_, ReportCard.staticSolrPupilsAsianTotal(siteRequest_, ReportCard.staticSetPupilsAsianTotal(siteRequest_, o)));
+	}
+
 	public Long solrPupilsAsianTotal() {
-		return pupilsAsianTotal;
+		return ReportCard.staticSolrPupilsAsianTotal(siteRequest_, pupilsAsianTotal);
 	}
 
 	public String strPupilsAsianTotal() {
@@ -1860,22 +2105,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsAsianPercent = pupilsAsianPercent;
 		this.pupilsAsianPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsAsianPercent(String o) {
+	public void setPupilsAsianPercent(String o) {
+		this.pupilsAsianPercent = ReportCard.staticSetPupilsAsianPercent(siteRequest_, o);
+		this.pupilsAsianPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetPupilsAsianPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.pupilsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.pupilsAsianPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setPupilsAsianPercent(Double o) {
+	public void setPupilsAsianPercent(Double o) {
 			this.pupilsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsAsianPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setPupilsAsianPercent(Integer o) {
+	public void setPupilsAsianPercent(Integer o) {
 			this.pupilsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsAsianPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard pupilsAsianPercentInit() {
 		if(!pupilsAsianPercentWrap.alreadyInitialized) {
@@ -1887,8 +2133,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrPupilsAsianPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrPupilsAsianPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsAsianPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsAsianPercent(siteRequest_, ReportCard.staticSolrPupilsAsianPercent(siteRequest_, ReportCard.staticSetPupilsAsianPercent(siteRequest_, o)));
+	}
+
 	public Double solrPupilsAsianPercent() {
-		return pupilsAsianPercent == null ? null : pupilsAsianPercent.doubleValue();
+		return ReportCard.staticSolrPupilsAsianPercent(siteRequest_, pupilsAsianPercent);
 	}
 
 	public String strPupilsAsianPercent() {
@@ -1966,11 +2224,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsLatinxFemale = pupilsLatinxFemale;
 		this.pupilsLatinxFemaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsLatinxFemale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pupilsLatinxFemale = Long.parseLong(o);
+	public void setPupilsLatinxFemale(String o) {
+		this.pupilsLatinxFemale = ReportCard.staticSetPupilsLatinxFemale(siteRequest_, o);
 		this.pupilsLatinxFemaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetPupilsLatinxFemale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard pupilsLatinxFemaleInit() {
 		if(!pupilsLatinxFemaleWrap.alreadyInitialized) {
@@ -1982,8 +2243,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrPupilsLatinxFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPupilsLatinxFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsLatinxFemale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsLatinxFemale(siteRequest_, ReportCard.staticSolrPupilsLatinxFemale(siteRequest_, ReportCard.staticSetPupilsLatinxFemale(siteRequest_, o)));
+	}
+
 	public Long solrPupilsLatinxFemale() {
-		return pupilsLatinxFemale;
+		return ReportCard.staticSolrPupilsLatinxFemale(siteRequest_, pupilsLatinxFemale);
 	}
 
 	public String strPupilsLatinxFemale() {
@@ -2101,11 +2374,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsLatinxMale = pupilsLatinxMale;
 		this.pupilsLatinxMaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsLatinxMale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pupilsLatinxMale = Long.parseLong(o);
+	public void setPupilsLatinxMale(String o) {
+		this.pupilsLatinxMale = ReportCard.staticSetPupilsLatinxMale(siteRequest_, o);
 		this.pupilsLatinxMaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetPupilsLatinxMale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard pupilsLatinxMaleInit() {
 		if(!pupilsLatinxMaleWrap.alreadyInitialized) {
@@ -2117,8 +2393,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrPupilsLatinxMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPupilsLatinxMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsLatinxMale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsLatinxMale(siteRequest_, ReportCard.staticSolrPupilsLatinxMale(siteRequest_, ReportCard.staticSetPupilsLatinxMale(siteRequest_, o)));
+	}
+
 	public Long solrPupilsLatinxMale() {
-		return pupilsLatinxMale;
+		return ReportCard.staticSolrPupilsLatinxMale(siteRequest_, pupilsLatinxMale);
 	}
 
 	public String strPupilsLatinxMale() {
@@ -2236,11 +2524,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsLatinxTotal = pupilsLatinxTotal;
 		this.pupilsLatinxTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsLatinxTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pupilsLatinxTotal = Long.parseLong(o);
+	public void setPupilsLatinxTotal(String o) {
+		this.pupilsLatinxTotal = ReportCard.staticSetPupilsLatinxTotal(siteRequest_, o);
 		this.pupilsLatinxTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetPupilsLatinxTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard pupilsLatinxTotalInit() {
 		if(!pupilsLatinxTotalWrap.alreadyInitialized) {
@@ -2252,8 +2543,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrPupilsLatinxTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPupilsLatinxTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsLatinxTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsLatinxTotal(siteRequest_, ReportCard.staticSolrPupilsLatinxTotal(siteRequest_, ReportCard.staticSetPupilsLatinxTotal(siteRequest_, o)));
+	}
+
 	public Long solrPupilsLatinxTotal() {
-		return pupilsLatinxTotal;
+		return ReportCard.staticSolrPupilsLatinxTotal(siteRequest_, pupilsLatinxTotal);
 	}
 
 	public String strPupilsLatinxTotal() {
@@ -2331,22 +2634,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsLatinxPercent = pupilsLatinxPercent;
 		this.pupilsLatinxPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsLatinxPercent(String o) {
+	public void setPupilsLatinxPercent(String o) {
+		this.pupilsLatinxPercent = ReportCard.staticSetPupilsLatinxPercent(siteRequest_, o);
+		this.pupilsLatinxPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetPupilsLatinxPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.pupilsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.pupilsLatinxPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setPupilsLatinxPercent(Double o) {
+	public void setPupilsLatinxPercent(Double o) {
 			this.pupilsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsLatinxPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setPupilsLatinxPercent(Integer o) {
+	public void setPupilsLatinxPercent(Integer o) {
 			this.pupilsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsLatinxPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard pupilsLatinxPercentInit() {
 		if(!pupilsLatinxPercentWrap.alreadyInitialized) {
@@ -2358,8 +2662,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrPupilsLatinxPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrPupilsLatinxPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsLatinxPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsLatinxPercent(siteRequest_, ReportCard.staticSolrPupilsLatinxPercent(siteRequest_, ReportCard.staticSetPupilsLatinxPercent(siteRequest_, o)));
+	}
+
 	public Double solrPupilsLatinxPercent() {
-		return pupilsLatinxPercent == null ? null : pupilsLatinxPercent.doubleValue();
+		return ReportCard.staticSolrPupilsLatinxPercent(siteRequest_, pupilsLatinxPercent);
 	}
 
 	public String strPupilsLatinxPercent() {
@@ -2437,11 +2753,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsBlackFemale = pupilsBlackFemale;
 		this.pupilsBlackFemaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsBlackFemale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pupilsBlackFemale = Long.parseLong(o);
+	public void setPupilsBlackFemale(String o) {
+		this.pupilsBlackFemale = ReportCard.staticSetPupilsBlackFemale(siteRequest_, o);
 		this.pupilsBlackFemaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetPupilsBlackFemale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard pupilsBlackFemaleInit() {
 		if(!pupilsBlackFemaleWrap.alreadyInitialized) {
@@ -2453,8 +2772,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrPupilsBlackFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPupilsBlackFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsBlackFemale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsBlackFemale(siteRequest_, ReportCard.staticSolrPupilsBlackFemale(siteRequest_, ReportCard.staticSetPupilsBlackFemale(siteRequest_, o)));
+	}
+
 	public Long solrPupilsBlackFemale() {
-		return pupilsBlackFemale;
+		return ReportCard.staticSolrPupilsBlackFemale(siteRequest_, pupilsBlackFemale);
 	}
 
 	public String strPupilsBlackFemale() {
@@ -2572,11 +2903,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsBlackMale = pupilsBlackMale;
 		this.pupilsBlackMaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsBlackMale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pupilsBlackMale = Long.parseLong(o);
+	public void setPupilsBlackMale(String o) {
+		this.pupilsBlackMale = ReportCard.staticSetPupilsBlackMale(siteRequest_, o);
 		this.pupilsBlackMaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetPupilsBlackMale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard pupilsBlackMaleInit() {
 		if(!pupilsBlackMaleWrap.alreadyInitialized) {
@@ -2588,8 +2922,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrPupilsBlackMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPupilsBlackMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsBlackMale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsBlackMale(siteRequest_, ReportCard.staticSolrPupilsBlackMale(siteRequest_, ReportCard.staticSetPupilsBlackMale(siteRequest_, o)));
+	}
+
 	public Long solrPupilsBlackMale() {
-		return pupilsBlackMale;
+		return ReportCard.staticSolrPupilsBlackMale(siteRequest_, pupilsBlackMale);
 	}
 
 	public String strPupilsBlackMale() {
@@ -2707,11 +3053,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsBlackTotal = pupilsBlackTotal;
 		this.pupilsBlackTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsBlackTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pupilsBlackTotal = Long.parseLong(o);
+	public void setPupilsBlackTotal(String o) {
+		this.pupilsBlackTotal = ReportCard.staticSetPupilsBlackTotal(siteRequest_, o);
 		this.pupilsBlackTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetPupilsBlackTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard pupilsBlackTotalInit() {
 		if(!pupilsBlackTotalWrap.alreadyInitialized) {
@@ -2723,8 +3072,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrPupilsBlackTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPupilsBlackTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsBlackTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsBlackTotal(siteRequest_, ReportCard.staticSolrPupilsBlackTotal(siteRequest_, ReportCard.staticSetPupilsBlackTotal(siteRequest_, o)));
+	}
+
 	public Long solrPupilsBlackTotal() {
-		return pupilsBlackTotal;
+		return ReportCard.staticSolrPupilsBlackTotal(siteRequest_, pupilsBlackTotal);
 	}
 
 	public String strPupilsBlackTotal() {
@@ -2802,22 +3163,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsBlackPercent = pupilsBlackPercent;
 		this.pupilsBlackPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsBlackPercent(String o) {
+	public void setPupilsBlackPercent(String o) {
+		this.pupilsBlackPercent = ReportCard.staticSetPupilsBlackPercent(siteRequest_, o);
+		this.pupilsBlackPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetPupilsBlackPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.pupilsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.pupilsBlackPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setPupilsBlackPercent(Double o) {
+	public void setPupilsBlackPercent(Double o) {
 			this.pupilsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsBlackPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setPupilsBlackPercent(Integer o) {
+	public void setPupilsBlackPercent(Integer o) {
 			this.pupilsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsBlackPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard pupilsBlackPercentInit() {
 		if(!pupilsBlackPercentWrap.alreadyInitialized) {
@@ -2829,8 +3191,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrPupilsBlackPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrPupilsBlackPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsBlackPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsBlackPercent(siteRequest_, ReportCard.staticSolrPupilsBlackPercent(siteRequest_, ReportCard.staticSetPupilsBlackPercent(siteRequest_, o)));
+	}
+
 	public Double solrPupilsBlackPercent() {
-		return pupilsBlackPercent == null ? null : pupilsBlackPercent.doubleValue();
+		return ReportCard.staticSolrPupilsBlackPercent(siteRequest_, pupilsBlackPercent);
 	}
 
 	public String strPupilsBlackPercent() {
@@ -2908,11 +3282,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsWhiteFemale = pupilsWhiteFemale;
 		this.pupilsWhiteFemaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsWhiteFemale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pupilsWhiteFemale = Long.parseLong(o);
+	public void setPupilsWhiteFemale(String o) {
+		this.pupilsWhiteFemale = ReportCard.staticSetPupilsWhiteFemale(siteRequest_, o);
 		this.pupilsWhiteFemaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetPupilsWhiteFemale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard pupilsWhiteFemaleInit() {
 		if(!pupilsWhiteFemaleWrap.alreadyInitialized) {
@@ -2924,8 +3301,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrPupilsWhiteFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPupilsWhiteFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsWhiteFemale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsWhiteFemale(siteRequest_, ReportCard.staticSolrPupilsWhiteFemale(siteRequest_, ReportCard.staticSetPupilsWhiteFemale(siteRequest_, o)));
+	}
+
 	public Long solrPupilsWhiteFemale() {
-		return pupilsWhiteFemale;
+		return ReportCard.staticSolrPupilsWhiteFemale(siteRequest_, pupilsWhiteFemale);
 	}
 
 	public String strPupilsWhiteFemale() {
@@ -3043,11 +3432,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsWhiteMale = pupilsWhiteMale;
 		this.pupilsWhiteMaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsWhiteMale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pupilsWhiteMale = Long.parseLong(o);
+	public void setPupilsWhiteMale(String o) {
+		this.pupilsWhiteMale = ReportCard.staticSetPupilsWhiteMale(siteRequest_, o);
 		this.pupilsWhiteMaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetPupilsWhiteMale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard pupilsWhiteMaleInit() {
 		if(!pupilsWhiteMaleWrap.alreadyInitialized) {
@@ -3059,8 +3451,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrPupilsWhiteMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPupilsWhiteMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsWhiteMale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsWhiteMale(siteRequest_, ReportCard.staticSolrPupilsWhiteMale(siteRequest_, ReportCard.staticSetPupilsWhiteMale(siteRequest_, o)));
+	}
+
 	public Long solrPupilsWhiteMale() {
-		return pupilsWhiteMale;
+		return ReportCard.staticSolrPupilsWhiteMale(siteRequest_, pupilsWhiteMale);
 	}
 
 	public String strPupilsWhiteMale() {
@@ -3178,11 +3582,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsWhiteTotal = pupilsWhiteTotal;
 		this.pupilsWhiteTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsWhiteTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pupilsWhiteTotal = Long.parseLong(o);
+	public void setPupilsWhiteTotal(String o) {
+		this.pupilsWhiteTotal = ReportCard.staticSetPupilsWhiteTotal(siteRequest_, o);
 		this.pupilsWhiteTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetPupilsWhiteTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard pupilsWhiteTotalInit() {
 		if(!pupilsWhiteTotalWrap.alreadyInitialized) {
@@ -3194,8 +3601,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrPupilsWhiteTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPupilsWhiteTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsWhiteTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsWhiteTotal(siteRequest_, ReportCard.staticSolrPupilsWhiteTotal(siteRequest_, ReportCard.staticSetPupilsWhiteTotal(siteRequest_, o)));
+	}
+
 	public Long solrPupilsWhiteTotal() {
-		return pupilsWhiteTotal;
+		return ReportCard.staticSolrPupilsWhiteTotal(siteRequest_, pupilsWhiteTotal);
 	}
 
 	public String strPupilsWhiteTotal() {
@@ -3273,22 +3692,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsWhitePercent = pupilsWhitePercent;
 		this.pupilsWhitePercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsWhitePercent(String o) {
+	public void setPupilsWhitePercent(String o) {
+		this.pupilsWhitePercent = ReportCard.staticSetPupilsWhitePercent(siteRequest_, o);
+		this.pupilsWhitePercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetPupilsWhitePercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.pupilsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.pupilsWhitePercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setPupilsWhitePercent(Double o) {
+	public void setPupilsWhitePercent(Double o) {
 			this.pupilsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsWhitePercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setPupilsWhitePercent(Integer o) {
+	public void setPupilsWhitePercent(Integer o) {
 			this.pupilsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsWhitePercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard pupilsWhitePercentInit() {
 		if(!pupilsWhitePercentWrap.alreadyInitialized) {
@@ -3300,8 +3720,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrPupilsWhitePercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrPupilsWhitePercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsWhitePercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsWhitePercent(siteRequest_, ReportCard.staticSolrPupilsWhitePercent(siteRequest_, ReportCard.staticSetPupilsWhitePercent(siteRequest_, o)));
+	}
+
 	public Double solrPupilsWhitePercent() {
-		return pupilsWhitePercent == null ? null : pupilsWhitePercent.doubleValue();
+		return ReportCard.staticSolrPupilsWhitePercent(siteRequest_, pupilsWhitePercent);
 	}
 
 	public String strPupilsWhitePercent() {
@@ -3379,11 +3811,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsPacificIslanderFemale = pupilsPacificIslanderFemale;
 		this.pupilsPacificIslanderFemaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsPacificIslanderFemale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pupilsPacificIslanderFemale = Long.parseLong(o);
+	public void setPupilsPacificIslanderFemale(String o) {
+		this.pupilsPacificIslanderFemale = ReportCard.staticSetPupilsPacificIslanderFemale(siteRequest_, o);
 		this.pupilsPacificIslanderFemaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetPupilsPacificIslanderFemale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard pupilsPacificIslanderFemaleInit() {
 		if(!pupilsPacificIslanderFemaleWrap.alreadyInitialized) {
@@ -3395,8 +3830,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrPupilsPacificIslanderFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPupilsPacificIslanderFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsPacificIslanderFemale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsPacificIslanderFemale(siteRequest_, ReportCard.staticSolrPupilsPacificIslanderFemale(siteRequest_, ReportCard.staticSetPupilsPacificIslanderFemale(siteRequest_, o)));
+	}
+
 	public Long solrPupilsPacificIslanderFemale() {
-		return pupilsPacificIslanderFemale;
+		return ReportCard.staticSolrPupilsPacificIslanderFemale(siteRequest_, pupilsPacificIslanderFemale);
 	}
 
 	public String strPupilsPacificIslanderFemale() {
@@ -3514,11 +3961,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsPacificIslanderMale = pupilsPacificIslanderMale;
 		this.pupilsPacificIslanderMaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsPacificIslanderMale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pupilsPacificIslanderMale = Long.parseLong(o);
+	public void setPupilsPacificIslanderMale(String o) {
+		this.pupilsPacificIslanderMale = ReportCard.staticSetPupilsPacificIslanderMale(siteRequest_, o);
 		this.pupilsPacificIslanderMaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetPupilsPacificIslanderMale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard pupilsPacificIslanderMaleInit() {
 		if(!pupilsPacificIslanderMaleWrap.alreadyInitialized) {
@@ -3530,8 +3980,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrPupilsPacificIslanderMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPupilsPacificIslanderMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsPacificIslanderMale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsPacificIslanderMale(siteRequest_, ReportCard.staticSolrPupilsPacificIslanderMale(siteRequest_, ReportCard.staticSetPupilsPacificIslanderMale(siteRequest_, o)));
+	}
+
 	public Long solrPupilsPacificIslanderMale() {
-		return pupilsPacificIslanderMale;
+		return ReportCard.staticSolrPupilsPacificIslanderMale(siteRequest_, pupilsPacificIslanderMale);
 	}
 
 	public String strPupilsPacificIslanderMale() {
@@ -3649,11 +4111,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsPacificIslanderTotal = pupilsPacificIslanderTotal;
 		this.pupilsPacificIslanderTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsPacificIslanderTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pupilsPacificIslanderTotal = Long.parseLong(o);
+	public void setPupilsPacificIslanderTotal(String o) {
+		this.pupilsPacificIslanderTotal = ReportCard.staticSetPupilsPacificIslanderTotal(siteRequest_, o);
 		this.pupilsPacificIslanderTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetPupilsPacificIslanderTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard pupilsPacificIslanderTotalInit() {
 		if(!pupilsPacificIslanderTotalWrap.alreadyInitialized) {
@@ -3665,8 +4130,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrPupilsPacificIslanderTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPupilsPacificIslanderTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsPacificIslanderTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsPacificIslanderTotal(siteRequest_, ReportCard.staticSolrPupilsPacificIslanderTotal(siteRequest_, ReportCard.staticSetPupilsPacificIslanderTotal(siteRequest_, o)));
+	}
+
 	public Long solrPupilsPacificIslanderTotal() {
-		return pupilsPacificIslanderTotal;
+		return ReportCard.staticSolrPupilsPacificIslanderTotal(siteRequest_, pupilsPacificIslanderTotal);
 	}
 
 	public String strPupilsPacificIslanderTotal() {
@@ -3744,22 +4221,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsPacificIslanderPercent = pupilsPacificIslanderPercent;
 		this.pupilsPacificIslanderPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsPacificIslanderPercent(String o) {
+	public void setPupilsPacificIslanderPercent(String o) {
+		this.pupilsPacificIslanderPercent = ReportCard.staticSetPupilsPacificIslanderPercent(siteRequest_, o);
+		this.pupilsPacificIslanderPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetPupilsPacificIslanderPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.pupilsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.pupilsPacificIslanderPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setPupilsPacificIslanderPercent(Double o) {
+	public void setPupilsPacificIslanderPercent(Double o) {
 			this.pupilsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsPacificIslanderPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setPupilsPacificIslanderPercent(Integer o) {
+	public void setPupilsPacificIslanderPercent(Integer o) {
 			this.pupilsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsPacificIslanderPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard pupilsPacificIslanderPercentInit() {
 		if(!pupilsPacificIslanderPercentWrap.alreadyInitialized) {
@@ -3771,8 +4249,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrPupilsPacificIslanderPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrPupilsPacificIslanderPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsPacificIslanderPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsPacificIslanderPercent(siteRequest_, ReportCard.staticSolrPupilsPacificIslanderPercent(siteRequest_, ReportCard.staticSetPupilsPacificIslanderPercent(siteRequest_, o)));
+	}
+
 	public Double solrPupilsPacificIslanderPercent() {
-		return pupilsPacificIslanderPercent == null ? null : pupilsPacificIslanderPercent.doubleValue();
+		return ReportCard.staticSolrPupilsPacificIslanderPercent(siteRequest_, pupilsPacificIslanderPercent);
 	}
 
 	public String strPupilsPacificIslanderPercent() {
@@ -3850,11 +4340,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsMultiRacialFemale = pupilsMultiRacialFemale;
 		this.pupilsMultiRacialFemaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsMultiRacialFemale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pupilsMultiRacialFemale = Long.parseLong(o);
+	public void setPupilsMultiRacialFemale(String o) {
+		this.pupilsMultiRacialFemale = ReportCard.staticSetPupilsMultiRacialFemale(siteRequest_, o);
 		this.pupilsMultiRacialFemaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetPupilsMultiRacialFemale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard pupilsMultiRacialFemaleInit() {
 		if(!pupilsMultiRacialFemaleWrap.alreadyInitialized) {
@@ -3866,8 +4359,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrPupilsMultiRacialFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPupilsMultiRacialFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsMultiRacialFemale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsMultiRacialFemale(siteRequest_, ReportCard.staticSolrPupilsMultiRacialFemale(siteRequest_, ReportCard.staticSetPupilsMultiRacialFemale(siteRequest_, o)));
+	}
+
 	public Long solrPupilsMultiRacialFemale() {
-		return pupilsMultiRacialFemale;
+		return ReportCard.staticSolrPupilsMultiRacialFemale(siteRequest_, pupilsMultiRacialFemale);
 	}
 
 	public String strPupilsMultiRacialFemale() {
@@ -3985,11 +4490,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsMultiRacialMale = pupilsMultiRacialMale;
 		this.pupilsMultiRacialMaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsMultiRacialMale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pupilsMultiRacialMale = Long.parseLong(o);
+	public void setPupilsMultiRacialMale(String o) {
+		this.pupilsMultiRacialMale = ReportCard.staticSetPupilsMultiRacialMale(siteRequest_, o);
 		this.pupilsMultiRacialMaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetPupilsMultiRacialMale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard pupilsMultiRacialMaleInit() {
 		if(!pupilsMultiRacialMaleWrap.alreadyInitialized) {
@@ -4001,8 +4509,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrPupilsMultiRacialMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPupilsMultiRacialMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsMultiRacialMale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsMultiRacialMale(siteRequest_, ReportCard.staticSolrPupilsMultiRacialMale(siteRequest_, ReportCard.staticSetPupilsMultiRacialMale(siteRequest_, o)));
+	}
+
 	public Long solrPupilsMultiRacialMale() {
-		return pupilsMultiRacialMale;
+		return ReportCard.staticSolrPupilsMultiRacialMale(siteRequest_, pupilsMultiRacialMale);
 	}
 
 	public String strPupilsMultiRacialMale() {
@@ -4120,11 +4640,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsMultiRacialTotal = pupilsMultiRacialTotal;
 		this.pupilsMultiRacialTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsMultiRacialTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.pupilsMultiRacialTotal = Long.parseLong(o);
+	public void setPupilsMultiRacialTotal(String o) {
+		this.pupilsMultiRacialTotal = ReportCard.staticSetPupilsMultiRacialTotal(siteRequest_, o);
 		this.pupilsMultiRacialTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetPupilsMultiRacialTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard pupilsMultiRacialTotalInit() {
 		if(!pupilsMultiRacialTotalWrap.alreadyInitialized) {
@@ -4136,8 +4659,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrPupilsMultiRacialTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrPupilsMultiRacialTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsMultiRacialTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsMultiRacialTotal(siteRequest_, ReportCard.staticSolrPupilsMultiRacialTotal(siteRequest_, ReportCard.staticSetPupilsMultiRacialTotal(siteRequest_, o)));
+	}
+
 	public Long solrPupilsMultiRacialTotal() {
-		return pupilsMultiRacialTotal;
+		return ReportCard.staticSolrPupilsMultiRacialTotal(siteRequest_, pupilsMultiRacialTotal);
 	}
 
 	public String strPupilsMultiRacialTotal() {
@@ -4215,22 +4750,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsMultiRacialPercent = pupilsMultiRacialPercent;
 		this.pupilsMultiRacialPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsMultiRacialPercent(String o) {
+	public void setPupilsMultiRacialPercent(String o) {
+		this.pupilsMultiRacialPercent = ReportCard.staticSetPupilsMultiRacialPercent(siteRequest_, o);
+		this.pupilsMultiRacialPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetPupilsMultiRacialPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.pupilsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.pupilsMultiRacialPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setPupilsMultiRacialPercent(Double o) {
+	public void setPupilsMultiRacialPercent(Double o) {
 			this.pupilsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsMultiRacialPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setPupilsMultiRacialPercent(Integer o) {
+	public void setPupilsMultiRacialPercent(Integer o) {
 			this.pupilsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsMultiRacialPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard pupilsMultiRacialPercentInit() {
 		if(!pupilsMultiRacialPercentWrap.alreadyInitialized) {
@@ -4242,8 +4778,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrPupilsMultiRacialPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrPupilsMultiRacialPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsMultiRacialPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsMultiRacialPercent(siteRequest_, ReportCard.staticSolrPupilsMultiRacialPercent(siteRequest_, ReportCard.staticSetPupilsMultiRacialPercent(siteRequest_, o)));
+	}
+
 	public Double solrPupilsMultiRacialPercent() {
-		return pupilsMultiRacialPercent == null ? null : pupilsMultiRacialPercent.doubleValue();
+		return ReportCard.staticSolrPupilsMultiRacialPercent(siteRequest_, pupilsMultiRacialPercent);
 	}
 
 	public String strPupilsMultiRacialPercent() {
@@ -4321,22 +4869,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.pupilsOtherPercent = pupilsOtherPercent;
 		this.pupilsOtherPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setPupilsOtherPercent(String o) {
+	public void setPupilsOtherPercent(String o) {
+		this.pupilsOtherPercent = ReportCard.staticSetPupilsOtherPercent(siteRequest_, o);
+		this.pupilsOtherPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetPupilsOtherPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.pupilsOtherPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.pupilsOtherPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setPupilsOtherPercent(Double o) {
+	public void setPupilsOtherPercent(Double o) {
 			this.pupilsOtherPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsOtherPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setPupilsOtherPercent(Integer o) {
+	public void setPupilsOtherPercent(Integer o) {
 			this.pupilsOtherPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.pupilsOtherPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard pupilsOtherPercentInit() {
 		if(!pupilsOtherPercentWrap.alreadyInitialized) {
@@ -4348,8 +4897,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrPupilsOtherPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrPupilsOtherPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPupilsOtherPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrPupilsOtherPercent(siteRequest_, ReportCard.staticSolrPupilsOtherPercent(siteRequest_, ReportCard.staticSetPupilsOtherPercent(siteRequest_, o)));
+	}
+
 	public Double solrPupilsOtherPercent() {
-		return pupilsOtherPercent == null ? null : pupilsOtherPercent.doubleValue();
+		return ReportCard.staticSolrPupilsOtherPercent(siteRequest_, pupilsOtherPercent);
 	}
 
 	public String strPupilsOtherPercent() {
@@ -4401,11 +4962,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.teachersMale = teachersMale;
 		this.teachersMaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setTeachersMale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.teachersMale = Long.parseLong(o);
+	public void setTeachersMale(String o) {
+		this.teachersMale = ReportCard.staticSetTeachersMale(siteRequest_, o);
 		this.teachersMaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetTeachersMale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard teachersMaleInit() {
 		if(!teachersMaleWrap.alreadyInitialized) {
@@ -4417,8 +4981,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrTeachersMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrTeachersMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqTeachersMale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrTeachersMale(siteRequest_, ReportCard.staticSolrTeachersMale(siteRequest_, ReportCard.staticSetTeachersMale(siteRequest_, o)));
+	}
+
 	public Long solrTeachersMale() {
-		return teachersMale;
+		return ReportCard.staticSolrTeachersMale(siteRequest_, teachersMale);
 	}
 
 	public String strTeachersMale() {
@@ -4536,11 +5112,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.teachersFemale = teachersFemale;
 		this.teachersFemaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setTeachersFemale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.teachersFemale = Long.parseLong(o);
+	public void setTeachersFemale(String o) {
+		this.teachersFemale = ReportCard.staticSetTeachersFemale(siteRequest_, o);
 		this.teachersFemaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetTeachersFemale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard teachersFemaleInit() {
 		if(!teachersFemaleWrap.alreadyInitialized) {
@@ -4552,8 +5131,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrTeachersFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrTeachersFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqTeachersFemale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrTeachersFemale(siteRequest_, ReportCard.staticSolrTeachersFemale(siteRequest_, ReportCard.staticSetTeachersFemale(siteRequest_, o)));
+	}
+
 	public Long solrTeachersFemale() {
-		return teachersFemale;
+		return ReportCard.staticSolrTeachersFemale(siteRequest_, teachersFemale);
 	}
 
 	public String strTeachersFemale() {
@@ -4671,11 +5262,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.teachersTotal = teachersTotal;
 		this.teachersTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setTeachersTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.teachersTotal = Long.parseLong(o);
+	public void setTeachersTotal(String o) {
+		this.teachersTotal = ReportCard.staticSetTeachersTotal(siteRequest_, o);
 		this.teachersTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetTeachersTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard teachersTotalInit() {
 		if(!teachersTotalWrap.alreadyInitialized) {
@@ -4687,8 +5281,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrTeachersTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrTeachersTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqTeachersTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrTeachersTotal(siteRequest_, ReportCard.staticSolrTeachersTotal(siteRequest_, ReportCard.staticSetTeachersTotal(siteRequest_, o)));
+	}
+
 	public Long solrTeachersTotal() {
-		return teachersTotal;
+		return ReportCard.staticSolrTeachersTotal(siteRequest_, teachersTotal);
 	}
 
 	public String strTeachersTotal() {
@@ -4766,11 +5372,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.teachersWhiteTotal = teachersWhiteTotal;
 		this.teachersWhiteTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setTeachersWhiteTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.teachersWhiteTotal = Long.parseLong(o);
+	public void setTeachersWhiteTotal(String o) {
+		this.teachersWhiteTotal = ReportCard.staticSetTeachersWhiteTotal(siteRequest_, o);
 		this.teachersWhiteTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetTeachersWhiteTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard teachersWhiteTotalInit() {
 		if(!teachersWhiteTotalWrap.alreadyInitialized) {
@@ -4782,8 +5391,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrTeachersWhiteTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrTeachersWhiteTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqTeachersWhiteTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrTeachersWhiteTotal(siteRequest_, ReportCard.staticSolrTeachersWhiteTotal(siteRequest_, ReportCard.staticSetTeachersWhiteTotal(siteRequest_, o)));
+	}
+
 	public Long solrTeachersWhiteTotal() {
-		return teachersWhiteTotal;
+		return ReportCard.staticSolrTeachersWhiteTotal(siteRequest_, teachersWhiteTotal);
 	}
 
 	public String strTeachersWhiteTotal() {
@@ -4901,22 +5522,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.teachersWhitePercent = teachersWhitePercent;
 		this.teachersWhitePercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setTeachersWhitePercent(String o) {
+	public void setTeachersWhitePercent(String o) {
+		this.teachersWhitePercent = ReportCard.staticSetTeachersWhitePercent(siteRequest_, o);
+		this.teachersWhitePercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetTeachersWhitePercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.teachersWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.teachersWhitePercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setTeachersWhitePercent(Double o) {
+	public void setTeachersWhitePercent(Double o) {
 			this.teachersWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.teachersWhitePercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setTeachersWhitePercent(Integer o) {
+	public void setTeachersWhitePercent(Integer o) {
 			this.teachersWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.teachersWhitePercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard teachersWhitePercentInit() {
 		if(!teachersWhitePercentWrap.alreadyInitialized) {
@@ -4928,8 +5550,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrTeachersWhitePercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrTeachersWhitePercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqTeachersWhitePercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrTeachersWhitePercent(siteRequest_, ReportCard.staticSolrTeachersWhitePercent(siteRequest_, ReportCard.staticSetTeachersWhitePercent(siteRequest_, o)));
+	}
+
 	public Double solrTeachersWhitePercent() {
-		return teachersWhitePercent == null ? null : teachersWhitePercent.doubleValue();
+		return ReportCard.staticSolrTeachersWhitePercent(siteRequest_, teachersWhitePercent);
 	}
 
 	public String strTeachersWhitePercent() {
@@ -5007,11 +5641,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.teachersBlackTotal = teachersBlackTotal;
 		this.teachersBlackTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setTeachersBlackTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.teachersBlackTotal = Long.parseLong(o);
+	public void setTeachersBlackTotal(String o) {
+		this.teachersBlackTotal = ReportCard.staticSetTeachersBlackTotal(siteRequest_, o);
 		this.teachersBlackTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetTeachersBlackTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard teachersBlackTotalInit() {
 		if(!teachersBlackTotalWrap.alreadyInitialized) {
@@ -5023,8 +5660,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrTeachersBlackTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrTeachersBlackTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqTeachersBlackTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrTeachersBlackTotal(siteRequest_, ReportCard.staticSolrTeachersBlackTotal(siteRequest_, ReportCard.staticSetTeachersBlackTotal(siteRequest_, o)));
+	}
+
 	public Long solrTeachersBlackTotal() {
-		return teachersBlackTotal;
+		return ReportCard.staticSolrTeachersBlackTotal(siteRequest_, teachersBlackTotal);
 	}
 
 	public String strTeachersBlackTotal() {
@@ -5142,22 +5791,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.teachersBlackPercent = teachersBlackPercent;
 		this.teachersBlackPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setTeachersBlackPercent(String o) {
+	public void setTeachersBlackPercent(String o) {
+		this.teachersBlackPercent = ReportCard.staticSetTeachersBlackPercent(siteRequest_, o);
+		this.teachersBlackPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetTeachersBlackPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.teachersBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.teachersBlackPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setTeachersBlackPercent(Double o) {
+	public void setTeachersBlackPercent(Double o) {
 			this.teachersBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.teachersBlackPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setTeachersBlackPercent(Integer o) {
+	public void setTeachersBlackPercent(Integer o) {
 			this.teachersBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.teachersBlackPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard teachersBlackPercentInit() {
 		if(!teachersBlackPercentWrap.alreadyInitialized) {
@@ -5169,8 +5819,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrTeachersBlackPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrTeachersBlackPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqTeachersBlackPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrTeachersBlackPercent(siteRequest_, ReportCard.staticSolrTeachersBlackPercent(siteRequest_, ReportCard.staticSetTeachersBlackPercent(siteRequest_, o)));
+	}
+
 	public Double solrTeachersBlackPercent() {
-		return teachersBlackPercent == null ? null : teachersBlackPercent.doubleValue();
+		return ReportCard.staticSolrTeachersBlackPercent(siteRequest_, teachersBlackPercent);
 	}
 
 	public String strTeachersBlackPercent() {
@@ -5248,11 +5910,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.teachersOtherTotal = teachersOtherTotal;
 		this.teachersOtherTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setTeachersOtherTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.teachersOtherTotal = Long.parseLong(o);
+	public void setTeachersOtherTotal(String o) {
+		this.teachersOtherTotal = ReportCard.staticSetTeachersOtherTotal(siteRequest_, o);
 		this.teachersOtherTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetTeachersOtherTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard teachersOtherTotalInit() {
 		if(!teachersOtherTotalWrap.alreadyInitialized) {
@@ -5264,8 +5929,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrTeachersOtherTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrTeachersOtherTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqTeachersOtherTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrTeachersOtherTotal(siteRequest_, ReportCard.staticSolrTeachersOtherTotal(siteRequest_, ReportCard.staticSetTeachersOtherTotal(siteRequest_, o)));
+	}
+
 	public Long solrTeachersOtherTotal() {
-		return teachersOtherTotal;
+		return ReportCard.staticSolrTeachersOtherTotal(siteRequest_, teachersOtherTotal);
 	}
 
 	public String strTeachersOtherTotal() {
@@ -5383,22 +6060,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.teachersOtherPercent = teachersOtherPercent;
 		this.teachersOtherPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setTeachersOtherPercent(String o) {
+	public void setTeachersOtherPercent(String o) {
+		this.teachersOtherPercent = ReportCard.staticSetTeachersOtherPercent(siteRequest_, o);
+		this.teachersOtherPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetTeachersOtherPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.teachersOtherPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.teachersOtherPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setTeachersOtherPercent(Double o) {
+	public void setTeachersOtherPercent(Double o) {
 			this.teachersOtherPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.teachersOtherPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setTeachersOtherPercent(Integer o) {
+	public void setTeachersOtherPercent(Integer o) {
 			this.teachersOtherPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.teachersOtherPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard teachersOtherPercentInit() {
 		if(!teachersOtherPercentWrap.alreadyInitialized) {
@@ -5410,8 +6088,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrTeachersOtherPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrTeachersOtherPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqTeachersOtherPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrTeachersOtherPercent(siteRequest_, ReportCard.staticSolrTeachersOtherPercent(siteRequest_, ReportCard.staticSetTeachersOtherPercent(siteRequest_, o)));
+	}
+
 	public Double solrTeachersOtherPercent() {
-		return teachersOtherPercent == null ? null : teachersOtherPercent.doubleValue();
+		return ReportCard.staticSolrTeachersOtherPercent(siteRequest_, teachersOtherPercent);
 	}
 
 	public String strTeachersOtherPercent() {
@@ -5489,11 +6179,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.delinquentComplaintsTotal = delinquentComplaintsTotal;
 		this.delinquentComplaintsTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setDelinquentComplaintsTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsTotal = Long.parseLong(o);
+	public void setDelinquentComplaintsTotal(String o) {
+		this.delinquentComplaintsTotal = ReportCard.staticSetDelinquentComplaintsTotal(siteRequest_, o);
 		this.delinquentComplaintsTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetDelinquentComplaintsTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard delinquentComplaintsTotalInit() {
 		if(!delinquentComplaintsTotalWrap.alreadyInitialized) {
@@ -5505,8 +6198,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrDelinquentComplaintsTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrDelinquentComplaintsTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqDelinquentComplaintsTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrDelinquentComplaintsTotal(siteRequest_, ReportCard.staticSolrDelinquentComplaintsTotal(siteRequest_, ReportCard.staticSetDelinquentComplaintsTotal(siteRequest_, o)));
+	}
+
 	public Long solrDelinquentComplaintsTotal() {
-		return delinquentComplaintsTotal;
+		return ReportCard.staticSolrDelinquentComplaintsTotal(siteRequest_, delinquentComplaintsTotal);
 	}
 
 	public String strDelinquentComplaintsTotal() {
@@ -5624,11 +6329,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.delinquentComplaintsAtSchool = delinquentComplaintsAtSchool;
 		this.delinquentComplaintsAtSchoolWrap.alreadyInitialized = true;
 	}
-	public ReportCard setDelinquentComplaintsAtSchool(String o) {
-		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsAtSchool = Long.parseLong(o);
+	public void setDelinquentComplaintsAtSchool(String o) {
+		this.delinquentComplaintsAtSchool = ReportCard.staticSetDelinquentComplaintsAtSchool(siteRequest_, o);
 		this.delinquentComplaintsAtSchoolWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetDelinquentComplaintsAtSchool(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard delinquentComplaintsAtSchoolInit() {
 		if(!delinquentComplaintsAtSchoolWrap.alreadyInitialized) {
@@ -5640,8 +6348,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrDelinquentComplaintsAtSchool(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrDelinquentComplaintsAtSchool(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqDelinquentComplaintsAtSchool(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrDelinquentComplaintsAtSchool(siteRequest_, ReportCard.staticSolrDelinquentComplaintsAtSchool(siteRequest_, ReportCard.staticSetDelinquentComplaintsAtSchool(siteRequest_, o)));
+	}
+
 	public Long solrDelinquentComplaintsAtSchool() {
-		return delinquentComplaintsAtSchool;
+		return ReportCard.staticSolrDelinquentComplaintsAtSchool(siteRequest_, delinquentComplaintsAtSchool);
 	}
 
 	public String strDelinquentComplaintsAtSchool() {
@@ -5759,22 +6479,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.delinquentComplaintsAtSchoolPercent = delinquentComplaintsAtSchoolPercent;
 		this.delinquentComplaintsAtSchoolPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setDelinquentComplaintsAtSchoolPercent(String o) {
+	public void setDelinquentComplaintsAtSchoolPercent(String o) {
+		this.delinquentComplaintsAtSchoolPercent = ReportCard.staticSetDelinquentComplaintsAtSchoolPercent(siteRequest_, o);
+		this.delinquentComplaintsAtSchoolPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetDelinquentComplaintsAtSchoolPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsAtSchoolPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.delinquentComplaintsAtSchoolPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setDelinquentComplaintsAtSchoolPercent(Double o) {
+	public void setDelinquentComplaintsAtSchoolPercent(Double o) {
 			this.delinquentComplaintsAtSchoolPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsAtSchoolPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setDelinquentComplaintsAtSchoolPercent(Integer o) {
+	public void setDelinquentComplaintsAtSchoolPercent(Integer o) {
 			this.delinquentComplaintsAtSchoolPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsAtSchoolPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard delinquentComplaintsAtSchoolPercentInit() {
 		if(!delinquentComplaintsAtSchoolPercentWrap.alreadyInitialized) {
@@ -5786,8 +6507,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrDelinquentComplaintsAtSchoolPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrDelinquentComplaintsAtSchoolPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqDelinquentComplaintsAtSchoolPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrDelinquentComplaintsAtSchoolPercent(siteRequest_, ReportCard.staticSolrDelinquentComplaintsAtSchoolPercent(siteRequest_, ReportCard.staticSetDelinquentComplaintsAtSchoolPercent(siteRequest_, o)));
+	}
+
 	public Double solrDelinquentComplaintsAtSchoolPercent() {
-		return delinquentComplaintsAtSchoolPercent == null ? null : delinquentComplaintsAtSchoolPercent.doubleValue();
+		return ReportCard.staticSolrDelinquentComplaintsAtSchoolPercent(siteRequest_, delinquentComplaintsAtSchoolPercent);
 	}
 
 	public String strDelinquentComplaintsAtSchoolPercent() {
@@ -5865,11 +6598,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.delinquentComplaintsAsian = delinquentComplaintsAsian;
 		this.delinquentComplaintsAsianWrap.alreadyInitialized = true;
 	}
-	public ReportCard setDelinquentComplaintsAsian(String o) {
-		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsAsian = Long.parseLong(o);
+	public void setDelinquentComplaintsAsian(String o) {
+		this.delinquentComplaintsAsian = ReportCard.staticSetDelinquentComplaintsAsian(siteRequest_, o);
 		this.delinquentComplaintsAsianWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetDelinquentComplaintsAsian(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard delinquentComplaintsAsianInit() {
 		if(!delinquentComplaintsAsianWrap.alreadyInitialized) {
@@ -5881,8 +6617,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrDelinquentComplaintsAsian(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrDelinquentComplaintsAsian(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqDelinquentComplaintsAsian(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrDelinquentComplaintsAsian(siteRequest_, ReportCard.staticSolrDelinquentComplaintsAsian(siteRequest_, ReportCard.staticSetDelinquentComplaintsAsian(siteRequest_, o)));
+	}
+
 	public Long solrDelinquentComplaintsAsian() {
-		return delinquentComplaintsAsian;
+		return ReportCard.staticSolrDelinquentComplaintsAsian(siteRequest_, delinquentComplaintsAsian);
 	}
 
 	public String strDelinquentComplaintsAsian() {
@@ -6000,22 +6748,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.delinquentComplaintsAsianPercent = delinquentComplaintsAsianPercent;
 		this.delinquentComplaintsAsianPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setDelinquentComplaintsAsianPercent(String o) {
+	public void setDelinquentComplaintsAsianPercent(String o) {
+		this.delinquentComplaintsAsianPercent = ReportCard.staticSetDelinquentComplaintsAsianPercent(siteRequest_, o);
+		this.delinquentComplaintsAsianPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetDelinquentComplaintsAsianPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.delinquentComplaintsAsianPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setDelinquentComplaintsAsianPercent(Double o) {
+	public void setDelinquentComplaintsAsianPercent(Double o) {
 			this.delinquentComplaintsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsAsianPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setDelinquentComplaintsAsianPercent(Integer o) {
+	public void setDelinquentComplaintsAsianPercent(Integer o) {
 			this.delinquentComplaintsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsAsianPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard delinquentComplaintsAsianPercentInit() {
 		if(!delinquentComplaintsAsianPercentWrap.alreadyInitialized) {
@@ -6027,8 +6776,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrDelinquentComplaintsAsianPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrDelinquentComplaintsAsianPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqDelinquentComplaintsAsianPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrDelinquentComplaintsAsianPercent(siteRequest_, ReportCard.staticSolrDelinquentComplaintsAsianPercent(siteRequest_, ReportCard.staticSetDelinquentComplaintsAsianPercent(siteRequest_, o)));
+	}
+
 	public Double solrDelinquentComplaintsAsianPercent() {
-		return delinquentComplaintsAsianPercent == null ? null : delinquentComplaintsAsianPercent.doubleValue();
+		return ReportCard.staticSolrDelinquentComplaintsAsianPercent(siteRequest_, delinquentComplaintsAsianPercent);
 	}
 
 	public String strDelinquentComplaintsAsianPercent() {
@@ -6106,11 +6867,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.delinquentComplaintsBlack = delinquentComplaintsBlack;
 		this.delinquentComplaintsBlackWrap.alreadyInitialized = true;
 	}
-	public ReportCard setDelinquentComplaintsBlack(String o) {
-		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsBlack = Long.parseLong(o);
+	public void setDelinquentComplaintsBlack(String o) {
+		this.delinquentComplaintsBlack = ReportCard.staticSetDelinquentComplaintsBlack(siteRequest_, o);
 		this.delinquentComplaintsBlackWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetDelinquentComplaintsBlack(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard delinquentComplaintsBlackInit() {
 		if(!delinquentComplaintsBlackWrap.alreadyInitialized) {
@@ -6122,8 +6886,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrDelinquentComplaintsBlack(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrDelinquentComplaintsBlack(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqDelinquentComplaintsBlack(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrDelinquentComplaintsBlack(siteRequest_, ReportCard.staticSolrDelinquentComplaintsBlack(siteRequest_, ReportCard.staticSetDelinquentComplaintsBlack(siteRequest_, o)));
+	}
+
 	public Long solrDelinquentComplaintsBlack() {
-		return delinquentComplaintsBlack;
+		return ReportCard.staticSolrDelinquentComplaintsBlack(siteRequest_, delinquentComplaintsBlack);
 	}
 
 	public String strDelinquentComplaintsBlack() {
@@ -6241,22 +7017,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.delinquentComplaintsBlackPercent = delinquentComplaintsBlackPercent;
 		this.delinquentComplaintsBlackPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setDelinquentComplaintsBlackPercent(String o) {
+	public void setDelinquentComplaintsBlackPercent(String o) {
+		this.delinquentComplaintsBlackPercent = ReportCard.staticSetDelinquentComplaintsBlackPercent(siteRequest_, o);
+		this.delinquentComplaintsBlackPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetDelinquentComplaintsBlackPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.delinquentComplaintsBlackPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setDelinquentComplaintsBlackPercent(Double o) {
+	public void setDelinquentComplaintsBlackPercent(Double o) {
 			this.delinquentComplaintsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsBlackPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setDelinquentComplaintsBlackPercent(Integer o) {
+	public void setDelinquentComplaintsBlackPercent(Integer o) {
 			this.delinquentComplaintsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsBlackPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard delinquentComplaintsBlackPercentInit() {
 		if(!delinquentComplaintsBlackPercentWrap.alreadyInitialized) {
@@ -6268,8 +7045,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrDelinquentComplaintsBlackPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrDelinquentComplaintsBlackPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqDelinquentComplaintsBlackPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrDelinquentComplaintsBlackPercent(siteRequest_, ReportCard.staticSolrDelinquentComplaintsBlackPercent(siteRequest_, ReportCard.staticSetDelinquentComplaintsBlackPercent(siteRequest_, o)));
+	}
+
 	public Double solrDelinquentComplaintsBlackPercent() {
-		return delinquentComplaintsBlackPercent == null ? null : delinquentComplaintsBlackPercent.doubleValue();
+		return ReportCard.staticSolrDelinquentComplaintsBlackPercent(siteRequest_, delinquentComplaintsBlackPercent);
 	}
 
 	public String strDelinquentComplaintsBlackPercent() {
@@ -6347,11 +7136,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.delinquentComplaintsLatinx = delinquentComplaintsLatinx;
 		this.delinquentComplaintsLatinxWrap.alreadyInitialized = true;
 	}
-	public ReportCard setDelinquentComplaintsLatinx(String o) {
-		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsLatinx = Long.parseLong(o);
+	public void setDelinquentComplaintsLatinx(String o) {
+		this.delinquentComplaintsLatinx = ReportCard.staticSetDelinquentComplaintsLatinx(siteRequest_, o);
 		this.delinquentComplaintsLatinxWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetDelinquentComplaintsLatinx(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard delinquentComplaintsLatinxInit() {
 		if(!delinquentComplaintsLatinxWrap.alreadyInitialized) {
@@ -6363,8 +7155,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrDelinquentComplaintsLatinx(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrDelinquentComplaintsLatinx(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqDelinquentComplaintsLatinx(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrDelinquentComplaintsLatinx(siteRequest_, ReportCard.staticSolrDelinquentComplaintsLatinx(siteRequest_, ReportCard.staticSetDelinquentComplaintsLatinx(siteRequest_, o)));
+	}
+
 	public Long solrDelinquentComplaintsLatinx() {
-		return delinquentComplaintsLatinx;
+		return ReportCard.staticSolrDelinquentComplaintsLatinx(siteRequest_, delinquentComplaintsLatinx);
 	}
 
 	public String strDelinquentComplaintsLatinx() {
@@ -6482,22 +7286,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.delinquentComplaintsLatinxPercent = delinquentComplaintsLatinxPercent;
 		this.delinquentComplaintsLatinxPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setDelinquentComplaintsLatinxPercent(String o) {
+	public void setDelinquentComplaintsLatinxPercent(String o) {
+		this.delinquentComplaintsLatinxPercent = ReportCard.staticSetDelinquentComplaintsLatinxPercent(siteRequest_, o);
+		this.delinquentComplaintsLatinxPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetDelinquentComplaintsLatinxPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.delinquentComplaintsLatinxPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setDelinquentComplaintsLatinxPercent(Double o) {
+	public void setDelinquentComplaintsLatinxPercent(Double o) {
 			this.delinquentComplaintsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsLatinxPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setDelinquentComplaintsLatinxPercent(Integer o) {
+	public void setDelinquentComplaintsLatinxPercent(Integer o) {
 			this.delinquentComplaintsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsLatinxPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard delinquentComplaintsLatinxPercentInit() {
 		if(!delinquentComplaintsLatinxPercentWrap.alreadyInitialized) {
@@ -6509,8 +7314,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrDelinquentComplaintsLatinxPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrDelinquentComplaintsLatinxPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqDelinquentComplaintsLatinxPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrDelinquentComplaintsLatinxPercent(siteRequest_, ReportCard.staticSolrDelinquentComplaintsLatinxPercent(siteRequest_, ReportCard.staticSetDelinquentComplaintsLatinxPercent(siteRequest_, o)));
+	}
+
 	public Double solrDelinquentComplaintsLatinxPercent() {
-		return delinquentComplaintsLatinxPercent == null ? null : delinquentComplaintsLatinxPercent.doubleValue();
+		return ReportCard.staticSolrDelinquentComplaintsLatinxPercent(siteRequest_, delinquentComplaintsLatinxPercent);
 	}
 
 	public String strDelinquentComplaintsLatinxPercent() {
@@ -6588,11 +7405,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.delinquentComplaintsMultiRacial = delinquentComplaintsMultiRacial;
 		this.delinquentComplaintsMultiRacialWrap.alreadyInitialized = true;
 	}
-	public ReportCard setDelinquentComplaintsMultiRacial(String o) {
-		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsMultiRacial = Long.parseLong(o);
+	public void setDelinquentComplaintsMultiRacial(String o) {
+		this.delinquentComplaintsMultiRacial = ReportCard.staticSetDelinquentComplaintsMultiRacial(siteRequest_, o);
 		this.delinquentComplaintsMultiRacialWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetDelinquentComplaintsMultiRacial(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard delinquentComplaintsMultiRacialInit() {
 		if(!delinquentComplaintsMultiRacialWrap.alreadyInitialized) {
@@ -6604,8 +7424,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrDelinquentComplaintsMultiRacial(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrDelinquentComplaintsMultiRacial(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqDelinquentComplaintsMultiRacial(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrDelinquentComplaintsMultiRacial(siteRequest_, ReportCard.staticSolrDelinquentComplaintsMultiRacial(siteRequest_, ReportCard.staticSetDelinquentComplaintsMultiRacial(siteRequest_, o)));
+	}
+
 	public Long solrDelinquentComplaintsMultiRacial() {
-		return delinquentComplaintsMultiRacial;
+		return ReportCard.staticSolrDelinquentComplaintsMultiRacial(siteRequest_, delinquentComplaintsMultiRacial);
 	}
 
 	public String strDelinquentComplaintsMultiRacial() {
@@ -6723,22 +7555,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.delinquentComplaintsMultiRacialPercent = delinquentComplaintsMultiRacialPercent;
 		this.delinquentComplaintsMultiRacialPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setDelinquentComplaintsMultiRacialPercent(String o) {
+	public void setDelinquentComplaintsMultiRacialPercent(String o) {
+		this.delinquentComplaintsMultiRacialPercent = ReportCard.staticSetDelinquentComplaintsMultiRacialPercent(siteRequest_, o);
+		this.delinquentComplaintsMultiRacialPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetDelinquentComplaintsMultiRacialPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.delinquentComplaintsMultiRacialPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setDelinquentComplaintsMultiRacialPercent(Double o) {
+	public void setDelinquentComplaintsMultiRacialPercent(Double o) {
 			this.delinquentComplaintsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsMultiRacialPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setDelinquentComplaintsMultiRacialPercent(Integer o) {
+	public void setDelinquentComplaintsMultiRacialPercent(Integer o) {
 			this.delinquentComplaintsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsMultiRacialPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard delinquentComplaintsMultiRacialPercentInit() {
 		if(!delinquentComplaintsMultiRacialPercentWrap.alreadyInitialized) {
@@ -6750,8 +7583,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrDelinquentComplaintsMultiRacialPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrDelinquentComplaintsMultiRacialPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqDelinquentComplaintsMultiRacialPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrDelinquentComplaintsMultiRacialPercent(siteRequest_, ReportCard.staticSolrDelinquentComplaintsMultiRacialPercent(siteRequest_, ReportCard.staticSetDelinquentComplaintsMultiRacialPercent(siteRequest_, o)));
+	}
+
 	public Double solrDelinquentComplaintsMultiRacialPercent() {
-		return delinquentComplaintsMultiRacialPercent == null ? null : delinquentComplaintsMultiRacialPercent.doubleValue();
+		return ReportCard.staticSolrDelinquentComplaintsMultiRacialPercent(siteRequest_, delinquentComplaintsMultiRacialPercent);
 	}
 
 	public String strDelinquentComplaintsMultiRacialPercent() {
@@ -6829,11 +7674,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.delinquentComplaintsIndigenous = delinquentComplaintsIndigenous;
 		this.delinquentComplaintsIndigenousWrap.alreadyInitialized = true;
 	}
-	public ReportCard setDelinquentComplaintsIndigenous(String o) {
-		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsIndigenous = Long.parseLong(o);
+	public void setDelinquentComplaintsIndigenous(String o) {
+		this.delinquentComplaintsIndigenous = ReportCard.staticSetDelinquentComplaintsIndigenous(siteRequest_, o);
 		this.delinquentComplaintsIndigenousWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetDelinquentComplaintsIndigenous(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard delinquentComplaintsIndigenousInit() {
 		if(!delinquentComplaintsIndigenousWrap.alreadyInitialized) {
@@ -6845,8 +7693,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrDelinquentComplaintsIndigenous(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrDelinquentComplaintsIndigenous(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqDelinquentComplaintsIndigenous(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrDelinquentComplaintsIndigenous(siteRequest_, ReportCard.staticSolrDelinquentComplaintsIndigenous(siteRequest_, ReportCard.staticSetDelinquentComplaintsIndigenous(siteRequest_, o)));
+	}
+
 	public Long solrDelinquentComplaintsIndigenous() {
-		return delinquentComplaintsIndigenous;
+		return ReportCard.staticSolrDelinquentComplaintsIndigenous(siteRequest_, delinquentComplaintsIndigenous);
 	}
 
 	public String strDelinquentComplaintsIndigenous() {
@@ -6964,22 +7824,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.delinquentComplaintsIndigenousPercent = delinquentComplaintsIndigenousPercent;
 		this.delinquentComplaintsIndigenousPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setDelinquentComplaintsIndigenousPercent(String o) {
+	public void setDelinquentComplaintsIndigenousPercent(String o) {
+		this.delinquentComplaintsIndigenousPercent = ReportCard.staticSetDelinquentComplaintsIndigenousPercent(siteRequest_, o);
+		this.delinquentComplaintsIndigenousPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetDelinquentComplaintsIndigenousPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.delinquentComplaintsIndigenousPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setDelinquentComplaintsIndigenousPercent(Double o) {
+	public void setDelinquentComplaintsIndigenousPercent(Double o) {
 			this.delinquentComplaintsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsIndigenousPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setDelinquentComplaintsIndigenousPercent(Integer o) {
+	public void setDelinquentComplaintsIndigenousPercent(Integer o) {
 			this.delinquentComplaintsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsIndigenousPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard delinquentComplaintsIndigenousPercentInit() {
 		if(!delinquentComplaintsIndigenousPercentWrap.alreadyInitialized) {
@@ -6991,8 +7852,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrDelinquentComplaintsIndigenousPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrDelinquentComplaintsIndigenousPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqDelinquentComplaintsIndigenousPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrDelinquentComplaintsIndigenousPercent(siteRequest_, ReportCard.staticSolrDelinquentComplaintsIndigenousPercent(siteRequest_, ReportCard.staticSetDelinquentComplaintsIndigenousPercent(siteRequest_, o)));
+	}
+
 	public Double solrDelinquentComplaintsIndigenousPercent() {
-		return delinquentComplaintsIndigenousPercent == null ? null : delinquentComplaintsIndigenousPercent.doubleValue();
+		return ReportCard.staticSolrDelinquentComplaintsIndigenousPercent(siteRequest_, delinquentComplaintsIndigenousPercent);
 	}
 
 	public String strDelinquentComplaintsIndigenousPercent() {
@@ -7070,11 +7943,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.delinquentComplaintsWhite = delinquentComplaintsWhite;
 		this.delinquentComplaintsWhiteWrap.alreadyInitialized = true;
 	}
-	public ReportCard setDelinquentComplaintsWhite(String o) {
-		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsWhite = Long.parseLong(o);
+	public void setDelinquentComplaintsWhite(String o) {
+		this.delinquentComplaintsWhite = ReportCard.staticSetDelinquentComplaintsWhite(siteRequest_, o);
 		this.delinquentComplaintsWhiteWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetDelinquentComplaintsWhite(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard delinquentComplaintsWhiteInit() {
 		if(!delinquentComplaintsWhiteWrap.alreadyInitialized) {
@@ -7086,8 +7962,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrDelinquentComplaintsWhite(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrDelinquentComplaintsWhite(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqDelinquentComplaintsWhite(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrDelinquentComplaintsWhite(siteRequest_, ReportCard.staticSolrDelinquentComplaintsWhite(siteRequest_, ReportCard.staticSetDelinquentComplaintsWhite(siteRequest_, o)));
+	}
+
 	public Long solrDelinquentComplaintsWhite() {
-		return delinquentComplaintsWhite;
+		return ReportCard.staticSolrDelinquentComplaintsWhite(siteRequest_, delinquentComplaintsWhite);
 	}
 
 	public String strDelinquentComplaintsWhite() {
@@ -7205,22 +8093,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.delinquentComplaintsWhitePercent = delinquentComplaintsWhitePercent;
 		this.delinquentComplaintsWhitePercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setDelinquentComplaintsWhitePercent(String o) {
+	public void setDelinquentComplaintsWhitePercent(String o) {
+		this.delinquentComplaintsWhitePercent = ReportCard.staticSetDelinquentComplaintsWhitePercent(siteRequest_, o);
+		this.delinquentComplaintsWhitePercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetDelinquentComplaintsWhitePercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.delinquentComplaintsWhitePercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setDelinquentComplaintsWhitePercent(Double o) {
+	public void setDelinquentComplaintsWhitePercent(Double o) {
 			this.delinquentComplaintsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsWhitePercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setDelinquentComplaintsWhitePercent(Integer o) {
+	public void setDelinquentComplaintsWhitePercent(Integer o) {
 			this.delinquentComplaintsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsWhitePercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard delinquentComplaintsWhitePercentInit() {
 		if(!delinquentComplaintsWhitePercentWrap.alreadyInitialized) {
@@ -7232,8 +8121,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrDelinquentComplaintsWhitePercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrDelinquentComplaintsWhitePercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqDelinquentComplaintsWhitePercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrDelinquentComplaintsWhitePercent(siteRequest_, ReportCard.staticSolrDelinquentComplaintsWhitePercent(siteRequest_, ReportCard.staticSetDelinquentComplaintsWhitePercent(siteRequest_, o)));
+	}
+
 	public Double solrDelinquentComplaintsWhitePercent() {
-		return delinquentComplaintsWhitePercent == null ? null : delinquentComplaintsWhitePercent.doubleValue();
+		return ReportCard.staticSolrDelinquentComplaintsWhitePercent(siteRequest_, delinquentComplaintsWhitePercent);
 	}
 
 	public String strDelinquentComplaintsWhitePercent() {
@@ -7311,11 +8212,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.delinquentComplaintsPacificIslander = delinquentComplaintsPacificIslander;
 		this.delinquentComplaintsPacificIslanderWrap.alreadyInitialized = true;
 	}
-	public ReportCard setDelinquentComplaintsPacificIslander(String o) {
-		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsPacificIslander = Long.parseLong(o);
+	public void setDelinquentComplaintsPacificIslander(String o) {
+		this.delinquentComplaintsPacificIslander = ReportCard.staticSetDelinquentComplaintsPacificIslander(siteRequest_, o);
 		this.delinquentComplaintsPacificIslanderWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetDelinquentComplaintsPacificIslander(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard delinquentComplaintsPacificIslanderInit() {
 		if(!delinquentComplaintsPacificIslanderWrap.alreadyInitialized) {
@@ -7327,8 +8231,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrDelinquentComplaintsPacificIslander(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrDelinquentComplaintsPacificIslander(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqDelinquentComplaintsPacificIslander(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrDelinquentComplaintsPacificIslander(siteRequest_, ReportCard.staticSolrDelinquentComplaintsPacificIslander(siteRequest_, ReportCard.staticSetDelinquentComplaintsPacificIslander(siteRequest_, o)));
+	}
+
 	public Long solrDelinquentComplaintsPacificIslander() {
-		return delinquentComplaintsPacificIslander;
+		return ReportCard.staticSolrDelinquentComplaintsPacificIslander(siteRequest_, delinquentComplaintsPacificIslander);
 	}
 
 	public String strDelinquentComplaintsPacificIslander() {
@@ -7446,22 +8362,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.delinquentComplaintsPacificIslanderPercent = delinquentComplaintsPacificIslanderPercent;
 		this.delinquentComplaintsPacificIslanderPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setDelinquentComplaintsPacificIslanderPercent(String o) {
+	public void setDelinquentComplaintsPacificIslanderPercent(String o) {
+		this.delinquentComplaintsPacificIslanderPercent = ReportCard.staticSetDelinquentComplaintsPacificIslanderPercent(siteRequest_, o);
+		this.delinquentComplaintsPacificIslanderPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetDelinquentComplaintsPacificIslanderPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.delinquentComplaintsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.delinquentComplaintsPacificIslanderPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setDelinquentComplaintsPacificIslanderPercent(Double o) {
+	public void setDelinquentComplaintsPacificIslanderPercent(Double o) {
 			this.delinquentComplaintsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsPacificIslanderPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setDelinquentComplaintsPacificIslanderPercent(Integer o) {
+	public void setDelinquentComplaintsPacificIslanderPercent(Integer o) {
 			this.delinquentComplaintsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.delinquentComplaintsPacificIslanderPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard delinquentComplaintsPacificIslanderPercentInit() {
 		if(!delinquentComplaintsPacificIslanderPercentWrap.alreadyInitialized) {
@@ -7473,8 +8390,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrDelinquentComplaintsPacificIslanderPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrDelinquentComplaintsPacificIslanderPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqDelinquentComplaintsPacificIslanderPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrDelinquentComplaintsPacificIslanderPercent(siteRequest_, ReportCard.staticSolrDelinquentComplaintsPacificIslanderPercent(siteRequest_, ReportCard.staticSetDelinquentComplaintsPacificIslanderPercent(siteRequest_, o)));
+	}
+
 	public Double solrDelinquentComplaintsPacificIslanderPercent() {
-		return delinquentComplaintsPacificIslanderPercent == null ? null : delinquentComplaintsPacificIslanderPercent.doubleValue();
+		return ReportCard.staticSolrDelinquentComplaintsPacificIslanderPercent(siteRequest_, delinquentComplaintsPacificIslanderPercent);
 	}
 
 	public String strDelinquentComplaintsPacificIslanderPercent() {
@@ -7552,11 +8481,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionRate = shortTermSuspensionRate;
 		this.shortTermSuspensionRateWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionRate(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionRate = Long.parseLong(o);
+	public void setShortTermSuspensionRate(String o) {
+		this.shortTermSuspensionRate = ReportCard.staticSetShortTermSuspensionRate(siteRequest_, o);
 		this.shortTermSuspensionRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionRate(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionRateInit() {
 		if(!shortTermSuspensionRateWrap.alreadyInitialized) {
@@ -7568,8 +8500,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionRate(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionRate(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionRate(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionRate(siteRequest_, ReportCard.staticSolrShortTermSuspensionRate(siteRequest_, ReportCard.staticSetShortTermSuspensionRate(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionRate() {
-		return shortTermSuspensionRate;
+		return ReportCard.staticSolrShortTermSuspensionRate(siteRequest_, shortTermSuspensionRate);
 	}
 
 	public String strShortTermSuspensionRate() {
@@ -7687,11 +8631,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsTotal = shortTermSuspensionsTotal;
 		this.shortTermSuspensionsTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsTotal = Long.parseLong(o);
+	public void setShortTermSuspensionsTotal(String o) {
+		this.shortTermSuspensionsTotal = ReportCard.staticSetShortTermSuspensionsTotal(siteRequest_, o);
 		this.shortTermSuspensionsTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionsTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionsTotalInit() {
 		if(!shortTermSuspensionsTotalWrap.alreadyInitialized) {
@@ -7703,8 +8650,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionsTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionsTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsTotal(siteRequest_, ReportCard.staticSolrShortTermSuspensionsTotal(siteRequest_, ReportCard.staticSetShortTermSuspensionsTotal(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionsTotal() {
-		return shortTermSuspensionsTotal;
+		return ReportCard.staticSolrShortTermSuspensionsTotal(siteRequest_, shortTermSuspensionsTotal);
 	}
 
 	public String strShortTermSuspensionsTotal() {
@@ -7822,11 +8781,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.longTermSuspensionsTotal = longTermSuspensionsTotal;
 		this.longTermSuspensionsTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setLongTermSuspensionsTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.longTermSuspensionsTotal = Long.parseLong(o);
+	public void setLongTermSuspensionsTotal(String o) {
+		this.longTermSuspensionsTotal = ReportCard.staticSetLongTermSuspensionsTotal(siteRequest_, o);
 		this.longTermSuspensionsTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetLongTermSuspensionsTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard longTermSuspensionsTotalInit() {
 		if(!longTermSuspensionsTotalWrap.alreadyInitialized) {
@@ -7838,8 +8800,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrLongTermSuspensionsTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrLongTermSuspensionsTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqLongTermSuspensionsTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrLongTermSuspensionsTotal(siteRequest_, ReportCard.staticSolrLongTermSuspensionsTotal(siteRequest_, ReportCard.staticSetLongTermSuspensionsTotal(siteRequest_, o)));
+	}
+
 	public Long solrLongTermSuspensionsTotal() {
-		return longTermSuspensionsTotal;
+		return ReportCard.staticSolrLongTermSuspensionsTotal(siteRequest_, longTermSuspensionsTotal);
 	}
 
 	public String strLongTermSuspensionsTotal() {
@@ -7957,11 +8931,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.expulsionsTotal = expulsionsTotal;
 		this.expulsionsTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setExpulsionsTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.expulsionsTotal = Long.parseLong(o);
+	public void setExpulsionsTotal(String o) {
+		this.expulsionsTotal = ReportCard.staticSetExpulsionsTotal(siteRequest_, o);
 		this.expulsionsTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetExpulsionsTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard expulsionsTotalInit() {
 		if(!expulsionsTotalWrap.alreadyInitialized) {
@@ -7973,8 +8950,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrExpulsionsTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrExpulsionsTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqExpulsionsTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrExpulsionsTotal(siteRequest_, ReportCard.staticSolrExpulsionsTotal(siteRequest_, ReportCard.staticSetExpulsionsTotal(siteRequest_, o)));
+	}
+
 	public Long solrExpulsionsTotal() {
-		return expulsionsTotal;
+		return ReportCard.staticSolrExpulsionsTotal(siteRequest_, expulsionsTotal);
 	}
 
 	public String strExpulsionsTotal() {
@@ -8092,11 +9081,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsAsianFemale = shortTermSuspensionsAsianFemale;
 		this.shortTermSuspensionsAsianFemaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsAsianFemale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsAsianFemale = Long.parseLong(o);
+	public void setShortTermSuspensionsAsianFemale(String o) {
+		this.shortTermSuspensionsAsianFemale = ReportCard.staticSetShortTermSuspensionsAsianFemale(siteRequest_, o);
 		this.shortTermSuspensionsAsianFemaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionsAsianFemale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionsAsianFemaleInit() {
 		if(!shortTermSuspensionsAsianFemaleWrap.alreadyInitialized) {
@@ -8108,8 +9100,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionsAsianFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionsAsianFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsAsianFemale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsAsianFemale(siteRequest_, ReportCard.staticSolrShortTermSuspensionsAsianFemale(siteRequest_, ReportCard.staticSetShortTermSuspensionsAsianFemale(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionsAsianFemale() {
-		return shortTermSuspensionsAsianFemale;
+		return ReportCard.staticSolrShortTermSuspensionsAsianFemale(siteRequest_, shortTermSuspensionsAsianFemale);
 	}
 
 	public String strShortTermSuspensionsAsianFemale() {
@@ -8227,11 +9231,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsAsianMale = shortTermSuspensionsAsianMale;
 		this.shortTermSuspensionsAsianMaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsAsianMale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsAsianMale = Long.parseLong(o);
+	public void setShortTermSuspensionsAsianMale(String o) {
+		this.shortTermSuspensionsAsianMale = ReportCard.staticSetShortTermSuspensionsAsianMale(siteRequest_, o);
 		this.shortTermSuspensionsAsianMaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionsAsianMale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionsAsianMaleInit() {
 		if(!shortTermSuspensionsAsianMaleWrap.alreadyInitialized) {
@@ -8243,8 +9250,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionsAsianMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionsAsianMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsAsianMale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsAsianMale(siteRequest_, ReportCard.staticSolrShortTermSuspensionsAsianMale(siteRequest_, ReportCard.staticSetShortTermSuspensionsAsianMale(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionsAsianMale() {
-		return shortTermSuspensionsAsianMale;
+		return ReportCard.staticSolrShortTermSuspensionsAsianMale(siteRequest_, shortTermSuspensionsAsianMale);
 	}
 
 	public String strShortTermSuspensionsAsianMale() {
@@ -8362,11 +9381,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsAsianTotal = shortTermSuspensionsAsianTotal;
 		this.shortTermSuspensionsAsianTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsAsianTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsAsianTotal = Long.parseLong(o);
+	public void setShortTermSuspensionsAsianTotal(String o) {
+		this.shortTermSuspensionsAsianTotal = ReportCard.staticSetShortTermSuspensionsAsianTotal(siteRequest_, o);
 		this.shortTermSuspensionsAsianTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionsAsianTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionsAsianTotalInit() {
 		if(!shortTermSuspensionsAsianTotalWrap.alreadyInitialized) {
@@ -8378,8 +9400,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionsAsianTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionsAsianTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsAsianTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsAsianTotal(siteRequest_, ReportCard.staticSolrShortTermSuspensionsAsianTotal(siteRequest_, ReportCard.staticSetShortTermSuspensionsAsianTotal(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionsAsianTotal() {
-		return shortTermSuspensionsAsianTotal;
+		return ReportCard.staticSolrShortTermSuspensionsAsianTotal(siteRequest_, shortTermSuspensionsAsianTotal);
 	}
 
 	public String strShortTermSuspensionsAsianTotal() {
@@ -8457,22 +9491,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsAsianPercent = shortTermSuspensionsAsianPercent;
 		this.shortTermSuspensionsAsianPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsAsianPercent(String o) {
+	public void setShortTermSuspensionsAsianPercent(String o) {
+		this.shortTermSuspensionsAsianPercent = ReportCard.staticSetShortTermSuspensionsAsianPercent(siteRequest_, o);
+		this.shortTermSuspensionsAsianPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetShortTermSuspensionsAsianPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsAsianPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setShortTermSuspensionsAsianPercent(Double o) {
+	public void setShortTermSuspensionsAsianPercent(Double o) {
 			this.shortTermSuspensionsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsAsianPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsAsianPercent(Integer o) {
+	public void setShortTermSuspensionsAsianPercent(Integer o) {
 			this.shortTermSuspensionsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsAsianPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard shortTermSuspensionsAsianPercentInit() {
 		if(!shortTermSuspensionsAsianPercentWrap.alreadyInitialized) {
@@ -8484,8 +9519,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrShortTermSuspensionsAsianPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrShortTermSuspensionsAsianPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsAsianPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsAsianPercent(siteRequest_, ReportCard.staticSolrShortTermSuspensionsAsianPercent(siteRequest_, ReportCard.staticSetShortTermSuspensionsAsianPercent(siteRequest_, o)));
+	}
+
 	public Double solrShortTermSuspensionsAsianPercent() {
-		return shortTermSuspensionsAsianPercent == null ? null : shortTermSuspensionsAsianPercent.doubleValue();
+		return ReportCard.staticSolrShortTermSuspensionsAsianPercent(siteRequest_, shortTermSuspensionsAsianPercent);
 	}
 
 	public String strShortTermSuspensionsAsianPercent() {
@@ -8563,22 +9610,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsAsianRate = shortTermSuspensionsAsianRate;
 		this.shortTermSuspensionsAsianRateWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsAsianRate(String o) {
+	public void setShortTermSuspensionsAsianRate(String o) {
+		this.shortTermSuspensionsAsianRate = ReportCard.staticSetShortTermSuspensionsAsianRate(siteRequest_, o);
+		this.shortTermSuspensionsAsianRateWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetShortTermSuspensionsAsianRate(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsAsianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsAsianRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setShortTermSuspensionsAsianRate(Double o) {
+	public void setShortTermSuspensionsAsianRate(Double o) {
 			this.shortTermSuspensionsAsianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsAsianRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsAsianRate(Integer o) {
+	public void setShortTermSuspensionsAsianRate(Integer o) {
 			this.shortTermSuspensionsAsianRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsAsianRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard shortTermSuspensionsAsianRateInit() {
 		if(!shortTermSuspensionsAsianRateWrap.alreadyInitialized) {
@@ -8590,8 +9638,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrShortTermSuspensionsAsianRate(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrShortTermSuspensionsAsianRate(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsAsianRate(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsAsianRate(siteRequest_, ReportCard.staticSolrShortTermSuspensionsAsianRate(siteRequest_, ReportCard.staticSetShortTermSuspensionsAsianRate(siteRequest_, o)));
+	}
+
 	public Double solrShortTermSuspensionsAsianRate() {
-		return shortTermSuspensionsAsianRate == null ? null : shortTermSuspensionsAsianRate.doubleValue();
+		return ReportCard.staticSolrShortTermSuspensionsAsianRate(siteRequest_, shortTermSuspensionsAsianRate);
 	}
 
 	public String strShortTermSuspensionsAsianRate() {
@@ -8669,11 +9729,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsBlackFemale = shortTermSuspensionsBlackFemale;
 		this.shortTermSuspensionsBlackFemaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsBlackFemale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsBlackFemale = Long.parseLong(o);
+	public void setShortTermSuspensionsBlackFemale(String o) {
+		this.shortTermSuspensionsBlackFemale = ReportCard.staticSetShortTermSuspensionsBlackFemale(siteRequest_, o);
 		this.shortTermSuspensionsBlackFemaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionsBlackFemale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionsBlackFemaleInit() {
 		if(!shortTermSuspensionsBlackFemaleWrap.alreadyInitialized) {
@@ -8685,8 +9748,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionsBlackFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionsBlackFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsBlackFemale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsBlackFemale(siteRequest_, ReportCard.staticSolrShortTermSuspensionsBlackFemale(siteRequest_, ReportCard.staticSetShortTermSuspensionsBlackFemale(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionsBlackFemale() {
-		return shortTermSuspensionsBlackFemale;
+		return ReportCard.staticSolrShortTermSuspensionsBlackFemale(siteRequest_, shortTermSuspensionsBlackFemale);
 	}
 
 	public String strShortTermSuspensionsBlackFemale() {
@@ -8804,11 +9879,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsBlackMale = shortTermSuspensionsBlackMale;
 		this.shortTermSuspensionsBlackMaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsBlackMale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsBlackMale = Long.parseLong(o);
+	public void setShortTermSuspensionsBlackMale(String o) {
+		this.shortTermSuspensionsBlackMale = ReportCard.staticSetShortTermSuspensionsBlackMale(siteRequest_, o);
 		this.shortTermSuspensionsBlackMaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionsBlackMale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionsBlackMaleInit() {
 		if(!shortTermSuspensionsBlackMaleWrap.alreadyInitialized) {
@@ -8820,8 +9898,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionsBlackMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionsBlackMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsBlackMale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsBlackMale(siteRequest_, ReportCard.staticSolrShortTermSuspensionsBlackMale(siteRequest_, ReportCard.staticSetShortTermSuspensionsBlackMale(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionsBlackMale() {
-		return shortTermSuspensionsBlackMale;
+		return ReportCard.staticSolrShortTermSuspensionsBlackMale(siteRequest_, shortTermSuspensionsBlackMale);
 	}
 
 	public String strShortTermSuspensionsBlackMale() {
@@ -8939,11 +10029,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsBlackTotal = shortTermSuspensionsBlackTotal;
 		this.shortTermSuspensionsBlackTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsBlackTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsBlackTotal = Long.parseLong(o);
+	public void setShortTermSuspensionsBlackTotal(String o) {
+		this.shortTermSuspensionsBlackTotal = ReportCard.staticSetShortTermSuspensionsBlackTotal(siteRequest_, o);
 		this.shortTermSuspensionsBlackTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionsBlackTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionsBlackTotalInit() {
 		if(!shortTermSuspensionsBlackTotalWrap.alreadyInitialized) {
@@ -8955,8 +10048,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionsBlackTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionsBlackTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsBlackTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsBlackTotal(siteRequest_, ReportCard.staticSolrShortTermSuspensionsBlackTotal(siteRequest_, ReportCard.staticSetShortTermSuspensionsBlackTotal(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionsBlackTotal() {
-		return shortTermSuspensionsBlackTotal;
+		return ReportCard.staticSolrShortTermSuspensionsBlackTotal(siteRequest_, shortTermSuspensionsBlackTotal);
 	}
 
 	public String strShortTermSuspensionsBlackTotal() {
@@ -9034,22 +10139,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsBlackPercent = shortTermSuspensionsBlackPercent;
 		this.shortTermSuspensionsBlackPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsBlackPercent(String o) {
+	public void setShortTermSuspensionsBlackPercent(String o) {
+		this.shortTermSuspensionsBlackPercent = ReportCard.staticSetShortTermSuspensionsBlackPercent(siteRequest_, o);
+		this.shortTermSuspensionsBlackPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetShortTermSuspensionsBlackPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsBlackPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setShortTermSuspensionsBlackPercent(Double o) {
+	public void setShortTermSuspensionsBlackPercent(Double o) {
 			this.shortTermSuspensionsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsBlackPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsBlackPercent(Integer o) {
+	public void setShortTermSuspensionsBlackPercent(Integer o) {
 			this.shortTermSuspensionsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsBlackPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard shortTermSuspensionsBlackPercentInit() {
 		if(!shortTermSuspensionsBlackPercentWrap.alreadyInitialized) {
@@ -9061,8 +10167,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrShortTermSuspensionsBlackPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrShortTermSuspensionsBlackPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsBlackPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsBlackPercent(siteRequest_, ReportCard.staticSolrShortTermSuspensionsBlackPercent(siteRequest_, ReportCard.staticSetShortTermSuspensionsBlackPercent(siteRequest_, o)));
+	}
+
 	public Double solrShortTermSuspensionsBlackPercent() {
-		return shortTermSuspensionsBlackPercent == null ? null : shortTermSuspensionsBlackPercent.doubleValue();
+		return ReportCard.staticSolrShortTermSuspensionsBlackPercent(siteRequest_, shortTermSuspensionsBlackPercent);
 	}
 
 	public String strShortTermSuspensionsBlackPercent() {
@@ -9140,22 +10258,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsBlackRate = shortTermSuspensionsBlackRate;
 		this.shortTermSuspensionsBlackRateWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsBlackRate(String o) {
+	public void setShortTermSuspensionsBlackRate(String o) {
+		this.shortTermSuspensionsBlackRate = ReportCard.staticSetShortTermSuspensionsBlackRate(siteRequest_, o);
+		this.shortTermSuspensionsBlackRateWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetShortTermSuspensionsBlackRate(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsBlackRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsBlackRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setShortTermSuspensionsBlackRate(Double o) {
+	public void setShortTermSuspensionsBlackRate(Double o) {
 			this.shortTermSuspensionsBlackRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsBlackRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsBlackRate(Integer o) {
+	public void setShortTermSuspensionsBlackRate(Integer o) {
 			this.shortTermSuspensionsBlackRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsBlackRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard shortTermSuspensionsBlackRateInit() {
 		if(!shortTermSuspensionsBlackRateWrap.alreadyInitialized) {
@@ -9167,8 +10286,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrShortTermSuspensionsBlackRate(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrShortTermSuspensionsBlackRate(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsBlackRate(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsBlackRate(siteRequest_, ReportCard.staticSolrShortTermSuspensionsBlackRate(siteRequest_, ReportCard.staticSetShortTermSuspensionsBlackRate(siteRequest_, o)));
+	}
+
 	public Double solrShortTermSuspensionsBlackRate() {
-		return shortTermSuspensionsBlackRate == null ? null : shortTermSuspensionsBlackRate.doubleValue();
+		return ReportCard.staticSolrShortTermSuspensionsBlackRate(siteRequest_, shortTermSuspensionsBlackRate);
 	}
 
 	public String strShortTermSuspensionsBlackRate() {
@@ -9246,11 +10377,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsLatinxFemale = shortTermSuspensionsLatinxFemale;
 		this.shortTermSuspensionsLatinxFemaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsLatinxFemale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsLatinxFemale = Long.parseLong(o);
+	public void setShortTermSuspensionsLatinxFemale(String o) {
+		this.shortTermSuspensionsLatinxFemale = ReportCard.staticSetShortTermSuspensionsLatinxFemale(siteRequest_, o);
 		this.shortTermSuspensionsLatinxFemaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionsLatinxFemale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionsLatinxFemaleInit() {
 		if(!shortTermSuspensionsLatinxFemaleWrap.alreadyInitialized) {
@@ -9262,8 +10396,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionsLatinxFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionsLatinxFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsLatinxFemale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsLatinxFemale(siteRequest_, ReportCard.staticSolrShortTermSuspensionsLatinxFemale(siteRequest_, ReportCard.staticSetShortTermSuspensionsLatinxFemale(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionsLatinxFemale() {
-		return shortTermSuspensionsLatinxFemale;
+		return ReportCard.staticSolrShortTermSuspensionsLatinxFemale(siteRequest_, shortTermSuspensionsLatinxFemale);
 	}
 
 	public String strShortTermSuspensionsLatinxFemale() {
@@ -9381,11 +10527,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsLatinxMale = shortTermSuspensionsLatinxMale;
 		this.shortTermSuspensionsLatinxMaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsLatinxMale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsLatinxMale = Long.parseLong(o);
+	public void setShortTermSuspensionsLatinxMale(String o) {
+		this.shortTermSuspensionsLatinxMale = ReportCard.staticSetShortTermSuspensionsLatinxMale(siteRequest_, o);
 		this.shortTermSuspensionsLatinxMaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionsLatinxMale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionsLatinxMaleInit() {
 		if(!shortTermSuspensionsLatinxMaleWrap.alreadyInitialized) {
@@ -9397,8 +10546,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionsLatinxMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionsLatinxMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsLatinxMale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsLatinxMale(siteRequest_, ReportCard.staticSolrShortTermSuspensionsLatinxMale(siteRequest_, ReportCard.staticSetShortTermSuspensionsLatinxMale(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionsLatinxMale() {
-		return shortTermSuspensionsLatinxMale;
+		return ReportCard.staticSolrShortTermSuspensionsLatinxMale(siteRequest_, shortTermSuspensionsLatinxMale);
 	}
 
 	public String strShortTermSuspensionsLatinxMale() {
@@ -9516,11 +10677,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsLatinxTotal = shortTermSuspensionsLatinxTotal;
 		this.shortTermSuspensionsLatinxTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsLatinxTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsLatinxTotal = Long.parseLong(o);
+	public void setShortTermSuspensionsLatinxTotal(String o) {
+		this.shortTermSuspensionsLatinxTotal = ReportCard.staticSetShortTermSuspensionsLatinxTotal(siteRequest_, o);
 		this.shortTermSuspensionsLatinxTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionsLatinxTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionsLatinxTotalInit() {
 		if(!shortTermSuspensionsLatinxTotalWrap.alreadyInitialized) {
@@ -9532,8 +10696,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionsLatinxTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionsLatinxTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsLatinxTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsLatinxTotal(siteRequest_, ReportCard.staticSolrShortTermSuspensionsLatinxTotal(siteRequest_, ReportCard.staticSetShortTermSuspensionsLatinxTotal(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionsLatinxTotal() {
-		return shortTermSuspensionsLatinxTotal;
+		return ReportCard.staticSolrShortTermSuspensionsLatinxTotal(siteRequest_, shortTermSuspensionsLatinxTotal);
 	}
 
 	public String strShortTermSuspensionsLatinxTotal() {
@@ -9611,22 +10787,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsLatinxPercent = shortTermSuspensionsLatinxPercent;
 		this.shortTermSuspensionsLatinxPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsLatinxPercent(String o) {
+	public void setShortTermSuspensionsLatinxPercent(String o) {
+		this.shortTermSuspensionsLatinxPercent = ReportCard.staticSetShortTermSuspensionsLatinxPercent(siteRequest_, o);
+		this.shortTermSuspensionsLatinxPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetShortTermSuspensionsLatinxPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsLatinxPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setShortTermSuspensionsLatinxPercent(Double o) {
+	public void setShortTermSuspensionsLatinxPercent(Double o) {
 			this.shortTermSuspensionsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsLatinxPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsLatinxPercent(Integer o) {
+	public void setShortTermSuspensionsLatinxPercent(Integer o) {
 			this.shortTermSuspensionsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsLatinxPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard shortTermSuspensionsLatinxPercentInit() {
 		if(!shortTermSuspensionsLatinxPercentWrap.alreadyInitialized) {
@@ -9638,8 +10815,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrShortTermSuspensionsLatinxPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrShortTermSuspensionsLatinxPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsLatinxPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsLatinxPercent(siteRequest_, ReportCard.staticSolrShortTermSuspensionsLatinxPercent(siteRequest_, ReportCard.staticSetShortTermSuspensionsLatinxPercent(siteRequest_, o)));
+	}
+
 	public Double solrShortTermSuspensionsLatinxPercent() {
-		return shortTermSuspensionsLatinxPercent == null ? null : shortTermSuspensionsLatinxPercent.doubleValue();
+		return ReportCard.staticSolrShortTermSuspensionsLatinxPercent(siteRequest_, shortTermSuspensionsLatinxPercent);
 	}
 
 	public String strShortTermSuspensionsLatinxPercent() {
@@ -9717,22 +10906,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsLatinxRate = shortTermSuspensionsLatinxRate;
 		this.shortTermSuspensionsLatinxRateWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsLatinxRate(String o) {
+	public void setShortTermSuspensionsLatinxRate(String o) {
+		this.shortTermSuspensionsLatinxRate = ReportCard.staticSetShortTermSuspensionsLatinxRate(siteRequest_, o);
+		this.shortTermSuspensionsLatinxRateWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetShortTermSuspensionsLatinxRate(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsLatinxRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsLatinxRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setShortTermSuspensionsLatinxRate(Double o) {
+	public void setShortTermSuspensionsLatinxRate(Double o) {
 			this.shortTermSuspensionsLatinxRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsLatinxRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsLatinxRate(Integer o) {
+	public void setShortTermSuspensionsLatinxRate(Integer o) {
 			this.shortTermSuspensionsLatinxRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsLatinxRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard shortTermSuspensionsLatinxRateInit() {
 		if(!shortTermSuspensionsLatinxRateWrap.alreadyInitialized) {
@@ -9744,8 +10934,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrShortTermSuspensionsLatinxRate(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrShortTermSuspensionsLatinxRate(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsLatinxRate(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsLatinxRate(siteRequest_, ReportCard.staticSolrShortTermSuspensionsLatinxRate(siteRequest_, ReportCard.staticSetShortTermSuspensionsLatinxRate(siteRequest_, o)));
+	}
+
 	public Double solrShortTermSuspensionsLatinxRate() {
-		return shortTermSuspensionsLatinxRate == null ? null : shortTermSuspensionsLatinxRate.doubleValue();
+		return ReportCard.staticSolrShortTermSuspensionsLatinxRate(siteRequest_, shortTermSuspensionsLatinxRate);
 	}
 
 	public String strShortTermSuspensionsLatinxRate() {
@@ -9823,11 +11025,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsIndigenousFemale = shortTermSuspensionsIndigenousFemale;
 		this.shortTermSuspensionsIndigenousFemaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsIndigenousFemale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsIndigenousFemale = Long.parseLong(o);
+	public void setShortTermSuspensionsIndigenousFemale(String o) {
+		this.shortTermSuspensionsIndigenousFemale = ReportCard.staticSetShortTermSuspensionsIndigenousFemale(siteRequest_, o);
 		this.shortTermSuspensionsIndigenousFemaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionsIndigenousFemale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionsIndigenousFemaleInit() {
 		if(!shortTermSuspensionsIndigenousFemaleWrap.alreadyInitialized) {
@@ -9839,8 +11044,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionsIndigenousFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionsIndigenousFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsIndigenousFemale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsIndigenousFemale(siteRequest_, ReportCard.staticSolrShortTermSuspensionsIndigenousFemale(siteRequest_, ReportCard.staticSetShortTermSuspensionsIndigenousFemale(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionsIndigenousFemale() {
-		return shortTermSuspensionsIndigenousFemale;
+		return ReportCard.staticSolrShortTermSuspensionsIndigenousFemale(siteRequest_, shortTermSuspensionsIndigenousFemale);
 	}
 
 	public String strShortTermSuspensionsIndigenousFemale() {
@@ -9958,11 +11175,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsIndigenousMale = shortTermSuspensionsIndigenousMale;
 		this.shortTermSuspensionsIndigenousMaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsIndigenousMale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsIndigenousMale = Long.parseLong(o);
+	public void setShortTermSuspensionsIndigenousMale(String o) {
+		this.shortTermSuspensionsIndigenousMale = ReportCard.staticSetShortTermSuspensionsIndigenousMale(siteRequest_, o);
 		this.shortTermSuspensionsIndigenousMaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionsIndigenousMale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionsIndigenousMaleInit() {
 		if(!shortTermSuspensionsIndigenousMaleWrap.alreadyInitialized) {
@@ -9974,8 +11194,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionsIndigenousMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionsIndigenousMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsIndigenousMale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsIndigenousMale(siteRequest_, ReportCard.staticSolrShortTermSuspensionsIndigenousMale(siteRequest_, ReportCard.staticSetShortTermSuspensionsIndigenousMale(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionsIndigenousMale() {
-		return shortTermSuspensionsIndigenousMale;
+		return ReportCard.staticSolrShortTermSuspensionsIndigenousMale(siteRequest_, shortTermSuspensionsIndigenousMale);
 	}
 
 	public String strShortTermSuspensionsIndigenousMale() {
@@ -10093,11 +11325,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsIndigenousTotal = shortTermSuspensionsIndigenousTotal;
 		this.shortTermSuspensionsIndigenousTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsIndigenousTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsIndigenousTotal = Long.parseLong(o);
+	public void setShortTermSuspensionsIndigenousTotal(String o) {
+		this.shortTermSuspensionsIndigenousTotal = ReportCard.staticSetShortTermSuspensionsIndigenousTotal(siteRequest_, o);
 		this.shortTermSuspensionsIndigenousTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionsIndigenousTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionsIndigenousTotalInit() {
 		if(!shortTermSuspensionsIndigenousTotalWrap.alreadyInitialized) {
@@ -10109,8 +11344,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionsIndigenousTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionsIndigenousTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsIndigenousTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsIndigenousTotal(siteRequest_, ReportCard.staticSolrShortTermSuspensionsIndigenousTotal(siteRequest_, ReportCard.staticSetShortTermSuspensionsIndigenousTotal(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionsIndigenousTotal() {
-		return shortTermSuspensionsIndigenousTotal;
+		return ReportCard.staticSolrShortTermSuspensionsIndigenousTotal(siteRequest_, shortTermSuspensionsIndigenousTotal);
 	}
 
 	public String strShortTermSuspensionsIndigenousTotal() {
@@ -10188,22 +11435,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsIndigenousPercent = shortTermSuspensionsIndigenousPercent;
 		this.shortTermSuspensionsIndigenousPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsIndigenousPercent(String o) {
+	public void setShortTermSuspensionsIndigenousPercent(String o) {
+		this.shortTermSuspensionsIndigenousPercent = ReportCard.staticSetShortTermSuspensionsIndigenousPercent(siteRequest_, o);
+		this.shortTermSuspensionsIndigenousPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetShortTermSuspensionsIndigenousPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsIndigenousPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setShortTermSuspensionsIndigenousPercent(Double o) {
+	public void setShortTermSuspensionsIndigenousPercent(Double o) {
 			this.shortTermSuspensionsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsIndigenousPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsIndigenousPercent(Integer o) {
+	public void setShortTermSuspensionsIndigenousPercent(Integer o) {
 			this.shortTermSuspensionsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsIndigenousPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard shortTermSuspensionsIndigenousPercentInit() {
 		if(!shortTermSuspensionsIndigenousPercentWrap.alreadyInitialized) {
@@ -10215,8 +11463,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrShortTermSuspensionsIndigenousPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrShortTermSuspensionsIndigenousPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsIndigenousPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsIndigenousPercent(siteRequest_, ReportCard.staticSolrShortTermSuspensionsIndigenousPercent(siteRequest_, ReportCard.staticSetShortTermSuspensionsIndigenousPercent(siteRequest_, o)));
+	}
+
 	public Double solrShortTermSuspensionsIndigenousPercent() {
-		return shortTermSuspensionsIndigenousPercent == null ? null : shortTermSuspensionsIndigenousPercent.doubleValue();
+		return ReportCard.staticSolrShortTermSuspensionsIndigenousPercent(siteRequest_, shortTermSuspensionsIndigenousPercent);
 	}
 
 	public String strShortTermSuspensionsIndigenousPercent() {
@@ -10294,22 +11554,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsIndigenousRate = shortTermSuspensionsIndigenousRate;
 		this.shortTermSuspensionsIndigenousRateWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsIndigenousRate(String o) {
+	public void setShortTermSuspensionsIndigenousRate(String o) {
+		this.shortTermSuspensionsIndigenousRate = ReportCard.staticSetShortTermSuspensionsIndigenousRate(siteRequest_, o);
+		this.shortTermSuspensionsIndigenousRateWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetShortTermSuspensionsIndigenousRate(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsIndigenousRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsIndigenousRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setShortTermSuspensionsIndigenousRate(Double o) {
+	public void setShortTermSuspensionsIndigenousRate(Double o) {
 			this.shortTermSuspensionsIndigenousRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsIndigenousRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsIndigenousRate(Integer o) {
+	public void setShortTermSuspensionsIndigenousRate(Integer o) {
 			this.shortTermSuspensionsIndigenousRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsIndigenousRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard shortTermSuspensionsIndigenousRateInit() {
 		if(!shortTermSuspensionsIndigenousRateWrap.alreadyInitialized) {
@@ -10321,8 +11582,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrShortTermSuspensionsIndigenousRate(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrShortTermSuspensionsIndigenousRate(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsIndigenousRate(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsIndigenousRate(siteRequest_, ReportCard.staticSolrShortTermSuspensionsIndigenousRate(siteRequest_, ReportCard.staticSetShortTermSuspensionsIndigenousRate(siteRequest_, o)));
+	}
+
 	public Double solrShortTermSuspensionsIndigenousRate() {
-		return shortTermSuspensionsIndigenousRate == null ? null : shortTermSuspensionsIndigenousRate.doubleValue();
+		return ReportCard.staticSolrShortTermSuspensionsIndigenousRate(siteRequest_, shortTermSuspensionsIndigenousRate);
 	}
 
 	public String strShortTermSuspensionsIndigenousRate() {
@@ -10400,11 +11673,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsMultiRacialFemale = shortTermSuspensionsMultiRacialFemale;
 		this.shortTermSuspensionsMultiRacialFemaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsMultiRacialFemale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsMultiRacialFemale = Long.parseLong(o);
+	public void setShortTermSuspensionsMultiRacialFemale(String o) {
+		this.shortTermSuspensionsMultiRacialFemale = ReportCard.staticSetShortTermSuspensionsMultiRacialFemale(siteRequest_, o);
 		this.shortTermSuspensionsMultiRacialFemaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionsMultiRacialFemale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionsMultiRacialFemaleInit() {
 		if(!shortTermSuspensionsMultiRacialFemaleWrap.alreadyInitialized) {
@@ -10416,8 +11692,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionsMultiRacialFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionsMultiRacialFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsMultiRacialFemale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsMultiRacialFemale(siteRequest_, ReportCard.staticSolrShortTermSuspensionsMultiRacialFemale(siteRequest_, ReportCard.staticSetShortTermSuspensionsMultiRacialFemale(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionsMultiRacialFemale() {
-		return shortTermSuspensionsMultiRacialFemale;
+		return ReportCard.staticSolrShortTermSuspensionsMultiRacialFemale(siteRequest_, shortTermSuspensionsMultiRacialFemale);
 	}
 
 	public String strShortTermSuspensionsMultiRacialFemale() {
@@ -10535,11 +11823,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsMultiRacialMale = shortTermSuspensionsMultiRacialMale;
 		this.shortTermSuspensionsMultiRacialMaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsMultiRacialMale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsMultiRacialMale = Long.parseLong(o);
+	public void setShortTermSuspensionsMultiRacialMale(String o) {
+		this.shortTermSuspensionsMultiRacialMale = ReportCard.staticSetShortTermSuspensionsMultiRacialMale(siteRequest_, o);
 		this.shortTermSuspensionsMultiRacialMaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionsMultiRacialMale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionsMultiRacialMaleInit() {
 		if(!shortTermSuspensionsMultiRacialMaleWrap.alreadyInitialized) {
@@ -10551,8 +11842,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionsMultiRacialMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionsMultiRacialMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsMultiRacialMale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsMultiRacialMale(siteRequest_, ReportCard.staticSolrShortTermSuspensionsMultiRacialMale(siteRequest_, ReportCard.staticSetShortTermSuspensionsMultiRacialMale(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionsMultiRacialMale() {
-		return shortTermSuspensionsMultiRacialMale;
+		return ReportCard.staticSolrShortTermSuspensionsMultiRacialMale(siteRequest_, shortTermSuspensionsMultiRacialMale);
 	}
 
 	public String strShortTermSuspensionsMultiRacialMale() {
@@ -10670,11 +11973,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsMultiRacialTotal = shortTermSuspensionsMultiRacialTotal;
 		this.shortTermSuspensionsMultiRacialTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsMultiRacialTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsMultiRacialTotal = Long.parseLong(o);
+	public void setShortTermSuspensionsMultiRacialTotal(String o) {
+		this.shortTermSuspensionsMultiRacialTotal = ReportCard.staticSetShortTermSuspensionsMultiRacialTotal(siteRequest_, o);
 		this.shortTermSuspensionsMultiRacialTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionsMultiRacialTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionsMultiRacialTotalInit() {
 		if(!shortTermSuspensionsMultiRacialTotalWrap.alreadyInitialized) {
@@ -10686,8 +11992,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionsMultiRacialTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionsMultiRacialTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsMultiRacialTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsMultiRacialTotal(siteRequest_, ReportCard.staticSolrShortTermSuspensionsMultiRacialTotal(siteRequest_, ReportCard.staticSetShortTermSuspensionsMultiRacialTotal(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionsMultiRacialTotal() {
-		return shortTermSuspensionsMultiRacialTotal;
+		return ReportCard.staticSolrShortTermSuspensionsMultiRacialTotal(siteRequest_, shortTermSuspensionsMultiRacialTotal);
 	}
 
 	public String strShortTermSuspensionsMultiRacialTotal() {
@@ -10765,22 +12083,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsMultiRacialPercent = shortTermSuspensionsMultiRacialPercent;
 		this.shortTermSuspensionsMultiRacialPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsMultiRacialPercent(String o) {
+	public void setShortTermSuspensionsMultiRacialPercent(String o) {
+		this.shortTermSuspensionsMultiRacialPercent = ReportCard.staticSetShortTermSuspensionsMultiRacialPercent(siteRequest_, o);
+		this.shortTermSuspensionsMultiRacialPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetShortTermSuspensionsMultiRacialPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsMultiRacialPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setShortTermSuspensionsMultiRacialPercent(Double o) {
+	public void setShortTermSuspensionsMultiRacialPercent(Double o) {
 			this.shortTermSuspensionsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsMultiRacialPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsMultiRacialPercent(Integer o) {
+	public void setShortTermSuspensionsMultiRacialPercent(Integer o) {
 			this.shortTermSuspensionsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsMultiRacialPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard shortTermSuspensionsMultiRacialPercentInit() {
 		if(!shortTermSuspensionsMultiRacialPercentWrap.alreadyInitialized) {
@@ -10792,8 +12111,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrShortTermSuspensionsMultiRacialPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrShortTermSuspensionsMultiRacialPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsMultiRacialPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsMultiRacialPercent(siteRequest_, ReportCard.staticSolrShortTermSuspensionsMultiRacialPercent(siteRequest_, ReportCard.staticSetShortTermSuspensionsMultiRacialPercent(siteRequest_, o)));
+	}
+
 	public Double solrShortTermSuspensionsMultiRacialPercent() {
-		return shortTermSuspensionsMultiRacialPercent == null ? null : shortTermSuspensionsMultiRacialPercent.doubleValue();
+		return ReportCard.staticSolrShortTermSuspensionsMultiRacialPercent(siteRequest_, shortTermSuspensionsMultiRacialPercent);
 	}
 
 	public String strShortTermSuspensionsMultiRacialPercent() {
@@ -10871,22 +12202,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsMultiRacialRate = shortTermSuspensionsMultiRacialRate;
 		this.shortTermSuspensionsMultiRacialRateWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsMultiRacialRate(String o) {
+	public void setShortTermSuspensionsMultiRacialRate(String o) {
+		this.shortTermSuspensionsMultiRacialRate = ReportCard.staticSetShortTermSuspensionsMultiRacialRate(siteRequest_, o);
+		this.shortTermSuspensionsMultiRacialRateWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetShortTermSuspensionsMultiRacialRate(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsMultiRacialRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsMultiRacialRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setShortTermSuspensionsMultiRacialRate(Double o) {
+	public void setShortTermSuspensionsMultiRacialRate(Double o) {
 			this.shortTermSuspensionsMultiRacialRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsMultiRacialRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsMultiRacialRate(Integer o) {
+	public void setShortTermSuspensionsMultiRacialRate(Integer o) {
 			this.shortTermSuspensionsMultiRacialRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsMultiRacialRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard shortTermSuspensionsMultiRacialRateInit() {
 		if(!shortTermSuspensionsMultiRacialRateWrap.alreadyInitialized) {
@@ -10898,8 +12230,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrShortTermSuspensionsMultiRacialRate(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrShortTermSuspensionsMultiRacialRate(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsMultiRacialRate(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsMultiRacialRate(siteRequest_, ReportCard.staticSolrShortTermSuspensionsMultiRacialRate(siteRequest_, ReportCard.staticSetShortTermSuspensionsMultiRacialRate(siteRequest_, o)));
+	}
+
 	public Double solrShortTermSuspensionsMultiRacialRate() {
-		return shortTermSuspensionsMultiRacialRate == null ? null : shortTermSuspensionsMultiRacialRate.doubleValue();
+		return ReportCard.staticSolrShortTermSuspensionsMultiRacialRate(siteRequest_, shortTermSuspensionsMultiRacialRate);
 	}
 
 	public String strShortTermSuspensionsMultiRacialRate() {
@@ -10977,11 +12321,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsPacificIslanderFemale = shortTermSuspensionsPacificIslanderFemale;
 		this.shortTermSuspensionsPacificIslanderFemaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsPacificIslanderFemale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsPacificIslanderFemale = Long.parseLong(o);
+	public void setShortTermSuspensionsPacificIslanderFemale(String o) {
+		this.shortTermSuspensionsPacificIslanderFemale = ReportCard.staticSetShortTermSuspensionsPacificIslanderFemale(siteRequest_, o);
 		this.shortTermSuspensionsPacificIslanderFemaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionsPacificIslanderFemale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionsPacificIslanderFemaleInit() {
 		if(!shortTermSuspensionsPacificIslanderFemaleWrap.alreadyInitialized) {
@@ -10993,8 +12340,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionsPacificIslanderFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionsPacificIslanderFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsPacificIslanderFemale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsPacificIslanderFemale(siteRequest_, ReportCard.staticSolrShortTermSuspensionsPacificIslanderFemale(siteRequest_, ReportCard.staticSetShortTermSuspensionsPacificIslanderFemale(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionsPacificIslanderFemale() {
-		return shortTermSuspensionsPacificIslanderFemale;
+		return ReportCard.staticSolrShortTermSuspensionsPacificIslanderFemale(siteRequest_, shortTermSuspensionsPacificIslanderFemale);
 	}
 
 	public String strShortTermSuspensionsPacificIslanderFemale() {
@@ -11112,11 +12471,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsPacificIslanderMale = shortTermSuspensionsPacificIslanderMale;
 		this.shortTermSuspensionsPacificIslanderMaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsPacificIslanderMale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsPacificIslanderMale = Long.parseLong(o);
+	public void setShortTermSuspensionsPacificIslanderMale(String o) {
+		this.shortTermSuspensionsPacificIslanderMale = ReportCard.staticSetShortTermSuspensionsPacificIslanderMale(siteRequest_, o);
 		this.shortTermSuspensionsPacificIslanderMaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionsPacificIslanderMale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionsPacificIslanderMaleInit() {
 		if(!shortTermSuspensionsPacificIslanderMaleWrap.alreadyInitialized) {
@@ -11128,8 +12490,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionsPacificIslanderMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionsPacificIslanderMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsPacificIslanderMale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsPacificIslanderMale(siteRequest_, ReportCard.staticSolrShortTermSuspensionsPacificIslanderMale(siteRequest_, ReportCard.staticSetShortTermSuspensionsPacificIslanderMale(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionsPacificIslanderMale() {
-		return shortTermSuspensionsPacificIslanderMale;
+		return ReportCard.staticSolrShortTermSuspensionsPacificIslanderMale(siteRequest_, shortTermSuspensionsPacificIslanderMale);
 	}
 
 	public String strShortTermSuspensionsPacificIslanderMale() {
@@ -11247,11 +12621,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsPacificIslanderTotal = shortTermSuspensionsPacificIslanderTotal;
 		this.shortTermSuspensionsPacificIslanderTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsPacificIslanderTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsPacificIslanderTotal = Long.parseLong(o);
+	public void setShortTermSuspensionsPacificIslanderTotal(String o) {
+		this.shortTermSuspensionsPacificIslanderTotal = ReportCard.staticSetShortTermSuspensionsPacificIslanderTotal(siteRequest_, o);
 		this.shortTermSuspensionsPacificIslanderTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionsPacificIslanderTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionsPacificIslanderTotalInit() {
 		if(!shortTermSuspensionsPacificIslanderTotalWrap.alreadyInitialized) {
@@ -11263,8 +12640,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionsPacificIslanderTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionsPacificIslanderTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsPacificIslanderTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsPacificIslanderTotal(siteRequest_, ReportCard.staticSolrShortTermSuspensionsPacificIslanderTotal(siteRequest_, ReportCard.staticSetShortTermSuspensionsPacificIslanderTotal(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionsPacificIslanderTotal() {
-		return shortTermSuspensionsPacificIslanderTotal;
+		return ReportCard.staticSolrShortTermSuspensionsPacificIslanderTotal(siteRequest_, shortTermSuspensionsPacificIslanderTotal);
 	}
 
 	public String strShortTermSuspensionsPacificIslanderTotal() {
@@ -11342,22 +12731,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsPacificIslanderPercent = shortTermSuspensionsPacificIslanderPercent;
 		this.shortTermSuspensionsPacificIslanderPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsPacificIslanderPercent(String o) {
+	public void setShortTermSuspensionsPacificIslanderPercent(String o) {
+		this.shortTermSuspensionsPacificIslanderPercent = ReportCard.staticSetShortTermSuspensionsPacificIslanderPercent(siteRequest_, o);
+		this.shortTermSuspensionsPacificIslanderPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetShortTermSuspensionsPacificIslanderPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsPacificIslanderPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setShortTermSuspensionsPacificIslanderPercent(Double o) {
+	public void setShortTermSuspensionsPacificIslanderPercent(Double o) {
 			this.shortTermSuspensionsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsPacificIslanderPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsPacificIslanderPercent(Integer o) {
+	public void setShortTermSuspensionsPacificIslanderPercent(Integer o) {
 			this.shortTermSuspensionsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsPacificIslanderPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard shortTermSuspensionsPacificIslanderPercentInit() {
 		if(!shortTermSuspensionsPacificIslanderPercentWrap.alreadyInitialized) {
@@ -11369,8 +12759,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrShortTermSuspensionsPacificIslanderPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrShortTermSuspensionsPacificIslanderPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsPacificIslanderPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsPacificIslanderPercent(siteRequest_, ReportCard.staticSolrShortTermSuspensionsPacificIslanderPercent(siteRequest_, ReportCard.staticSetShortTermSuspensionsPacificIslanderPercent(siteRequest_, o)));
+	}
+
 	public Double solrShortTermSuspensionsPacificIslanderPercent() {
-		return shortTermSuspensionsPacificIslanderPercent == null ? null : shortTermSuspensionsPacificIslanderPercent.doubleValue();
+		return ReportCard.staticSolrShortTermSuspensionsPacificIslanderPercent(siteRequest_, shortTermSuspensionsPacificIslanderPercent);
 	}
 
 	public String strShortTermSuspensionsPacificIslanderPercent() {
@@ -11448,22 +12850,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsPacificIslanderRate = shortTermSuspensionsPacificIslanderRate;
 		this.shortTermSuspensionsPacificIslanderRateWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsPacificIslanderRate(String o) {
+	public void setShortTermSuspensionsPacificIslanderRate(String o) {
+		this.shortTermSuspensionsPacificIslanderRate = ReportCard.staticSetShortTermSuspensionsPacificIslanderRate(siteRequest_, o);
+		this.shortTermSuspensionsPacificIslanderRateWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetShortTermSuspensionsPacificIslanderRate(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsPacificIslanderRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsPacificIslanderRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setShortTermSuspensionsPacificIslanderRate(Double o) {
+	public void setShortTermSuspensionsPacificIslanderRate(Double o) {
 			this.shortTermSuspensionsPacificIslanderRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsPacificIslanderRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsPacificIslanderRate(Integer o) {
+	public void setShortTermSuspensionsPacificIslanderRate(Integer o) {
 			this.shortTermSuspensionsPacificIslanderRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsPacificIslanderRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard shortTermSuspensionsPacificIslanderRateInit() {
 		if(!shortTermSuspensionsPacificIslanderRateWrap.alreadyInitialized) {
@@ -11475,8 +12878,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrShortTermSuspensionsPacificIslanderRate(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrShortTermSuspensionsPacificIslanderRate(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsPacificIslanderRate(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsPacificIslanderRate(siteRequest_, ReportCard.staticSolrShortTermSuspensionsPacificIslanderRate(siteRequest_, ReportCard.staticSetShortTermSuspensionsPacificIslanderRate(siteRequest_, o)));
+	}
+
 	public Double solrShortTermSuspensionsPacificIslanderRate() {
-		return shortTermSuspensionsPacificIslanderRate == null ? null : shortTermSuspensionsPacificIslanderRate.doubleValue();
+		return ReportCard.staticSolrShortTermSuspensionsPacificIslanderRate(siteRequest_, shortTermSuspensionsPacificIslanderRate);
 	}
 
 	public String strShortTermSuspensionsPacificIslanderRate() {
@@ -11554,11 +12969,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsWhiteFemale = shortTermSuspensionsWhiteFemale;
 		this.shortTermSuspensionsWhiteFemaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsWhiteFemale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsWhiteFemale = Long.parseLong(o);
+	public void setShortTermSuspensionsWhiteFemale(String o) {
+		this.shortTermSuspensionsWhiteFemale = ReportCard.staticSetShortTermSuspensionsWhiteFemale(siteRequest_, o);
 		this.shortTermSuspensionsWhiteFemaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionsWhiteFemale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionsWhiteFemaleInit() {
 		if(!shortTermSuspensionsWhiteFemaleWrap.alreadyInitialized) {
@@ -11570,8 +12988,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionsWhiteFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionsWhiteFemale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsWhiteFemale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsWhiteFemale(siteRequest_, ReportCard.staticSolrShortTermSuspensionsWhiteFemale(siteRequest_, ReportCard.staticSetShortTermSuspensionsWhiteFemale(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionsWhiteFemale() {
-		return shortTermSuspensionsWhiteFemale;
+		return ReportCard.staticSolrShortTermSuspensionsWhiteFemale(siteRequest_, shortTermSuspensionsWhiteFemale);
 	}
 
 	public String strShortTermSuspensionsWhiteFemale() {
@@ -11689,11 +13119,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsWhiteMale = shortTermSuspensionsWhiteMale;
 		this.shortTermSuspensionsWhiteMaleWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsWhiteMale(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsWhiteMale = Long.parseLong(o);
+	public void setShortTermSuspensionsWhiteMale(String o) {
+		this.shortTermSuspensionsWhiteMale = ReportCard.staticSetShortTermSuspensionsWhiteMale(siteRequest_, o);
 		this.shortTermSuspensionsWhiteMaleWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionsWhiteMale(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionsWhiteMaleInit() {
 		if(!shortTermSuspensionsWhiteMaleWrap.alreadyInitialized) {
@@ -11705,8 +13138,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionsWhiteMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionsWhiteMale(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsWhiteMale(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsWhiteMale(siteRequest_, ReportCard.staticSolrShortTermSuspensionsWhiteMale(siteRequest_, ReportCard.staticSetShortTermSuspensionsWhiteMale(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionsWhiteMale() {
-		return shortTermSuspensionsWhiteMale;
+		return ReportCard.staticSolrShortTermSuspensionsWhiteMale(siteRequest_, shortTermSuspensionsWhiteMale);
 	}
 
 	public String strShortTermSuspensionsWhiteMale() {
@@ -11824,11 +13269,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsWhiteTotal = shortTermSuspensionsWhiteTotal;
 		this.shortTermSuspensionsWhiteTotalWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsWhiteTotal(String o) {
-		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsWhiteTotal = Long.parseLong(o);
+	public void setShortTermSuspensionsWhiteTotal(String o) {
+		this.shortTermSuspensionsWhiteTotal = ReportCard.staticSetShortTermSuspensionsWhiteTotal(siteRequest_, o);
 		this.shortTermSuspensionsWhiteTotalWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetShortTermSuspensionsWhiteTotal(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard shortTermSuspensionsWhiteTotalInit() {
 		if(!shortTermSuspensionsWhiteTotalWrap.alreadyInitialized) {
@@ -11840,8 +13288,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrShortTermSuspensionsWhiteTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrShortTermSuspensionsWhiteTotal(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsWhiteTotal(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsWhiteTotal(siteRequest_, ReportCard.staticSolrShortTermSuspensionsWhiteTotal(siteRequest_, ReportCard.staticSetShortTermSuspensionsWhiteTotal(siteRequest_, o)));
+	}
+
 	public Long solrShortTermSuspensionsWhiteTotal() {
-		return shortTermSuspensionsWhiteTotal;
+		return ReportCard.staticSolrShortTermSuspensionsWhiteTotal(siteRequest_, shortTermSuspensionsWhiteTotal);
 	}
 
 	public String strShortTermSuspensionsWhiteTotal() {
@@ -11919,22 +13379,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsWhitePercent = shortTermSuspensionsWhitePercent;
 		this.shortTermSuspensionsWhitePercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsWhitePercent(String o) {
+	public void setShortTermSuspensionsWhitePercent(String o) {
+		this.shortTermSuspensionsWhitePercent = ReportCard.staticSetShortTermSuspensionsWhitePercent(siteRequest_, o);
+		this.shortTermSuspensionsWhitePercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetShortTermSuspensionsWhitePercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsWhitePercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setShortTermSuspensionsWhitePercent(Double o) {
+	public void setShortTermSuspensionsWhitePercent(Double o) {
 			this.shortTermSuspensionsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsWhitePercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsWhitePercent(Integer o) {
+	public void setShortTermSuspensionsWhitePercent(Integer o) {
 			this.shortTermSuspensionsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsWhitePercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard shortTermSuspensionsWhitePercentInit() {
 		if(!shortTermSuspensionsWhitePercentWrap.alreadyInitialized) {
@@ -11946,8 +13407,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrShortTermSuspensionsWhitePercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrShortTermSuspensionsWhitePercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsWhitePercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsWhitePercent(siteRequest_, ReportCard.staticSolrShortTermSuspensionsWhitePercent(siteRequest_, ReportCard.staticSetShortTermSuspensionsWhitePercent(siteRequest_, o)));
+	}
+
 	public Double solrShortTermSuspensionsWhitePercent() {
-		return shortTermSuspensionsWhitePercent == null ? null : shortTermSuspensionsWhitePercent.doubleValue();
+		return ReportCard.staticSolrShortTermSuspensionsWhitePercent(siteRequest_, shortTermSuspensionsWhitePercent);
 	}
 
 	public String strShortTermSuspensionsWhitePercent() {
@@ -12025,22 +13498,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsWhiteRate = shortTermSuspensionsWhiteRate;
 		this.shortTermSuspensionsWhiteRateWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsWhiteRate(String o) {
+	public void setShortTermSuspensionsWhiteRate(String o) {
+		this.shortTermSuspensionsWhiteRate = ReportCard.staticSetShortTermSuspensionsWhiteRate(siteRequest_, o);
+		this.shortTermSuspensionsWhiteRateWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetShortTermSuspensionsWhiteRate(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsWhiteRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsWhiteRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setShortTermSuspensionsWhiteRate(Double o) {
+	public void setShortTermSuspensionsWhiteRate(Double o) {
 			this.shortTermSuspensionsWhiteRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsWhiteRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsWhiteRate(Integer o) {
+	public void setShortTermSuspensionsWhiteRate(Integer o) {
 			this.shortTermSuspensionsWhiteRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsWhiteRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard shortTermSuspensionsWhiteRateInit() {
 		if(!shortTermSuspensionsWhiteRateWrap.alreadyInitialized) {
@@ -12052,8 +13526,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrShortTermSuspensionsWhiteRate(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrShortTermSuspensionsWhiteRate(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsWhiteRate(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsWhiteRate(siteRequest_, ReportCard.staticSolrShortTermSuspensionsWhiteRate(siteRequest_, ReportCard.staticSetShortTermSuspensionsWhiteRate(siteRequest_, o)));
+	}
+
 	public Double solrShortTermSuspensionsWhiteRate() {
-		return shortTermSuspensionsWhiteRate == null ? null : shortTermSuspensionsWhiteRate.doubleValue();
+		return ReportCard.staticSolrShortTermSuspensionsWhiteRate(siteRequest_, shortTermSuspensionsWhiteRate);
 	}
 
 	public String strShortTermSuspensionsWhiteRate() {
@@ -12131,22 +13617,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsAllRate = shortTermSuspensionsAllRate;
 		this.shortTermSuspensionsAllRateWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsAllRate(String o) {
+	public void setShortTermSuspensionsAllRate(String o) {
+		this.shortTermSuspensionsAllRate = ReportCard.staticSetShortTermSuspensionsAllRate(siteRequest_, o);
+		this.shortTermSuspensionsAllRateWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetShortTermSuspensionsAllRate(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsAllRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsAllRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setShortTermSuspensionsAllRate(Double o) {
+	public void setShortTermSuspensionsAllRate(Double o) {
 			this.shortTermSuspensionsAllRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsAllRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsAllRate(Integer o) {
+	public void setShortTermSuspensionsAllRate(Integer o) {
 			this.shortTermSuspensionsAllRate = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsAllRateWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard shortTermSuspensionsAllRateInit() {
 		if(!shortTermSuspensionsAllRateWrap.alreadyInitialized) {
@@ -12158,8 +13645,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrShortTermSuspensionsAllRate(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrShortTermSuspensionsAllRate(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsAllRate(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsAllRate(siteRequest_, ReportCard.staticSolrShortTermSuspensionsAllRate(siteRequest_, ReportCard.staticSetShortTermSuspensionsAllRate(siteRequest_, o)));
+	}
+
 	public Double solrShortTermSuspensionsAllRate() {
-		return shortTermSuspensionsAllRate == null ? null : shortTermSuspensionsAllRate.doubleValue();
+		return ReportCard.staticSolrShortTermSuspensionsAllRate(siteRequest_, shortTermSuspensionsAllRate);
 	}
 
 	public String strShortTermSuspensionsAllRate() {
@@ -12237,22 +13736,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.shortTermSuspensionsBlackVsWhite = shortTermSuspensionsBlackVsWhite;
 		this.shortTermSuspensionsBlackVsWhiteWrap.alreadyInitialized = true;
 	}
-	public ReportCard setShortTermSuspensionsBlackVsWhite(String o) {
+	public void setShortTermSuspensionsBlackVsWhite(String o) {
+		this.shortTermSuspensionsBlackVsWhite = ReportCard.staticSetShortTermSuspensionsBlackVsWhite(siteRequest_, o);
+		this.shortTermSuspensionsBlackVsWhiteWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetShortTermSuspensionsBlackVsWhite(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.shortTermSuspensionsBlackVsWhite = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.shortTermSuspensionsBlackVsWhiteWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setShortTermSuspensionsBlackVsWhite(Double o) {
+	public void setShortTermSuspensionsBlackVsWhite(Double o) {
 			this.shortTermSuspensionsBlackVsWhite = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsBlackVsWhiteWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setShortTermSuspensionsBlackVsWhite(Integer o) {
+	public void setShortTermSuspensionsBlackVsWhite(Integer o) {
 			this.shortTermSuspensionsBlackVsWhite = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.shortTermSuspensionsBlackVsWhiteWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard shortTermSuspensionsBlackVsWhiteInit() {
 		if(!shortTermSuspensionsBlackVsWhiteWrap.alreadyInitialized) {
@@ -12264,8 +13764,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrShortTermSuspensionsBlackVsWhite(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrShortTermSuspensionsBlackVsWhite(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqShortTermSuspensionsBlackVsWhite(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrShortTermSuspensionsBlackVsWhite(siteRequest_, ReportCard.staticSolrShortTermSuspensionsBlackVsWhite(siteRequest_, ReportCard.staticSetShortTermSuspensionsBlackVsWhite(siteRequest_, o)));
+	}
+
 	public Double solrShortTermSuspensionsBlackVsWhite() {
-		return shortTermSuspensionsBlackVsWhite == null ? null : shortTermSuspensionsBlackVsWhite.doubleValue();
+		return ReportCard.staticSolrShortTermSuspensionsBlackVsWhite(siteRequest_, shortTermSuspensionsBlackVsWhite);
 	}
 
 	public String strShortTermSuspensionsBlackVsWhite() {
@@ -12343,22 +13855,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.examsCollegeReadyGrades38OverallPercent = examsCollegeReadyGrades38OverallPercent;
 		this.examsCollegeReadyGrades38OverallPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setExamsCollegeReadyGrades38OverallPercent(String o) {
+	public void setExamsCollegeReadyGrades38OverallPercent(String o) {
+		this.examsCollegeReadyGrades38OverallPercent = ReportCard.staticSetExamsCollegeReadyGrades38OverallPercent(siteRequest_, o);
+		this.examsCollegeReadyGrades38OverallPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetExamsCollegeReadyGrades38OverallPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.examsCollegeReadyGrades38OverallPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades38OverallPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setExamsCollegeReadyGrades38OverallPercent(Double o) {
+	public void setExamsCollegeReadyGrades38OverallPercent(Double o) {
 			this.examsCollegeReadyGrades38OverallPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades38OverallPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades38OverallPercent(Integer o) {
+	public void setExamsCollegeReadyGrades38OverallPercent(Integer o) {
 			this.examsCollegeReadyGrades38OverallPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades38OverallPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard examsCollegeReadyGrades38OverallPercentInit() {
 		if(!examsCollegeReadyGrades38OverallPercentWrap.alreadyInitialized) {
@@ -12370,8 +13883,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrExamsCollegeReadyGrades38OverallPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrExamsCollegeReadyGrades38OverallPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqExamsCollegeReadyGrades38OverallPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrExamsCollegeReadyGrades38OverallPercent(siteRequest_, ReportCard.staticSolrExamsCollegeReadyGrades38OverallPercent(siteRequest_, ReportCard.staticSetExamsCollegeReadyGrades38OverallPercent(siteRequest_, o)));
+	}
+
 	public Double solrExamsCollegeReadyGrades38OverallPercent() {
-		return examsCollegeReadyGrades38OverallPercent == null ? null : examsCollegeReadyGrades38OverallPercent.doubleValue();
+		return ReportCard.staticSolrExamsCollegeReadyGrades38OverallPercent(siteRequest_, examsCollegeReadyGrades38OverallPercent);
 	}
 
 	public String strExamsCollegeReadyGrades38OverallPercent() {
@@ -12489,22 +14014,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.examsCollegeReadyGrades38IndigenousPercent = examsCollegeReadyGrades38IndigenousPercent;
 		this.examsCollegeReadyGrades38IndigenousPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setExamsCollegeReadyGrades38IndigenousPercent(String o) {
+	public void setExamsCollegeReadyGrades38IndigenousPercent(String o) {
+		this.examsCollegeReadyGrades38IndigenousPercent = ReportCard.staticSetExamsCollegeReadyGrades38IndigenousPercent(siteRequest_, o);
+		this.examsCollegeReadyGrades38IndigenousPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetExamsCollegeReadyGrades38IndigenousPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.examsCollegeReadyGrades38IndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades38IndigenousPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setExamsCollegeReadyGrades38IndigenousPercent(Double o) {
+	public void setExamsCollegeReadyGrades38IndigenousPercent(Double o) {
 			this.examsCollegeReadyGrades38IndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades38IndigenousPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades38IndigenousPercent(Integer o) {
+	public void setExamsCollegeReadyGrades38IndigenousPercent(Integer o) {
 			this.examsCollegeReadyGrades38IndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades38IndigenousPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard examsCollegeReadyGrades38IndigenousPercentInit() {
 		if(!examsCollegeReadyGrades38IndigenousPercentWrap.alreadyInitialized) {
@@ -12516,8 +14042,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrExamsCollegeReadyGrades38IndigenousPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrExamsCollegeReadyGrades38IndigenousPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqExamsCollegeReadyGrades38IndigenousPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrExamsCollegeReadyGrades38IndigenousPercent(siteRequest_, ReportCard.staticSolrExamsCollegeReadyGrades38IndigenousPercent(siteRequest_, ReportCard.staticSetExamsCollegeReadyGrades38IndigenousPercent(siteRequest_, o)));
+	}
+
 	public Double solrExamsCollegeReadyGrades38IndigenousPercent() {
-		return examsCollegeReadyGrades38IndigenousPercent == null ? null : examsCollegeReadyGrades38IndigenousPercent.doubleValue();
+		return ReportCard.staticSolrExamsCollegeReadyGrades38IndigenousPercent(siteRequest_, examsCollegeReadyGrades38IndigenousPercent);
 	}
 
 	public String strExamsCollegeReadyGrades38IndigenousPercent() {
@@ -12635,22 +14173,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.examsCollegeReadyGrades38AsianPercent = examsCollegeReadyGrades38AsianPercent;
 		this.examsCollegeReadyGrades38AsianPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setExamsCollegeReadyGrades38AsianPercent(String o) {
+	public void setExamsCollegeReadyGrades38AsianPercent(String o) {
+		this.examsCollegeReadyGrades38AsianPercent = ReportCard.staticSetExamsCollegeReadyGrades38AsianPercent(siteRequest_, o);
+		this.examsCollegeReadyGrades38AsianPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetExamsCollegeReadyGrades38AsianPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.examsCollegeReadyGrades38AsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades38AsianPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setExamsCollegeReadyGrades38AsianPercent(Double o) {
+	public void setExamsCollegeReadyGrades38AsianPercent(Double o) {
 			this.examsCollegeReadyGrades38AsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades38AsianPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades38AsianPercent(Integer o) {
+	public void setExamsCollegeReadyGrades38AsianPercent(Integer o) {
 			this.examsCollegeReadyGrades38AsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades38AsianPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard examsCollegeReadyGrades38AsianPercentInit() {
 		if(!examsCollegeReadyGrades38AsianPercentWrap.alreadyInitialized) {
@@ -12662,8 +14201,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrExamsCollegeReadyGrades38AsianPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrExamsCollegeReadyGrades38AsianPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqExamsCollegeReadyGrades38AsianPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrExamsCollegeReadyGrades38AsianPercent(siteRequest_, ReportCard.staticSolrExamsCollegeReadyGrades38AsianPercent(siteRequest_, ReportCard.staticSetExamsCollegeReadyGrades38AsianPercent(siteRequest_, o)));
+	}
+
 	public Double solrExamsCollegeReadyGrades38AsianPercent() {
-		return examsCollegeReadyGrades38AsianPercent == null ? null : examsCollegeReadyGrades38AsianPercent.doubleValue();
+		return ReportCard.staticSolrExamsCollegeReadyGrades38AsianPercent(siteRequest_, examsCollegeReadyGrades38AsianPercent);
 	}
 
 	public String strExamsCollegeReadyGrades38AsianPercent() {
@@ -12781,22 +14332,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.examsCollegeReadyGrades38BlackPercent = examsCollegeReadyGrades38BlackPercent;
 		this.examsCollegeReadyGrades38BlackPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setExamsCollegeReadyGrades38BlackPercent(String o) {
+	public void setExamsCollegeReadyGrades38BlackPercent(String o) {
+		this.examsCollegeReadyGrades38BlackPercent = ReportCard.staticSetExamsCollegeReadyGrades38BlackPercent(siteRequest_, o);
+		this.examsCollegeReadyGrades38BlackPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetExamsCollegeReadyGrades38BlackPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.examsCollegeReadyGrades38BlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades38BlackPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setExamsCollegeReadyGrades38BlackPercent(Double o) {
+	public void setExamsCollegeReadyGrades38BlackPercent(Double o) {
 			this.examsCollegeReadyGrades38BlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades38BlackPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades38BlackPercent(Integer o) {
+	public void setExamsCollegeReadyGrades38BlackPercent(Integer o) {
 			this.examsCollegeReadyGrades38BlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades38BlackPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard examsCollegeReadyGrades38BlackPercentInit() {
 		if(!examsCollegeReadyGrades38BlackPercentWrap.alreadyInitialized) {
@@ -12808,8 +14360,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrExamsCollegeReadyGrades38BlackPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrExamsCollegeReadyGrades38BlackPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqExamsCollegeReadyGrades38BlackPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrExamsCollegeReadyGrades38BlackPercent(siteRequest_, ReportCard.staticSolrExamsCollegeReadyGrades38BlackPercent(siteRequest_, ReportCard.staticSetExamsCollegeReadyGrades38BlackPercent(siteRequest_, o)));
+	}
+
 	public Double solrExamsCollegeReadyGrades38BlackPercent() {
-		return examsCollegeReadyGrades38BlackPercent == null ? null : examsCollegeReadyGrades38BlackPercent.doubleValue();
+		return ReportCard.staticSolrExamsCollegeReadyGrades38BlackPercent(siteRequest_, examsCollegeReadyGrades38BlackPercent);
 	}
 
 	public String strExamsCollegeReadyGrades38BlackPercent() {
@@ -12927,22 +14491,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.examsCollegeReadyGrades38LatinxPercent = examsCollegeReadyGrades38LatinxPercent;
 		this.examsCollegeReadyGrades38LatinxPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setExamsCollegeReadyGrades38LatinxPercent(String o) {
+	public void setExamsCollegeReadyGrades38LatinxPercent(String o) {
+		this.examsCollegeReadyGrades38LatinxPercent = ReportCard.staticSetExamsCollegeReadyGrades38LatinxPercent(siteRequest_, o);
+		this.examsCollegeReadyGrades38LatinxPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetExamsCollegeReadyGrades38LatinxPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.examsCollegeReadyGrades38LatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades38LatinxPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setExamsCollegeReadyGrades38LatinxPercent(Double o) {
+	public void setExamsCollegeReadyGrades38LatinxPercent(Double o) {
 			this.examsCollegeReadyGrades38LatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades38LatinxPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades38LatinxPercent(Integer o) {
+	public void setExamsCollegeReadyGrades38LatinxPercent(Integer o) {
 			this.examsCollegeReadyGrades38LatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades38LatinxPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard examsCollegeReadyGrades38LatinxPercentInit() {
 		if(!examsCollegeReadyGrades38LatinxPercentWrap.alreadyInitialized) {
@@ -12954,8 +14519,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrExamsCollegeReadyGrades38LatinxPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrExamsCollegeReadyGrades38LatinxPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqExamsCollegeReadyGrades38LatinxPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrExamsCollegeReadyGrades38LatinxPercent(siteRequest_, ReportCard.staticSolrExamsCollegeReadyGrades38LatinxPercent(siteRequest_, ReportCard.staticSetExamsCollegeReadyGrades38LatinxPercent(siteRequest_, o)));
+	}
+
 	public Double solrExamsCollegeReadyGrades38LatinxPercent() {
-		return examsCollegeReadyGrades38LatinxPercent == null ? null : examsCollegeReadyGrades38LatinxPercent.doubleValue();
+		return ReportCard.staticSolrExamsCollegeReadyGrades38LatinxPercent(siteRequest_, examsCollegeReadyGrades38LatinxPercent);
 	}
 
 	public String strExamsCollegeReadyGrades38LatinxPercent() {
@@ -13073,22 +14650,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.examsCollegeReadyGrades38MultiRacialPercent = examsCollegeReadyGrades38MultiRacialPercent;
 		this.examsCollegeReadyGrades38MultiRacialPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setExamsCollegeReadyGrades38MultiRacialPercent(String o) {
+	public void setExamsCollegeReadyGrades38MultiRacialPercent(String o) {
+		this.examsCollegeReadyGrades38MultiRacialPercent = ReportCard.staticSetExamsCollegeReadyGrades38MultiRacialPercent(siteRequest_, o);
+		this.examsCollegeReadyGrades38MultiRacialPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetExamsCollegeReadyGrades38MultiRacialPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.examsCollegeReadyGrades38MultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades38MultiRacialPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setExamsCollegeReadyGrades38MultiRacialPercent(Double o) {
+	public void setExamsCollegeReadyGrades38MultiRacialPercent(Double o) {
 			this.examsCollegeReadyGrades38MultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades38MultiRacialPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades38MultiRacialPercent(Integer o) {
+	public void setExamsCollegeReadyGrades38MultiRacialPercent(Integer o) {
 			this.examsCollegeReadyGrades38MultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades38MultiRacialPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard examsCollegeReadyGrades38MultiRacialPercentInit() {
 		if(!examsCollegeReadyGrades38MultiRacialPercentWrap.alreadyInitialized) {
@@ -13100,8 +14678,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrExamsCollegeReadyGrades38MultiRacialPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrExamsCollegeReadyGrades38MultiRacialPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqExamsCollegeReadyGrades38MultiRacialPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrExamsCollegeReadyGrades38MultiRacialPercent(siteRequest_, ReportCard.staticSolrExamsCollegeReadyGrades38MultiRacialPercent(siteRequest_, ReportCard.staticSetExamsCollegeReadyGrades38MultiRacialPercent(siteRequest_, o)));
+	}
+
 	public Double solrExamsCollegeReadyGrades38MultiRacialPercent() {
-		return examsCollegeReadyGrades38MultiRacialPercent == null ? null : examsCollegeReadyGrades38MultiRacialPercent.doubleValue();
+		return ReportCard.staticSolrExamsCollegeReadyGrades38MultiRacialPercent(siteRequest_, examsCollegeReadyGrades38MultiRacialPercent);
 	}
 
 	public String strExamsCollegeReadyGrades38MultiRacialPercent() {
@@ -13219,22 +14809,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.examsCollegeReadyGrades38PacificIslanderPercent = examsCollegeReadyGrades38PacificIslanderPercent;
 		this.examsCollegeReadyGrades38PacificIslanderPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setExamsCollegeReadyGrades38PacificIslanderPercent(String o) {
+	public void setExamsCollegeReadyGrades38PacificIslanderPercent(String o) {
+		this.examsCollegeReadyGrades38PacificIslanderPercent = ReportCard.staticSetExamsCollegeReadyGrades38PacificIslanderPercent(siteRequest_, o);
+		this.examsCollegeReadyGrades38PacificIslanderPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetExamsCollegeReadyGrades38PacificIslanderPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.examsCollegeReadyGrades38PacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades38PacificIslanderPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setExamsCollegeReadyGrades38PacificIslanderPercent(Double o) {
+	public void setExamsCollegeReadyGrades38PacificIslanderPercent(Double o) {
 			this.examsCollegeReadyGrades38PacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades38PacificIslanderPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades38PacificIslanderPercent(Integer o) {
+	public void setExamsCollegeReadyGrades38PacificIslanderPercent(Integer o) {
 			this.examsCollegeReadyGrades38PacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades38PacificIslanderPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard examsCollegeReadyGrades38PacificIslanderPercentInit() {
 		if(!examsCollegeReadyGrades38PacificIslanderPercentWrap.alreadyInitialized) {
@@ -13246,8 +14837,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrExamsCollegeReadyGrades38PacificIslanderPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrExamsCollegeReadyGrades38PacificIslanderPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqExamsCollegeReadyGrades38PacificIslanderPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrExamsCollegeReadyGrades38PacificIslanderPercent(siteRequest_, ReportCard.staticSolrExamsCollegeReadyGrades38PacificIslanderPercent(siteRequest_, ReportCard.staticSetExamsCollegeReadyGrades38PacificIslanderPercent(siteRequest_, o)));
+	}
+
 	public Double solrExamsCollegeReadyGrades38PacificIslanderPercent() {
-		return examsCollegeReadyGrades38PacificIslanderPercent == null ? null : examsCollegeReadyGrades38PacificIslanderPercent.doubleValue();
+		return ReportCard.staticSolrExamsCollegeReadyGrades38PacificIslanderPercent(siteRequest_, examsCollegeReadyGrades38PacificIslanderPercent);
 	}
 
 	public String strExamsCollegeReadyGrades38PacificIslanderPercent() {
@@ -13365,22 +14968,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.examsCollegeReadyGrades38WhitePercent = examsCollegeReadyGrades38WhitePercent;
 		this.examsCollegeReadyGrades38WhitePercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setExamsCollegeReadyGrades38WhitePercent(String o) {
+	public void setExamsCollegeReadyGrades38WhitePercent(String o) {
+		this.examsCollegeReadyGrades38WhitePercent = ReportCard.staticSetExamsCollegeReadyGrades38WhitePercent(siteRequest_, o);
+		this.examsCollegeReadyGrades38WhitePercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetExamsCollegeReadyGrades38WhitePercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.examsCollegeReadyGrades38WhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades38WhitePercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setExamsCollegeReadyGrades38WhitePercent(Double o) {
+	public void setExamsCollegeReadyGrades38WhitePercent(Double o) {
 			this.examsCollegeReadyGrades38WhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades38WhitePercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades38WhitePercent(Integer o) {
+	public void setExamsCollegeReadyGrades38WhitePercent(Integer o) {
 			this.examsCollegeReadyGrades38WhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades38WhitePercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard examsCollegeReadyGrades38WhitePercentInit() {
 		if(!examsCollegeReadyGrades38WhitePercentWrap.alreadyInitialized) {
@@ -13392,8 +14996,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrExamsCollegeReadyGrades38WhitePercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrExamsCollegeReadyGrades38WhitePercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqExamsCollegeReadyGrades38WhitePercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrExamsCollegeReadyGrades38WhitePercent(siteRequest_, ReportCard.staticSolrExamsCollegeReadyGrades38WhitePercent(siteRequest_, ReportCard.staticSetExamsCollegeReadyGrades38WhitePercent(siteRequest_, o)));
+	}
+
 	public Double solrExamsCollegeReadyGrades38WhitePercent() {
-		return examsCollegeReadyGrades38WhitePercent == null ? null : examsCollegeReadyGrades38WhitePercent.doubleValue();
+		return ReportCard.staticSolrExamsCollegeReadyGrades38WhitePercent(siteRequest_, examsCollegeReadyGrades38WhitePercent);
 	}
 
 	public String strExamsCollegeReadyGrades38WhitePercent() {
@@ -13511,22 +15127,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.examsCollegeReadyGrades912OverallPercent = examsCollegeReadyGrades912OverallPercent;
 		this.examsCollegeReadyGrades912OverallPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setExamsCollegeReadyGrades912OverallPercent(String o) {
+	public void setExamsCollegeReadyGrades912OverallPercent(String o) {
+		this.examsCollegeReadyGrades912OverallPercent = ReportCard.staticSetExamsCollegeReadyGrades912OverallPercent(siteRequest_, o);
+		this.examsCollegeReadyGrades912OverallPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetExamsCollegeReadyGrades912OverallPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.examsCollegeReadyGrades912OverallPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades912OverallPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setExamsCollegeReadyGrades912OverallPercent(Double o) {
+	public void setExamsCollegeReadyGrades912OverallPercent(Double o) {
 			this.examsCollegeReadyGrades912OverallPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades912OverallPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades912OverallPercent(Integer o) {
+	public void setExamsCollegeReadyGrades912OverallPercent(Integer o) {
 			this.examsCollegeReadyGrades912OverallPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades912OverallPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard examsCollegeReadyGrades912OverallPercentInit() {
 		if(!examsCollegeReadyGrades912OverallPercentWrap.alreadyInitialized) {
@@ -13538,8 +15155,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrExamsCollegeReadyGrades912OverallPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrExamsCollegeReadyGrades912OverallPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqExamsCollegeReadyGrades912OverallPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrExamsCollegeReadyGrades912OverallPercent(siteRequest_, ReportCard.staticSolrExamsCollegeReadyGrades912OverallPercent(siteRequest_, ReportCard.staticSetExamsCollegeReadyGrades912OverallPercent(siteRequest_, o)));
+	}
+
 	public Double solrExamsCollegeReadyGrades912OverallPercent() {
-		return examsCollegeReadyGrades912OverallPercent == null ? null : examsCollegeReadyGrades912OverallPercent.doubleValue();
+		return ReportCard.staticSolrExamsCollegeReadyGrades912OverallPercent(siteRequest_, examsCollegeReadyGrades912OverallPercent);
 	}
 
 	public String strExamsCollegeReadyGrades912OverallPercent() {
@@ -13657,22 +15286,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.examsCollegeReadyGrades912IndigenousPercent = examsCollegeReadyGrades912IndigenousPercent;
 		this.examsCollegeReadyGrades912IndigenousPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setExamsCollegeReadyGrades912IndigenousPercent(String o) {
+	public void setExamsCollegeReadyGrades912IndigenousPercent(String o) {
+		this.examsCollegeReadyGrades912IndigenousPercent = ReportCard.staticSetExamsCollegeReadyGrades912IndigenousPercent(siteRequest_, o);
+		this.examsCollegeReadyGrades912IndigenousPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetExamsCollegeReadyGrades912IndigenousPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.examsCollegeReadyGrades912IndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades912IndigenousPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setExamsCollegeReadyGrades912IndigenousPercent(Double o) {
+	public void setExamsCollegeReadyGrades912IndigenousPercent(Double o) {
 			this.examsCollegeReadyGrades912IndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades912IndigenousPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades912IndigenousPercent(Integer o) {
+	public void setExamsCollegeReadyGrades912IndigenousPercent(Integer o) {
 			this.examsCollegeReadyGrades912IndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades912IndigenousPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard examsCollegeReadyGrades912IndigenousPercentInit() {
 		if(!examsCollegeReadyGrades912IndigenousPercentWrap.alreadyInitialized) {
@@ -13684,8 +15314,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrExamsCollegeReadyGrades912IndigenousPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrExamsCollegeReadyGrades912IndigenousPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqExamsCollegeReadyGrades912IndigenousPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrExamsCollegeReadyGrades912IndigenousPercent(siteRequest_, ReportCard.staticSolrExamsCollegeReadyGrades912IndigenousPercent(siteRequest_, ReportCard.staticSetExamsCollegeReadyGrades912IndigenousPercent(siteRequest_, o)));
+	}
+
 	public Double solrExamsCollegeReadyGrades912IndigenousPercent() {
-		return examsCollegeReadyGrades912IndigenousPercent == null ? null : examsCollegeReadyGrades912IndigenousPercent.doubleValue();
+		return ReportCard.staticSolrExamsCollegeReadyGrades912IndigenousPercent(siteRequest_, examsCollegeReadyGrades912IndigenousPercent);
 	}
 
 	public String strExamsCollegeReadyGrades912IndigenousPercent() {
@@ -13803,22 +15445,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.examsCollegeReadyGrades912AsianPercent = examsCollegeReadyGrades912AsianPercent;
 		this.examsCollegeReadyGrades912AsianPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setExamsCollegeReadyGrades912AsianPercent(String o) {
+	public void setExamsCollegeReadyGrades912AsianPercent(String o) {
+		this.examsCollegeReadyGrades912AsianPercent = ReportCard.staticSetExamsCollegeReadyGrades912AsianPercent(siteRequest_, o);
+		this.examsCollegeReadyGrades912AsianPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetExamsCollegeReadyGrades912AsianPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.examsCollegeReadyGrades912AsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades912AsianPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setExamsCollegeReadyGrades912AsianPercent(Double o) {
+	public void setExamsCollegeReadyGrades912AsianPercent(Double o) {
 			this.examsCollegeReadyGrades912AsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades912AsianPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades912AsianPercent(Integer o) {
+	public void setExamsCollegeReadyGrades912AsianPercent(Integer o) {
 			this.examsCollegeReadyGrades912AsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades912AsianPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard examsCollegeReadyGrades912AsianPercentInit() {
 		if(!examsCollegeReadyGrades912AsianPercentWrap.alreadyInitialized) {
@@ -13830,8 +15473,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrExamsCollegeReadyGrades912AsianPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrExamsCollegeReadyGrades912AsianPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqExamsCollegeReadyGrades912AsianPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrExamsCollegeReadyGrades912AsianPercent(siteRequest_, ReportCard.staticSolrExamsCollegeReadyGrades912AsianPercent(siteRequest_, ReportCard.staticSetExamsCollegeReadyGrades912AsianPercent(siteRequest_, o)));
+	}
+
 	public Double solrExamsCollegeReadyGrades912AsianPercent() {
-		return examsCollegeReadyGrades912AsianPercent == null ? null : examsCollegeReadyGrades912AsianPercent.doubleValue();
+		return ReportCard.staticSolrExamsCollegeReadyGrades912AsianPercent(siteRequest_, examsCollegeReadyGrades912AsianPercent);
 	}
 
 	public String strExamsCollegeReadyGrades912AsianPercent() {
@@ -13949,22 +15604,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.examsCollegeReadyGrades912BlackPercent = examsCollegeReadyGrades912BlackPercent;
 		this.examsCollegeReadyGrades912BlackPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setExamsCollegeReadyGrades912BlackPercent(String o) {
+	public void setExamsCollegeReadyGrades912BlackPercent(String o) {
+		this.examsCollegeReadyGrades912BlackPercent = ReportCard.staticSetExamsCollegeReadyGrades912BlackPercent(siteRequest_, o);
+		this.examsCollegeReadyGrades912BlackPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetExamsCollegeReadyGrades912BlackPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.examsCollegeReadyGrades912BlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades912BlackPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setExamsCollegeReadyGrades912BlackPercent(Double o) {
+	public void setExamsCollegeReadyGrades912BlackPercent(Double o) {
 			this.examsCollegeReadyGrades912BlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades912BlackPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades912BlackPercent(Integer o) {
+	public void setExamsCollegeReadyGrades912BlackPercent(Integer o) {
 			this.examsCollegeReadyGrades912BlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades912BlackPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard examsCollegeReadyGrades912BlackPercentInit() {
 		if(!examsCollegeReadyGrades912BlackPercentWrap.alreadyInitialized) {
@@ -13976,8 +15632,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrExamsCollegeReadyGrades912BlackPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrExamsCollegeReadyGrades912BlackPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqExamsCollegeReadyGrades912BlackPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrExamsCollegeReadyGrades912BlackPercent(siteRequest_, ReportCard.staticSolrExamsCollegeReadyGrades912BlackPercent(siteRequest_, ReportCard.staticSetExamsCollegeReadyGrades912BlackPercent(siteRequest_, o)));
+	}
+
 	public Double solrExamsCollegeReadyGrades912BlackPercent() {
-		return examsCollegeReadyGrades912BlackPercent == null ? null : examsCollegeReadyGrades912BlackPercent.doubleValue();
+		return ReportCard.staticSolrExamsCollegeReadyGrades912BlackPercent(siteRequest_, examsCollegeReadyGrades912BlackPercent);
 	}
 
 	public String strExamsCollegeReadyGrades912BlackPercent() {
@@ -14095,22 +15763,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.examsCollegeReadyGrades912LatinxPercent = examsCollegeReadyGrades912LatinxPercent;
 		this.examsCollegeReadyGrades912LatinxPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setExamsCollegeReadyGrades912LatinxPercent(String o) {
+	public void setExamsCollegeReadyGrades912LatinxPercent(String o) {
+		this.examsCollegeReadyGrades912LatinxPercent = ReportCard.staticSetExamsCollegeReadyGrades912LatinxPercent(siteRequest_, o);
+		this.examsCollegeReadyGrades912LatinxPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetExamsCollegeReadyGrades912LatinxPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.examsCollegeReadyGrades912LatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades912LatinxPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setExamsCollegeReadyGrades912LatinxPercent(Double o) {
+	public void setExamsCollegeReadyGrades912LatinxPercent(Double o) {
 			this.examsCollegeReadyGrades912LatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades912LatinxPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades912LatinxPercent(Integer o) {
+	public void setExamsCollegeReadyGrades912LatinxPercent(Integer o) {
 			this.examsCollegeReadyGrades912LatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades912LatinxPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard examsCollegeReadyGrades912LatinxPercentInit() {
 		if(!examsCollegeReadyGrades912LatinxPercentWrap.alreadyInitialized) {
@@ -14122,8 +15791,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrExamsCollegeReadyGrades912LatinxPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrExamsCollegeReadyGrades912LatinxPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqExamsCollegeReadyGrades912LatinxPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrExamsCollegeReadyGrades912LatinxPercent(siteRequest_, ReportCard.staticSolrExamsCollegeReadyGrades912LatinxPercent(siteRequest_, ReportCard.staticSetExamsCollegeReadyGrades912LatinxPercent(siteRequest_, o)));
+	}
+
 	public Double solrExamsCollegeReadyGrades912LatinxPercent() {
-		return examsCollegeReadyGrades912LatinxPercent == null ? null : examsCollegeReadyGrades912LatinxPercent.doubleValue();
+		return ReportCard.staticSolrExamsCollegeReadyGrades912LatinxPercent(siteRequest_, examsCollegeReadyGrades912LatinxPercent);
 	}
 
 	public String strExamsCollegeReadyGrades912LatinxPercent() {
@@ -14241,22 +15922,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.examsCollegeReadyGrades912MultiRacialPercent = examsCollegeReadyGrades912MultiRacialPercent;
 		this.examsCollegeReadyGrades912MultiRacialPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setExamsCollegeReadyGrades912MultiRacialPercent(String o) {
+	public void setExamsCollegeReadyGrades912MultiRacialPercent(String o) {
+		this.examsCollegeReadyGrades912MultiRacialPercent = ReportCard.staticSetExamsCollegeReadyGrades912MultiRacialPercent(siteRequest_, o);
+		this.examsCollegeReadyGrades912MultiRacialPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetExamsCollegeReadyGrades912MultiRacialPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.examsCollegeReadyGrades912MultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades912MultiRacialPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setExamsCollegeReadyGrades912MultiRacialPercent(Double o) {
+	public void setExamsCollegeReadyGrades912MultiRacialPercent(Double o) {
 			this.examsCollegeReadyGrades912MultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades912MultiRacialPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades912MultiRacialPercent(Integer o) {
+	public void setExamsCollegeReadyGrades912MultiRacialPercent(Integer o) {
 			this.examsCollegeReadyGrades912MultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades912MultiRacialPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard examsCollegeReadyGrades912MultiRacialPercentInit() {
 		if(!examsCollegeReadyGrades912MultiRacialPercentWrap.alreadyInitialized) {
@@ -14268,8 +15950,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrExamsCollegeReadyGrades912MultiRacialPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrExamsCollegeReadyGrades912MultiRacialPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqExamsCollegeReadyGrades912MultiRacialPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrExamsCollegeReadyGrades912MultiRacialPercent(siteRequest_, ReportCard.staticSolrExamsCollegeReadyGrades912MultiRacialPercent(siteRequest_, ReportCard.staticSetExamsCollegeReadyGrades912MultiRacialPercent(siteRequest_, o)));
+	}
+
 	public Double solrExamsCollegeReadyGrades912MultiRacialPercent() {
-		return examsCollegeReadyGrades912MultiRacialPercent == null ? null : examsCollegeReadyGrades912MultiRacialPercent.doubleValue();
+		return ReportCard.staticSolrExamsCollegeReadyGrades912MultiRacialPercent(siteRequest_, examsCollegeReadyGrades912MultiRacialPercent);
 	}
 
 	public String strExamsCollegeReadyGrades912MultiRacialPercent() {
@@ -14387,22 +16081,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.examsCollegeReadyGrades912PacificIslanderPercent = examsCollegeReadyGrades912PacificIslanderPercent;
 		this.examsCollegeReadyGrades912PacificIslanderPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setExamsCollegeReadyGrades912PacificIslanderPercent(String o) {
+	public void setExamsCollegeReadyGrades912PacificIslanderPercent(String o) {
+		this.examsCollegeReadyGrades912PacificIslanderPercent = ReportCard.staticSetExamsCollegeReadyGrades912PacificIslanderPercent(siteRequest_, o);
+		this.examsCollegeReadyGrades912PacificIslanderPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetExamsCollegeReadyGrades912PacificIslanderPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.examsCollegeReadyGrades912PacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades912PacificIslanderPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setExamsCollegeReadyGrades912PacificIslanderPercent(Double o) {
+	public void setExamsCollegeReadyGrades912PacificIslanderPercent(Double o) {
 			this.examsCollegeReadyGrades912PacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades912PacificIslanderPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades912PacificIslanderPercent(Integer o) {
+	public void setExamsCollegeReadyGrades912PacificIslanderPercent(Integer o) {
 			this.examsCollegeReadyGrades912PacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades912PacificIslanderPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard examsCollegeReadyGrades912PacificIslanderPercentInit() {
 		if(!examsCollegeReadyGrades912PacificIslanderPercentWrap.alreadyInitialized) {
@@ -14414,8 +16109,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrExamsCollegeReadyGrades912PacificIslanderPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrExamsCollegeReadyGrades912PacificIslanderPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqExamsCollegeReadyGrades912PacificIslanderPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrExamsCollegeReadyGrades912PacificIslanderPercent(siteRequest_, ReportCard.staticSolrExamsCollegeReadyGrades912PacificIslanderPercent(siteRequest_, ReportCard.staticSetExamsCollegeReadyGrades912PacificIslanderPercent(siteRequest_, o)));
+	}
+
 	public Double solrExamsCollegeReadyGrades912PacificIslanderPercent() {
-		return examsCollegeReadyGrades912PacificIslanderPercent == null ? null : examsCollegeReadyGrades912PacificIslanderPercent.doubleValue();
+		return ReportCard.staticSolrExamsCollegeReadyGrades912PacificIslanderPercent(siteRequest_, examsCollegeReadyGrades912PacificIslanderPercent);
 	}
 
 	public String strExamsCollegeReadyGrades912PacificIslanderPercent() {
@@ -14533,22 +16240,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.examsCollegeReadyGrades912WhitePercent = examsCollegeReadyGrades912WhitePercent;
 		this.examsCollegeReadyGrades912WhitePercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setExamsCollegeReadyGrades912WhitePercent(String o) {
+	public void setExamsCollegeReadyGrades912WhitePercent(String o) {
+		this.examsCollegeReadyGrades912WhitePercent = ReportCard.staticSetExamsCollegeReadyGrades912WhitePercent(siteRequest_, o);
+		this.examsCollegeReadyGrades912WhitePercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetExamsCollegeReadyGrades912WhitePercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.examsCollegeReadyGrades912WhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades912WhitePercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setExamsCollegeReadyGrades912WhitePercent(Double o) {
+	public void setExamsCollegeReadyGrades912WhitePercent(Double o) {
 			this.examsCollegeReadyGrades912WhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades912WhitePercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades912WhitePercent(Integer o) {
+	public void setExamsCollegeReadyGrades912WhitePercent(Integer o) {
 			this.examsCollegeReadyGrades912WhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades912WhitePercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard examsCollegeReadyGrades912WhitePercentInit() {
 		if(!examsCollegeReadyGrades912WhitePercentWrap.alreadyInitialized) {
@@ -14560,8 +16268,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrExamsCollegeReadyGrades912WhitePercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrExamsCollegeReadyGrades912WhitePercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqExamsCollegeReadyGrades912WhitePercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrExamsCollegeReadyGrades912WhitePercent(siteRequest_, ReportCard.staticSolrExamsCollegeReadyGrades912WhitePercent(siteRequest_, ReportCard.staticSetExamsCollegeReadyGrades912WhitePercent(siteRequest_, o)));
+	}
+
 	public Double solrExamsCollegeReadyGrades912WhitePercent() {
-		return examsCollegeReadyGrades912WhitePercent == null ? null : examsCollegeReadyGrades912WhitePercent.doubleValue();
+		return ReportCard.staticSolrExamsCollegeReadyGrades912WhitePercent(siteRequest_, examsCollegeReadyGrades912WhitePercent);
 	}
 
 	public String strExamsCollegeReadyGrades912WhitePercent() {
@@ -14679,22 +16399,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.graduateWithin4YearsOverallPercent = graduateWithin4YearsOverallPercent;
 		this.graduateWithin4YearsOverallPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setGraduateWithin4YearsOverallPercent(String o) {
+	public void setGraduateWithin4YearsOverallPercent(String o) {
+		this.graduateWithin4YearsOverallPercent = ReportCard.staticSetGraduateWithin4YearsOverallPercent(siteRequest_, o);
+		this.graduateWithin4YearsOverallPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetGraduateWithin4YearsOverallPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.graduateWithin4YearsOverallPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.graduateWithin4YearsOverallPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setGraduateWithin4YearsOverallPercent(Double o) {
+	public void setGraduateWithin4YearsOverallPercent(Double o) {
 			this.graduateWithin4YearsOverallPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.graduateWithin4YearsOverallPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setGraduateWithin4YearsOverallPercent(Integer o) {
+	public void setGraduateWithin4YearsOverallPercent(Integer o) {
 			this.graduateWithin4YearsOverallPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.graduateWithin4YearsOverallPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard graduateWithin4YearsOverallPercentInit() {
 		if(!graduateWithin4YearsOverallPercentWrap.alreadyInitialized) {
@@ -14706,8 +16427,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrGraduateWithin4YearsOverallPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrGraduateWithin4YearsOverallPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqGraduateWithin4YearsOverallPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrGraduateWithin4YearsOverallPercent(siteRequest_, ReportCard.staticSolrGraduateWithin4YearsOverallPercent(siteRequest_, ReportCard.staticSetGraduateWithin4YearsOverallPercent(siteRequest_, o)));
+	}
+
 	public Double solrGraduateWithin4YearsOverallPercent() {
-		return graduateWithin4YearsOverallPercent == null ? null : graduateWithin4YearsOverallPercent.doubleValue();
+		return ReportCard.staticSolrGraduateWithin4YearsOverallPercent(siteRequest_, graduateWithin4YearsOverallPercent);
 	}
 
 	public String strGraduateWithin4YearsOverallPercent() {
@@ -14825,22 +16558,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.graduateWithin4YearsIndigenousPercent = graduateWithin4YearsIndigenousPercent;
 		this.graduateWithin4YearsIndigenousPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setGraduateWithin4YearsIndigenousPercent(String o) {
+	public void setGraduateWithin4YearsIndigenousPercent(String o) {
+		this.graduateWithin4YearsIndigenousPercent = ReportCard.staticSetGraduateWithin4YearsIndigenousPercent(siteRequest_, o);
+		this.graduateWithin4YearsIndigenousPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetGraduateWithin4YearsIndigenousPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.graduateWithin4YearsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.graduateWithin4YearsIndigenousPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setGraduateWithin4YearsIndigenousPercent(Double o) {
+	public void setGraduateWithin4YearsIndigenousPercent(Double o) {
 			this.graduateWithin4YearsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.graduateWithin4YearsIndigenousPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setGraduateWithin4YearsIndigenousPercent(Integer o) {
+	public void setGraduateWithin4YearsIndigenousPercent(Integer o) {
 			this.graduateWithin4YearsIndigenousPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.graduateWithin4YearsIndigenousPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard graduateWithin4YearsIndigenousPercentInit() {
 		if(!graduateWithin4YearsIndigenousPercentWrap.alreadyInitialized) {
@@ -14852,8 +16586,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrGraduateWithin4YearsIndigenousPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrGraduateWithin4YearsIndigenousPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqGraduateWithin4YearsIndigenousPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrGraduateWithin4YearsIndigenousPercent(siteRequest_, ReportCard.staticSolrGraduateWithin4YearsIndigenousPercent(siteRequest_, ReportCard.staticSetGraduateWithin4YearsIndigenousPercent(siteRequest_, o)));
+	}
+
 	public Double solrGraduateWithin4YearsIndigenousPercent() {
-		return graduateWithin4YearsIndigenousPercent == null ? null : graduateWithin4YearsIndigenousPercent.doubleValue();
+		return ReportCard.staticSolrGraduateWithin4YearsIndigenousPercent(siteRequest_, graduateWithin4YearsIndigenousPercent);
 	}
 
 	public String strGraduateWithin4YearsIndigenousPercent() {
@@ -14971,22 +16717,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.graduateWithin4YearsAsianPercent = graduateWithin4YearsAsianPercent;
 		this.graduateWithin4YearsAsianPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setGraduateWithin4YearsAsianPercent(String o) {
+	public void setGraduateWithin4YearsAsianPercent(String o) {
+		this.graduateWithin4YearsAsianPercent = ReportCard.staticSetGraduateWithin4YearsAsianPercent(siteRequest_, o);
+		this.graduateWithin4YearsAsianPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetGraduateWithin4YearsAsianPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.graduateWithin4YearsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.graduateWithin4YearsAsianPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setGraduateWithin4YearsAsianPercent(Double o) {
+	public void setGraduateWithin4YearsAsianPercent(Double o) {
 			this.graduateWithin4YearsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.graduateWithin4YearsAsianPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setGraduateWithin4YearsAsianPercent(Integer o) {
+	public void setGraduateWithin4YearsAsianPercent(Integer o) {
 			this.graduateWithin4YearsAsianPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.graduateWithin4YearsAsianPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard graduateWithin4YearsAsianPercentInit() {
 		if(!graduateWithin4YearsAsianPercentWrap.alreadyInitialized) {
@@ -14998,8 +16745,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrGraduateWithin4YearsAsianPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrGraduateWithin4YearsAsianPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqGraduateWithin4YearsAsianPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrGraduateWithin4YearsAsianPercent(siteRequest_, ReportCard.staticSolrGraduateWithin4YearsAsianPercent(siteRequest_, ReportCard.staticSetGraduateWithin4YearsAsianPercent(siteRequest_, o)));
+	}
+
 	public Double solrGraduateWithin4YearsAsianPercent() {
-		return graduateWithin4YearsAsianPercent == null ? null : graduateWithin4YearsAsianPercent.doubleValue();
+		return ReportCard.staticSolrGraduateWithin4YearsAsianPercent(siteRequest_, graduateWithin4YearsAsianPercent);
 	}
 
 	public String strGraduateWithin4YearsAsianPercent() {
@@ -15117,22 +16876,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.graduateWithin4YearsBlackPercent = graduateWithin4YearsBlackPercent;
 		this.graduateWithin4YearsBlackPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setGraduateWithin4YearsBlackPercent(String o) {
+	public void setGraduateWithin4YearsBlackPercent(String o) {
+		this.graduateWithin4YearsBlackPercent = ReportCard.staticSetGraduateWithin4YearsBlackPercent(siteRequest_, o);
+		this.graduateWithin4YearsBlackPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetGraduateWithin4YearsBlackPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.graduateWithin4YearsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.graduateWithin4YearsBlackPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setGraduateWithin4YearsBlackPercent(Double o) {
+	public void setGraduateWithin4YearsBlackPercent(Double o) {
 			this.graduateWithin4YearsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.graduateWithin4YearsBlackPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setGraduateWithin4YearsBlackPercent(Integer o) {
+	public void setGraduateWithin4YearsBlackPercent(Integer o) {
 			this.graduateWithin4YearsBlackPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.graduateWithin4YearsBlackPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard graduateWithin4YearsBlackPercentInit() {
 		if(!graduateWithin4YearsBlackPercentWrap.alreadyInitialized) {
@@ -15144,8 +16904,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrGraduateWithin4YearsBlackPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrGraduateWithin4YearsBlackPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqGraduateWithin4YearsBlackPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrGraduateWithin4YearsBlackPercent(siteRequest_, ReportCard.staticSolrGraduateWithin4YearsBlackPercent(siteRequest_, ReportCard.staticSetGraduateWithin4YearsBlackPercent(siteRequest_, o)));
+	}
+
 	public Double solrGraduateWithin4YearsBlackPercent() {
-		return graduateWithin4YearsBlackPercent == null ? null : graduateWithin4YearsBlackPercent.doubleValue();
+		return ReportCard.staticSolrGraduateWithin4YearsBlackPercent(siteRequest_, graduateWithin4YearsBlackPercent);
 	}
 
 	public String strGraduateWithin4YearsBlackPercent() {
@@ -15263,22 +17035,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.graduateWithin4YearsLatinxPercent = graduateWithin4YearsLatinxPercent;
 		this.graduateWithin4YearsLatinxPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setGraduateWithin4YearsLatinxPercent(String o) {
+	public void setGraduateWithin4YearsLatinxPercent(String o) {
+		this.graduateWithin4YearsLatinxPercent = ReportCard.staticSetGraduateWithin4YearsLatinxPercent(siteRequest_, o);
+		this.graduateWithin4YearsLatinxPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetGraduateWithin4YearsLatinxPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.graduateWithin4YearsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.graduateWithin4YearsLatinxPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setGraduateWithin4YearsLatinxPercent(Double o) {
+	public void setGraduateWithin4YearsLatinxPercent(Double o) {
 			this.graduateWithin4YearsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.graduateWithin4YearsLatinxPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setGraduateWithin4YearsLatinxPercent(Integer o) {
+	public void setGraduateWithin4YearsLatinxPercent(Integer o) {
 			this.graduateWithin4YearsLatinxPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.graduateWithin4YearsLatinxPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard graduateWithin4YearsLatinxPercentInit() {
 		if(!graduateWithin4YearsLatinxPercentWrap.alreadyInitialized) {
@@ -15290,8 +17063,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrGraduateWithin4YearsLatinxPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrGraduateWithin4YearsLatinxPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqGraduateWithin4YearsLatinxPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrGraduateWithin4YearsLatinxPercent(siteRequest_, ReportCard.staticSolrGraduateWithin4YearsLatinxPercent(siteRequest_, ReportCard.staticSetGraduateWithin4YearsLatinxPercent(siteRequest_, o)));
+	}
+
 	public Double solrGraduateWithin4YearsLatinxPercent() {
-		return graduateWithin4YearsLatinxPercent == null ? null : graduateWithin4YearsLatinxPercent.doubleValue();
+		return ReportCard.staticSolrGraduateWithin4YearsLatinxPercent(siteRequest_, graduateWithin4YearsLatinxPercent);
 	}
 
 	public String strGraduateWithin4YearsLatinxPercent() {
@@ -15409,22 +17194,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.graduateWithin4YearsMultiRacialPercent = graduateWithin4YearsMultiRacialPercent;
 		this.graduateWithin4YearsMultiRacialPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setGraduateWithin4YearsMultiRacialPercent(String o) {
+	public void setGraduateWithin4YearsMultiRacialPercent(String o) {
+		this.graduateWithin4YearsMultiRacialPercent = ReportCard.staticSetGraduateWithin4YearsMultiRacialPercent(siteRequest_, o);
+		this.graduateWithin4YearsMultiRacialPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetGraduateWithin4YearsMultiRacialPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.graduateWithin4YearsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.graduateWithin4YearsMultiRacialPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setGraduateWithin4YearsMultiRacialPercent(Double o) {
+	public void setGraduateWithin4YearsMultiRacialPercent(Double o) {
 			this.graduateWithin4YearsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.graduateWithin4YearsMultiRacialPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setGraduateWithin4YearsMultiRacialPercent(Integer o) {
+	public void setGraduateWithin4YearsMultiRacialPercent(Integer o) {
 			this.graduateWithin4YearsMultiRacialPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.graduateWithin4YearsMultiRacialPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard graduateWithin4YearsMultiRacialPercentInit() {
 		if(!graduateWithin4YearsMultiRacialPercentWrap.alreadyInitialized) {
@@ -15436,8 +17222,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrGraduateWithin4YearsMultiRacialPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrGraduateWithin4YearsMultiRacialPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqGraduateWithin4YearsMultiRacialPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrGraduateWithin4YearsMultiRacialPercent(siteRequest_, ReportCard.staticSolrGraduateWithin4YearsMultiRacialPercent(siteRequest_, ReportCard.staticSetGraduateWithin4YearsMultiRacialPercent(siteRequest_, o)));
+	}
+
 	public Double solrGraduateWithin4YearsMultiRacialPercent() {
-		return graduateWithin4YearsMultiRacialPercent == null ? null : graduateWithin4YearsMultiRacialPercent.doubleValue();
+		return ReportCard.staticSolrGraduateWithin4YearsMultiRacialPercent(siteRequest_, graduateWithin4YearsMultiRacialPercent);
 	}
 
 	public String strGraduateWithin4YearsMultiRacialPercent() {
@@ -15555,22 +17353,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.graduateWithin4YearsPacificIslanderPercent = graduateWithin4YearsPacificIslanderPercent;
 		this.graduateWithin4YearsPacificIslanderPercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setGraduateWithin4YearsPacificIslanderPercent(String o) {
+	public void setGraduateWithin4YearsPacificIslanderPercent(String o) {
+		this.graduateWithin4YearsPacificIslanderPercent = ReportCard.staticSetGraduateWithin4YearsPacificIslanderPercent(siteRequest_, o);
+		this.graduateWithin4YearsPacificIslanderPercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetGraduateWithin4YearsPacificIslanderPercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.graduateWithin4YearsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.graduateWithin4YearsPacificIslanderPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setGraduateWithin4YearsPacificIslanderPercent(Double o) {
+	public void setGraduateWithin4YearsPacificIslanderPercent(Double o) {
 			this.graduateWithin4YearsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.graduateWithin4YearsPacificIslanderPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setGraduateWithin4YearsPacificIslanderPercent(Integer o) {
+	public void setGraduateWithin4YearsPacificIslanderPercent(Integer o) {
 			this.graduateWithin4YearsPacificIslanderPercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.graduateWithin4YearsPacificIslanderPercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard graduateWithin4YearsPacificIslanderPercentInit() {
 		if(!graduateWithin4YearsPacificIslanderPercentWrap.alreadyInitialized) {
@@ -15582,8 +17381,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrGraduateWithin4YearsPacificIslanderPercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrGraduateWithin4YearsPacificIslanderPercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqGraduateWithin4YearsPacificIslanderPercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrGraduateWithin4YearsPacificIslanderPercent(siteRequest_, ReportCard.staticSolrGraduateWithin4YearsPacificIslanderPercent(siteRequest_, ReportCard.staticSetGraduateWithin4YearsPacificIslanderPercent(siteRequest_, o)));
+	}
+
 	public Double solrGraduateWithin4YearsPacificIslanderPercent() {
-		return graduateWithin4YearsPacificIslanderPercent == null ? null : graduateWithin4YearsPacificIslanderPercent.doubleValue();
+		return ReportCard.staticSolrGraduateWithin4YearsPacificIslanderPercent(siteRequest_, graduateWithin4YearsPacificIslanderPercent);
 	}
 
 	public String strGraduateWithin4YearsPacificIslanderPercent() {
@@ -15701,22 +17512,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.graduateWithin4YearsWhitePercent = graduateWithin4YearsWhitePercent;
 		this.graduateWithin4YearsWhitePercentWrap.alreadyInitialized = true;
 	}
-	public ReportCard setGraduateWithin4YearsWhitePercent(String o) {
+	public void setGraduateWithin4YearsWhitePercent(String o) {
+		this.graduateWithin4YearsWhitePercent = ReportCard.staticSetGraduateWithin4YearsWhitePercent(siteRequest_, o);
+		this.graduateWithin4YearsWhitePercentWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetGraduateWithin4YearsWhitePercent(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.graduateWithin4YearsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.graduateWithin4YearsWhitePercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setGraduateWithin4YearsWhitePercent(Double o) {
+	public void setGraduateWithin4YearsWhitePercent(Double o) {
 			this.graduateWithin4YearsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.graduateWithin4YearsWhitePercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setGraduateWithin4YearsWhitePercent(Integer o) {
+	public void setGraduateWithin4YearsWhitePercent(Integer o) {
 			this.graduateWithin4YearsWhitePercent = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.graduateWithin4YearsWhitePercentWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard graduateWithin4YearsWhitePercentInit() {
 		if(!graduateWithin4YearsWhitePercentWrap.alreadyInitialized) {
@@ -15728,8 +17540,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrGraduateWithin4YearsWhitePercent(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrGraduateWithin4YearsWhitePercent(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqGraduateWithin4YearsWhitePercent(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrGraduateWithin4YearsWhitePercent(siteRequest_, ReportCard.staticSolrGraduateWithin4YearsWhitePercent(siteRequest_, ReportCard.staticSetGraduateWithin4YearsWhitePercent(siteRequest_, o)));
+	}
+
 	public Double solrGraduateWithin4YearsWhitePercent() {
-		return graduateWithin4YearsWhitePercent == null ? null : graduateWithin4YearsWhitePercent.doubleValue();
+		return ReportCard.staticSolrGraduateWithin4YearsWhitePercent(siteRequest_, graduateWithin4YearsWhitePercent);
 	}
 
 	public String strGraduateWithin4YearsWhitePercent() {
@@ -15847,22 +17671,23 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.examsCollegeReadyGrades38BlackVsWhite = examsCollegeReadyGrades38BlackVsWhite;
 		this.examsCollegeReadyGrades38BlackVsWhiteWrap.alreadyInitialized = true;
 	}
-	public ReportCard setExamsCollegeReadyGrades38BlackVsWhite(String o) {
+	public void setExamsCollegeReadyGrades38BlackVsWhite(String o) {
+		this.examsCollegeReadyGrades38BlackVsWhite = ReportCard.staticSetExamsCollegeReadyGrades38BlackVsWhite(siteRequest_, o);
+		this.examsCollegeReadyGrades38BlackVsWhiteWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetExamsCollegeReadyGrades38BlackVsWhite(SiteRequestEnUS siteRequest_, String o) {
 		o = StringUtils.removeAll(o, "[^\\d\\.]");
 		if(NumberUtils.isParsable(o))
-			this.examsCollegeReadyGrades38BlackVsWhite = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
-		this.examsCollegeReadyGrades38BlackVsWhiteWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
 	}
-	public ReportCard setExamsCollegeReadyGrades38BlackVsWhite(Double o) {
+	public void setExamsCollegeReadyGrades38BlackVsWhite(Double o) {
 			this.examsCollegeReadyGrades38BlackVsWhite = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades38BlackVsWhiteWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
-	public ReportCard setExamsCollegeReadyGrades38BlackVsWhite(Integer o) {
+	public void setExamsCollegeReadyGrades38BlackVsWhite(Integer o) {
 			this.examsCollegeReadyGrades38BlackVsWhite = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
 		this.examsCollegeReadyGrades38BlackVsWhiteWrap.alreadyInitialized = true;
-		return (ReportCard)this;
 	}
 	protected ReportCard examsCollegeReadyGrades38BlackVsWhiteInit() {
 		if(!examsCollegeReadyGrades38BlackVsWhiteWrap.alreadyInitialized) {
@@ -15874,8 +17699,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Double staticSolrExamsCollegeReadyGrades38BlackVsWhite(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrExamsCollegeReadyGrades38BlackVsWhite(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqExamsCollegeReadyGrades38BlackVsWhite(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrExamsCollegeReadyGrades38BlackVsWhite(siteRequest_, ReportCard.staticSolrExamsCollegeReadyGrades38BlackVsWhite(siteRequest_, ReportCard.staticSetExamsCollegeReadyGrades38BlackVsWhite(siteRequest_, o)));
+	}
+
 	public Double solrExamsCollegeReadyGrades38BlackVsWhite() {
-		return examsCollegeReadyGrades38BlackVsWhite == null ? null : examsCollegeReadyGrades38BlackVsWhite.doubleValue();
+		return ReportCard.staticSolrExamsCollegeReadyGrades38BlackVsWhite(siteRequest_, examsCollegeReadyGrades38BlackVsWhite);
 	}
 
 	public String strExamsCollegeReadyGrades38BlackVsWhite() {
@@ -15896,6 +17733,99 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 
 	public String htmExamsCollegeReadyGrades38BlackVsWhite() {
 		return examsCollegeReadyGrades38BlackVsWhite == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades38BlackVsWhite());
+	}
+
+	////////////////////////////////////////////
+	// examsCollegeReadyGrades38LatinxVsWhite //
+	////////////////////////////////////////////
+
+	/**	 The entity examsCollegeReadyGrades38LatinxVsWhite
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected BigDecimal examsCollegeReadyGrades38LatinxVsWhite;
+	@JsonIgnore
+	public Wrap<BigDecimal> examsCollegeReadyGrades38LatinxVsWhiteWrap = new Wrap<BigDecimal>().p(this).c(BigDecimal.class).var("examsCollegeReadyGrades38LatinxVsWhite").o(examsCollegeReadyGrades38LatinxVsWhite);
+
+	/**	<br/> The entity examsCollegeReadyGrades38LatinxVsWhite
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:examsCollegeReadyGrades38LatinxVsWhite">Find the entity examsCollegeReadyGrades38LatinxVsWhite in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _examsCollegeReadyGrades38LatinxVsWhite(Wrap<BigDecimal> c);
+
+	public BigDecimal getExamsCollegeReadyGrades38LatinxVsWhite() {
+		return examsCollegeReadyGrades38LatinxVsWhite;
+	}
+
+	public void setExamsCollegeReadyGrades38LatinxVsWhite(BigDecimal examsCollegeReadyGrades38LatinxVsWhite) {
+		this.examsCollegeReadyGrades38LatinxVsWhite = examsCollegeReadyGrades38LatinxVsWhite;
+		this.examsCollegeReadyGrades38LatinxVsWhiteWrap.alreadyInitialized = true;
+	}
+	public void setExamsCollegeReadyGrades38LatinxVsWhite(String o) {
+		this.examsCollegeReadyGrades38LatinxVsWhite = ReportCard.staticSetExamsCollegeReadyGrades38LatinxVsWhite(siteRequest_, o);
+		this.examsCollegeReadyGrades38LatinxVsWhiteWrap.alreadyInitialized = true;
+	}
+	public static BigDecimal staticSetExamsCollegeReadyGrades38LatinxVsWhite(SiteRequestEnUS siteRequest_, String o) {
+		o = StringUtils.removeAll(o, "[^\\d\\.]");
+		if(NumberUtils.isParsable(o))
+			return new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		return null;
+	}
+	public void setExamsCollegeReadyGrades38LatinxVsWhite(Double o) {
+			this.examsCollegeReadyGrades38LatinxVsWhite = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38LatinxVsWhiteWrap.alreadyInitialized = true;
+	}
+	public void setExamsCollegeReadyGrades38LatinxVsWhite(Integer o) {
+			this.examsCollegeReadyGrades38LatinxVsWhite = new BigDecimal(o, MathContext.DECIMAL64).setScale(2, RoundingMode.HALF_UP);
+		this.examsCollegeReadyGrades38LatinxVsWhiteWrap.alreadyInitialized = true;
+	}
+	protected ReportCard examsCollegeReadyGrades38LatinxVsWhiteInit() {
+		if(!examsCollegeReadyGrades38LatinxVsWhiteWrap.alreadyInitialized) {
+			_examsCollegeReadyGrades38LatinxVsWhite(examsCollegeReadyGrades38LatinxVsWhiteWrap);
+			if(examsCollegeReadyGrades38LatinxVsWhite == null)
+				setExamsCollegeReadyGrades38LatinxVsWhite(examsCollegeReadyGrades38LatinxVsWhiteWrap.o);
+		}
+		examsCollegeReadyGrades38LatinxVsWhiteWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public static Double staticSolrExamsCollegeReadyGrades38LatinxVsWhite(SiteRequestEnUS siteRequest_, BigDecimal o) {
+		return o == null ? null : o.doubleValue();
+	}
+
+	public static String staticSolrStrExamsCollegeReadyGrades38LatinxVsWhite(SiteRequestEnUS siteRequest_, Double o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqExamsCollegeReadyGrades38LatinxVsWhite(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrExamsCollegeReadyGrades38LatinxVsWhite(siteRequest_, ReportCard.staticSolrExamsCollegeReadyGrades38LatinxVsWhite(siteRequest_, ReportCard.staticSetExamsCollegeReadyGrades38LatinxVsWhite(siteRequest_, o)));
+	}
+
+	public Double solrExamsCollegeReadyGrades38LatinxVsWhite() {
+		return ReportCard.staticSolrExamsCollegeReadyGrades38LatinxVsWhite(siteRequest_, examsCollegeReadyGrades38LatinxVsWhite);
+	}
+
+	public String strExamsCollegeReadyGrades38LatinxVsWhite() {
+		return examsCollegeReadyGrades38LatinxVsWhite == null ? "" : examsCollegeReadyGrades38LatinxVsWhite.setScale(2, RoundingMode.HALF_UP).toString();
+	}
+
+	public String jsonExamsCollegeReadyGrades38LatinxVsWhite() {
+		return examsCollegeReadyGrades38LatinxVsWhite == null ? "" : examsCollegeReadyGrades38LatinxVsWhite.toString();
+	}
+
+	public String nomAffichageExamsCollegeReadyGrades38LatinxVsWhite() {
+		return "short-term suspensions Latinx vs white";
+	}
+
+	public String htmTooltipExamsCollegeReadyGrades38LatinxVsWhite() {
+		return null;
+	}
+
+	public String htmExamsCollegeReadyGrades38LatinxVsWhite() {
+		return examsCollegeReadyGrades38LatinxVsWhite == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades38LatinxVsWhite());
 	}
 
 	//////////////
@@ -15927,11 +17857,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.stateKey = stateKey;
 		this.stateKeyWrap.alreadyInitialized = true;
 	}
-	public ReportCard setStateKey(String o) {
-		if(NumberUtils.isParsable(o))
-			this.stateKey = Long.parseLong(o);
+	public void setStateKey(String o) {
+		this.stateKey = ReportCard.staticSetStateKey(siteRequest_, o);
 		this.stateKeyWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Long staticSetStateKey(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected ReportCard stateKeyInit() {
 		if(!stateKeyWrap.alreadyInitialized) {
@@ -15943,8 +17876,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Long staticSolrStateKey(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrStateKey(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqStateKey(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrStateKey(siteRequest_, ReportCard.staticSolrStateKey(siteRequest_, ReportCard.staticSetStateKey(siteRequest_, o)));
+	}
+
 	public Long solrStateKey() {
-		return stateKey;
+		return ReportCard.staticSolrStateKey(siteRequest_, stateKey);
 	}
 
 	public String strStateKey() {
@@ -15990,10 +17935,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public String getStateId() {
 		return stateId;
 	}
-
-	public void setStateId(String stateId) {
-		this.stateId = stateId;
+	public void setStateId(String o) {
+		this.stateId = ReportCard.staticSetStateId(siteRequest_, o);
 		this.stateIdWrap.alreadyInitialized = true;
+	}
+	public static String staticSetStateId(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ReportCard stateIdInit() {
 		if(!stateIdWrap.alreadyInitialized) {
@@ -16005,8 +17952,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static String staticSolrStateId(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrStateId(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqStateId(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrStateId(siteRequest_, ReportCard.staticSolrStateId(siteRequest_, ReportCard.staticSetStateId(siteRequest_, o)));
+	}
+
 	public String solrStateId() {
-		return stateId;
+		return ReportCard.staticSolrStateId(siteRequest_, stateId);
 	}
 
 	public String strStateId() {
@@ -16052,10 +18011,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public String getAgencyId() {
 		return agencyId;
 	}
-
-	public void setAgencyId(String agencyId) {
-		this.agencyId = agencyId;
+	public void setAgencyId(String o) {
+		this.agencyId = ReportCard.staticSetAgencyId(siteRequest_, o);
 		this.agencyIdWrap.alreadyInitialized = true;
+	}
+	public static String staticSetAgencyId(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ReportCard agencyIdInit() {
 		if(!agencyIdWrap.alreadyInitialized) {
@@ -16067,8 +18028,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static String staticSolrAgencyId(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyId(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyId(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrAgencyId(siteRequest_, ReportCard.staticSolrAgencyId(siteRequest_, ReportCard.staticSetAgencyId(siteRequest_, o)));
+	}
+
 	public String solrAgencyId() {
-		return agencyId;
+		return ReportCard.staticSolrAgencyId(siteRequest_, agencyId);
 	}
 
 	public String strAgencyId() {
@@ -16114,10 +18087,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public String getStateName() {
 		return stateName;
 	}
-
-	public void setStateName(String stateName) {
-		this.stateName = stateName;
+	public void setStateName(String o) {
+		this.stateName = ReportCard.staticSetStateName(siteRequest_, o);
 		this.stateNameWrap.alreadyInitialized = true;
+	}
+	public static String staticSetStateName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ReportCard stateNameInit() {
 		if(!stateNameWrap.alreadyInitialized) {
@@ -16129,8 +18104,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static String staticSolrStateName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrStateName(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqStateName(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrStateName(siteRequest_, ReportCard.staticSolrStateName(siteRequest_, ReportCard.staticSetStateName(siteRequest_, o)));
+	}
+
 	public String solrStateName() {
-		return stateName;
+		return ReportCard.staticSolrStateName(siteRequest_, stateName);
 	}
 
 	public String strStateName() {
@@ -16176,10 +18163,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public String getStateAbbreviation() {
 		return stateAbbreviation;
 	}
-
-	public void setStateAbbreviation(String stateAbbreviation) {
-		this.stateAbbreviation = stateAbbreviation;
+	public void setStateAbbreviation(String o) {
+		this.stateAbbreviation = ReportCard.staticSetStateAbbreviation(siteRequest_, o);
 		this.stateAbbreviationWrap.alreadyInitialized = true;
+	}
+	public static String staticSetStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ReportCard stateAbbreviationInit() {
 		if(!stateAbbreviationWrap.alreadyInitialized) {
@@ -16191,8 +18180,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static String staticSolrStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrStateAbbreviation(siteRequest_, ReportCard.staticSolrStateAbbreviation(siteRequest_, ReportCard.staticSetStateAbbreviation(siteRequest_, o)));
+	}
+
 	public String solrStateAbbreviation() {
-		return stateAbbreviation;
+		return ReportCard.staticSolrStateAbbreviation(siteRequest_, stateAbbreviation);
 	}
 
 	public String strStateAbbreviation() {
@@ -16238,10 +18239,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public String getAgencyOnlyName() {
 		return agencyOnlyName;
 	}
-
-	public void setAgencyOnlyName(String agencyOnlyName) {
-		this.agencyOnlyName = agencyOnlyName;
+	public void setAgencyOnlyName(String o) {
+		this.agencyOnlyName = ReportCard.staticSetAgencyOnlyName(siteRequest_, o);
 		this.agencyOnlyNameWrap.alreadyInitialized = true;
+	}
+	public static String staticSetAgencyOnlyName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ReportCard agencyOnlyNameInit() {
 		if(!agencyOnlyNameWrap.alreadyInitialized) {
@@ -16253,8 +18256,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static String staticSolrAgencyOnlyName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyOnlyName(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyOnlyName(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrAgencyOnlyName(siteRequest_, ReportCard.staticSolrAgencyOnlyName(siteRequest_, ReportCard.staticSetAgencyOnlyName(siteRequest_, o)));
+	}
+
 	public String solrAgencyOnlyName() {
-		return agencyOnlyName;
+		return ReportCard.staticSolrAgencyOnlyName(siteRequest_, agencyOnlyName);
 	}
 
 	public String strAgencyOnlyName() {
@@ -16300,10 +18315,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public String getAgencyName() {
 		return agencyName;
 	}
-
-	public void setAgencyName(String agencyName) {
-		this.agencyName = agencyName;
+	public void setAgencyName(String o) {
+		this.agencyName = ReportCard.staticSetAgencyName(siteRequest_, o);
 		this.agencyNameWrap.alreadyInitialized = true;
+	}
+	public static String staticSetAgencyName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ReportCard agencyNameInit() {
 		if(!agencyNameWrap.alreadyInitialized) {
@@ -16315,8 +18332,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static String staticSolrAgencyName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyName(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyName(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrAgencyName(siteRequest_, ReportCard.staticSolrAgencyName(siteRequest_, ReportCard.staticSetAgencyName(siteRequest_, o)));
+	}
+
 	public String solrAgencyName() {
-		return agencyName;
+		return ReportCard.staticSolrAgencyName(siteRequest_, agencyName);
 	}
 
 	public String strAgencyName() {
@@ -16362,10 +18391,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public String getAgencyCoords() {
 		return agencyCoords;
 	}
-
-	public void setAgencyCoords(String agencyCoords) {
-		this.agencyCoords = agencyCoords;
+	public void setAgencyCoords(String o) {
+		this.agencyCoords = ReportCard.staticSetAgencyCoords(siteRequest_, o);
 		this.agencyCoordsWrap.alreadyInitialized = true;
+	}
+	public static String staticSetAgencyCoords(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ReportCard agencyCoordsInit() {
 		if(!agencyCoordsWrap.alreadyInitialized) {
@@ -16377,8 +18408,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static String staticSolrAgencyCoords(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyCoords(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyCoords(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrAgencyCoords(siteRequest_, ReportCard.staticSolrAgencyCoords(siteRequest_, ReportCard.staticSetAgencyCoords(siteRequest_, o)));
+	}
+
 	public String solrAgencyCoords() {
-		return agencyCoords;
+		return ReportCard.staticSolrAgencyCoords(siteRequest_, agencyCoords);
 	}
 
 	public String strAgencyCoords() {
@@ -16430,11 +18473,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.agencyLeft = agencyLeft;
 		this.agencyLeftWrap.alreadyInitialized = true;
 	}
-	public ReportCard setAgencyLeft(String o) {
-		if(NumberUtils.isParsable(o))
-			this.agencyLeft = Integer.parseInt(o);
+	public void setAgencyLeft(String o) {
+		this.agencyLeft = ReportCard.staticSetAgencyLeft(siteRequest_, o);
 		this.agencyLeftWrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Integer staticSetAgencyLeft(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected ReportCard agencyLeftInit() {
 		if(!agencyLeftWrap.alreadyInitialized) {
@@ -16446,8 +18492,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Integer staticSolrAgencyLeft(SiteRequestEnUS siteRequest_, Integer o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyLeft(SiteRequestEnUS siteRequest_, Integer o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyLeft(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrAgencyLeft(siteRequest_, ReportCard.staticSolrAgencyLeft(siteRequest_, ReportCard.staticSetAgencyLeft(siteRequest_, o)));
+	}
+
 	public Integer solrAgencyLeft() {
-		return agencyLeft;
+		return ReportCard.staticSolrAgencyLeft(siteRequest_, agencyLeft);
 	}
 
 	public String strAgencyLeft() {
@@ -16493,10 +18551,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public String getReportCardCompleteName() {
 		return reportCardCompleteName;
 	}
-
-	public void setReportCardCompleteName(String reportCardCompleteName) {
-		this.reportCardCompleteName = reportCardCompleteName;
+	public void setReportCardCompleteName(String o) {
+		this.reportCardCompleteName = ReportCard.staticSetReportCardCompleteName(siteRequest_, o);
 		this.reportCardCompleteNameWrap.alreadyInitialized = true;
+	}
+	public static String staticSetReportCardCompleteName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ReportCard reportCardCompleteNameInit() {
 		if(!reportCardCompleteNameWrap.alreadyInitialized) {
@@ -16508,8 +18568,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static String staticSolrReportCardCompleteName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrReportCardCompleteName(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqReportCardCompleteName(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrReportCardCompleteName(siteRequest_, ReportCard.staticSolrReportCardCompleteName(siteRequest_, ReportCard.staticSetReportCardCompleteName(siteRequest_, o)));
+	}
+
 	public String solrReportCardCompleteName() {
-		return reportCardCompleteName;
+		return ReportCard.staticSolrReportCardCompleteName(siteRequest_, reportCardCompleteName);
 	}
 
 	public String strReportCardCompleteName() {
@@ -16561,11 +18633,14 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.reportCardNumber_ = reportCardNumber_;
 		this.reportCardNumber_Wrap.alreadyInitialized = true;
 	}
-	public ReportCard setReportCardNumber_(String o) {
-		if(NumberUtils.isParsable(o))
-			this.reportCardNumber_ = Integer.parseInt(o);
+	public void setReportCardNumber_(String o) {
+		this.reportCardNumber_ = ReportCard.staticSetReportCardNumber_(siteRequest_, o);
 		this.reportCardNumber_Wrap.alreadyInitialized = true;
-		return (ReportCard)this;
+	}
+	public static Integer staticSetReportCardNumber_(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected ReportCard reportCardNumber_Init() {
 		if(!reportCardNumber_Wrap.alreadyInitialized) {
@@ -16577,8 +18652,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static Integer staticSolrReportCardNumber_(SiteRequestEnUS siteRequest_, Integer o) {
+		return o;
+	}
+
+	public static String staticSolrStrReportCardNumber_(SiteRequestEnUS siteRequest_, Integer o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqReportCardNumber_(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrReportCardNumber_(siteRequest_, ReportCard.staticSolrReportCardNumber_(siteRequest_, ReportCard.staticSetReportCardNumber_(siteRequest_, o)));
+	}
+
 	public Integer solrReportCardNumber_() {
-		return reportCardNumber_;
+		return ReportCard.staticSolrReportCardNumber_(siteRequest_, reportCardNumber_);
 	}
 
 	public String strReportCardNumber_() {
@@ -16629,6 +18716,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.reportCardStates_ = reportCardStates_;
 		this.reportCardStates_Wrap.alreadyInitialized = true;
 	}
+	public static ReportCard staticSetReportCardStates_(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	public ReportCard addReportCardStates_(ReportCard...objets) {
 		for(ReportCard o : objets) {
 			addReportCardStates_(o);
@@ -16675,6 +18765,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public void setReportCardAgencies_(List<ReportCard> reportCardAgencies_) {
 		this.reportCardAgencies_ = reportCardAgencies_;
 		this.reportCardAgencies_Wrap.alreadyInitialized = true;
+	}
+	public static ReportCard staticSetReportCardAgencies_(SiteRequestEnUS siteRequest_, String o) {
+		return null;
 	}
 	public ReportCard addReportCardAgencies_(ReportCard...objets) {
 		for(ReportCard o : objets) {
@@ -16723,6 +18816,9 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		this.reportCardReportCards_ = reportCardReportCards_;
 		this.reportCardReportCards_Wrap.alreadyInitialized = true;
 	}
+	public static ReportCard staticSetReportCardReportCards_(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	public ReportCard addReportCardReportCards_(ReportCard...objets) {
 		for(ReportCard o : objets) {
 			addReportCardReportCards_(o);
@@ -16765,10 +18861,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public String getAgencyDemographicsGraph() {
 		return agencyDemographicsGraph;
 	}
-
-	public void setAgencyDemographicsGraph(String agencyDemographicsGraph) {
-		this.agencyDemographicsGraph = agencyDemographicsGraph;
+	public void setAgencyDemographicsGraph(String o) {
+		this.agencyDemographicsGraph = ReportCard.staticSetAgencyDemographicsGraph(siteRequest_, o);
 		this.agencyDemographicsGraphWrap.alreadyInitialized = true;
+	}
+	public static String staticSetAgencyDemographicsGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ReportCard agencyDemographicsGraphInit() {
 		if(!agencyDemographicsGraphWrap.alreadyInitialized) {
@@ -16780,8 +18878,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static String staticSolrAgencyDemographicsGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyDemographicsGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyDemographicsGraph(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrAgencyDemographicsGraph(siteRequest_, ReportCard.staticSolrAgencyDemographicsGraph(siteRequest_, ReportCard.staticSetAgencyDemographicsGraph(siteRequest_, o)));
+	}
+
 	public String solrAgencyDemographicsGraph() {
-		return agencyDemographicsGraph;
+		return ReportCard.staticSolrAgencyDemographicsGraph(siteRequest_, agencyDemographicsGraph);
 	}
 
 	public String strAgencyDemographicsGraph() {
@@ -16827,10 +18937,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public String getAgencyStudentsByRaceGraph() {
 		return agencyStudentsByRaceGraph;
 	}
-
-	public void setAgencyStudentsByRaceGraph(String agencyStudentsByRaceGraph) {
-		this.agencyStudentsByRaceGraph = agencyStudentsByRaceGraph;
+	public void setAgencyStudentsByRaceGraph(String o) {
+		this.agencyStudentsByRaceGraph = ReportCard.staticSetAgencyStudentsByRaceGraph(siteRequest_, o);
 		this.agencyStudentsByRaceGraphWrap.alreadyInitialized = true;
+	}
+	public static String staticSetAgencyStudentsByRaceGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ReportCard agencyStudentsByRaceGraphInit() {
 		if(!agencyStudentsByRaceGraphWrap.alreadyInitialized) {
@@ -16842,8 +18954,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static String staticSolrAgencyStudentsByRaceGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyStudentsByRaceGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyStudentsByRaceGraph(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrAgencyStudentsByRaceGraph(siteRequest_, ReportCard.staticSolrAgencyStudentsByRaceGraph(siteRequest_, ReportCard.staticSetAgencyStudentsByRaceGraph(siteRequest_, o)));
+	}
+
 	public String solrAgencyStudentsByRaceGraph() {
-		return agencyStudentsByRaceGraph;
+		return ReportCard.staticSolrAgencyStudentsByRaceGraph(siteRequest_, agencyStudentsByRaceGraph);
 	}
 
 	public String strAgencyStudentsByRaceGraph() {
@@ -16889,10 +19013,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public String getAgencyTeachersByRaceGraph() {
 		return agencyTeachersByRaceGraph;
 	}
-
-	public void setAgencyTeachersByRaceGraph(String agencyTeachersByRaceGraph) {
-		this.agencyTeachersByRaceGraph = agencyTeachersByRaceGraph;
+	public void setAgencyTeachersByRaceGraph(String o) {
+		this.agencyTeachersByRaceGraph = ReportCard.staticSetAgencyTeachersByRaceGraph(siteRequest_, o);
 		this.agencyTeachersByRaceGraphWrap.alreadyInitialized = true;
+	}
+	public static String staticSetAgencyTeachersByRaceGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ReportCard agencyTeachersByRaceGraphInit() {
 		if(!agencyTeachersByRaceGraphWrap.alreadyInitialized) {
@@ -16904,8 +19030,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static String staticSolrAgencyTeachersByRaceGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyTeachersByRaceGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyTeachersByRaceGraph(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrAgencyTeachersByRaceGraph(siteRequest_, ReportCard.staticSolrAgencyTeachersByRaceGraph(siteRequest_, ReportCard.staticSetAgencyTeachersByRaceGraph(siteRequest_, o)));
+	}
+
 	public String solrAgencyTeachersByRaceGraph() {
-		return agencyTeachersByRaceGraph;
+		return ReportCard.staticSolrAgencyTeachersByRaceGraph(siteRequest_, agencyTeachersByRaceGraph);
 	}
 
 	public String strAgencyTeachersByRaceGraph() {
@@ -16951,10 +19089,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public String getAgencyGrades3To8Graph() {
 		return agencyGrades3To8Graph;
 	}
-
-	public void setAgencyGrades3To8Graph(String agencyGrades3To8Graph) {
-		this.agencyGrades3To8Graph = agencyGrades3To8Graph;
+	public void setAgencyGrades3To8Graph(String o) {
+		this.agencyGrades3To8Graph = ReportCard.staticSetAgencyGrades3To8Graph(siteRequest_, o);
 		this.agencyGrades3To8GraphWrap.alreadyInitialized = true;
+	}
+	public static String staticSetAgencyGrades3To8Graph(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ReportCard agencyGrades3To8GraphInit() {
 		if(!agencyGrades3To8GraphWrap.alreadyInitialized) {
@@ -16966,8 +19106,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static String staticSolrAgencyGrades3To8Graph(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyGrades3To8Graph(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyGrades3To8Graph(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrAgencyGrades3To8Graph(siteRequest_, ReportCard.staticSolrAgencyGrades3To8Graph(siteRequest_, ReportCard.staticSetAgencyGrades3To8Graph(siteRequest_, o)));
+	}
+
 	public String solrAgencyGrades3To8Graph() {
-		return agencyGrades3To8Graph;
+		return ReportCard.staticSolrAgencyGrades3To8Graph(siteRequest_, agencyGrades3To8Graph);
 	}
 
 	public String strAgencyGrades3To8Graph() {
@@ -17013,10 +19165,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public String getAgencyGrades9To12Graph() {
 		return agencyGrades9To12Graph;
 	}
-
-	public void setAgencyGrades9To12Graph(String agencyGrades9To12Graph) {
-		this.agencyGrades9To12Graph = agencyGrades9To12Graph;
+	public void setAgencyGrades9To12Graph(String o) {
+		this.agencyGrades9To12Graph = ReportCard.staticSetAgencyGrades9To12Graph(siteRequest_, o);
 		this.agencyGrades9To12GraphWrap.alreadyInitialized = true;
+	}
+	public static String staticSetAgencyGrades9To12Graph(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ReportCard agencyGrades9To12GraphInit() {
 		if(!agencyGrades9To12GraphWrap.alreadyInitialized) {
@@ -17028,8 +19182,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static String staticSolrAgencyGrades9To12Graph(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyGrades9To12Graph(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyGrades9To12Graph(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrAgencyGrades9To12Graph(siteRequest_, ReportCard.staticSolrAgencyGrades9To12Graph(siteRequest_, ReportCard.staticSetAgencyGrades9To12Graph(siteRequest_, o)));
+	}
+
 	public String solrAgencyGrades9To12Graph() {
-		return agencyGrades9To12Graph;
+		return ReportCard.staticSolrAgencyGrades9To12Graph(siteRequest_, agencyGrades9To12Graph);
 	}
 
 	public String strAgencyGrades9To12Graph() {
@@ -17075,10 +19241,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public String getAgencyGraduatesWithin4YearsGraph() {
 		return agencyGraduatesWithin4YearsGraph;
 	}
-
-	public void setAgencyGraduatesWithin4YearsGraph(String agencyGraduatesWithin4YearsGraph) {
-		this.agencyGraduatesWithin4YearsGraph = agencyGraduatesWithin4YearsGraph;
+	public void setAgencyGraduatesWithin4YearsGraph(String o) {
+		this.agencyGraduatesWithin4YearsGraph = ReportCard.staticSetAgencyGraduatesWithin4YearsGraph(siteRequest_, o);
 		this.agencyGraduatesWithin4YearsGraphWrap.alreadyInitialized = true;
+	}
+	public static String staticSetAgencyGraduatesWithin4YearsGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ReportCard agencyGraduatesWithin4YearsGraphInit() {
 		if(!agencyGraduatesWithin4YearsGraphWrap.alreadyInitialized) {
@@ -17090,8 +19258,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static String staticSolrAgencyGraduatesWithin4YearsGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyGraduatesWithin4YearsGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyGraduatesWithin4YearsGraph(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrAgencyGraduatesWithin4YearsGraph(siteRequest_, ReportCard.staticSolrAgencyGraduatesWithin4YearsGraph(siteRequest_, ReportCard.staticSetAgencyGraduatesWithin4YearsGraph(siteRequest_, o)));
+	}
+
 	public String solrAgencyGraduatesWithin4YearsGraph() {
-		return agencyGraduatesWithin4YearsGraph;
+		return ReportCard.staticSolrAgencyGraduatesWithin4YearsGraph(siteRequest_, agencyGraduatesWithin4YearsGraph);
 	}
 
 	public String strAgencyGraduatesWithin4YearsGraph() {
@@ -17137,10 +19317,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public String getSuspensionsByRaceGraph() {
 		return suspensionsByRaceGraph;
 	}
-
-	public void setSuspensionsByRaceGraph(String suspensionsByRaceGraph) {
-		this.suspensionsByRaceGraph = suspensionsByRaceGraph;
+	public void setSuspensionsByRaceGraph(String o) {
+		this.suspensionsByRaceGraph = ReportCard.staticSetSuspensionsByRaceGraph(siteRequest_, o);
 		this.suspensionsByRaceGraphWrap.alreadyInitialized = true;
+	}
+	public static String staticSetSuspensionsByRaceGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ReportCard suspensionsByRaceGraphInit() {
 		if(!suspensionsByRaceGraphWrap.alreadyInitialized) {
@@ -17152,8 +19334,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static String staticSolrSuspensionsByRaceGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrSuspensionsByRaceGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqSuspensionsByRaceGraph(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrSuspensionsByRaceGraph(siteRequest_, ReportCard.staticSolrSuspensionsByRaceGraph(siteRequest_, ReportCard.staticSetSuspensionsByRaceGraph(siteRequest_, o)));
+	}
+
 	public String solrSuspensionsByRaceGraph() {
-		return suspensionsByRaceGraph;
+		return ReportCard.staticSolrSuspensionsByRaceGraph(siteRequest_, suspensionsByRaceGraph);
 	}
 
 	public String strSuspensionsByRaceGraph() {
@@ -17199,10 +19393,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public String getSuspensionRatesByRaceGraph() {
 		return suspensionRatesByRaceGraph;
 	}
-
-	public void setSuspensionRatesByRaceGraph(String suspensionRatesByRaceGraph) {
-		this.suspensionRatesByRaceGraph = suspensionRatesByRaceGraph;
+	public void setSuspensionRatesByRaceGraph(String o) {
+		this.suspensionRatesByRaceGraph = ReportCard.staticSetSuspensionRatesByRaceGraph(siteRequest_, o);
 		this.suspensionRatesByRaceGraphWrap.alreadyInitialized = true;
+	}
+	public static String staticSetSuspensionRatesByRaceGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ReportCard suspensionRatesByRaceGraphInit() {
 		if(!suspensionRatesByRaceGraphWrap.alreadyInitialized) {
@@ -17214,8 +19410,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static String staticSolrSuspensionRatesByRaceGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrSuspensionRatesByRaceGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqSuspensionRatesByRaceGraph(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrSuspensionRatesByRaceGraph(siteRequest_, ReportCard.staticSolrSuspensionRatesByRaceGraph(siteRequest_, ReportCard.staticSetSuspensionRatesByRaceGraph(siteRequest_, o)));
+	}
+
 	public String solrSuspensionRatesByRaceGraph() {
-		return suspensionRatesByRaceGraph;
+		return ReportCard.staticSolrSuspensionRatesByRaceGraph(siteRequest_, suspensionRatesByRaceGraph);
 	}
 
 	public String strSuspensionRatesByRaceGraph() {
@@ -17261,10 +19469,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public String getCountySchoolBasedComplaintsGraph() {
 		return countySchoolBasedComplaintsGraph;
 	}
-
-	public void setCountySchoolBasedComplaintsGraph(String countySchoolBasedComplaintsGraph) {
-		this.countySchoolBasedComplaintsGraph = countySchoolBasedComplaintsGraph;
+	public void setCountySchoolBasedComplaintsGraph(String o) {
+		this.countySchoolBasedComplaintsGraph = ReportCard.staticSetCountySchoolBasedComplaintsGraph(siteRequest_, o);
 		this.countySchoolBasedComplaintsGraphWrap.alreadyInitialized = true;
+	}
+	public static String staticSetCountySchoolBasedComplaintsGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ReportCard countySchoolBasedComplaintsGraphInit() {
 		if(!countySchoolBasedComplaintsGraphWrap.alreadyInitialized) {
@@ -17276,8 +19486,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static String staticSolrCountySchoolBasedComplaintsGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrCountySchoolBasedComplaintsGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqCountySchoolBasedComplaintsGraph(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrCountySchoolBasedComplaintsGraph(siteRequest_, ReportCard.staticSolrCountySchoolBasedComplaintsGraph(siteRequest_, ReportCard.staticSetCountySchoolBasedComplaintsGraph(siteRequest_, o)));
+	}
+
 	public String solrCountySchoolBasedComplaintsGraph() {
-		return countySchoolBasedComplaintsGraph;
+		return ReportCard.staticSolrCountySchoolBasedComplaintsGraph(siteRequest_, countySchoolBasedComplaintsGraph);
 	}
 
 	public String strCountySchoolBasedComplaintsGraph() {
@@ -17323,10 +19545,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public String getSchoolBasedComplaintsGraph() {
 		return schoolBasedComplaintsGraph;
 	}
-
-	public void setSchoolBasedComplaintsGraph(String schoolBasedComplaintsGraph) {
-		this.schoolBasedComplaintsGraph = schoolBasedComplaintsGraph;
+	public void setSchoolBasedComplaintsGraph(String o) {
+		this.schoolBasedComplaintsGraph = ReportCard.staticSetSchoolBasedComplaintsGraph(siteRequest_, o);
 		this.schoolBasedComplaintsGraphWrap.alreadyInitialized = true;
+	}
+	public static String staticSetSchoolBasedComplaintsGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ReportCard schoolBasedComplaintsGraphInit() {
 		if(!schoolBasedComplaintsGraphWrap.alreadyInitialized) {
@@ -17338,8 +19562,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static String staticSolrSchoolBasedComplaintsGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrSchoolBasedComplaintsGraph(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqSchoolBasedComplaintsGraph(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrSchoolBasedComplaintsGraph(siteRequest_, ReportCard.staticSolrSchoolBasedComplaintsGraph(siteRequest_, ReportCard.staticSetSchoolBasedComplaintsGraph(siteRequest_, o)));
+	}
+
 	public String solrSchoolBasedComplaintsGraph() {
-		return schoolBasedComplaintsGraph;
+		return ReportCard.staticSolrSchoolBasedComplaintsGraph(siteRequest_, schoolBasedComplaintsGraph);
 	}
 
 	public String strSchoolBasedComplaintsGraph() {
@@ -17385,10 +19621,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public String getAgencyStudentsByRaceGraph2() {
 		return agencyStudentsByRaceGraph2;
 	}
-
-	public void setAgencyStudentsByRaceGraph2(String agencyStudentsByRaceGraph2) {
-		this.agencyStudentsByRaceGraph2 = agencyStudentsByRaceGraph2;
+	public void setAgencyStudentsByRaceGraph2(String o) {
+		this.agencyStudentsByRaceGraph2 = ReportCard.staticSetAgencyStudentsByRaceGraph2(siteRequest_, o);
 		this.agencyStudentsByRaceGraph2Wrap.alreadyInitialized = true;
+	}
+	public static String staticSetAgencyStudentsByRaceGraph2(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ReportCard agencyStudentsByRaceGraph2Init() {
 		if(!agencyStudentsByRaceGraph2Wrap.alreadyInitialized) {
@@ -17400,8 +19638,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static String staticSolrAgencyStudentsByRaceGraph2(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyStudentsByRaceGraph2(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyStudentsByRaceGraph2(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrAgencyStudentsByRaceGraph2(siteRequest_, ReportCard.staticSolrAgencyStudentsByRaceGraph2(siteRequest_, ReportCard.staticSetAgencyStudentsByRaceGraph2(siteRequest_, o)));
+	}
+
 	public String solrAgencyStudentsByRaceGraph2() {
-		return agencyStudentsByRaceGraph2;
+		return ReportCard.staticSolrAgencyStudentsByRaceGraph2(siteRequest_, agencyStudentsByRaceGraph2);
 	}
 
 	public String strAgencyStudentsByRaceGraph2() {
@@ -17447,10 +19697,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	public String getReportCardImage() {
 		return reportCardImage;
 	}
-
-	public void setReportCardImage(String reportCardImage) {
-		this.reportCardImage = reportCardImage;
+	public void setReportCardImage(String o) {
+		this.reportCardImage = ReportCard.staticSetReportCardImage(siteRequest_, o);
 		this.reportCardImageWrap.alreadyInitialized = true;
+	}
+	public static String staticSetReportCardImage(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected ReportCard reportCardImageInit() {
 		if(!reportCardImageWrap.alreadyInitialized) {
@@ -17462,8 +19714,20 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return (ReportCard)this;
 	}
 
+	public static String staticSolrReportCardImage(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrReportCardImage(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqReportCardImage(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrReportCardImage(siteRequest_, ReportCard.staticSolrReportCardImage(siteRequest_, ReportCard.staticSetReportCardImage(siteRequest_, o)));
+	}
+
 	public String solrReportCardImage() {
-		return reportCardImage;
+		return ReportCard.staticSolrReportCardImage(siteRequest_, reportCardImage);
 	}
 
 	public String strReportCardImage() {
@@ -17639,6 +19903,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		graduateWithin4YearsPacificIslanderPercentInit();
 		graduateWithin4YearsWhitePercentInit();
 		examsCollegeReadyGrades38BlackVsWhiteInit();
+		examsCollegeReadyGrades38LatinxVsWhiteInit();
 		stateKeyInit();
 		stateIdInit();
 		agencyIdInit();
@@ -17969,6 +20234,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.graduateWithin4YearsWhitePercent;
 			case "examsCollegeReadyGrades38BlackVsWhite":
 				return oReportCard.examsCollegeReadyGrades38BlackVsWhite;
+			case "examsCollegeReadyGrades38LatinxVsWhite":
+				return oReportCard.examsCollegeReadyGrades38LatinxVsWhite;
 			case "stateKey":
 				return oReportCard.stateKey;
 			case "stateId":
@@ -18054,6 +20321,1294 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return val;
 			default:
 				return super.attributeCluster(var, val);
+		}
+	}
+
+	///////////////
+	// staticSet //
+	///////////////
+
+	public static Object staticSetForClass(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		return staticSetReportCard(entityVar,  siteRequest_, o);
+	}
+	public static Object staticSetReportCard(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		switch(entityVar) {
+		case "reportCardKey":
+			return ReportCard.staticSetReportCardKey(siteRequest_, o);
+		case "reportCardStartYear":
+			return ReportCard.staticSetReportCardStartYear(siteRequest_, o);
+		case "reportCardStartYearStr":
+			return ReportCard.staticSetReportCardStartYearStr(siteRequest_, o);
+		case "reportCardEndYear":
+			return ReportCard.staticSetReportCardEndYear(siteRequest_, o);
+		case "reportCardYearsStr":
+			return ReportCard.staticSetReportCardYearsStr(siteRequest_, o);
+		case "agencyKey":
+			return ReportCard.staticSetAgencyKey(siteRequest_, o);
+		case "imageLeft":
+			return ReportCard.staticSetImageLeft(siteRequest_, o);
+		case "imageTop":
+			return ReportCard.staticSetImageTop(siteRequest_, o);
+		case "pupilsTotal":
+			return ReportCard.staticSetPupilsTotal(siteRequest_, o);
+		case "pupilsIndigenousFemale":
+			return ReportCard.staticSetPupilsIndigenousFemale(siteRequest_, o);
+		case "pupilsIndigenousMale":
+			return ReportCard.staticSetPupilsIndigenousMale(siteRequest_, o);
+		case "pupilsIndigenousTotal":
+			return ReportCard.staticSetPupilsIndigenousTotal(siteRequest_, o);
+		case "pupilsIndigenousPercent":
+			return ReportCard.staticSetPupilsIndigenousPercent(siteRequest_, o);
+		case "pupilsAsianFemale":
+			return ReportCard.staticSetPupilsAsianFemale(siteRequest_, o);
+		case "pupilsAsianMale":
+			return ReportCard.staticSetPupilsAsianMale(siteRequest_, o);
+		case "pupilsAsianTotal":
+			return ReportCard.staticSetPupilsAsianTotal(siteRequest_, o);
+		case "pupilsAsianPercent":
+			return ReportCard.staticSetPupilsAsianPercent(siteRequest_, o);
+		case "pupilsLatinxFemale":
+			return ReportCard.staticSetPupilsLatinxFemale(siteRequest_, o);
+		case "pupilsLatinxMale":
+			return ReportCard.staticSetPupilsLatinxMale(siteRequest_, o);
+		case "pupilsLatinxTotal":
+			return ReportCard.staticSetPupilsLatinxTotal(siteRequest_, o);
+		case "pupilsLatinxPercent":
+			return ReportCard.staticSetPupilsLatinxPercent(siteRequest_, o);
+		case "pupilsBlackFemale":
+			return ReportCard.staticSetPupilsBlackFemale(siteRequest_, o);
+		case "pupilsBlackMale":
+			return ReportCard.staticSetPupilsBlackMale(siteRequest_, o);
+		case "pupilsBlackTotal":
+			return ReportCard.staticSetPupilsBlackTotal(siteRequest_, o);
+		case "pupilsBlackPercent":
+			return ReportCard.staticSetPupilsBlackPercent(siteRequest_, o);
+		case "pupilsWhiteFemale":
+			return ReportCard.staticSetPupilsWhiteFemale(siteRequest_, o);
+		case "pupilsWhiteMale":
+			return ReportCard.staticSetPupilsWhiteMale(siteRequest_, o);
+		case "pupilsWhiteTotal":
+			return ReportCard.staticSetPupilsWhiteTotal(siteRequest_, o);
+		case "pupilsWhitePercent":
+			return ReportCard.staticSetPupilsWhitePercent(siteRequest_, o);
+		case "pupilsPacificIslanderFemale":
+			return ReportCard.staticSetPupilsPacificIslanderFemale(siteRequest_, o);
+		case "pupilsPacificIslanderMale":
+			return ReportCard.staticSetPupilsPacificIslanderMale(siteRequest_, o);
+		case "pupilsPacificIslanderTotal":
+			return ReportCard.staticSetPupilsPacificIslanderTotal(siteRequest_, o);
+		case "pupilsPacificIslanderPercent":
+			return ReportCard.staticSetPupilsPacificIslanderPercent(siteRequest_, o);
+		case "pupilsMultiRacialFemale":
+			return ReportCard.staticSetPupilsMultiRacialFemale(siteRequest_, o);
+		case "pupilsMultiRacialMale":
+			return ReportCard.staticSetPupilsMultiRacialMale(siteRequest_, o);
+		case "pupilsMultiRacialTotal":
+			return ReportCard.staticSetPupilsMultiRacialTotal(siteRequest_, o);
+		case "pupilsMultiRacialPercent":
+			return ReportCard.staticSetPupilsMultiRacialPercent(siteRequest_, o);
+		case "pupilsOtherPercent":
+			return ReportCard.staticSetPupilsOtherPercent(siteRequest_, o);
+		case "teachersMale":
+			return ReportCard.staticSetTeachersMale(siteRequest_, o);
+		case "teachersFemale":
+			return ReportCard.staticSetTeachersFemale(siteRequest_, o);
+		case "teachersTotal":
+			return ReportCard.staticSetTeachersTotal(siteRequest_, o);
+		case "teachersWhiteTotal":
+			return ReportCard.staticSetTeachersWhiteTotal(siteRequest_, o);
+		case "teachersWhitePercent":
+			return ReportCard.staticSetTeachersWhitePercent(siteRequest_, o);
+		case "teachersBlackTotal":
+			return ReportCard.staticSetTeachersBlackTotal(siteRequest_, o);
+		case "teachersBlackPercent":
+			return ReportCard.staticSetTeachersBlackPercent(siteRequest_, o);
+		case "teachersOtherTotal":
+			return ReportCard.staticSetTeachersOtherTotal(siteRequest_, o);
+		case "teachersOtherPercent":
+			return ReportCard.staticSetTeachersOtherPercent(siteRequest_, o);
+		case "delinquentComplaintsTotal":
+			return ReportCard.staticSetDelinquentComplaintsTotal(siteRequest_, o);
+		case "delinquentComplaintsAtSchool":
+			return ReportCard.staticSetDelinquentComplaintsAtSchool(siteRequest_, o);
+		case "delinquentComplaintsAtSchoolPercent":
+			return ReportCard.staticSetDelinquentComplaintsAtSchoolPercent(siteRequest_, o);
+		case "delinquentComplaintsAsian":
+			return ReportCard.staticSetDelinquentComplaintsAsian(siteRequest_, o);
+		case "delinquentComplaintsAsianPercent":
+			return ReportCard.staticSetDelinquentComplaintsAsianPercent(siteRequest_, o);
+		case "delinquentComplaintsBlack":
+			return ReportCard.staticSetDelinquentComplaintsBlack(siteRequest_, o);
+		case "delinquentComplaintsBlackPercent":
+			return ReportCard.staticSetDelinquentComplaintsBlackPercent(siteRequest_, o);
+		case "delinquentComplaintsLatinx":
+			return ReportCard.staticSetDelinquentComplaintsLatinx(siteRequest_, o);
+		case "delinquentComplaintsLatinxPercent":
+			return ReportCard.staticSetDelinquentComplaintsLatinxPercent(siteRequest_, o);
+		case "delinquentComplaintsMultiRacial":
+			return ReportCard.staticSetDelinquentComplaintsMultiRacial(siteRequest_, o);
+		case "delinquentComplaintsMultiRacialPercent":
+			return ReportCard.staticSetDelinquentComplaintsMultiRacialPercent(siteRequest_, o);
+		case "delinquentComplaintsIndigenous":
+			return ReportCard.staticSetDelinquentComplaintsIndigenous(siteRequest_, o);
+		case "delinquentComplaintsIndigenousPercent":
+			return ReportCard.staticSetDelinquentComplaintsIndigenousPercent(siteRequest_, o);
+		case "delinquentComplaintsWhite":
+			return ReportCard.staticSetDelinquentComplaintsWhite(siteRequest_, o);
+		case "delinquentComplaintsWhitePercent":
+			return ReportCard.staticSetDelinquentComplaintsWhitePercent(siteRequest_, o);
+		case "delinquentComplaintsPacificIslander":
+			return ReportCard.staticSetDelinquentComplaintsPacificIslander(siteRequest_, o);
+		case "delinquentComplaintsPacificIslanderPercent":
+			return ReportCard.staticSetDelinquentComplaintsPacificIslanderPercent(siteRequest_, o);
+		case "shortTermSuspensionRate":
+			return ReportCard.staticSetShortTermSuspensionRate(siteRequest_, o);
+		case "shortTermSuspensionsTotal":
+			return ReportCard.staticSetShortTermSuspensionsTotal(siteRequest_, o);
+		case "longTermSuspensionsTotal":
+			return ReportCard.staticSetLongTermSuspensionsTotal(siteRequest_, o);
+		case "expulsionsTotal":
+			return ReportCard.staticSetExpulsionsTotal(siteRequest_, o);
+		case "shortTermSuspensionsAsianFemale":
+			return ReportCard.staticSetShortTermSuspensionsAsianFemale(siteRequest_, o);
+		case "shortTermSuspensionsAsianMale":
+			return ReportCard.staticSetShortTermSuspensionsAsianMale(siteRequest_, o);
+		case "shortTermSuspensionsAsianTotal":
+			return ReportCard.staticSetShortTermSuspensionsAsianTotal(siteRequest_, o);
+		case "shortTermSuspensionsAsianPercent":
+			return ReportCard.staticSetShortTermSuspensionsAsianPercent(siteRequest_, o);
+		case "shortTermSuspensionsAsianRate":
+			return ReportCard.staticSetShortTermSuspensionsAsianRate(siteRequest_, o);
+		case "shortTermSuspensionsBlackFemale":
+			return ReportCard.staticSetShortTermSuspensionsBlackFemale(siteRequest_, o);
+		case "shortTermSuspensionsBlackMale":
+			return ReportCard.staticSetShortTermSuspensionsBlackMale(siteRequest_, o);
+		case "shortTermSuspensionsBlackTotal":
+			return ReportCard.staticSetShortTermSuspensionsBlackTotal(siteRequest_, o);
+		case "shortTermSuspensionsBlackPercent":
+			return ReportCard.staticSetShortTermSuspensionsBlackPercent(siteRequest_, o);
+		case "shortTermSuspensionsBlackRate":
+			return ReportCard.staticSetShortTermSuspensionsBlackRate(siteRequest_, o);
+		case "shortTermSuspensionsLatinxFemale":
+			return ReportCard.staticSetShortTermSuspensionsLatinxFemale(siteRequest_, o);
+		case "shortTermSuspensionsLatinxMale":
+			return ReportCard.staticSetShortTermSuspensionsLatinxMale(siteRequest_, o);
+		case "shortTermSuspensionsLatinxTotal":
+			return ReportCard.staticSetShortTermSuspensionsLatinxTotal(siteRequest_, o);
+		case "shortTermSuspensionsLatinxPercent":
+			return ReportCard.staticSetShortTermSuspensionsLatinxPercent(siteRequest_, o);
+		case "shortTermSuspensionsLatinxRate":
+			return ReportCard.staticSetShortTermSuspensionsLatinxRate(siteRequest_, o);
+		case "shortTermSuspensionsIndigenousFemale":
+			return ReportCard.staticSetShortTermSuspensionsIndigenousFemale(siteRequest_, o);
+		case "shortTermSuspensionsIndigenousMale":
+			return ReportCard.staticSetShortTermSuspensionsIndigenousMale(siteRequest_, o);
+		case "shortTermSuspensionsIndigenousTotal":
+			return ReportCard.staticSetShortTermSuspensionsIndigenousTotal(siteRequest_, o);
+		case "shortTermSuspensionsIndigenousPercent":
+			return ReportCard.staticSetShortTermSuspensionsIndigenousPercent(siteRequest_, o);
+		case "shortTermSuspensionsIndigenousRate":
+			return ReportCard.staticSetShortTermSuspensionsIndigenousRate(siteRequest_, o);
+		case "shortTermSuspensionsMultiRacialFemale":
+			return ReportCard.staticSetShortTermSuspensionsMultiRacialFemale(siteRequest_, o);
+		case "shortTermSuspensionsMultiRacialMale":
+			return ReportCard.staticSetShortTermSuspensionsMultiRacialMale(siteRequest_, o);
+		case "shortTermSuspensionsMultiRacialTotal":
+			return ReportCard.staticSetShortTermSuspensionsMultiRacialTotal(siteRequest_, o);
+		case "shortTermSuspensionsMultiRacialPercent":
+			return ReportCard.staticSetShortTermSuspensionsMultiRacialPercent(siteRequest_, o);
+		case "shortTermSuspensionsMultiRacialRate":
+			return ReportCard.staticSetShortTermSuspensionsMultiRacialRate(siteRequest_, o);
+		case "shortTermSuspensionsPacificIslanderFemale":
+			return ReportCard.staticSetShortTermSuspensionsPacificIslanderFemale(siteRequest_, o);
+		case "shortTermSuspensionsPacificIslanderMale":
+			return ReportCard.staticSetShortTermSuspensionsPacificIslanderMale(siteRequest_, o);
+		case "shortTermSuspensionsPacificIslanderTotal":
+			return ReportCard.staticSetShortTermSuspensionsPacificIslanderTotal(siteRequest_, o);
+		case "shortTermSuspensionsPacificIslanderPercent":
+			return ReportCard.staticSetShortTermSuspensionsPacificIslanderPercent(siteRequest_, o);
+		case "shortTermSuspensionsPacificIslanderRate":
+			return ReportCard.staticSetShortTermSuspensionsPacificIslanderRate(siteRequest_, o);
+		case "shortTermSuspensionsWhiteFemale":
+			return ReportCard.staticSetShortTermSuspensionsWhiteFemale(siteRequest_, o);
+		case "shortTermSuspensionsWhiteMale":
+			return ReportCard.staticSetShortTermSuspensionsWhiteMale(siteRequest_, o);
+		case "shortTermSuspensionsWhiteTotal":
+			return ReportCard.staticSetShortTermSuspensionsWhiteTotal(siteRequest_, o);
+		case "shortTermSuspensionsWhitePercent":
+			return ReportCard.staticSetShortTermSuspensionsWhitePercent(siteRequest_, o);
+		case "shortTermSuspensionsWhiteRate":
+			return ReportCard.staticSetShortTermSuspensionsWhiteRate(siteRequest_, o);
+		case "shortTermSuspensionsAllRate":
+			return ReportCard.staticSetShortTermSuspensionsAllRate(siteRequest_, o);
+		case "shortTermSuspensionsBlackVsWhite":
+			return ReportCard.staticSetShortTermSuspensionsBlackVsWhite(siteRequest_, o);
+		case "examsCollegeReadyGrades38OverallPercent":
+			return ReportCard.staticSetExamsCollegeReadyGrades38OverallPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades38IndigenousPercent":
+			return ReportCard.staticSetExamsCollegeReadyGrades38IndigenousPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades38AsianPercent":
+			return ReportCard.staticSetExamsCollegeReadyGrades38AsianPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades38BlackPercent":
+			return ReportCard.staticSetExamsCollegeReadyGrades38BlackPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades38LatinxPercent":
+			return ReportCard.staticSetExamsCollegeReadyGrades38LatinxPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades38MultiRacialPercent":
+			return ReportCard.staticSetExamsCollegeReadyGrades38MultiRacialPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades38PacificIslanderPercent":
+			return ReportCard.staticSetExamsCollegeReadyGrades38PacificIslanderPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades38WhitePercent":
+			return ReportCard.staticSetExamsCollegeReadyGrades38WhitePercent(siteRequest_, o);
+		case "examsCollegeReadyGrades912OverallPercent":
+			return ReportCard.staticSetExamsCollegeReadyGrades912OverallPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades912IndigenousPercent":
+			return ReportCard.staticSetExamsCollegeReadyGrades912IndigenousPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades912AsianPercent":
+			return ReportCard.staticSetExamsCollegeReadyGrades912AsianPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades912BlackPercent":
+			return ReportCard.staticSetExamsCollegeReadyGrades912BlackPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades912LatinxPercent":
+			return ReportCard.staticSetExamsCollegeReadyGrades912LatinxPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades912MultiRacialPercent":
+			return ReportCard.staticSetExamsCollegeReadyGrades912MultiRacialPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades912PacificIslanderPercent":
+			return ReportCard.staticSetExamsCollegeReadyGrades912PacificIslanderPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades912WhitePercent":
+			return ReportCard.staticSetExamsCollegeReadyGrades912WhitePercent(siteRequest_, o);
+		case "graduateWithin4YearsOverallPercent":
+			return ReportCard.staticSetGraduateWithin4YearsOverallPercent(siteRequest_, o);
+		case "graduateWithin4YearsIndigenousPercent":
+			return ReportCard.staticSetGraduateWithin4YearsIndigenousPercent(siteRequest_, o);
+		case "graduateWithin4YearsAsianPercent":
+			return ReportCard.staticSetGraduateWithin4YearsAsianPercent(siteRequest_, o);
+		case "graduateWithin4YearsBlackPercent":
+			return ReportCard.staticSetGraduateWithin4YearsBlackPercent(siteRequest_, o);
+		case "graduateWithin4YearsLatinxPercent":
+			return ReportCard.staticSetGraduateWithin4YearsLatinxPercent(siteRequest_, o);
+		case "graduateWithin4YearsMultiRacialPercent":
+			return ReportCard.staticSetGraduateWithin4YearsMultiRacialPercent(siteRequest_, o);
+		case "graduateWithin4YearsPacificIslanderPercent":
+			return ReportCard.staticSetGraduateWithin4YearsPacificIslanderPercent(siteRequest_, o);
+		case "graduateWithin4YearsWhitePercent":
+			return ReportCard.staticSetGraduateWithin4YearsWhitePercent(siteRequest_, o);
+		case "examsCollegeReadyGrades38BlackVsWhite":
+			return ReportCard.staticSetExamsCollegeReadyGrades38BlackVsWhite(siteRequest_, o);
+		case "examsCollegeReadyGrades38LatinxVsWhite":
+			return ReportCard.staticSetExamsCollegeReadyGrades38LatinxVsWhite(siteRequest_, o);
+		case "stateKey":
+			return ReportCard.staticSetStateKey(siteRequest_, o);
+		case "stateId":
+			return ReportCard.staticSetStateId(siteRequest_, o);
+		case "agencyId":
+			return ReportCard.staticSetAgencyId(siteRequest_, o);
+		case "stateName":
+			return ReportCard.staticSetStateName(siteRequest_, o);
+		case "stateAbbreviation":
+			return ReportCard.staticSetStateAbbreviation(siteRequest_, o);
+		case "agencyOnlyName":
+			return ReportCard.staticSetAgencyOnlyName(siteRequest_, o);
+		case "agencyName":
+			return ReportCard.staticSetAgencyName(siteRequest_, o);
+		case "agencyCoords":
+			return ReportCard.staticSetAgencyCoords(siteRequest_, o);
+		case "agencyLeft":
+			return ReportCard.staticSetAgencyLeft(siteRequest_, o);
+		case "reportCardCompleteName":
+			return ReportCard.staticSetReportCardCompleteName(siteRequest_, o);
+		case "reportCardNumber_":
+			return ReportCard.staticSetReportCardNumber_(siteRequest_, o);
+		case "agencyDemographicsGraph":
+			return ReportCard.staticSetAgencyDemographicsGraph(siteRequest_, o);
+		case "agencyStudentsByRaceGraph":
+			return ReportCard.staticSetAgencyStudentsByRaceGraph(siteRequest_, o);
+		case "agencyTeachersByRaceGraph":
+			return ReportCard.staticSetAgencyTeachersByRaceGraph(siteRequest_, o);
+		case "agencyGrades3To8Graph":
+			return ReportCard.staticSetAgencyGrades3To8Graph(siteRequest_, o);
+		case "agencyGrades9To12Graph":
+			return ReportCard.staticSetAgencyGrades9To12Graph(siteRequest_, o);
+		case "agencyGraduatesWithin4YearsGraph":
+			return ReportCard.staticSetAgencyGraduatesWithin4YearsGraph(siteRequest_, o);
+		case "suspensionsByRaceGraph":
+			return ReportCard.staticSetSuspensionsByRaceGraph(siteRequest_, o);
+		case "suspensionRatesByRaceGraph":
+			return ReportCard.staticSetSuspensionRatesByRaceGraph(siteRequest_, o);
+		case "countySchoolBasedComplaintsGraph":
+			return ReportCard.staticSetCountySchoolBasedComplaintsGraph(siteRequest_, o);
+		case "schoolBasedComplaintsGraph":
+			return ReportCard.staticSetSchoolBasedComplaintsGraph(siteRequest_, o);
+		case "agencyStudentsByRaceGraph2":
+			return ReportCard.staticSetAgencyStudentsByRaceGraph2(siteRequest_, o);
+		case "reportCardImage":
+			return ReportCard.staticSetReportCardImage(siteRequest_, o);
+			default:
+				return Cluster.staticSetCluster(entityVar,  siteRequest_, o);
+		}
+	}
+
+	////////////////
+	// staticSolr //
+	////////////////
+
+	public static Object staticSolrForClass(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		return staticSolrReportCard(entityVar,  siteRequest_, o);
+	}
+	public static Object staticSolrReportCard(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		switch(entityVar) {
+		case "reportCardKey":
+			return ReportCard.staticSolrReportCardKey(siteRequest_, (Long)o);
+		case "reportCardStartYear":
+			return ReportCard.staticSolrReportCardStartYear(siteRequest_, (Integer)o);
+		case "reportCardStartYearStr":
+			return ReportCard.staticSolrReportCardStartYearStr(siteRequest_, (String)o);
+		case "reportCardEndYear":
+			return ReportCard.staticSolrReportCardEndYear(siteRequest_, (Integer)o);
+		case "reportCardYearsStr":
+			return ReportCard.staticSolrReportCardYearsStr(siteRequest_, (String)o);
+		case "agencyKey":
+			return ReportCard.staticSolrAgencyKey(siteRequest_, (Long)o);
+		case "imageLeft":
+			return ReportCard.staticSolrImageLeft(siteRequest_, (Integer)o);
+		case "imageTop":
+			return ReportCard.staticSolrImageTop(siteRequest_, (Integer)o);
+		case "pupilsTotal":
+			return ReportCard.staticSolrPupilsTotal(siteRequest_, (Long)o);
+		case "pupilsIndigenousFemale":
+			return ReportCard.staticSolrPupilsIndigenousFemale(siteRequest_, (Long)o);
+		case "pupilsIndigenousMale":
+			return ReportCard.staticSolrPupilsIndigenousMale(siteRequest_, (Long)o);
+		case "pupilsIndigenousTotal":
+			return ReportCard.staticSolrPupilsIndigenousTotal(siteRequest_, (Long)o);
+		case "pupilsIndigenousPercent":
+			return ReportCard.staticSolrPupilsIndigenousPercent(siteRequest_, (BigDecimal)o);
+		case "pupilsAsianFemale":
+			return ReportCard.staticSolrPupilsAsianFemale(siteRequest_, (Long)o);
+		case "pupilsAsianMale":
+			return ReportCard.staticSolrPupilsAsianMale(siteRequest_, (Long)o);
+		case "pupilsAsianTotal":
+			return ReportCard.staticSolrPupilsAsianTotal(siteRequest_, (Long)o);
+		case "pupilsAsianPercent":
+			return ReportCard.staticSolrPupilsAsianPercent(siteRequest_, (BigDecimal)o);
+		case "pupilsLatinxFemale":
+			return ReportCard.staticSolrPupilsLatinxFemale(siteRequest_, (Long)o);
+		case "pupilsLatinxMale":
+			return ReportCard.staticSolrPupilsLatinxMale(siteRequest_, (Long)o);
+		case "pupilsLatinxTotal":
+			return ReportCard.staticSolrPupilsLatinxTotal(siteRequest_, (Long)o);
+		case "pupilsLatinxPercent":
+			return ReportCard.staticSolrPupilsLatinxPercent(siteRequest_, (BigDecimal)o);
+		case "pupilsBlackFemale":
+			return ReportCard.staticSolrPupilsBlackFemale(siteRequest_, (Long)o);
+		case "pupilsBlackMale":
+			return ReportCard.staticSolrPupilsBlackMale(siteRequest_, (Long)o);
+		case "pupilsBlackTotal":
+			return ReportCard.staticSolrPupilsBlackTotal(siteRequest_, (Long)o);
+		case "pupilsBlackPercent":
+			return ReportCard.staticSolrPupilsBlackPercent(siteRequest_, (BigDecimal)o);
+		case "pupilsWhiteFemale":
+			return ReportCard.staticSolrPupilsWhiteFemale(siteRequest_, (Long)o);
+		case "pupilsWhiteMale":
+			return ReportCard.staticSolrPupilsWhiteMale(siteRequest_, (Long)o);
+		case "pupilsWhiteTotal":
+			return ReportCard.staticSolrPupilsWhiteTotal(siteRequest_, (Long)o);
+		case "pupilsWhitePercent":
+			return ReportCard.staticSolrPupilsWhitePercent(siteRequest_, (BigDecimal)o);
+		case "pupilsPacificIslanderFemale":
+			return ReportCard.staticSolrPupilsPacificIslanderFemale(siteRequest_, (Long)o);
+		case "pupilsPacificIslanderMale":
+			return ReportCard.staticSolrPupilsPacificIslanderMale(siteRequest_, (Long)o);
+		case "pupilsPacificIslanderTotal":
+			return ReportCard.staticSolrPupilsPacificIslanderTotal(siteRequest_, (Long)o);
+		case "pupilsPacificIslanderPercent":
+			return ReportCard.staticSolrPupilsPacificIslanderPercent(siteRequest_, (BigDecimal)o);
+		case "pupilsMultiRacialFemale":
+			return ReportCard.staticSolrPupilsMultiRacialFemale(siteRequest_, (Long)o);
+		case "pupilsMultiRacialMale":
+			return ReportCard.staticSolrPupilsMultiRacialMale(siteRequest_, (Long)o);
+		case "pupilsMultiRacialTotal":
+			return ReportCard.staticSolrPupilsMultiRacialTotal(siteRequest_, (Long)o);
+		case "pupilsMultiRacialPercent":
+			return ReportCard.staticSolrPupilsMultiRacialPercent(siteRequest_, (BigDecimal)o);
+		case "pupilsOtherPercent":
+			return ReportCard.staticSolrPupilsOtherPercent(siteRequest_, (BigDecimal)o);
+		case "teachersMale":
+			return ReportCard.staticSolrTeachersMale(siteRequest_, (Long)o);
+		case "teachersFemale":
+			return ReportCard.staticSolrTeachersFemale(siteRequest_, (Long)o);
+		case "teachersTotal":
+			return ReportCard.staticSolrTeachersTotal(siteRequest_, (Long)o);
+		case "teachersWhiteTotal":
+			return ReportCard.staticSolrTeachersWhiteTotal(siteRequest_, (Long)o);
+		case "teachersWhitePercent":
+			return ReportCard.staticSolrTeachersWhitePercent(siteRequest_, (BigDecimal)o);
+		case "teachersBlackTotal":
+			return ReportCard.staticSolrTeachersBlackTotal(siteRequest_, (Long)o);
+		case "teachersBlackPercent":
+			return ReportCard.staticSolrTeachersBlackPercent(siteRequest_, (BigDecimal)o);
+		case "teachersOtherTotal":
+			return ReportCard.staticSolrTeachersOtherTotal(siteRequest_, (Long)o);
+		case "teachersOtherPercent":
+			return ReportCard.staticSolrTeachersOtherPercent(siteRequest_, (BigDecimal)o);
+		case "delinquentComplaintsTotal":
+			return ReportCard.staticSolrDelinquentComplaintsTotal(siteRequest_, (Long)o);
+		case "delinquentComplaintsAtSchool":
+			return ReportCard.staticSolrDelinquentComplaintsAtSchool(siteRequest_, (Long)o);
+		case "delinquentComplaintsAtSchoolPercent":
+			return ReportCard.staticSolrDelinquentComplaintsAtSchoolPercent(siteRequest_, (BigDecimal)o);
+		case "delinquentComplaintsAsian":
+			return ReportCard.staticSolrDelinquentComplaintsAsian(siteRequest_, (Long)o);
+		case "delinquentComplaintsAsianPercent":
+			return ReportCard.staticSolrDelinquentComplaintsAsianPercent(siteRequest_, (BigDecimal)o);
+		case "delinquentComplaintsBlack":
+			return ReportCard.staticSolrDelinquentComplaintsBlack(siteRequest_, (Long)o);
+		case "delinquentComplaintsBlackPercent":
+			return ReportCard.staticSolrDelinquentComplaintsBlackPercent(siteRequest_, (BigDecimal)o);
+		case "delinquentComplaintsLatinx":
+			return ReportCard.staticSolrDelinquentComplaintsLatinx(siteRequest_, (Long)o);
+		case "delinquentComplaintsLatinxPercent":
+			return ReportCard.staticSolrDelinquentComplaintsLatinxPercent(siteRequest_, (BigDecimal)o);
+		case "delinquentComplaintsMultiRacial":
+			return ReportCard.staticSolrDelinquentComplaintsMultiRacial(siteRequest_, (Long)o);
+		case "delinquentComplaintsMultiRacialPercent":
+			return ReportCard.staticSolrDelinquentComplaintsMultiRacialPercent(siteRequest_, (BigDecimal)o);
+		case "delinquentComplaintsIndigenous":
+			return ReportCard.staticSolrDelinquentComplaintsIndigenous(siteRequest_, (Long)o);
+		case "delinquentComplaintsIndigenousPercent":
+			return ReportCard.staticSolrDelinquentComplaintsIndigenousPercent(siteRequest_, (BigDecimal)o);
+		case "delinquentComplaintsWhite":
+			return ReportCard.staticSolrDelinquentComplaintsWhite(siteRequest_, (Long)o);
+		case "delinquentComplaintsWhitePercent":
+			return ReportCard.staticSolrDelinquentComplaintsWhitePercent(siteRequest_, (BigDecimal)o);
+		case "delinquentComplaintsPacificIslander":
+			return ReportCard.staticSolrDelinquentComplaintsPacificIslander(siteRequest_, (Long)o);
+		case "delinquentComplaintsPacificIslanderPercent":
+			return ReportCard.staticSolrDelinquentComplaintsPacificIslanderPercent(siteRequest_, (BigDecimal)o);
+		case "shortTermSuspensionRate":
+			return ReportCard.staticSolrShortTermSuspensionRate(siteRequest_, (Long)o);
+		case "shortTermSuspensionsTotal":
+			return ReportCard.staticSolrShortTermSuspensionsTotal(siteRequest_, (Long)o);
+		case "longTermSuspensionsTotal":
+			return ReportCard.staticSolrLongTermSuspensionsTotal(siteRequest_, (Long)o);
+		case "expulsionsTotal":
+			return ReportCard.staticSolrExpulsionsTotal(siteRequest_, (Long)o);
+		case "shortTermSuspensionsAsianFemale":
+			return ReportCard.staticSolrShortTermSuspensionsAsianFemale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsAsianMale":
+			return ReportCard.staticSolrShortTermSuspensionsAsianMale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsAsianTotal":
+			return ReportCard.staticSolrShortTermSuspensionsAsianTotal(siteRequest_, (Long)o);
+		case "shortTermSuspensionsAsianPercent":
+			return ReportCard.staticSolrShortTermSuspensionsAsianPercent(siteRequest_, (BigDecimal)o);
+		case "shortTermSuspensionsAsianRate":
+			return ReportCard.staticSolrShortTermSuspensionsAsianRate(siteRequest_, (BigDecimal)o);
+		case "shortTermSuspensionsBlackFemale":
+			return ReportCard.staticSolrShortTermSuspensionsBlackFemale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsBlackMale":
+			return ReportCard.staticSolrShortTermSuspensionsBlackMale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsBlackTotal":
+			return ReportCard.staticSolrShortTermSuspensionsBlackTotal(siteRequest_, (Long)o);
+		case "shortTermSuspensionsBlackPercent":
+			return ReportCard.staticSolrShortTermSuspensionsBlackPercent(siteRequest_, (BigDecimal)o);
+		case "shortTermSuspensionsBlackRate":
+			return ReportCard.staticSolrShortTermSuspensionsBlackRate(siteRequest_, (BigDecimal)o);
+		case "shortTermSuspensionsLatinxFemale":
+			return ReportCard.staticSolrShortTermSuspensionsLatinxFemale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsLatinxMale":
+			return ReportCard.staticSolrShortTermSuspensionsLatinxMale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsLatinxTotal":
+			return ReportCard.staticSolrShortTermSuspensionsLatinxTotal(siteRequest_, (Long)o);
+		case "shortTermSuspensionsLatinxPercent":
+			return ReportCard.staticSolrShortTermSuspensionsLatinxPercent(siteRequest_, (BigDecimal)o);
+		case "shortTermSuspensionsLatinxRate":
+			return ReportCard.staticSolrShortTermSuspensionsLatinxRate(siteRequest_, (BigDecimal)o);
+		case "shortTermSuspensionsIndigenousFemale":
+			return ReportCard.staticSolrShortTermSuspensionsIndigenousFemale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsIndigenousMale":
+			return ReportCard.staticSolrShortTermSuspensionsIndigenousMale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsIndigenousTotal":
+			return ReportCard.staticSolrShortTermSuspensionsIndigenousTotal(siteRequest_, (Long)o);
+		case "shortTermSuspensionsIndigenousPercent":
+			return ReportCard.staticSolrShortTermSuspensionsIndigenousPercent(siteRequest_, (BigDecimal)o);
+		case "shortTermSuspensionsIndigenousRate":
+			return ReportCard.staticSolrShortTermSuspensionsIndigenousRate(siteRequest_, (BigDecimal)o);
+		case "shortTermSuspensionsMultiRacialFemale":
+			return ReportCard.staticSolrShortTermSuspensionsMultiRacialFemale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsMultiRacialMale":
+			return ReportCard.staticSolrShortTermSuspensionsMultiRacialMale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsMultiRacialTotal":
+			return ReportCard.staticSolrShortTermSuspensionsMultiRacialTotal(siteRequest_, (Long)o);
+		case "shortTermSuspensionsMultiRacialPercent":
+			return ReportCard.staticSolrShortTermSuspensionsMultiRacialPercent(siteRequest_, (BigDecimal)o);
+		case "shortTermSuspensionsMultiRacialRate":
+			return ReportCard.staticSolrShortTermSuspensionsMultiRacialRate(siteRequest_, (BigDecimal)o);
+		case "shortTermSuspensionsPacificIslanderFemale":
+			return ReportCard.staticSolrShortTermSuspensionsPacificIslanderFemale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsPacificIslanderMale":
+			return ReportCard.staticSolrShortTermSuspensionsPacificIslanderMale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsPacificIslanderTotal":
+			return ReportCard.staticSolrShortTermSuspensionsPacificIslanderTotal(siteRequest_, (Long)o);
+		case "shortTermSuspensionsPacificIslanderPercent":
+			return ReportCard.staticSolrShortTermSuspensionsPacificIslanderPercent(siteRequest_, (BigDecimal)o);
+		case "shortTermSuspensionsPacificIslanderRate":
+			return ReportCard.staticSolrShortTermSuspensionsPacificIslanderRate(siteRequest_, (BigDecimal)o);
+		case "shortTermSuspensionsWhiteFemale":
+			return ReportCard.staticSolrShortTermSuspensionsWhiteFemale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsWhiteMale":
+			return ReportCard.staticSolrShortTermSuspensionsWhiteMale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsWhiteTotal":
+			return ReportCard.staticSolrShortTermSuspensionsWhiteTotal(siteRequest_, (Long)o);
+		case "shortTermSuspensionsWhitePercent":
+			return ReportCard.staticSolrShortTermSuspensionsWhitePercent(siteRequest_, (BigDecimal)o);
+		case "shortTermSuspensionsWhiteRate":
+			return ReportCard.staticSolrShortTermSuspensionsWhiteRate(siteRequest_, (BigDecimal)o);
+		case "shortTermSuspensionsAllRate":
+			return ReportCard.staticSolrShortTermSuspensionsAllRate(siteRequest_, (BigDecimal)o);
+		case "shortTermSuspensionsBlackVsWhite":
+			return ReportCard.staticSolrShortTermSuspensionsBlackVsWhite(siteRequest_, (BigDecimal)o);
+		case "examsCollegeReadyGrades38OverallPercent":
+			return ReportCard.staticSolrExamsCollegeReadyGrades38OverallPercent(siteRequest_, (BigDecimal)o);
+		case "examsCollegeReadyGrades38IndigenousPercent":
+			return ReportCard.staticSolrExamsCollegeReadyGrades38IndigenousPercent(siteRequest_, (BigDecimal)o);
+		case "examsCollegeReadyGrades38AsianPercent":
+			return ReportCard.staticSolrExamsCollegeReadyGrades38AsianPercent(siteRequest_, (BigDecimal)o);
+		case "examsCollegeReadyGrades38BlackPercent":
+			return ReportCard.staticSolrExamsCollegeReadyGrades38BlackPercent(siteRequest_, (BigDecimal)o);
+		case "examsCollegeReadyGrades38LatinxPercent":
+			return ReportCard.staticSolrExamsCollegeReadyGrades38LatinxPercent(siteRequest_, (BigDecimal)o);
+		case "examsCollegeReadyGrades38MultiRacialPercent":
+			return ReportCard.staticSolrExamsCollegeReadyGrades38MultiRacialPercent(siteRequest_, (BigDecimal)o);
+		case "examsCollegeReadyGrades38PacificIslanderPercent":
+			return ReportCard.staticSolrExamsCollegeReadyGrades38PacificIslanderPercent(siteRequest_, (BigDecimal)o);
+		case "examsCollegeReadyGrades38WhitePercent":
+			return ReportCard.staticSolrExamsCollegeReadyGrades38WhitePercent(siteRequest_, (BigDecimal)o);
+		case "examsCollegeReadyGrades912OverallPercent":
+			return ReportCard.staticSolrExamsCollegeReadyGrades912OverallPercent(siteRequest_, (BigDecimal)o);
+		case "examsCollegeReadyGrades912IndigenousPercent":
+			return ReportCard.staticSolrExamsCollegeReadyGrades912IndigenousPercent(siteRequest_, (BigDecimal)o);
+		case "examsCollegeReadyGrades912AsianPercent":
+			return ReportCard.staticSolrExamsCollegeReadyGrades912AsianPercent(siteRequest_, (BigDecimal)o);
+		case "examsCollegeReadyGrades912BlackPercent":
+			return ReportCard.staticSolrExamsCollegeReadyGrades912BlackPercent(siteRequest_, (BigDecimal)o);
+		case "examsCollegeReadyGrades912LatinxPercent":
+			return ReportCard.staticSolrExamsCollegeReadyGrades912LatinxPercent(siteRequest_, (BigDecimal)o);
+		case "examsCollegeReadyGrades912MultiRacialPercent":
+			return ReportCard.staticSolrExamsCollegeReadyGrades912MultiRacialPercent(siteRequest_, (BigDecimal)o);
+		case "examsCollegeReadyGrades912PacificIslanderPercent":
+			return ReportCard.staticSolrExamsCollegeReadyGrades912PacificIslanderPercent(siteRequest_, (BigDecimal)o);
+		case "examsCollegeReadyGrades912WhitePercent":
+			return ReportCard.staticSolrExamsCollegeReadyGrades912WhitePercent(siteRequest_, (BigDecimal)o);
+		case "graduateWithin4YearsOverallPercent":
+			return ReportCard.staticSolrGraduateWithin4YearsOverallPercent(siteRequest_, (BigDecimal)o);
+		case "graduateWithin4YearsIndigenousPercent":
+			return ReportCard.staticSolrGraduateWithin4YearsIndigenousPercent(siteRequest_, (BigDecimal)o);
+		case "graduateWithin4YearsAsianPercent":
+			return ReportCard.staticSolrGraduateWithin4YearsAsianPercent(siteRequest_, (BigDecimal)o);
+		case "graduateWithin4YearsBlackPercent":
+			return ReportCard.staticSolrGraduateWithin4YearsBlackPercent(siteRequest_, (BigDecimal)o);
+		case "graduateWithin4YearsLatinxPercent":
+			return ReportCard.staticSolrGraduateWithin4YearsLatinxPercent(siteRequest_, (BigDecimal)o);
+		case "graduateWithin4YearsMultiRacialPercent":
+			return ReportCard.staticSolrGraduateWithin4YearsMultiRacialPercent(siteRequest_, (BigDecimal)o);
+		case "graduateWithin4YearsPacificIslanderPercent":
+			return ReportCard.staticSolrGraduateWithin4YearsPacificIslanderPercent(siteRequest_, (BigDecimal)o);
+		case "graduateWithin4YearsWhitePercent":
+			return ReportCard.staticSolrGraduateWithin4YearsWhitePercent(siteRequest_, (BigDecimal)o);
+		case "examsCollegeReadyGrades38BlackVsWhite":
+			return ReportCard.staticSolrExamsCollegeReadyGrades38BlackVsWhite(siteRequest_, (BigDecimal)o);
+		case "examsCollegeReadyGrades38LatinxVsWhite":
+			return ReportCard.staticSolrExamsCollegeReadyGrades38LatinxVsWhite(siteRequest_, (BigDecimal)o);
+		case "stateKey":
+			return ReportCard.staticSolrStateKey(siteRequest_, (Long)o);
+		case "stateId":
+			return ReportCard.staticSolrStateId(siteRequest_, (String)o);
+		case "agencyId":
+			return ReportCard.staticSolrAgencyId(siteRequest_, (String)o);
+		case "stateName":
+			return ReportCard.staticSolrStateName(siteRequest_, (String)o);
+		case "stateAbbreviation":
+			return ReportCard.staticSolrStateAbbreviation(siteRequest_, (String)o);
+		case "agencyOnlyName":
+			return ReportCard.staticSolrAgencyOnlyName(siteRequest_, (String)o);
+		case "agencyName":
+			return ReportCard.staticSolrAgencyName(siteRequest_, (String)o);
+		case "agencyCoords":
+			return ReportCard.staticSolrAgencyCoords(siteRequest_, (String)o);
+		case "agencyLeft":
+			return ReportCard.staticSolrAgencyLeft(siteRequest_, (Integer)o);
+		case "reportCardCompleteName":
+			return ReportCard.staticSolrReportCardCompleteName(siteRequest_, (String)o);
+		case "reportCardNumber_":
+			return ReportCard.staticSolrReportCardNumber_(siteRequest_, (Integer)o);
+		case "agencyDemographicsGraph":
+			return ReportCard.staticSolrAgencyDemographicsGraph(siteRequest_, (String)o);
+		case "agencyStudentsByRaceGraph":
+			return ReportCard.staticSolrAgencyStudentsByRaceGraph(siteRequest_, (String)o);
+		case "agencyTeachersByRaceGraph":
+			return ReportCard.staticSolrAgencyTeachersByRaceGraph(siteRequest_, (String)o);
+		case "agencyGrades3To8Graph":
+			return ReportCard.staticSolrAgencyGrades3To8Graph(siteRequest_, (String)o);
+		case "agencyGrades9To12Graph":
+			return ReportCard.staticSolrAgencyGrades9To12Graph(siteRequest_, (String)o);
+		case "agencyGraduatesWithin4YearsGraph":
+			return ReportCard.staticSolrAgencyGraduatesWithin4YearsGraph(siteRequest_, (String)o);
+		case "suspensionsByRaceGraph":
+			return ReportCard.staticSolrSuspensionsByRaceGraph(siteRequest_, (String)o);
+		case "suspensionRatesByRaceGraph":
+			return ReportCard.staticSolrSuspensionRatesByRaceGraph(siteRequest_, (String)o);
+		case "countySchoolBasedComplaintsGraph":
+			return ReportCard.staticSolrCountySchoolBasedComplaintsGraph(siteRequest_, (String)o);
+		case "schoolBasedComplaintsGraph":
+			return ReportCard.staticSolrSchoolBasedComplaintsGraph(siteRequest_, (String)o);
+		case "agencyStudentsByRaceGraph2":
+			return ReportCard.staticSolrAgencyStudentsByRaceGraph2(siteRequest_, (String)o);
+		case "reportCardImage":
+			return ReportCard.staticSolrReportCardImage(siteRequest_, (String)o);
+			default:
+				return Cluster.staticSolrCluster(entityVar,  siteRequest_, o);
+		}
+	}
+
+	///////////////////
+	// staticSolrStr //
+	///////////////////
+
+	public static String staticSolrStrForClass(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		return staticSolrStrReportCard(entityVar,  siteRequest_, o);
+	}
+	public static String staticSolrStrReportCard(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		switch(entityVar) {
+		case "reportCardKey":
+			return ReportCard.staticSolrStrReportCardKey(siteRequest_, (Long)o);
+		case "reportCardStartYear":
+			return ReportCard.staticSolrStrReportCardStartYear(siteRequest_, (Integer)o);
+		case "reportCardStartYearStr":
+			return ReportCard.staticSolrStrReportCardStartYearStr(siteRequest_, (String)o);
+		case "reportCardEndYear":
+			return ReportCard.staticSolrStrReportCardEndYear(siteRequest_, (Integer)o);
+		case "reportCardYearsStr":
+			return ReportCard.staticSolrStrReportCardYearsStr(siteRequest_, (String)o);
+		case "agencyKey":
+			return ReportCard.staticSolrStrAgencyKey(siteRequest_, (Long)o);
+		case "imageLeft":
+			return ReportCard.staticSolrStrImageLeft(siteRequest_, (Integer)o);
+		case "imageTop":
+			return ReportCard.staticSolrStrImageTop(siteRequest_, (Integer)o);
+		case "pupilsTotal":
+			return ReportCard.staticSolrStrPupilsTotal(siteRequest_, (Long)o);
+		case "pupilsIndigenousFemale":
+			return ReportCard.staticSolrStrPupilsIndigenousFemale(siteRequest_, (Long)o);
+		case "pupilsIndigenousMale":
+			return ReportCard.staticSolrStrPupilsIndigenousMale(siteRequest_, (Long)o);
+		case "pupilsIndigenousTotal":
+			return ReportCard.staticSolrStrPupilsIndigenousTotal(siteRequest_, (Long)o);
+		case "pupilsIndigenousPercent":
+			return ReportCard.staticSolrStrPupilsIndigenousPercent(siteRequest_, (Double)o);
+		case "pupilsAsianFemale":
+			return ReportCard.staticSolrStrPupilsAsianFemale(siteRequest_, (Long)o);
+		case "pupilsAsianMale":
+			return ReportCard.staticSolrStrPupilsAsianMale(siteRequest_, (Long)o);
+		case "pupilsAsianTotal":
+			return ReportCard.staticSolrStrPupilsAsianTotal(siteRequest_, (Long)o);
+		case "pupilsAsianPercent":
+			return ReportCard.staticSolrStrPupilsAsianPercent(siteRequest_, (Double)o);
+		case "pupilsLatinxFemale":
+			return ReportCard.staticSolrStrPupilsLatinxFemale(siteRequest_, (Long)o);
+		case "pupilsLatinxMale":
+			return ReportCard.staticSolrStrPupilsLatinxMale(siteRequest_, (Long)o);
+		case "pupilsLatinxTotal":
+			return ReportCard.staticSolrStrPupilsLatinxTotal(siteRequest_, (Long)o);
+		case "pupilsLatinxPercent":
+			return ReportCard.staticSolrStrPupilsLatinxPercent(siteRequest_, (Double)o);
+		case "pupilsBlackFemale":
+			return ReportCard.staticSolrStrPupilsBlackFemale(siteRequest_, (Long)o);
+		case "pupilsBlackMale":
+			return ReportCard.staticSolrStrPupilsBlackMale(siteRequest_, (Long)o);
+		case "pupilsBlackTotal":
+			return ReportCard.staticSolrStrPupilsBlackTotal(siteRequest_, (Long)o);
+		case "pupilsBlackPercent":
+			return ReportCard.staticSolrStrPupilsBlackPercent(siteRequest_, (Double)o);
+		case "pupilsWhiteFemale":
+			return ReportCard.staticSolrStrPupilsWhiteFemale(siteRequest_, (Long)o);
+		case "pupilsWhiteMale":
+			return ReportCard.staticSolrStrPupilsWhiteMale(siteRequest_, (Long)o);
+		case "pupilsWhiteTotal":
+			return ReportCard.staticSolrStrPupilsWhiteTotal(siteRequest_, (Long)o);
+		case "pupilsWhitePercent":
+			return ReportCard.staticSolrStrPupilsWhitePercent(siteRequest_, (Double)o);
+		case "pupilsPacificIslanderFemale":
+			return ReportCard.staticSolrStrPupilsPacificIslanderFemale(siteRequest_, (Long)o);
+		case "pupilsPacificIslanderMale":
+			return ReportCard.staticSolrStrPupilsPacificIslanderMale(siteRequest_, (Long)o);
+		case "pupilsPacificIslanderTotal":
+			return ReportCard.staticSolrStrPupilsPacificIslanderTotal(siteRequest_, (Long)o);
+		case "pupilsPacificIslanderPercent":
+			return ReportCard.staticSolrStrPupilsPacificIslanderPercent(siteRequest_, (Double)o);
+		case "pupilsMultiRacialFemale":
+			return ReportCard.staticSolrStrPupilsMultiRacialFemale(siteRequest_, (Long)o);
+		case "pupilsMultiRacialMale":
+			return ReportCard.staticSolrStrPupilsMultiRacialMale(siteRequest_, (Long)o);
+		case "pupilsMultiRacialTotal":
+			return ReportCard.staticSolrStrPupilsMultiRacialTotal(siteRequest_, (Long)o);
+		case "pupilsMultiRacialPercent":
+			return ReportCard.staticSolrStrPupilsMultiRacialPercent(siteRequest_, (Double)o);
+		case "pupilsOtherPercent":
+			return ReportCard.staticSolrStrPupilsOtherPercent(siteRequest_, (Double)o);
+		case "teachersMale":
+			return ReportCard.staticSolrStrTeachersMale(siteRequest_, (Long)o);
+		case "teachersFemale":
+			return ReportCard.staticSolrStrTeachersFemale(siteRequest_, (Long)o);
+		case "teachersTotal":
+			return ReportCard.staticSolrStrTeachersTotal(siteRequest_, (Long)o);
+		case "teachersWhiteTotal":
+			return ReportCard.staticSolrStrTeachersWhiteTotal(siteRequest_, (Long)o);
+		case "teachersWhitePercent":
+			return ReportCard.staticSolrStrTeachersWhitePercent(siteRequest_, (Double)o);
+		case "teachersBlackTotal":
+			return ReportCard.staticSolrStrTeachersBlackTotal(siteRequest_, (Long)o);
+		case "teachersBlackPercent":
+			return ReportCard.staticSolrStrTeachersBlackPercent(siteRequest_, (Double)o);
+		case "teachersOtherTotal":
+			return ReportCard.staticSolrStrTeachersOtherTotal(siteRequest_, (Long)o);
+		case "teachersOtherPercent":
+			return ReportCard.staticSolrStrTeachersOtherPercent(siteRequest_, (Double)o);
+		case "delinquentComplaintsTotal":
+			return ReportCard.staticSolrStrDelinquentComplaintsTotal(siteRequest_, (Long)o);
+		case "delinquentComplaintsAtSchool":
+			return ReportCard.staticSolrStrDelinquentComplaintsAtSchool(siteRequest_, (Long)o);
+		case "delinquentComplaintsAtSchoolPercent":
+			return ReportCard.staticSolrStrDelinquentComplaintsAtSchoolPercent(siteRequest_, (Double)o);
+		case "delinquentComplaintsAsian":
+			return ReportCard.staticSolrStrDelinquentComplaintsAsian(siteRequest_, (Long)o);
+		case "delinquentComplaintsAsianPercent":
+			return ReportCard.staticSolrStrDelinquentComplaintsAsianPercent(siteRequest_, (Double)o);
+		case "delinquentComplaintsBlack":
+			return ReportCard.staticSolrStrDelinquentComplaintsBlack(siteRequest_, (Long)o);
+		case "delinquentComplaintsBlackPercent":
+			return ReportCard.staticSolrStrDelinquentComplaintsBlackPercent(siteRequest_, (Double)o);
+		case "delinquentComplaintsLatinx":
+			return ReportCard.staticSolrStrDelinquentComplaintsLatinx(siteRequest_, (Long)o);
+		case "delinquentComplaintsLatinxPercent":
+			return ReportCard.staticSolrStrDelinquentComplaintsLatinxPercent(siteRequest_, (Double)o);
+		case "delinquentComplaintsMultiRacial":
+			return ReportCard.staticSolrStrDelinquentComplaintsMultiRacial(siteRequest_, (Long)o);
+		case "delinquentComplaintsMultiRacialPercent":
+			return ReportCard.staticSolrStrDelinquentComplaintsMultiRacialPercent(siteRequest_, (Double)o);
+		case "delinquentComplaintsIndigenous":
+			return ReportCard.staticSolrStrDelinquentComplaintsIndigenous(siteRequest_, (Long)o);
+		case "delinquentComplaintsIndigenousPercent":
+			return ReportCard.staticSolrStrDelinquentComplaintsIndigenousPercent(siteRequest_, (Double)o);
+		case "delinquentComplaintsWhite":
+			return ReportCard.staticSolrStrDelinquentComplaintsWhite(siteRequest_, (Long)o);
+		case "delinquentComplaintsWhitePercent":
+			return ReportCard.staticSolrStrDelinquentComplaintsWhitePercent(siteRequest_, (Double)o);
+		case "delinquentComplaintsPacificIslander":
+			return ReportCard.staticSolrStrDelinquentComplaintsPacificIslander(siteRequest_, (Long)o);
+		case "delinquentComplaintsPacificIslanderPercent":
+			return ReportCard.staticSolrStrDelinquentComplaintsPacificIslanderPercent(siteRequest_, (Double)o);
+		case "shortTermSuspensionRate":
+			return ReportCard.staticSolrStrShortTermSuspensionRate(siteRequest_, (Long)o);
+		case "shortTermSuspensionsTotal":
+			return ReportCard.staticSolrStrShortTermSuspensionsTotal(siteRequest_, (Long)o);
+		case "longTermSuspensionsTotal":
+			return ReportCard.staticSolrStrLongTermSuspensionsTotal(siteRequest_, (Long)o);
+		case "expulsionsTotal":
+			return ReportCard.staticSolrStrExpulsionsTotal(siteRequest_, (Long)o);
+		case "shortTermSuspensionsAsianFemale":
+			return ReportCard.staticSolrStrShortTermSuspensionsAsianFemale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsAsianMale":
+			return ReportCard.staticSolrStrShortTermSuspensionsAsianMale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsAsianTotal":
+			return ReportCard.staticSolrStrShortTermSuspensionsAsianTotal(siteRequest_, (Long)o);
+		case "shortTermSuspensionsAsianPercent":
+			return ReportCard.staticSolrStrShortTermSuspensionsAsianPercent(siteRequest_, (Double)o);
+		case "shortTermSuspensionsAsianRate":
+			return ReportCard.staticSolrStrShortTermSuspensionsAsianRate(siteRequest_, (Double)o);
+		case "shortTermSuspensionsBlackFemale":
+			return ReportCard.staticSolrStrShortTermSuspensionsBlackFemale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsBlackMale":
+			return ReportCard.staticSolrStrShortTermSuspensionsBlackMale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsBlackTotal":
+			return ReportCard.staticSolrStrShortTermSuspensionsBlackTotal(siteRequest_, (Long)o);
+		case "shortTermSuspensionsBlackPercent":
+			return ReportCard.staticSolrStrShortTermSuspensionsBlackPercent(siteRequest_, (Double)o);
+		case "shortTermSuspensionsBlackRate":
+			return ReportCard.staticSolrStrShortTermSuspensionsBlackRate(siteRequest_, (Double)o);
+		case "shortTermSuspensionsLatinxFemale":
+			return ReportCard.staticSolrStrShortTermSuspensionsLatinxFemale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsLatinxMale":
+			return ReportCard.staticSolrStrShortTermSuspensionsLatinxMale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsLatinxTotal":
+			return ReportCard.staticSolrStrShortTermSuspensionsLatinxTotal(siteRequest_, (Long)o);
+		case "shortTermSuspensionsLatinxPercent":
+			return ReportCard.staticSolrStrShortTermSuspensionsLatinxPercent(siteRequest_, (Double)o);
+		case "shortTermSuspensionsLatinxRate":
+			return ReportCard.staticSolrStrShortTermSuspensionsLatinxRate(siteRequest_, (Double)o);
+		case "shortTermSuspensionsIndigenousFemale":
+			return ReportCard.staticSolrStrShortTermSuspensionsIndigenousFemale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsIndigenousMale":
+			return ReportCard.staticSolrStrShortTermSuspensionsIndigenousMale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsIndigenousTotal":
+			return ReportCard.staticSolrStrShortTermSuspensionsIndigenousTotal(siteRequest_, (Long)o);
+		case "shortTermSuspensionsIndigenousPercent":
+			return ReportCard.staticSolrStrShortTermSuspensionsIndigenousPercent(siteRequest_, (Double)o);
+		case "shortTermSuspensionsIndigenousRate":
+			return ReportCard.staticSolrStrShortTermSuspensionsIndigenousRate(siteRequest_, (Double)o);
+		case "shortTermSuspensionsMultiRacialFemale":
+			return ReportCard.staticSolrStrShortTermSuspensionsMultiRacialFemale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsMultiRacialMale":
+			return ReportCard.staticSolrStrShortTermSuspensionsMultiRacialMale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsMultiRacialTotal":
+			return ReportCard.staticSolrStrShortTermSuspensionsMultiRacialTotal(siteRequest_, (Long)o);
+		case "shortTermSuspensionsMultiRacialPercent":
+			return ReportCard.staticSolrStrShortTermSuspensionsMultiRacialPercent(siteRequest_, (Double)o);
+		case "shortTermSuspensionsMultiRacialRate":
+			return ReportCard.staticSolrStrShortTermSuspensionsMultiRacialRate(siteRequest_, (Double)o);
+		case "shortTermSuspensionsPacificIslanderFemale":
+			return ReportCard.staticSolrStrShortTermSuspensionsPacificIslanderFemale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsPacificIslanderMale":
+			return ReportCard.staticSolrStrShortTermSuspensionsPacificIslanderMale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsPacificIslanderTotal":
+			return ReportCard.staticSolrStrShortTermSuspensionsPacificIslanderTotal(siteRequest_, (Long)o);
+		case "shortTermSuspensionsPacificIslanderPercent":
+			return ReportCard.staticSolrStrShortTermSuspensionsPacificIslanderPercent(siteRequest_, (Double)o);
+		case "shortTermSuspensionsPacificIslanderRate":
+			return ReportCard.staticSolrStrShortTermSuspensionsPacificIslanderRate(siteRequest_, (Double)o);
+		case "shortTermSuspensionsWhiteFemale":
+			return ReportCard.staticSolrStrShortTermSuspensionsWhiteFemale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsWhiteMale":
+			return ReportCard.staticSolrStrShortTermSuspensionsWhiteMale(siteRequest_, (Long)o);
+		case "shortTermSuspensionsWhiteTotal":
+			return ReportCard.staticSolrStrShortTermSuspensionsWhiteTotal(siteRequest_, (Long)o);
+		case "shortTermSuspensionsWhitePercent":
+			return ReportCard.staticSolrStrShortTermSuspensionsWhitePercent(siteRequest_, (Double)o);
+		case "shortTermSuspensionsWhiteRate":
+			return ReportCard.staticSolrStrShortTermSuspensionsWhiteRate(siteRequest_, (Double)o);
+		case "shortTermSuspensionsAllRate":
+			return ReportCard.staticSolrStrShortTermSuspensionsAllRate(siteRequest_, (Double)o);
+		case "shortTermSuspensionsBlackVsWhite":
+			return ReportCard.staticSolrStrShortTermSuspensionsBlackVsWhite(siteRequest_, (Double)o);
+		case "examsCollegeReadyGrades38OverallPercent":
+			return ReportCard.staticSolrStrExamsCollegeReadyGrades38OverallPercent(siteRequest_, (Double)o);
+		case "examsCollegeReadyGrades38IndigenousPercent":
+			return ReportCard.staticSolrStrExamsCollegeReadyGrades38IndigenousPercent(siteRequest_, (Double)o);
+		case "examsCollegeReadyGrades38AsianPercent":
+			return ReportCard.staticSolrStrExamsCollegeReadyGrades38AsianPercent(siteRequest_, (Double)o);
+		case "examsCollegeReadyGrades38BlackPercent":
+			return ReportCard.staticSolrStrExamsCollegeReadyGrades38BlackPercent(siteRequest_, (Double)o);
+		case "examsCollegeReadyGrades38LatinxPercent":
+			return ReportCard.staticSolrStrExamsCollegeReadyGrades38LatinxPercent(siteRequest_, (Double)o);
+		case "examsCollegeReadyGrades38MultiRacialPercent":
+			return ReportCard.staticSolrStrExamsCollegeReadyGrades38MultiRacialPercent(siteRequest_, (Double)o);
+		case "examsCollegeReadyGrades38PacificIslanderPercent":
+			return ReportCard.staticSolrStrExamsCollegeReadyGrades38PacificIslanderPercent(siteRequest_, (Double)o);
+		case "examsCollegeReadyGrades38WhitePercent":
+			return ReportCard.staticSolrStrExamsCollegeReadyGrades38WhitePercent(siteRequest_, (Double)o);
+		case "examsCollegeReadyGrades912OverallPercent":
+			return ReportCard.staticSolrStrExamsCollegeReadyGrades912OverallPercent(siteRequest_, (Double)o);
+		case "examsCollegeReadyGrades912IndigenousPercent":
+			return ReportCard.staticSolrStrExamsCollegeReadyGrades912IndigenousPercent(siteRequest_, (Double)o);
+		case "examsCollegeReadyGrades912AsianPercent":
+			return ReportCard.staticSolrStrExamsCollegeReadyGrades912AsianPercent(siteRequest_, (Double)o);
+		case "examsCollegeReadyGrades912BlackPercent":
+			return ReportCard.staticSolrStrExamsCollegeReadyGrades912BlackPercent(siteRequest_, (Double)o);
+		case "examsCollegeReadyGrades912LatinxPercent":
+			return ReportCard.staticSolrStrExamsCollegeReadyGrades912LatinxPercent(siteRequest_, (Double)o);
+		case "examsCollegeReadyGrades912MultiRacialPercent":
+			return ReportCard.staticSolrStrExamsCollegeReadyGrades912MultiRacialPercent(siteRequest_, (Double)o);
+		case "examsCollegeReadyGrades912PacificIslanderPercent":
+			return ReportCard.staticSolrStrExamsCollegeReadyGrades912PacificIslanderPercent(siteRequest_, (Double)o);
+		case "examsCollegeReadyGrades912WhitePercent":
+			return ReportCard.staticSolrStrExamsCollegeReadyGrades912WhitePercent(siteRequest_, (Double)o);
+		case "graduateWithin4YearsOverallPercent":
+			return ReportCard.staticSolrStrGraduateWithin4YearsOverallPercent(siteRequest_, (Double)o);
+		case "graduateWithin4YearsIndigenousPercent":
+			return ReportCard.staticSolrStrGraduateWithin4YearsIndigenousPercent(siteRequest_, (Double)o);
+		case "graduateWithin4YearsAsianPercent":
+			return ReportCard.staticSolrStrGraduateWithin4YearsAsianPercent(siteRequest_, (Double)o);
+		case "graduateWithin4YearsBlackPercent":
+			return ReportCard.staticSolrStrGraduateWithin4YearsBlackPercent(siteRequest_, (Double)o);
+		case "graduateWithin4YearsLatinxPercent":
+			return ReportCard.staticSolrStrGraduateWithin4YearsLatinxPercent(siteRequest_, (Double)o);
+		case "graduateWithin4YearsMultiRacialPercent":
+			return ReportCard.staticSolrStrGraduateWithin4YearsMultiRacialPercent(siteRequest_, (Double)o);
+		case "graduateWithin4YearsPacificIslanderPercent":
+			return ReportCard.staticSolrStrGraduateWithin4YearsPacificIslanderPercent(siteRequest_, (Double)o);
+		case "graduateWithin4YearsWhitePercent":
+			return ReportCard.staticSolrStrGraduateWithin4YearsWhitePercent(siteRequest_, (Double)o);
+		case "examsCollegeReadyGrades38BlackVsWhite":
+			return ReportCard.staticSolrStrExamsCollegeReadyGrades38BlackVsWhite(siteRequest_, (Double)o);
+		case "examsCollegeReadyGrades38LatinxVsWhite":
+			return ReportCard.staticSolrStrExamsCollegeReadyGrades38LatinxVsWhite(siteRequest_, (Double)o);
+		case "stateKey":
+			return ReportCard.staticSolrStrStateKey(siteRequest_, (Long)o);
+		case "stateId":
+			return ReportCard.staticSolrStrStateId(siteRequest_, (String)o);
+		case "agencyId":
+			return ReportCard.staticSolrStrAgencyId(siteRequest_, (String)o);
+		case "stateName":
+			return ReportCard.staticSolrStrStateName(siteRequest_, (String)o);
+		case "stateAbbreviation":
+			return ReportCard.staticSolrStrStateAbbreviation(siteRequest_, (String)o);
+		case "agencyOnlyName":
+			return ReportCard.staticSolrStrAgencyOnlyName(siteRequest_, (String)o);
+		case "agencyName":
+			return ReportCard.staticSolrStrAgencyName(siteRequest_, (String)o);
+		case "agencyCoords":
+			return ReportCard.staticSolrStrAgencyCoords(siteRequest_, (String)o);
+		case "agencyLeft":
+			return ReportCard.staticSolrStrAgencyLeft(siteRequest_, (Integer)o);
+		case "reportCardCompleteName":
+			return ReportCard.staticSolrStrReportCardCompleteName(siteRequest_, (String)o);
+		case "reportCardNumber_":
+			return ReportCard.staticSolrStrReportCardNumber_(siteRequest_, (Integer)o);
+		case "agencyDemographicsGraph":
+			return ReportCard.staticSolrStrAgencyDemographicsGraph(siteRequest_, (String)o);
+		case "agencyStudentsByRaceGraph":
+			return ReportCard.staticSolrStrAgencyStudentsByRaceGraph(siteRequest_, (String)o);
+		case "agencyTeachersByRaceGraph":
+			return ReportCard.staticSolrStrAgencyTeachersByRaceGraph(siteRequest_, (String)o);
+		case "agencyGrades3To8Graph":
+			return ReportCard.staticSolrStrAgencyGrades3To8Graph(siteRequest_, (String)o);
+		case "agencyGrades9To12Graph":
+			return ReportCard.staticSolrStrAgencyGrades9To12Graph(siteRequest_, (String)o);
+		case "agencyGraduatesWithin4YearsGraph":
+			return ReportCard.staticSolrStrAgencyGraduatesWithin4YearsGraph(siteRequest_, (String)o);
+		case "suspensionsByRaceGraph":
+			return ReportCard.staticSolrStrSuspensionsByRaceGraph(siteRequest_, (String)o);
+		case "suspensionRatesByRaceGraph":
+			return ReportCard.staticSolrStrSuspensionRatesByRaceGraph(siteRequest_, (String)o);
+		case "countySchoolBasedComplaintsGraph":
+			return ReportCard.staticSolrStrCountySchoolBasedComplaintsGraph(siteRequest_, (String)o);
+		case "schoolBasedComplaintsGraph":
+			return ReportCard.staticSolrStrSchoolBasedComplaintsGraph(siteRequest_, (String)o);
+		case "agencyStudentsByRaceGraph2":
+			return ReportCard.staticSolrStrAgencyStudentsByRaceGraph2(siteRequest_, (String)o);
+		case "reportCardImage":
+			return ReportCard.staticSolrStrReportCardImage(siteRequest_, (String)o);
+			default:
+				return Cluster.staticSolrStrCluster(entityVar,  siteRequest_, o);
+		}
+	}
+
+	//////////////////
+	// staticSolrFq //
+	//////////////////
+
+	public static String staticSolrFqForClass(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		return staticSolrFqReportCard(entityVar,  siteRequest_, o);
+	}
+	public static String staticSolrFqReportCard(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		switch(entityVar) {
+		case "reportCardKey":
+			return ReportCard.staticSolrFqReportCardKey(siteRequest_, o);
+		case "reportCardStartYear":
+			return ReportCard.staticSolrFqReportCardStartYear(siteRequest_, o);
+		case "reportCardStartYearStr":
+			return ReportCard.staticSolrFqReportCardStartYearStr(siteRequest_, o);
+		case "reportCardEndYear":
+			return ReportCard.staticSolrFqReportCardEndYear(siteRequest_, o);
+		case "reportCardYearsStr":
+			return ReportCard.staticSolrFqReportCardYearsStr(siteRequest_, o);
+		case "agencyKey":
+			return ReportCard.staticSolrFqAgencyKey(siteRequest_, o);
+		case "imageLeft":
+			return ReportCard.staticSolrFqImageLeft(siteRequest_, o);
+		case "imageTop":
+			return ReportCard.staticSolrFqImageTop(siteRequest_, o);
+		case "pupilsTotal":
+			return ReportCard.staticSolrFqPupilsTotal(siteRequest_, o);
+		case "pupilsIndigenousFemale":
+			return ReportCard.staticSolrFqPupilsIndigenousFemale(siteRequest_, o);
+		case "pupilsIndigenousMale":
+			return ReportCard.staticSolrFqPupilsIndigenousMale(siteRequest_, o);
+		case "pupilsIndigenousTotal":
+			return ReportCard.staticSolrFqPupilsIndigenousTotal(siteRequest_, o);
+		case "pupilsIndigenousPercent":
+			return ReportCard.staticSolrFqPupilsIndigenousPercent(siteRequest_, o);
+		case "pupilsAsianFemale":
+			return ReportCard.staticSolrFqPupilsAsianFemale(siteRequest_, o);
+		case "pupilsAsianMale":
+			return ReportCard.staticSolrFqPupilsAsianMale(siteRequest_, o);
+		case "pupilsAsianTotal":
+			return ReportCard.staticSolrFqPupilsAsianTotal(siteRequest_, o);
+		case "pupilsAsianPercent":
+			return ReportCard.staticSolrFqPupilsAsianPercent(siteRequest_, o);
+		case "pupilsLatinxFemale":
+			return ReportCard.staticSolrFqPupilsLatinxFemale(siteRequest_, o);
+		case "pupilsLatinxMale":
+			return ReportCard.staticSolrFqPupilsLatinxMale(siteRequest_, o);
+		case "pupilsLatinxTotal":
+			return ReportCard.staticSolrFqPupilsLatinxTotal(siteRequest_, o);
+		case "pupilsLatinxPercent":
+			return ReportCard.staticSolrFqPupilsLatinxPercent(siteRequest_, o);
+		case "pupilsBlackFemale":
+			return ReportCard.staticSolrFqPupilsBlackFemale(siteRequest_, o);
+		case "pupilsBlackMale":
+			return ReportCard.staticSolrFqPupilsBlackMale(siteRequest_, o);
+		case "pupilsBlackTotal":
+			return ReportCard.staticSolrFqPupilsBlackTotal(siteRequest_, o);
+		case "pupilsBlackPercent":
+			return ReportCard.staticSolrFqPupilsBlackPercent(siteRequest_, o);
+		case "pupilsWhiteFemale":
+			return ReportCard.staticSolrFqPupilsWhiteFemale(siteRequest_, o);
+		case "pupilsWhiteMale":
+			return ReportCard.staticSolrFqPupilsWhiteMale(siteRequest_, o);
+		case "pupilsWhiteTotal":
+			return ReportCard.staticSolrFqPupilsWhiteTotal(siteRequest_, o);
+		case "pupilsWhitePercent":
+			return ReportCard.staticSolrFqPupilsWhitePercent(siteRequest_, o);
+		case "pupilsPacificIslanderFemale":
+			return ReportCard.staticSolrFqPupilsPacificIslanderFemale(siteRequest_, o);
+		case "pupilsPacificIslanderMale":
+			return ReportCard.staticSolrFqPupilsPacificIslanderMale(siteRequest_, o);
+		case "pupilsPacificIslanderTotal":
+			return ReportCard.staticSolrFqPupilsPacificIslanderTotal(siteRequest_, o);
+		case "pupilsPacificIslanderPercent":
+			return ReportCard.staticSolrFqPupilsPacificIslanderPercent(siteRequest_, o);
+		case "pupilsMultiRacialFemale":
+			return ReportCard.staticSolrFqPupilsMultiRacialFemale(siteRequest_, o);
+		case "pupilsMultiRacialMale":
+			return ReportCard.staticSolrFqPupilsMultiRacialMale(siteRequest_, o);
+		case "pupilsMultiRacialTotal":
+			return ReportCard.staticSolrFqPupilsMultiRacialTotal(siteRequest_, o);
+		case "pupilsMultiRacialPercent":
+			return ReportCard.staticSolrFqPupilsMultiRacialPercent(siteRequest_, o);
+		case "pupilsOtherPercent":
+			return ReportCard.staticSolrFqPupilsOtherPercent(siteRequest_, o);
+		case "teachersMale":
+			return ReportCard.staticSolrFqTeachersMale(siteRequest_, o);
+		case "teachersFemale":
+			return ReportCard.staticSolrFqTeachersFemale(siteRequest_, o);
+		case "teachersTotal":
+			return ReportCard.staticSolrFqTeachersTotal(siteRequest_, o);
+		case "teachersWhiteTotal":
+			return ReportCard.staticSolrFqTeachersWhiteTotal(siteRequest_, o);
+		case "teachersWhitePercent":
+			return ReportCard.staticSolrFqTeachersWhitePercent(siteRequest_, o);
+		case "teachersBlackTotal":
+			return ReportCard.staticSolrFqTeachersBlackTotal(siteRequest_, o);
+		case "teachersBlackPercent":
+			return ReportCard.staticSolrFqTeachersBlackPercent(siteRequest_, o);
+		case "teachersOtherTotal":
+			return ReportCard.staticSolrFqTeachersOtherTotal(siteRequest_, o);
+		case "teachersOtherPercent":
+			return ReportCard.staticSolrFqTeachersOtherPercent(siteRequest_, o);
+		case "delinquentComplaintsTotal":
+			return ReportCard.staticSolrFqDelinquentComplaintsTotal(siteRequest_, o);
+		case "delinquentComplaintsAtSchool":
+			return ReportCard.staticSolrFqDelinquentComplaintsAtSchool(siteRequest_, o);
+		case "delinquentComplaintsAtSchoolPercent":
+			return ReportCard.staticSolrFqDelinquentComplaintsAtSchoolPercent(siteRequest_, o);
+		case "delinquentComplaintsAsian":
+			return ReportCard.staticSolrFqDelinquentComplaintsAsian(siteRequest_, o);
+		case "delinquentComplaintsAsianPercent":
+			return ReportCard.staticSolrFqDelinquentComplaintsAsianPercent(siteRequest_, o);
+		case "delinquentComplaintsBlack":
+			return ReportCard.staticSolrFqDelinquentComplaintsBlack(siteRequest_, o);
+		case "delinquentComplaintsBlackPercent":
+			return ReportCard.staticSolrFqDelinquentComplaintsBlackPercent(siteRequest_, o);
+		case "delinquentComplaintsLatinx":
+			return ReportCard.staticSolrFqDelinquentComplaintsLatinx(siteRequest_, o);
+		case "delinquentComplaintsLatinxPercent":
+			return ReportCard.staticSolrFqDelinquentComplaintsLatinxPercent(siteRequest_, o);
+		case "delinquentComplaintsMultiRacial":
+			return ReportCard.staticSolrFqDelinquentComplaintsMultiRacial(siteRequest_, o);
+		case "delinquentComplaintsMultiRacialPercent":
+			return ReportCard.staticSolrFqDelinquentComplaintsMultiRacialPercent(siteRequest_, o);
+		case "delinquentComplaintsIndigenous":
+			return ReportCard.staticSolrFqDelinquentComplaintsIndigenous(siteRequest_, o);
+		case "delinquentComplaintsIndigenousPercent":
+			return ReportCard.staticSolrFqDelinquentComplaintsIndigenousPercent(siteRequest_, o);
+		case "delinquentComplaintsWhite":
+			return ReportCard.staticSolrFqDelinquentComplaintsWhite(siteRequest_, o);
+		case "delinquentComplaintsWhitePercent":
+			return ReportCard.staticSolrFqDelinquentComplaintsWhitePercent(siteRequest_, o);
+		case "delinquentComplaintsPacificIslander":
+			return ReportCard.staticSolrFqDelinquentComplaintsPacificIslander(siteRequest_, o);
+		case "delinquentComplaintsPacificIslanderPercent":
+			return ReportCard.staticSolrFqDelinquentComplaintsPacificIslanderPercent(siteRequest_, o);
+		case "shortTermSuspensionRate":
+			return ReportCard.staticSolrFqShortTermSuspensionRate(siteRequest_, o);
+		case "shortTermSuspensionsTotal":
+			return ReportCard.staticSolrFqShortTermSuspensionsTotal(siteRequest_, o);
+		case "longTermSuspensionsTotal":
+			return ReportCard.staticSolrFqLongTermSuspensionsTotal(siteRequest_, o);
+		case "expulsionsTotal":
+			return ReportCard.staticSolrFqExpulsionsTotal(siteRequest_, o);
+		case "shortTermSuspensionsAsianFemale":
+			return ReportCard.staticSolrFqShortTermSuspensionsAsianFemale(siteRequest_, o);
+		case "shortTermSuspensionsAsianMale":
+			return ReportCard.staticSolrFqShortTermSuspensionsAsianMale(siteRequest_, o);
+		case "shortTermSuspensionsAsianTotal":
+			return ReportCard.staticSolrFqShortTermSuspensionsAsianTotal(siteRequest_, o);
+		case "shortTermSuspensionsAsianPercent":
+			return ReportCard.staticSolrFqShortTermSuspensionsAsianPercent(siteRequest_, o);
+		case "shortTermSuspensionsAsianRate":
+			return ReportCard.staticSolrFqShortTermSuspensionsAsianRate(siteRequest_, o);
+		case "shortTermSuspensionsBlackFemale":
+			return ReportCard.staticSolrFqShortTermSuspensionsBlackFemale(siteRequest_, o);
+		case "shortTermSuspensionsBlackMale":
+			return ReportCard.staticSolrFqShortTermSuspensionsBlackMale(siteRequest_, o);
+		case "shortTermSuspensionsBlackTotal":
+			return ReportCard.staticSolrFqShortTermSuspensionsBlackTotal(siteRequest_, o);
+		case "shortTermSuspensionsBlackPercent":
+			return ReportCard.staticSolrFqShortTermSuspensionsBlackPercent(siteRequest_, o);
+		case "shortTermSuspensionsBlackRate":
+			return ReportCard.staticSolrFqShortTermSuspensionsBlackRate(siteRequest_, o);
+		case "shortTermSuspensionsLatinxFemale":
+			return ReportCard.staticSolrFqShortTermSuspensionsLatinxFemale(siteRequest_, o);
+		case "shortTermSuspensionsLatinxMale":
+			return ReportCard.staticSolrFqShortTermSuspensionsLatinxMale(siteRequest_, o);
+		case "shortTermSuspensionsLatinxTotal":
+			return ReportCard.staticSolrFqShortTermSuspensionsLatinxTotal(siteRequest_, o);
+		case "shortTermSuspensionsLatinxPercent":
+			return ReportCard.staticSolrFqShortTermSuspensionsLatinxPercent(siteRequest_, o);
+		case "shortTermSuspensionsLatinxRate":
+			return ReportCard.staticSolrFqShortTermSuspensionsLatinxRate(siteRequest_, o);
+		case "shortTermSuspensionsIndigenousFemale":
+			return ReportCard.staticSolrFqShortTermSuspensionsIndigenousFemale(siteRequest_, o);
+		case "shortTermSuspensionsIndigenousMale":
+			return ReportCard.staticSolrFqShortTermSuspensionsIndigenousMale(siteRequest_, o);
+		case "shortTermSuspensionsIndigenousTotal":
+			return ReportCard.staticSolrFqShortTermSuspensionsIndigenousTotal(siteRequest_, o);
+		case "shortTermSuspensionsIndigenousPercent":
+			return ReportCard.staticSolrFqShortTermSuspensionsIndigenousPercent(siteRequest_, o);
+		case "shortTermSuspensionsIndigenousRate":
+			return ReportCard.staticSolrFqShortTermSuspensionsIndigenousRate(siteRequest_, o);
+		case "shortTermSuspensionsMultiRacialFemale":
+			return ReportCard.staticSolrFqShortTermSuspensionsMultiRacialFemale(siteRequest_, o);
+		case "shortTermSuspensionsMultiRacialMale":
+			return ReportCard.staticSolrFqShortTermSuspensionsMultiRacialMale(siteRequest_, o);
+		case "shortTermSuspensionsMultiRacialTotal":
+			return ReportCard.staticSolrFqShortTermSuspensionsMultiRacialTotal(siteRequest_, o);
+		case "shortTermSuspensionsMultiRacialPercent":
+			return ReportCard.staticSolrFqShortTermSuspensionsMultiRacialPercent(siteRequest_, o);
+		case "shortTermSuspensionsMultiRacialRate":
+			return ReportCard.staticSolrFqShortTermSuspensionsMultiRacialRate(siteRequest_, o);
+		case "shortTermSuspensionsPacificIslanderFemale":
+			return ReportCard.staticSolrFqShortTermSuspensionsPacificIslanderFemale(siteRequest_, o);
+		case "shortTermSuspensionsPacificIslanderMale":
+			return ReportCard.staticSolrFqShortTermSuspensionsPacificIslanderMale(siteRequest_, o);
+		case "shortTermSuspensionsPacificIslanderTotal":
+			return ReportCard.staticSolrFqShortTermSuspensionsPacificIslanderTotal(siteRequest_, o);
+		case "shortTermSuspensionsPacificIslanderPercent":
+			return ReportCard.staticSolrFqShortTermSuspensionsPacificIslanderPercent(siteRequest_, o);
+		case "shortTermSuspensionsPacificIslanderRate":
+			return ReportCard.staticSolrFqShortTermSuspensionsPacificIslanderRate(siteRequest_, o);
+		case "shortTermSuspensionsWhiteFemale":
+			return ReportCard.staticSolrFqShortTermSuspensionsWhiteFemale(siteRequest_, o);
+		case "shortTermSuspensionsWhiteMale":
+			return ReportCard.staticSolrFqShortTermSuspensionsWhiteMale(siteRequest_, o);
+		case "shortTermSuspensionsWhiteTotal":
+			return ReportCard.staticSolrFqShortTermSuspensionsWhiteTotal(siteRequest_, o);
+		case "shortTermSuspensionsWhitePercent":
+			return ReportCard.staticSolrFqShortTermSuspensionsWhitePercent(siteRequest_, o);
+		case "shortTermSuspensionsWhiteRate":
+			return ReportCard.staticSolrFqShortTermSuspensionsWhiteRate(siteRequest_, o);
+		case "shortTermSuspensionsAllRate":
+			return ReportCard.staticSolrFqShortTermSuspensionsAllRate(siteRequest_, o);
+		case "shortTermSuspensionsBlackVsWhite":
+			return ReportCard.staticSolrFqShortTermSuspensionsBlackVsWhite(siteRequest_, o);
+		case "examsCollegeReadyGrades38OverallPercent":
+			return ReportCard.staticSolrFqExamsCollegeReadyGrades38OverallPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades38IndigenousPercent":
+			return ReportCard.staticSolrFqExamsCollegeReadyGrades38IndigenousPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades38AsianPercent":
+			return ReportCard.staticSolrFqExamsCollegeReadyGrades38AsianPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades38BlackPercent":
+			return ReportCard.staticSolrFqExamsCollegeReadyGrades38BlackPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades38LatinxPercent":
+			return ReportCard.staticSolrFqExamsCollegeReadyGrades38LatinxPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades38MultiRacialPercent":
+			return ReportCard.staticSolrFqExamsCollegeReadyGrades38MultiRacialPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades38PacificIslanderPercent":
+			return ReportCard.staticSolrFqExamsCollegeReadyGrades38PacificIslanderPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades38WhitePercent":
+			return ReportCard.staticSolrFqExamsCollegeReadyGrades38WhitePercent(siteRequest_, o);
+		case "examsCollegeReadyGrades912OverallPercent":
+			return ReportCard.staticSolrFqExamsCollegeReadyGrades912OverallPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades912IndigenousPercent":
+			return ReportCard.staticSolrFqExamsCollegeReadyGrades912IndigenousPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades912AsianPercent":
+			return ReportCard.staticSolrFqExamsCollegeReadyGrades912AsianPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades912BlackPercent":
+			return ReportCard.staticSolrFqExamsCollegeReadyGrades912BlackPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades912LatinxPercent":
+			return ReportCard.staticSolrFqExamsCollegeReadyGrades912LatinxPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades912MultiRacialPercent":
+			return ReportCard.staticSolrFqExamsCollegeReadyGrades912MultiRacialPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades912PacificIslanderPercent":
+			return ReportCard.staticSolrFqExamsCollegeReadyGrades912PacificIslanderPercent(siteRequest_, o);
+		case "examsCollegeReadyGrades912WhitePercent":
+			return ReportCard.staticSolrFqExamsCollegeReadyGrades912WhitePercent(siteRequest_, o);
+		case "graduateWithin4YearsOverallPercent":
+			return ReportCard.staticSolrFqGraduateWithin4YearsOverallPercent(siteRequest_, o);
+		case "graduateWithin4YearsIndigenousPercent":
+			return ReportCard.staticSolrFqGraduateWithin4YearsIndigenousPercent(siteRequest_, o);
+		case "graduateWithin4YearsAsianPercent":
+			return ReportCard.staticSolrFqGraduateWithin4YearsAsianPercent(siteRequest_, o);
+		case "graduateWithin4YearsBlackPercent":
+			return ReportCard.staticSolrFqGraduateWithin4YearsBlackPercent(siteRequest_, o);
+		case "graduateWithin4YearsLatinxPercent":
+			return ReportCard.staticSolrFqGraduateWithin4YearsLatinxPercent(siteRequest_, o);
+		case "graduateWithin4YearsMultiRacialPercent":
+			return ReportCard.staticSolrFqGraduateWithin4YearsMultiRacialPercent(siteRequest_, o);
+		case "graduateWithin4YearsPacificIslanderPercent":
+			return ReportCard.staticSolrFqGraduateWithin4YearsPacificIslanderPercent(siteRequest_, o);
+		case "graduateWithin4YearsWhitePercent":
+			return ReportCard.staticSolrFqGraduateWithin4YearsWhitePercent(siteRequest_, o);
+		case "examsCollegeReadyGrades38BlackVsWhite":
+			return ReportCard.staticSolrFqExamsCollegeReadyGrades38BlackVsWhite(siteRequest_, o);
+		case "examsCollegeReadyGrades38LatinxVsWhite":
+			return ReportCard.staticSolrFqExamsCollegeReadyGrades38LatinxVsWhite(siteRequest_, o);
+		case "stateKey":
+			return ReportCard.staticSolrFqStateKey(siteRequest_, o);
+		case "stateId":
+			return ReportCard.staticSolrFqStateId(siteRequest_, o);
+		case "agencyId":
+			return ReportCard.staticSolrFqAgencyId(siteRequest_, o);
+		case "stateName":
+			return ReportCard.staticSolrFqStateName(siteRequest_, o);
+		case "stateAbbreviation":
+			return ReportCard.staticSolrFqStateAbbreviation(siteRequest_, o);
+		case "agencyOnlyName":
+			return ReportCard.staticSolrFqAgencyOnlyName(siteRequest_, o);
+		case "agencyName":
+			return ReportCard.staticSolrFqAgencyName(siteRequest_, o);
+		case "agencyCoords":
+			return ReportCard.staticSolrFqAgencyCoords(siteRequest_, o);
+		case "agencyLeft":
+			return ReportCard.staticSolrFqAgencyLeft(siteRequest_, o);
+		case "reportCardCompleteName":
+			return ReportCard.staticSolrFqReportCardCompleteName(siteRequest_, o);
+		case "reportCardNumber_":
+			return ReportCard.staticSolrFqReportCardNumber_(siteRequest_, o);
+		case "agencyDemographicsGraph":
+			return ReportCard.staticSolrFqAgencyDemographicsGraph(siteRequest_, o);
+		case "agencyStudentsByRaceGraph":
+			return ReportCard.staticSolrFqAgencyStudentsByRaceGraph(siteRequest_, o);
+		case "agencyTeachersByRaceGraph":
+			return ReportCard.staticSolrFqAgencyTeachersByRaceGraph(siteRequest_, o);
+		case "agencyGrades3To8Graph":
+			return ReportCard.staticSolrFqAgencyGrades3To8Graph(siteRequest_, o);
+		case "agencyGrades9To12Graph":
+			return ReportCard.staticSolrFqAgencyGrades9To12Graph(siteRequest_, o);
+		case "agencyGraduatesWithin4YearsGraph":
+			return ReportCard.staticSolrFqAgencyGraduatesWithin4YearsGraph(siteRequest_, o);
+		case "suspensionsByRaceGraph":
+			return ReportCard.staticSolrFqSuspensionsByRaceGraph(siteRequest_, o);
+		case "suspensionRatesByRaceGraph":
+			return ReportCard.staticSolrFqSuspensionRatesByRaceGraph(siteRequest_, o);
+		case "countySchoolBasedComplaintsGraph":
+			return ReportCard.staticSolrFqCountySchoolBasedComplaintsGraph(siteRequest_, o);
+		case "schoolBasedComplaintsGraph":
+			return ReportCard.staticSolrFqSchoolBasedComplaintsGraph(siteRequest_, o);
+		case "agencyStudentsByRaceGraph2":
+			return ReportCard.staticSolrFqAgencyStudentsByRaceGraph2(siteRequest_, o);
+		case "reportCardImage":
+			return ReportCard.staticSolrFqReportCardImage(siteRequest_, o);
+			default:
+				return Cluster.staticSolrFqCluster(entityVar,  siteRequest_, o);
 		}
 	}
 
@@ -19227,6 +22782,12 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					oReportCard.setExamsCollegeReadyGrades38BlackVsWhite(examsCollegeReadyGrades38BlackVsWhite);
 			}
 
+			if(saves.contains("examsCollegeReadyGrades38LatinxVsWhite")) {
+				Double examsCollegeReadyGrades38LatinxVsWhite = (Double)solrDocument.get("examsCollegeReadyGrades38LatinxVsWhite_stored_double");
+				if(examsCollegeReadyGrades38LatinxVsWhite != null)
+					oReportCard.setExamsCollegeReadyGrades38LatinxVsWhite(examsCollegeReadyGrades38LatinxVsWhite);
+			}
+
 			if(saves.contains("stateKey")) {
 				Long stateKey = (Long)solrDocument.get("stateKey_stored_long");
 				if(stateKey != null)
@@ -19941,6 +23502,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			document.addField("examsCollegeReadyGrades38BlackVsWhite_indexed_double", examsCollegeReadyGrades38BlackVsWhite.doubleValue());
 			document.addField("examsCollegeReadyGrades38BlackVsWhite_stored_double", examsCollegeReadyGrades38BlackVsWhite.doubleValue());
 		}
+		if(examsCollegeReadyGrades38LatinxVsWhite != null) {
+			document.addField("examsCollegeReadyGrades38LatinxVsWhite_indexed_double", examsCollegeReadyGrades38LatinxVsWhite.doubleValue());
+			document.addField("examsCollegeReadyGrades38LatinxVsWhite_stored_double", examsCollegeReadyGrades38LatinxVsWhite.doubleValue());
+		}
 		if(stateKey != null) {
 			document.addField("stateKey_indexed_long", stateKey);
 			document.addField("stateKey_stored_long", stateKey);
@@ -20296,6 +23861,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return "graduateWithin4YearsWhitePercent_indexed_double";
 			case "examsCollegeReadyGrades38BlackVsWhite":
 				return "examsCollegeReadyGrades38BlackVsWhite_indexed_double";
+			case "examsCollegeReadyGrades38LatinxVsWhite":
+				return "examsCollegeReadyGrades38LatinxVsWhite_indexed_double";
 			case "stateKey":
 				return "stateKey_indexed_long";
 			case "stateId":
@@ -20857,6 +24424,10 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(examsCollegeReadyGrades38BlackVsWhite != null)
 			oReportCard.setExamsCollegeReadyGrades38BlackVsWhite(examsCollegeReadyGrades38BlackVsWhite);
 
+		Double examsCollegeReadyGrades38LatinxVsWhite = (Double)solrDocument.get("examsCollegeReadyGrades38LatinxVsWhite_stored_double");
+		if(examsCollegeReadyGrades38LatinxVsWhite != null)
+			oReportCard.setExamsCollegeReadyGrades38LatinxVsWhite(examsCollegeReadyGrades38LatinxVsWhite);
+
 		Long stateKey = (Long)solrDocument.get("stateKey_stored_long");
 		if(stateKey != null)
 			oReportCard.setStateKey(stateKey);
@@ -21215,6 +24786,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("graduateWithin4YearsWhitePercent");
 			if(!Objects.equals(examsCollegeReadyGrades38BlackVsWhite, original.getExamsCollegeReadyGrades38BlackVsWhite()))
 				apiRequest.addVars("examsCollegeReadyGrades38BlackVsWhite");
+			if(!Objects.equals(examsCollegeReadyGrades38LatinxVsWhite, original.getExamsCollegeReadyGrades38LatinxVsWhite()))
+				apiRequest.addVars("examsCollegeReadyGrades38LatinxVsWhite");
 			if(!Objects.equals(stateKey, original.getStateKey()))
 				apiRequest.addVars("stateKey");
 			if(!Objects.equals(stateId, original.getStateId()))
@@ -21268,7 +24841,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	//////////////
 
 	@Override public int hashCode() {
-		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, reportCardYearsStr, agencyKey, imageLeft, imageTop, pupilsTotal, pupilsIndigenousFemale, pupilsIndigenousMale, pupilsIndigenousTotal, pupilsIndigenousPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsLatinxFemale, pupilsLatinxMale, pupilsLatinxTotal, pupilsLatinxPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, pupilsOtherPercent, teachersMale, teachersFemale, teachersTotal, teachersWhiteTotal, teachersWhitePercent, teachersBlackTotal, teachersBlackPercent, teachersOtherTotal, teachersOtherPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, delinquentComplaintsAsian, delinquentComplaintsAsianPercent, delinquentComplaintsBlack, delinquentComplaintsBlackPercent, delinquentComplaintsLatinx, delinquentComplaintsLatinxPercent, delinquentComplaintsMultiRacial, delinquentComplaintsMultiRacialPercent, delinquentComplaintsIndigenous, delinquentComplaintsIndigenousPercent, delinquentComplaintsWhite, delinquentComplaintsWhitePercent, delinquentComplaintsPacificIslander, delinquentComplaintsPacificIslanderPercent, shortTermSuspensionRate, shortTermSuspensionsTotal, longTermSuspensionsTotal, expulsionsTotal, shortTermSuspensionsAsianFemale, shortTermSuspensionsAsianMale, shortTermSuspensionsAsianTotal, shortTermSuspensionsAsianPercent, shortTermSuspensionsAsianRate, shortTermSuspensionsBlackFemale, shortTermSuspensionsBlackMale, shortTermSuspensionsBlackTotal, shortTermSuspensionsBlackPercent, shortTermSuspensionsBlackRate, shortTermSuspensionsLatinxFemale, shortTermSuspensionsLatinxMale, shortTermSuspensionsLatinxTotal, shortTermSuspensionsLatinxPercent, shortTermSuspensionsLatinxRate, shortTermSuspensionsIndigenousFemale, shortTermSuspensionsIndigenousMale, shortTermSuspensionsIndigenousTotal, shortTermSuspensionsIndigenousPercent, shortTermSuspensionsIndigenousRate, shortTermSuspensionsMultiRacialFemale, shortTermSuspensionsMultiRacialMale, shortTermSuspensionsMultiRacialTotal, shortTermSuspensionsMultiRacialPercent, shortTermSuspensionsMultiRacialRate, shortTermSuspensionsPacificIslanderFemale, shortTermSuspensionsPacificIslanderMale, shortTermSuspensionsPacificIslanderTotal, shortTermSuspensionsPacificIslanderPercent, shortTermSuspensionsPacificIslanderRate, shortTermSuspensionsWhiteFemale, shortTermSuspensionsWhiteMale, shortTermSuspensionsWhiteTotal, shortTermSuspensionsWhitePercent, shortTermSuspensionsWhiteRate, shortTermSuspensionsAllRate, shortTermSuspensionsBlackVsWhite, examsCollegeReadyGrades38OverallPercent, examsCollegeReadyGrades38IndigenousPercent, examsCollegeReadyGrades38AsianPercent, examsCollegeReadyGrades38BlackPercent, examsCollegeReadyGrades38LatinxPercent, examsCollegeReadyGrades38MultiRacialPercent, examsCollegeReadyGrades38PacificIslanderPercent, examsCollegeReadyGrades38WhitePercent, examsCollegeReadyGrades912OverallPercent, examsCollegeReadyGrades912IndigenousPercent, examsCollegeReadyGrades912AsianPercent, examsCollegeReadyGrades912BlackPercent, examsCollegeReadyGrades912LatinxPercent, examsCollegeReadyGrades912MultiRacialPercent, examsCollegeReadyGrades912PacificIslanderPercent, examsCollegeReadyGrades912WhitePercent, graduateWithin4YearsOverallPercent, graduateWithin4YearsIndigenousPercent, graduateWithin4YearsAsianPercent, graduateWithin4YearsBlackPercent, graduateWithin4YearsLatinxPercent, graduateWithin4YearsMultiRacialPercent, graduateWithin4YearsPacificIslanderPercent, graduateWithin4YearsWhitePercent, examsCollegeReadyGrades38BlackVsWhite, stateKey, stateId, agencyId, stateName, stateAbbreviation, agencyOnlyName, agencyName, agencyCoords, agencyLeft, reportCardCompleteName, agencyDemographicsGraph, agencyStudentsByRaceGraph, agencyTeachersByRaceGraph, agencyGrades3To8Graph, agencyGrades9To12Graph, agencyGraduatesWithin4YearsGraph, suspensionsByRaceGraph, suspensionRatesByRaceGraph, countySchoolBasedComplaintsGraph, schoolBasedComplaintsGraph, agencyStudentsByRaceGraph2, reportCardImage);
+		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, reportCardYearsStr, agencyKey, imageLeft, imageTop, pupilsTotal, pupilsIndigenousFemale, pupilsIndigenousMale, pupilsIndigenousTotal, pupilsIndigenousPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsLatinxFemale, pupilsLatinxMale, pupilsLatinxTotal, pupilsLatinxPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, pupilsOtherPercent, teachersMale, teachersFemale, teachersTotal, teachersWhiteTotal, teachersWhitePercent, teachersBlackTotal, teachersBlackPercent, teachersOtherTotal, teachersOtherPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, delinquentComplaintsAsian, delinquentComplaintsAsianPercent, delinquentComplaintsBlack, delinquentComplaintsBlackPercent, delinquentComplaintsLatinx, delinquentComplaintsLatinxPercent, delinquentComplaintsMultiRacial, delinquentComplaintsMultiRacialPercent, delinquentComplaintsIndigenous, delinquentComplaintsIndigenousPercent, delinquentComplaintsWhite, delinquentComplaintsWhitePercent, delinquentComplaintsPacificIslander, delinquentComplaintsPacificIslanderPercent, shortTermSuspensionRate, shortTermSuspensionsTotal, longTermSuspensionsTotal, expulsionsTotal, shortTermSuspensionsAsianFemale, shortTermSuspensionsAsianMale, shortTermSuspensionsAsianTotal, shortTermSuspensionsAsianPercent, shortTermSuspensionsAsianRate, shortTermSuspensionsBlackFemale, shortTermSuspensionsBlackMale, shortTermSuspensionsBlackTotal, shortTermSuspensionsBlackPercent, shortTermSuspensionsBlackRate, shortTermSuspensionsLatinxFemale, shortTermSuspensionsLatinxMale, shortTermSuspensionsLatinxTotal, shortTermSuspensionsLatinxPercent, shortTermSuspensionsLatinxRate, shortTermSuspensionsIndigenousFemale, shortTermSuspensionsIndigenousMale, shortTermSuspensionsIndigenousTotal, shortTermSuspensionsIndigenousPercent, shortTermSuspensionsIndigenousRate, shortTermSuspensionsMultiRacialFemale, shortTermSuspensionsMultiRacialMale, shortTermSuspensionsMultiRacialTotal, shortTermSuspensionsMultiRacialPercent, shortTermSuspensionsMultiRacialRate, shortTermSuspensionsPacificIslanderFemale, shortTermSuspensionsPacificIslanderMale, shortTermSuspensionsPacificIslanderTotal, shortTermSuspensionsPacificIslanderPercent, shortTermSuspensionsPacificIslanderRate, shortTermSuspensionsWhiteFemale, shortTermSuspensionsWhiteMale, shortTermSuspensionsWhiteTotal, shortTermSuspensionsWhitePercent, shortTermSuspensionsWhiteRate, shortTermSuspensionsAllRate, shortTermSuspensionsBlackVsWhite, examsCollegeReadyGrades38OverallPercent, examsCollegeReadyGrades38IndigenousPercent, examsCollegeReadyGrades38AsianPercent, examsCollegeReadyGrades38BlackPercent, examsCollegeReadyGrades38LatinxPercent, examsCollegeReadyGrades38MultiRacialPercent, examsCollegeReadyGrades38PacificIslanderPercent, examsCollegeReadyGrades38WhitePercent, examsCollegeReadyGrades912OverallPercent, examsCollegeReadyGrades912IndigenousPercent, examsCollegeReadyGrades912AsianPercent, examsCollegeReadyGrades912BlackPercent, examsCollegeReadyGrades912LatinxPercent, examsCollegeReadyGrades912MultiRacialPercent, examsCollegeReadyGrades912PacificIslanderPercent, examsCollegeReadyGrades912WhitePercent, graduateWithin4YearsOverallPercent, graduateWithin4YearsIndigenousPercent, graduateWithin4YearsAsianPercent, graduateWithin4YearsBlackPercent, graduateWithin4YearsLatinxPercent, graduateWithin4YearsMultiRacialPercent, graduateWithin4YearsPacificIslanderPercent, graduateWithin4YearsWhitePercent, examsCollegeReadyGrades38BlackVsWhite, examsCollegeReadyGrades38LatinxVsWhite, stateKey, stateId, agencyId, stateName, stateAbbreviation, agencyOnlyName, agencyName, agencyCoords, agencyLeft, reportCardCompleteName, agencyDemographicsGraph, agencyStudentsByRaceGraph, agencyTeachersByRaceGraph, agencyGrades3To8Graph, agencyGrades9To12Graph, agencyGraduatesWithin4YearsGraph, suspensionsByRaceGraph, suspensionRatesByRaceGraph, countySchoolBasedComplaintsGraph, schoolBasedComplaintsGraph, agencyStudentsByRaceGraph2, reportCardImage);
 	}
 
 	////////////
@@ -21411,6 +24984,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				&& Objects.equals( graduateWithin4YearsPacificIslanderPercent, that.graduateWithin4YearsPacificIslanderPercent )
 				&& Objects.equals( graduateWithin4YearsWhitePercent, that.graduateWithin4YearsWhitePercent )
 				&& Objects.equals( examsCollegeReadyGrades38BlackVsWhite, that.examsCollegeReadyGrades38BlackVsWhite )
+				&& Objects.equals( examsCollegeReadyGrades38LatinxVsWhite, that.examsCollegeReadyGrades38LatinxVsWhite )
 				&& Objects.equals( stateKey, that.stateKey )
 				&& Objects.equals( stateId, that.stateId )
 				&& Objects.equals( agencyId, that.agencyId )
@@ -21572,6 +25146,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		sb.append( ", graduateWithin4YearsPacificIslanderPercent: " ).append(graduateWithin4YearsPacificIslanderPercent);
 		sb.append( ", graduateWithin4YearsWhitePercent: " ).append(graduateWithin4YearsWhitePercent);
 		sb.append( ", examsCollegeReadyGrades38BlackVsWhite: " ).append(examsCollegeReadyGrades38BlackVsWhite);
+		sb.append( ", examsCollegeReadyGrades38LatinxVsWhite: " ).append(examsCollegeReadyGrades38LatinxVsWhite);
 		sb.append( ", stateKey: " ).append(stateKey);
 		sb.append( ", stateId: \"" ).append(stateId).append( "\"" );
 		sb.append( ", agencyId: \"" ).append(agencyId).append( "\"" );

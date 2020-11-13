@@ -693,11 +693,6 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmGraduateWithin4YearsPacificIslanderPercent("PUTCopy");
 			o.htmGraduateWithin4YearsWhitePercent("PUTCopy");
 		} g("div");
-		{ e("div").a("class", "w3-cell-row ").f();
-			o.htmInheritPk("PUTCopy");
-			o.htmUserId("PUTCopy");
-			o.htmUserKey("PUTCopy");
-		} g("div");
 	}
 
 	public void htmlFormPATCHReportCard(ReportCard o) {
@@ -839,11 +834,6 @@ public class ReportCardGenPage extends ReportCardGenPageGen<PageLayout> {
 			o.htmGraduateWithin4YearsMultiRacialPercent("PATCH");
 			o.htmGraduateWithin4YearsPacificIslanderPercent("PATCH");
 			o.htmGraduateWithin4YearsWhitePercent("PATCH");
-		} g("div");
-		{ e("div").a("class", "w3-cell-row ").f();
-			o.htmInheritPk("PATCH");
-			o.htmUserId("PATCH");
-			o.htmUserKey("PATCH");
 		} g("div");
 	}
 

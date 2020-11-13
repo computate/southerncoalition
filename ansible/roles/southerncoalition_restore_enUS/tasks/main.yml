@@ -5,6 +5,11 @@
 # psql southerncoalition -c 'delete from a; delete from d; delete from c;'
 ---
 - name: For each file
+  debug:
+    var: item
+  with_fileglob: 
+    - "{{ SOUTHERNCOALITION_RESTORE_DIR_ENUS }}/{{ DATA_NAME_VAR }}*"
+- name: For each file
   include_tasks: southerncoalition_restore.yml
   with_fileglob: 
     - "{{ SOUTHERNCOALITION_RESTORE_DIR_ENUS }}/{{ DATA_NAME_VAR }}*"

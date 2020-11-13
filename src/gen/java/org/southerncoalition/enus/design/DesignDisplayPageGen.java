@@ -76,6 +76,9 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		this.pageDesign = pageDesign;
 		this.pageDesignWrap.alreadyInitialized = true;
 	}
+	public static PageDesign staticSetPageDesign(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected DesignDisplayPage pageDesignInit() {
 		if(!pageDesignWrap.alreadyInitialized) {
 			_pageDesign(pageDesignWrap);
@@ -111,10 +114,12 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 	public String getPageDesignId() {
 		return pageDesignId;
 	}
-
-	public void setPageDesignId(String pageDesignId) {
-		this.pageDesignId = pageDesignId;
+	public void setPageDesignId(String o) {
+		this.pageDesignId = DesignDisplayPage.staticSetPageDesignId(siteRequest_, o);
 		this.pageDesignIdWrap.alreadyInitialized = true;
+	}
+	public static String staticSetPageDesignId(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected DesignDisplayPage pageDesignIdInit() {
 		if(!pageDesignIdWrap.alreadyInitialized) {
@@ -126,8 +131,20 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		return (DesignDisplayPage)this;
 	}
 
+	public static String staticSolrPageDesignId(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrPageDesignId(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPageDesignId(SiteRequestEnUS siteRequest_, String o) {
+		return DesignDisplayPage.staticSolrStrPageDesignId(siteRequest_, DesignDisplayPage.staticSolrPageDesignId(siteRequest_, DesignDisplayPage.staticSetPageDesignId(siteRequest_, o)));
+	}
+
 	public String solrPageDesignId() {
-		return pageDesignId;
+		return DesignDisplayPage.staticSolrPageDesignId(siteRequest_, pageDesignId);
 	}
 
 	public String strPageDesignId() {
@@ -179,11 +196,14 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		this.reportCardStartYear = reportCardStartYear;
 		this.reportCardStartYearWrap.alreadyInitialized = true;
 	}
-	public DesignDisplayPage setReportCardStartYear(String o) {
-		if(NumberUtils.isParsable(o))
-			this.reportCardStartYear = Integer.parseInt(o);
+	public void setReportCardStartYear(String o) {
+		this.reportCardStartYear = DesignDisplayPage.staticSetReportCardStartYear(siteRequest_, o);
 		this.reportCardStartYearWrap.alreadyInitialized = true;
-		return (DesignDisplayPage)this;
+	}
+	public static Integer staticSetReportCardStartYear(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected DesignDisplayPage reportCardStartYearInit() {
 		if(!reportCardStartYearWrap.alreadyInitialized) {
@@ -195,8 +215,20 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		return (DesignDisplayPage)this;
 	}
 
+	public static Integer staticSolrReportCardStartYear(SiteRequestEnUS siteRequest_, Integer o) {
+		return o;
+	}
+
+	public static String staticSolrStrReportCardStartYear(SiteRequestEnUS siteRequest_, Integer o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqReportCardStartYear(SiteRequestEnUS siteRequest_, String o) {
+		return DesignDisplayPage.staticSolrStrReportCardStartYear(siteRequest_, DesignDisplayPage.staticSolrReportCardStartYear(siteRequest_, DesignDisplayPage.staticSetReportCardStartYear(siteRequest_, o)));
+	}
+
 	public Integer solrReportCardStartYear() {
-		return reportCardStartYear;
+		return DesignDisplayPage.staticSolrReportCardStartYear(siteRequest_, reportCardStartYear);
 	}
 
 	public String strReportCardStartYear() {
@@ -248,11 +280,14 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		this.reportCardEndYear = reportCardEndYear;
 		this.reportCardEndYearWrap.alreadyInitialized = true;
 	}
-	public DesignDisplayPage setReportCardEndYear(String o) {
-		if(NumberUtils.isParsable(o))
-			this.reportCardEndYear = Integer.parseInt(o);
+	public void setReportCardEndYear(String o) {
+		this.reportCardEndYear = DesignDisplayPage.staticSetReportCardEndYear(siteRequest_, o);
 		this.reportCardEndYearWrap.alreadyInitialized = true;
-		return (DesignDisplayPage)this;
+	}
+	public static Integer staticSetReportCardEndYear(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected DesignDisplayPage reportCardEndYearInit() {
 		if(!reportCardEndYearWrap.alreadyInitialized) {
@@ -264,8 +299,20 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		return (DesignDisplayPage)this;
 	}
 
+	public static Integer staticSolrReportCardEndYear(SiteRequestEnUS siteRequest_, Integer o) {
+		return o;
+	}
+
+	public static String staticSolrStrReportCardEndYear(SiteRequestEnUS siteRequest_, Integer o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqReportCardEndYear(SiteRequestEnUS siteRequest_, String o) {
+		return DesignDisplayPage.staticSolrStrReportCardEndYear(siteRequest_, DesignDisplayPage.staticSolrReportCardEndYear(siteRequest_, DesignDisplayPage.staticSetReportCardEndYear(siteRequest_, o)));
+	}
+
 	public Integer solrReportCardEndYear() {
-		return reportCardEndYear;
+		return DesignDisplayPage.staticSolrReportCardEndYear(siteRequest_, reportCardEndYear);
 	}
 
 	public String strReportCardEndYear() {
@@ -316,6 +363,9 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		this.reportCardSearch = reportCardSearch;
 		this.reportCardSearchWrap.alreadyInitialized = true;
 	}
+	public static SearchList<ReportCard> staticSetReportCardSearch(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected DesignDisplayPage reportCardSearchInit() {
 		if(!reportCardSearchWrap.alreadyInitialized) {
 			_reportCardSearch(reportCardSearch);
@@ -352,6 +402,9 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 	public void setReportCardStartYears(List<ReportCard> reportCardStartYears) {
 		this.reportCardStartYears = reportCardStartYears;
 		this.reportCardStartYearsWrap.alreadyInitialized = true;
+	}
+	public static ReportCard staticSetReportCardStartYears(SiteRequestEnUS siteRequest_, String o) {
+		return null;
 	}
 	public DesignDisplayPage addReportCardStartYears(ReportCard...objets) {
 		for(ReportCard o : objets) {
@@ -400,6 +453,9 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		this.reportCardStartYearCurrent = reportCardStartYearCurrent;
 		this.reportCardStartYearCurrentWrap.alreadyInitialized = true;
 	}
+	public static ReportCard staticSetReportCardStartYearCurrent(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected DesignDisplayPage reportCardStartYearCurrentInit() {
 		if(!reportCardStartYearCurrentWrap.alreadyInitialized) {
 			_reportCardStartYearCurrent(reportCardStartYearCurrentWrap);
@@ -440,6 +496,9 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		this.reportCard_ = reportCard_;
 		this.reportCard_Wrap.alreadyInitialized = true;
 	}
+	public static ReportCard staticSetReportCard_(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected DesignDisplayPage reportCard_Init() {
 		if(!reportCard_Wrap.alreadyInitialized) {
 			_reportCard_(reportCard_Wrap);
@@ -477,6 +536,9 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 	public void setReportCards(List<ReportCard> reportCards) {
 		this.reportCards = reportCards;
 		this.reportCardsWrap.alreadyInitialized = true;
+	}
+	public static ReportCard staticSetReportCards(SiteRequestEnUS siteRequest_, String o) {
+		return null;
 	}
 	public DesignDisplayPage addReportCards(ReportCard...objets) {
 		for(ReportCard o : objets) {
@@ -527,6 +589,9 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		this.reportCardStates_ = reportCardStates_;
 		this.reportCardStates_Wrap.alreadyInitialized = true;
 	}
+	public static ReportCard staticSetReportCardStates_(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	public DesignDisplayPage addReportCardStates_(ReportCard...objets) {
 		for(ReportCard o : objets) {
 			addReportCardStates_(o);
@@ -573,6 +638,9 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 	public void setReportCardAgencies_(List<ReportCard> reportCardAgencies_) {
 		this.reportCardAgencies_ = reportCardAgencies_;
 		this.reportCardAgencies_Wrap.alreadyInitialized = true;
+	}
+	public static ReportCard staticSetReportCardAgencies_(SiteRequestEnUS siteRequest_, String o) {
+		return null;
 	}
 	public DesignDisplayPage addReportCardAgencies_(ReportCard...objets) {
 		for(ReportCard o : objets) {
@@ -623,6 +691,9 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		this.reportCardState_ = reportCardState_;
 		this.reportCardState_Wrap.alreadyInitialized = true;
 	}
+	public static ReportCard staticSetReportCardState_(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected DesignDisplayPage reportCardState_Init() {
 		if(!reportCardState_Wrap.alreadyInitialized) {
 			_reportCardState_(reportCardState_Wrap);
@@ -660,6 +731,9 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 	public void setReportCardAgency_(ReportCard reportCardAgency_) {
 		this.reportCardAgency_ = reportCardAgency_;
 		this.reportCardAgency_Wrap.alreadyInitialized = true;
+	}
+	public static ReportCard staticSetReportCardAgency_(SiteRequestEnUS siteRequest_, String o) {
+		return null;
 	}
 	protected DesignDisplayPage reportCardAgency_Init() {
 		if(!reportCardAgency_Wrap.alreadyInitialized) {
@@ -699,6 +773,9 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		this.reportCardReportCard_ = reportCardReportCard_;
 		this.reportCardReportCard_Wrap.alreadyInitialized = true;
 	}
+	public static ReportCard staticSetReportCardReportCard_(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected DesignDisplayPage reportCardReportCard_Init() {
 		if(!reportCardReportCard_Wrap.alreadyInitialized) {
 			_reportCardReportCard_(reportCardReportCard_Wrap);
@@ -737,6 +814,9 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		this.agencySearch = agencySearch;
 		this.agencySearchWrap.alreadyInitialized = true;
 	}
+	public static SearchList<SiteAgency> staticSetAgencySearch(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected DesignDisplayPage agencySearchInit() {
 		if(!agencySearchWrap.alreadyInitialized) {
 			_agencySearch(agencySearch);
@@ -773,6 +853,9 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 	public void setAgency_(SiteAgency agency_) {
 		this.agency_ = agency_;
 		this.agency_Wrap.alreadyInitialized = true;
+	}
+	public static SiteAgency staticSetAgency_(SiteRequestEnUS siteRequest_, String o) {
+		return null;
 	}
 	protected DesignDisplayPage agency_Init() {
 		if(!agency_Wrap.alreadyInitialized) {
@@ -813,11 +896,14 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		this.agencyKey = agencyKey;
 		this.agencyKeyWrap.alreadyInitialized = true;
 	}
-	public DesignDisplayPage setAgencyKey(String o) {
-		if(NumberUtils.isParsable(o))
-			this.agencyKey = Long.parseLong(o);
+	public void setAgencyKey(String o) {
+		this.agencyKey = DesignDisplayPage.staticSetAgencyKey(siteRequest_, o);
 		this.agencyKeyWrap.alreadyInitialized = true;
-		return (DesignDisplayPage)this;
+	}
+	public static Long staticSetAgencyKey(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected DesignDisplayPage agencyKeyInit() {
 		if(!agencyKeyWrap.alreadyInitialized) {
@@ -829,8 +915,20 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		return (DesignDisplayPage)this;
 	}
 
+	public static Long staticSolrAgencyKey(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyKey(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyKey(SiteRequestEnUS siteRequest_, String o) {
+		return DesignDisplayPage.staticSolrStrAgencyKey(siteRequest_, DesignDisplayPage.staticSolrAgencyKey(siteRequest_, DesignDisplayPage.staticSetAgencyKey(siteRequest_, o)));
+	}
+
 	public Long solrAgencyKey() {
-		return agencyKey;
+		return DesignDisplayPage.staticSolrAgencyKey(siteRequest_, agencyKey);
 	}
 
 	public String strAgencyKey() {
@@ -881,6 +979,9 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		this.stateSearch = stateSearch;
 		this.stateSearchWrap.alreadyInitialized = true;
 	}
+	public static SearchList<SiteState> staticSetStateSearch(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected DesignDisplayPage stateSearchInit() {
 		if(!stateSearchWrap.alreadyInitialized) {
 			_stateSearch(stateSearch);
@@ -918,6 +1019,9 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		this.state_ = state_;
 		this.state_Wrap.alreadyInitialized = true;
 	}
+	public static SiteState staticSetState_(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected DesignDisplayPage state_Init() {
 		if(!state_Wrap.alreadyInitialized) {
 			_state_(state_Wrap);
@@ -951,10 +1055,12 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 	public String getEmailToAddress() {
 		return emailToAddress;
 	}
-
-	public void setEmailToAddress(String emailToAddress) {
-		this.emailToAddress = emailToAddress;
+	public void setEmailToAddress(String o) {
+		this.emailToAddress = DesignDisplayPage.staticSetEmailToAddress(siteRequest_, o);
 		this.emailToAddressWrap.alreadyInitialized = true;
+	}
+	public static String staticSetEmailToAddress(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected DesignDisplayPage emailToAddressInit() {
 		if(!emailToAddressWrap.alreadyInitialized) {
@@ -966,8 +1072,20 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		return (DesignDisplayPage)this;
 	}
 
+	public static String staticSolrEmailToAddress(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrEmailToAddress(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqEmailToAddress(SiteRequestEnUS siteRequest_, String o) {
+		return DesignDisplayPage.staticSolrStrEmailToAddress(siteRequest_, DesignDisplayPage.staticSolrEmailToAddress(siteRequest_, DesignDisplayPage.staticSetEmailToAddress(siteRequest_, o)));
+	}
+
 	public String solrEmailToAddress() {
-		return emailToAddress;
+		return DesignDisplayPage.staticSolrEmailToAddress(siteRequest_, emailToAddress);
 	}
 
 	public String strEmailToAddress() {
@@ -1013,10 +1131,12 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 	public String getEmailToName() {
 		return emailToName;
 	}
-
-	public void setEmailToName(String emailToName) {
-		this.emailToName = emailToName;
+	public void setEmailToName(String o) {
+		this.emailToName = DesignDisplayPage.staticSetEmailToName(siteRequest_, o);
 		this.emailToNameWrap.alreadyInitialized = true;
+	}
+	public static String staticSetEmailToName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected DesignDisplayPage emailToNameInit() {
 		if(!emailToNameWrap.alreadyInitialized) {
@@ -1028,8 +1148,20 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		return (DesignDisplayPage)this;
 	}
 
+	public static String staticSolrEmailToName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrEmailToName(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqEmailToName(SiteRequestEnUS siteRequest_, String o) {
+		return DesignDisplayPage.staticSolrStrEmailToName(siteRequest_, DesignDisplayPage.staticSolrEmailToName(siteRequest_, DesignDisplayPage.staticSetEmailToName(siteRequest_, o)));
+	}
+
 	public String solrEmailToName() {
-		return emailToName;
+		return DesignDisplayPage.staticSolrEmailToName(siteRequest_, emailToName);
 	}
 
 	public String strEmailToName() {
@@ -1075,10 +1207,12 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 	public String getEmailMessage() {
 		return emailMessage;
 	}
-
-	public void setEmailMessage(String emailMessage) {
-		this.emailMessage = emailMessage;
+	public void setEmailMessage(String o) {
+		this.emailMessage = DesignDisplayPage.staticSetEmailMessage(siteRequest_, o);
 		this.emailMessageWrap.alreadyInitialized = true;
+	}
+	public static String staticSetEmailMessage(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected DesignDisplayPage emailMessageInit() {
 		if(!emailMessageWrap.alreadyInitialized) {
@@ -1090,8 +1224,20 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		return (DesignDisplayPage)this;
 	}
 
+	public static String staticSolrEmailMessage(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrEmailMessage(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqEmailMessage(SiteRequestEnUS siteRequest_, String o) {
+		return DesignDisplayPage.staticSolrStrEmailMessage(siteRequest_, DesignDisplayPage.staticSolrEmailMessage(siteRequest_, DesignDisplayPage.staticSetEmailMessage(siteRequest_, o)));
+	}
+
 	public String solrEmailMessage() {
-		return emailMessage;
+		return DesignDisplayPage.staticSolrEmailMessage(siteRequest_, emailMessage);
 	}
 
 	public String strEmailMessage() {
@@ -1143,11 +1289,14 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		this.stateKey = stateKey;
 		this.stateKeyWrap.alreadyInitialized = true;
 	}
-	public DesignDisplayPage setStateKey(String o) {
-		if(NumberUtils.isParsable(o))
-			this.stateKey = Long.parseLong(o);
+	public void setStateKey(String o) {
+		this.stateKey = DesignDisplayPage.staticSetStateKey(siteRequest_, o);
 		this.stateKeyWrap.alreadyInitialized = true;
-		return (DesignDisplayPage)this;
+	}
+	public static Long staticSetStateKey(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected DesignDisplayPage stateKeyInit() {
 		if(!stateKeyWrap.alreadyInitialized) {
@@ -1159,8 +1308,20 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		return (DesignDisplayPage)this;
 	}
 
+	public static Long staticSolrStateKey(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrStateKey(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqStateKey(SiteRequestEnUS siteRequest_, String o) {
+		return DesignDisplayPage.staticSolrStrStateKey(siteRequest_, DesignDisplayPage.staticSolrStateKey(siteRequest_, DesignDisplayPage.staticSetStateKey(siteRequest_, o)));
+	}
+
 	public Long solrStateKey() {
-		return stateKey;
+		return DesignDisplayPage.staticSolrStateKey(siteRequest_, stateKey);
 	}
 
 	public String strStateKey() {
@@ -1206,10 +1367,12 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 	public String getStateName() {
 		return stateName;
 	}
-
-	public void setStateName(String stateName) {
-		this.stateName = stateName;
+	public void setStateName(String o) {
+		this.stateName = DesignDisplayPage.staticSetStateName(siteRequest_, o);
 		this.stateNameWrap.alreadyInitialized = true;
+	}
+	public static String staticSetStateName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected DesignDisplayPage stateNameInit() {
 		if(!stateNameWrap.alreadyInitialized) {
@@ -1221,8 +1384,20 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		return (DesignDisplayPage)this;
 	}
 
+	public static String staticSolrStateName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrStateName(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqStateName(SiteRequestEnUS siteRequest_, String o) {
+		return DesignDisplayPage.staticSolrStrStateName(siteRequest_, DesignDisplayPage.staticSolrStateName(siteRequest_, DesignDisplayPage.staticSetStateName(siteRequest_, o)));
+	}
+
 	public String solrStateName() {
-		return stateName;
+		return DesignDisplayPage.staticSolrStateName(siteRequest_, stateName);
 	}
 
 	public String strStateName() {
@@ -1274,6 +1449,9 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		this.stateReportCardSearch = stateReportCardSearch;
 		this.stateReportCardSearchWrap.alreadyInitialized = true;
 	}
+	public static SearchList<ReportCard> staticSetStateReportCardSearch(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected DesignDisplayPage stateReportCardSearchInit() {
 		if(!stateReportCardSearchWrap.alreadyInitialized) {
 			_stateReportCardSearch(stateReportCardSearch);
@@ -1310,6 +1488,9 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 	public void setStateReportCard_(ReportCard stateReportCard_) {
 		this.stateReportCard_ = stateReportCard_;
 		this.stateReportCard_Wrap.alreadyInitialized = true;
+	}
+	public static ReportCard staticSetStateReportCard_(SiteRequestEnUS siteRequest_, String o) {
+		return null;
 	}
 	protected DesignDisplayPage stateReportCard_Init() {
 		if(!stateReportCard_Wrap.alreadyInitialized) {
@@ -1349,6 +1530,9 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		this.htmlPartSearch = htmlPartSearch;
 		this.htmlPartSearchWrap.alreadyInitialized = true;
 	}
+	public static SearchList<HtmlPart> staticSetHtmlPartSearch(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected DesignDisplayPage htmlPartSearchInit() {
 		if(!htmlPartSearchWrap.alreadyInitialized) {
 			_htmlPartSearch(htmlPartSearch);
@@ -1385,6 +1569,9 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 	public void setHtmlPartList(List<HtmlPart> htmlPartList) {
 		this.htmlPartList = htmlPartList;
 		this.htmlPartListWrap.alreadyInitialized = true;
+	}
+	public static HtmlPart staticSetHtmlPartList(SiteRequestEnUS siteRequest_, String o) {
+		return null;
 	}
 	public DesignDisplayPage addHtmlPartList(HtmlPart...objets) {
 		for(HtmlPart o : objets) {
@@ -1591,6 +1778,134 @@ public abstract class DesignDisplayPageGen<DEV> extends DesignDisplayGenPage {
 		switch(var) {
 			default:
 				return super.attributeDesignDisplayGenPage(var, val);
+		}
+	}
+
+	///////////////
+	// staticSet //
+	///////////////
+
+	public static Object staticSetForClass(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		return staticSetDesignDisplayPage(entityVar,  siteRequest_, o);
+	}
+	public static Object staticSetDesignDisplayPage(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		switch(entityVar) {
+		case "pageDesignId":
+			return DesignDisplayPage.staticSetPageDesignId(siteRequest_, o);
+		case "reportCardStartYear":
+			return DesignDisplayPage.staticSetReportCardStartYear(siteRequest_, o);
+		case "reportCardEndYear":
+			return DesignDisplayPage.staticSetReportCardEndYear(siteRequest_, o);
+		case "agencyKey":
+			return DesignDisplayPage.staticSetAgencyKey(siteRequest_, o);
+		case "emailToAddress":
+			return DesignDisplayPage.staticSetEmailToAddress(siteRequest_, o);
+		case "emailToName":
+			return DesignDisplayPage.staticSetEmailToName(siteRequest_, o);
+		case "emailMessage":
+			return DesignDisplayPage.staticSetEmailMessage(siteRequest_, o);
+		case "stateKey":
+			return DesignDisplayPage.staticSetStateKey(siteRequest_, o);
+		case "stateName":
+			return DesignDisplayPage.staticSetStateName(siteRequest_, o);
+			default:
+				return DesignDisplayGenPage.staticSetDesignDisplayGenPage(entityVar,  siteRequest_, o);
+		}
+	}
+
+	////////////////
+	// staticSolr //
+	////////////////
+
+	public static Object staticSolrForClass(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		return staticSolrDesignDisplayPage(entityVar,  siteRequest_, o);
+	}
+	public static Object staticSolrDesignDisplayPage(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		switch(entityVar) {
+		case "pageDesignId":
+			return DesignDisplayPage.staticSolrPageDesignId(siteRequest_, (String)o);
+		case "reportCardStartYear":
+			return DesignDisplayPage.staticSolrReportCardStartYear(siteRequest_, (Integer)o);
+		case "reportCardEndYear":
+			return DesignDisplayPage.staticSolrReportCardEndYear(siteRequest_, (Integer)o);
+		case "agencyKey":
+			return DesignDisplayPage.staticSolrAgencyKey(siteRequest_, (Long)o);
+		case "emailToAddress":
+			return DesignDisplayPage.staticSolrEmailToAddress(siteRequest_, (String)o);
+		case "emailToName":
+			return DesignDisplayPage.staticSolrEmailToName(siteRequest_, (String)o);
+		case "emailMessage":
+			return DesignDisplayPage.staticSolrEmailMessage(siteRequest_, (String)o);
+		case "stateKey":
+			return DesignDisplayPage.staticSolrStateKey(siteRequest_, (Long)o);
+		case "stateName":
+			return DesignDisplayPage.staticSolrStateName(siteRequest_, (String)o);
+			default:
+				return DesignDisplayGenPage.staticSolrDesignDisplayGenPage(entityVar,  siteRequest_, o);
+		}
+	}
+
+	///////////////////
+	// staticSolrStr //
+	///////////////////
+
+	public static String staticSolrStrForClass(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		return staticSolrStrDesignDisplayPage(entityVar,  siteRequest_, o);
+	}
+	public static String staticSolrStrDesignDisplayPage(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		switch(entityVar) {
+		case "pageDesignId":
+			return DesignDisplayPage.staticSolrStrPageDesignId(siteRequest_, (String)o);
+		case "reportCardStartYear":
+			return DesignDisplayPage.staticSolrStrReportCardStartYear(siteRequest_, (Integer)o);
+		case "reportCardEndYear":
+			return DesignDisplayPage.staticSolrStrReportCardEndYear(siteRequest_, (Integer)o);
+		case "agencyKey":
+			return DesignDisplayPage.staticSolrStrAgencyKey(siteRequest_, (Long)o);
+		case "emailToAddress":
+			return DesignDisplayPage.staticSolrStrEmailToAddress(siteRequest_, (String)o);
+		case "emailToName":
+			return DesignDisplayPage.staticSolrStrEmailToName(siteRequest_, (String)o);
+		case "emailMessage":
+			return DesignDisplayPage.staticSolrStrEmailMessage(siteRequest_, (String)o);
+		case "stateKey":
+			return DesignDisplayPage.staticSolrStrStateKey(siteRequest_, (Long)o);
+		case "stateName":
+			return DesignDisplayPage.staticSolrStrStateName(siteRequest_, (String)o);
+			default:
+				return DesignDisplayGenPage.staticSolrStrDesignDisplayGenPage(entityVar,  siteRequest_, o);
+		}
+	}
+
+	//////////////////
+	// staticSolrFq //
+	//////////////////
+
+	public static String staticSolrFqForClass(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		return staticSolrFqDesignDisplayPage(entityVar,  siteRequest_, o);
+	}
+	public static String staticSolrFqDesignDisplayPage(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		switch(entityVar) {
+		case "pageDesignId":
+			return DesignDisplayPage.staticSolrFqPageDesignId(siteRequest_, o);
+		case "reportCardStartYear":
+			return DesignDisplayPage.staticSolrFqReportCardStartYear(siteRequest_, o);
+		case "reportCardEndYear":
+			return DesignDisplayPage.staticSolrFqReportCardEndYear(siteRequest_, o);
+		case "agencyKey":
+			return DesignDisplayPage.staticSolrFqAgencyKey(siteRequest_, o);
+		case "emailToAddress":
+			return DesignDisplayPage.staticSolrFqEmailToAddress(siteRequest_, o);
+		case "emailToName":
+			return DesignDisplayPage.staticSolrFqEmailToName(siteRequest_, o);
+		case "emailMessage":
+			return DesignDisplayPage.staticSolrFqEmailMessage(siteRequest_, o);
+		case "stateKey":
+			return DesignDisplayPage.staticSolrFqStateKey(siteRequest_, o);
+		case "stateName":
+			return DesignDisplayPage.staticSolrFqStateName(siteRequest_, o);
+			default:
+				return DesignDisplayGenPage.staticSolrFqDesignDisplayGenPage(entityVar,  siteRequest_, o);
 		}
 	}
 

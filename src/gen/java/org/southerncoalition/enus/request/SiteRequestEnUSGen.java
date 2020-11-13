@@ -85,6 +85,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		this.siteContext_ = siteContext_;
 		this.siteContext_Wrap.alreadyInitialized = true;
 	}
+	public static SiteContextEnUS staticSetSiteContext_(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected SiteRequestEnUS siteContext_Init() {
 		if(!siteContext_Wrap.alreadyInitialized) {
 			_siteContext_(siteContext_Wrap);
@@ -122,6 +125,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 	public void setSiteConfig_(SiteConfig siteConfig_) {
 		this.siteConfig_ = siteConfig_;
 		this.siteConfig_Wrap.alreadyInitialized = true;
+	}
+	public static SiteConfig staticSetSiteConfig_(SiteRequestEnUS siteRequest_, String o) {
+		return null;
 	}
 	protected SiteRequestEnUS siteConfig_Init() {
 		if(!siteConfig_Wrap.alreadyInitialized) {
@@ -161,6 +167,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		this.siteRequest_ = siteRequest_;
 		this.siteRequest_Wrap.alreadyInitialized = true;
 	}
+	public static SiteRequestEnUS staticSetSiteRequest_(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected SiteRequestEnUS siteRequest_Init() {
 		if(!siteRequest_Wrap.alreadyInitialized) {
 			_siteRequest_(siteRequest_Wrap);
@@ -198,6 +207,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 	public void setApiRequest_(ApiRequest apiRequest_) {
 		this.apiRequest_ = apiRequest_;
 		this.apiRequest_Wrap.alreadyInitialized = true;
+	}
+	public static ApiRequest staticSetApiRequest_(SiteRequestEnUS siteRequest_, String o) {
+		return null;
 	}
 	protected SiteRequestEnUS apiRequest_Init() {
 		if(!apiRequest_Wrap.alreadyInitialized) {
@@ -237,6 +249,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		this.vertx = vertx;
 		this.vertxWrap.alreadyInitialized = true;
 	}
+	public static Vertx staticSetVertx(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected SiteRequestEnUS vertxInit() {
 		if(!vertxWrap.alreadyInitialized) {
 			_vertx(vertxWrap);
@@ -274,6 +289,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 	public void setJsonObject(JsonObject jsonObject) {
 		this.jsonObject = jsonObject;
 		this.jsonObjectWrap.alreadyInitialized = true;
+	}
+	public static JsonObject staticSetJsonObject(SiteRequestEnUS siteRequest_, String o) {
+		return null;
 	}
 	protected SiteRequestEnUS jsonObjectInit() {
 		if(!jsonObjectWrap.alreadyInitialized) {
@@ -313,6 +331,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		this.solrQuery = solrQuery;
 		this.solrQueryWrap.alreadyInitialized = true;
 	}
+	public static SolrQuery staticSetSolrQuery(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected SiteRequestEnUS solrQueryInit() {
 		if(!solrQueryWrap.alreadyInitialized) {
 			_solrQuery(solrQueryWrap);
@@ -350,6 +371,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 	public void setOperationRequest(OperationRequest operationRequest) {
 		this.operationRequest = operationRequest;
 		this.operationRequestWrap.alreadyInitialized = true;
+	}
+	public static OperationRequest staticSetOperationRequest(SiteRequestEnUS siteRequest_, String o) {
+		return null;
 	}
 	protected SiteRequestEnUS operationRequestInit() {
 		if(!operationRequestWrap.alreadyInitialized) {
@@ -389,6 +413,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		this.queryResponse = queryResponse;
 		this.queryResponseWrap.alreadyInitialized = true;
 	}
+	public static QueryResponse staticSetQueryResponse(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected SiteRequestEnUS queryResponseInit() {
 		if(!queryResponseWrap.alreadyInitialized) {
 			_queryResponse(queryResponseWrap);
@@ -427,6 +454,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		this.searchResults = searchResults;
 		this.searchResultsWrap.alreadyInitialized = true;
 	}
+	public static SolrDocumentList staticSetSearchResults(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected SiteRequestEnUS searchResultsInit() {
 		if(!searchResultsWrap.alreadyInitialized) {
 			_searchResults(searchResultsWrap);
@@ -464,6 +494,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 	public void setW(AllWriter w) {
 		this.w = w;
 		this.wWrap.alreadyInitialized = true;
+	}
+	public static AllWriter staticSetW(SiteRequestEnUS siteRequest_, String o) {
+		return null;
 	}
 	protected SiteRequestEnUS wInit() {
 		if(!wWrap.alreadyInitialized) {
@@ -505,6 +538,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		this.userVertx = userVertx;
 		this.userVertxWrap.alreadyInitialized = true;
 	}
+	public static JsonObject staticSetUserVertx(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected SiteRequestEnUS userVertxInit() {
 		if(!userVertxWrap.alreadyInitialized) {
 			_userVertx(userVertxWrap);
@@ -543,6 +579,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		this.jsonPrincipal = jsonPrincipal;
 		this.jsonPrincipalWrap.alreadyInitialized = true;
 	}
+	public static JsonObject staticSetJsonPrincipal(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected SiteRequestEnUS jsonPrincipalInit() {
 		if(!jsonPrincipalWrap.alreadyInitialized) {
 			_jsonPrincipal(jsonPrincipalWrap);
@@ -576,10 +615,12 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 	public String getUserId() {
 		return userId;
 	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
+	public void setUserId(String o) {
+		this.userId = SiteRequestEnUS.staticSetUserId(siteRequest_, o);
 		this.userIdWrap.alreadyInitialized = true;
+	}
+	public static String staticSetUserId(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteRequestEnUS userIdInit() {
 		if(!userIdWrap.alreadyInitialized) {
@@ -591,8 +632,20 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		return (SiteRequestEnUS)this;
 	}
 
+	public static String staticSolrUserId(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrUserId(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqUserId(SiteRequestEnUS siteRequest_, String o) {
+		return SiteRequestEnUS.staticSolrStrUserId(siteRequest_, SiteRequestEnUS.staticSolrUserId(siteRequest_, SiteRequestEnUS.staticSetUserId(siteRequest_, o)));
+	}
+
 	public String solrUserId() {
-		return userId;
+		return SiteRequestEnUS.staticSolrUserId(siteRequest_, userId);
 	}
 
 	public String strUserId() {
@@ -644,11 +697,14 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		this.userKey = userKey;
 		this.userKeyWrap.alreadyInitialized = true;
 	}
-	public SiteRequestEnUS setUserKey(String o) {
-		if(NumberUtils.isParsable(o))
-			this.userKey = Long.parseLong(o);
+	public void setUserKey(String o) {
+		this.userKey = SiteRequestEnUS.staticSetUserKey(siteRequest_, o);
 		this.userKeyWrap.alreadyInitialized = true;
-		return (SiteRequestEnUS)this;
+	}
+	public static Long staticSetUserKey(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected SiteRequestEnUS userKeyInit() {
 		if(!userKeyWrap.alreadyInitialized) {
@@ -660,8 +716,20 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		return (SiteRequestEnUS)this;
 	}
 
+	public static Long staticSolrUserKey(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrUserKey(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqUserKey(SiteRequestEnUS siteRequest_, String o) {
+		return SiteRequestEnUS.staticSolrStrUserKey(siteRequest_, SiteRequestEnUS.staticSolrUserKey(siteRequest_, SiteRequestEnUS.staticSetUserKey(siteRequest_, o)));
+	}
+
 	public Long solrUserKey() {
-		return userKey;
+		return SiteRequestEnUS.staticSolrUserKey(siteRequest_, userKey);
 	}
 
 	public String strUserKey() {
@@ -707,10 +775,12 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 	public String getSessionId() {
 		return sessionId;
 	}
-
-	public void setSessionId(String sessionId) {
-		this.sessionId = sessionId;
+	public void setSessionId(String o) {
+		this.sessionId = SiteRequestEnUS.staticSetSessionId(siteRequest_, o);
 		this.sessionIdWrap.alreadyInitialized = true;
+	}
+	public static String staticSetSessionId(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteRequestEnUS sessionIdInit() {
 		if(!sessionIdWrap.alreadyInitialized) {
@@ -722,8 +792,20 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		return (SiteRequestEnUS)this;
 	}
 
+	public static String staticSolrSessionId(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrSessionId(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqSessionId(SiteRequestEnUS siteRequest_, String o) {
+		return SiteRequestEnUS.staticSolrStrSessionId(siteRequest_, SiteRequestEnUS.staticSolrSessionId(siteRequest_, SiteRequestEnUS.staticSetSessionId(siteRequest_, o)));
+	}
+
 	public String solrSessionId() {
-		return sessionId;
+		return SiteRequestEnUS.staticSolrSessionId(siteRequest_, sessionId);
 	}
 
 	public String strSessionId() {
@@ -769,10 +851,12 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 	public String getSessionIdBefore() {
 		return sessionIdBefore;
 	}
-
-	public void setSessionIdBefore(String sessionIdBefore) {
-		this.sessionIdBefore = sessionIdBefore;
+	public void setSessionIdBefore(String o) {
+		this.sessionIdBefore = SiteRequestEnUS.staticSetSessionIdBefore(siteRequest_, o);
 		this.sessionIdBeforeWrap.alreadyInitialized = true;
+	}
+	public static String staticSetSessionIdBefore(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteRequestEnUS sessionIdBeforeInit() {
 		if(!sessionIdBeforeWrap.alreadyInitialized) {
@@ -784,8 +868,20 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		return (SiteRequestEnUS)this;
 	}
 
+	public static String staticSolrSessionIdBefore(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrSessionIdBefore(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqSessionIdBefore(SiteRequestEnUS siteRequest_, String o) {
+		return SiteRequestEnUS.staticSolrStrSessionIdBefore(siteRequest_, SiteRequestEnUS.staticSolrSessionIdBefore(siteRequest_, SiteRequestEnUS.staticSetSessionIdBefore(siteRequest_, o)));
+	}
+
 	public String solrSessionIdBefore() {
-		return sessionIdBefore;
+		return SiteRequestEnUS.staticSolrSessionIdBefore(siteRequest_, sessionIdBefore);
 	}
 
 	public String strSessionIdBefore() {
@@ -831,10 +927,12 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 	public String getUserName() {
 		return userName;
 	}
-
-	public void setUserName(String userName) {
-		this.userName = userName;
+	public void setUserName(String o) {
+		this.userName = SiteRequestEnUS.staticSetUserName(siteRequest_, o);
 		this.userNameWrap.alreadyInitialized = true;
+	}
+	public static String staticSetUserName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteRequestEnUS userNameInit() {
 		if(!userNameWrap.alreadyInitialized) {
@@ -846,8 +944,20 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		return (SiteRequestEnUS)this;
 	}
 
+	public static String staticSolrUserName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrUserName(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqUserName(SiteRequestEnUS siteRequest_, String o) {
+		return SiteRequestEnUS.staticSolrStrUserName(siteRequest_, SiteRequestEnUS.staticSolrUserName(siteRequest_, SiteRequestEnUS.staticSetUserName(siteRequest_, o)));
+	}
+
 	public String solrUserName() {
-		return userName;
+		return SiteRequestEnUS.staticSolrUserName(siteRequest_, userName);
 	}
 
 	public String strUserName() {
@@ -893,10 +1003,12 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 	public String getUserLastName() {
 		return userLastName;
 	}
-
-	public void setUserLastName(String userLastName) {
-		this.userLastName = userLastName;
+	public void setUserLastName(String o) {
+		this.userLastName = SiteRequestEnUS.staticSetUserLastName(siteRequest_, o);
 		this.userLastNameWrap.alreadyInitialized = true;
+	}
+	public static String staticSetUserLastName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteRequestEnUS userLastNameInit() {
 		if(!userLastNameWrap.alreadyInitialized) {
@@ -908,8 +1020,20 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		return (SiteRequestEnUS)this;
 	}
 
+	public static String staticSolrUserLastName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrUserLastName(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqUserLastName(SiteRequestEnUS siteRequest_, String o) {
+		return SiteRequestEnUS.staticSolrStrUserLastName(siteRequest_, SiteRequestEnUS.staticSolrUserLastName(siteRequest_, SiteRequestEnUS.staticSetUserLastName(siteRequest_, o)));
+	}
+
 	public String solrUserLastName() {
-		return userLastName;
+		return SiteRequestEnUS.staticSolrUserLastName(siteRequest_, userLastName);
 	}
 
 	public String strUserLastName() {
@@ -955,10 +1079,12 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 	public String getUserFirstName() {
 		return userFirstName;
 	}
-
-	public void setUserFirstName(String userFirstName) {
-		this.userFirstName = userFirstName;
+	public void setUserFirstName(String o) {
+		this.userFirstName = SiteRequestEnUS.staticSetUserFirstName(siteRequest_, o);
 		this.userFirstNameWrap.alreadyInitialized = true;
+	}
+	public static String staticSetUserFirstName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteRequestEnUS userFirstNameInit() {
 		if(!userFirstNameWrap.alreadyInitialized) {
@@ -970,8 +1096,20 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		return (SiteRequestEnUS)this;
 	}
 
+	public static String staticSolrUserFirstName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrUserFirstName(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqUserFirstName(SiteRequestEnUS siteRequest_, String o) {
+		return SiteRequestEnUS.staticSolrStrUserFirstName(siteRequest_, SiteRequestEnUS.staticSolrUserFirstName(siteRequest_, SiteRequestEnUS.staticSetUserFirstName(siteRequest_, o)));
+	}
+
 	public String solrUserFirstName() {
-		return userFirstName;
+		return SiteRequestEnUS.staticSolrUserFirstName(siteRequest_, userFirstName);
 	}
 
 	public String strUserFirstName() {
@@ -1017,10 +1155,12 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 	public String getUserFullName() {
 		return userFullName;
 	}
-
-	public void setUserFullName(String userFullName) {
-		this.userFullName = userFullName;
+	public void setUserFullName(String o) {
+		this.userFullName = SiteRequestEnUS.staticSetUserFullName(siteRequest_, o);
 		this.userFullNameWrap.alreadyInitialized = true;
+	}
+	public static String staticSetUserFullName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteRequestEnUS userFullNameInit() {
 		if(!userFullNameWrap.alreadyInitialized) {
@@ -1032,8 +1172,20 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		return (SiteRequestEnUS)this;
 	}
 
+	public static String staticSolrUserFullName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrUserFullName(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqUserFullName(SiteRequestEnUS siteRequest_, String o) {
+		return SiteRequestEnUS.staticSolrStrUserFullName(siteRequest_, SiteRequestEnUS.staticSolrUserFullName(siteRequest_, SiteRequestEnUS.staticSetUserFullName(siteRequest_, o)));
+	}
+
 	public String solrUserFullName() {
-		return userFullName;
+		return SiteRequestEnUS.staticSolrUserFullName(siteRequest_, userFullName);
 	}
 
 	public String strUserFullName() {
@@ -1084,6 +1236,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		this.userRealmRoles = userRealmRoles;
 		this.userRealmRolesWrap.alreadyInitialized = true;
 	}
+	public static String staticSetUserRealmRoles(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	public SiteRequestEnUS addUserRealmRoles(String...objets) {
 		for(String o : objets) {
 			addUserRealmRoles(o);
@@ -1095,13 +1250,12 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 			this.userRealmRoles.add(o);
 		return (SiteRequestEnUS)this;
 	}
-	public SiteRequestEnUS setUserRealmRoles(JsonArray objets) {
+	public void setUserRealmRoles(JsonArray objets) {
 		userRealmRoles.clear();
 		for(int i = 0; i < objets.size(); i++) {
 			String o = objets.getString(i);
 			addUserRealmRoles(o);
 		}
-		return (SiteRequestEnUS)this;
 	}
 	protected SiteRequestEnUS userRealmRolesInit() {
 		if(!userRealmRolesWrap.alreadyInitialized) {
@@ -1111,8 +1265,24 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		return (SiteRequestEnUS)this;
 	}
 
+	public static String staticSolrUserRealmRoles(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrUserRealmRoles(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqUserRealmRoles(SiteRequestEnUS siteRequest_, String o) {
+		return SiteRequestEnUS.staticSolrStrUserRealmRoles(siteRequest_, SiteRequestEnUS.staticSolrUserRealmRoles(siteRequest_, SiteRequestEnUS.staticSetUserRealmRoles(siteRequest_, o)));
+	}
+
 	public List<String> solrUserRealmRoles() {
-		return userRealmRoles;
+		List<String> l = new ArrayList<String>();
+		for(String o : userRealmRoles) {
+			l.add(SiteRequestEnUS.staticSolrUserRealmRoles(siteRequest_, o));
+		}
+		return l;
 	}
 
 	public String strUserRealmRoles() {
@@ -1163,6 +1333,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		this.userResource = userResource;
 		this.userResourceWrap.alreadyInitialized = true;
 	}
+	public static JsonObject staticSetUserResource(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected SiteRequestEnUS userResourceInit() {
 		if(!userResourceWrap.alreadyInitialized) {
 			_userResource(userResourceWrap);
@@ -1201,6 +1374,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		this.userResourceRoles = userResourceRoles;
 		this.userResourceRolesWrap.alreadyInitialized = true;
 	}
+	public static String staticSetUserResourceRoles(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	public SiteRequestEnUS addUserResourceRoles(String...objets) {
 		for(String o : objets) {
 			addUserResourceRoles(o);
@@ -1212,13 +1388,12 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 			this.userResourceRoles.add(o);
 		return (SiteRequestEnUS)this;
 	}
-	public SiteRequestEnUS setUserResourceRoles(JsonArray objets) {
+	public void setUserResourceRoles(JsonArray objets) {
 		userResourceRoles.clear();
 		for(int i = 0; i < objets.size(); i++) {
 			String o = objets.getString(i);
 			addUserResourceRoles(o);
 		}
-		return (SiteRequestEnUS)this;
 	}
 	protected SiteRequestEnUS userResourceRolesInit() {
 		if(!userResourceRolesWrap.alreadyInitialized) {
@@ -1228,8 +1403,24 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		return (SiteRequestEnUS)this;
 	}
 
+	public static String staticSolrUserResourceRoles(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrUserResourceRoles(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqUserResourceRoles(SiteRequestEnUS siteRequest_, String o) {
+		return SiteRequestEnUS.staticSolrStrUserResourceRoles(siteRequest_, SiteRequestEnUS.staticSolrUserResourceRoles(siteRequest_, SiteRequestEnUS.staticSetUserResourceRoles(siteRequest_, o)));
+	}
+
 	public List<String> solrUserResourceRoles() {
-		return userResourceRoles;
+		List<String> l = new ArrayList<String>();
+		for(String o : userResourceRoles) {
+			l.add(SiteRequestEnUS.staticSolrUserResourceRoles(siteRequest_, o));
+		}
+		return l;
 	}
 
 	public String strUserResourceRoles() {
@@ -1280,6 +1471,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		this.siteUser = siteUser;
 		this.siteUserWrap.alreadyInitialized = true;
 	}
+	public static SiteUser staticSetSiteUser(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected SiteRequestEnUS siteUserInit() {
 		if(!siteUserWrap.alreadyInitialized) {
 			_siteUser(siteUserWrap);
@@ -1320,6 +1514,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		this.xmlStack = xmlStack;
 		this.xmlStackWrap.alreadyInitialized = true;
 	}
+	public static Stack<String> staticSetXmlStack(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected SiteRequestEnUS xmlStackInit() {
 		if(!xmlStackWrap.alreadyInitialized) {
 			_xmlStack(xmlStack);
@@ -1355,6 +1552,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 	public void setSolrDocument(SolrDocument solrDocument) {
 		this.solrDocument = solrDocument;
 		this.solrDocumentWrap.alreadyInitialized = true;
+	}
+	public static SolrDocument staticSetSolrDocument(SiteRequestEnUS siteRequest_, String o) {
+		return null;
 	}
 	protected SiteRequestEnUS solrDocumentInit() {
 		if(!solrDocumentWrap.alreadyInitialized) {
@@ -1394,10 +1594,12 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		this.pageAdmin = pageAdmin;
 		this.pageAdminWrap.alreadyInitialized = true;
 	}
-	public SiteRequestEnUS setPageAdmin(String o) {
-		this.pageAdmin = Boolean.parseBoolean(o);
+	public void setPageAdmin(String o) {
+		this.pageAdmin = SiteRequestEnUS.staticSetPageAdmin(siteRequest_, o);
 		this.pageAdminWrap.alreadyInitialized = true;
-		return (SiteRequestEnUS)this;
+	}
+	public static Boolean staticSetPageAdmin(SiteRequestEnUS siteRequest_, String o) {
+		return Boolean.parseBoolean(o);
 	}
 	protected SiteRequestEnUS pageAdminInit() {
 		if(!pageAdminWrap.alreadyInitialized) {
@@ -1409,8 +1611,20 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		return (SiteRequestEnUS)this;
 	}
 
+	public static Boolean staticSolrPageAdmin(SiteRequestEnUS siteRequest_, Boolean o) {
+		return o;
+	}
+
+	public static String staticSolrStrPageAdmin(SiteRequestEnUS siteRequest_, Boolean o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqPageAdmin(SiteRequestEnUS siteRequest_, String o) {
+		return SiteRequestEnUS.staticSolrStrPageAdmin(siteRequest_, SiteRequestEnUS.staticSolrPageAdmin(siteRequest_, SiteRequestEnUS.staticSetPageAdmin(siteRequest_, o)));
+	}
+
 	public Boolean solrPageAdmin() {
-		return pageAdmin;
+		return SiteRequestEnUS.staticSolrPageAdmin(siteRequest_, pageAdmin);
 	}
 
 	public String strPageAdmin() {
@@ -1462,11 +1676,14 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		this.requestPk = requestPk;
 		this.requestPkWrap.alreadyInitialized = true;
 	}
-	public SiteRequestEnUS setRequestPk(String o) {
-		if(NumberUtils.isParsable(o))
-			this.requestPk = Long.parseLong(o);
+	public void setRequestPk(String o) {
+		this.requestPk = SiteRequestEnUS.staticSetRequestPk(siteRequest_, o);
 		this.requestPkWrap.alreadyInitialized = true;
-		return (SiteRequestEnUS)this;
+	}
+	public static Long staticSetRequestPk(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected SiteRequestEnUS requestPkInit() {
 		if(!requestPkWrap.alreadyInitialized) {
@@ -1478,8 +1695,20 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		return (SiteRequestEnUS)this;
 	}
 
+	public static Long staticSolrRequestPk(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrRequestPk(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqRequestPk(SiteRequestEnUS siteRequest_, String o) {
+		return SiteRequestEnUS.staticSolrStrRequestPk(siteRequest_, SiteRequestEnUS.staticSolrRequestPk(siteRequest_, SiteRequestEnUS.staticSetRequestPk(siteRequest_, o)));
+	}
+
 	public Long solrRequestPk() {
-		return requestPk;
+		return SiteRequestEnUS.staticSolrRequestPk(siteRequest_, requestPk);
 	}
 
 	public String strRequestPk() {
@@ -1525,10 +1754,12 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 	public String getRequestUri() {
 		return requestUri;
 	}
-
-	public void setRequestUri(String requestUri) {
-		this.requestUri = requestUri;
+	public void setRequestUri(String o) {
+		this.requestUri = SiteRequestEnUS.staticSetRequestUri(siteRequest_, o);
 		this.requestUriWrap.alreadyInitialized = true;
+	}
+	public static String staticSetRequestUri(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteRequestEnUS requestUriInit() {
 		if(!requestUriWrap.alreadyInitialized) {
@@ -1540,8 +1771,20 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		return (SiteRequestEnUS)this;
 	}
 
+	public static String staticSolrRequestUri(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrRequestUri(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqRequestUri(SiteRequestEnUS siteRequest_, String o) {
+		return SiteRequestEnUS.staticSolrStrRequestUri(siteRequest_, SiteRequestEnUS.staticSolrRequestUri(siteRequest_, SiteRequestEnUS.staticSetRequestUri(siteRequest_, o)));
+	}
+
 	public String solrRequestUri() {
-		return requestUri;
+		return SiteRequestEnUS.staticSolrRequestUri(siteRequest_, requestUri);
 	}
 
 	public String strRequestUri() {
@@ -1587,10 +1830,12 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 	public String getRequestMethod() {
 		return requestMethod;
 	}
-
-	public void setRequestMethod(String requestMethod) {
-		this.requestMethod = requestMethod;
+	public void setRequestMethod(String o) {
+		this.requestMethod = SiteRequestEnUS.staticSetRequestMethod(siteRequest_, o);
 		this.requestMethodWrap.alreadyInitialized = true;
+	}
+	public static String staticSetRequestMethod(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteRequestEnUS requestMethodInit() {
 		if(!requestMethodWrap.alreadyInitialized) {
@@ -1602,8 +1847,20 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		return (SiteRequestEnUS)this;
 	}
 
+	public static String staticSolrRequestMethod(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrRequestMethod(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqRequestMethod(SiteRequestEnUS siteRequest_, String o) {
+		return SiteRequestEnUS.staticSolrStrRequestMethod(siteRequest_, SiteRequestEnUS.staticSolrRequestMethod(siteRequest_, SiteRequestEnUS.staticSetRequestMethod(siteRequest_, o)));
+	}
+
 	public String solrRequestMethod() {
-		return requestMethod;
+		return SiteRequestEnUS.staticSolrRequestMethod(siteRequest_, requestMethod);
 	}
 
 	public String strRequestMethod() {
@@ -1654,6 +1911,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		this.tx = tx;
 		this.txWrap.alreadyInitialized = true;
 	}
+	public static Transaction staticSetTx(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected SiteRequestEnUS txInit() {
 		if(!txWrap.alreadyInitialized) {
 			_tx(txWrap);
@@ -1691,6 +1951,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 	public void setSqlConnection(SqlConnection sqlConnection) {
 		this.sqlConnection = sqlConnection;
 		this.sqlConnectionWrap.alreadyInitialized = true;
+	}
+	public static SqlConnection staticSetSqlConnection(SiteRequestEnUS siteRequest_, String o) {
+		return null;
 	}
 	protected SiteRequestEnUS sqlConnectionInit() {
 		if(!sqlConnectionWrap.alreadyInitialized) {
@@ -1730,6 +1993,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 		this.requestHeaders = requestHeaders;
 		this.requestHeadersWrap.alreadyInitialized = true;
 	}
+	public static CaseInsensitiveHeaders staticSetRequestHeaders(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
 	protected SiteRequestEnUS requestHeadersInit() {
 		if(!requestHeadersWrap.alreadyInitialized) {
 			_requestHeaders(requestHeadersWrap);
@@ -1767,6 +2033,9 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 	public void setRequestVars(Map<String, String> requestVars) {
 		this.requestVars = requestVars;
 		this.requestVarsWrap.alreadyInitialized = true;
+	}
+	public static Map<String, String> staticSetRequestVars(SiteRequestEnUS siteRequest_, String o) {
+		return null;
 	}
 	protected SiteRequestEnUS requestVarsInit() {
 		if(!requestVarsWrap.alreadyInitialized) {
@@ -1967,6 +2236,174 @@ public abstract class SiteRequestEnUSGen<DEV> extends Object {
 	public Object attributeSiteRequestEnUS(String var, Object val) {
 		SiteRequestEnUS oSiteRequestEnUS = (SiteRequestEnUS)this;
 		switch(var) {
+			default:
+				return null;
+		}
+	}
+
+	///////////////
+	// staticSet //
+	///////////////
+
+	public static Object staticSetForClass(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		return staticSetSiteRequestEnUS(entityVar,  siteRequest_, o);
+	}
+	public static Object staticSetSiteRequestEnUS(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		switch(entityVar) {
+		case "userId":
+			return SiteRequestEnUS.staticSetUserId(siteRequest_, o);
+		case "userKey":
+			return SiteRequestEnUS.staticSetUserKey(siteRequest_, o);
+		case "sessionId":
+			return SiteRequestEnUS.staticSetSessionId(siteRequest_, o);
+		case "sessionIdBefore":
+			return SiteRequestEnUS.staticSetSessionIdBefore(siteRequest_, o);
+		case "userName":
+			return SiteRequestEnUS.staticSetUserName(siteRequest_, o);
+		case "userLastName":
+			return SiteRequestEnUS.staticSetUserLastName(siteRequest_, o);
+		case "userFirstName":
+			return SiteRequestEnUS.staticSetUserFirstName(siteRequest_, o);
+		case "userFullName":
+			return SiteRequestEnUS.staticSetUserFullName(siteRequest_, o);
+		case "userRealmRoles":
+			return SiteRequestEnUS.staticSetUserRealmRoles(siteRequest_, o);
+		case "userResourceRoles":
+			return SiteRequestEnUS.staticSetUserResourceRoles(siteRequest_, o);
+		case "pageAdmin":
+			return SiteRequestEnUS.staticSetPageAdmin(siteRequest_, o);
+		case "requestPk":
+			return SiteRequestEnUS.staticSetRequestPk(siteRequest_, o);
+		case "requestUri":
+			return SiteRequestEnUS.staticSetRequestUri(siteRequest_, o);
+		case "requestMethod":
+			return SiteRequestEnUS.staticSetRequestMethod(siteRequest_, o);
+			default:
+				return null;
+		}
+	}
+
+	////////////////
+	// staticSolr //
+	////////////////
+
+	public static Object staticSolrForClass(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		return staticSolrSiteRequestEnUS(entityVar,  siteRequest_, o);
+	}
+	public static Object staticSolrSiteRequestEnUS(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		switch(entityVar) {
+		case "userId":
+			return SiteRequestEnUS.staticSolrUserId(siteRequest_, (String)o);
+		case "userKey":
+			return SiteRequestEnUS.staticSolrUserKey(siteRequest_, (Long)o);
+		case "sessionId":
+			return SiteRequestEnUS.staticSolrSessionId(siteRequest_, (String)o);
+		case "sessionIdBefore":
+			return SiteRequestEnUS.staticSolrSessionIdBefore(siteRequest_, (String)o);
+		case "userName":
+			return SiteRequestEnUS.staticSolrUserName(siteRequest_, (String)o);
+		case "userLastName":
+			return SiteRequestEnUS.staticSolrUserLastName(siteRequest_, (String)o);
+		case "userFirstName":
+			return SiteRequestEnUS.staticSolrUserFirstName(siteRequest_, (String)o);
+		case "userFullName":
+			return SiteRequestEnUS.staticSolrUserFullName(siteRequest_, (String)o);
+		case "userRealmRoles":
+			return SiteRequestEnUS.staticSolrUserRealmRoles(siteRequest_, (String)o);
+		case "userResourceRoles":
+			return SiteRequestEnUS.staticSolrUserResourceRoles(siteRequest_, (String)o);
+		case "pageAdmin":
+			return SiteRequestEnUS.staticSolrPageAdmin(siteRequest_, (Boolean)o);
+		case "requestPk":
+			return SiteRequestEnUS.staticSolrRequestPk(siteRequest_, (Long)o);
+		case "requestUri":
+			return SiteRequestEnUS.staticSolrRequestUri(siteRequest_, (String)o);
+		case "requestMethod":
+			return SiteRequestEnUS.staticSolrRequestMethod(siteRequest_, (String)o);
+			default:
+				return null;
+		}
+	}
+
+	///////////////////
+	// staticSolrStr //
+	///////////////////
+
+	public static String staticSolrStrForClass(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		return staticSolrStrSiteRequestEnUS(entityVar,  siteRequest_, o);
+	}
+	public static String staticSolrStrSiteRequestEnUS(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		switch(entityVar) {
+		case "userId":
+			return SiteRequestEnUS.staticSolrStrUserId(siteRequest_, (String)o);
+		case "userKey":
+			return SiteRequestEnUS.staticSolrStrUserKey(siteRequest_, (Long)o);
+		case "sessionId":
+			return SiteRequestEnUS.staticSolrStrSessionId(siteRequest_, (String)o);
+		case "sessionIdBefore":
+			return SiteRequestEnUS.staticSolrStrSessionIdBefore(siteRequest_, (String)o);
+		case "userName":
+			return SiteRequestEnUS.staticSolrStrUserName(siteRequest_, (String)o);
+		case "userLastName":
+			return SiteRequestEnUS.staticSolrStrUserLastName(siteRequest_, (String)o);
+		case "userFirstName":
+			return SiteRequestEnUS.staticSolrStrUserFirstName(siteRequest_, (String)o);
+		case "userFullName":
+			return SiteRequestEnUS.staticSolrStrUserFullName(siteRequest_, (String)o);
+		case "userRealmRoles":
+			return SiteRequestEnUS.staticSolrStrUserRealmRoles(siteRequest_, (String)o);
+		case "userResourceRoles":
+			return SiteRequestEnUS.staticSolrStrUserResourceRoles(siteRequest_, (String)o);
+		case "pageAdmin":
+			return SiteRequestEnUS.staticSolrStrPageAdmin(siteRequest_, (Boolean)o);
+		case "requestPk":
+			return SiteRequestEnUS.staticSolrStrRequestPk(siteRequest_, (Long)o);
+		case "requestUri":
+			return SiteRequestEnUS.staticSolrStrRequestUri(siteRequest_, (String)o);
+		case "requestMethod":
+			return SiteRequestEnUS.staticSolrStrRequestMethod(siteRequest_, (String)o);
+			default:
+				return null;
+		}
+	}
+
+	//////////////////
+	// staticSolrFq //
+	//////////////////
+
+	public static String staticSolrFqForClass(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		return staticSolrFqSiteRequestEnUS(entityVar,  siteRequest_, o);
+	}
+	public static String staticSolrFqSiteRequestEnUS(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		switch(entityVar) {
+		case "userId":
+			return SiteRequestEnUS.staticSolrFqUserId(siteRequest_, o);
+		case "userKey":
+			return SiteRequestEnUS.staticSolrFqUserKey(siteRequest_, o);
+		case "sessionId":
+			return SiteRequestEnUS.staticSolrFqSessionId(siteRequest_, o);
+		case "sessionIdBefore":
+			return SiteRequestEnUS.staticSolrFqSessionIdBefore(siteRequest_, o);
+		case "userName":
+			return SiteRequestEnUS.staticSolrFqUserName(siteRequest_, o);
+		case "userLastName":
+			return SiteRequestEnUS.staticSolrFqUserLastName(siteRequest_, o);
+		case "userFirstName":
+			return SiteRequestEnUS.staticSolrFqUserFirstName(siteRequest_, o);
+		case "userFullName":
+			return SiteRequestEnUS.staticSolrFqUserFullName(siteRequest_, o);
+		case "userRealmRoles":
+			return SiteRequestEnUS.staticSolrFqUserRealmRoles(siteRequest_, o);
+		case "userResourceRoles":
+			return SiteRequestEnUS.staticSolrFqUserResourceRoles(siteRequest_, o);
+		case "pageAdmin":
+			return SiteRequestEnUS.staticSolrFqPageAdmin(siteRequest_, o);
+		case "requestPk":
+			return SiteRequestEnUS.staticSolrFqRequestPk(siteRequest_, o);
+		case "requestUri":
+			return SiteRequestEnUS.staticSolrFqRequestUri(siteRequest_, o);
+		case "requestMethod":
+			return SiteRequestEnUS.staticSolrFqRequestMethod(siteRequest_, o);
 			default:
 				return null;
 		}

@@ -393,11 +393,6 @@ public class DesignEmailGenPage extends DesignEmailGenPageGen<PageLayout> {
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmHtmlPartKeys("PUTCopy");
 		} g("div");
-		{ e("div").a("class", "w3-cell-row ").f();
-			o.htmInheritPk("PUTCopy");
-			o.htmUserId("PUTCopy");
-			o.htmUserKey("PUTCopy");
-		} g("div");
 	}
 
 	public void htmlFormPATCHPageDesign(PageDesign o) {
@@ -421,11 +416,6 @@ public class DesignEmailGenPage extends DesignEmailGenPageGen<PageLayout> {
 		} g("div");
 		{ e("div").a("class", "w3-cell-row ").f();
 			o.htmHtmlPartKeys("PATCH");
-		} g("div");
-		{ e("div").a("class", "w3-cell-row ").f();
-			o.htmInheritPk("PATCH");
-			o.htmUserId("PATCH");
-			o.htmUserKey("PATCH");
 		} g("div");
 	}
 

@@ -108,11 +108,14 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		this.stateKey = stateKey;
 		this.stateKeyWrap.alreadyInitialized = true;
 	}
-	public SiteState setStateKey(String o) {
-		if(NumberUtils.isParsable(o))
-			this.stateKey = Long.parseLong(o);
+	public void setStateKey(String o) {
+		this.stateKey = SiteState.staticSetStateKey(siteRequest_, o);
 		this.stateKeyWrap.alreadyInitialized = true;
-		return (SiteState)this;
+	}
+	public static Long staticSetStateKey(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
 	}
 	protected SiteState stateKeyInit() {
 		if(!stateKeyWrap.alreadyInitialized) {
@@ -124,8 +127,20 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		return (SiteState)this;
 	}
 
+	public static Long staticSolrStateKey(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrStateKey(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqStateKey(SiteRequestEnUS siteRequest_, String o) {
+		return SiteState.staticSolrStrStateKey(siteRequest_, SiteState.staticSolrStateKey(siteRequest_, SiteState.staticSetStateKey(siteRequest_, o)));
+	}
+
 	public Long solrStateKey() {
-		return stateKey;
+		return SiteState.staticSolrStateKey(siteRequest_, stateKey);
 	}
 
 	public String strStateKey() {
@@ -171,10 +186,12 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 	public String getStateName() {
 		return stateName;
 	}
-
-	public void setStateName(String stateName) {
-		this.stateName = stateName;
+	public void setStateName(String o) {
+		this.stateName = SiteState.staticSetStateName(siteRequest_, o);
 		this.stateNameWrap.alreadyInitialized = true;
+	}
+	public static String staticSetStateName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteState stateNameInit() {
 		if(!stateNameWrap.alreadyInitialized) {
@@ -186,8 +203,20 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		return (SiteState)this;
 	}
 
+	public static String staticSolrStateName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrStateName(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqStateName(SiteRequestEnUS siteRequest_, String o) {
+		return SiteState.staticSolrStrStateName(siteRequest_, SiteState.staticSolrStateName(siteRequest_, SiteState.staticSetStateName(siteRequest_, o)));
+	}
+
 	public String solrStateName() {
-		return stateName;
+		return SiteState.staticSolrStateName(siteRequest_, stateName);
 	}
 
 	public String strStateName() {
@@ -299,10 +328,12 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 	public String getStateAbbreviation() {
 		return stateAbbreviation;
 	}
-
-	public void setStateAbbreviation(String stateAbbreviation) {
-		this.stateAbbreviation = stateAbbreviation;
+	public void setStateAbbreviation(String o) {
+		this.stateAbbreviation = SiteState.staticSetStateAbbreviation(siteRequest_, o);
 		this.stateAbbreviationWrap.alreadyInitialized = true;
+	}
+	public static String staticSetStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteState stateAbbreviationInit() {
 		if(!stateAbbreviationWrap.alreadyInitialized) {
@@ -314,8 +345,20 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		return (SiteState)this;
 	}
 
+	public static String staticSolrStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
+		return SiteState.staticSolrStrStateAbbreviation(siteRequest_, SiteState.staticSolrStateAbbreviation(siteRequest_, SiteState.staticSetStateAbbreviation(siteRequest_, o)));
+	}
+
 	public String solrStateAbbreviation() {
-		return stateAbbreviation;
+		return SiteState.staticSolrStateAbbreviation(siteRequest_, stateAbbreviation);
 	}
 
 	public String strStateAbbreviation() {
@@ -433,11 +476,14 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		this.imageLeft = imageLeft;
 		this.imageLeftWrap.alreadyInitialized = true;
 	}
-	public SiteState setImageLeft(String o) {
-		if(NumberUtils.isParsable(o))
-			this.imageLeft = Integer.parseInt(o);
+	public void setImageLeft(String o) {
+		this.imageLeft = SiteState.staticSetImageLeft(siteRequest_, o);
 		this.imageLeftWrap.alreadyInitialized = true;
-		return (SiteState)this;
+	}
+	public static Integer staticSetImageLeft(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected SiteState imageLeftInit() {
 		if(!imageLeftWrap.alreadyInitialized) {
@@ -449,8 +495,20 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		return (SiteState)this;
 	}
 
+	public static Integer staticSolrImageLeft(SiteRequestEnUS siteRequest_, Integer o) {
+		return o;
+	}
+
+	public static String staticSolrStrImageLeft(SiteRequestEnUS siteRequest_, Integer o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqImageLeft(SiteRequestEnUS siteRequest_, String o) {
+		return SiteState.staticSolrStrImageLeft(siteRequest_, SiteState.staticSolrImageLeft(siteRequest_, SiteState.staticSetImageLeft(siteRequest_, o)));
+	}
+
 	public Integer solrImageLeft() {
-		return imageLeft;
+		return SiteState.staticSolrImageLeft(siteRequest_, imageLeft);
 	}
 
 	public String strImageLeft() {
@@ -568,11 +626,14 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		this.imageTop = imageTop;
 		this.imageTopWrap.alreadyInitialized = true;
 	}
-	public SiteState setImageTop(String o) {
-		if(NumberUtils.isParsable(o))
-			this.imageTop = Integer.parseInt(o);
+	public void setImageTop(String o) {
+		this.imageTop = SiteState.staticSetImageTop(siteRequest_, o);
 		this.imageTopWrap.alreadyInitialized = true;
-		return (SiteState)this;
+	}
+	public static Integer staticSetImageTop(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
 	}
 	protected SiteState imageTopInit() {
 		if(!imageTopWrap.alreadyInitialized) {
@@ -584,8 +645,20 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		return (SiteState)this;
 	}
 
+	public static Integer staticSolrImageTop(SiteRequestEnUS siteRequest_, Integer o) {
+		return o;
+	}
+
+	public static String staticSolrStrImageTop(SiteRequestEnUS siteRequest_, Integer o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqImageTop(SiteRequestEnUS siteRequest_, String o) {
+		return SiteState.staticSolrStrImageTop(siteRequest_, SiteState.staticSolrImageTop(siteRequest_, SiteState.staticSetImageTop(siteRequest_, o)));
+	}
+
 	public Integer solrImageTop() {
-		return imageTop;
+		return SiteState.staticSolrImageTop(siteRequest_, imageTop);
 	}
 
 	public String strImageTop() {
@@ -703,6 +776,17 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		this.agencyKeys = agencyKeys;
 		this.agencyKeysWrap.alreadyInitialized = true;
 	}
+	public void setAgencyKeys(String o) {
+		Long l = SiteState.staticSetAgencyKeys(siteRequest_, o);
+		if(l != null)
+			addAgencyKeys(l);
+		this.agencyKeysWrap.alreadyInitialized = true;
+	}
+	public static Long staticSetAgencyKeys(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
+	}
 	public SiteState addAgencyKeys(Long...objets) {
 		for(Long o : objets) {
 			addAgencyKeys(o);
@@ -714,13 +798,12 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 			this.agencyKeys.add(o);
 		return (SiteState)this;
 	}
-	public SiteState setAgencyKeys(JsonArray objets) {
+	public void setAgencyKeys(JsonArray objets) {
 		agencyKeys.clear();
 		for(int i = 0; i < objets.size(); i++) {
 			Long o = objets.getLong(i);
 			addAgencyKeys(o);
 		}
-		return (SiteState)this;
 	}
 	public SiteState addAgencyKeys(String o) {
 		if(NumberUtils.isParsable(o)) {
@@ -737,8 +820,24 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		return (SiteState)this;
 	}
 
+	public static Long staticSolrAgencyKeys(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyKeys(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyKeys(SiteRequestEnUS siteRequest_, String o) {
+		return SiteState.staticSolrStrAgencyKeys(siteRequest_, SiteState.staticSolrAgencyKeys(siteRequest_, SiteState.staticSetAgencyKeys(siteRequest_, o)));
+	}
+
 	public List<Long> solrAgencyKeys() {
-		return agencyKeys;
+		List<Long> l = new ArrayList<Long>();
+		for(Long o : agencyKeys) {
+			l.add(SiteState.staticSolrAgencyKeys(siteRequest_, o));
+		}
+		return l;
 	}
 
 	public String strAgencyKeys() {
@@ -774,9 +873,12 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 					.a("class", "value suggestAgencyKeys w3-input w3-border w3-cell w3-cell-middle ")
 					.a("name", "setAgencyKeys")
 					.a("id", classApiMethodMethod, "_agencyKeys")
-					.a("autocomplete", "off")
-					.a("oninput", "suggestSiteStateAgencyKeys($(this).val() ? searchSiteAgencyFilters($(this.parentElement)) : [", pk == null ? "" : "{'name':'fq','value':'stateKey:" + pk + "'}", "], $('#listSiteStateAgencyKeys_", classApiMethodMethod, "'), ", pk, "); ")
-				.fg();
+					.a("autocomplete", "off");
+					if("Page".equals(classApiMethodMethod)) {
+						a("oninput", "suggestSiteStateAgencyKeys($(this).val() ? searchSiteAgencyFilters($(this.parentElement)) : [", pk == null ? "" : "{'name':'fq','value':'stateKey:" + pk + "'}", "], $('#listSiteStateAgencyKeys_", classApiMethodMethod, "'), ", pk, "); ");
+					}
+
+				fg();
 
 		} else {
 			e("span").a("class", "varSiteState", pk, "AgencyKeys ").f().sx(htmAgencyKeys()).g("span");
@@ -856,10 +958,12 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 	public String getStateCompleteName() {
 		return stateCompleteName;
 	}
-
-	public void setStateCompleteName(String stateCompleteName) {
-		this.stateCompleteName = stateCompleteName;
+	public void setStateCompleteName(String o) {
+		this.stateCompleteName = SiteState.staticSetStateCompleteName(siteRequest_, o);
 		this.stateCompleteNameWrap.alreadyInitialized = true;
+	}
+	public static String staticSetStateCompleteName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
 	}
 	protected SiteState stateCompleteNameInit() {
 		if(!stateCompleteNameWrap.alreadyInitialized) {
@@ -871,8 +975,20 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		return (SiteState)this;
 	}
 
+	public static String staticSolrStateCompleteName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrStateCompleteName(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqStateCompleteName(SiteRequestEnUS siteRequest_, String o) {
+		return SiteState.staticSolrStrStateCompleteName(siteRequest_, SiteState.staticSolrStateCompleteName(siteRequest_, SiteState.staticSetStateCompleteName(siteRequest_, o)));
+	}
+
 	public String solrStateCompleteName() {
-		return stateCompleteName;
+		return SiteState.staticSolrStateCompleteName(siteRequest_, stateCompleteName);
 	}
 
 	public String strStateCompleteName() {
@@ -1007,6 +1123,118 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 				return val;
 			default:
 				return super.attributeCluster(var, val);
+		}
+	}
+
+	///////////////
+	// staticSet //
+	///////////////
+
+	public static Object staticSetForClass(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		return staticSetSiteState(entityVar,  siteRequest_, o);
+	}
+	public static Object staticSetSiteState(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		switch(entityVar) {
+		case "stateKey":
+			return SiteState.staticSetStateKey(siteRequest_, o);
+		case "stateName":
+			return SiteState.staticSetStateName(siteRequest_, o);
+		case "stateAbbreviation":
+			return SiteState.staticSetStateAbbreviation(siteRequest_, o);
+		case "imageLeft":
+			return SiteState.staticSetImageLeft(siteRequest_, o);
+		case "imageTop":
+			return SiteState.staticSetImageTop(siteRequest_, o);
+		case "agencyKeys":
+			return SiteState.staticSetAgencyKeys(siteRequest_, o);
+		case "stateCompleteName":
+			return SiteState.staticSetStateCompleteName(siteRequest_, o);
+			default:
+				return Cluster.staticSetCluster(entityVar,  siteRequest_, o);
+		}
+	}
+
+	////////////////
+	// staticSolr //
+	////////////////
+
+	public static Object staticSolrForClass(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		return staticSolrSiteState(entityVar,  siteRequest_, o);
+	}
+	public static Object staticSolrSiteState(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		switch(entityVar) {
+		case "stateKey":
+			return SiteState.staticSolrStateKey(siteRequest_, (Long)o);
+		case "stateName":
+			return SiteState.staticSolrStateName(siteRequest_, (String)o);
+		case "stateAbbreviation":
+			return SiteState.staticSolrStateAbbreviation(siteRequest_, (String)o);
+		case "imageLeft":
+			return SiteState.staticSolrImageLeft(siteRequest_, (Integer)o);
+		case "imageTop":
+			return SiteState.staticSolrImageTop(siteRequest_, (Integer)o);
+		case "agencyKeys":
+			return SiteState.staticSolrAgencyKeys(siteRequest_, (Long)o);
+		case "stateCompleteName":
+			return SiteState.staticSolrStateCompleteName(siteRequest_, (String)o);
+			default:
+				return Cluster.staticSolrCluster(entityVar,  siteRequest_, o);
+		}
+	}
+
+	///////////////////
+	// staticSolrStr //
+	///////////////////
+
+	public static String staticSolrStrForClass(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		return staticSolrStrSiteState(entityVar,  siteRequest_, o);
+	}
+	public static String staticSolrStrSiteState(String entityVar, SiteRequestEnUS siteRequest_, Object o) {
+		switch(entityVar) {
+		case "stateKey":
+			return SiteState.staticSolrStrStateKey(siteRequest_, (Long)o);
+		case "stateName":
+			return SiteState.staticSolrStrStateName(siteRequest_, (String)o);
+		case "stateAbbreviation":
+			return SiteState.staticSolrStrStateAbbreviation(siteRequest_, (String)o);
+		case "imageLeft":
+			return SiteState.staticSolrStrImageLeft(siteRequest_, (Integer)o);
+		case "imageTop":
+			return SiteState.staticSolrStrImageTop(siteRequest_, (Integer)o);
+		case "agencyKeys":
+			return SiteState.staticSolrStrAgencyKeys(siteRequest_, (Long)o);
+		case "stateCompleteName":
+			return SiteState.staticSolrStrStateCompleteName(siteRequest_, (String)o);
+			default:
+				return Cluster.staticSolrStrCluster(entityVar,  siteRequest_, o);
+		}
+	}
+
+	//////////////////
+	// staticSolrFq //
+	//////////////////
+
+	public static String staticSolrFqForClass(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		return staticSolrFqSiteState(entityVar,  siteRequest_, o);
+	}
+	public static String staticSolrFqSiteState(String entityVar, SiteRequestEnUS siteRequest_, String o) {
+		switch(entityVar) {
+		case "stateKey":
+			return SiteState.staticSolrFqStateKey(siteRequest_, o);
+		case "stateName":
+			return SiteState.staticSolrFqStateName(siteRequest_, o);
+		case "stateAbbreviation":
+			return SiteState.staticSolrFqStateAbbreviation(siteRequest_, o);
+		case "imageLeft":
+			return SiteState.staticSolrFqImageLeft(siteRequest_, o);
+		case "imageTop":
+			return SiteState.staticSolrFqImageTop(siteRequest_, o);
+		case "agencyKeys":
+			return SiteState.staticSolrFqAgencyKeys(siteRequest_, o);
+		case "stateCompleteName":
+			return SiteState.staticSolrFqStateCompleteName(siteRequest_, o);
+			default:
+				return Cluster.staticSolrFqCluster(entityVar,  siteRequest_, o);
 		}
 	}
 
