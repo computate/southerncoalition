@@ -190,10 +190,9 @@ public abstract class AppSwagger2Gen<DEV> extends Object {
 	public String getAppPath() {
 		return appPath;
 	}
-	public AppSwagger2 setAppPath(String o) {
+	public void setAppPath(String o) {
 		this.appPath = AppSwagger2.staticSetAppPath(siteRequest_, o);
 		this.appPathWrap.alreadyInitialized = true;
-		return (AppSwagger2)this;
 	}
 	public static String staticSetAppPath(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -213,7 +212,7 @@ public abstract class AppSwagger2Gen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrAppPath(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqAppPath(SiteRequestEnUS siteRequest_, String o) {
@@ -267,10 +266,9 @@ public abstract class AppSwagger2Gen<DEV> extends Object {
 	public String getAppName() {
 		return appName;
 	}
-	public AppSwagger2 setAppName(String o) {
+	public void setAppName(String o) {
 		this.appName = AppSwagger2.staticSetAppName(siteRequest_, o);
 		this.appNameWrap.alreadyInitialized = true;
-		return (AppSwagger2)this;
 	}
 	public static String staticSetAppName(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -290,7 +288,7 @@ public abstract class AppSwagger2Gen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrAppName(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqAppName(SiteRequestEnUS siteRequest_, String o) {
@@ -344,10 +342,9 @@ public abstract class AppSwagger2Gen<DEV> extends Object {
 	public String getLanguageName() {
 		return languageName;
 	}
-	public AppSwagger2 setLanguageName(String o) {
+	public void setLanguageName(String o) {
 		this.languageName = AppSwagger2.staticSetLanguageName(siteRequest_, o);
 		this.languageNameWrap.alreadyInitialized = true;
-		return (AppSwagger2)this;
 	}
 	public static String staticSetLanguageName(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -367,7 +364,7 @@ public abstract class AppSwagger2Gen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrLanguageName(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqLanguageName(SiteRequestEnUS siteRequest_, String o) {
@@ -421,10 +418,9 @@ public abstract class AppSwagger2Gen<DEV> extends Object {
 	public String getOpenApiVersion() {
 		return openApiVersion;
 	}
-	public AppSwagger2 setOpenApiVersion(String o) {
+	public void setOpenApiVersion(String o) {
 		this.openApiVersion = AppSwagger2.staticSetOpenApiVersion(siteRequest_, o);
 		this.openApiVersionWrap.alreadyInitialized = true;
-		return (AppSwagger2)this;
 	}
 	public static String staticSetOpenApiVersion(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -444,7 +440,7 @@ public abstract class AppSwagger2Gen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrOpenApiVersion(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqOpenApiVersion(SiteRequestEnUS siteRequest_, String o) {
@@ -504,10 +500,9 @@ public abstract class AppSwagger2Gen<DEV> extends Object {
 		this.openApiVersionNumber = openApiVersionNumber;
 		this.openApiVersionNumberWrap.alreadyInitialized = true;
 	}
-	public AppSwagger2 setOpenApiVersionNumber(String o) {
+	public void setOpenApiVersionNumber(String o) {
 		this.openApiVersionNumber = AppSwagger2.staticSetOpenApiVersionNumber(siteRequest_, o);
 		this.openApiVersionNumberWrap.alreadyInitialized = true;
-		return (AppSwagger2)this;
 	}
 	public static Integer staticSetOpenApiVersionNumber(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -529,7 +524,7 @@ public abstract class AppSwagger2Gen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrOpenApiVersionNumber(SiteRequestEnUS siteRequest_, Integer o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqOpenApiVersionNumber(SiteRequestEnUS siteRequest_, String o) {
@@ -589,10 +584,9 @@ public abstract class AppSwagger2Gen<DEV> extends Object {
 		this.tabsSchema = tabsSchema;
 		this.tabsSchemaWrap.alreadyInitialized = true;
 	}
-	public AppSwagger2 setTabsSchema(String o) {
+	public void setTabsSchema(String o) {
 		this.tabsSchema = AppSwagger2.staticSetTabsSchema(siteRequest_, o);
 		this.tabsSchemaWrap.alreadyInitialized = true;
-		return (AppSwagger2)this;
 	}
 	public static Integer staticSetTabsSchema(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -614,7 +608,7 @@ public abstract class AppSwagger2Gen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrTabsSchema(SiteRequestEnUS siteRequest_, Integer o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqTabsSchema(SiteRequestEnUS siteRequest_, String o) {
@@ -668,10 +662,9 @@ public abstract class AppSwagger2Gen<DEV> extends Object {
 	public String getApiVersion() {
 		return apiVersion;
 	}
-	public AppSwagger2 setApiVersion(String o) {
+	public void setApiVersion(String o) {
 		this.apiVersion = AppSwagger2.staticSetApiVersion(siteRequest_, o);
 		this.apiVersionWrap.alreadyInitialized = true;
-		return (AppSwagger2)this;
 	}
 	public static String staticSetApiVersion(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -691,7 +684,7 @@ public abstract class AppSwagger2Gen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrApiVersion(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqApiVersion(SiteRequestEnUS siteRequest_, String o) {
@@ -745,10 +738,9 @@ public abstract class AppSwagger2Gen<DEV> extends Object {
 	public String getOpenApiYamlPath() {
 		return openApiYamlPath;
 	}
-	public AppSwagger2 setOpenApiYamlPath(String o) {
+	public void setOpenApiYamlPath(String o) {
 		this.openApiYamlPath = AppSwagger2.staticSetOpenApiYamlPath(siteRequest_, o);
 		this.openApiYamlPathWrap.alreadyInitialized = true;
-		return (AppSwagger2)this;
 	}
 	public static String staticSetOpenApiYamlPath(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -768,7 +760,7 @@ public abstract class AppSwagger2Gen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrOpenApiYamlPath(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqOpenApiYamlPath(SiteRequestEnUS siteRequest_, String o) {

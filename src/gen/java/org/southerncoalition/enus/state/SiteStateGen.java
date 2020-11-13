@@ -108,10 +108,9 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		this.stateKey = stateKey;
 		this.stateKeyWrap.alreadyInitialized = true;
 	}
-	public SiteState setStateKey(String o) {
+	public void setStateKey(String o) {
 		this.stateKey = SiteState.staticSetStateKey(siteRequest_, o);
 		this.stateKeyWrap.alreadyInitialized = true;
-		return (SiteState)this;
 	}
 	public static Long staticSetStateKey(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -133,7 +132,7 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 	}
 
 	public static String staticSolrStrStateKey(SiteRequestEnUS siteRequest_, Long o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqStateKey(SiteRequestEnUS siteRequest_, String o) {
@@ -187,10 +186,9 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 	public String getStateName() {
 		return stateName;
 	}
-	public SiteState setStateName(String o) {
+	public void setStateName(String o) {
 		this.stateName = SiteState.staticSetStateName(siteRequest_, o);
 		this.stateNameWrap.alreadyInitialized = true;
-		return (SiteState)this;
 	}
 	public static String staticSetStateName(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -210,7 +208,7 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 	}
 
 	public static String staticSolrStrStateName(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqStateName(SiteRequestEnUS siteRequest_, String o) {
@@ -330,10 +328,9 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 	public String getStateAbbreviation() {
 		return stateAbbreviation;
 	}
-	public SiteState setStateAbbreviation(String o) {
+	public void setStateAbbreviation(String o) {
 		this.stateAbbreviation = SiteState.staticSetStateAbbreviation(siteRequest_, o);
 		this.stateAbbreviationWrap.alreadyInitialized = true;
-		return (SiteState)this;
 	}
 	public static String staticSetStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -353,7 +350,7 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 	}
 
 	public static String staticSolrStrStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
@@ -479,10 +476,9 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		this.imageLeft = imageLeft;
 		this.imageLeftWrap.alreadyInitialized = true;
 	}
-	public SiteState setImageLeft(String o) {
+	public void setImageLeft(String o) {
 		this.imageLeft = SiteState.staticSetImageLeft(siteRequest_, o);
 		this.imageLeftWrap.alreadyInitialized = true;
-		return (SiteState)this;
 	}
 	public static Integer staticSetImageLeft(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -504,7 +500,7 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 	}
 
 	public static String staticSolrStrImageLeft(SiteRequestEnUS siteRequest_, Integer o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqImageLeft(SiteRequestEnUS siteRequest_, String o) {
@@ -630,10 +626,9 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		this.imageTop = imageTop;
 		this.imageTopWrap.alreadyInitialized = true;
 	}
-	public SiteState setImageTop(String o) {
+	public void setImageTop(String o) {
 		this.imageTop = SiteState.staticSetImageTop(siteRequest_, o);
 		this.imageTopWrap.alreadyInitialized = true;
-		return (SiteState)this;
 	}
 	public static Integer staticSetImageTop(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -655,7 +650,7 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 	}
 
 	public static String staticSolrStrImageTop(SiteRequestEnUS siteRequest_, Integer o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqImageTop(SiteRequestEnUS siteRequest_, String o) {
@@ -781,7 +776,15 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		this.agencyKeys = agencyKeys;
 		this.agencyKeysWrap.alreadyInitialized = true;
 	}
-	public static List<Long> staticSetAgencyKeys(SiteRequestEnUS siteRequest_, String o) {
+	public void setAgencyKeys(String o) {
+		Long l = SiteState.staticSetAgencyKeys(siteRequest_, o);
+		if(l != null)
+			addAgencyKeys(l);
+		this.agencyKeysWrap.alreadyInitialized = true;
+	}
+	public static Long staticSetAgencyKeys(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
 		return null;
 	}
 	public SiteState addAgencyKeys(Long...objets) {
@@ -795,13 +798,12 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 			this.agencyKeys.add(o);
 		return (SiteState)this;
 	}
-	public SiteState setAgencyKeys(JsonArray objets) {
+	public void setAgencyKeys(JsonArray objets) {
 		agencyKeys.clear();
 		for(int i = 0; i < objets.size(); i++) {
 			Long o = objets.getLong(i);
 			addAgencyKeys(o);
 		}
-		return (SiteState)this;
 	}
 	public SiteState addAgencyKeys(String o) {
 		if(NumberUtils.isParsable(o)) {
@@ -818,12 +820,12 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		return (SiteState)this;
 	}
 
-	public static List<Long> staticSolrAgencyKeys(SiteRequestEnUS siteRequest_, List<Long> o) {
+	public static Long staticSolrAgencyKeys(SiteRequestEnUS siteRequest_, Long o) {
 		return o;
 	}
 
-	public static String staticSolrStrAgencyKeys(SiteRequestEnUS siteRequest_, List<Long> o) {
-			return o == null ? null : o.toString();
+	public static String staticSolrStrAgencyKeys(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqAgencyKeys(SiteRequestEnUS siteRequest_, String o) {
@@ -831,7 +833,11 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 	}
 
 	public List<Long> solrAgencyKeys() {
-		return SiteState.staticSolrAgencyKeys(siteRequest_, agencyKeys);
+		List<Long> l = new ArrayList<Long>();
+		for(Long o : agencyKeys) {
+			l.add(SiteState.staticSolrAgencyKeys(siteRequest_, o));
+		}
+		return l;
 	}
 
 	public String strAgencyKeys() {
@@ -952,10 +958,9 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 	public String getStateCompleteName() {
 		return stateCompleteName;
 	}
-	public SiteState setStateCompleteName(String o) {
+	public void setStateCompleteName(String o) {
 		this.stateCompleteName = SiteState.staticSetStateCompleteName(siteRequest_, o);
 		this.stateCompleteNameWrap.alreadyInitialized = true;
-		return (SiteState)this;
 	}
 	public static String staticSetStateCompleteName(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -975,7 +980,7 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 	}
 
 	public static String staticSolrStrStateCompleteName(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqStateCompleteName(SiteRequestEnUS siteRequest_, String o) {
@@ -1169,7 +1174,7 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		case "imageTop":
 			return SiteState.staticSolrImageTop(siteRequest_, (Integer)o);
 		case "agencyKeys":
-			return SiteState.staticSolrAgencyKeys(siteRequest_, (List<Long>)o);
+			return SiteState.staticSolrAgencyKeys(siteRequest_, (Long)o);
 		case "stateCompleteName":
 			return SiteState.staticSolrStateCompleteName(siteRequest_, (String)o);
 			default:
@@ -1197,7 +1202,7 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 		case "imageTop":
 			return SiteState.staticSolrStrImageTop(siteRequest_, (Integer)o);
 		case "agencyKeys":
-			return SiteState.staticSolrStrAgencyKeys(siteRequest_, (List<Long>)o);
+			return SiteState.staticSolrStrAgencyKeys(siteRequest_, (Long)o);
 		case "stateCompleteName":
 			return SiteState.staticSolrStrStateCompleteName(siteRequest_, (String)o);
 			default:

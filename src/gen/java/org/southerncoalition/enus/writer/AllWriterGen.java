@@ -108,10 +108,9 @@ public abstract class AllWriterGen<DEV> extends Object {
 	public String getTabStr() {
 		return tabStr;
 	}
-	public AllWriter setTabStr(String o) {
+	public void setTabStr(String o) {
 		this.tabStr = AllWriter.staticSetTabStr(siteRequest_, o);
 		this.tabStrWrap.alreadyInitialized = true;
-		return (AllWriter)this;
 	}
 	public static String staticSetTabStr(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -131,7 +130,7 @@ public abstract class AllWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrTabStr(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqTabStr(SiteRequestEnUS siteRequest_, String o) {
@@ -354,10 +353,9 @@ public abstract class AllWriterGen<DEV> extends Object {
 		this.empty = empty;
 		this.emptyWrap.alreadyInitialized = true;
 	}
-	public AllWriter setEmpty(String o) {
+	public void setEmpty(String o) {
 		this.empty = AllWriter.staticSetEmpty(siteRequest_, o);
 		this.emptyWrap.alreadyInitialized = true;
-		return (AllWriter)this;
 	}
 	public static Boolean staticSetEmpty(SiteRequestEnUS siteRequest_, String o) {
 		return Boolean.parseBoolean(o);
@@ -377,7 +375,7 @@ public abstract class AllWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrEmpty(SiteRequestEnUS siteRequest_, Boolean o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqEmpty(SiteRequestEnUS siteRequest_, String o) {

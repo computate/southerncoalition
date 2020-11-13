@@ -109,10 +109,9 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 		this.pageDesignKey = pageDesignKey;
 		this.pageDesignKeyWrap.alreadyInitialized = true;
 	}
-	public PageDesign setPageDesignKey(String o) {
+	public void setPageDesignKey(String o) {
 		this.pageDesignKey = PageDesign.staticSetPageDesignKey(siteRequest_, o);
 		this.pageDesignKeyWrap.alreadyInitialized = true;
-		return (PageDesign)this;
 	}
 	public static Long staticSetPageDesignKey(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -134,7 +133,7 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 	}
 
 	public static String staticSolrStrPageDesignKey(SiteRequestEnUS siteRequest_, Long o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqPageDesignKey(SiteRequestEnUS siteRequest_, String o) {
@@ -194,7 +193,15 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 		this.childDesignKeys = childDesignKeys;
 		this.childDesignKeysWrap.alreadyInitialized = true;
 	}
-	public static List<Long> staticSetChildDesignKeys(SiteRequestEnUS siteRequest_, String o) {
+	public void setChildDesignKeys(String o) {
+		Long l = PageDesign.staticSetChildDesignKeys(siteRequest_, o);
+		if(l != null)
+			addChildDesignKeys(l);
+		this.childDesignKeysWrap.alreadyInitialized = true;
+	}
+	public static Long staticSetChildDesignKeys(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
 		return null;
 	}
 	public PageDesign addChildDesignKeys(Long...objets) {
@@ -208,13 +215,12 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 			this.childDesignKeys.add(o);
 		return (PageDesign)this;
 	}
-	public PageDesign setChildDesignKeys(JsonArray objets) {
+	public void setChildDesignKeys(JsonArray objets) {
 		childDesignKeys.clear();
 		for(int i = 0; i < objets.size(); i++) {
 			Long o = objets.getLong(i);
 			addChildDesignKeys(o);
 		}
-		return (PageDesign)this;
 	}
 	public PageDesign addChildDesignKeys(String o) {
 		if(NumberUtils.isParsable(o)) {
@@ -231,12 +237,12 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 		return (PageDesign)this;
 	}
 
-	public static List<Long> staticSolrChildDesignKeys(SiteRequestEnUS siteRequest_, List<Long> o) {
+	public static Long staticSolrChildDesignKeys(SiteRequestEnUS siteRequest_, Long o) {
 		return o;
 	}
 
-	public static String staticSolrStrChildDesignKeys(SiteRequestEnUS siteRequest_, List<Long> o) {
-			return o == null ? null : o.toString();
+	public static String staticSolrStrChildDesignKeys(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqChildDesignKeys(SiteRequestEnUS siteRequest_, String o) {
@@ -244,7 +250,11 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 	}
 
 	public List<Long> solrChildDesignKeys() {
-		return PageDesign.staticSolrChildDesignKeys(siteRequest_, childDesignKeys);
+		List<Long> l = new ArrayList<Long>();
+		for(Long o : childDesignKeys) {
+			l.add(PageDesign.staticSolrChildDesignKeys(siteRequest_, o));
+		}
+		return l;
 	}
 
 	public String strChildDesignKeys() {
@@ -296,7 +306,15 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 		this.parentDesignKeys = parentDesignKeys;
 		this.parentDesignKeysWrap.alreadyInitialized = true;
 	}
-	public static List<Long> staticSetParentDesignKeys(SiteRequestEnUS siteRequest_, String o) {
+	public void setParentDesignKeys(String o) {
+		Long l = PageDesign.staticSetParentDesignKeys(siteRequest_, o);
+		if(l != null)
+			addParentDesignKeys(l);
+		this.parentDesignKeysWrap.alreadyInitialized = true;
+	}
+	public static Long staticSetParentDesignKeys(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
 		return null;
 	}
 	public PageDesign addParentDesignKeys(Long...objets) {
@@ -310,13 +328,12 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 			this.parentDesignKeys.add(o);
 		return (PageDesign)this;
 	}
-	public PageDesign setParentDesignKeys(JsonArray objets) {
+	public void setParentDesignKeys(JsonArray objets) {
 		parentDesignKeys.clear();
 		for(int i = 0; i < objets.size(); i++) {
 			Long o = objets.getLong(i);
 			addParentDesignKeys(o);
 		}
-		return (PageDesign)this;
 	}
 	public PageDesign addParentDesignKeys(String o) {
 		if(NumberUtils.isParsable(o)) {
@@ -333,12 +350,12 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 		return (PageDesign)this;
 	}
 
-	public static List<Long> staticSolrParentDesignKeys(SiteRequestEnUS siteRequest_, List<Long> o) {
+	public static Long staticSolrParentDesignKeys(SiteRequestEnUS siteRequest_, Long o) {
 		return o;
 	}
 
-	public static String staticSolrStrParentDesignKeys(SiteRequestEnUS siteRequest_, List<Long> o) {
-			return o == null ? null : o.toString();
+	public static String staticSolrStrParentDesignKeys(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqParentDesignKeys(SiteRequestEnUS siteRequest_, String o) {
@@ -346,7 +363,11 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 	}
 
 	public List<Long> solrParentDesignKeys() {
-		return PageDesign.staticSolrParentDesignKeys(siteRequest_, parentDesignKeys);
+		List<Long> l = new ArrayList<Long>();
+		for(Long o : parentDesignKeys) {
+			l.add(PageDesign.staticSolrParentDesignKeys(siteRequest_, o));
+		}
+		return l;
 	}
 
 	public String strParentDesignKeys() {
@@ -473,7 +494,15 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 		this.htmlPartKeys = htmlPartKeys;
 		this.htmlPartKeysWrap.alreadyInitialized = true;
 	}
-	public static List<Long> staticSetHtmlPartKeys(SiteRequestEnUS siteRequest_, String o) {
+	public void setHtmlPartKeys(String o) {
+		Long l = PageDesign.staticSetHtmlPartKeys(siteRequest_, o);
+		if(l != null)
+			addHtmlPartKeys(l);
+		this.htmlPartKeysWrap.alreadyInitialized = true;
+	}
+	public static Long staticSetHtmlPartKeys(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
 		return null;
 	}
 	public PageDesign addHtmlPartKeys(Long...objets) {
@@ -487,13 +516,12 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 			this.htmlPartKeys.add(o);
 		return (PageDesign)this;
 	}
-	public PageDesign setHtmlPartKeys(JsonArray objets) {
+	public void setHtmlPartKeys(JsonArray objets) {
 		htmlPartKeys.clear();
 		for(int i = 0; i < objets.size(); i++) {
 			Long o = objets.getLong(i);
 			addHtmlPartKeys(o);
 		}
-		return (PageDesign)this;
 	}
 	public PageDesign addHtmlPartKeys(String o) {
 		if(NumberUtils.isParsable(o)) {
@@ -510,12 +538,12 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 		return (PageDesign)this;
 	}
 
-	public static List<Long> staticSolrHtmlPartKeys(SiteRequestEnUS siteRequest_, List<Long> o) {
+	public static Long staticSolrHtmlPartKeys(SiteRequestEnUS siteRequest_, Long o) {
 		return o;
 	}
 
-	public static String staticSolrStrHtmlPartKeys(SiteRequestEnUS siteRequest_, List<Long> o) {
-			return o == null ? null : o.toString();
+	public static String staticSolrStrHtmlPartKeys(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqHtmlPartKeys(SiteRequestEnUS siteRequest_, String o) {
@@ -523,7 +551,11 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 	}
 
 	public List<Long> solrHtmlPartKeys() {
-		return PageDesign.staticSolrHtmlPartKeys(siteRequest_, htmlPartKeys);
+		List<Long> l = new ArrayList<Long>();
+		for(Long o : htmlPartKeys) {
+			l.add(PageDesign.staticSolrHtmlPartKeys(siteRequest_, o));
+		}
+		return l;
 	}
 
 	public String strHtmlPartKeys() {
@@ -644,10 +676,9 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 	public String getPageDesignCompleteName() {
 		return pageDesignCompleteName;
 	}
-	public PageDesign setPageDesignCompleteName(String o) {
+	public void setPageDesignCompleteName(String o) {
 		this.pageDesignCompleteName = PageDesign.staticSetPageDesignCompleteName(siteRequest_, o);
 		this.pageDesignCompleteNameWrap.alreadyInitialized = true;
-		return (PageDesign)this;
 	}
 	public static String staticSetPageDesignCompleteName(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -667,7 +698,7 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 	}
 
 	public static String staticSolrStrPageDesignCompleteName(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqPageDesignCompleteName(SiteRequestEnUS siteRequest_, String o) {
@@ -792,10 +823,9 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 		this.designHidden = designHidden;
 		this.designHiddenWrap.alreadyInitialized = true;
 	}
-	public PageDesign setDesignHidden(String o) {
+	public void setDesignHidden(String o) {
 		this.designHidden = PageDesign.staticSetDesignHidden(siteRequest_, o);
 		this.designHiddenWrap.alreadyInitialized = true;
-		return (PageDesign)this;
 	}
 	public static Boolean staticSetDesignHidden(SiteRequestEnUS siteRequest_, String o) {
 		return Boolean.parseBoolean(o);
@@ -815,7 +845,7 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 	}
 
 	public static String staticSolrStrDesignHidden(SiteRequestEnUS siteRequest_, Boolean o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqDesignHidden(SiteRequestEnUS siteRequest_, String o) {
@@ -932,10 +962,9 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 	public String getPageContentType() {
 		return pageContentType;
 	}
-	public PageDesign setPageContentType(String o) {
+	public void setPageContentType(String o) {
 		this.pageContentType = PageDesign.staticSetPageContentType(siteRequest_, o);
 		this.pageContentTypeWrap.alreadyInitialized = true;
-		return (PageDesign)this;
 	}
 	public static String staticSetPageContentType(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -955,7 +984,7 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 	}
 
 	public static String staticSolrStrPageContentType(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqPageContentType(SiteRequestEnUS siteRequest_, String o) {
@@ -1217,11 +1246,11 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 		case "pageDesignKey":
 			return PageDesign.staticSolrPageDesignKey(siteRequest_, (Long)o);
 		case "childDesignKeys":
-			return PageDesign.staticSolrChildDesignKeys(siteRequest_, (List<Long>)o);
+			return PageDesign.staticSolrChildDesignKeys(siteRequest_, (Long)o);
 		case "parentDesignKeys":
-			return PageDesign.staticSolrParentDesignKeys(siteRequest_, (List<Long>)o);
+			return PageDesign.staticSolrParentDesignKeys(siteRequest_, (Long)o);
 		case "htmlPartKeys":
-			return PageDesign.staticSolrHtmlPartKeys(siteRequest_, (List<Long>)o);
+			return PageDesign.staticSolrHtmlPartKeys(siteRequest_, (Long)o);
 		case "pageDesignCompleteName":
 			return PageDesign.staticSolrPageDesignCompleteName(siteRequest_, (String)o);
 		case "designHidden":
@@ -1245,11 +1274,11 @@ public abstract class PageDesignGen<DEV> extends Cluster {
 		case "pageDesignKey":
 			return PageDesign.staticSolrStrPageDesignKey(siteRequest_, (Long)o);
 		case "childDesignKeys":
-			return PageDesign.staticSolrStrChildDesignKeys(siteRequest_, (List<Long>)o);
+			return PageDesign.staticSolrStrChildDesignKeys(siteRequest_, (Long)o);
 		case "parentDesignKeys":
-			return PageDesign.staticSolrStrParentDesignKeys(siteRequest_, (List<Long>)o);
+			return PageDesign.staticSolrStrParentDesignKeys(siteRequest_, (Long)o);
 		case "htmlPartKeys":
-			return PageDesign.staticSolrStrHtmlPartKeys(siteRequest_, (List<Long>)o);
+			return PageDesign.staticSolrStrHtmlPartKeys(siteRequest_, (Long)o);
 		case "pageDesignCompleteName":
 			return PageDesign.staticSolrStrPageDesignCompleteName(siteRequest_, (String)o);
 		case "designHidden":

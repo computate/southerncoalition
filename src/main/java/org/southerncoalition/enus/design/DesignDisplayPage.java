@@ -311,6 +311,7 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 			l.setQuery("*:*");
 			l.addFilterQuery("stateKey_indexed_long:" + stateKey);
 			l.addFilterQuery("agencyName_indexed_string:" + ClientUtils.escapeQueryChars(stateName));
+			l.addFilterQuery("reportCardStartYear_indexed_int:" + reportCardStartYear);
 			l.setC(ReportCard.class);
 			l.setStore(true);
 		}

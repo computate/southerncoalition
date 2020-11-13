@@ -158,10 +158,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		this.contextRows = contextRows;
 		this.contextRowsWrap.alreadyInitialized = true;
 	}
-	public ApiWriter setContextRows(String o) {
+	public void setContextRows(String o) {
 		this.contextRows = ApiWriter.staticSetContextRows(siteRequest_, o);
 		this.contextRowsWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static Integer staticSetContextRows(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -183,7 +182,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrContextRows(SiteRequestEnUS siteRequest_, Integer o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqContextRows(SiteRequestEnUS siteRequest_, String o) {
@@ -237,10 +236,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	public String getClassApiMethod() {
 		return classApiMethod;
 	}
-	public ApiWriter setClassApiMethod(String o) {
+	public void setClassApiMethod(String o) {
 		this.classApiMethod = ApiWriter.staticSetClassApiMethod(siteRequest_, o);
 		this.classApiMethodWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static String staticSetClassApiMethod(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -260,7 +258,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrClassApiMethod(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassApiMethod(SiteRequestEnUS siteRequest_, String o) {
@@ -314,10 +312,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	public String getOpenApiVersion() {
 		return openApiVersion;
 	}
-	public ApiWriter setOpenApiVersion(String o) {
+	public void setOpenApiVersion(String o) {
 		this.openApiVersion = ApiWriter.staticSetOpenApiVersion(siteRequest_, o);
 		this.openApiVersionWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static String staticSetOpenApiVersion(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -337,7 +334,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrOpenApiVersion(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqOpenApiVersion(SiteRequestEnUS siteRequest_, String o) {
@@ -439,7 +436,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		this.classUris = classUris;
 		this.classUrisWrap.alreadyInitialized = true;
 	}
-	public static List<String> staticSetClassUris(SiteRequestEnUS siteRequest_, String o) {
+	public static String staticSetClassUris(SiteRequestEnUS siteRequest_, String o) {
 		return null;
 	}
 	public ApiWriter addClassUris(String...objets) {
@@ -453,13 +450,12 @@ public abstract class ApiWriterGen<DEV> extends Object {
 			this.classUris.add(o);
 		return (ApiWriter)this;
 	}
-	public ApiWriter setClassUris(JsonArray objets) {
+	public void setClassUris(JsonArray objets) {
 		classUris.clear();
 		for(int i = 0; i < objets.size(); i++) {
 			String o = objets.getString(i);
 			addClassUris(o);
 		}
-		return (ApiWriter)this;
 	}
 	protected ApiWriter classUrisInit() {
 		if(!classUrisWrap.alreadyInitialized) {
@@ -471,12 +467,12 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		return (ApiWriter)this;
 	}
 
-	public static List<String> staticSolrClassUris(SiteRequestEnUS siteRequest_, List<String> o) {
+	public static String staticSolrClassUris(SiteRequestEnUS siteRequest_, String o) {
 		return o;
 	}
 
-	public static String staticSolrStrClassUris(SiteRequestEnUS siteRequest_, List<String> o) {
-			return o == null ? null : o.toString();
+	public static String staticSolrStrClassUris(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassUris(SiteRequestEnUS siteRequest_, String o) {
@@ -484,7 +480,11 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public List<String> solrClassUris() {
-		return ApiWriter.staticSolrClassUris(siteRequest_, classUris);
+		List<String> l = new ArrayList<String>();
+		for(String o : classUris) {
+			l.add(ApiWriter.staticSolrClassUris(siteRequest_, o));
+		}
+		return l;
 	}
 
 	public String strClassUris() {
@@ -536,10 +536,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		this.openApiVersionNumber = openApiVersionNumber;
 		this.openApiVersionNumberWrap.alreadyInitialized = true;
 	}
-	public ApiWriter setOpenApiVersionNumber(String o) {
+	public void setOpenApiVersionNumber(String o) {
 		this.openApiVersionNumber = ApiWriter.staticSetOpenApiVersionNumber(siteRequest_, o);
 		this.openApiVersionNumberWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static Integer staticSetOpenApiVersionNumber(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -561,7 +560,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrOpenApiVersionNumber(SiteRequestEnUS siteRequest_, Integer o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqOpenApiVersionNumber(SiteRequestEnUS siteRequest_, String o) {
@@ -621,10 +620,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		this.tabsSchema = tabsSchema;
 		this.tabsSchemaWrap.alreadyInitialized = true;
 	}
-	public ApiWriter setTabsSchema(String o) {
+	public void setTabsSchema(String o) {
 		this.tabsSchema = ApiWriter.staticSetTabsSchema(siteRequest_, o);
 		this.tabsSchemaWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static Integer staticSetTabsSchema(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -646,7 +644,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrTabsSchema(SiteRequestEnUS siteRequest_, Integer o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqTabsSchema(SiteRequestEnUS siteRequest_, String o) {
@@ -706,10 +704,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		this.tabsResponses = tabsResponses;
 		this.tabsResponsesWrap.alreadyInitialized = true;
 	}
-	public ApiWriter setTabsResponses(String o) {
+	public void setTabsResponses(String o) {
 		this.tabsResponses = ApiWriter.staticSetTabsResponses(siteRequest_, o);
 		this.tabsResponsesWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static Integer staticSetTabsResponses(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -731,7 +728,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrTabsResponses(SiteRequestEnUS siteRequest_, Integer o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqTabsResponses(SiteRequestEnUS siteRequest_, String o) {
@@ -1344,10 +1341,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	public String getClassApiTag() {
 		return classApiTag;
 	}
-	public ApiWriter setClassApiTag(String o) {
+	public void setClassApiTag(String o) {
 		this.classApiTag = ApiWriter.staticSetClassApiTag(siteRequest_, o);
 		this.classApiTagWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static String staticSetClassApiTag(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1367,7 +1363,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrClassApiTag(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassApiTag(SiteRequestEnUS siteRequest_, String o) {
@@ -1426,10 +1422,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		this.classExtendsBase = classExtendsBase;
 		this.classExtendsBaseWrap.alreadyInitialized = true;
 	}
-	public ApiWriter setClassExtendsBase(String o) {
+	public void setClassExtendsBase(String o) {
 		this.classExtendsBase = ApiWriter.staticSetClassExtendsBase(siteRequest_, o);
 		this.classExtendsBaseWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static Boolean staticSetClassExtendsBase(SiteRequestEnUS siteRequest_, String o) {
 		return Boolean.parseBoolean(o);
@@ -1449,7 +1444,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrClassExtendsBase(SiteRequestEnUS siteRequest_, Boolean o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassExtendsBase(SiteRequestEnUS siteRequest_, String o) {
@@ -1508,10 +1503,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		this.classIsBase = classIsBase;
 		this.classIsBaseWrap.alreadyInitialized = true;
 	}
-	public ApiWriter setClassIsBase(String o) {
+	public void setClassIsBase(String o) {
 		this.classIsBase = ApiWriter.staticSetClassIsBase(siteRequest_, o);
 		this.classIsBaseWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static Boolean staticSetClassIsBase(SiteRequestEnUS siteRequest_, String o) {
 		return Boolean.parseBoolean(o);
@@ -1531,7 +1525,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrClassIsBase(SiteRequestEnUS siteRequest_, Boolean o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassIsBase(SiteRequestEnUS siteRequest_, String o) {
@@ -1585,10 +1579,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	public String getClassSimpleName() {
 		return classSimpleName;
 	}
-	public ApiWriter setClassSimpleName(String o) {
+	public void setClassSimpleName(String o) {
 		this.classSimpleName = ApiWriter.staticSetClassSimpleName(siteRequest_, o);
 		this.classSimpleNameWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static String staticSetClassSimpleName(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1608,7 +1601,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrClassSimpleName(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassSimpleName(SiteRequestEnUS siteRequest_, String o) {
@@ -1662,10 +1655,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	public String getAppName() {
 		return appName;
 	}
-	public ApiWriter setAppName(String o) {
+	public void setAppName(String o) {
 		this.appName = ApiWriter.staticSetAppName(siteRequest_, o);
 		this.appNameWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static String staticSetAppName(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1685,7 +1677,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrAppName(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqAppName(SiteRequestEnUS siteRequest_, String o) {
@@ -1739,10 +1731,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	public String getClassAbsolutePath() {
 		return classAbsolutePath;
 	}
-	public ApiWriter setClassAbsolutePath(String o) {
+	public void setClassAbsolutePath(String o) {
 		this.classAbsolutePath = ApiWriter.staticSetClassAbsolutePath(siteRequest_, o);
 		this.classAbsolutePathWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static String staticSetClassAbsolutePath(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1762,7 +1753,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrClassAbsolutePath(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassAbsolutePath(SiteRequestEnUS siteRequest_, String o) {
@@ -1816,10 +1807,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	public String getClassApiUriMethod() {
 		return classApiUriMethod;
 	}
-	public ApiWriter setClassApiUriMethod(String o) {
+	public void setClassApiUriMethod(String o) {
 		this.classApiUriMethod = ApiWriter.staticSetClassApiUriMethod(siteRequest_, o);
 		this.classApiUriMethodWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static String staticSetClassApiUriMethod(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1839,7 +1829,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrClassApiUriMethod(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassApiUriMethod(SiteRequestEnUS siteRequest_, String o) {
@@ -1898,10 +1888,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		this.classRoleUserMethod = classRoleUserMethod;
 		this.classRoleUserMethodWrap.alreadyInitialized = true;
 	}
-	public ApiWriter setClassRoleUserMethod(String o) {
+	public void setClassRoleUserMethod(String o) {
 		this.classRoleUserMethod = ApiWriter.staticSetClassRoleUserMethod(siteRequest_, o);
 		this.classRoleUserMethodWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static Boolean staticSetClassRoleUserMethod(SiteRequestEnUS siteRequest_, String o) {
 		return Boolean.parseBoolean(o);
@@ -1921,7 +1910,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrClassRoleUserMethod(SiteRequestEnUS siteRequest_, Boolean o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassRoleUserMethod(SiteRequestEnUS siteRequest_, String o) {
@@ -1975,10 +1964,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	public String getClassApiMethodMethod() {
 		return classApiMethodMethod;
 	}
-	public ApiWriter setClassApiMethodMethod(String o) {
+	public void setClassApiMethodMethod(String o) {
 		this.classApiMethodMethod = ApiWriter.staticSetClassApiMethodMethod(siteRequest_, o);
 		this.classApiMethodMethodWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static String staticSetClassApiMethodMethod(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1998,7 +1986,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrClassApiMethodMethod(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassApiMethodMethod(SiteRequestEnUS siteRequest_, String o) {
@@ -2052,10 +2040,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	public String getClassApiMediaType200Method() {
 		return classApiMediaType200Method;
 	}
-	public ApiWriter setClassApiMediaType200Method(String o) {
+	public void setClassApiMediaType200Method(String o) {
 		this.classApiMediaType200Method = ApiWriter.staticSetClassApiMediaType200Method(siteRequest_, o);
 		this.classApiMediaType200MethodWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static String staticSetClassApiMediaType200Method(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2075,7 +2062,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrClassApiMediaType200Method(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassApiMediaType200Method(SiteRequestEnUS siteRequest_, String o) {
@@ -2129,10 +2116,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	public String getClassApiOperationIdMethod() {
 		return classApiOperationIdMethod;
 	}
-	public ApiWriter setClassApiOperationIdMethod(String o) {
+	public void setClassApiOperationIdMethod(String o) {
 		this.classApiOperationIdMethod = ApiWriter.staticSetClassApiOperationIdMethod(siteRequest_, o);
 		this.classApiOperationIdMethodWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static String staticSetClassApiOperationIdMethod(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2152,7 +2138,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrClassApiOperationIdMethod(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassApiOperationIdMethod(SiteRequestEnUS siteRequest_, String o) {
@@ -2206,10 +2192,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	public String getClassApiOperationIdMethodRequest() {
 		return classApiOperationIdMethodRequest;
 	}
-	public ApiWriter setClassApiOperationIdMethodRequest(String o) {
+	public void setClassApiOperationIdMethodRequest(String o) {
 		this.classApiOperationIdMethodRequest = ApiWriter.staticSetClassApiOperationIdMethodRequest(siteRequest_, o);
 		this.classApiOperationIdMethodRequestWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static String staticSetClassApiOperationIdMethodRequest(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2229,7 +2214,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrClassApiOperationIdMethodRequest(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassApiOperationIdMethodRequest(SiteRequestEnUS siteRequest_, String o) {
@@ -2283,10 +2268,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	public String getClassApiOperationIdMethodResponse() {
 		return classApiOperationIdMethodResponse;
 	}
-	public ApiWriter setClassApiOperationIdMethodResponse(String o) {
+	public void setClassApiOperationIdMethodResponse(String o) {
 		this.classApiOperationIdMethodResponse = ApiWriter.staticSetClassApiOperationIdMethodResponse(siteRequest_, o);
 		this.classApiOperationIdMethodResponseWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static String staticSetClassApiOperationIdMethodResponse(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2306,7 +2290,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrClassApiOperationIdMethodResponse(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassApiOperationIdMethodResponse(SiteRequestEnUS siteRequest_, String o) {
@@ -2360,10 +2344,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	public String getClassSuperApiOperationIdMethodRequest() {
 		return classSuperApiOperationIdMethodRequest;
 	}
-	public ApiWriter setClassSuperApiOperationIdMethodRequest(String o) {
+	public void setClassSuperApiOperationIdMethodRequest(String o) {
 		this.classSuperApiOperationIdMethodRequest = ApiWriter.staticSetClassSuperApiOperationIdMethodRequest(siteRequest_, o);
 		this.classSuperApiOperationIdMethodRequestWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static String staticSetClassSuperApiOperationIdMethodRequest(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2383,7 +2366,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrClassSuperApiOperationIdMethodRequest(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassSuperApiOperationIdMethodRequest(SiteRequestEnUS siteRequest_, String o) {
@@ -2437,10 +2420,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	public String getClassSuperApiOperationIdMethodResponse() {
 		return classSuperApiOperationIdMethodResponse;
 	}
-	public ApiWriter setClassSuperApiOperationIdMethodResponse(String o) {
+	public void setClassSuperApiOperationIdMethodResponse(String o) {
 		this.classSuperApiOperationIdMethodResponse = ApiWriter.staticSetClassSuperApiOperationIdMethodResponse(siteRequest_, o);
 		this.classSuperApiOperationIdMethodResponseWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static String staticSetClassSuperApiOperationIdMethodResponse(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2460,7 +2442,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrClassSuperApiOperationIdMethodResponse(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassSuperApiOperationIdMethodResponse(SiteRequestEnUS siteRequest_, String o) {
@@ -2514,10 +2496,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	public String getClassPageCanonicalNameMethod() {
 		return classPageCanonicalNameMethod;
 	}
-	public ApiWriter setClassPageCanonicalNameMethod(String o) {
+	public void setClassPageCanonicalNameMethod(String o) {
 		this.classPageCanonicalNameMethod = ApiWriter.staticSetClassPageCanonicalNameMethod(siteRequest_, o);
 		this.classPageCanonicalNameMethodWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static String staticSetClassPageCanonicalNameMethod(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2537,7 +2518,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrClassPageCanonicalNameMethod(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassPageCanonicalNameMethod(SiteRequestEnUS siteRequest_, String o) {
@@ -2596,10 +2577,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		this.classKeywordsFound = classKeywordsFound;
 		this.classKeywordsFoundWrap.alreadyInitialized = true;
 	}
-	public ApiWriter setClassKeywordsFound(String o) {
+	public void setClassKeywordsFound(String o) {
 		this.classKeywordsFound = ApiWriter.staticSetClassKeywordsFound(siteRequest_, o);
 		this.classKeywordsFoundWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static Boolean staticSetClassKeywordsFound(SiteRequestEnUS siteRequest_, String o) {
 		return Boolean.parseBoolean(o);
@@ -2619,7 +2599,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrClassKeywordsFound(SiteRequestEnUS siteRequest_, Boolean o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassKeywordsFound(SiteRequestEnUS siteRequest_, String o) {
@@ -2678,7 +2658,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		this.classKeywords = classKeywords;
 		this.classKeywordsWrap.alreadyInitialized = true;
 	}
-	public static List<String> staticSetClassKeywords(SiteRequestEnUS siteRequest_, String o) {
+	public static String staticSetClassKeywords(SiteRequestEnUS siteRequest_, String o) {
 		return null;
 	}
 	public ApiWriter addClassKeywords(String...objets) {
@@ -2692,13 +2672,12 @@ public abstract class ApiWriterGen<DEV> extends Object {
 			this.classKeywords.add(o);
 		return (ApiWriter)this;
 	}
-	public ApiWriter setClassKeywords(JsonArray objets) {
+	public void setClassKeywords(JsonArray objets) {
 		classKeywords.clear();
 		for(int i = 0; i < objets.size(); i++) {
 			String o = objets.getString(i);
 			addClassKeywords(o);
 		}
-		return (ApiWriter)this;
 	}
 	protected ApiWriter classKeywordsInit() {
 		if(!classKeywordsWrap.alreadyInitialized) {
@@ -2710,12 +2689,12 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		return (ApiWriter)this;
 	}
 
-	public static List<String> staticSolrClassKeywords(SiteRequestEnUS siteRequest_, List<String> o) {
+	public static String staticSolrClassKeywords(SiteRequestEnUS siteRequest_, String o) {
 		return o;
 	}
 
-	public static String staticSolrStrClassKeywords(SiteRequestEnUS siteRequest_, List<String> o) {
-			return o == null ? null : o.toString();
+	public static String staticSolrStrClassKeywords(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassKeywords(SiteRequestEnUS siteRequest_, String o) {
@@ -2723,7 +2702,11 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public List<String> solrClassKeywords() {
-		return ApiWriter.staticSolrClassKeywords(siteRequest_, classKeywords);
+		List<String> l = new ArrayList<String>();
+		for(String o : classKeywords) {
+			l.add(ApiWriter.staticSolrClassKeywords(siteRequest_, o));
+		}
+		return l;
 	}
 
 	public String strClassKeywords() {
@@ -2774,10 +2757,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		this.classPublicRead = classPublicRead;
 		this.classPublicReadWrap.alreadyInitialized = true;
 	}
-	public ApiWriter setClassPublicRead(String o) {
+	public void setClassPublicRead(String o) {
 		this.classPublicRead = ApiWriter.staticSetClassPublicRead(siteRequest_, o);
 		this.classPublicReadWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static Boolean staticSetClassPublicRead(SiteRequestEnUS siteRequest_, String o) {
 		return Boolean.parseBoolean(o);
@@ -2797,7 +2779,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrClassPublicRead(SiteRequestEnUS siteRequest_, Boolean o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassPublicRead(SiteRequestEnUS siteRequest_, String o) {
@@ -2856,10 +2838,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		this.classRoleSession = classRoleSession;
 		this.classRoleSessionWrap.alreadyInitialized = true;
 	}
-	public ApiWriter setClassRoleSession(String o) {
+	public void setClassRoleSession(String o) {
 		this.classRoleSession = ApiWriter.staticSetClassRoleSession(siteRequest_, o);
 		this.classRoleSessionWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static Boolean staticSetClassRoleSession(SiteRequestEnUS siteRequest_, String o) {
 		return Boolean.parseBoolean(o);
@@ -2879,7 +2860,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrClassRoleSession(SiteRequestEnUS siteRequest_, Boolean o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassRoleSession(SiteRequestEnUS siteRequest_, String o) {
@@ -2938,10 +2919,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		this.classRoleUtilisateur = classRoleUtilisateur;
 		this.classRoleUtilisateurWrap.alreadyInitialized = true;
 	}
-	public ApiWriter setClassRoleUtilisateur(String o) {
+	public void setClassRoleUtilisateur(String o) {
 		this.classRoleUtilisateur = ApiWriter.staticSetClassRoleUtilisateur(siteRequest_, o);
 		this.classRoleUtilisateurWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static Boolean staticSetClassRoleUtilisateur(SiteRequestEnUS siteRequest_, String o) {
 		return Boolean.parseBoolean(o);
@@ -2961,7 +2941,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrClassRoleUtilisateur(SiteRequestEnUS siteRequest_, Boolean o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassRoleUtilisateur(SiteRequestEnUS siteRequest_, String o) {
@@ -3020,10 +3000,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		this.classRolesFound = classRolesFound;
 		this.classRolesFoundWrap.alreadyInitialized = true;
 	}
-	public ApiWriter setClassRolesFound(String o) {
+	public void setClassRolesFound(String o) {
 		this.classRolesFound = ApiWriter.staticSetClassRolesFound(siteRequest_, o);
 		this.classRolesFoundWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static Boolean staticSetClassRolesFound(SiteRequestEnUS siteRequest_, String o) {
 		return Boolean.parseBoolean(o);
@@ -3043,7 +3022,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrClassRolesFound(SiteRequestEnUS siteRequest_, Boolean o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassRolesFound(SiteRequestEnUS siteRequest_, String o) {
@@ -3102,7 +3081,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		this.classRoles = classRoles;
 		this.classRolesWrap.alreadyInitialized = true;
 	}
-	public static List<String> staticSetClassRoles(SiteRequestEnUS siteRequest_, String o) {
+	public static String staticSetClassRoles(SiteRequestEnUS siteRequest_, String o) {
 		return null;
 	}
 	public ApiWriter addClassRoles(String...objets) {
@@ -3116,13 +3095,12 @@ public abstract class ApiWriterGen<DEV> extends Object {
 			this.classRoles.add(o);
 		return (ApiWriter)this;
 	}
-	public ApiWriter setClassRoles(JsonArray objets) {
+	public void setClassRoles(JsonArray objets) {
 		classRoles.clear();
 		for(int i = 0; i < objets.size(); i++) {
 			String o = objets.getString(i);
 			addClassRoles(o);
 		}
-		return (ApiWriter)this;
 	}
 	protected ApiWriter classRolesInit() {
 		if(!classRolesWrap.alreadyInitialized) {
@@ -3134,12 +3112,12 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		return (ApiWriter)this;
 	}
 
-	public static List<String> staticSolrClassRoles(SiteRequestEnUS siteRequest_, List<String> o) {
+	public static String staticSolrClassRoles(SiteRequestEnUS siteRequest_, String o) {
 		return o;
 	}
 
-	public static String staticSolrStrClassRoles(SiteRequestEnUS siteRequest_, List<String> o) {
-			return o == null ? null : o.toString();
+	public static String staticSolrStrClassRoles(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassRoles(SiteRequestEnUS siteRequest_, String o) {
@@ -3147,7 +3125,11 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public List<String> solrClassRoles() {
-		return ApiWriter.staticSolrClassRoles(siteRequest_, classRoles);
+		List<String> l = new ArrayList<String>();
+		for(String o : classRoles) {
+			l.add(ApiWriter.staticSolrClassRoles(siteRequest_, o));
+		}
+		return l;
 	}
 
 	public String strClassRoles() {
@@ -3198,7 +3180,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		this.classRolesLanguage = classRolesLanguage;
 		this.classRolesLanguageWrap.alreadyInitialized = true;
 	}
-	public static List<String> staticSetClassRolesLanguage(SiteRequestEnUS siteRequest_, String o) {
+	public static String staticSetClassRolesLanguage(SiteRequestEnUS siteRequest_, String o) {
 		return null;
 	}
 	public ApiWriter addClassRolesLanguage(String...objets) {
@@ -3212,13 +3194,12 @@ public abstract class ApiWriterGen<DEV> extends Object {
 			this.classRolesLanguage.add(o);
 		return (ApiWriter)this;
 	}
-	public ApiWriter setClassRolesLanguage(JsonArray objets) {
+	public void setClassRolesLanguage(JsonArray objets) {
 		classRolesLanguage.clear();
 		for(int i = 0; i < objets.size(); i++) {
 			String o = objets.getString(i);
 			addClassRolesLanguage(o);
 		}
-		return (ApiWriter)this;
 	}
 	protected ApiWriter classRolesLanguageInit() {
 		if(!classRolesLanguageWrap.alreadyInitialized) {
@@ -3230,12 +3211,12 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		return (ApiWriter)this;
 	}
 
-	public static List<String> staticSolrClassRolesLanguage(SiteRequestEnUS siteRequest_, List<String> o) {
+	public static String staticSolrClassRolesLanguage(SiteRequestEnUS siteRequest_, String o) {
 		return o;
 	}
 
-	public static String staticSolrStrClassRolesLanguage(SiteRequestEnUS siteRequest_, List<String> o) {
-			return o == null ? null : o.toString();
+	public static String staticSolrStrClassRolesLanguage(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqClassRolesLanguage(SiteRequestEnUS siteRequest_, String o) {
@@ -3243,7 +3224,11 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public List<String> solrClassRolesLanguage() {
-		return ApiWriter.staticSolrClassRolesLanguage(siteRequest_, classRolesLanguage);
+		List<String> l = new ArrayList<String>();
+		for(String o : classRolesLanguage) {
+			l.add(ApiWriter.staticSolrClassRolesLanguage(siteRequest_, o));
+		}
+		return l;
 	}
 
 	public String strClassRolesLanguage() {
@@ -3289,10 +3274,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	public String getLanguageName() {
 		return languageName;
 	}
-	public ApiWriter setLanguageName(String o) {
+	public void setLanguageName(String o) {
 		this.languageName = ApiWriter.staticSetLanguageName(siteRequest_, o);
 		this.languageNameWrap.alreadyInitialized = true;
-		return (ApiWriter)this;
 	}
 	public static String staticSetLanguageName(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -3312,7 +3296,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrLanguageName(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqLanguageName(SiteRequestEnUS siteRequest_, String o) {
@@ -3736,7 +3720,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		case "openApiVersion":
 			return ApiWriter.staticSolrOpenApiVersion(siteRequest_, (String)o);
 		case "classUris":
-			return ApiWriter.staticSolrClassUris(siteRequest_, (List<String>)o);
+			return ApiWriter.staticSolrClassUris(siteRequest_, (String)o);
 		case "openApiVersionNumber":
 			return ApiWriter.staticSolrOpenApiVersionNumber(siteRequest_, (Integer)o);
 		case "tabsSchema":
@@ -3778,7 +3762,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		case "classKeywordsFound":
 			return ApiWriter.staticSolrClassKeywordsFound(siteRequest_, (Boolean)o);
 		case "classKeywords":
-			return ApiWriter.staticSolrClassKeywords(siteRequest_, (List<String>)o);
+			return ApiWriter.staticSolrClassKeywords(siteRequest_, (String)o);
 		case "classPublicRead":
 			return ApiWriter.staticSolrClassPublicRead(siteRequest_, (Boolean)o);
 		case "classRoleSession":
@@ -3788,9 +3772,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		case "classRolesFound":
 			return ApiWriter.staticSolrClassRolesFound(siteRequest_, (Boolean)o);
 		case "classRoles":
-			return ApiWriter.staticSolrClassRoles(siteRequest_, (List<String>)o);
+			return ApiWriter.staticSolrClassRoles(siteRequest_, (String)o);
 		case "classRolesLanguage":
-			return ApiWriter.staticSolrClassRolesLanguage(siteRequest_, (List<String>)o);
+			return ApiWriter.staticSolrClassRolesLanguage(siteRequest_, (String)o);
 		case "languageName":
 			return ApiWriter.staticSolrLanguageName(siteRequest_, (String)o);
 			default:
@@ -3814,7 +3798,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		case "openApiVersion":
 			return ApiWriter.staticSolrStrOpenApiVersion(siteRequest_, (String)o);
 		case "classUris":
-			return ApiWriter.staticSolrStrClassUris(siteRequest_, (List<String>)o);
+			return ApiWriter.staticSolrStrClassUris(siteRequest_, (String)o);
 		case "openApiVersionNumber":
 			return ApiWriter.staticSolrStrOpenApiVersionNumber(siteRequest_, (Integer)o);
 		case "tabsSchema":
@@ -3856,7 +3840,7 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		case "classKeywordsFound":
 			return ApiWriter.staticSolrStrClassKeywordsFound(siteRequest_, (Boolean)o);
 		case "classKeywords":
-			return ApiWriter.staticSolrStrClassKeywords(siteRequest_, (List<String>)o);
+			return ApiWriter.staticSolrStrClassKeywords(siteRequest_, (String)o);
 		case "classPublicRead":
 			return ApiWriter.staticSolrStrClassPublicRead(siteRequest_, (Boolean)o);
 		case "classRoleSession":
@@ -3866,9 +3850,9 @@ public abstract class ApiWriterGen<DEV> extends Object {
 		case "classRolesFound":
 			return ApiWriter.staticSolrStrClassRolesFound(siteRequest_, (Boolean)o);
 		case "classRoles":
-			return ApiWriter.staticSolrStrClassRoles(siteRequest_, (List<String>)o);
+			return ApiWriter.staticSolrStrClassRoles(siteRequest_, (String)o);
 		case "classRolesLanguage":
-			return ApiWriter.staticSolrStrClassRolesLanguage(siteRequest_, (List<String>)o);
+			return ApiWriter.staticSolrStrClassRolesLanguage(siteRequest_, (String)o);
 		case "languageName":
 			return ApiWriter.staticSolrStrLanguageName(siteRequest_, (String)o);
 			default:

@@ -152,10 +152,9 @@ public abstract class SearchListGen<DEV> {
 		this.store = store;
 		this.storeWrap.alreadyInitialized = true;
 	}
-	public SearchList setStore(String o) {
+	public void setStore(String o) {
 		this.store = SearchList.staticSetStore(siteRequest_, o);
 		this.storeWrap.alreadyInitialized = true;
-		return (SearchList)this;
 	}
 	public static Boolean staticSetStore(SiteRequestEnUS siteRequest_, String o) {
 		return Boolean.parseBoolean(o);
@@ -175,7 +174,7 @@ public abstract class SearchListGen<DEV> {
 	}
 
 	public static String staticSolrStrStore(SiteRequestEnUS siteRequest_, Boolean o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqStore(SiteRequestEnUS siteRequest_, String o) {
@@ -234,10 +233,9 @@ public abstract class SearchListGen<DEV> {
 		this.populate = populate;
 		this.populateWrap.alreadyInitialized = true;
 	}
-	public SearchList setPopulate(String o) {
+	public void setPopulate(String o) {
 		this.populate = SearchList.staticSetPopulate(siteRequest_, o);
 		this.populateWrap.alreadyInitialized = true;
-		return (SearchList)this;
 	}
 	public static Boolean staticSetPopulate(SiteRequestEnUS siteRequest_, String o) {
 		return Boolean.parseBoolean(o);
@@ -257,7 +255,7 @@ public abstract class SearchListGen<DEV> {
 	}
 
 	public static String staticSolrStrPopulate(SiteRequestEnUS siteRequest_, Boolean o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqPopulate(SiteRequestEnUS siteRequest_, String o) {
@@ -316,7 +314,7 @@ public abstract class SearchListGen<DEV> {
 		this.fields = fields;
 		this.fieldsWrap.alreadyInitialized = true;
 	}
-	public static List<String> staticSetFields(SiteRequestEnUS siteRequest_, String o) {
+	public static String staticSetFields(SiteRequestEnUS siteRequest_, String o) {
 		return null;
 	}
 	public SearchList addFields(String...objets) {
@@ -330,13 +328,12 @@ public abstract class SearchListGen<DEV> {
 			this.fields.add(o);
 		return (SearchList)this;
 	}
-	public SearchList setFields(JsonArray objets) {
+	public void setFields(JsonArray objets) {
 		fields.clear();
 		for(int i = 0; i < objets.size(); i++) {
 			String o = objets.getString(i);
 			addFields(o);
 		}
-		return (SearchList)this;
 	}
 	protected SearchList fieldsInit() {
 		if(!fieldsWrap.alreadyInitialized) {
@@ -346,12 +343,12 @@ public abstract class SearchListGen<DEV> {
 		return (SearchList)this;
 	}
 
-	public static List<String> staticSolrFields(SiteRequestEnUS siteRequest_, List<String> o) {
+	public static String staticSolrFields(SiteRequestEnUS siteRequest_, String o) {
 		return o;
 	}
 
-	public static String staticSolrStrFields(SiteRequestEnUS siteRequest_, List<String> o) {
-			return o == null ? null : o.toString();
+	public static String staticSolrStrFields(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqFields(SiteRequestEnUS siteRequest_, String o) {
@@ -359,7 +356,11 @@ public abstract class SearchListGen<DEV> {
 	}
 
 	public List<String> solrFields() {
-		return SearchList.staticSolrFields(siteRequest_, fields);
+		List<String> l = new ArrayList<String>();
+		for(String o : fields) {
+			l.add(SearchList.staticSolrFields(siteRequest_, o));
+		}
+		return l;
 	}
 
 	public String strFields() {
@@ -698,7 +699,7 @@ public abstract class SearchListGen<DEV> {
 		case "populate":
 			return SearchList.staticSolrPopulate(siteRequest_, (Boolean)o);
 		case "fields":
-			return SearchList.staticSolrFields(siteRequest_, (List<String>)o);
+			return SearchList.staticSolrFields(siteRequest_, (String)o);
 			default:
 				return null;
 		}
@@ -718,7 +719,7 @@ public abstract class SearchListGen<DEV> {
 		case "populate":
 			return SearchList.staticSolrStrPopulate(siteRequest_, (Boolean)o);
 		case "fields":
-			return SearchList.staticSolrStrFields(siteRequest_, (List<String>)o);
+			return SearchList.staticSolrStrFields(siteRequest_, (String)o);
 			default:
 				return null;
 		}

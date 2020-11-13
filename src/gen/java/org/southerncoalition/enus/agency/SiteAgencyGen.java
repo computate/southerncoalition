@@ -110,10 +110,9 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		this.agencyKey = agencyKey;
 		this.agencyKeyWrap.alreadyInitialized = true;
 	}
-	public SiteAgency setAgencyKey(String o) {
+	public void setAgencyKey(String o) {
 		this.agencyKey = SiteAgency.staticSetAgencyKey(siteRequest_, o);
 		this.agencyKeyWrap.alreadyInitialized = true;
-		return (SiteAgency)this;
 	}
 	public static Long staticSetAgencyKey(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -135,7 +134,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	}
 
 	public static String staticSolrStrAgencyKey(SiteRequestEnUS siteRequest_, Long o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqAgencyKey(SiteRequestEnUS siteRequest_, String o) {
@@ -189,10 +188,9 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	public String getAgencyName() {
 		return agencyName;
 	}
-	public SiteAgency setAgencyName(String o) {
+	public void setAgencyName(String o) {
 		this.agencyName = SiteAgency.staticSetAgencyName(siteRequest_, o);
 		this.agencyNameWrap.alreadyInitialized = true;
-		return (SiteAgency)this;
 	}
 	public static String staticSetAgencyName(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -212,7 +210,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	}
 
 	public static String staticSolrStrAgencyName(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqAgencyName(SiteRequestEnUS siteRequest_, String o) {
@@ -420,10 +418,9 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		this.stateKey = stateKey;
 		this.stateKeyWrap.alreadyInitialized = true;
 	}
-	public SiteAgency setStateKey(String o) {
+	public void setStateKey(String o) {
 		this.stateKey = SiteAgency.staticSetStateKey(siteRequest_, o);
 		this.stateKeyWrap.alreadyInitialized = true;
-		return (SiteAgency)this;
 	}
 	public static Long staticSetStateKey(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -445,7 +442,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	}
 
 	public static String staticSolrStrStateKey(SiteRequestEnUS siteRequest_, Long o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqStateKey(SiteRequestEnUS siteRequest_, String o) {
@@ -580,10 +577,9 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		this.imageLeft = imageLeft;
 		this.imageLeftWrap.alreadyInitialized = true;
 	}
-	public SiteAgency setImageLeft(String o) {
+	public void setImageLeft(String o) {
 		this.imageLeft = SiteAgency.staticSetImageLeft(siteRequest_, o);
 		this.imageLeftWrap.alreadyInitialized = true;
-		return (SiteAgency)this;
 	}
 	public static Integer staticSetImageLeft(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -605,7 +601,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	}
 
 	public static String staticSolrStrImageLeft(SiteRequestEnUS siteRequest_, Integer o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqImageLeft(SiteRequestEnUS siteRequest_, String o) {
@@ -731,10 +727,9 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		this.imageTop = imageTop;
 		this.imageTopWrap.alreadyInitialized = true;
 	}
-	public SiteAgency setImageTop(String o) {
+	public void setImageTop(String o) {
 		this.imageTop = SiteAgency.staticSetImageTop(siteRequest_, o);
 		this.imageTopWrap.alreadyInitialized = true;
-		return (SiteAgency)this;
 	}
 	public static Integer staticSetImageTop(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -756,7 +751,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	}
 
 	public static String staticSolrStrImageTop(SiteRequestEnUS siteRequest_, Integer o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqImageTop(SiteRequestEnUS siteRequest_, String o) {
@@ -876,10 +871,9 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	public String getImageCoords() {
 		return imageCoords;
 	}
-	public SiteAgency setImageCoords(String o) {
+	public void setImageCoords(String o) {
 		this.imageCoords = SiteAgency.staticSetImageCoords(siteRequest_, o);
 		this.imageCoordsWrap.alreadyInitialized = true;
-		return (SiteAgency)this;
 	}
 	public static String staticSetImageCoords(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -899,7 +893,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	}
 
 	public static String staticSolrStrImageCoords(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqImageCoords(SiteRequestEnUS siteRequest_, String o) {
@@ -1023,7 +1017,15 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		this.reportCardKeys = reportCardKeys;
 		this.reportCardKeysWrap.alreadyInitialized = true;
 	}
-	public static List<Long> staticSetReportCardKeys(SiteRequestEnUS siteRequest_, String o) {
+	public void setReportCardKeys(String o) {
+		Long l = SiteAgency.staticSetReportCardKeys(siteRequest_, o);
+		if(l != null)
+			addReportCardKeys(l);
+		this.reportCardKeysWrap.alreadyInitialized = true;
+	}
+	public static Long staticSetReportCardKeys(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
 		return null;
 	}
 	public SiteAgency addReportCardKeys(Long...objets) {
@@ -1037,13 +1039,12 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 			this.reportCardKeys.add(o);
 		return (SiteAgency)this;
 	}
-	public SiteAgency setReportCardKeys(JsonArray objets) {
+	public void setReportCardKeys(JsonArray objets) {
 		reportCardKeys.clear();
 		for(int i = 0; i < objets.size(); i++) {
 			Long o = objets.getLong(i);
 			addReportCardKeys(o);
 		}
-		return (SiteAgency)this;
 	}
 	public SiteAgency addReportCardKeys(String o) {
 		if(NumberUtils.isParsable(o)) {
@@ -1060,12 +1061,12 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		return (SiteAgency)this;
 	}
 
-	public static List<Long> staticSolrReportCardKeys(SiteRequestEnUS siteRequest_, List<Long> o) {
+	public static Long staticSolrReportCardKeys(SiteRequestEnUS siteRequest_, Long o) {
 		return o;
 	}
 
-	public static String staticSolrStrReportCardKeys(SiteRequestEnUS siteRequest_, List<Long> o) {
-			return o == null ? null : o.toString();
+	public static String staticSolrStrReportCardKeys(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqReportCardKeys(SiteRequestEnUS siteRequest_, String o) {
@@ -1073,7 +1074,11 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	}
 
 	public List<Long> solrReportCardKeys() {
-		return SiteAgency.staticSolrReportCardKeys(siteRequest_, reportCardKeys);
+		List<Long> l = new ArrayList<Long>();
+		for(Long o : reportCardKeys) {
+			l.add(SiteAgency.staticSolrReportCardKeys(siteRequest_, o));
+		}
+		return l;
 	}
 
 	public String strReportCardKeys() {
@@ -1194,10 +1199,9 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	public String getStateId() {
 		return stateId;
 	}
-	public SiteAgency setStateId(String o) {
+	public void setStateId(String o) {
 		this.stateId = SiteAgency.staticSetStateId(siteRequest_, o);
 		this.stateIdWrap.alreadyInitialized = true;
-		return (SiteAgency)this;
 	}
 	public static String staticSetStateId(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1217,7 +1221,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	}
 
 	public static String staticSolrStrStateId(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqStateId(SiteRequestEnUS siteRequest_, String o) {
@@ -1271,10 +1275,9 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	public String getStateName() {
 		return stateName;
 	}
-	public SiteAgency setStateName(String o) {
+	public void setStateName(String o) {
 		this.stateName = SiteAgency.staticSetStateName(siteRequest_, o);
 		this.stateNameWrap.alreadyInitialized = true;
-		return (SiteAgency)this;
 	}
 	public static String staticSetStateName(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1294,7 +1297,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	}
 
 	public static String staticSolrStrStateName(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqStateName(SiteRequestEnUS siteRequest_, String o) {
@@ -1348,10 +1351,9 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	public String getStateAbbreviation() {
 		return stateAbbreviation;
 	}
-	public SiteAgency setStateAbbreviation(String o) {
+	public void setStateAbbreviation(String o) {
 		this.stateAbbreviation = SiteAgency.staticSetStateAbbreviation(siteRequest_, o);
 		this.stateAbbreviationWrap.alreadyInitialized = true;
-		return (SiteAgency)this;
 	}
 	public static String staticSetStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1371,7 +1373,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	}
 
 	public static String staticSolrStrStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
@@ -1425,10 +1427,9 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	public String getAgencyOnlyName() {
 		return agencyOnlyName;
 	}
-	public SiteAgency setAgencyOnlyName(String o) {
+	public void setAgencyOnlyName(String o) {
 		this.agencyOnlyName = SiteAgency.staticSetAgencyOnlyName(siteRequest_, o);
 		this.agencyOnlyNameWrap.alreadyInitialized = true;
-		return (SiteAgency)this;
 	}
 	public static String staticSetAgencyOnlyName(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1448,7 +1449,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	}
 
 	public static String staticSolrStrAgencyOnlyName(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqAgencyOnlyName(SiteRequestEnUS siteRequest_, String o) {
@@ -1502,10 +1503,9 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	public String getAgencyCompleteName() {
 		return agencyCompleteName;
 	}
-	public SiteAgency setAgencyCompleteName(String o) {
+	public void setAgencyCompleteName(String o) {
 		this.agencyCompleteName = SiteAgency.staticSetAgencyCompleteName(siteRequest_, o);
 		this.agencyCompleteNameWrap.alreadyInitialized = true;
-		return (SiteAgency)this;
 	}
 	public static String staticSetAgencyCompleteName(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1525,7 +1525,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	}
 
 	public static String staticSolrStrAgencyCompleteName(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqAgencyCompleteName(SiteRequestEnUS siteRequest_, String o) {
@@ -1760,7 +1760,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		case "imageCoords":
 			return SiteAgency.staticSolrImageCoords(siteRequest_, (String)o);
 		case "reportCardKeys":
-			return SiteAgency.staticSolrReportCardKeys(siteRequest_, (List<Long>)o);
+			return SiteAgency.staticSolrReportCardKeys(siteRequest_, (Long)o);
 		case "stateId":
 			return SiteAgency.staticSolrStateId(siteRequest_, (String)o);
 		case "stateName":
@@ -1798,7 +1798,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		case "imageCoords":
 			return SiteAgency.staticSolrStrImageCoords(siteRequest_, (String)o);
 		case "reportCardKeys":
-			return SiteAgency.staticSolrStrReportCardKeys(siteRequest_, (List<Long>)o);
+			return SiteAgency.staticSolrStrReportCardKeys(siteRequest_, (Long)o);
 		case "stateId":
 			return SiteAgency.staticSolrStrStateId(siteRequest_, (String)o);
 		case "stateName":

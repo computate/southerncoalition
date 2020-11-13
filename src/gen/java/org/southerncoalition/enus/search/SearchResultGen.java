@@ -152,10 +152,9 @@ public abstract class SearchResultGen<DEV> extends Object {
 		this.resultIndex = resultIndex;
 		this.resultIndexWrap.alreadyInitialized = true;
 	}
-	public SearchResult setResultIndex(String o) {
+	public void setResultIndex(String o) {
 		this.resultIndex = SearchResult.staticSetResultIndex(siteRequest_, o);
 		this.resultIndexWrap.alreadyInitialized = true;
-		return (SearchResult)this;
 	}
 	public static Long staticSetResultIndex(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -177,7 +176,7 @@ public abstract class SearchResultGen<DEV> extends Object {
 	}
 
 	public static String staticSolrStrResultIndex(SiteRequestEnUS siteRequest_, Long o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqResultIndex(SiteRequestEnUS siteRequest_, String o) {

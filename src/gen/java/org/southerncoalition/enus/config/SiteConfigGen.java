@@ -65,10 +65,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getConfigPath() {
 		return configPath;
 	}
-	public SiteConfig setConfigPath(String o) {
+	public void setConfigPath(String o) {
 		this.configPath = SiteConfig.staticSetConfigPath(null, o);
 		this.configPathWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetConfigPath(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -159,10 +158,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getSiteIdentifier() {
 		return siteIdentifier;
 	}
-	public SiteConfig setSiteIdentifier(String o) {
+	public void setSiteIdentifier(String o) {
 		this.siteIdentifier = SiteConfig.staticSetSiteIdentifier(null, o);
 		this.siteIdentifierWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetSiteIdentifier(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -212,10 +210,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getPrefixEscaped() {
 		return prefixEscaped;
 	}
-	public SiteConfig setPrefixEscaped(String o) {
+	public void setPrefixEscaped(String o) {
 		this.prefixEscaped = SiteConfig.staticSetPrefixEscaped(null, o);
 		this.prefixEscapedWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetPrefixEscaped(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -265,10 +262,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAppPath() {
 		return appPath;
 	}
-	public SiteConfig setAppPath(String o) {
+	public void setAppPath(String o) {
 		this.appPath = SiteConfig.staticSetAppPath(null, o);
 		this.appPathWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetAppPath(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -318,10 +314,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getDocRoot() {
 		return docRoot;
 	}
-	public SiteConfig setDocRoot(String o) {
+	public void setDocRoot(String o) {
 		this.docRoot = SiteConfig.staticSetDocRoot(null, o);
 		this.docRootWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetDocRoot(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -371,10 +366,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getCompanyName() {
 		return companyName;
 	}
-	public SiteConfig setCompanyName(String o) {
+	public void setCompanyName(String o) {
 		this.companyName = SiteConfig.staticSetCompanyName(null, o);
 		this.companyNameWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetCompanyName(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -424,10 +418,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getDomainName() {
 		return domainName;
 	}
-	public SiteConfig setDomainName(String o) {
+	public void setDomainName(String o) {
 		this.domainName = SiteConfig.staticSetDomainName(null, o);
 		this.domainNameWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetDomainName(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -477,10 +470,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getSiteHostName() {
 		return siteHostName;
 	}
-	public SiteConfig setSiteHostName(String o) {
+	public void setSiteHostName(String o) {
 		this.siteHostName = SiteConfig.staticSetSiteHostName(null, o);
 		this.siteHostNameWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetSiteHostName(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -536,10 +528,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.sitePort = sitePort;
 		this.sitePortWrap.alreadyInitialized = true;
 	}
-	public SiteConfig setSitePort(String o) {
+	public void setSitePort(String o) {
 		this.sitePort = SiteConfig.staticSetSitePort(null, o);
 		this.sitePortWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static Integer staticSetSitePort(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -597,10 +588,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.siteInstances = siteInstances;
 		this.siteInstancesWrap.alreadyInitialized = true;
 	}
-	public SiteConfig setSiteInstances(String o) {
+	public void setSiteInstances(String o) {
 		this.siteInstances = SiteConfig.staticSetSiteInstances(null, o);
 		this.siteInstancesWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static Integer staticSetSiteInstances(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -652,10 +642,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAuthRealm() {
 		return authRealm;
 	}
-	public SiteConfig setAuthRealm(String o) {
+	public void setAuthRealm(String o) {
 		this.authRealm = SiteConfig.staticSetAuthRealm(null, o);
 		this.authRealmWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetAuthRealm(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -705,10 +694,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAuthResource() {
 		return authResource;
 	}
-	public SiteConfig setAuthResource(String o) {
+	public void setAuthResource(String o) {
 		this.authResource = SiteConfig.staticSetAuthResource(null, o);
 		this.authResourceWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetAuthResource(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -758,10 +746,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAuthSecret() {
 		return authSecret;
 	}
-	public SiteConfig setAuthSecret(String o) {
+	public void setAuthSecret(String o) {
 		this.authSecret = SiteConfig.staticSetAuthSecret(null, o);
 		this.authSecretWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetAuthSecret(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -811,10 +798,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAuthSslRequired() {
 		return authSslRequired;
 	}
-	public SiteConfig setAuthSslRequired(String o) {
+	public void setAuthSslRequired(String o) {
 		this.authSslRequired = SiteConfig.staticSetAuthSslRequired(null, o);
 		this.authSslRequiredWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetAuthSslRequired(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -864,10 +850,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getSslJksPath() {
 		return sslJksPath;
 	}
-	public SiteConfig setSslJksPath(String o) {
+	public void setSslJksPath(String o) {
 		this.sslJksPath = SiteConfig.staticSetSslJksPath(null, o);
 		this.sslJksPathWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetSslJksPath(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -917,10 +902,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getSslJksPassword() {
 		return sslJksPassword;
 	}
-	public SiteConfig setSslJksPassword(String o) {
+	public void setSslJksPassword(String o) {
 		this.sslJksPassword = SiteConfig.staticSetSslJksPassword(null, o);
 		this.sslJksPasswordWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetSslJksPassword(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -970,10 +954,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAuthUrl() {
 		return authUrl;
 	}
-	public SiteConfig setAuthUrl(String o) {
+	public void setAuthUrl(String o) {
 		this.authUrl = SiteConfig.staticSetAuthUrl(null, o);
 		this.authUrlWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetAuthUrl(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1023,10 +1006,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getEncryptionSalt() {
 		return encryptionSalt;
 	}
-	public SiteConfig setEncryptionSalt(String o) {
+	public void setEncryptionSalt(String o) {
 		this.encryptionSalt = SiteConfig.staticSetEncryptionSalt(null, o);
 		this.encryptionSaltWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetEncryptionSalt(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1076,10 +1058,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getEncryptionPassword() {
 		return encryptionPassword;
 	}
-	public SiteConfig setEncryptionPassword(String o) {
+	public void setEncryptionPassword(String o) {
 		this.encryptionPassword = SiteConfig.staticSetEncryptionPassword(null, o);
 		this.encryptionPasswordWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetEncryptionPassword(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1129,10 +1110,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getSiteBaseUrl() {
 		return siteBaseUrl;
 	}
-	public SiteConfig setSiteBaseUrl(String o) {
+	public void setSiteBaseUrl(String o) {
 		this.siteBaseUrl = SiteConfig.staticSetSiteBaseUrl(null, o);
 		this.siteBaseUrlWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetSiteBaseUrl(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1182,10 +1162,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getSiteDisplayName() {
 		return siteDisplayName;
 	}
-	public SiteConfig setSiteDisplayName(String o) {
+	public void setSiteDisplayName(String o) {
 		this.siteDisplayName = SiteConfig.staticSetSiteDisplayName(null, o);
 		this.siteDisplayNameWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetSiteDisplayName(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1235,10 +1214,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getJdbcDriverClass() {
 		return jdbcDriverClass;
 	}
-	public SiteConfig setJdbcDriverClass(String o) {
+	public void setJdbcDriverClass(String o) {
 		this.jdbcDriverClass = SiteConfig.staticSetJdbcDriverClass(null, o);
 		this.jdbcDriverClassWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetJdbcDriverClass(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1288,10 +1266,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getJdbcUsername() {
 		return jdbcUsername;
 	}
-	public SiteConfig setJdbcUsername(String o) {
+	public void setJdbcUsername(String o) {
 		this.jdbcUsername = SiteConfig.staticSetJdbcUsername(null, o);
 		this.jdbcUsernameWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetJdbcUsername(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1341,10 +1318,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getJdbcPassword() {
 		return jdbcPassword;
 	}
-	public SiteConfig setJdbcPassword(String o) {
+	public void setJdbcPassword(String o) {
 		this.jdbcPassword = SiteConfig.staticSetJdbcPassword(null, o);
 		this.jdbcPasswordWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetJdbcPassword(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1400,10 +1376,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.jdbcMaxPoolSize = jdbcMaxPoolSize;
 		this.jdbcMaxPoolSizeWrap.alreadyInitialized = true;
 	}
-	public SiteConfig setJdbcMaxPoolSize(String o) {
+	public void setJdbcMaxPoolSize(String o) {
 		this.jdbcMaxPoolSize = SiteConfig.staticSetJdbcMaxPoolSize(null, o);
 		this.jdbcMaxPoolSizeWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static Integer staticSetJdbcMaxPoolSize(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -1461,10 +1436,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.jdbcMaxWaitQueueSize = jdbcMaxWaitQueueSize;
 		this.jdbcMaxWaitQueueSizeWrap.alreadyInitialized = true;
 	}
-	public SiteConfig setJdbcMaxWaitQueueSize(String o) {
+	public void setJdbcMaxWaitQueueSize(String o) {
 		this.jdbcMaxWaitQueueSize = SiteConfig.staticSetJdbcMaxWaitQueueSize(null, o);
 		this.jdbcMaxWaitQueueSizeWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static Integer staticSetJdbcMaxWaitQueueSize(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -1522,10 +1496,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.jdbcMinPoolSize = jdbcMinPoolSize;
 		this.jdbcMinPoolSizeWrap.alreadyInitialized = true;
 	}
-	public SiteConfig setJdbcMinPoolSize(String o) {
+	public void setJdbcMinPoolSize(String o) {
 		this.jdbcMinPoolSize = SiteConfig.staticSetJdbcMinPoolSize(null, o);
 		this.jdbcMinPoolSizeWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static Integer staticSetJdbcMinPoolSize(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -1583,10 +1556,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.jdbcMaxStatements = jdbcMaxStatements;
 		this.jdbcMaxStatementsWrap.alreadyInitialized = true;
 	}
-	public SiteConfig setJdbcMaxStatements(String o) {
+	public void setJdbcMaxStatements(String o) {
 		this.jdbcMaxStatements = SiteConfig.staticSetJdbcMaxStatements(null, o);
 		this.jdbcMaxStatementsWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static Integer staticSetJdbcMaxStatements(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -1644,10 +1616,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.jdbcMaxStatementsPerConnection = jdbcMaxStatementsPerConnection;
 		this.jdbcMaxStatementsPerConnectionWrap.alreadyInitialized = true;
 	}
-	public SiteConfig setJdbcMaxStatementsPerConnection(String o) {
+	public void setJdbcMaxStatementsPerConnection(String o) {
 		this.jdbcMaxStatementsPerConnection = SiteConfig.staticSetJdbcMaxStatementsPerConnection(null, o);
 		this.jdbcMaxStatementsPerConnectionWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static Integer staticSetJdbcMaxStatementsPerConnection(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -1705,10 +1676,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.jdbcMaxIdleTime = jdbcMaxIdleTime;
 		this.jdbcMaxIdleTimeWrap.alreadyInitialized = true;
 	}
-	public SiteConfig setJdbcMaxIdleTime(String o) {
+	public void setJdbcMaxIdleTime(String o) {
 		this.jdbcMaxIdleTime = SiteConfig.staticSetJdbcMaxIdleTime(null, o);
 		this.jdbcMaxIdleTimeWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static Integer staticSetJdbcMaxIdleTime(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -1766,10 +1736,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.jdbcConnectTimeout = jdbcConnectTimeout;
 		this.jdbcConnectTimeoutWrap.alreadyInitialized = true;
 	}
-	public SiteConfig setJdbcConnectTimeout(String o) {
+	public void setJdbcConnectTimeout(String o) {
 		this.jdbcConnectTimeout = SiteConfig.staticSetJdbcConnectTimeout(null, o);
 		this.jdbcConnectTimeoutWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static Integer staticSetJdbcConnectTimeout(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -1821,10 +1790,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getJdbcHost() {
 		return jdbcHost;
 	}
-	public SiteConfig setJdbcHost(String o) {
+	public void setJdbcHost(String o) {
 		this.jdbcHost = SiteConfig.staticSetJdbcHost(null, o);
 		this.jdbcHostWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetJdbcHost(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1880,10 +1848,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.jdbcPort = jdbcPort;
 		this.jdbcPortWrap.alreadyInitialized = true;
 	}
-	public SiteConfig setJdbcPort(String o) {
+	public void setJdbcPort(String o) {
 		this.jdbcPort = SiteConfig.staticSetJdbcPort(null, o);
 		this.jdbcPortWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static Integer staticSetJdbcPort(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -1935,10 +1902,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getJdbcDatabase() {
 		return jdbcDatabase;
 	}
-	public SiteConfig setJdbcDatabase(String o) {
+	public void setJdbcDatabase(String o) {
 		this.jdbcDatabase = SiteConfig.staticSetJdbcDatabase(null, o);
 		this.jdbcDatabaseWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetJdbcDatabase(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1988,10 +1954,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getSolrUrl() {
 		return solrUrl;
 	}
-	public SiteConfig setSolrUrl(String o) {
+	public void setSolrUrl(String o) {
 		this.solrUrl = SiteConfig.staticSetSolrUrl(null, o);
 		this.solrUrlWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetSolrUrl(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2041,10 +2006,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getSolrUrlComputate() {
 		return solrUrlComputate;
 	}
-	public SiteConfig setSolrUrlComputate(String o) {
+	public void setSolrUrlComputate(String o) {
 		this.solrUrlComputate = SiteConfig.staticSetSolrUrlComputate(null, o);
 		this.solrUrlComputateWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetSolrUrlComputate(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2094,10 +2058,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAccountFacebook() {
 		return accountFacebook;
 	}
-	public SiteConfig setAccountFacebook(String o) {
+	public void setAccountFacebook(String o) {
 		this.accountFacebook = SiteConfig.staticSetAccountFacebook(null, o);
 		this.accountFacebookWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetAccountFacebook(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2147,10 +2110,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAccountTwitter() {
 		return accountTwitter;
 	}
-	public SiteConfig setAccountTwitter(String o) {
+	public void setAccountTwitter(String o) {
 		this.accountTwitter = SiteConfig.staticSetAccountTwitter(null, o);
 		this.accountTwitterWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetAccountTwitter(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2200,10 +2162,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAccountInstagram() {
 		return accountInstagram;
 	}
-	public SiteConfig setAccountInstagram(String o) {
+	public void setAccountInstagram(String o) {
 		this.accountInstagram = SiteConfig.staticSetAccountInstagram(null, o);
 		this.accountInstagramWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetAccountInstagram(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2253,10 +2214,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAccountYoutube() {
 		return accountYoutube;
 	}
-	public SiteConfig setAccountYoutube(String o) {
+	public void setAccountYoutube(String o) {
 		this.accountYoutube = SiteConfig.staticSetAccountYoutube(null, o);
 		this.accountYoutubeWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetAccountYoutube(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2306,10 +2266,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAccountPinterest() {
 		return accountPinterest;
 	}
-	public SiteConfig setAccountPinterest(String o) {
+	public void setAccountPinterest(String o) {
 		this.accountPinterest = SiteConfig.staticSetAccountPinterest(null, o);
 		this.accountPinterestWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetAccountPinterest(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2359,10 +2318,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getAccountEmail() {
 		return accountEmail;
 	}
-	public SiteConfig setAccountEmail(String o) {
+	public void setAccountEmail(String o) {
 		this.accountEmail = SiteConfig.staticSetAccountEmail(null, o);
 		this.accountEmailWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetAccountEmail(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2412,10 +2370,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getRoleAdmin() {
 		return roleAdmin;
 	}
-	public SiteConfig setRoleAdmin(String o) {
+	public void setRoleAdmin(String o) {
 		this.roleAdmin = SiteConfig.staticSetRoleAdmin(null, o);
 		this.roleAdminWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetRoleAdmin(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2465,10 +2422,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getEmailAdmin() {
 		return emailAdmin;
 	}
-	public SiteConfig setEmailAdmin(String o) {
+	public void setEmailAdmin(String o) {
 		this.emailAdmin = SiteConfig.staticSetEmailAdmin(null, o);
 		this.emailAdminWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetEmailAdmin(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2524,10 +2480,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.numberExecutors = numberExecutors;
 		this.numberExecutorsWrap.alreadyInitialized = true;
 	}
-	public SiteConfig setNumberExecutors(String o) {
+	public void setNumberExecutors(String o) {
 		this.numberExecutors = SiteConfig.staticSetNumberExecutors(null, o);
 		this.numberExecutorsWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static Integer staticSetNumberExecutors(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -2579,10 +2534,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getOpenApiVersion() {
 		return openApiVersion;
 	}
-	public SiteConfig setOpenApiVersion(String o) {
+	public void setOpenApiVersion(String o) {
 		this.openApiVersion = SiteConfig.staticSetOpenApiVersion(null, o);
 		this.openApiVersionWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetOpenApiVersion(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2632,10 +2586,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getApiDescription() {
 		return apiDescription;
 	}
-	public SiteConfig setApiDescription(String o) {
+	public void setApiDescription(String o) {
 		this.apiDescription = SiteConfig.staticSetApiDescription(null, o);
 		this.apiDescriptionWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetApiDescription(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2685,10 +2638,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getApiTitle() {
 		return apiTitle;
 	}
-	public SiteConfig setApiTitle(String o) {
+	public void setApiTitle(String o) {
 		this.apiTitle = SiteConfig.staticSetApiTitle(null, o);
 		this.apiTitleWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetApiTitle(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2738,10 +2690,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getApiTermsService() {
 		return apiTermsService;
 	}
-	public SiteConfig setApiTermsService(String o) {
+	public void setApiTermsService(String o) {
 		this.apiTermsService = SiteConfig.staticSetApiTermsService(null, o);
 		this.apiTermsServiceWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetApiTermsService(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2791,10 +2742,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getApiVersion() {
 		return apiVersion;
 	}
-	public SiteConfig setApiVersion(String o) {
+	public void setApiVersion(String o) {
 		this.apiVersion = SiteConfig.staticSetApiVersion(null, o);
 		this.apiVersionWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetApiVersion(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2844,10 +2794,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getApiContactEmail() {
 		return apiContactEmail;
 	}
-	public SiteConfig setApiContactEmail(String o) {
+	public void setApiContactEmail(String o) {
 		this.apiContactEmail = SiteConfig.staticSetApiContactEmail(null, o);
 		this.apiContactEmailWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetApiContactEmail(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2897,10 +2846,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getApiLicenseName() {
 		return apiLicenseName;
 	}
-	public SiteConfig setApiLicenseName(String o) {
+	public void setApiLicenseName(String o) {
 		this.apiLicenseName = SiteConfig.staticSetApiLicenseName(null, o);
 		this.apiLicenseNameWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetApiLicenseName(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -2950,10 +2898,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getApiLicenseUrl() {
 		return apiLicenseUrl;
 	}
-	public SiteConfig setApiLicenseUrl(String o) {
+	public void setApiLicenseUrl(String o) {
 		this.apiLicenseUrl = SiteConfig.staticSetApiLicenseUrl(null, o);
 		this.apiLicenseUrlWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetApiLicenseUrl(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -3003,10 +2950,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getApiHostName() {
 		return apiHostName;
 	}
-	public SiteConfig setApiHostName(String o) {
+	public void setApiHostName(String o) {
 		this.apiHostName = SiteConfig.staticSetApiHostName(null, o);
 		this.apiHostNameWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetApiHostName(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -3056,10 +3002,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getApiBasePath() {
 		return apiBasePath;
 	}
-	public SiteConfig setApiBasePath(String o) {
+	public void setApiBasePath(String o) {
 		this.apiBasePath = SiteConfig.staticSetApiBasePath(null, o);
 		this.apiBasePathWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetApiBasePath(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -3109,10 +3054,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getStaticBaseUrl() {
 		return staticBaseUrl;
 	}
-	public SiteConfig setStaticBaseUrl(String o) {
+	public void setStaticBaseUrl(String o) {
 		this.staticBaseUrl = SiteConfig.staticSetStaticBaseUrl(null, o);
 		this.staticBaseUrlWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetStaticBaseUrl(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -3162,10 +3106,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getEmailHost() {
 		return emailHost;
 	}
-	public SiteConfig setEmailHost(String o) {
+	public void setEmailHost(String o) {
 		this.emailHost = SiteConfig.staticSetEmailHost(null, o);
 		this.emailHostWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetEmailHost(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -3221,10 +3164,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.emailPort = emailPort;
 		this.emailPortWrap.alreadyInitialized = true;
 	}
-	public SiteConfig setEmailPort(String o) {
+	public void setEmailPort(String o) {
 		this.emailPort = SiteConfig.staticSetEmailPort(null, o);
 		this.emailPortWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static Integer staticSetEmailPort(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -3276,10 +3218,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getEmailUsername() {
 		return emailUsername;
 	}
-	public SiteConfig setEmailUsername(String o) {
+	public void setEmailUsername(String o) {
 		this.emailUsername = SiteConfig.staticSetEmailUsername(null, o);
 		this.emailUsernameWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetEmailUsername(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -3329,10 +3270,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getEmailPassword() {
 		return emailPassword;
 	}
-	public SiteConfig setEmailPassword(String o) {
+	public void setEmailPassword(String o) {
 		this.emailPassword = SiteConfig.staticSetEmailPassword(null, o);
 		this.emailPasswordWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetEmailPassword(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -3382,10 +3322,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getEmailFrom() {
 		return emailFrom;
 	}
-	public SiteConfig setEmailFrom(String o) {
+	public void setEmailFrom(String o) {
 		this.emailFrom = SiteConfig.staticSetEmailFrom(null, o);
 		this.emailFromWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetEmailFrom(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -3440,10 +3379,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.emailAuth = emailAuth;
 		this.emailAuthWrap.alreadyInitialized = true;
 	}
-	public SiteConfig setEmailAuth(String o) {
+	public void setEmailAuth(String o) {
 		this.emailAuth = SiteConfig.staticSetEmailAuth(null, o);
 		this.emailAuthWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static Boolean staticSetEmailAuth(SiteRequestEnUS siteRequest_, String o) {
 		return Boolean.parseBoolean(o);
@@ -3498,10 +3436,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 		this.emailSsl = emailSsl;
 		this.emailSslWrap.alreadyInitialized = true;
 	}
-	public SiteConfig setEmailSsl(String o) {
+	public void setEmailSsl(String o) {
 		this.emailSsl = SiteConfig.staticSetEmailSsl(null, o);
 		this.emailSslWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static Boolean staticSetEmailSsl(SiteRequestEnUS siteRequest_, String o) {
 		return Boolean.parseBoolean(o);
@@ -3551,10 +3488,9 @@ public abstract class SiteConfigGen<DEV> extends Object {
 	public String getSiteZone() {
 		return siteZone;
 	}
-	public SiteConfig setSiteZone(String o) {
+	public void setSiteZone(String o) {
 		this.siteZone = SiteConfig.staticSetSiteZone(null, o);
 		this.siteZoneWrap.alreadyInitialized = true;
-		return (SiteConfig)this;
 	}
 	public static String staticSetSiteZone(SiteRequestEnUS siteRequest_, String o) {
 		return o;

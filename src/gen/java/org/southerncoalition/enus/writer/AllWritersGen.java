@@ -108,7 +108,7 @@ public abstract class AllWritersGen<DEV> extends Object {
 		this.writers = writers;
 		this.writersWrap.alreadyInitialized = true;
 	}
-	public static List<AllWriter> staticSetWriters(SiteRequestEnUS siteRequest_, String o) {
+	public static AllWriter staticSetWriters(SiteRequestEnUS siteRequest_, String o) {
 		return null;
 	}
 	public AllWriters addWriters(AllWriter...objets) {

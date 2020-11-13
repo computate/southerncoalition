@@ -200,10 +200,9 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 	public String getPageDesignId() {
 		return pageDesignId;
 	}
-	public DesignPdfPage setPageDesignId(String o) {
+	public void setPageDesignId(String o) {
 		this.pageDesignId = DesignPdfPage.staticSetPageDesignId(siteRequest_, o);
 		this.pageDesignIdWrap.alreadyInitialized = true;
-		return (DesignPdfPage)this;
 	}
 	public static String staticSetPageDesignId(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -223,7 +222,7 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 	}
 
 	public static String staticSolrStrPageDesignId(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqPageDesignId(SiteRequestEnUS siteRequest_, String o) {
@@ -283,10 +282,9 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 		this.reportCardStartYear = reportCardStartYear;
 		this.reportCardStartYearWrap.alreadyInitialized = true;
 	}
-	public DesignPdfPage setReportCardStartYear(String o) {
+	public void setReportCardStartYear(String o) {
 		this.reportCardStartYear = DesignPdfPage.staticSetReportCardStartYear(siteRequest_, o);
 		this.reportCardStartYearWrap.alreadyInitialized = true;
-		return (DesignPdfPage)this;
 	}
 	public static Integer staticSetReportCardStartYear(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -308,7 +306,7 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 	}
 
 	public static String staticSolrStrReportCardStartYear(SiteRequestEnUS siteRequest_, Integer o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqReportCardStartYear(SiteRequestEnUS siteRequest_, String o) {
@@ -368,10 +366,9 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 		this.reportCardEndYear = reportCardEndYear;
 		this.reportCardEndYearWrap.alreadyInitialized = true;
 	}
-	public DesignPdfPage setReportCardEndYear(String o) {
+	public void setReportCardEndYear(String o) {
 		this.reportCardEndYear = DesignPdfPage.staticSetReportCardEndYear(siteRequest_, o);
 		this.reportCardEndYearWrap.alreadyInitialized = true;
-		return (DesignPdfPage)this;
 	}
 	public static Integer staticSetReportCardEndYear(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -393,7 +390,7 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 	}
 
 	public static String staticSolrStrReportCardEndYear(SiteRequestEnUS siteRequest_, Integer o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqReportCardEndYear(SiteRequestEnUS siteRequest_, String o) {
@@ -492,7 +489,7 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 		this.reportCardStartYears = reportCardStartYears;
 		this.reportCardStartYearsWrap.alreadyInitialized = true;
 	}
-	public static List<String> staticSetReportCardStartYears(SiteRequestEnUS siteRequest_, String o) {
+	public static String staticSetReportCardStartYears(SiteRequestEnUS siteRequest_, String o) {
 		return null;
 	}
 	public DesignPdfPage addReportCardStartYears(String...objets) {
@@ -506,13 +503,12 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 			this.reportCardStartYears.add(o);
 		return (DesignPdfPage)this;
 	}
-	public DesignPdfPage setReportCardStartYears(JsonArray objets) {
+	public void setReportCardStartYears(JsonArray objets) {
 		reportCardStartYears.clear();
 		for(int i = 0; i < objets.size(); i++) {
 			String o = objets.getString(i);
 			addReportCardStartYears(o);
 		}
-		return (DesignPdfPage)this;
 	}
 	protected DesignPdfPage reportCardStartYearsInit() {
 		if(!reportCardStartYearsWrap.alreadyInitialized) {
@@ -522,12 +518,12 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 		return (DesignPdfPage)this;
 	}
 
-	public static List<String> staticSolrReportCardStartYears(SiteRequestEnUS siteRequest_, List<String> o) {
+	public static String staticSolrReportCardStartYears(SiteRequestEnUS siteRequest_, String o) {
 		return o;
 	}
 
-	public static String staticSolrStrReportCardStartYears(SiteRequestEnUS siteRequest_, List<String> o) {
-			return o == null ? null : o.toString();
+	public static String staticSolrStrReportCardStartYears(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqReportCardStartYears(SiteRequestEnUS siteRequest_, String o) {
@@ -535,7 +531,11 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 	}
 
 	public List<String> solrReportCardStartYears() {
-		return DesignPdfPage.staticSolrReportCardStartYears(siteRequest_, reportCardStartYears);
+		List<String> l = new ArrayList<String>();
+		for(String o : reportCardStartYears) {
+			l.add(DesignPdfPage.staticSolrReportCardStartYears(siteRequest_, o));
+		}
+		return l;
 	}
 
 	public String strReportCardStartYears() {
@@ -581,10 +581,9 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 	public String getReportCardStartYearCurrent() {
 		return reportCardStartYearCurrent;
 	}
-	public DesignPdfPage setReportCardStartYearCurrent(String o) {
+	public void setReportCardStartYearCurrent(String o) {
 		this.reportCardStartYearCurrent = DesignPdfPage.staticSetReportCardStartYearCurrent(siteRequest_, o);
 		this.reportCardStartYearCurrentWrap.alreadyInitialized = true;
-		return (DesignPdfPage)this;
 	}
 	public static String staticSetReportCardStartYearCurrent(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -604,7 +603,7 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 	}
 
 	public static String staticSolrStrReportCardStartYearCurrent(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqReportCardStartYearCurrent(SiteRequestEnUS siteRequest_, String o) {
@@ -704,7 +703,7 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 		this.reportCards = reportCards;
 		this.reportCardsWrap.alreadyInitialized = true;
 	}
-	public static List<ReportCard> staticSetReportCards(SiteRequestEnUS siteRequest_, String o) {
+	public static ReportCard staticSetReportCards(SiteRequestEnUS siteRequest_, String o) {
 		return null;
 	}
 	public DesignPdfPage addReportCards(ReportCard...objets) {
@@ -756,7 +755,7 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 		this.reportCardStates_ = reportCardStates_;
 		this.reportCardStates_Wrap.alreadyInitialized = true;
 	}
-	public static List<ReportCard> staticSetReportCardStates_(SiteRequestEnUS siteRequest_, String o) {
+	public static ReportCard staticSetReportCardStates_(SiteRequestEnUS siteRequest_, String o) {
 		return null;
 	}
 	public DesignPdfPage addReportCardStates_(ReportCard...objets) {
@@ -806,7 +805,7 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 		this.reportCardAgencies_ = reportCardAgencies_;
 		this.reportCardAgencies_Wrap.alreadyInitialized = true;
 	}
-	public static List<ReportCard> staticSetReportCardAgencies_(SiteRequestEnUS siteRequest_, String o) {
+	public static ReportCard staticSetReportCardAgencies_(SiteRequestEnUS siteRequest_, String o) {
 		return null;
 	}
 	public DesignPdfPage addReportCardAgencies_(ReportCard...objets) {
@@ -1063,10 +1062,9 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 		this.agencyKey = agencyKey;
 		this.agencyKeyWrap.alreadyInitialized = true;
 	}
-	public DesignPdfPage setAgencyKey(String o) {
+	public void setAgencyKey(String o) {
 		this.agencyKey = DesignPdfPage.staticSetAgencyKey(siteRequest_, o);
 		this.agencyKeyWrap.alreadyInitialized = true;
-		return (DesignPdfPage)this;
 	}
 	public static Long staticSetAgencyKey(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -1088,7 +1086,7 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 	}
 
 	public static String staticSolrStrAgencyKey(SiteRequestEnUS siteRequest_, Long o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqAgencyKey(SiteRequestEnUS siteRequest_, String o) {
@@ -1223,10 +1221,9 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 	public String getEmailToAddress() {
 		return emailToAddress;
 	}
-	public DesignPdfPage setEmailToAddress(String o) {
+	public void setEmailToAddress(String o) {
 		this.emailToAddress = DesignPdfPage.staticSetEmailToAddress(siteRequest_, o);
 		this.emailToAddressWrap.alreadyInitialized = true;
-		return (DesignPdfPage)this;
 	}
 	public static String staticSetEmailToAddress(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1246,7 +1243,7 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 	}
 
 	public static String staticSolrStrEmailToAddress(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqEmailToAddress(SiteRequestEnUS siteRequest_, String o) {
@@ -1300,10 +1297,9 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 	public String getEmailToName() {
 		return emailToName;
 	}
-	public DesignPdfPage setEmailToName(String o) {
+	public void setEmailToName(String o) {
 		this.emailToName = DesignPdfPage.staticSetEmailToName(siteRequest_, o);
 		this.emailToNameWrap.alreadyInitialized = true;
-		return (DesignPdfPage)this;
 	}
 	public static String staticSetEmailToName(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1323,7 +1319,7 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 	}
 
 	public static String staticSolrStrEmailToName(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqEmailToName(SiteRequestEnUS siteRequest_, String o) {
@@ -1377,10 +1373,9 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 	public String getEmailMessage() {
 		return emailMessage;
 	}
-	public DesignPdfPage setEmailMessage(String o) {
+	public void setEmailMessage(String o) {
 		this.emailMessage = DesignPdfPage.staticSetEmailMessage(siteRequest_, o);
 		this.emailMessageWrap.alreadyInitialized = true;
-		return (DesignPdfPage)this;
 	}
 	public static String staticSetEmailMessage(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1400,7 +1395,7 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 	}
 
 	public static String staticSolrStrEmailMessage(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqEmailMessage(SiteRequestEnUS siteRequest_, String o) {
@@ -1460,10 +1455,9 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 		this.stateKey = stateKey;
 		this.stateKeyWrap.alreadyInitialized = true;
 	}
-	public DesignPdfPage setStateKey(String o) {
+	public void setStateKey(String o) {
 		this.stateKey = DesignPdfPage.staticSetStateKey(siteRequest_, o);
 		this.stateKeyWrap.alreadyInitialized = true;
-		return (DesignPdfPage)this;
 	}
 	public static Long staticSetStateKey(SiteRequestEnUS siteRequest_, String o) {
 		if(NumberUtils.isParsable(o))
@@ -1485,7 +1479,7 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 	}
 
 	public static String staticSolrStrStateKey(SiteRequestEnUS siteRequest_, Long o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqStateKey(SiteRequestEnUS siteRequest_, String o) {
@@ -1539,10 +1533,9 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 	public String getStateName() {
 		return stateName;
 	}
-	public DesignPdfPage setStateName(String o) {
+	public void setStateName(String o) {
 		this.stateName = DesignPdfPage.staticSetStateName(siteRequest_, o);
 		this.stateNameWrap.alreadyInitialized = true;
-		return (DesignPdfPage)this;
 	}
 	public static String staticSetStateName(SiteRequestEnUS siteRequest_, String o) {
 		return o;
@@ -1562,7 +1555,7 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 	}
 
 	public static String staticSolrStrStateName(SiteRequestEnUS siteRequest_, String o) {
-			return o == null ? null : o.toString();
+		return o == null ? null : o.toString();
 	}
 
 	public static String staticSolrFqStateName(SiteRequestEnUS siteRequest_, String o) {
@@ -1661,7 +1654,7 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 		this.htmlPartList = htmlPartList;
 		this.htmlPartListWrap.alreadyInitialized = true;
 	}
-	public static List<HtmlPart> staticSetHtmlPartList(SiteRequestEnUS siteRequest_, String o) {
+	public static HtmlPart staticSetHtmlPartList(SiteRequestEnUS siteRequest_, String o) {
 		return null;
 	}
 	public DesignPdfPage addHtmlPartList(HtmlPart...objets) {
@@ -1924,7 +1917,7 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 		case "reportCardEndYear":
 			return DesignPdfPage.staticSolrReportCardEndYear(siteRequest_, (Integer)o);
 		case "reportCardStartYears":
-			return DesignPdfPage.staticSolrReportCardStartYears(siteRequest_, (List<String>)o);
+			return DesignPdfPage.staticSolrReportCardStartYears(siteRequest_, (String)o);
 		case "reportCardStartYearCurrent":
 			return DesignPdfPage.staticSolrReportCardStartYearCurrent(siteRequest_, (String)o);
 		case "agencyKey":
@@ -1960,7 +1953,7 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 		case "reportCardEndYear":
 			return DesignPdfPage.staticSolrStrReportCardEndYear(siteRequest_, (Integer)o);
 		case "reportCardStartYears":
-			return DesignPdfPage.staticSolrStrReportCardStartYears(siteRequest_, (List<String>)o);
+			return DesignPdfPage.staticSolrStrReportCardStartYears(siteRequest_, (String)o);
 		case "reportCardStartYearCurrent":
 			return DesignPdfPage.staticSolrStrReportCardStartYearCurrent(siteRequest_, (String)o);
 		case "agencyKey":
