@@ -2146,7 +2146,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			plot.setSectionPaint(dataset.getKey(6), Color.decode("#a84039"));
 
 			ChartRenderingInfo chartRenderingInfo = new ChartRenderingInfo(new StandardEntityCollection());
-			BufferedImage image = chart.createBufferedImage(400, 600, chartRenderingInfo);
+			BufferedImage image = chart.createBufferedImage(300, 500, chartRenderingInfo);
 
 			ToolTipTagFragmentGenerator toolTipFragmentGenerator = new StandardToolTipTagFragmentGenerator() {
 				@Override
@@ -2358,8 +2358,8 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			dataset.addValue( examsCollegeReadyGrades38AsianPercent, "Asian", "Asian" );  
 			dataset.addValue( examsCollegeReadyGrades38BlackPercent, "Black", "Black" );  
 			dataset.addValue( examsCollegeReadyGrades38LatinxPercent, "Latinx", "Latinx" );  
-			dataset.addValue( examsCollegeReadyGrades38MultiRacialPercent, "Multi-Racial", "Multi-Racial" );  
-			dataset.addValue( examsCollegeReadyGrades38PacificIslanderPercent, "Pacific Islander", "Pacific Islander" );  
+			dataset.addValue( examsCollegeReadyGrades38MultiRacialPercent, "Multi", "Multi" );  
+			dataset.addValue( examsCollegeReadyGrades38PacificIslanderPercent, "Pacific Isl.", "Pacific Isl." );  
 			dataset.addValue( examsCollegeReadyGrades38WhitePercent, "White", "White" );  
 			dataset.addValue( examsCollegeReadyGrades38OverallPercent, "Overall", "Overall" );  
 	
@@ -2383,13 +2383,13 @@ public class ReportCard extends ReportCardGen<Cluster> {
 
 			ValueAxis axis = plot.getRangeAxis();
 			axis.setUpperMargin(0.2);
-			plot.getRangeAxis().setLabelFont(new Font("DejaVu Sans", 0, 18));
-			plot.getRangeAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 18));
-			plot.getDomainAxis().setLabelFont(new Font("DejaVu Sans", 0, 18));
-			plot.getDomainAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 18));
+			plot.getRangeAxis().setLabelFont(new Font("DejaVu Sans", 0, 24));
+			plot.getRangeAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 24));
+			plot.getDomainAxis().setLabelFont(new Font("DejaVu Sans", 0, 24));
+			plot.getDomainAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 24));
 			plot.getDomainAxis().setMaximumCategoryLabelWidthRatio(2);
 
-			renderer.setItemLabelAnchorOffset(22);
+			renderer.setItemLabelAnchorOffset(32);
 			renderer.setItemMargin(0.0);
 			renderer.setMaximumBarWidth(100.0);
 			renderer.setShadowVisible(false);
@@ -2399,7 +2399,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			renderer.setDefaultItemLabelsVisible(true);
 			ItemLabelPosition position = new ItemLabelPosition(ItemLabelAnchor.OUTSIDE12, TextAnchor.TOP_CENTER);
 			renderer.setDefaultPositiveItemLabelPosition(position);
-			renderer.setDefaultItemLabelFont(new Font("DejaVu Sans", 0, 18));
+			renderer.setDefaultItemLabelFont(new Font("DejaVu Sans", 0, 24));
 
 			ChartRenderingInfo chartRenderingInfo = new ChartRenderingInfo(new StandardEntityCollection());
 			BufferedImage image = chart.createBufferedImage(1100, 280, chartRenderingInfo);
@@ -2448,8 +2448,8 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			dataset.addValue( examsCollegeReadyGrades912AsianPercent, "Asian", "Asian" );  
 			dataset.addValue( examsCollegeReadyGrades912BlackPercent, "Black", "Black" );  
 			dataset.addValue( examsCollegeReadyGrades912LatinxPercent, "Latinx", "Latinx" );  
-			dataset.addValue( examsCollegeReadyGrades912MultiRacialPercent, "Multi-Racial", "Multi-Racial" );  
-			dataset.addValue( examsCollegeReadyGrades912PacificIslanderPercent, "Pacific Islander", "Pacific Islander" );  
+			dataset.addValue( examsCollegeReadyGrades912MultiRacialPercent, "Multi", "Multi" );  
+			dataset.addValue( examsCollegeReadyGrades912PacificIslanderPercent, "Pacific Isl.", "Pacific Isl." );  
 			dataset.addValue( examsCollegeReadyGrades912WhitePercent, "White", "White" );  
 			dataset.addValue( examsCollegeReadyGrades912OverallPercent, "Overall", "Overall" );  
 	
@@ -2473,13 +2473,13 @@ public class ReportCard extends ReportCardGen<Cluster> {
 
 			ValueAxis axis = plot.getRangeAxis();
 			axis.setUpperMargin(0.2);
-			plot.getRangeAxis().setLabelFont(new Font("DejaVu Sans", 0, 18));
-			plot.getRangeAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 18));
-			plot.getDomainAxis().setLabelFont(new Font("DejaVu Sans", 0, 18));
-			plot.getDomainAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 18));
+			plot.getRangeAxis().setLabelFont(new Font("DejaVu Sans", 0, 24));
+			plot.getRangeAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 24));
+			plot.getDomainAxis().setLabelFont(new Font("DejaVu Sans", 0, 24));
+			plot.getDomainAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 24));
 			plot.getDomainAxis().setMaximumCategoryLabelWidthRatio(2);
 
-			renderer.setItemLabelAnchorOffset(22);
+			renderer.setItemLabelAnchorOffset(32);
 			renderer.setItemMargin(0.0);
 			renderer.setMaximumBarWidth(100.0);
 			renderer.setShadowVisible(false);
@@ -2489,7 +2489,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			renderer.setDefaultItemLabelsVisible(true);
 			ItemLabelPosition position = new ItemLabelPosition(ItemLabelAnchor.OUTSIDE12, TextAnchor.TOP_CENTER);
 			renderer.setDefaultPositiveItemLabelPosition(position);
-			renderer.setDefaultItemLabelFont(new Font("DejaVu Sans", 0, 18));
+			renderer.setDefaultItemLabelFont(new Font("DejaVu Sans", 0, 24));
 
 			ChartRenderingInfo chartRenderingInfo = new ChartRenderingInfo(new StandardEntityCollection());
 			BufferedImage image = chart.createBufferedImage(1100, 280, chartRenderingInfo);
@@ -2538,8 +2538,8 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			dataset.addValue( graduateWithin4YearsAsianPercent, "Asian", "Asian" );  
 			dataset.addValue( graduateWithin4YearsBlackPercent, "Black", "Black" );  
 			dataset.addValue( graduateWithin4YearsLatinxPercent, "Latinx", "Latinx" );  
-			dataset.addValue( graduateWithin4YearsMultiRacialPercent, "Multi-Racial", "Multi-Racial" );  
-			dataset.addValue( graduateWithin4YearsPacificIslanderPercent, "Pacific Islander", "Pacific Islander" );  
+			dataset.addValue( graduateWithin4YearsMultiRacialPercent, "Multi", "Multi" );  
+			dataset.addValue( graduateWithin4YearsPacificIslanderPercent, "Pacific Isl.", "Pacific Isl." );  
 			dataset.addValue( graduateWithin4YearsWhitePercent, "White", "White" );  
 			dataset.addValue( graduateWithin4YearsOverallPercent, "Overall", "Overall" );  
 	
@@ -2563,13 +2563,13 @@ public class ReportCard extends ReportCardGen<Cluster> {
 
 			ValueAxis axis = plot.getRangeAxis();
 			axis.setUpperMargin(0.2);
-			plot.getRangeAxis().setLabelFont(new Font("DejaVu Sans", 0, 18));
-			plot.getRangeAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 18));
-			plot.getDomainAxis().setLabelFont(new Font("DejaVu Sans", 0, 18));
-			plot.getDomainAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 18));
+			plot.getRangeAxis().setLabelFont(new Font("DejaVu Sans", 0, 24));
+			plot.getRangeAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 24));
+			plot.getDomainAxis().setLabelFont(new Font("DejaVu Sans", 0, 24));
+			plot.getDomainAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 24));
 			plot.getDomainAxis().setMaximumCategoryLabelWidthRatio(2);
 
-			renderer.setItemLabelAnchorOffset(22);
+			renderer.setItemLabelAnchorOffset(32);
 			renderer.setItemMargin(0.0);
 			renderer.setMaximumBarWidth(100.0);
 			renderer.setShadowVisible(false);
@@ -2579,7 +2579,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			renderer.setDefaultItemLabelsVisible(true);
 			ItemLabelPosition position = new ItemLabelPosition(ItemLabelAnchor.OUTSIDE12, TextAnchor.TOP_CENTER);
 			renderer.setDefaultPositiveItemLabelPosition(position);
-			renderer.setDefaultItemLabelFont(new Font("DejaVu Sans", 0, 18));
+			renderer.setDefaultItemLabelFont(new Font("DejaVu Sans", 0, 24));
 
 			ChartRenderingInfo chartRenderingInfo = new ChartRenderingInfo(new StandardEntityCollection());
 			BufferedImage image = chart.createBufferedImage(1100, 280, chartRenderingInfo);
@@ -2632,7 +2632,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			dataset.addValue( shortTermSuspensionsPacificIslanderPercent, "Pacific Islander", "Pacific Islander" );  
 			dataset.addValue( shortTermSuspensionsWhitePercent, "White", "White" );  
 	
-			JFreeChart chart = ChartFactory.createStackedBarChart(null, null, null, dataset, PlotOrientation.VERTICAL, true, true, true);
+			JFreeChart chart = ChartFactory.createStackedBarChart(null, null, null, dataset, PlotOrientation.HORIZONTAL, true, true, true);
 			CategoryPlot plot = (CategoryPlot)chart.getPlot();
 	
 			chart.removeLegend();
@@ -2651,13 +2651,14 @@ public class ReportCard extends ReportCardGen<Cluster> {
 
 			ValueAxis axis = plot.getRangeAxis();
 			axis.setUpperMargin(0.2);
-			plot.getRangeAxis().setLabelFont(new Font("DejaVu Sans", 0, 18));
-			plot.getRangeAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 18));
-			plot.getDomainAxis().setLabelFont(new Font("DejaVu Sans", 0, 18));
-			plot.getDomainAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 18));
+			plot.getRangeAxis().setLabelFont(new Font("DejaVu Sans", 0, 24));
+			plot.getRangeAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 24));
+			plot.getDomainAxis().setLabelFont(new Font("DejaVu Sans", 0, 24));
+			plot.getDomainAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 24));
 			plot.getDomainAxis().setMaximumCategoryLabelWidthRatio(2);
+			plot.setRangeAxisLocation(AxisLocation.BOTTOM_OR_RIGHT);
 
-			renderer.setItemLabelAnchorOffset(22);
+			renderer.setItemLabelAnchorOffset(12);
 			renderer.setItemMargin(0.0);
 			renderer.setMaximumBarWidth(100.0);
 			renderer.setShadowVisible(false);
@@ -2665,12 +2666,12 @@ public class ReportCard extends ReportCardGen<Cluster> {
 
 			renderer.setDefaultItemLabelGenerator(new StandardCategoryItemLabelGenerator());
 			renderer.setDefaultItemLabelsVisible(true);
-			ItemLabelPosition position = new ItemLabelPosition(ItemLabelAnchor.OUTSIDE12, TextAnchor.TOP_CENTER);
+			ItemLabelPosition position = new ItemLabelPosition(ItemLabelAnchor.OUTSIDE3, TextAnchor.CENTER_LEFT);
 			renderer.setDefaultPositiveItemLabelPosition(position);
-			renderer.setDefaultItemLabelFont(new Font("DejaVu Sans", 0, 18));
+			renderer.setDefaultItemLabelFont(new Font("DejaVu Sans", 0, 24));
 
 			ChartRenderingInfo chartRenderingInfo = new ChartRenderingInfo(new StandardEntityCollection());
-			BufferedImage image = chart.createBufferedImage(900, 600, chartRenderingInfo);
+			BufferedImage image = chart.createBufferedImage(700, 520, chartRenderingInfo);
 
 			ToolTipTagFragmentGenerator toolTipFragmentGenerator = new StandardToolTipTagFragmentGenerator() {
 				@Override
@@ -2741,10 +2742,10 @@ public class ReportCard extends ReportCardGen<Cluster> {
 
 			ValueAxis axis = plot.getRangeAxis();
 			axis.setUpperMargin(0.2);
-			plot.getRangeAxis().setLabelFont(new Font("DejaVu Sans", 0, 18));
-			plot.getRangeAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 18));
-			plot.getDomainAxis().setLabelFont(new Font("DejaVu Sans", 0, 18));
-			plot.getDomainAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 18));
+			plot.getRangeAxis().setLabelFont(new Font("DejaVu Sans", 0, 24));
+			plot.getRangeAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 24));
+			plot.getDomainAxis().setLabelFont(new Font("DejaVu Sans", 0, 24));
+			plot.getDomainAxis().setTickLabelFont(new Font("DejaVu Sans", 0, 24));
 			plot.setRangeAxisLocation(AxisLocation.BOTTOM_OR_RIGHT);
 
 			renderer.setItemLabelAnchorOffset(12);
@@ -2757,10 +2758,10 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			renderer.setDefaultItemLabelsVisible(true);
 			ItemLabelPosition position = new ItemLabelPosition(ItemLabelAnchor.OUTSIDE3, TextAnchor.CENTER_LEFT);
 			renderer.setDefaultPositiveItemLabelPosition(position);
-			renderer.setDefaultItemLabelFont(new Font("DejaVu Sans", 0, 18));
+			renderer.setDefaultItemLabelFont(new Font("DejaVu Sans", 0, 24));
 
 			ChartRenderingInfo chartRenderingInfo = new ChartRenderingInfo(new StandardEntityCollection());
-			BufferedImage image = chart.createBufferedImage(900, 600, chartRenderingInfo);
+			BufferedImage image = chart.createBufferedImage(700, 520, chartRenderingInfo);
 
 			ToolTipTagFragmentGenerator toolTipFragmentGenerator = new StandardToolTipTagFragmentGenerator() {
 				@Override
@@ -2879,7 +2880,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 
 			StringBuilder b = new StringBuilder();
 			b.append("                  ").append(imageMap).append("\n");
-			b.append("                  <img usemap=\"#map_").append(w.var).append("\" style=\"width: 200px; \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
+			b.append("                  <img usemap=\"#map_").append(w.var).append("\" style=\"width: 250px; \" src=\"data:image/png;base64,").append(imageStr).append("\"/>\n");
 			w.o(b.toString());
 		} catch (IOException ex) {
 			ExceptionUtils.rethrow(ex);
