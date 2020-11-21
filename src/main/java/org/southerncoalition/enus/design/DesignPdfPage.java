@@ -96,8 +96,8 @@ public class DesignPdfPage extends DesignPdfPageGen<DesignPdfGenPage> {
 		}
 		if(o == null) {
 			LocalDate now = LocalDate.now();
-			LocalDate yearEndDate = now.with(TemporalAdjusters.firstDayOfMonth()).withMonth(6).minusYears(2);
-			yearEndDate = now.isBefore(yearEndDate) ? yearEndDate : yearEndDate.plusYears(1);
+			LocalDate yearEndDate = now.with(TemporalAdjusters.firstDayOfMonth()).withMonth(6);
+			yearEndDate = now.isBefore(yearEndDate) ? yearEndDate.minusYears(1) : yearEndDate.minusYears(2);
 			o = yearEndDate.getYear();
 		}
 		c.o(o);
@@ -112,12 +112,13 @@ public class DesignPdfPage extends DesignPdfPageGen<DesignPdfGenPage> {
 	}
 
 	protected void _reportCardSearch(SearchList<ReportCard> l) {
+		l.addFilterQuery("archived_indexed_boolean:false");
+		l.addFilterQuery("deleted_indexed_boolean:false");
 		if(reportCardStartYear != null) {
 			OperationRequest operationRequest = siteRequest_.getOperationRequest();
 			l.setStore(true);
 			l.setQuery("*:*");
 			l.setC(ReportCard.class);
-			l.addFilterQuery("reportCardEndYear_indexed_int:" + reportCardEndYear);
 	
 			l.addSort("reportCardStartYear_indexed_int", ORDER.desc);
 			l.addSort("stateName_indexed_string", ORDER.asc);
@@ -144,22 +145,25 @@ public class DesignPdfPage extends DesignPdfPageGen<DesignPdfGenPage> {
 		}
 	}
 
-	protected void _reportCardStartYears(List<String> l) {
-		List<Integer> years = reportCardSearch.getQueryResponse().getFacetField("reportCardStartYear_indexed_int").getValues().stream().map(o -> Integer.parseInt(o.getName())).collect(Collectors.toList());
+	protected void _reportCardStartYears(List<ReportCard> l) {
+		List<Integer> years = reportCardSearch.getQueryResponse().getFacetField("reportCardStartYear_indexed_int").getValues().stream().filter(o -> o.getCount() > 0).map(o -> Integer.parseInt(o.getName())).collect(Collectors.toList());
 		years.remove(reportCardStartYear);
 		Collections.sort(years);
 		for(Integer i = 0; i < years.size(); i++) {
+			ReportCard reportCard = new ReportCard();
 			Integer year = years.get(i);
+			reportCard.setReportCardStartYear(year);
+			l.add(reportCard);
 			if(i == (years.size() - 1) && years.size() > 1)
-				l.add(" and " + year);
+				reportCard.setReportCardStartYearStr(" and " + year);
 			else if(i > 0)
-				l.add(", " + year);
+				reportCard.setReportCardStartYearStr(", " + year);
 			else
-				l.add(year.toString());
+				reportCard.setReportCardStartYearStr(year.toString());
 		}
 	}
 
-	protected void _reportCardStartYearCurrent(Wrap<String> c) {
+	protected void _reportCardStartYearCurrent(Wrap<ReportCard> c) {
 	}
 
 	protected void _reportCard_(Wrap<ReportCard> c) {
@@ -252,11 +256,13 @@ public class DesignPdfPage extends DesignPdfPageGen<DesignPdfGenPage> {
 		l.setC(SiteAgency.class);
 
 		Long agencyKey = Optional.ofNullable(reportCardSearch.first()).map(ReportCard::getAgencyKey).orElse(null);
-		if(pageDesignId != null && pageDesignId.endsWith("-reportCard-form") && agencyKey != null) {
+		if(agencyKey != null) {
 			l.addSort("stateName_indexed_string", ORDER.asc);
 			l.addSort("agencyOnlyName_indexed_string", ORDER.asc);
 			l.addFilterQuery("pk_indexed_long:" + agencyKey);
 			l.addFilterQuery("stateKey_indexed_long:[* TO *]");
+			l.addFilterQuery("archived_indexed_boolean:false");
+			l.addFilterQuery("deleted_indexed_boolean:false");
 		} else {
 			for(String var : siteRequest_.getRequestVars().keySet()) {
 				String val = siteRequest_.getRequestVars().get(var);
@@ -270,16 +276,8 @@ public class DesignPdfPage extends DesignPdfPageGen<DesignPdfGenPage> {
 	}
 
 	protected void _agency_(Wrap<SiteAgency> c) {
-		if(pageDesignId != null && pageDesignId.endsWith("-reportCard-form")) {
-			if(agencySearch.size() == 0) {
-				throw new RuntimeException("No agency was found for the query: " + siteRequest_.getOperationRequest().getParams().getJsonObject("query").encode());
-			}
-			else if(agencySearch.size() == 1) {
-				c.o(agencySearch.get(0));
-			}
-			else  {
-				throw new RuntimeException("More than one agency was found for the query: " + siteRequest_.getOperationRequest().getParams().getJsonObject("query").encode());
-			}
+		if(agencySearch.size() == 1) {
+			c.o(agencySearch.get(0));
 		}
 	}
 
@@ -292,6 +290,8 @@ public class DesignPdfPage extends DesignPdfPageGen<DesignPdfGenPage> {
 		l.setStore(true);
 		l.setQuery("*:*");
 		l.setC(SiteState.class);
+		l.addFilterQuery("archived_indexed_boolean:false");
+		l.addFilterQuery("deleted_indexed_boolean:false");
 
 		for(String var : siteRequest_.getRequestVars().keySet()) {
 			String val = siteRequest_.getRequestVars().get(var);
@@ -345,6 +345,29 @@ public class DesignPdfPage extends DesignPdfPageGen<DesignPdfGenPage> {
 
 	/**
 	 * {@inheritDoc}
+	 * Ignore: true
+	 */ 
+	protected void _stateReportCardSearch(SearchList<ReportCard> l) {
+		if(stateKey != null && stateName != null) {
+			l.setQuery("*:*");
+			l.addFilterQuery("stateKey_indexed_long:" + stateKey);
+			l.addFilterQuery("agencyName_indexed_string:" + ClientUtils.escapeQueryChars(stateName));
+			l.addFilterQuery("reportCardStartYear_indexed_int:" + reportCardStartYear);
+			l.addFilterQuery("archived_indexed_boolean:false");
+			l.addFilterQuery("deleted_indexed_boolean:false");
+			l.setC(ReportCard.class);
+			l.setStore(true);
+		}
+	}
+
+	protected void _stateReportCard_(Wrap<ReportCard> c) {
+		if(stateReportCardSearch.size() > 0) {
+			c.o(stateReportCardSearch.get(0));
+		}
+	}
+
+	/**
+	 * {@inheritDoc}
 	 * 
 	 **/
 	protected void _htmlPartSearch(SearchList<HtmlPart> l) {
@@ -357,6 +380,8 @@ public class DesignPdfPage extends DesignPdfPageGen<DesignPdfGenPage> {
 				fq.append(" OR pageDesignKeys_indexed_longs:").append(k);
 
 			l.addFilterQuery(fq.toString());
+			l.addFilterQuery("archived_indexed_boolean:false");
+			l.addFilterQuery("deleted_indexed_boolean:false");
 			l.setC(HtmlPart.class);
 			l.setStore(true);
 			l.addSort("sort1_indexed_double", ORDER.asc);

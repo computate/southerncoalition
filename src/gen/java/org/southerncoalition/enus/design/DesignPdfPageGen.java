@@ -466,49 +466,42 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 	//////////////////////////
 
 	/**	 The entity reportCardStartYears
-	 *	Il est construit avant d'être initialisé avec le constructeur par défaut List<String>(). 
+	 *	Il est construit avant d'être initialisé avec le constructeur par défaut List<ReportCard>(). 
 	 */
 	@JsonInclude(Include.NON_NULL)
-	protected List<String> reportCardStartYears = new ArrayList<String>();
+	protected List<ReportCard> reportCardStartYears = new ArrayList<ReportCard>();
 	@JsonIgnore
-	public Wrap<List<String>> reportCardStartYearsWrap = new Wrap<List<String>>().p(this).c(List.class).var("reportCardStartYears").o(reportCardStartYears);
+	public Wrap<List<ReportCard>> reportCardStartYearsWrap = new Wrap<List<ReportCard>>().p(this).c(List.class).var("reportCardStartYears").o(reportCardStartYears);
 
 	/**	<br/> The entity reportCardStartYears
-	 *  It is constructed before being initialized with the constructor by default List<String>(). 
+	 *  It is constructed before being initialized with the constructor by default List<ReportCard>(). 
 	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignPdfPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:reportCardStartYears">Find the entity reportCardStartYears in Solr</a>
 	 * <br/>
 	 * @param reportCardStartYears is the entity already constructed. 
 	 **/
-	protected abstract void _reportCardStartYears(List<String> l);
+	protected abstract void _reportCardStartYears(List<ReportCard> l);
 
-	public List<String> getReportCardStartYears() {
+	public List<ReportCard> getReportCardStartYears() {
 		return reportCardStartYears;
 	}
 
-	public void setReportCardStartYears(List<String> reportCardStartYears) {
+	public void setReportCardStartYears(List<ReportCard> reportCardStartYears) {
 		this.reportCardStartYears = reportCardStartYears;
 		this.reportCardStartYearsWrap.alreadyInitialized = true;
 	}
-	public static String staticSetReportCardStartYears(SiteRequestEnUS siteRequest_, String o) {
+	public static ReportCard staticSetReportCardStartYears(SiteRequestEnUS siteRequest_, String o) {
 		return null;
 	}
-	public DesignPdfPage addReportCardStartYears(String...objets) {
-		for(String o : objets) {
+	public DesignPdfPage addReportCardStartYears(ReportCard...objets) {
+		for(ReportCard o : objets) {
 			addReportCardStartYears(o);
 		}
 		return (DesignPdfPage)this;
 	}
-	public DesignPdfPage addReportCardStartYears(String o) {
+	public DesignPdfPage addReportCardStartYears(ReportCard o) {
 		if(o != null && !reportCardStartYears.contains(o))
 			this.reportCardStartYears.add(o);
 		return (DesignPdfPage)this;
-	}
-	public void setReportCardStartYears(JsonArray objets) {
-		reportCardStartYears.clear();
-		for(int i = 0; i < objets.size(); i++) {
-			String o = objets.getString(i);
-			addReportCardStartYears(o);
-		}
 	}
 	protected DesignPdfPage reportCardStartYearsInit() {
 		if(!reportCardStartYearsWrap.alreadyInitialized) {
@@ -516,46 +509,6 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 		}
 		reportCardStartYearsWrap.alreadyInitialized(true);
 		return (DesignPdfPage)this;
-	}
-
-	public static String staticSolrReportCardStartYears(SiteRequestEnUS siteRequest_, String o) {
-		return o;
-	}
-
-	public static String staticSolrStrReportCardStartYears(SiteRequestEnUS siteRequest_, String o) {
-		return o == null ? null : o.toString();
-	}
-
-	public static String staticSolrFqReportCardStartYears(SiteRequestEnUS siteRequest_, String o) {
-		return DesignPdfPage.staticSolrStrReportCardStartYears(siteRequest_, DesignPdfPage.staticSolrReportCardStartYears(siteRequest_, DesignPdfPage.staticSetReportCardStartYears(siteRequest_, o)));
-	}
-
-	public List<String> solrReportCardStartYears() {
-		List<String> l = new ArrayList<String>();
-		for(String o : reportCardStartYears) {
-			l.add(DesignPdfPage.staticSolrReportCardStartYears(siteRequest_, o));
-		}
-		return l;
-	}
-
-	public String strReportCardStartYears() {
-		return reportCardStartYears == null ? "" : reportCardStartYears.toString();
-	}
-
-	public String jsonReportCardStartYears() {
-		return reportCardStartYears == null ? "" : reportCardStartYears.toString();
-	}
-
-	public String nomAffichageReportCardStartYears() {
-		return null;
-	}
-
-	public String htmTooltipReportCardStartYears() {
-		return null;
-	}
-
-	public String htmReportCardStartYears() {
-		return reportCardStartYears == null ? "" : StringEscapeUtils.escapeHtml4(strReportCardStartYears());
 	}
 
 	////////////////////////////////
@@ -566,9 +519,9 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 	 *	 is defined as null before being initialized. 
 	 */
 	@JsonInclude(Include.NON_NULL)
-	protected String reportCardStartYearCurrent;
+	protected ReportCard reportCardStartYearCurrent;
 	@JsonIgnore
-	public Wrap<String> reportCardStartYearCurrentWrap = new Wrap<String>().p(this).c(String.class).var("reportCardStartYearCurrent").o(reportCardStartYearCurrent);
+	public Wrap<ReportCard> reportCardStartYearCurrentWrap = new Wrap<ReportCard>().p(this).c(ReportCard.class).var("reportCardStartYearCurrent").o(reportCardStartYearCurrent);
 
 	/**	<br/> The entity reportCardStartYearCurrent
 	 *  is defined as null before being initialized. 
@@ -576,17 +529,18 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 	 * <br/>
 	 * @param c is for wrapping a value to assign to this entity during initialization. 
 	 **/
-	protected abstract void _reportCardStartYearCurrent(Wrap<String> c);
+	protected abstract void _reportCardStartYearCurrent(Wrap<ReportCard> c);
 
-	public String getReportCardStartYearCurrent() {
+	public ReportCard getReportCardStartYearCurrent() {
 		return reportCardStartYearCurrent;
 	}
-	public void setReportCardStartYearCurrent(String o) {
-		this.reportCardStartYearCurrent = DesignPdfPage.staticSetReportCardStartYearCurrent(siteRequest_, o);
+
+	public void setReportCardStartYearCurrent(ReportCard reportCardStartYearCurrent) {
+		this.reportCardStartYearCurrent = reportCardStartYearCurrent;
 		this.reportCardStartYearCurrentWrap.alreadyInitialized = true;
 	}
-	public static String staticSetReportCardStartYearCurrent(SiteRequestEnUS siteRequest_, String o) {
-		return o;
+	public static ReportCard staticSetReportCardStartYearCurrent(SiteRequestEnUS siteRequest_, String o) {
+		return null;
 	}
 	protected DesignPdfPage reportCardStartYearCurrentInit() {
 		if(!reportCardStartYearCurrentWrap.alreadyInitialized) {
@@ -594,44 +548,10 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 			if(reportCardStartYearCurrent == null)
 				setReportCardStartYearCurrent(reportCardStartYearCurrentWrap.o);
 		}
+		if(reportCardStartYearCurrent != null)
+			reportCardStartYearCurrent.initDeepForClass(siteRequest_);
 		reportCardStartYearCurrentWrap.alreadyInitialized(true);
 		return (DesignPdfPage)this;
-	}
-
-	public static String staticSolrReportCardStartYearCurrent(SiteRequestEnUS siteRequest_, String o) {
-		return o;
-	}
-
-	public static String staticSolrStrReportCardStartYearCurrent(SiteRequestEnUS siteRequest_, String o) {
-		return o == null ? null : o.toString();
-	}
-
-	public static String staticSolrFqReportCardStartYearCurrent(SiteRequestEnUS siteRequest_, String o) {
-		return DesignPdfPage.staticSolrStrReportCardStartYearCurrent(siteRequest_, DesignPdfPage.staticSolrReportCardStartYearCurrent(siteRequest_, DesignPdfPage.staticSetReportCardStartYearCurrent(siteRequest_, o)));
-	}
-
-	public String solrReportCardStartYearCurrent() {
-		return DesignPdfPage.staticSolrReportCardStartYearCurrent(siteRequest_, reportCardStartYearCurrent);
-	}
-
-	public String strReportCardStartYearCurrent() {
-		return reportCardStartYearCurrent == null ? "" : reportCardStartYearCurrent;
-	}
-
-	public String jsonReportCardStartYearCurrent() {
-		return reportCardStartYearCurrent == null ? "" : reportCardStartYearCurrent;
-	}
-
-	public String nomAffichageReportCardStartYearCurrent() {
-		return null;
-	}
-
-	public String htmTooltipReportCardStartYearCurrent() {
-		return null;
-	}
-
-	public String htmReportCardStartYearCurrent() {
-		return reportCardStartYearCurrent == null ? "" : StringEscapeUtils.escapeHtml4(strReportCardStartYearCurrent());
 	}
 
 	/////////////////
@@ -1586,6 +1506,88 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 		return stateName == null ? "" : StringEscapeUtils.escapeHtml4(strStateName());
 	}
 
+	///////////////////////////
+	// stateReportCardSearch //
+	///////////////////////////
+
+	/**	 The entity stateReportCardSearch
+	 *	Il est construit avant d'être initialisé avec le constructeur par défaut SearchList<ReportCard>(). 
+	 */
+	@JsonIgnore
+	@JsonInclude(Include.NON_NULL)
+	protected SearchList<ReportCard> stateReportCardSearch = new SearchList<ReportCard>();
+	@JsonIgnore
+	public Wrap<SearchList<ReportCard>> stateReportCardSearchWrap = new Wrap<SearchList<ReportCard>>().p(this).c(SearchList.class).var("stateReportCardSearch").o(stateReportCardSearch);
+
+	/**	<br/> The entity stateReportCardSearch
+	 *  It is constructed before being initialized with the constructor by default SearchList<ReportCard>(). 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignPdfPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:stateReportCardSearch">Find the entity stateReportCardSearch in Solr</a>
+	 * <br/>
+	 * @param stateReportCardSearch is the entity already constructed. 
+	 **/
+	protected abstract void _stateReportCardSearch(SearchList<ReportCard> l);
+
+	public SearchList<ReportCard> getStateReportCardSearch() {
+		return stateReportCardSearch;
+	}
+
+	public void setStateReportCardSearch(SearchList<ReportCard> stateReportCardSearch) {
+		this.stateReportCardSearch = stateReportCardSearch;
+		this.stateReportCardSearchWrap.alreadyInitialized = true;
+	}
+	public static SearchList<ReportCard> staticSetStateReportCardSearch(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+	protected DesignPdfPage stateReportCardSearchInit() {
+		if(!stateReportCardSearchWrap.alreadyInitialized) {
+			_stateReportCardSearch(stateReportCardSearch);
+		}
+		stateReportCardSearch.initDeepForClass(siteRequest_);
+		stateReportCardSearchWrap.alreadyInitialized(true);
+		return (DesignPdfPage)this;
+	}
+
+	//////////////////////
+	// stateReportCard_ //
+	//////////////////////
+
+	/**	 The entity stateReportCard_
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected ReportCard stateReportCard_;
+	@JsonIgnore
+	public Wrap<ReportCard> stateReportCard_Wrap = new Wrap<ReportCard>().p(this).c(ReportCard.class).var("stateReportCard_").o(stateReportCard_);
+
+	/**	<br/> The entity stateReportCard_
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.design.DesignPdfPage&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:stateReportCard_">Find the entity stateReportCard_ in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _stateReportCard_(Wrap<ReportCard> c);
+
+	public ReportCard getStateReportCard_() {
+		return stateReportCard_;
+	}
+
+	public void setStateReportCard_(ReportCard stateReportCard_) {
+		this.stateReportCard_ = stateReportCard_;
+		this.stateReportCard_Wrap.alreadyInitialized = true;
+	}
+	public static ReportCard staticSetStateReportCard_(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+	protected DesignPdfPage stateReportCard_Init() {
+		if(!stateReportCard_Wrap.alreadyInitialized) {
+			_stateReportCard_(stateReportCard_Wrap);
+			if(stateReportCard_ == null)
+				setStateReportCard_(stateReportCard_Wrap.o);
+		}
+		stateReportCard_Wrap.alreadyInitialized(true);
+		return (DesignPdfPage)this;
+	}
+
 	////////////////////
 	// htmlPartSearch //
 	////////////////////
@@ -1725,6 +1727,8 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 		emailMessageInit();
 		stateKeyInit();
 		stateNameInit();
+		stateReportCardSearchInit();
+		stateReportCard_Init();
 		htmlPartSearchInit();
 		htmlPartListInit();
 	}
@@ -1747,10 +1751,14 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 			pageDesign.setSiteRequest_(siteRequest_);
 		if(reportCardSearch != null)
 			reportCardSearch.setSiteRequest_(siteRequest_);
+		if(reportCardStartYearCurrent != null)
+			reportCardStartYearCurrent.setSiteRequest_(siteRequest_);
 		if(agencySearch != null)
 			agencySearch.setSiteRequest_(siteRequest_);
 		if(stateSearch != null)
 			stateSearch.setSiteRequest_(siteRequest_);
+		if(stateReportCardSearch != null)
+			stateReportCardSearch.setSiteRequest_(siteRequest_);
 		if(htmlPartSearch != null)
 			htmlPartSearch.setSiteRequest_(siteRequest_);
 	}
@@ -1831,6 +1839,10 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 				return oDesignPdfPage.stateKey;
 			case "stateName":
 				return oDesignPdfPage.stateName;
+			case "stateReportCardSearch":
+				return oDesignPdfPage.stateReportCardSearch;
+			case "stateReportCard_":
+				return oDesignPdfPage.stateReportCard_;
 			case "htmlPartSearch":
 				return oDesignPdfPage.htmlPartSearch;
 			case "htmlPartList":
@@ -1880,10 +1892,6 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 			return DesignPdfPage.staticSetReportCardStartYear(siteRequest_, o);
 		case "reportCardEndYear":
 			return DesignPdfPage.staticSetReportCardEndYear(siteRequest_, o);
-		case "reportCardStartYears":
-			return DesignPdfPage.staticSetReportCardStartYears(siteRequest_, o);
-		case "reportCardStartYearCurrent":
-			return DesignPdfPage.staticSetReportCardStartYearCurrent(siteRequest_, o);
 		case "agencyKey":
 			return DesignPdfPage.staticSetAgencyKey(siteRequest_, o);
 		case "emailToAddress":
@@ -1916,10 +1924,6 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 			return DesignPdfPage.staticSolrReportCardStartYear(siteRequest_, (Integer)o);
 		case "reportCardEndYear":
 			return DesignPdfPage.staticSolrReportCardEndYear(siteRequest_, (Integer)o);
-		case "reportCardStartYears":
-			return DesignPdfPage.staticSolrReportCardStartYears(siteRequest_, (String)o);
-		case "reportCardStartYearCurrent":
-			return DesignPdfPage.staticSolrReportCardStartYearCurrent(siteRequest_, (String)o);
 		case "agencyKey":
 			return DesignPdfPage.staticSolrAgencyKey(siteRequest_, (Long)o);
 		case "emailToAddress":
@@ -1952,10 +1956,6 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 			return DesignPdfPage.staticSolrStrReportCardStartYear(siteRequest_, (Integer)o);
 		case "reportCardEndYear":
 			return DesignPdfPage.staticSolrStrReportCardEndYear(siteRequest_, (Integer)o);
-		case "reportCardStartYears":
-			return DesignPdfPage.staticSolrStrReportCardStartYears(siteRequest_, (String)o);
-		case "reportCardStartYearCurrent":
-			return DesignPdfPage.staticSolrStrReportCardStartYearCurrent(siteRequest_, (String)o);
 		case "agencyKey":
 			return DesignPdfPage.staticSolrStrAgencyKey(siteRequest_, (Long)o);
 		case "emailToAddress":
@@ -1988,10 +1988,6 @@ public abstract class DesignPdfPageGen<DEV> extends DesignPdfGenPage {
 			return DesignPdfPage.staticSolrFqReportCardStartYear(siteRequest_, o);
 		case "reportCardEndYear":
 			return DesignPdfPage.staticSolrFqReportCardEndYear(siteRequest_, o);
-		case "reportCardStartYears":
-			return DesignPdfPage.staticSolrFqReportCardStartYears(siteRequest_, o);
-		case "reportCardStartYearCurrent":
-			return DesignPdfPage.staticSolrFqReportCardStartYearCurrent(siteRequest_, o);
 		case "agencyKey":
 			return DesignPdfPage.staticSolrFqAgencyKey(siteRequest_, o);
 		case "emailToAddress":

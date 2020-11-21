@@ -61,8 +61,8 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 		}
 		if(o == null) {
 			LocalDate now = LocalDate.now();
-			LocalDate yearEndDate = now.with(TemporalAdjusters.firstDayOfMonth()).withMonth(6).minusYears(2);
-			yearEndDate = now.isBefore(yearEndDate) ? yearEndDate : yearEndDate.plusYears(1);
+			LocalDate yearEndDate = now.with(TemporalAdjusters.firstDayOfMonth()).withMonth(6);
+			yearEndDate = now.isBefore(yearEndDate) ? yearEndDate.minusYears(1) : yearEndDate.minusYears(2);
 			o = yearEndDate.getYear();
 		}
 		c.o(o);
@@ -77,6 +77,8 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 	}
 
 	protected void _reportCardSearch(SearchList<ReportCard> l) {
+		l.addFilterQuery("archived_indexed_boolean:false");
+		l.addFilterQuery("deleted_indexed_boolean:false");
 		if(reportCardStartYear != null) {
 			OperationRequest operationRequest = siteRequest_.getOperationRequest();
 			l.setStore(true);
@@ -109,7 +111,7 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 	}
 
 	protected void _reportCardStartYears(List<ReportCard> l) {
-		List<Integer> years = reportCardSearch.getQueryResponse().getFacetField("reportCardStartYear_indexed_int").getValues().stream().map(o -> Integer.parseInt(o.getName())).collect(Collectors.toList());
+		List<Integer> years = reportCardSearch.getQueryResponse().getFacetField("reportCardStartYear_indexed_int").getValues().stream().filter(o -> o.getCount() > 0).map(o -> Integer.parseInt(o.getName())).collect(Collectors.toList());
 		years.remove(reportCardStartYear);
 		Collections.sort(years);
 		for(Integer i = 0; i < years.size(); i++) {
@@ -224,6 +226,8 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 			l.addSort("agencyOnlyName_indexed_string", ORDER.asc);
 			l.addFilterQuery("pk_indexed_long:" + agencyKey);
 			l.addFilterQuery("stateKey_indexed_long:[* TO *]");
+			l.addFilterQuery("archived_indexed_boolean:false");
+			l.addFilterQuery("deleted_indexed_boolean:false");
 		} else {
 			for(String var : siteRequest_.getRequestVars().keySet()) {
 				String val = siteRequest_.getRequestVars().get(var);
@@ -251,6 +255,8 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 		l.setStore(true);
 		l.setQuery("*:*");
 		l.setC(SiteState.class);
+		l.addFilterQuery("archived_indexed_boolean:false");
+		l.addFilterQuery("deleted_indexed_boolean:false");
 
 		for(String var : siteRequest_.getRequestVars().keySet()) {
 			String val = siteRequest_.getRequestVars().get(var);
@@ -312,6 +318,8 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 			l.addFilterQuery("stateKey_indexed_long:" + stateKey);
 			l.addFilterQuery("agencyName_indexed_string:" + ClientUtils.escapeQueryChars(stateName));
 			l.addFilterQuery("reportCardStartYear_indexed_int:" + reportCardStartYear);
+			l.addFilterQuery("archived_indexed_boolean:false");
+			l.addFilterQuery("deleted_indexed_boolean:false");
 			l.setC(ReportCard.class);
 			l.setStore(true);
 		}
@@ -337,6 +345,8 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 				fq.append(" OR pageDesignKeys_indexed_longs:").append(k);
 
 			l.addFilterQuery(fq.toString());
+			l.addFilterQuery("archived_indexed_boolean:false");
+			l.addFilterQuery("deleted_indexed_boolean:false");
 			l.setC(HtmlPart.class);
 			l.setStore(true);
 			l.addSort("sort1_indexed_double", ORDER.asc);

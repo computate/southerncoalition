@@ -824,8 +824,8 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _delinquentComplaintsAsianPercent(Wrap<BigDecimal> c) {
 		if(delinquentComplaintsAsian != null 
-				&& delinquentComplaintsTotal != null && delinquentComplaintsTotal > 0)
-			c.o(new BigDecimal(delinquentComplaintsAsian).divide(new BigDecimal(delinquentComplaintsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+				&& delinquentComplaintsAtSchool != null && delinquentComplaintsAtSchool > 0)
+			c.o(new BigDecimal(delinquentComplaintsAsian).divide(new BigDecimal(delinquentComplaintsAtSchool), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
 	@Override public String strDelinquentComplaintsAsianPercent() {
 		return delinquentComplaintsAsianPercent == null ? "" : delinquentComplaintsAsianPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -853,8 +853,8 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _delinquentComplaintsBlackPercent(Wrap<BigDecimal> c) {
 		if(delinquentComplaintsBlack != null 
-				&& delinquentComplaintsTotal != null && delinquentComplaintsTotal > 0)
-			c.o(new BigDecimal(delinquentComplaintsBlack).divide(new BigDecimal(delinquentComplaintsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+				&& delinquentComplaintsAtSchool != null && delinquentComplaintsAtSchool > 0)
+			c.o(new BigDecimal(delinquentComplaintsBlack).divide(new BigDecimal(delinquentComplaintsAtSchool), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
 	@Override public String strDelinquentComplaintsBlackPercent() {
 		return delinquentComplaintsBlackPercent == null ? "" : delinquentComplaintsBlackPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -882,8 +882,8 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _delinquentComplaintsLatinxPercent(Wrap<BigDecimal> c) {
 		if(delinquentComplaintsLatinx != null 
-				&& delinquentComplaintsTotal != null && delinquentComplaintsTotal > 0)
-			c.o(new BigDecimal(delinquentComplaintsLatinx).divide(new BigDecimal(delinquentComplaintsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+				&& delinquentComplaintsAtSchool != null && delinquentComplaintsAtSchool > 0)
+			c.o(new BigDecimal(delinquentComplaintsLatinx).divide(new BigDecimal(delinquentComplaintsAtSchool), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
 	@Override public String strDelinquentComplaintsLatinxPercent() {
 		return delinquentComplaintsLatinxPercent == null ? "" : delinquentComplaintsLatinxPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -911,8 +911,8 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _delinquentComplaintsMultiRacialPercent(Wrap<BigDecimal> c) {
 		if(delinquentComplaintsMultiRacial != null 
-				&& delinquentComplaintsTotal != null && delinquentComplaintsTotal > 0)
-			c.o(new BigDecimal(delinquentComplaintsMultiRacial).divide(new BigDecimal(delinquentComplaintsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+				&& delinquentComplaintsAtSchool != null && delinquentComplaintsAtSchool > 0)
+			c.o(new BigDecimal(delinquentComplaintsMultiRacial).divide(new BigDecimal(delinquentComplaintsAtSchool), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
 	@Override public String strDelinquentComplaintsMultiRacialPercent() {
 		return delinquentComplaintsMultiRacialPercent == null ? "" : delinquentComplaintsMultiRacialPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -940,8 +940,8 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _delinquentComplaintsIndigenousPercent(Wrap<BigDecimal> c) {
 		if(delinquentComplaintsIndigenous != null 
-				&& delinquentComplaintsTotal != null && delinquentComplaintsTotal > 0)
-			c.o(new BigDecimal(delinquentComplaintsIndigenous).divide(new BigDecimal(delinquentComplaintsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+				&& delinquentComplaintsAtSchool != null && delinquentComplaintsAtSchool > 0)
+			c.o(new BigDecimal(delinquentComplaintsIndigenous).divide(new BigDecimal(delinquentComplaintsAtSchool), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
 	@Override public String strDelinquentComplaintsIndigenousPercent() {
 		return delinquentComplaintsIndigenousPercent == null ? "" : delinquentComplaintsIndigenousPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -969,8 +969,8 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _delinquentComplaintsWhitePercent(Wrap<BigDecimal> c) {
 		if(delinquentComplaintsWhite != null 
-				&& delinquentComplaintsTotal != null && delinquentComplaintsTotal > 0)
-			c.o(new BigDecimal(delinquentComplaintsWhite).divide(new BigDecimal(delinquentComplaintsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+				&& delinquentComplaintsAtSchool != null && delinquentComplaintsAtSchool > 0)
+			c.o(new BigDecimal(delinquentComplaintsWhite).divide(new BigDecimal(delinquentComplaintsAtSchool), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
 	@Override public String strDelinquentComplaintsWhitePercent() {
 		return delinquentComplaintsWhitePercent == null ? "" : delinquentComplaintsWhitePercent.setScale(1, RoundingMode.CEILING).toString();
@@ -998,8 +998,8 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _delinquentComplaintsPacificIslanderPercent(Wrap<BigDecimal> c) {
 		if(delinquentComplaintsPacificIslander != null 
-				&& delinquentComplaintsTotal != null && delinquentComplaintsTotal > 0)
-			c.o(new BigDecimal(delinquentComplaintsPacificIslander).divide(new BigDecimal(delinquentComplaintsTotal), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
+				&& delinquentComplaintsAtSchool != null && delinquentComplaintsAtSchool > 0)
+			c.o(new BigDecimal(delinquentComplaintsPacificIslander).divide(new BigDecimal(delinquentComplaintsAtSchool), 4, RoundingMode.HALF_UP).multiply(new BigDecimal(100)).setScale(1, RoundingMode.HALF_UP));
 	}
 	@Override public String strDelinquentComplaintsPacificIslanderPercent() {
 		return delinquentComplaintsPacificIslanderPercent == null ? "" : delinquentComplaintsPacificIslanderPercent.setScale(1, RoundingMode.CEILING).toString();
