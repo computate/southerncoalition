@@ -318,52 +318,53 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			l.setC(ReportCard.class);
 			l.setStore(true);
 			l.setRows(0);
-			l.add("json.facet", "{pupilsTotal:'max(pupilsTotal_indexed_long)'}");
-			l.add("json.facet", "{pupilsIndigenousFemale:'max(pupilsIndigenousFemale_indexed_long)'}");
-			l.add("json.facet", "{pupilsIndigenousMale:'max(pupilsIndigenousMale_indexed_long)'}");
-			l.add("json.facet", "{pupilsAsianFemale:'max(pupilsAsianFemale_indexed_long)'}");
-			l.add("json.facet", "{pupilsAsianMale:'max(pupilsAsianMale_indexed_long)'}");
-			l.add("json.facet", "{pupilsLatinxFemale:'max(pupilsLatinxFemale_indexed_long)'}");
-			l.add("json.facet", "{pupilsLatinxMale:'max(pupilsLatinxMale_indexed_long)'}");
-			l.add("json.facet", "{pupilsBlackFemale:'max(pupilsBlackFemale_indexed_long)'}");
-			l.add("json.facet", "{pupilsBlackMale:'max(pupilsBlackMale_indexed_long)'}");
-			l.add("json.facet", "{pupilsWhiteFemale:'max(pupilsWhiteFemale_indexed_long)'}");
-			l.add("json.facet", "{pupilsWhiteMale:'max(pupilsWhiteMale_indexed_long)'}");
-			l.add("json.facet", "{pupilsPacificIslanderFemale:'max(pupilsPacificIslanderFemale_indexed_long)'}");
-			l.add("json.facet", "{pupilsPacificIslanderMale:'max(pupilsPacificIslanderMale_indexed_long)'}");
-			l.add("json.facet", "{pupilsMultiRacialFemale:'max(pupilsMultiRacialFemale_indexed_long)'}");
-			l.add("json.facet", "{pupilsMultiRacialMale:'max(pupilsMultiRacialMale_indexed_long)'}");
-			l.add("json.facet", "{teachersMale:'max(teachersMale_indexed_long)'}");
-			l.add("json.facet", "{teachersFemale:'max(teachersFemale_indexed_long)'}");
-			l.add("json.facet", "{teachersWhiteTotal:'max(teachersWhiteTotal_indexed_long)'}");
-			l.add("json.facet", "{teachersBlackTotal:'max(teachersBlackTotal_indexed_long)'}");
-			l.add("json.facet", "{teachersOtherTotal:'max(teachersOtherTotal_indexed_long)'}");
-			l.add("json.facet", "{delinquentComplaintsTotal:'max(delinquentComplaintsTotal_indexed_long)'}");
-			l.add("json.facet", "{delinquentComplaintsAtSchool:'max(delinquentComplaintsAtSchool_indexed_long)'}");
-			l.add("json.facet", "{delinquentComplaintsAsian:'max(delinquentComplaintsAsian_indexed_long)'}");
-			l.add("json.facet", "{delinquentComplaintsBlack:'max(delinquentComplaintsBlack_indexed_long)'}");
-			l.add("json.facet", "{delinquentComplaintsLatinx:'max(delinquentComplaintsLatinx_indexed_long)'}");
-			l.add("json.facet", "{delinquentComplaintsMultiRacial:'max(delinquentComplaintsMultiRacial_indexed_long)'}");
-			l.add("json.facet", "{delinquentComplaintsIndigenous:'max(delinquentComplaintsIndigenous_indexed_long)'}");
-			l.add("json.facet", "{delinquentComplaintsWhite:'max(delinquentComplaintsWhite_indexed_long)'}");
-			l.add("json.facet", "{delinquentComplaintsPacificIslander:'max(delinquentComplaintsPacificIslander_indexed_long)'}");
-			l.add("json.facet", "{shortTermSuspensionsTotal:'max(shortTermSuspensionsTotal_indexed_long)'}");
-			l.add("json.facet", "{longTermSuspensionsTotal:'max(longTermSuspensionsTotal_indexed_long)'}");
-			l.add("json.facet", "{expulsionsTotal:'max(expulsionsTotal_indexed_long)'}");
-			l.add("json.facet", "{shortTermSuspensionsAsianFemale:'max(shortTermSuspensionsAsianFemale_indexed_long)'}");
-			l.add("json.facet", "{shortTermSuspensionsAsianMale:'max(shortTermSuspensionsAsianMale_indexed_long)'}");
-			l.add("json.facet", "{shortTermSuspensionsBlackFemale:'max(shortTermSuspensionsBlackFemale_indexed_long)'}");
-			l.add("json.facet", "{shortTermSuspensionsBlackMale:'max(shortTermSuspensionsBlackMale_indexed_long)'}");
-			l.add("json.facet", "{shortTermSuspensionsLatinxFemale:'max(shortTermSuspensionsLatinxFemale_indexed_long)'}");
-			l.add("json.facet", "{shortTermSuspensionsLatinxMale:'max(shortTermSuspensionsLatinxMale_indexed_long)'}");
-			l.add("json.facet", "{shortTermSuspensionsIndigenousFemale:'max(shortTermSuspensionsIndigenousFemale_indexed_long)'}");
-			l.add("json.facet", "{shortTermSuspensionsIndigenousMale:'max(shortTermSuspensionsIndigenousMale_indexed_long)'}");
-			l.add("json.facet", "{shortTermSuspensionsMultiRacialFemale:'max(shortTermSuspensionsMultiRacialFemale_indexed_long)'}");
-			l.add("json.facet", "{shortTermSuspensionsMultiRacialMale:'max(shortTermSuspensionsMultiRacialMale_indexed_long)'}");
-			l.add("json.facet", "{shortTermSuspensionsPacificIslanderFemale:'max(shortTermSuspensionsPacificIslanderFemale_indexed_long)'}");
-			l.add("json.facet", "{shortTermSuspensionsPacificIslanderMale:'max(shortTermSuspensionsPacificIslanderMale_indexed_long)'}");
-			l.add("json.facet", "{shortTermSuspensionsWhiteFemale:'max(shortTermSuspensionsWhiteFemale_indexed_long)'}");
-			l.add("json.facet", "{shortTermSuspensionsWhiteMale:'max(shortTermSuspensionsWhiteMale_indexed_long)'}");
+			l.add("json.facet", "{pupilsTotal:'sum(pupilsTotal_indexed_long)'}");
+			l.add("json.facet", "{pupilsIndigenousFemale:'sum(pupilsIndigenousFemale_indexed_long)'}");
+			l.add("json.facet", "{pupilsIndigenousMale:'sum(pupilsIndigenousMale_indexed_long)'}");
+			l.add("json.facet", "{pupilsAsianFemale:'sum(pupilsAsianFemale_indexed_long)'}");
+			l.add("json.facet", "{pupilsAsianMale:'sum(pupilsAsianMale_indexed_long)'}");
+			l.add("json.facet", "{pupilsLatinxFemale:'sum(pupilsLatinxFemale_indexed_long)'}");
+			l.add("json.facet", "{pupilsLatinxMale:'sum(pupilsLatinxMale_indexed_long)'}");
+			l.add("json.facet", "{pupilsBlackFemale:'sum(pupilsBlackFemale_indexed_long)'}");
+			l.add("json.facet", "{pupilsBlackMale:'sum(pupilsBlackMale_indexed_long)'}");
+			l.add("json.facet", "{pupilsWhiteFemale:'sum(pupilsWhiteFemale_indexed_long)'}");
+			l.add("json.facet", "{pupilsWhiteMale:'sum(pupilsWhiteMale_indexed_long)'}");
+			l.add("json.facet", "{pupilsPacificIslanderFemale:'sum(pupilsPacificIslanderFemale_indexed_long)'}");
+			l.add("json.facet", "{pupilsPacificIslanderMale:'sum(pupilsPacificIslanderMale_indexed_long)'}");
+			l.add("json.facet", "{pupilsMultiRacialFemale:'sum(pupilsMultiRacialFemale_indexed_long)'}");
+			l.add("json.facet", "{pupilsMultiRacialMale:'sum(pupilsMultiRacialMale_indexed_long)'}");
+			l.add("json.facet", "{teachersMale:'sum(teachersMale_indexed_long)'}");
+			l.add("json.facet", "{teachersFemale:'sum(teachersFemale_indexed_long)'}");
+			l.add("json.facet", "{teachersWhiteTotal:'sum(teachersWhiteTotal_indexed_long)'}");
+			l.add("json.facet", "{teachersBlackTotal:'sum(teachersBlackTotal_indexed_long)'}");
+			l.add("json.facet", "{teachersOtherTotal:'sum(teachersOtherTotal_indexed_long)'}");
+			l.add("json.facet", "{delinquentComplaintsTotal:'sum(delinquentComplaintsTotal_indexed_long)'}");
+			l.add("json.facet", "{delinquentComplaintsAtSchool:'sum(delinquentComplaintsAtSchool_indexed_long)'}");
+			l.add("json.facet", "{delinquentComplaintsAsian:'sum(delinquentComplaintsAsian_indexed_long)'}");
+			l.add("json.facet", "{delinquentComplaintsBlack:'sum(delinquentComplaintsBlack_indexed_long)'}");
+			l.add("json.facet", "{delinquentComplaintsLatinx:'sum(delinquentComplaintsLatinx_indexed_long)'}");
+			l.add("json.facet", "{delinquentComplaintsMultiRacial:'sum(delinquentComplaintsMultiRacial_indexed_long)'}");
+			l.add("json.facet", "{delinquentComplaintsIndigenous:'sum(delinquentComplaintsIndigenous_indexed_long)'}");
+			l.add("json.facet", "{delinquentComplaintsWhite:'sum(delinquentComplaintsWhite_indexed_long)'}");
+			l.add("json.facet", "{delinquentComplaintsPacificIslander:'sum(delinquentComplaintsPacificIslander_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionRate:'sum(shortTermSuspensionRate_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsTotal:'sum(shortTermSuspensionsTotal_indexed_long)'}");
+			l.add("json.facet", "{longTermSuspensionsTotal:'sum(longTermSuspensionsTotal_indexed_long)'}");
+			l.add("json.facet", "{expulsionsTotal:'sum(expulsionsTotal_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsAsianFemale:'sum(shortTermSuspensionsAsianFemale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsAsianMale:'sum(shortTermSuspensionsAsianMale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsBlackFemale:'sum(shortTermSuspensionsBlackFemale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsBlackMale:'sum(shortTermSuspensionsBlackMale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsLatinxFemale:'sum(shortTermSuspensionsLatinxFemale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsLatinxMale:'sum(shortTermSuspensionsLatinxMale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsIndigenousFemale:'sum(shortTermSuspensionsIndigenousFemale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsIndigenousMale:'sum(shortTermSuspensionsIndigenousMale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsMultiRacialFemale:'sum(shortTermSuspensionsMultiRacialFemale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsMultiRacialMale:'sum(shortTermSuspensionsMultiRacialMale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsPacificIslanderFemale:'sum(shortTermSuspensionsPacificIslanderFemale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsPacificIslanderMale:'sum(shortTermSuspensionsPacificIslanderMale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsWhiteFemale:'sum(shortTermSuspensionsWhiteFemale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsWhiteMale:'sum(shortTermSuspensionsWhiteMale_indexed_long)'}");
 			l.add("json.facet", "{examsCollegeReadyGrades38OverallPercent:'avg(examsCollegeReadyGrades38OverallPercent_indexed_double)'}");
 			l.add("json.facet", "{examsCollegeReadyGrades38IndigenousPercent:'avg(examsCollegeReadyGrades38IndigenousPercent_indexed_double)'}");
 			l.add("json.facet", "{examsCollegeReadyGrades38AsianPercent:'avg(examsCollegeReadyGrades38AsianPercent_indexed_double)'}");
@@ -412,7 +413,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _pupilsTotal(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("pupilsTotal"));
+			c.o(((Double)stateFacets.getStatValue("pupilsTotal")).longValue());
 		}
 	}
 	@Override
@@ -431,7 +432,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _pupilsIndigenousFemale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("pupilsIndigenousFemale"));
+			c.o(((Double)stateFacets.getStatValue("pupilsIndigenousFemale")).longValue());
 		}
 	}
 
@@ -446,7 +447,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */  
 	protected void _pupilsIndigenousMale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("pupilsIndigenousMale"));
+			c.o(((Double)stateFacets.getStatValue("pupilsIndigenousMale")).longValue());
 		}
 	}
 
@@ -491,7 +492,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _pupilsAsianFemale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("pupilsAsianFemale"));
+			c.o(((Double)stateFacets.getStatValue("pupilsAsianFemale")).longValue());
 		}
 	}
 
@@ -506,7 +507,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _pupilsAsianMale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("pupilsAsianMale"));
+			c.o(((Double)stateFacets.getStatValue("pupilsAsianMale")).longValue());
 		}
 	}
 
@@ -551,7 +552,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _pupilsLatinxFemale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("pupilsLatinxFemale"));
+			c.o(((Double)stateFacets.getStatValue("pupilsLatinxFemale")).longValue());
 		}
 	}
 
@@ -566,7 +567,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _pupilsLatinxMale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("pupilsLatinxMale"));
+			c.o(((Double)stateFacets.getStatValue("pupilsLatinxMale")).longValue());
 		}
 	}
 
@@ -611,7 +612,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _pupilsBlackFemale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("pupilsBlackFemale"));
+			c.o(((Double)stateFacets.getStatValue("pupilsBlackFemale")).longValue());
 		}
 	}
 
@@ -626,7 +627,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _pupilsBlackMale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("pupilsBlackMale"));
+			c.o(((Double)stateFacets.getStatValue("pupilsBlackMale")).longValue());
 		}
 	}
 
@@ -671,7 +672,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _pupilsWhiteFemale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("pupilsWhiteFemale"));
+			c.o(((Double)stateFacets.getStatValue("pupilsWhiteFemale")).longValue());
 		}
 	}
 
@@ -686,7 +687,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _pupilsWhiteMale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("pupilsWhiteMale"));
+			c.o(((Double)stateFacets.getStatValue("pupilsWhiteMale")).longValue());
 		}
 	}
 
@@ -731,7 +732,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _pupilsPacificIslanderFemale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("pupilsPacificIslanderFemale"));
+			c.o(((Double)stateFacets.getStatValue("pupilsPacificIslanderFemale")).longValue());
 		}
 	}
 
@@ -746,7 +747,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _pupilsPacificIslanderMale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("pupilsPacificIslanderMale"));
+			c.o(((Double)stateFacets.getStatValue("pupilsPacificIslanderMale")).longValue());
 		}
 	}
 
@@ -791,7 +792,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _pupilsMultiRacialFemale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("pupilsMultiRacialFemale"));
+			c.o(((Double)stateFacets.getStatValue("pupilsMultiRacialFemale")).longValue());
 		}
 	}
 
@@ -806,7 +807,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _pupilsMultiRacialMale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("pupilsMultiRacialMale"));
+			c.o(((Double)stateFacets.getStatValue("pupilsMultiRacialMale")).longValue());
 		}
 	}
 
@@ -880,7 +881,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _teachersMale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("teachersMale"));
+			c.o(((Double)stateFacets.getStatValue("teachersMale")).longValue());
 		}
 	}
 
@@ -895,7 +896,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _teachersFemale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("teachersFemale"));
+			c.o(((Double)stateFacets.getStatValue("teachersFemale")).longValue());
 		}
 	}
 
@@ -927,7 +928,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _teachersWhiteTotal(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("teachersWhiteTotal"));
+			c.o(((Double)stateFacets.getStatValue("teachersWhiteTotal")).longValue());
 		}
 	}
 
@@ -959,7 +960,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _teachersBlackTotal(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("teachersBlackTotal"));
+			c.o(((Double)stateFacets.getStatValue("teachersBlackTotal")).longValue());
 		}
 	}
 
@@ -991,7 +992,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _teachersOtherTotal(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("teachersOtherTotal"));
+			c.o(((Double)stateFacets.getStatValue("teachersOtherTotal")).longValue());
 		}
 	}
 
@@ -1027,7 +1028,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _delinquentComplaintsTotal(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("delinquentComplaintsTotal"));
+			c.o(((Double)stateFacets.getStatValue("delinquentComplaintsTotal")).longValue());
 		}
 	}
 
@@ -1042,7 +1043,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _delinquentComplaintsAtSchool(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("delinquentComplaintsAtSchool"));
+			c.o(((Double)stateFacets.getStatValue("delinquentComplaintsAtSchool")).longValue());
 		}
 	}
 
@@ -1074,7 +1075,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _delinquentComplaintsAsian(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("delinquentComplaintsAsian"));
+			c.o(((Double)stateFacets.getStatValue("delinquentComplaintsAsian")).longValue());
 		}
 	}
 
@@ -1106,7 +1107,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _delinquentComplaintsBlack(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("delinquentComplaintsBlack"));
+			c.o(((Double)stateFacets.getStatValue("delinquentComplaintsBlack")).longValue());
 		}
 	}
 
@@ -1138,7 +1139,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _delinquentComplaintsLatinx(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("delinquentComplaintsLatinx"));
+			c.o(((Double)stateFacets.getStatValue("delinquentComplaintsLatinx")).longValue());
 		}
 	}
 
@@ -1170,7 +1171,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _delinquentComplaintsMultiRacial(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("delinquentComplaintsMultiRacial"));
+			c.o(((Double)stateFacets.getStatValue("delinquentComplaintsMultiRacial")).longValue());
 		}
 	}
 
@@ -1202,7 +1203,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _delinquentComplaintsIndigenous(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("delinquentComplaintsIndigenous"));
+			c.o(((Double)stateFacets.getStatValue("delinquentComplaintsIndigenous")).longValue());
 		}
 	}
 
@@ -1234,7 +1235,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _delinquentComplaintsWhite(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("delinquentComplaintsWhite"));
+			c.o(((Double)stateFacets.getStatValue("delinquentComplaintsWhite")).longValue());
 		}
 	}
 
@@ -1266,7 +1267,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _delinquentComplaintsPacificIslander(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("delinquentComplaintsPacificIslander"));
+			c.o(((Double)stateFacets.getStatValue("delinquentComplaintsPacificIslander")).longValue());
 		}
 	}
 
@@ -1302,7 +1303,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _shortTermSuspensionRate(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("shortTermSuspensionRate"));
+			c.o(((Double)stateFacets.getStatValue("shortTermSuspensionRate")).longValue());
 		}
 	}
 	@Override
@@ -1321,7 +1322,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _shortTermSuspensionsTotal(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsTotal"));
+			c.o(((Double)stateFacets.getStatValue("shortTermSuspensionsTotal")).longValue());
 		}
 	}
 	@Override
@@ -1340,7 +1341,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _longTermSuspensionsTotal(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("longTermSuspensionsTotal"));
+			c.o(((Double)stateFacets.getStatValue("longTermSuspensionsTotal")).longValue());
 		}
 	}
 	@Override
@@ -1359,7 +1360,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _expulsionsTotal(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("expulsionsTotal"));
+			c.o(((Double)stateFacets.getStatValue("expulsionsTotal")).longValue());
 		}
 	}
 
@@ -1374,7 +1375,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _shortTermSuspensionsAsianFemale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsAsianFemale"));
+			c.o(((Double)stateFacets.getStatValue("shortTermSuspensionsAsianFemale")).longValue());
 		}
 	}
 
@@ -1389,7 +1390,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _shortTermSuspensionsAsianMale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsAsianMale"));
+			c.o(((Double)stateFacets.getStatValue("shortTermSuspensionsAsianMale")).longValue());
 		}
 	}
 
@@ -1450,7 +1451,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _shortTermSuspensionsBlackFemale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsBlackFemale"));
+			c.o(((Double)stateFacets.getStatValue("shortTermSuspensionsBlackFemale")).longValue());
 		}
 	}
 
@@ -1465,7 +1466,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _shortTermSuspensionsBlackMale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsBlackMale"));
+			c.o(((Double)stateFacets.getStatValue("shortTermSuspensionsBlackMale")).longValue());
 		}
 	}
 
@@ -1526,7 +1527,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _shortTermSuspensionsLatinxFemale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsLatinxFemale"));
+			c.o(((Double)stateFacets.getStatValue("shortTermSuspensionsLatinxFemale")).longValue());
 		}
 	}
 
@@ -1541,7 +1542,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _shortTermSuspensionsLatinxMale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsLatinxMale"));
+			c.o(((Double)stateFacets.getStatValue("shortTermSuspensionsLatinxMale")).longValue());
 		}
 	}
 
@@ -1602,7 +1603,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _shortTermSuspensionsIndigenousFemale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsIndigenousFemale"));
+			c.o(((Double)stateFacets.getStatValue("shortTermSuspensionsIndigenousFemale")).longValue());
 		}
 	}
 
@@ -1617,7 +1618,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */  
 	protected void _shortTermSuspensionsIndigenousMale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsIndigenousMale"));
+			c.o(((Double)stateFacets.getStatValue("shortTermSuspensionsIndigenousMale")).longValue());
 		}
 	}
 
@@ -1678,7 +1679,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _shortTermSuspensionsMultiRacialFemale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsMultiRacialFemale"));
+			c.o(((Double)stateFacets.getStatValue("shortTermSuspensionsMultiRacialFemale")).longValue());
 		}
 	}
 
@@ -1693,7 +1694,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _shortTermSuspensionsMultiRacialMale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsMultiRacialMale"));
+			c.o(((Double)stateFacets.getStatValue("shortTermSuspensionsMultiRacialMale")).longValue());
 		}
 	}
 
@@ -1754,7 +1755,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _shortTermSuspensionsPacificIslanderFemale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsPacificIslanderFemale"));
+			c.o(((Double)stateFacets.getStatValue("shortTermSuspensionsPacificIslanderFemale")).longValue());
 		}
 	}
 
@@ -1769,7 +1770,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _shortTermSuspensionsPacificIslanderMale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsPacificIslanderMale"));
+			c.o(((Double)stateFacets.getStatValue("shortTermSuspensionsPacificIslanderMale")).longValue());
 		}
 	}
 
@@ -1830,7 +1831,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _shortTermSuspensionsWhiteFemale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsWhiteFemale"));
+			c.o(((Double)stateFacets.getStatValue("shortTermSuspensionsWhiteFemale")).longValue());
 		}
 	}
 
@@ -1845,7 +1846,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _shortTermSuspensionsWhiteMale(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsWhiteMale"));
+			c.o(((Double)stateFacets.getStatValue("shortTermSuspensionsWhiteMale")).longValue());
 		}
 	}
 
