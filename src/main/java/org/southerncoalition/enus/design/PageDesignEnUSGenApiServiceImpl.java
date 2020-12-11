@@ -619,7 +619,10 @@ public class PageDesignEnUSGenApiServiceImpl implements PageDesignEnUSGenApiServ
 			jsonObject.put("saves", Optional.ofNullable(jsonObject.getJsonArray("saves")).orElse(new JsonArray()));
 			JsonObject jsonPatch = Optional.ofNullable(siteRequest.getJsonObject()).map(o -> o.getJsonObject("patch")).orElse(new JsonObject());
 			jsonPatch.stream().forEach(o -> {
-				jsonObject.put(o.getKey(), o.getValue());
+				if(o.getValue() == null)
+					jsonObject.remove(o.getKey());
+				else
+					jsonObject.put(o.getKey(), o.getValue());
 				jsonObject.getJsonArray("saves").add(o.getKey());
 			});
 
@@ -731,7 +734,7 @@ public class PageDesignEnUSGenApiServiceImpl implements PageDesignEnUSGenApiServ
 						}));
 						break;
 					case "childDesignKeys":
-						for(Long l : jsonObject.getJsonArray(entityVar).stream().map(a -> Long.parseLong((String)a)).collect(Collectors.toList())) {
+						for(Long l : Optional.ofNullable(jsonObject.getJsonArray(entityVar)).orElse(new JsonArray()).stream().map(a -> Long.parseLong((String)a)).collect(Collectors.toList())) {
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_addA
 										, Tuple.of(pk, "childDesignKeys", l, "parentDesignKeys")
@@ -750,7 +753,7 @@ public class PageDesignEnUSGenApiServiceImpl implements PageDesignEnUSGenApiServ
 						}
 						break;
 					case "parentDesignKeys":
-						for(Long l : jsonObject.getJsonArray(entityVar).stream().map(a -> Long.parseLong((String)a)).collect(Collectors.toList())) {
+						for(Long l : Optional.ofNullable(jsonObject.getJsonArray(entityVar)).orElse(new JsonArray()).stream().map(a -> Long.parseLong((String)a)).collect(Collectors.toList())) {
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_addA
 										, Tuple.of(l, "childDesignKeys", pk, "parentDesignKeys")
@@ -769,7 +772,7 @@ public class PageDesignEnUSGenApiServiceImpl implements PageDesignEnUSGenApiServ
 						}
 						break;
 					case "htmlPartKeys":
-						for(Long l : jsonObject.getJsonArray(entityVar).stream().map(a -> Long.parseLong((String)a)).collect(Collectors.toList())) {
+						for(Long l : Optional.ofNullable(jsonObject.getJsonArray(entityVar)).orElse(new JsonArray()).stream().map(a -> Long.parseLong((String)a)).collect(Collectors.toList())) {
 							futures.add(Future.future(a -> {
 								tx.preparedQuery(SiteContextEnUS.SQL_addA
 										, Tuple.of(pk, "htmlPartKeys", l, "pageDesignKeys")
@@ -1084,7 +1087,7 @@ public class PageDesignEnUSGenApiServiceImpl implements PageDesignEnUSGenApiServ
 						}));
 						break;
 					case "childDesignKeys":
-						for(Long l : jsonObject.getJsonArray(entityVar).stream().map(a -> Long.parseLong((String)a)).collect(Collectors.toList())) {
+						for(Long l : Optional.ofNullable(jsonObject.getJsonArray(entityVar)).orElse(new JsonArray()).stream().map(a -> Long.parseLong((String)a)).collect(Collectors.toList())) {
 							if(l != null) {
 								SearchList<PageDesign> searchList = new SearchList<PageDesign>();
 								searchList.setQuery("*:*");
@@ -1116,7 +1119,7 @@ public class PageDesignEnUSGenApiServiceImpl implements PageDesignEnUSGenApiServ
 						}
 						break;
 					case "parentDesignKeys":
-						for(Long l : jsonObject.getJsonArray(entityVar).stream().map(a -> Long.parseLong((String)a)).collect(Collectors.toList())) {
+						for(Long l : Optional.ofNullable(jsonObject.getJsonArray(entityVar)).orElse(new JsonArray()).stream().map(a -> Long.parseLong((String)a)).collect(Collectors.toList())) {
 							if(l != null) {
 								SearchList<PageDesign> searchList = new SearchList<PageDesign>();
 								searchList.setQuery("*:*");
@@ -1148,7 +1151,7 @@ public class PageDesignEnUSGenApiServiceImpl implements PageDesignEnUSGenApiServ
 						}
 						break;
 					case "htmlPartKeys":
-						for(Long l : jsonObject.getJsonArray(entityVar).stream().map(a -> Long.parseLong((String)a)).collect(Collectors.toList())) {
+						for(Long l : Optional.ofNullable(jsonObject.getJsonArray(entityVar)).orElse(new JsonArray()).stream().map(a -> Long.parseLong((String)a)).collect(Collectors.toList())) {
 							if(l != null) {
 								SearchList<HtmlPart> searchList = new SearchList<HtmlPart>();
 								searchList.setQuery("*:*");
@@ -3420,7 +3423,7 @@ public class PageDesignEnUSGenApiServiceImpl implements PageDesignEnUSGenApiServ
 		if(varIndexed == null)
 			throw new RuntimeException(String.format("\"%s\" is not an indexed entity. ", entityVar));
 		if(StringUtils.startsWith(valueIndexed, "[")) {
-			String[] fqs = StringUtils.split(StringUtils.substringBefore(StringUtils.substringAfter(valueIndexed, "["), "]"), " TO ");
+			String[] fqs = StringUtils.substringBefore(StringUtils.substringAfter(valueIndexed, "["), "]").split(" TO ");
 			if(fqs.length != 2)
 				throw new RuntimeException(String.format("\"%s\" invalid range query. ", valueIndexed));
 			String fq1 = fqs[0].equals("*") ? fqs[0] : PageDesign.staticSolrFqForClass(entityVar, searchList.getSiteRequest_(), fqs[0]);

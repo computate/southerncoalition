@@ -1,53 +1,55 @@
 package org.southerncoalition.enus.reportcard;
 
 import java.util.Arrays;
-import org.southerncoalition.enus.request.api.ApiRequest;
-import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
-import org.southerncoalition.enus.search.SearchList;
 import java.util.Date;
 import org.southerncoalition.enus.agency.SiteAgency;
-import java.util.HashMap;
 import org.apache.commons.lang3.StringUtils;
 import java.lang.Integer;
-import io.vertx.core.logging.LoggerFactory;
-import java.text.NumberFormat;
-import java.util.ArrayList;
 import java.math.BigDecimal;
-import org.apache.commons.collections.CollectionUtils;
 import java.lang.Long;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.vertx.core.json.JsonObject;
-import java.lang.String;
 import io.vertx.core.logging.Logger;
 import org.southerncoalition.enus.cluster.Cluster;
 import java.math.RoundingMode;
-import org.southerncoalition.enus.wrap.Wrap;
 import org.southerncoalition.enus.writer.AllWriter;
 import java.math.MathContext;
-import org.apache.solr.client.solrj.response.QueryResponse;
 import java.util.Set;
-import org.apache.commons.text.StringEscapeUtils;
-import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import org.southerncoalition.enus.request.SiteRequestEnUS;
-import org.apache.solr.client.solrj.SolrClient;
 import java.util.Objects;
-import io.vertx.core.json.JsonArray;
-import org.apache.solr.common.SolrDocument;
 import java.util.List;
 import org.apache.solr.client.solrj.SolrQuery;
-import org.apache.commons.lang3.math.NumberUtils;
-import org.southerncoalition.enus.reportcard.ReportCard;
 import java.util.Optional;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import org.apache.solr.client.solrj.util.ClientUtils;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.southerncoalition.enus.context.SiteContextEnUS;
-import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import org.apache.solr.common.SolrInputDocument;
 import org.apache.commons.lang3.exception.ExceptionUtils;
+import org.southerncoalition.enus.request.api.ApiRequest;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
+import org.southerncoalition.enus.search.SearchList;
+import java.util.HashMap;
+import io.vertx.core.logging.LoggerFactory;
+import java.text.NumberFormat;
+import java.util.ArrayList;
+import org.apache.commons.collections.CollectionUtils;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.lang.Boolean;
+import java.lang.String;
+import org.apache.solr.client.solrj.response.json.NestableJsonFacet;
+import org.southerncoalition.enus.wrap.Wrap;
+import org.apache.solr.client.solrj.response.QueryResponse;
+import org.apache.commons.text.StringEscapeUtils;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import org.southerncoalition.enus.request.SiteRequestEnUS;
+import org.apache.solr.client.solrj.SolrClient;
+import io.vertx.core.json.JsonArray;
+import org.apache.solr.common.SolrDocument;
+import org.apache.commons.lang3.math.NumberUtils;
+import org.southerncoalition.enus.reportcard.ReportCard;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 
 /**	
  * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstClasse_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true">Find the class  in Solr. </a>
@@ -751,16 +753,24 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
 				) {
 			e("i").a("class", "far fa-search w3-xxlarge w3-cell w3-cell-middle ").f().g("i");
-				e("input")
-					.a("type", "text")
-					.a("placeholder", "agency")
-					.a("class", "value suggestAgencyKey w3-input w3-border w3-cell w3-cell-middle ")
-					.a("name", "setAgencyKey")
-					.a("id", classApiMethodMethod, "_agencyKey")
-					.a("autocomplete", "off");
-					if("Page".equals(classApiMethodMethod)) {
-						a("oninput", "suggestReportCardAgencyKey($(this).val() ? searchSiteAgencyFilters($(this.parentElement)) : [", pk == null ? "" : "{'name':'fq','value':'reportCardKeys:" + pk + "'}", "], $('#listReportCardAgencyKey_", classApiMethodMethod, "'), ", pk, "); ");
-					}
+			if("PUTCopy".equals(classApiMethodMethod)) {
+				{ e("div").f();
+					e("input")
+						.a("type", "checkbox")
+						.a("id", classApiMethodMethod, "_agencyKey_clear")
+						.a("class", "agencyKey_clear ")
+						.fg();
+					e("label").a("for", "classApiMethodMethod, \"_agencyKey_clear").f().sx("clear").g("label");
+				} g("div");
+			}
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "agency")
+				.a("class", "value suggestAgencyKey w3-input w3-border w3-cell w3-cell-middle ")
+				.a("name", "setAgencyKey")
+				.a("id", classApiMethodMethod, "_agencyKey")
+				.a("autocomplete", "off");
+				a("oninput", "suggestReportCardAgencyKey($(this).val() ? searchSiteAgencyFilters($(this.parentElement)) : [", pk == null ? "" : "{'name':'fq','value':'reportCardKeys:" + pk + "'}", "], $('#listReportCardAgencyKey_", classApiMethodMethod, "'), ", pk, "); ");
 
 				fg();
 
@@ -802,14 +812,16 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 										CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), SiteAgency.ROLES)
 										|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), SiteAgency.ROLES)
 										) {
-									{ e("div").a("class", "w3-cell-row ").f();
-										e("button")
-											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-pale-yellow ")
-											.a("id", classApiMethodMethod, "_agencyKey_add")
-											.a("onclick", "$(this).addClass('w3-disabled'); this.disabled = true; this.innerHTML = 'Sending…'; postSiteAgencyVals({ reportCardKeys: [ \"", pk, "\" ] }, function() {}, function() { addError($('#", classApiMethodMethod, "agencyKey')); });")
-											.f().sx("add a agency")
-										.g("button");
-									} g("div");
+									if("Page".equals(classApiMethodMethod)) {
+										{ e("div").a("class", "w3-cell-row ").f();
+											e("button")
+												.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-pale-yellow ")
+												.a("id", classApiMethodMethod, "_agencyKey_add")
+												.a("onclick", "$(this).addClass('w3-disabled'); this.disabled = true; this.innerHTML = 'Sending…'; postSiteAgencyVals({ reportCardKeys: [ \"", pk, "\" ] }, function() {}, function() { addError($('#", classApiMethodMethod, "agencyKey')); });")
+												.f().sx("add a agency")
+											.g("button");
+										} g("div");
+									}
 								}
 							} g("div");
 						} g("div");
@@ -985,6 +997,869 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 
 	public String htmImageTop() {
 		return imageTop == null ? "" : StringEscapeUtils.escapeHtml4(strImageTop());
+	}
+
+	//////////////
+	// stateKey //
+	//////////////
+
+	/**	 The entity stateKey
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Long stateKey;
+	@JsonIgnore
+	public Wrap<Long> stateKeyWrap = new Wrap<Long>().p(this).c(Long.class).var("stateKey").o(stateKey);
+
+	/**	<br/> The entity stateKey
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:stateKey">Find the entity stateKey in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _stateKey(Wrap<Long> c);
+
+	public Long getStateKey() {
+		return stateKey;
+	}
+
+	public void setStateKey(Long stateKey) {
+		this.stateKey = stateKey;
+		this.stateKeyWrap.alreadyInitialized = true;
+	}
+	public void setStateKey(String o) {
+		this.stateKey = ReportCard.staticSetStateKey(siteRequest_, o);
+		this.stateKeyWrap.alreadyInitialized = true;
+	}
+	public static Long staticSetStateKey(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Long.parseLong(o);
+		return null;
+	}
+	protected ReportCard stateKeyInit() {
+		if(!stateKeyWrap.alreadyInitialized) {
+			_stateKey(stateKeyWrap);
+			if(stateKey == null)
+				setStateKey(stateKeyWrap.o);
+		}
+		stateKeyWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public static Long staticSolrStateKey(SiteRequestEnUS siteRequest_, Long o) {
+		return o;
+	}
+
+	public static String staticSolrStrStateKey(SiteRequestEnUS siteRequest_, Long o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqStateKey(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrStateKey(siteRequest_, ReportCard.staticSolrStateKey(siteRequest_, ReportCard.staticSetStateKey(siteRequest_, o)));
+	}
+
+	public Long solrStateKey() {
+		return ReportCard.staticSolrStateKey(siteRequest_, stateKey);
+	}
+
+	public String strStateKey() {
+		return stateKey == null ? "" : stateKey.toString();
+	}
+
+	public String jsonStateKey() {
+		return stateKey == null ? "" : stateKey.toString();
+	}
+
+	public String nomAffichageStateKey() {
+		return null;
+	}
+
+	public String htmTooltipStateKey() {
+		return null;
+	}
+
+	public String htmStateKey() {
+		return stateKey == null ? "" : StringEscapeUtils.escapeHtml4(strStateKey());
+	}
+
+	/////////////
+	// stateId //
+	/////////////
+
+	/**	 The entity stateId
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String stateId;
+	@JsonIgnore
+	public Wrap<String> stateIdWrap = new Wrap<String>().p(this).c(String.class).var("stateId").o(stateId);
+
+	/**	<br/> The entity stateId
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:stateId">Find the entity stateId in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _stateId(Wrap<String> c);
+
+	public String getStateId() {
+		return stateId;
+	}
+	public void setStateId(String o) {
+		this.stateId = ReportCard.staticSetStateId(siteRequest_, o);
+		this.stateIdWrap.alreadyInitialized = true;
+	}
+	public static String staticSetStateId(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+	protected ReportCard stateIdInit() {
+		if(!stateIdWrap.alreadyInitialized) {
+			_stateId(stateIdWrap);
+			if(stateId == null)
+				setStateId(stateIdWrap.o);
+		}
+		stateIdWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public static String staticSolrStateId(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrStateId(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqStateId(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrStateId(siteRequest_, ReportCard.staticSolrStateId(siteRequest_, ReportCard.staticSetStateId(siteRequest_, o)));
+	}
+
+	public String solrStateId() {
+		return ReportCard.staticSolrStateId(siteRequest_, stateId);
+	}
+
+	public String strStateId() {
+		return stateId == null ? "" : stateId;
+	}
+
+	public String jsonStateId() {
+		return stateId == null ? "" : stateId;
+	}
+
+	public String nomAffichageStateId() {
+		return null;
+	}
+
+	public String htmTooltipStateId() {
+		return null;
+	}
+
+	public String htmStateId() {
+		return stateId == null ? "" : StringEscapeUtils.escapeHtml4(strStateId());
+	}
+
+	//////////////
+	// agencyId //
+	//////////////
+
+	/**	 The entity agencyId
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String agencyId;
+	@JsonIgnore
+	public Wrap<String> agencyIdWrap = new Wrap<String>().p(this).c(String.class).var("agencyId").o(agencyId);
+
+	/**	<br/> The entity agencyId
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyId">Find the entity agencyId in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _agencyId(Wrap<String> c);
+
+	public String getAgencyId() {
+		return agencyId;
+	}
+	public void setAgencyId(String o) {
+		this.agencyId = ReportCard.staticSetAgencyId(siteRequest_, o);
+		this.agencyIdWrap.alreadyInitialized = true;
+	}
+	public static String staticSetAgencyId(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+	protected ReportCard agencyIdInit() {
+		if(!agencyIdWrap.alreadyInitialized) {
+			_agencyId(agencyIdWrap);
+			if(agencyId == null)
+				setAgencyId(agencyIdWrap.o);
+		}
+		agencyIdWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public static String staticSolrAgencyId(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyId(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyId(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrAgencyId(siteRequest_, ReportCard.staticSolrAgencyId(siteRequest_, ReportCard.staticSetAgencyId(siteRequest_, o)));
+	}
+
+	public String solrAgencyId() {
+		return ReportCard.staticSolrAgencyId(siteRequest_, agencyId);
+	}
+
+	public String strAgencyId() {
+		return agencyId == null ? "" : agencyId;
+	}
+
+	public String jsonAgencyId() {
+		return agencyId == null ? "" : agencyId;
+	}
+
+	public String nomAffichageAgencyId() {
+		return null;
+	}
+
+	public String htmTooltipAgencyId() {
+		return null;
+	}
+
+	public String htmAgencyId() {
+		return agencyId == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyId());
+	}
+
+	///////////////
+	// stateName //
+	///////////////
+
+	/**	 The entity stateName
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String stateName;
+	@JsonIgnore
+	public Wrap<String> stateNameWrap = new Wrap<String>().p(this).c(String.class).var("stateName").o(stateName);
+
+	/**	<br/> The entity stateName
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:stateName">Find the entity stateName in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _stateName(Wrap<String> c);
+
+	public String getStateName() {
+		return stateName;
+	}
+	public void setStateName(String o) {
+		this.stateName = ReportCard.staticSetStateName(siteRequest_, o);
+		this.stateNameWrap.alreadyInitialized = true;
+	}
+	public static String staticSetStateName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+	protected ReportCard stateNameInit() {
+		if(!stateNameWrap.alreadyInitialized) {
+			_stateName(stateNameWrap);
+			if(stateName == null)
+				setStateName(stateNameWrap.o);
+		}
+		stateNameWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public static String staticSolrStateName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrStateName(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqStateName(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrStateName(siteRequest_, ReportCard.staticSolrStateName(siteRequest_, ReportCard.staticSetStateName(siteRequest_, o)));
+	}
+
+	public String solrStateName() {
+		return ReportCard.staticSolrStateName(siteRequest_, stateName);
+	}
+
+	public String strStateName() {
+		return stateName == null ? "" : stateName;
+	}
+
+	public String jsonStateName() {
+		return stateName == null ? "" : stateName;
+	}
+
+	public String nomAffichageStateName() {
+		return null;
+	}
+
+	public String htmTooltipStateName() {
+		return null;
+	}
+
+	public String htmStateName() {
+		return stateName == null ? "" : StringEscapeUtils.escapeHtml4(strStateName());
+	}
+
+	///////////////////////
+	// stateAbbreviation //
+	///////////////////////
+
+	/**	 The entity stateAbbreviation
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String stateAbbreviation;
+	@JsonIgnore
+	public Wrap<String> stateAbbreviationWrap = new Wrap<String>().p(this).c(String.class).var("stateAbbreviation").o(stateAbbreviation);
+
+	/**	<br/> The entity stateAbbreviation
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:stateAbbreviation">Find the entity stateAbbreviation in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _stateAbbreviation(Wrap<String> c);
+
+	public String getStateAbbreviation() {
+		return stateAbbreviation;
+	}
+	public void setStateAbbreviation(String o) {
+		this.stateAbbreviation = ReportCard.staticSetStateAbbreviation(siteRequest_, o);
+		this.stateAbbreviationWrap.alreadyInitialized = true;
+	}
+	public static String staticSetStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+	protected ReportCard stateAbbreviationInit() {
+		if(!stateAbbreviationWrap.alreadyInitialized) {
+			_stateAbbreviation(stateAbbreviationWrap);
+			if(stateAbbreviation == null)
+				setStateAbbreviation(stateAbbreviationWrap.o);
+		}
+		stateAbbreviationWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public static String staticSolrStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrStateAbbreviation(siteRequest_, ReportCard.staticSolrStateAbbreviation(siteRequest_, ReportCard.staticSetStateAbbreviation(siteRequest_, o)));
+	}
+
+	public String solrStateAbbreviation() {
+		return ReportCard.staticSolrStateAbbreviation(siteRequest_, stateAbbreviation);
+	}
+
+	public String strStateAbbreviation() {
+		return stateAbbreviation == null ? "" : stateAbbreviation;
+	}
+
+	public String jsonStateAbbreviation() {
+		return stateAbbreviation == null ? "" : stateAbbreviation;
+	}
+
+	public String nomAffichageStateAbbreviation() {
+		return null;
+	}
+
+	public String htmTooltipStateAbbreviation() {
+		return null;
+	}
+
+	public String htmStateAbbreviation() {
+		return stateAbbreviation == null ? "" : StringEscapeUtils.escapeHtml4(strStateAbbreviation());
+	}
+
+	////////////////////
+	// agencyOnlyName //
+	////////////////////
+
+	/**	 The entity agencyOnlyName
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String agencyOnlyName;
+	@JsonIgnore
+	public Wrap<String> agencyOnlyNameWrap = new Wrap<String>().p(this).c(String.class).var("agencyOnlyName").o(agencyOnlyName);
+
+	/**	<br/> The entity agencyOnlyName
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyOnlyName">Find the entity agencyOnlyName in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _agencyOnlyName(Wrap<String> c);
+
+	public String getAgencyOnlyName() {
+		return agencyOnlyName;
+	}
+	public void setAgencyOnlyName(String o) {
+		this.agencyOnlyName = ReportCard.staticSetAgencyOnlyName(siteRequest_, o);
+		this.agencyOnlyNameWrap.alreadyInitialized = true;
+	}
+	public static String staticSetAgencyOnlyName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+	protected ReportCard agencyOnlyNameInit() {
+		if(!agencyOnlyNameWrap.alreadyInitialized) {
+			_agencyOnlyName(agencyOnlyNameWrap);
+			if(agencyOnlyName == null)
+				setAgencyOnlyName(agencyOnlyNameWrap.o);
+		}
+		agencyOnlyNameWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public static String staticSolrAgencyOnlyName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyOnlyName(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyOnlyName(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrAgencyOnlyName(siteRequest_, ReportCard.staticSolrAgencyOnlyName(siteRequest_, ReportCard.staticSetAgencyOnlyName(siteRequest_, o)));
+	}
+
+	public String solrAgencyOnlyName() {
+		return ReportCard.staticSolrAgencyOnlyName(siteRequest_, agencyOnlyName);
+	}
+
+	public String strAgencyOnlyName() {
+		return agencyOnlyName == null ? "" : agencyOnlyName;
+	}
+
+	public String jsonAgencyOnlyName() {
+		return agencyOnlyName == null ? "" : agencyOnlyName;
+	}
+
+	public String nomAffichageAgencyOnlyName() {
+		return null;
+	}
+
+	public String htmTooltipAgencyOnlyName() {
+		return null;
+	}
+
+	public String htmAgencyOnlyName() {
+		return agencyOnlyName == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyOnlyName());
+	}
+
+	////////////////
+	// agencyName //
+	////////////////
+
+	/**	 The entity agencyName
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String agencyName;
+	@JsonIgnore
+	public Wrap<String> agencyNameWrap = new Wrap<String>().p(this).c(String.class).var("agencyName").o(agencyName);
+
+	/**	<br/> The entity agencyName
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyName">Find the entity agencyName in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _agencyName(Wrap<String> c);
+
+	public String getAgencyName() {
+		return agencyName;
+	}
+	public void setAgencyName(String o) {
+		this.agencyName = ReportCard.staticSetAgencyName(siteRequest_, o);
+		this.agencyNameWrap.alreadyInitialized = true;
+	}
+	public static String staticSetAgencyName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+	protected ReportCard agencyNameInit() {
+		if(!agencyNameWrap.alreadyInitialized) {
+			_agencyName(agencyNameWrap);
+			if(agencyName == null)
+				setAgencyName(agencyNameWrap.o);
+		}
+		agencyNameWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public static String staticSolrAgencyName(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyName(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyName(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrAgencyName(siteRequest_, ReportCard.staticSolrAgencyName(siteRequest_, ReportCard.staticSetAgencyName(siteRequest_, o)));
+	}
+
+	public String solrAgencyName() {
+		return ReportCard.staticSolrAgencyName(siteRequest_, agencyName);
+	}
+
+	public String strAgencyName() {
+		return agencyName == null ? "" : agencyName;
+	}
+
+	public String jsonAgencyName() {
+		return agencyName == null ? "" : agencyName;
+	}
+
+	public String nomAffichageAgencyName() {
+		return null;
+	}
+
+	public String htmTooltipAgencyName() {
+		return null;
+	}
+
+	public String htmAgencyName() {
+		return agencyName == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyName());
+	}
+
+	///////////////////
+	// agencyIsState //
+	///////////////////
+
+	/**	 The entity agencyIsState
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected Boolean agencyIsState;
+	@JsonIgnore
+	public Wrap<Boolean> agencyIsStateWrap = new Wrap<Boolean>().p(this).c(Boolean.class).var("agencyIsState").o(agencyIsState);
+
+	/**	<br/> The entity agencyIsState
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyIsState">Find the entity agencyIsState in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _agencyIsState(Wrap<Boolean> c);
+
+	public Boolean getAgencyIsState() {
+		return agencyIsState;
+	}
+
+	public void setAgencyIsState(Boolean agencyIsState) {
+		this.agencyIsState = agencyIsState;
+		this.agencyIsStateWrap.alreadyInitialized = true;
+	}
+	public void setAgencyIsState(String o) {
+		this.agencyIsState = ReportCard.staticSetAgencyIsState(siteRequest_, o);
+		this.agencyIsStateWrap.alreadyInitialized = true;
+	}
+	public static Boolean staticSetAgencyIsState(SiteRequestEnUS siteRequest_, String o) {
+		return Boolean.parseBoolean(o);
+	}
+	protected ReportCard agencyIsStateInit() {
+		if(!agencyIsStateWrap.alreadyInitialized) {
+			_agencyIsState(agencyIsStateWrap);
+			if(agencyIsState == null)
+				setAgencyIsState(agencyIsStateWrap.o);
+		}
+		agencyIsStateWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public static Boolean staticSolrAgencyIsState(SiteRequestEnUS siteRequest_, Boolean o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyIsState(SiteRequestEnUS siteRequest_, Boolean o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyIsState(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrAgencyIsState(siteRequest_, ReportCard.staticSolrAgencyIsState(siteRequest_, ReportCard.staticSetAgencyIsState(siteRequest_, o)));
+	}
+
+	public Boolean solrAgencyIsState() {
+		return ReportCard.staticSolrAgencyIsState(siteRequest_, agencyIsState);
+	}
+
+	public String strAgencyIsState() {
+		return agencyIsState == null ? "" : agencyIsState.toString();
+	}
+
+	public String jsonAgencyIsState() {
+		return agencyIsState == null ? "" : agencyIsState.toString();
+	}
+
+	public String nomAffichageAgencyIsState() {
+		return null;
+	}
+
+	public String htmTooltipAgencyIsState() {
+		return null;
+	}
+
+	public String htmAgencyIsState() {
+		return agencyIsState == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyIsState());
+	}
+
+	//////////////////
+	// agencyCoords //
+	//////////////////
+
+	/**	 The entity agencyCoords
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected String agencyCoords;
+	@JsonIgnore
+	public Wrap<String> agencyCoordsWrap = new Wrap<String>().p(this).c(String.class).var("agencyCoords").o(agencyCoords);
+
+	/**	<br/> The entity agencyCoords
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyCoords">Find the entity agencyCoords in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _agencyCoords(Wrap<String> c);
+
+	public String getAgencyCoords() {
+		return agencyCoords;
+	}
+	public void setAgencyCoords(String o) {
+		this.agencyCoords = ReportCard.staticSetAgencyCoords(siteRequest_, o);
+		this.agencyCoordsWrap.alreadyInitialized = true;
+	}
+	public static String staticSetAgencyCoords(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+	protected ReportCard agencyCoordsInit() {
+		if(!agencyCoordsWrap.alreadyInitialized) {
+			_agencyCoords(agencyCoordsWrap);
+			if(agencyCoords == null)
+				setAgencyCoords(agencyCoordsWrap.o);
+		}
+		agencyCoordsWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public static String staticSolrAgencyCoords(SiteRequestEnUS siteRequest_, String o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyCoords(SiteRequestEnUS siteRequest_, String o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyCoords(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrAgencyCoords(siteRequest_, ReportCard.staticSolrAgencyCoords(siteRequest_, ReportCard.staticSetAgencyCoords(siteRequest_, o)));
+	}
+
+	public String solrAgencyCoords() {
+		return ReportCard.staticSolrAgencyCoords(siteRequest_, agencyCoords);
+	}
+
+	public String strAgencyCoords() {
+		return agencyCoords == null ? "" : agencyCoords;
+	}
+
+	public String jsonAgencyCoords() {
+		return agencyCoords == null ? "" : agencyCoords;
+	}
+
+	public String nomAffichageAgencyCoords() {
+		return null;
+	}
+
+	public String htmTooltipAgencyCoords() {
+		return null;
+	}
+
+	public String htmAgencyCoords() {
+		return agencyCoords == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyCoords());
+	}
+
+	////////////////
+	// agencyLeft //
+	////////////////
+
+	/**	 The entity agencyLeft
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonSerialize(using = ToStringSerializer.class)
+	@JsonInclude(Include.NON_NULL)
+	protected Integer agencyLeft;
+	@JsonIgnore
+	public Wrap<Integer> agencyLeftWrap = new Wrap<Integer>().p(this).c(Integer.class).var("agencyLeft").o(agencyLeft);
+
+	/**	<br/> The entity agencyLeft
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyLeft">Find the entity agencyLeft in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _agencyLeft(Wrap<Integer> c);
+
+	public Integer getAgencyLeft() {
+		return agencyLeft;
+	}
+
+	public void setAgencyLeft(Integer agencyLeft) {
+		this.agencyLeft = agencyLeft;
+		this.agencyLeftWrap.alreadyInitialized = true;
+	}
+	public void setAgencyLeft(String o) {
+		this.agencyLeft = ReportCard.staticSetAgencyLeft(siteRequest_, o);
+		this.agencyLeftWrap.alreadyInitialized = true;
+	}
+	public static Integer staticSetAgencyLeft(SiteRequestEnUS siteRequest_, String o) {
+		if(NumberUtils.isParsable(o))
+			return Integer.parseInt(o);
+		return null;
+	}
+	protected ReportCard agencyLeftInit() {
+		if(!agencyLeftWrap.alreadyInitialized) {
+			_agencyLeft(agencyLeftWrap);
+			if(agencyLeft == null)
+				setAgencyLeft(agencyLeftWrap.o);
+		}
+		agencyLeftWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	public static Integer staticSolrAgencyLeft(SiteRequestEnUS siteRequest_, Integer o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyLeft(SiteRequestEnUS siteRequest_, Integer o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyLeft(SiteRequestEnUS siteRequest_, String o) {
+		return ReportCard.staticSolrStrAgencyLeft(siteRequest_, ReportCard.staticSolrAgencyLeft(siteRequest_, ReportCard.staticSetAgencyLeft(siteRequest_, o)));
+	}
+
+	public Integer solrAgencyLeft() {
+		return ReportCard.staticSolrAgencyLeft(siteRequest_, agencyLeft);
+	}
+
+	public String strAgencyLeft() {
+		return agencyLeft == null ? "" : agencyLeft.toString();
+	}
+
+	public String jsonAgencyLeft() {
+		return agencyLeft == null ? "" : agencyLeft.toString();
+	}
+
+	public String nomAffichageAgencyLeft() {
+		return null;
+	}
+
+	public String htmTooltipAgencyLeft() {
+		return null;
+	}
+
+	public String htmAgencyLeft() {
+		return agencyLeft == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyLeft());
+	}
+
+	///////////////////////////
+	// stateReportCardSearch //
+	///////////////////////////
+
+	/**	 The entity stateReportCardSearch
+	 *	Il est construit avant d'être initialisé avec le constructeur par défaut SearchList<ReportCard>(). 
+	 */
+	@JsonIgnore
+	@JsonInclude(Include.NON_NULL)
+	protected SearchList<ReportCard> stateReportCardSearch = new SearchList<ReportCard>();
+	@JsonIgnore
+	public Wrap<SearchList<ReportCard>> stateReportCardSearchWrap = new Wrap<SearchList<ReportCard>>().p(this).c(SearchList.class).var("stateReportCardSearch").o(stateReportCardSearch);
+
+	/**	<br/> The entity stateReportCardSearch
+	 *  It is constructed before being initialized with the constructor by default SearchList<ReportCard>(). 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:stateReportCardSearch">Find the entity stateReportCardSearch in Solr</a>
+	 * <br/>
+	 * @param stateReportCardSearch is the entity already constructed. 
+	 **/
+	protected abstract void _stateReportCardSearch(SearchList<ReportCard> l);
+
+	public SearchList<ReportCard> getStateReportCardSearch() {
+		return stateReportCardSearch;
+	}
+
+	public void setStateReportCardSearch(SearchList<ReportCard> stateReportCardSearch) {
+		this.stateReportCardSearch = stateReportCardSearch;
+		this.stateReportCardSearchWrap.alreadyInitialized = true;
+	}
+	public static SearchList<ReportCard> staticSetStateReportCardSearch(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+	protected ReportCard stateReportCardSearchInit() {
+		if(!stateReportCardSearchWrap.alreadyInitialized) {
+			_stateReportCardSearch(stateReportCardSearch);
+		}
+		stateReportCardSearch.initDeepForClass(siteRequest_);
+		stateReportCardSearchWrap.alreadyInitialized(true);
+		return (ReportCard)this;
+	}
+
+	/////////////////
+	// stateFacets //
+	/////////////////
+
+	/**	 The entity stateFacets
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected NestableJsonFacet stateFacets;
+	@JsonIgnore
+	public Wrap<NestableJsonFacet> stateFacetsWrap = new Wrap<NestableJsonFacet>().p(this).c(NestableJsonFacet.class).var("stateFacets").o(stateFacets);
+
+	/**	<br/> The entity stateFacets
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:stateFacets">Find the entity stateFacets in Solr</a>
+	 * <br/>
+	 * @param w is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _stateFacets(Wrap<NestableJsonFacet> w);
+
+	public NestableJsonFacet getStateFacets() {
+		return stateFacets;
+	}
+
+	public void setStateFacets(NestableJsonFacet stateFacets) {
+		this.stateFacets = stateFacets;
+		this.stateFacetsWrap.alreadyInitialized = true;
+	}
+	public static NestableJsonFacet staticSetStateFacets(SiteRequestEnUS siteRequest_, String o) {
+		return null;
+	}
+	protected ReportCard stateFacetsInit() {
+		if(!stateFacetsWrap.alreadyInitialized) {
+			_stateFacets(stateFacetsWrap);
+			if(stateFacets == null)
+				setStateFacets(stateFacetsWrap.o);
+		}
+		stateFacetsWrap.alreadyInitialized(true);
+		return (ReportCard)this;
 	}
 
 	/////////////////
@@ -17828,706 +18703,6 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		return examsCollegeReadyGrades38LatinxVsWhite == null ? "" : StringEscapeUtils.escapeHtml4(strExamsCollegeReadyGrades38LatinxVsWhite());
 	}
 
-	//////////////
-	// stateKey //
-	//////////////
-
-	/**	 The entity stateKey
-	 *	 is defined as null before being initialized. 
-	 */
-	@JsonSerialize(using = ToStringSerializer.class)
-	@JsonInclude(Include.NON_NULL)
-	protected Long stateKey;
-	@JsonIgnore
-	public Wrap<Long> stateKeyWrap = new Wrap<Long>().p(this).c(Long.class).var("stateKey").o(stateKey);
-
-	/**	<br/> The entity stateKey
-	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:stateKey">Find the entity stateKey in Solr</a>
-	 * <br/>
-	 * @param c is for wrapping a value to assign to this entity during initialization. 
-	 **/
-	protected abstract void _stateKey(Wrap<Long> c);
-
-	public Long getStateKey() {
-		return stateKey;
-	}
-
-	public void setStateKey(Long stateKey) {
-		this.stateKey = stateKey;
-		this.stateKeyWrap.alreadyInitialized = true;
-	}
-	public void setStateKey(String o) {
-		this.stateKey = ReportCard.staticSetStateKey(siteRequest_, o);
-		this.stateKeyWrap.alreadyInitialized = true;
-	}
-	public static Long staticSetStateKey(SiteRequestEnUS siteRequest_, String o) {
-		if(NumberUtils.isParsable(o))
-			return Long.parseLong(o);
-		return null;
-	}
-	protected ReportCard stateKeyInit() {
-		if(!stateKeyWrap.alreadyInitialized) {
-			_stateKey(stateKeyWrap);
-			if(stateKey == null)
-				setStateKey(stateKeyWrap.o);
-		}
-		stateKeyWrap.alreadyInitialized(true);
-		return (ReportCard)this;
-	}
-
-	public static Long staticSolrStateKey(SiteRequestEnUS siteRequest_, Long o) {
-		return o;
-	}
-
-	public static String staticSolrStrStateKey(SiteRequestEnUS siteRequest_, Long o) {
-		return o == null ? null : o.toString();
-	}
-
-	public static String staticSolrFqStateKey(SiteRequestEnUS siteRequest_, String o) {
-		return ReportCard.staticSolrStrStateKey(siteRequest_, ReportCard.staticSolrStateKey(siteRequest_, ReportCard.staticSetStateKey(siteRequest_, o)));
-	}
-
-	public Long solrStateKey() {
-		return ReportCard.staticSolrStateKey(siteRequest_, stateKey);
-	}
-
-	public String strStateKey() {
-		return stateKey == null ? "" : stateKey.toString();
-	}
-
-	public String jsonStateKey() {
-		return stateKey == null ? "" : stateKey.toString();
-	}
-
-	public String nomAffichageStateKey() {
-		return null;
-	}
-
-	public String htmTooltipStateKey() {
-		return null;
-	}
-
-	public String htmStateKey() {
-		return stateKey == null ? "" : StringEscapeUtils.escapeHtml4(strStateKey());
-	}
-
-	/////////////
-	// stateId //
-	/////////////
-
-	/**	 The entity stateId
-	 *	 is defined as null before being initialized. 
-	 */
-	@JsonInclude(Include.NON_NULL)
-	protected String stateId;
-	@JsonIgnore
-	public Wrap<String> stateIdWrap = new Wrap<String>().p(this).c(String.class).var("stateId").o(stateId);
-
-	/**	<br/> The entity stateId
-	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:stateId">Find the entity stateId in Solr</a>
-	 * <br/>
-	 * @param c is for wrapping a value to assign to this entity during initialization. 
-	 **/
-	protected abstract void _stateId(Wrap<String> c);
-
-	public String getStateId() {
-		return stateId;
-	}
-	public void setStateId(String o) {
-		this.stateId = ReportCard.staticSetStateId(siteRequest_, o);
-		this.stateIdWrap.alreadyInitialized = true;
-	}
-	public static String staticSetStateId(SiteRequestEnUS siteRequest_, String o) {
-		return o;
-	}
-	protected ReportCard stateIdInit() {
-		if(!stateIdWrap.alreadyInitialized) {
-			_stateId(stateIdWrap);
-			if(stateId == null)
-				setStateId(stateIdWrap.o);
-		}
-		stateIdWrap.alreadyInitialized(true);
-		return (ReportCard)this;
-	}
-
-	public static String staticSolrStateId(SiteRequestEnUS siteRequest_, String o) {
-		return o;
-	}
-
-	public static String staticSolrStrStateId(SiteRequestEnUS siteRequest_, String o) {
-		return o == null ? null : o.toString();
-	}
-
-	public static String staticSolrFqStateId(SiteRequestEnUS siteRequest_, String o) {
-		return ReportCard.staticSolrStrStateId(siteRequest_, ReportCard.staticSolrStateId(siteRequest_, ReportCard.staticSetStateId(siteRequest_, o)));
-	}
-
-	public String solrStateId() {
-		return ReportCard.staticSolrStateId(siteRequest_, stateId);
-	}
-
-	public String strStateId() {
-		return stateId == null ? "" : stateId;
-	}
-
-	public String jsonStateId() {
-		return stateId == null ? "" : stateId;
-	}
-
-	public String nomAffichageStateId() {
-		return null;
-	}
-
-	public String htmTooltipStateId() {
-		return null;
-	}
-
-	public String htmStateId() {
-		return stateId == null ? "" : StringEscapeUtils.escapeHtml4(strStateId());
-	}
-
-	//////////////
-	// agencyId //
-	//////////////
-
-	/**	 The entity agencyId
-	 *	 is defined as null before being initialized. 
-	 */
-	@JsonInclude(Include.NON_NULL)
-	protected String agencyId;
-	@JsonIgnore
-	public Wrap<String> agencyIdWrap = new Wrap<String>().p(this).c(String.class).var("agencyId").o(agencyId);
-
-	/**	<br/> The entity agencyId
-	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyId">Find the entity agencyId in Solr</a>
-	 * <br/>
-	 * @param c is for wrapping a value to assign to this entity during initialization. 
-	 **/
-	protected abstract void _agencyId(Wrap<String> c);
-
-	public String getAgencyId() {
-		return agencyId;
-	}
-	public void setAgencyId(String o) {
-		this.agencyId = ReportCard.staticSetAgencyId(siteRequest_, o);
-		this.agencyIdWrap.alreadyInitialized = true;
-	}
-	public static String staticSetAgencyId(SiteRequestEnUS siteRequest_, String o) {
-		return o;
-	}
-	protected ReportCard agencyIdInit() {
-		if(!agencyIdWrap.alreadyInitialized) {
-			_agencyId(agencyIdWrap);
-			if(agencyId == null)
-				setAgencyId(agencyIdWrap.o);
-		}
-		agencyIdWrap.alreadyInitialized(true);
-		return (ReportCard)this;
-	}
-
-	public static String staticSolrAgencyId(SiteRequestEnUS siteRequest_, String o) {
-		return o;
-	}
-
-	public static String staticSolrStrAgencyId(SiteRequestEnUS siteRequest_, String o) {
-		return o == null ? null : o.toString();
-	}
-
-	public static String staticSolrFqAgencyId(SiteRequestEnUS siteRequest_, String o) {
-		return ReportCard.staticSolrStrAgencyId(siteRequest_, ReportCard.staticSolrAgencyId(siteRequest_, ReportCard.staticSetAgencyId(siteRequest_, o)));
-	}
-
-	public String solrAgencyId() {
-		return ReportCard.staticSolrAgencyId(siteRequest_, agencyId);
-	}
-
-	public String strAgencyId() {
-		return agencyId == null ? "" : agencyId;
-	}
-
-	public String jsonAgencyId() {
-		return agencyId == null ? "" : agencyId;
-	}
-
-	public String nomAffichageAgencyId() {
-		return null;
-	}
-
-	public String htmTooltipAgencyId() {
-		return null;
-	}
-
-	public String htmAgencyId() {
-		return agencyId == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyId());
-	}
-
-	///////////////
-	// stateName //
-	///////////////
-
-	/**	 The entity stateName
-	 *	 is defined as null before being initialized. 
-	 */
-	@JsonInclude(Include.NON_NULL)
-	protected String stateName;
-	@JsonIgnore
-	public Wrap<String> stateNameWrap = new Wrap<String>().p(this).c(String.class).var("stateName").o(stateName);
-
-	/**	<br/> The entity stateName
-	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:stateName">Find the entity stateName in Solr</a>
-	 * <br/>
-	 * @param c is for wrapping a value to assign to this entity during initialization. 
-	 **/
-	protected abstract void _stateName(Wrap<String> c);
-
-	public String getStateName() {
-		return stateName;
-	}
-	public void setStateName(String o) {
-		this.stateName = ReportCard.staticSetStateName(siteRequest_, o);
-		this.stateNameWrap.alreadyInitialized = true;
-	}
-	public static String staticSetStateName(SiteRequestEnUS siteRequest_, String o) {
-		return o;
-	}
-	protected ReportCard stateNameInit() {
-		if(!stateNameWrap.alreadyInitialized) {
-			_stateName(stateNameWrap);
-			if(stateName == null)
-				setStateName(stateNameWrap.o);
-		}
-		stateNameWrap.alreadyInitialized(true);
-		return (ReportCard)this;
-	}
-
-	public static String staticSolrStateName(SiteRequestEnUS siteRequest_, String o) {
-		return o;
-	}
-
-	public static String staticSolrStrStateName(SiteRequestEnUS siteRequest_, String o) {
-		return o == null ? null : o.toString();
-	}
-
-	public static String staticSolrFqStateName(SiteRequestEnUS siteRequest_, String o) {
-		return ReportCard.staticSolrStrStateName(siteRequest_, ReportCard.staticSolrStateName(siteRequest_, ReportCard.staticSetStateName(siteRequest_, o)));
-	}
-
-	public String solrStateName() {
-		return ReportCard.staticSolrStateName(siteRequest_, stateName);
-	}
-
-	public String strStateName() {
-		return stateName == null ? "" : stateName;
-	}
-
-	public String jsonStateName() {
-		return stateName == null ? "" : stateName;
-	}
-
-	public String nomAffichageStateName() {
-		return null;
-	}
-
-	public String htmTooltipStateName() {
-		return null;
-	}
-
-	public String htmStateName() {
-		return stateName == null ? "" : StringEscapeUtils.escapeHtml4(strStateName());
-	}
-
-	///////////////////////
-	// stateAbbreviation //
-	///////////////////////
-
-	/**	 The entity stateAbbreviation
-	 *	 is defined as null before being initialized. 
-	 */
-	@JsonInclude(Include.NON_NULL)
-	protected String stateAbbreviation;
-	@JsonIgnore
-	public Wrap<String> stateAbbreviationWrap = new Wrap<String>().p(this).c(String.class).var("stateAbbreviation").o(stateAbbreviation);
-
-	/**	<br/> The entity stateAbbreviation
-	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:stateAbbreviation">Find the entity stateAbbreviation in Solr</a>
-	 * <br/>
-	 * @param c is for wrapping a value to assign to this entity during initialization. 
-	 **/
-	protected abstract void _stateAbbreviation(Wrap<String> c);
-
-	public String getStateAbbreviation() {
-		return stateAbbreviation;
-	}
-	public void setStateAbbreviation(String o) {
-		this.stateAbbreviation = ReportCard.staticSetStateAbbreviation(siteRequest_, o);
-		this.stateAbbreviationWrap.alreadyInitialized = true;
-	}
-	public static String staticSetStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
-		return o;
-	}
-	protected ReportCard stateAbbreviationInit() {
-		if(!stateAbbreviationWrap.alreadyInitialized) {
-			_stateAbbreviation(stateAbbreviationWrap);
-			if(stateAbbreviation == null)
-				setStateAbbreviation(stateAbbreviationWrap.o);
-		}
-		stateAbbreviationWrap.alreadyInitialized(true);
-		return (ReportCard)this;
-	}
-
-	public static String staticSolrStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
-		return o;
-	}
-
-	public static String staticSolrStrStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
-		return o == null ? null : o.toString();
-	}
-
-	public static String staticSolrFqStateAbbreviation(SiteRequestEnUS siteRequest_, String o) {
-		return ReportCard.staticSolrStrStateAbbreviation(siteRequest_, ReportCard.staticSolrStateAbbreviation(siteRequest_, ReportCard.staticSetStateAbbreviation(siteRequest_, o)));
-	}
-
-	public String solrStateAbbreviation() {
-		return ReportCard.staticSolrStateAbbreviation(siteRequest_, stateAbbreviation);
-	}
-
-	public String strStateAbbreviation() {
-		return stateAbbreviation == null ? "" : stateAbbreviation;
-	}
-
-	public String jsonStateAbbreviation() {
-		return stateAbbreviation == null ? "" : stateAbbreviation;
-	}
-
-	public String nomAffichageStateAbbreviation() {
-		return null;
-	}
-
-	public String htmTooltipStateAbbreviation() {
-		return null;
-	}
-
-	public String htmStateAbbreviation() {
-		return stateAbbreviation == null ? "" : StringEscapeUtils.escapeHtml4(strStateAbbreviation());
-	}
-
-	////////////////////
-	// agencyOnlyName //
-	////////////////////
-
-	/**	 The entity agencyOnlyName
-	 *	 is defined as null before being initialized. 
-	 */
-	@JsonInclude(Include.NON_NULL)
-	protected String agencyOnlyName;
-	@JsonIgnore
-	public Wrap<String> agencyOnlyNameWrap = new Wrap<String>().p(this).c(String.class).var("agencyOnlyName").o(agencyOnlyName);
-
-	/**	<br/> The entity agencyOnlyName
-	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyOnlyName">Find the entity agencyOnlyName in Solr</a>
-	 * <br/>
-	 * @param c is for wrapping a value to assign to this entity during initialization. 
-	 **/
-	protected abstract void _agencyOnlyName(Wrap<String> c);
-
-	public String getAgencyOnlyName() {
-		return agencyOnlyName;
-	}
-	public void setAgencyOnlyName(String o) {
-		this.agencyOnlyName = ReportCard.staticSetAgencyOnlyName(siteRequest_, o);
-		this.agencyOnlyNameWrap.alreadyInitialized = true;
-	}
-	public static String staticSetAgencyOnlyName(SiteRequestEnUS siteRequest_, String o) {
-		return o;
-	}
-	protected ReportCard agencyOnlyNameInit() {
-		if(!agencyOnlyNameWrap.alreadyInitialized) {
-			_agencyOnlyName(agencyOnlyNameWrap);
-			if(agencyOnlyName == null)
-				setAgencyOnlyName(agencyOnlyNameWrap.o);
-		}
-		agencyOnlyNameWrap.alreadyInitialized(true);
-		return (ReportCard)this;
-	}
-
-	public static String staticSolrAgencyOnlyName(SiteRequestEnUS siteRequest_, String o) {
-		return o;
-	}
-
-	public static String staticSolrStrAgencyOnlyName(SiteRequestEnUS siteRequest_, String o) {
-		return o == null ? null : o.toString();
-	}
-
-	public static String staticSolrFqAgencyOnlyName(SiteRequestEnUS siteRequest_, String o) {
-		return ReportCard.staticSolrStrAgencyOnlyName(siteRequest_, ReportCard.staticSolrAgencyOnlyName(siteRequest_, ReportCard.staticSetAgencyOnlyName(siteRequest_, o)));
-	}
-
-	public String solrAgencyOnlyName() {
-		return ReportCard.staticSolrAgencyOnlyName(siteRequest_, agencyOnlyName);
-	}
-
-	public String strAgencyOnlyName() {
-		return agencyOnlyName == null ? "" : agencyOnlyName;
-	}
-
-	public String jsonAgencyOnlyName() {
-		return agencyOnlyName == null ? "" : agencyOnlyName;
-	}
-
-	public String nomAffichageAgencyOnlyName() {
-		return null;
-	}
-
-	public String htmTooltipAgencyOnlyName() {
-		return null;
-	}
-
-	public String htmAgencyOnlyName() {
-		return agencyOnlyName == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyOnlyName());
-	}
-
-	////////////////
-	// agencyName //
-	////////////////
-
-	/**	 The entity agencyName
-	 *	 is defined as null before being initialized. 
-	 */
-	@JsonInclude(Include.NON_NULL)
-	protected String agencyName;
-	@JsonIgnore
-	public Wrap<String> agencyNameWrap = new Wrap<String>().p(this).c(String.class).var("agencyName").o(agencyName);
-
-	/**	<br/> The entity agencyName
-	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyName">Find the entity agencyName in Solr</a>
-	 * <br/>
-	 * @param c is for wrapping a value to assign to this entity during initialization. 
-	 **/
-	protected abstract void _agencyName(Wrap<String> c);
-
-	public String getAgencyName() {
-		return agencyName;
-	}
-	public void setAgencyName(String o) {
-		this.agencyName = ReportCard.staticSetAgencyName(siteRequest_, o);
-		this.agencyNameWrap.alreadyInitialized = true;
-	}
-	public static String staticSetAgencyName(SiteRequestEnUS siteRequest_, String o) {
-		return o;
-	}
-	protected ReportCard agencyNameInit() {
-		if(!agencyNameWrap.alreadyInitialized) {
-			_agencyName(agencyNameWrap);
-			if(agencyName == null)
-				setAgencyName(agencyNameWrap.o);
-		}
-		agencyNameWrap.alreadyInitialized(true);
-		return (ReportCard)this;
-	}
-
-	public static String staticSolrAgencyName(SiteRequestEnUS siteRequest_, String o) {
-		return o;
-	}
-
-	public static String staticSolrStrAgencyName(SiteRequestEnUS siteRequest_, String o) {
-		return o == null ? null : o.toString();
-	}
-
-	public static String staticSolrFqAgencyName(SiteRequestEnUS siteRequest_, String o) {
-		return ReportCard.staticSolrStrAgencyName(siteRequest_, ReportCard.staticSolrAgencyName(siteRequest_, ReportCard.staticSetAgencyName(siteRequest_, o)));
-	}
-
-	public String solrAgencyName() {
-		return ReportCard.staticSolrAgencyName(siteRequest_, agencyName);
-	}
-
-	public String strAgencyName() {
-		return agencyName == null ? "" : agencyName;
-	}
-
-	public String jsonAgencyName() {
-		return agencyName == null ? "" : agencyName;
-	}
-
-	public String nomAffichageAgencyName() {
-		return null;
-	}
-
-	public String htmTooltipAgencyName() {
-		return null;
-	}
-
-	public String htmAgencyName() {
-		return agencyName == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyName());
-	}
-
-	//////////////////
-	// agencyCoords //
-	//////////////////
-
-	/**	 The entity agencyCoords
-	 *	 is defined as null before being initialized. 
-	 */
-	@JsonInclude(Include.NON_NULL)
-	protected String agencyCoords;
-	@JsonIgnore
-	public Wrap<String> agencyCoordsWrap = new Wrap<String>().p(this).c(String.class).var("agencyCoords").o(agencyCoords);
-
-	/**	<br/> The entity agencyCoords
-	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyCoords">Find the entity agencyCoords in Solr</a>
-	 * <br/>
-	 * @param c is for wrapping a value to assign to this entity during initialization. 
-	 **/
-	protected abstract void _agencyCoords(Wrap<String> c);
-
-	public String getAgencyCoords() {
-		return agencyCoords;
-	}
-	public void setAgencyCoords(String o) {
-		this.agencyCoords = ReportCard.staticSetAgencyCoords(siteRequest_, o);
-		this.agencyCoordsWrap.alreadyInitialized = true;
-	}
-	public static String staticSetAgencyCoords(SiteRequestEnUS siteRequest_, String o) {
-		return o;
-	}
-	protected ReportCard agencyCoordsInit() {
-		if(!agencyCoordsWrap.alreadyInitialized) {
-			_agencyCoords(agencyCoordsWrap);
-			if(agencyCoords == null)
-				setAgencyCoords(agencyCoordsWrap.o);
-		}
-		agencyCoordsWrap.alreadyInitialized(true);
-		return (ReportCard)this;
-	}
-
-	public static String staticSolrAgencyCoords(SiteRequestEnUS siteRequest_, String o) {
-		return o;
-	}
-
-	public static String staticSolrStrAgencyCoords(SiteRequestEnUS siteRequest_, String o) {
-		return o == null ? null : o.toString();
-	}
-
-	public static String staticSolrFqAgencyCoords(SiteRequestEnUS siteRequest_, String o) {
-		return ReportCard.staticSolrStrAgencyCoords(siteRequest_, ReportCard.staticSolrAgencyCoords(siteRequest_, ReportCard.staticSetAgencyCoords(siteRequest_, o)));
-	}
-
-	public String solrAgencyCoords() {
-		return ReportCard.staticSolrAgencyCoords(siteRequest_, agencyCoords);
-	}
-
-	public String strAgencyCoords() {
-		return agencyCoords == null ? "" : agencyCoords;
-	}
-
-	public String jsonAgencyCoords() {
-		return agencyCoords == null ? "" : agencyCoords;
-	}
-
-	public String nomAffichageAgencyCoords() {
-		return null;
-	}
-
-	public String htmTooltipAgencyCoords() {
-		return null;
-	}
-
-	public String htmAgencyCoords() {
-		return agencyCoords == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyCoords());
-	}
-
-	////////////////
-	// agencyLeft //
-	////////////////
-
-	/**	 The entity agencyLeft
-	 *	 is defined as null before being initialized. 
-	 */
-	@JsonSerialize(using = ToStringSerializer.class)
-	@JsonInclude(Include.NON_NULL)
-	protected Integer agencyLeft;
-	@JsonIgnore
-	public Wrap<Integer> agencyLeftWrap = new Wrap<Integer>().p(this).c(Integer.class).var("agencyLeft").o(agencyLeft);
-
-	/**	<br/> The entity agencyLeft
-	 *  is defined as null before being initialized. 
-	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.reportcard.ReportCard&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyLeft">Find the entity agencyLeft in Solr</a>
-	 * <br/>
-	 * @param c is for wrapping a value to assign to this entity during initialization. 
-	 **/
-	protected abstract void _agencyLeft(Wrap<Integer> c);
-
-	public Integer getAgencyLeft() {
-		return agencyLeft;
-	}
-
-	public void setAgencyLeft(Integer agencyLeft) {
-		this.agencyLeft = agencyLeft;
-		this.agencyLeftWrap.alreadyInitialized = true;
-	}
-	public void setAgencyLeft(String o) {
-		this.agencyLeft = ReportCard.staticSetAgencyLeft(siteRequest_, o);
-		this.agencyLeftWrap.alreadyInitialized = true;
-	}
-	public static Integer staticSetAgencyLeft(SiteRequestEnUS siteRequest_, String o) {
-		if(NumberUtils.isParsable(o))
-			return Integer.parseInt(o);
-		return null;
-	}
-	protected ReportCard agencyLeftInit() {
-		if(!agencyLeftWrap.alreadyInitialized) {
-			_agencyLeft(agencyLeftWrap);
-			if(agencyLeft == null)
-				setAgencyLeft(agencyLeftWrap.o);
-		}
-		agencyLeftWrap.alreadyInitialized(true);
-		return (ReportCard)this;
-	}
-
-	public static Integer staticSolrAgencyLeft(SiteRequestEnUS siteRequest_, Integer o) {
-		return o;
-	}
-
-	public static String staticSolrStrAgencyLeft(SiteRequestEnUS siteRequest_, Integer o) {
-		return o == null ? null : o.toString();
-	}
-
-	public static String staticSolrFqAgencyLeft(SiteRequestEnUS siteRequest_, String o) {
-		return ReportCard.staticSolrStrAgencyLeft(siteRequest_, ReportCard.staticSolrAgencyLeft(siteRequest_, ReportCard.staticSetAgencyLeft(siteRequest_, o)));
-	}
-
-	public Integer solrAgencyLeft() {
-		return ReportCard.staticSolrAgencyLeft(siteRequest_, agencyLeft);
-	}
-
-	public String strAgencyLeft() {
-		return agencyLeft == null ? "" : agencyLeft.toString();
-	}
-
-	public String jsonAgencyLeft() {
-		return agencyLeft == null ? "" : agencyLeft.toString();
-	}
-
-	public String nomAffichageAgencyLeft() {
-		return null;
-	}
-
-	public String htmTooltipAgencyLeft() {
-		return null;
-	}
-
-	public String htmAgencyLeft() {
-		return agencyLeft == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyLeft());
-	}
-
 	////////////////////////////
 	// reportCardCompleteName //
 	////////////////////////////
@@ -19781,6 +19956,18 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		agencyKeyInit();
 		imageLeftInit();
 		imageTopInit();
+		stateKeyInit();
+		stateIdInit();
+		agencyIdInit();
+		stateNameInit();
+		stateAbbreviationInit();
+		agencyOnlyNameInit();
+		agencyNameInit();
+		agencyIsStateInit();
+		agencyCoordsInit();
+		agencyLeftInit();
+		stateReportCardSearchInit();
+		stateFacetsInit();
 		pupilsTotalInit();
 		pupilsIndigenousFemaleInit();
 		pupilsIndigenousMaleInit();
@@ -19904,15 +20091,6 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		graduateWithin4YearsWhitePercentInit();
 		examsCollegeReadyGrades38BlackVsWhiteInit();
 		examsCollegeReadyGrades38LatinxVsWhiteInit();
-		stateKeyInit();
-		stateIdInit();
-		agencyIdInit();
-		stateNameInit();
-		stateAbbreviationInit();
-		agencyOnlyNameInit();
-		agencyNameInit();
-		agencyCoordsInit();
-		agencyLeftInit();
 		reportCardCompleteNameInit();
 		reportCardNumber_Init();
 		reportCardStates_Init();
@@ -19944,6 +20122,8 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			super.siteRequestCluster(siteRequest_);
 		if(agencySearch != null)
 			agencySearch.setSiteRequest_(siteRequest_);
+		if(stateReportCardSearch != null)
+			stateReportCardSearch.setSiteRequest_(siteRequest_);
 	}
 
 	public void siteRequestForClass(SiteRequestEnUS siteRequest_) {
@@ -19990,6 +20170,30 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.imageLeft;
 			case "imageTop":
 				return oReportCard.imageTop;
+			case "stateKey":
+				return oReportCard.stateKey;
+			case "stateId":
+				return oReportCard.stateId;
+			case "agencyId":
+				return oReportCard.agencyId;
+			case "stateName":
+				return oReportCard.stateName;
+			case "stateAbbreviation":
+				return oReportCard.stateAbbreviation;
+			case "agencyOnlyName":
+				return oReportCard.agencyOnlyName;
+			case "agencyName":
+				return oReportCard.agencyName;
+			case "agencyIsState":
+				return oReportCard.agencyIsState;
+			case "agencyCoords":
+				return oReportCard.agencyCoords;
+			case "agencyLeft":
+				return oReportCard.agencyLeft;
+			case "stateReportCardSearch":
+				return oReportCard.stateReportCardSearch;
+			case "stateFacets":
+				return oReportCard.stateFacets;
 			case "pupilsTotal":
 				return oReportCard.pupilsTotal;
 			case "pupilsIndigenousFemale":
@@ -20236,24 +20440,6 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return oReportCard.examsCollegeReadyGrades38BlackVsWhite;
 			case "examsCollegeReadyGrades38LatinxVsWhite":
 				return oReportCard.examsCollegeReadyGrades38LatinxVsWhite;
-			case "stateKey":
-				return oReportCard.stateKey;
-			case "stateId":
-				return oReportCard.stateId;
-			case "agencyId":
-				return oReportCard.agencyId;
-			case "stateName":
-				return oReportCard.stateName;
-			case "stateAbbreviation":
-				return oReportCard.stateAbbreviation;
-			case "agencyOnlyName":
-				return oReportCard.agencyOnlyName;
-			case "agencyName":
-				return oReportCard.agencyName;
-			case "agencyCoords":
-				return oReportCard.agencyCoords;
-			case "agencyLeft":
-				return oReportCard.agencyLeft;
 			case "reportCardCompleteName":
 				return oReportCard.reportCardCompleteName;
 			case "reportCardNumber_":
@@ -20349,6 +20535,26 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			return ReportCard.staticSetImageLeft(siteRequest_, o);
 		case "imageTop":
 			return ReportCard.staticSetImageTop(siteRequest_, o);
+		case "stateKey":
+			return ReportCard.staticSetStateKey(siteRequest_, o);
+		case "stateId":
+			return ReportCard.staticSetStateId(siteRequest_, o);
+		case "agencyId":
+			return ReportCard.staticSetAgencyId(siteRequest_, o);
+		case "stateName":
+			return ReportCard.staticSetStateName(siteRequest_, o);
+		case "stateAbbreviation":
+			return ReportCard.staticSetStateAbbreviation(siteRequest_, o);
+		case "agencyOnlyName":
+			return ReportCard.staticSetAgencyOnlyName(siteRequest_, o);
+		case "agencyName":
+			return ReportCard.staticSetAgencyName(siteRequest_, o);
+		case "agencyIsState":
+			return ReportCard.staticSetAgencyIsState(siteRequest_, o);
+		case "agencyCoords":
+			return ReportCard.staticSetAgencyCoords(siteRequest_, o);
+		case "agencyLeft":
+			return ReportCard.staticSetAgencyLeft(siteRequest_, o);
 		case "pupilsTotal":
 			return ReportCard.staticSetPupilsTotal(siteRequest_, o);
 		case "pupilsIndigenousFemale":
@@ -20595,24 +20801,6 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			return ReportCard.staticSetExamsCollegeReadyGrades38BlackVsWhite(siteRequest_, o);
 		case "examsCollegeReadyGrades38LatinxVsWhite":
 			return ReportCard.staticSetExamsCollegeReadyGrades38LatinxVsWhite(siteRequest_, o);
-		case "stateKey":
-			return ReportCard.staticSetStateKey(siteRequest_, o);
-		case "stateId":
-			return ReportCard.staticSetStateId(siteRequest_, o);
-		case "agencyId":
-			return ReportCard.staticSetAgencyId(siteRequest_, o);
-		case "stateName":
-			return ReportCard.staticSetStateName(siteRequest_, o);
-		case "stateAbbreviation":
-			return ReportCard.staticSetStateAbbreviation(siteRequest_, o);
-		case "agencyOnlyName":
-			return ReportCard.staticSetAgencyOnlyName(siteRequest_, o);
-		case "agencyName":
-			return ReportCard.staticSetAgencyName(siteRequest_, o);
-		case "agencyCoords":
-			return ReportCard.staticSetAgencyCoords(siteRequest_, o);
-		case "agencyLeft":
-			return ReportCard.staticSetAgencyLeft(siteRequest_, o);
 		case "reportCardCompleteName":
 			return ReportCard.staticSetReportCardCompleteName(siteRequest_, o);
 		case "reportCardNumber_":
@@ -20671,6 +20859,26 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			return ReportCard.staticSolrImageLeft(siteRequest_, (Integer)o);
 		case "imageTop":
 			return ReportCard.staticSolrImageTop(siteRequest_, (Integer)o);
+		case "stateKey":
+			return ReportCard.staticSolrStateKey(siteRequest_, (Long)o);
+		case "stateId":
+			return ReportCard.staticSolrStateId(siteRequest_, (String)o);
+		case "agencyId":
+			return ReportCard.staticSolrAgencyId(siteRequest_, (String)o);
+		case "stateName":
+			return ReportCard.staticSolrStateName(siteRequest_, (String)o);
+		case "stateAbbreviation":
+			return ReportCard.staticSolrStateAbbreviation(siteRequest_, (String)o);
+		case "agencyOnlyName":
+			return ReportCard.staticSolrAgencyOnlyName(siteRequest_, (String)o);
+		case "agencyName":
+			return ReportCard.staticSolrAgencyName(siteRequest_, (String)o);
+		case "agencyIsState":
+			return ReportCard.staticSolrAgencyIsState(siteRequest_, (Boolean)o);
+		case "agencyCoords":
+			return ReportCard.staticSolrAgencyCoords(siteRequest_, (String)o);
+		case "agencyLeft":
+			return ReportCard.staticSolrAgencyLeft(siteRequest_, (Integer)o);
 		case "pupilsTotal":
 			return ReportCard.staticSolrPupilsTotal(siteRequest_, (Long)o);
 		case "pupilsIndigenousFemale":
@@ -20917,24 +21125,6 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			return ReportCard.staticSolrExamsCollegeReadyGrades38BlackVsWhite(siteRequest_, (BigDecimal)o);
 		case "examsCollegeReadyGrades38LatinxVsWhite":
 			return ReportCard.staticSolrExamsCollegeReadyGrades38LatinxVsWhite(siteRequest_, (BigDecimal)o);
-		case "stateKey":
-			return ReportCard.staticSolrStateKey(siteRequest_, (Long)o);
-		case "stateId":
-			return ReportCard.staticSolrStateId(siteRequest_, (String)o);
-		case "agencyId":
-			return ReportCard.staticSolrAgencyId(siteRequest_, (String)o);
-		case "stateName":
-			return ReportCard.staticSolrStateName(siteRequest_, (String)o);
-		case "stateAbbreviation":
-			return ReportCard.staticSolrStateAbbreviation(siteRequest_, (String)o);
-		case "agencyOnlyName":
-			return ReportCard.staticSolrAgencyOnlyName(siteRequest_, (String)o);
-		case "agencyName":
-			return ReportCard.staticSolrAgencyName(siteRequest_, (String)o);
-		case "agencyCoords":
-			return ReportCard.staticSolrAgencyCoords(siteRequest_, (String)o);
-		case "agencyLeft":
-			return ReportCard.staticSolrAgencyLeft(siteRequest_, (Integer)o);
 		case "reportCardCompleteName":
 			return ReportCard.staticSolrReportCardCompleteName(siteRequest_, (String)o);
 		case "reportCardNumber_":
@@ -20993,6 +21183,26 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			return ReportCard.staticSolrStrImageLeft(siteRequest_, (Integer)o);
 		case "imageTop":
 			return ReportCard.staticSolrStrImageTop(siteRequest_, (Integer)o);
+		case "stateKey":
+			return ReportCard.staticSolrStrStateKey(siteRequest_, (Long)o);
+		case "stateId":
+			return ReportCard.staticSolrStrStateId(siteRequest_, (String)o);
+		case "agencyId":
+			return ReportCard.staticSolrStrAgencyId(siteRequest_, (String)o);
+		case "stateName":
+			return ReportCard.staticSolrStrStateName(siteRequest_, (String)o);
+		case "stateAbbreviation":
+			return ReportCard.staticSolrStrStateAbbreviation(siteRequest_, (String)o);
+		case "agencyOnlyName":
+			return ReportCard.staticSolrStrAgencyOnlyName(siteRequest_, (String)o);
+		case "agencyName":
+			return ReportCard.staticSolrStrAgencyName(siteRequest_, (String)o);
+		case "agencyIsState":
+			return ReportCard.staticSolrStrAgencyIsState(siteRequest_, (Boolean)o);
+		case "agencyCoords":
+			return ReportCard.staticSolrStrAgencyCoords(siteRequest_, (String)o);
+		case "agencyLeft":
+			return ReportCard.staticSolrStrAgencyLeft(siteRequest_, (Integer)o);
 		case "pupilsTotal":
 			return ReportCard.staticSolrStrPupilsTotal(siteRequest_, (Long)o);
 		case "pupilsIndigenousFemale":
@@ -21239,24 +21449,6 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			return ReportCard.staticSolrStrExamsCollegeReadyGrades38BlackVsWhite(siteRequest_, (Double)o);
 		case "examsCollegeReadyGrades38LatinxVsWhite":
 			return ReportCard.staticSolrStrExamsCollegeReadyGrades38LatinxVsWhite(siteRequest_, (Double)o);
-		case "stateKey":
-			return ReportCard.staticSolrStrStateKey(siteRequest_, (Long)o);
-		case "stateId":
-			return ReportCard.staticSolrStrStateId(siteRequest_, (String)o);
-		case "agencyId":
-			return ReportCard.staticSolrStrAgencyId(siteRequest_, (String)o);
-		case "stateName":
-			return ReportCard.staticSolrStrStateName(siteRequest_, (String)o);
-		case "stateAbbreviation":
-			return ReportCard.staticSolrStrStateAbbreviation(siteRequest_, (String)o);
-		case "agencyOnlyName":
-			return ReportCard.staticSolrStrAgencyOnlyName(siteRequest_, (String)o);
-		case "agencyName":
-			return ReportCard.staticSolrStrAgencyName(siteRequest_, (String)o);
-		case "agencyCoords":
-			return ReportCard.staticSolrStrAgencyCoords(siteRequest_, (String)o);
-		case "agencyLeft":
-			return ReportCard.staticSolrStrAgencyLeft(siteRequest_, (Integer)o);
 		case "reportCardCompleteName":
 			return ReportCard.staticSolrStrReportCardCompleteName(siteRequest_, (String)o);
 		case "reportCardNumber_":
@@ -21315,6 +21507,26 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			return ReportCard.staticSolrFqImageLeft(siteRequest_, o);
 		case "imageTop":
 			return ReportCard.staticSolrFqImageTop(siteRequest_, o);
+		case "stateKey":
+			return ReportCard.staticSolrFqStateKey(siteRequest_, o);
+		case "stateId":
+			return ReportCard.staticSolrFqStateId(siteRequest_, o);
+		case "agencyId":
+			return ReportCard.staticSolrFqAgencyId(siteRequest_, o);
+		case "stateName":
+			return ReportCard.staticSolrFqStateName(siteRequest_, o);
+		case "stateAbbreviation":
+			return ReportCard.staticSolrFqStateAbbreviation(siteRequest_, o);
+		case "agencyOnlyName":
+			return ReportCard.staticSolrFqAgencyOnlyName(siteRequest_, o);
+		case "agencyName":
+			return ReportCard.staticSolrFqAgencyName(siteRequest_, o);
+		case "agencyIsState":
+			return ReportCard.staticSolrFqAgencyIsState(siteRequest_, o);
+		case "agencyCoords":
+			return ReportCard.staticSolrFqAgencyCoords(siteRequest_, o);
+		case "agencyLeft":
+			return ReportCard.staticSolrFqAgencyLeft(siteRequest_, o);
 		case "pupilsTotal":
 			return ReportCard.staticSolrFqPupilsTotal(siteRequest_, o);
 		case "pupilsIndigenousFemale":
@@ -21561,24 +21773,6 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			return ReportCard.staticSolrFqExamsCollegeReadyGrades38BlackVsWhite(siteRequest_, o);
 		case "examsCollegeReadyGrades38LatinxVsWhite":
 			return ReportCard.staticSolrFqExamsCollegeReadyGrades38LatinxVsWhite(siteRequest_, o);
-		case "stateKey":
-			return ReportCard.staticSolrFqStateKey(siteRequest_, o);
-		case "stateId":
-			return ReportCard.staticSolrFqStateId(siteRequest_, o);
-		case "agencyId":
-			return ReportCard.staticSolrFqAgencyId(siteRequest_, o);
-		case "stateName":
-			return ReportCard.staticSolrFqStateName(siteRequest_, o);
-		case "stateAbbreviation":
-			return ReportCard.staticSolrFqStateAbbreviation(siteRequest_, o);
-		case "agencyOnlyName":
-			return ReportCard.staticSolrFqAgencyOnlyName(siteRequest_, o);
-		case "agencyName":
-			return ReportCard.staticSolrFqAgencyName(siteRequest_, o);
-		case "agencyCoords":
-			return ReportCard.staticSolrFqAgencyCoords(siteRequest_, o);
-		case "agencyLeft":
-			return ReportCard.staticSolrFqAgencyLeft(siteRequest_, o);
 		case "reportCardCompleteName":
 			return ReportCard.staticSolrFqReportCardCompleteName(siteRequest_, o);
 		case "reportCardNumber_":
@@ -22048,6 +22242,66 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				Integer imageTop = (Integer)solrDocument.get("imageTop_stored_int");
 				if(imageTop != null)
 					oReportCard.setImageTop(imageTop);
+			}
+
+			if(saves.contains("stateKey")) {
+				Long stateKey = (Long)solrDocument.get("stateKey_stored_long");
+				if(stateKey != null)
+					oReportCard.setStateKey(stateKey);
+			}
+
+			if(saves.contains("stateId")) {
+				String stateId = (String)solrDocument.get("stateId_stored_string");
+				if(stateId != null)
+					oReportCard.setStateId(stateId);
+			}
+
+			if(saves.contains("agencyId")) {
+				String agencyId = (String)solrDocument.get("agencyId_stored_string");
+				if(agencyId != null)
+					oReportCard.setAgencyId(agencyId);
+			}
+
+			if(saves.contains("stateName")) {
+				String stateName = (String)solrDocument.get("stateName_stored_string");
+				if(stateName != null)
+					oReportCard.setStateName(stateName);
+			}
+
+			if(saves.contains("stateAbbreviation")) {
+				String stateAbbreviation = (String)solrDocument.get("stateAbbreviation_stored_string");
+				if(stateAbbreviation != null)
+					oReportCard.setStateAbbreviation(stateAbbreviation);
+			}
+
+			if(saves.contains("agencyOnlyName")) {
+				String agencyOnlyName = (String)solrDocument.get("agencyOnlyName_stored_string");
+				if(agencyOnlyName != null)
+					oReportCard.setAgencyOnlyName(agencyOnlyName);
+			}
+
+			if(saves.contains("agencyName")) {
+				String agencyName = (String)solrDocument.get("agencyName_stored_string");
+				if(agencyName != null)
+					oReportCard.setAgencyName(agencyName);
+			}
+
+			if(saves.contains("agencyIsState")) {
+				Boolean agencyIsState = (Boolean)solrDocument.get("agencyIsState_stored_boolean");
+				if(agencyIsState != null)
+					oReportCard.setAgencyIsState(agencyIsState);
+			}
+
+			if(saves.contains("agencyCoords")) {
+				String agencyCoords = (String)solrDocument.get("agencyCoords_stored_string");
+				if(agencyCoords != null)
+					oReportCard.setAgencyCoords(agencyCoords);
+			}
+
+			if(saves.contains("agencyLeft")) {
+				Integer agencyLeft = (Integer)solrDocument.get("agencyLeft_stored_int");
+				if(agencyLeft != null)
+					oReportCard.setAgencyLeft(agencyLeft);
 			}
 
 			if(saves.contains("pupilsTotal")) {
@@ -22788,60 +23042,6 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 					oReportCard.setExamsCollegeReadyGrades38LatinxVsWhite(examsCollegeReadyGrades38LatinxVsWhite);
 			}
 
-			if(saves.contains("stateKey")) {
-				Long stateKey = (Long)solrDocument.get("stateKey_stored_long");
-				if(stateKey != null)
-					oReportCard.setStateKey(stateKey);
-			}
-
-			if(saves.contains("stateId")) {
-				String stateId = (String)solrDocument.get("stateId_stored_string");
-				if(stateId != null)
-					oReportCard.setStateId(stateId);
-			}
-
-			if(saves.contains("agencyId")) {
-				String agencyId = (String)solrDocument.get("agencyId_stored_string");
-				if(agencyId != null)
-					oReportCard.setAgencyId(agencyId);
-			}
-
-			if(saves.contains("stateName")) {
-				String stateName = (String)solrDocument.get("stateName_stored_string");
-				if(stateName != null)
-					oReportCard.setStateName(stateName);
-			}
-
-			if(saves.contains("stateAbbreviation")) {
-				String stateAbbreviation = (String)solrDocument.get("stateAbbreviation_stored_string");
-				if(stateAbbreviation != null)
-					oReportCard.setStateAbbreviation(stateAbbreviation);
-			}
-
-			if(saves.contains("agencyOnlyName")) {
-				String agencyOnlyName = (String)solrDocument.get("agencyOnlyName_stored_string");
-				if(agencyOnlyName != null)
-					oReportCard.setAgencyOnlyName(agencyOnlyName);
-			}
-
-			if(saves.contains("agencyName")) {
-				String agencyName = (String)solrDocument.get("agencyName_stored_string");
-				if(agencyName != null)
-					oReportCard.setAgencyName(agencyName);
-			}
-
-			if(saves.contains("agencyCoords")) {
-				String agencyCoords = (String)solrDocument.get("agencyCoords_stored_string");
-				if(agencyCoords != null)
-					oReportCard.setAgencyCoords(agencyCoords);
-			}
-
-			if(saves.contains("agencyLeft")) {
-				Integer agencyLeft = (Integer)solrDocument.get("agencyLeft_stored_int");
-				if(agencyLeft != null)
-					oReportCard.setAgencyLeft(agencyLeft);
-			}
-
 			if(saves.contains("reportCardCompleteName")) {
 				String reportCardCompleteName = (String)solrDocument.get("reportCardCompleteName_stored_string");
 				if(reportCardCompleteName != null)
@@ -23013,6 +23213,44 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(imageTop != null) {
 			document.addField("imageTop_indexed_int", imageTop);
 			document.addField("imageTop_stored_int", imageTop);
+		}
+		if(stateKey != null) {
+			document.addField("stateKey_indexed_long", stateKey);
+			document.addField("stateKey_stored_long", stateKey);
+		}
+		if(stateId != null) {
+			document.addField("stateId_indexed_string", stateId);
+			document.addField("stateId_stored_string", stateId);
+		}
+		if(agencyId != null) {
+			document.addField("agencyId_indexed_string", agencyId);
+			document.addField("agencyId_stored_string", agencyId);
+		}
+		if(stateName != null) {
+			document.addField("stateName_indexed_string", stateName);
+			document.addField("stateName_stored_string", stateName);
+		}
+		if(stateAbbreviation != null) {
+			document.addField("stateAbbreviation_indexed_string", stateAbbreviation);
+			document.addField("stateAbbreviation_stored_string", stateAbbreviation);
+		}
+		if(agencyOnlyName != null) {
+			document.addField("agencyOnlyName_indexed_string", agencyOnlyName);
+			document.addField("agencyOnlyName_stored_string", agencyOnlyName);
+		}
+		if(agencyName != null) {
+			document.addField("agencyName_indexed_string", agencyName);
+			document.addField("agencyName_stored_string", agencyName);
+		}
+		if(agencyIsState != null) {
+			document.addField("agencyIsState_indexed_boolean", agencyIsState);
+			document.addField("agencyIsState_stored_boolean", agencyIsState);
+		}
+		if(agencyCoords != null) {
+			document.addField("agencyCoords_stored_string", agencyCoords);
+		}
+		if(agencyLeft != null) {
+			document.addField("agencyLeft_stored_int", agencyLeft);
 		}
 		if(pupilsTotal != null) {
 			document.addField("pupilsTotal_indexed_long", pupilsTotal);
@@ -23506,40 +23744,6 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 			document.addField("examsCollegeReadyGrades38LatinxVsWhite_indexed_double", examsCollegeReadyGrades38LatinxVsWhite.doubleValue());
 			document.addField("examsCollegeReadyGrades38LatinxVsWhite_stored_double", examsCollegeReadyGrades38LatinxVsWhite.doubleValue());
 		}
-		if(stateKey != null) {
-			document.addField("stateKey_indexed_long", stateKey);
-			document.addField("stateKey_stored_long", stateKey);
-		}
-		if(stateId != null) {
-			document.addField("stateId_indexed_string", stateId);
-			document.addField("stateId_stored_string", stateId);
-		}
-		if(agencyId != null) {
-			document.addField("agencyId_indexed_string", agencyId);
-			document.addField("agencyId_stored_string", agencyId);
-		}
-		if(stateName != null) {
-			document.addField("stateName_indexed_string", stateName);
-			document.addField("stateName_stored_string", stateName);
-		}
-		if(stateAbbreviation != null) {
-			document.addField("stateAbbreviation_indexed_string", stateAbbreviation);
-			document.addField("stateAbbreviation_stored_string", stateAbbreviation);
-		}
-		if(agencyOnlyName != null) {
-			document.addField("agencyOnlyName_indexed_string", agencyOnlyName);
-			document.addField("agencyOnlyName_stored_string", agencyOnlyName);
-		}
-		if(agencyName != null) {
-			document.addField("agencyName_indexed_string", agencyName);
-			document.addField("agencyName_stored_string", agencyName);
-		}
-		if(agencyCoords != null) {
-			document.addField("agencyCoords_stored_string", agencyCoords);
-		}
-		if(agencyLeft != null) {
-			document.addField("agencyLeft_stored_int", agencyLeft);
-		}
 		if(reportCardCompleteName != null) {
 			document.addField("reportCardCompleteName_indexed_string", reportCardCompleteName);
 			document.addField("reportCardCompleteName_stored_string", reportCardCompleteName);
@@ -23617,6 +23821,22 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return "imageLeft_indexed_int";
 			case "imageTop":
 				return "imageTop_indexed_int";
+			case "stateKey":
+				return "stateKey_indexed_long";
+			case "stateId":
+				return "stateId_indexed_string";
+			case "agencyId":
+				return "agencyId_indexed_string";
+			case "stateName":
+				return "stateName_indexed_string";
+			case "stateAbbreviation":
+				return "stateAbbreviation_indexed_string";
+			case "agencyOnlyName":
+				return "agencyOnlyName_indexed_string";
+			case "agencyName":
+				return "agencyName_indexed_string";
+			case "agencyIsState":
+				return "agencyIsState_indexed_boolean";
 			case "pupilsTotal":
 				return "pupilsTotal_indexed_long";
 			case "pupilsIndigenousFemale":
@@ -23863,20 +24083,6 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				return "examsCollegeReadyGrades38BlackVsWhite_indexed_double";
 			case "examsCollegeReadyGrades38LatinxVsWhite":
 				return "examsCollegeReadyGrades38LatinxVsWhite_indexed_double";
-			case "stateKey":
-				return "stateKey_indexed_long";
-			case "stateId":
-				return "stateId_indexed_string";
-			case "agencyId":
-				return "agencyId_indexed_string";
-			case "stateName":
-				return "stateName_indexed_string";
-			case "stateAbbreviation":
-				return "stateAbbreviation_indexed_string";
-			case "agencyOnlyName":
-				return "agencyOnlyName_indexed_string";
-			case "agencyName":
-				return "agencyName_indexed_string";
 			case "reportCardCompleteName":
 				return "reportCardCompleteName_indexed_string";
 			default:
@@ -23935,6 +24141,46 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		Integer imageTop = (Integer)solrDocument.get("imageTop_stored_int");
 		if(imageTop != null)
 			oReportCard.setImageTop(imageTop);
+
+		Long stateKey = (Long)solrDocument.get("stateKey_stored_long");
+		if(stateKey != null)
+			oReportCard.setStateKey(stateKey);
+
+		String stateId = (String)solrDocument.get("stateId_stored_string");
+		if(stateId != null)
+			oReportCard.setStateId(stateId);
+
+		String agencyId = (String)solrDocument.get("agencyId_stored_string");
+		if(agencyId != null)
+			oReportCard.setAgencyId(agencyId);
+
+		String stateName = (String)solrDocument.get("stateName_stored_string");
+		if(stateName != null)
+			oReportCard.setStateName(stateName);
+
+		String stateAbbreviation = (String)solrDocument.get("stateAbbreviation_stored_string");
+		if(stateAbbreviation != null)
+			oReportCard.setStateAbbreviation(stateAbbreviation);
+
+		String agencyOnlyName = (String)solrDocument.get("agencyOnlyName_stored_string");
+		if(agencyOnlyName != null)
+			oReportCard.setAgencyOnlyName(agencyOnlyName);
+
+		String agencyName = (String)solrDocument.get("agencyName_stored_string");
+		if(agencyName != null)
+			oReportCard.setAgencyName(agencyName);
+
+		Boolean agencyIsState = (Boolean)solrDocument.get("agencyIsState_stored_boolean");
+		if(agencyIsState != null)
+			oReportCard.setAgencyIsState(agencyIsState);
+
+		String agencyCoords = (String)solrDocument.get("agencyCoords_stored_string");
+		if(agencyCoords != null)
+			oReportCard.setAgencyCoords(agencyCoords);
+
+		Integer agencyLeft = (Integer)solrDocument.get("agencyLeft_stored_int");
+		if(agencyLeft != null)
+			oReportCard.setAgencyLeft(agencyLeft);
 
 		Long pupilsTotal = (Long)solrDocument.get("pupilsTotal_stored_long");
 		if(pupilsTotal != null)
@@ -24428,42 +24674,6 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		if(examsCollegeReadyGrades38LatinxVsWhite != null)
 			oReportCard.setExamsCollegeReadyGrades38LatinxVsWhite(examsCollegeReadyGrades38LatinxVsWhite);
 
-		Long stateKey = (Long)solrDocument.get("stateKey_stored_long");
-		if(stateKey != null)
-			oReportCard.setStateKey(stateKey);
-
-		String stateId = (String)solrDocument.get("stateId_stored_string");
-		if(stateId != null)
-			oReportCard.setStateId(stateId);
-
-		String agencyId = (String)solrDocument.get("agencyId_stored_string");
-		if(agencyId != null)
-			oReportCard.setAgencyId(agencyId);
-
-		String stateName = (String)solrDocument.get("stateName_stored_string");
-		if(stateName != null)
-			oReportCard.setStateName(stateName);
-
-		String stateAbbreviation = (String)solrDocument.get("stateAbbreviation_stored_string");
-		if(stateAbbreviation != null)
-			oReportCard.setStateAbbreviation(stateAbbreviation);
-
-		String agencyOnlyName = (String)solrDocument.get("agencyOnlyName_stored_string");
-		if(agencyOnlyName != null)
-			oReportCard.setAgencyOnlyName(agencyOnlyName);
-
-		String agencyName = (String)solrDocument.get("agencyName_stored_string");
-		if(agencyName != null)
-			oReportCard.setAgencyName(agencyName);
-
-		String agencyCoords = (String)solrDocument.get("agencyCoords_stored_string");
-		if(agencyCoords != null)
-			oReportCard.setAgencyCoords(agencyCoords);
-
-		Integer agencyLeft = (Integer)solrDocument.get("agencyLeft_stored_int");
-		if(agencyLeft != null)
-			oReportCard.setAgencyLeft(agencyLeft);
-
 		String reportCardCompleteName = (String)solrDocument.get("reportCardCompleteName_stored_string");
 		if(reportCardCompleteName != null)
 			oReportCard.setReportCardCompleteName(reportCardCompleteName);
@@ -24542,6 +24752,26 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("imageLeft");
 			if(!Objects.equals(imageTop, original.getImageTop()))
 				apiRequest.addVars("imageTop");
+			if(!Objects.equals(stateKey, original.getStateKey()))
+				apiRequest.addVars("stateKey");
+			if(!Objects.equals(stateId, original.getStateId()))
+				apiRequest.addVars("stateId");
+			if(!Objects.equals(agencyId, original.getAgencyId()))
+				apiRequest.addVars("agencyId");
+			if(!Objects.equals(stateName, original.getStateName()))
+				apiRequest.addVars("stateName");
+			if(!Objects.equals(stateAbbreviation, original.getStateAbbreviation()))
+				apiRequest.addVars("stateAbbreviation");
+			if(!Objects.equals(agencyOnlyName, original.getAgencyOnlyName()))
+				apiRequest.addVars("agencyOnlyName");
+			if(!Objects.equals(agencyName, original.getAgencyName()))
+				apiRequest.addVars("agencyName");
+			if(!Objects.equals(agencyIsState, original.getAgencyIsState()))
+				apiRequest.addVars("agencyIsState");
+			if(!Objects.equals(agencyCoords, original.getAgencyCoords()))
+				apiRequest.addVars("agencyCoords");
+			if(!Objects.equals(agencyLeft, original.getAgencyLeft()))
+				apiRequest.addVars("agencyLeft");
 			if(!Objects.equals(pupilsTotal, original.getPupilsTotal()))
 				apiRequest.addVars("pupilsTotal");
 			if(!Objects.equals(pupilsIndigenousFemale, original.getPupilsIndigenousFemale()))
@@ -24788,24 +25018,6 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				apiRequest.addVars("examsCollegeReadyGrades38BlackVsWhite");
 			if(!Objects.equals(examsCollegeReadyGrades38LatinxVsWhite, original.getExamsCollegeReadyGrades38LatinxVsWhite()))
 				apiRequest.addVars("examsCollegeReadyGrades38LatinxVsWhite");
-			if(!Objects.equals(stateKey, original.getStateKey()))
-				apiRequest.addVars("stateKey");
-			if(!Objects.equals(stateId, original.getStateId()))
-				apiRequest.addVars("stateId");
-			if(!Objects.equals(agencyId, original.getAgencyId()))
-				apiRequest.addVars("agencyId");
-			if(!Objects.equals(stateName, original.getStateName()))
-				apiRequest.addVars("stateName");
-			if(!Objects.equals(stateAbbreviation, original.getStateAbbreviation()))
-				apiRequest.addVars("stateAbbreviation");
-			if(!Objects.equals(agencyOnlyName, original.getAgencyOnlyName()))
-				apiRequest.addVars("agencyOnlyName");
-			if(!Objects.equals(agencyName, original.getAgencyName()))
-				apiRequest.addVars("agencyName");
-			if(!Objects.equals(agencyCoords, original.getAgencyCoords()))
-				apiRequest.addVars("agencyCoords");
-			if(!Objects.equals(agencyLeft, original.getAgencyLeft()))
-				apiRequest.addVars("agencyLeft");
 			if(!Objects.equals(reportCardCompleteName, original.getReportCardCompleteName()))
 				apiRequest.addVars("reportCardCompleteName");
 			if(!Objects.equals(agencyDemographicsGraph, original.getAgencyDemographicsGraph()))
@@ -24841,7 +25053,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	//////////////
 
 	@Override public int hashCode() {
-		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, reportCardYearsStr, agencyKey, imageLeft, imageTop, pupilsTotal, pupilsIndigenousFemale, pupilsIndigenousMale, pupilsIndigenousTotal, pupilsIndigenousPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsLatinxFemale, pupilsLatinxMale, pupilsLatinxTotal, pupilsLatinxPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, pupilsOtherPercent, teachersMale, teachersFemale, teachersTotal, teachersWhiteTotal, teachersWhitePercent, teachersBlackTotal, teachersBlackPercent, teachersOtherTotal, teachersOtherPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, delinquentComplaintsAsian, delinquentComplaintsAsianPercent, delinquentComplaintsBlack, delinquentComplaintsBlackPercent, delinquentComplaintsLatinx, delinquentComplaintsLatinxPercent, delinquentComplaintsMultiRacial, delinquentComplaintsMultiRacialPercent, delinquentComplaintsIndigenous, delinquentComplaintsIndigenousPercent, delinquentComplaintsWhite, delinquentComplaintsWhitePercent, delinquentComplaintsPacificIslander, delinquentComplaintsPacificIslanderPercent, shortTermSuspensionRate, shortTermSuspensionsTotal, longTermSuspensionsTotal, expulsionsTotal, shortTermSuspensionsAsianFemale, shortTermSuspensionsAsianMale, shortTermSuspensionsAsianTotal, shortTermSuspensionsAsianPercent, shortTermSuspensionsAsianRate, shortTermSuspensionsBlackFemale, shortTermSuspensionsBlackMale, shortTermSuspensionsBlackTotal, shortTermSuspensionsBlackPercent, shortTermSuspensionsBlackRate, shortTermSuspensionsLatinxFemale, shortTermSuspensionsLatinxMale, shortTermSuspensionsLatinxTotal, shortTermSuspensionsLatinxPercent, shortTermSuspensionsLatinxRate, shortTermSuspensionsIndigenousFemale, shortTermSuspensionsIndigenousMale, shortTermSuspensionsIndigenousTotal, shortTermSuspensionsIndigenousPercent, shortTermSuspensionsIndigenousRate, shortTermSuspensionsMultiRacialFemale, shortTermSuspensionsMultiRacialMale, shortTermSuspensionsMultiRacialTotal, shortTermSuspensionsMultiRacialPercent, shortTermSuspensionsMultiRacialRate, shortTermSuspensionsPacificIslanderFemale, shortTermSuspensionsPacificIslanderMale, shortTermSuspensionsPacificIslanderTotal, shortTermSuspensionsPacificIslanderPercent, shortTermSuspensionsPacificIslanderRate, shortTermSuspensionsWhiteFemale, shortTermSuspensionsWhiteMale, shortTermSuspensionsWhiteTotal, shortTermSuspensionsWhitePercent, shortTermSuspensionsWhiteRate, shortTermSuspensionsAllRate, shortTermSuspensionsBlackVsWhite, examsCollegeReadyGrades38OverallPercent, examsCollegeReadyGrades38IndigenousPercent, examsCollegeReadyGrades38AsianPercent, examsCollegeReadyGrades38BlackPercent, examsCollegeReadyGrades38LatinxPercent, examsCollegeReadyGrades38MultiRacialPercent, examsCollegeReadyGrades38PacificIslanderPercent, examsCollegeReadyGrades38WhitePercent, examsCollegeReadyGrades912OverallPercent, examsCollegeReadyGrades912IndigenousPercent, examsCollegeReadyGrades912AsianPercent, examsCollegeReadyGrades912BlackPercent, examsCollegeReadyGrades912LatinxPercent, examsCollegeReadyGrades912MultiRacialPercent, examsCollegeReadyGrades912PacificIslanderPercent, examsCollegeReadyGrades912WhitePercent, graduateWithin4YearsOverallPercent, graduateWithin4YearsIndigenousPercent, graduateWithin4YearsAsianPercent, graduateWithin4YearsBlackPercent, graduateWithin4YearsLatinxPercent, graduateWithin4YearsMultiRacialPercent, graduateWithin4YearsPacificIslanderPercent, graduateWithin4YearsWhitePercent, examsCollegeReadyGrades38BlackVsWhite, examsCollegeReadyGrades38LatinxVsWhite, stateKey, stateId, agencyId, stateName, stateAbbreviation, agencyOnlyName, agencyName, agencyCoords, agencyLeft, reportCardCompleteName, agencyDemographicsGraph, agencyStudentsByRaceGraph, agencyTeachersByRaceGraph, agencyGrades3To8Graph, agencyGrades9To12Graph, agencyGraduatesWithin4YearsGraph, suspensionsByRaceGraph, suspensionRatesByRaceGraph, countySchoolBasedComplaintsGraph, schoolBasedComplaintsGraph, agencyStudentsByRaceGraph2, reportCardImage);
+		return Objects.hash(super.hashCode(), reportCardKey, reportCardStartYear, reportCardEndYear, reportCardYearsStr, agencyKey, imageLeft, imageTop, stateKey, stateId, agencyId, stateName, stateAbbreviation, agencyOnlyName, agencyName, agencyIsState, agencyCoords, agencyLeft, pupilsTotal, pupilsIndigenousFemale, pupilsIndigenousMale, pupilsIndigenousTotal, pupilsIndigenousPercent, pupilsAsianFemale, pupilsAsianMale, pupilsAsianTotal, pupilsAsianPercent, pupilsLatinxFemale, pupilsLatinxMale, pupilsLatinxTotal, pupilsLatinxPercent, pupilsBlackFemale, pupilsBlackMale, pupilsBlackTotal, pupilsBlackPercent, pupilsWhiteFemale, pupilsWhiteMale, pupilsWhiteTotal, pupilsWhitePercent, pupilsPacificIslanderFemale, pupilsPacificIslanderMale, pupilsPacificIslanderTotal, pupilsPacificIslanderPercent, pupilsMultiRacialFemale, pupilsMultiRacialMale, pupilsMultiRacialTotal, pupilsMultiRacialPercent, pupilsOtherPercent, teachersMale, teachersFemale, teachersTotal, teachersWhiteTotal, teachersWhitePercent, teachersBlackTotal, teachersBlackPercent, teachersOtherTotal, teachersOtherPercent, delinquentComplaintsTotal, delinquentComplaintsAtSchool, delinquentComplaintsAtSchoolPercent, delinquentComplaintsAsian, delinquentComplaintsAsianPercent, delinquentComplaintsBlack, delinquentComplaintsBlackPercent, delinquentComplaintsLatinx, delinquentComplaintsLatinxPercent, delinquentComplaintsMultiRacial, delinquentComplaintsMultiRacialPercent, delinquentComplaintsIndigenous, delinquentComplaintsIndigenousPercent, delinquentComplaintsWhite, delinquentComplaintsWhitePercent, delinquentComplaintsPacificIslander, delinquentComplaintsPacificIslanderPercent, shortTermSuspensionRate, shortTermSuspensionsTotal, longTermSuspensionsTotal, expulsionsTotal, shortTermSuspensionsAsianFemale, shortTermSuspensionsAsianMale, shortTermSuspensionsAsianTotal, shortTermSuspensionsAsianPercent, shortTermSuspensionsAsianRate, shortTermSuspensionsBlackFemale, shortTermSuspensionsBlackMale, shortTermSuspensionsBlackTotal, shortTermSuspensionsBlackPercent, shortTermSuspensionsBlackRate, shortTermSuspensionsLatinxFemale, shortTermSuspensionsLatinxMale, shortTermSuspensionsLatinxTotal, shortTermSuspensionsLatinxPercent, shortTermSuspensionsLatinxRate, shortTermSuspensionsIndigenousFemale, shortTermSuspensionsIndigenousMale, shortTermSuspensionsIndigenousTotal, shortTermSuspensionsIndigenousPercent, shortTermSuspensionsIndigenousRate, shortTermSuspensionsMultiRacialFemale, shortTermSuspensionsMultiRacialMale, shortTermSuspensionsMultiRacialTotal, shortTermSuspensionsMultiRacialPercent, shortTermSuspensionsMultiRacialRate, shortTermSuspensionsPacificIslanderFemale, shortTermSuspensionsPacificIslanderMale, shortTermSuspensionsPacificIslanderTotal, shortTermSuspensionsPacificIslanderPercent, shortTermSuspensionsPacificIslanderRate, shortTermSuspensionsWhiteFemale, shortTermSuspensionsWhiteMale, shortTermSuspensionsWhiteTotal, shortTermSuspensionsWhitePercent, shortTermSuspensionsWhiteRate, shortTermSuspensionsAllRate, shortTermSuspensionsBlackVsWhite, examsCollegeReadyGrades38OverallPercent, examsCollegeReadyGrades38IndigenousPercent, examsCollegeReadyGrades38AsianPercent, examsCollegeReadyGrades38BlackPercent, examsCollegeReadyGrades38LatinxPercent, examsCollegeReadyGrades38MultiRacialPercent, examsCollegeReadyGrades38PacificIslanderPercent, examsCollegeReadyGrades38WhitePercent, examsCollegeReadyGrades912OverallPercent, examsCollegeReadyGrades912IndigenousPercent, examsCollegeReadyGrades912AsianPercent, examsCollegeReadyGrades912BlackPercent, examsCollegeReadyGrades912LatinxPercent, examsCollegeReadyGrades912MultiRacialPercent, examsCollegeReadyGrades912PacificIslanderPercent, examsCollegeReadyGrades912WhitePercent, graduateWithin4YearsOverallPercent, graduateWithin4YearsIndigenousPercent, graduateWithin4YearsAsianPercent, graduateWithin4YearsBlackPercent, graduateWithin4YearsLatinxPercent, graduateWithin4YearsMultiRacialPercent, graduateWithin4YearsPacificIslanderPercent, graduateWithin4YearsWhitePercent, examsCollegeReadyGrades38BlackVsWhite, examsCollegeReadyGrades38LatinxVsWhite, reportCardCompleteName, agencyDemographicsGraph, agencyStudentsByRaceGraph, agencyTeachersByRaceGraph, agencyGrades3To8Graph, agencyGrades9To12Graph, agencyGraduatesWithin4YearsGraph, suspensionsByRaceGraph, suspensionRatesByRaceGraph, countySchoolBasedComplaintsGraph, schoolBasedComplaintsGraph, agencyStudentsByRaceGraph2, reportCardImage);
 	}
 
 	////////////
@@ -24862,6 +25074,16 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				&& Objects.equals( agencyKey, that.agencyKey )
 				&& Objects.equals( imageLeft, that.imageLeft )
 				&& Objects.equals( imageTop, that.imageTop )
+				&& Objects.equals( stateKey, that.stateKey )
+				&& Objects.equals( stateId, that.stateId )
+				&& Objects.equals( agencyId, that.agencyId )
+				&& Objects.equals( stateName, that.stateName )
+				&& Objects.equals( stateAbbreviation, that.stateAbbreviation )
+				&& Objects.equals( agencyOnlyName, that.agencyOnlyName )
+				&& Objects.equals( agencyName, that.agencyName )
+				&& Objects.equals( agencyIsState, that.agencyIsState )
+				&& Objects.equals( agencyCoords, that.agencyCoords )
+				&& Objects.equals( agencyLeft, that.agencyLeft )
 				&& Objects.equals( pupilsTotal, that.pupilsTotal )
 				&& Objects.equals( pupilsIndigenousFemale, that.pupilsIndigenousFemale )
 				&& Objects.equals( pupilsIndigenousMale, that.pupilsIndigenousMale )
@@ -24985,15 +25207,6 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				&& Objects.equals( graduateWithin4YearsWhitePercent, that.graduateWithin4YearsWhitePercent )
 				&& Objects.equals( examsCollegeReadyGrades38BlackVsWhite, that.examsCollegeReadyGrades38BlackVsWhite )
 				&& Objects.equals( examsCollegeReadyGrades38LatinxVsWhite, that.examsCollegeReadyGrades38LatinxVsWhite )
-				&& Objects.equals( stateKey, that.stateKey )
-				&& Objects.equals( stateId, that.stateId )
-				&& Objects.equals( agencyId, that.agencyId )
-				&& Objects.equals( stateName, that.stateName )
-				&& Objects.equals( stateAbbreviation, that.stateAbbreviation )
-				&& Objects.equals( agencyOnlyName, that.agencyOnlyName )
-				&& Objects.equals( agencyName, that.agencyName )
-				&& Objects.equals( agencyCoords, that.agencyCoords )
-				&& Objects.equals( agencyLeft, that.agencyLeft )
 				&& Objects.equals( reportCardCompleteName, that.reportCardCompleteName )
 				&& Objects.equals( agencyDemographicsGraph, that.agencyDemographicsGraph )
 				&& Objects.equals( agencyStudentsByRaceGraph, that.agencyStudentsByRaceGraph )
@@ -25024,6 +25237,16 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		sb.append( ", agencyKey: " ).append(agencyKey);
 		sb.append( ", imageLeft: " ).append(imageLeft);
 		sb.append( ", imageTop: " ).append(imageTop);
+		sb.append( ", stateKey: " ).append(stateKey);
+		sb.append( ", stateId: \"" ).append(stateId).append( "\"" );
+		sb.append( ", agencyId: \"" ).append(agencyId).append( "\"" );
+		sb.append( ", stateName: \"" ).append(stateName).append( "\"" );
+		sb.append( ", stateAbbreviation: \"" ).append(stateAbbreviation).append( "\"" );
+		sb.append( ", agencyOnlyName: \"" ).append(agencyOnlyName).append( "\"" );
+		sb.append( ", agencyName: \"" ).append(agencyName).append( "\"" );
+		sb.append( ", agencyIsState: " ).append(agencyIsState);
+		sb.append( ", agencyCoords: \"" ).append(agencyCoords).append( "\"" );
+		sb.append( ", agencyLeft: " ).append(agencyLeft);
 		sb.append( ", pupilsTotal: " ).append(pupilsTotal);
 		sb.append( ", pupilsIndigenousFemale: " ).append(pupilsIndigenousFemale);
 		sb.append( ", pupilsIndigenousMale: " ).append(pupilsIndigenousMale);
@@ -25147,15 +25370,6 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 		sb.append( ", graduateWithin4YearsWhitePercent: " ).append(graduateWithin4YearsWhitePercent);
 		sb.append( ", examsCollegeReadyGrades38BlackVsWhite: " ).append(examsCollegeReadyGrades38BlackVsWhite);
 		sb.append( ", examsCollegeReadyGrades38LatinxVsWhite: " ).append(examsCollegeReadyGrades38LatinxVsWhite);
-		sb.append( ", stateKey: " ).append(stateKey);
-		sb.append( ", stateId: \"" ).append(stateId).append( "\"" );
-		sb.append( ", agencyId: \"" ).append(agencyId).append( "\"" );
-		sb.append( ", stateName: \"" ).append(stateName).append( "\"" );
-		sb.append( ", stateAbbreviation: \"" ).append(stateAbbreviation).append( "\"" );
-		sb.append( ", agencyOnlyName: \"" ).append(agencyOnlyName).append( "\"" );
-		sb.append( ", agencyName: \"" ).append(agencyName).append( "\"" );
-		sb.append( ", agencyCoords: \"" ).append(agencyCoords).append( "\"" );
-		sb.append( ", agencyLeft: " ).append(agencyLeft);
 		sb.append( ", reportCardCompleteName: \"" ).append(reportCardCompleteName).append( "\"" );
 		sb.append( ", agencyDemographicsGraph: \"" ).append(agencyDemographicsGraph).append( "\"" );
 		sb.append( ", agencyStudentsByRaceGraph: \"" ).append(agencyStudentsByRaceGraph).append( "\"" );

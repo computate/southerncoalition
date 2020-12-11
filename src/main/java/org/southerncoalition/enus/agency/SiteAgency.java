@@ -187,13 +187,22 @@ public class SiteAgency extends SiteAgencyGen<Cluster> {
 			c.o(state_.getStateAbbreviation());
 	}
 
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 */ 
+	protected void _agencyIsState(Wrap<Boolean> c) {
+		c.o(StringUtils.equals(agencyName, stateName));
+	}
+
 	/**    
 	 * {@inheritDoc}
 	 * Indexed: true
 	 * Stored: true
 	 */ 
 	protected void _agencyOnlyName(Wrap<String> c) {
-		if(StringUtils.equals(agencyName, stateName))
+		if(agencyIsState)
 			c.o("A A A " + stateName);
 		else
 			c.o(agencyName + " in " + stateName + " (" + stateAbbreviation + ")");
@@ -207,7 +216,7 @@ public class SiteAgency extends SiteAgencyGen<Cluster> {
 	 * VarTitle: true
 	 */ 
 	protected void _agencyCompleteName(Wrap<String> c) {
-		if(StringUtils.equals(agencyName, stateName))
+		if(agencyIsState)
 			c.o(stateName + " (" + stateAbbreviation + ")");
 		else
 			c.o(agencyName + " in " + stateName + " (" + stateAbbreviation + ")");
@@ -217,7 +226,7 @@ public class SiteAgency extends SiteAgencyGen<Cluster> {
 	 * {@inheritDoc}
 	 */
 	@Override() protected void  _objectTitle(Wrap<String> c) {
-		if(StringUtils.equals(agencyName, stateName))
+		if(agencyIsState)
 			c.o(stateName + " (" + stateAbbreviation + ")");
 		else
 			c.o(agencyName + " in " + stateName + " (" + stateAbbreviation + ")");
