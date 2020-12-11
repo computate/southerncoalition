@@ -927,7 +927,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 */ 
 	protected void _teachersWhiteTotal(Wrap<Long> c) {
 		if(stateFacets != null) {
-			c.o((Long)stateFacets.getStatValue(""));
+			c.o((Long)stateFacets.getStatValue("teachersWhiteTotal"));
 		}
 	}
 
