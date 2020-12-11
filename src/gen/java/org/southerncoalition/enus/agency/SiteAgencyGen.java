@@ -17,6 +17,7 @@ import java.lang.Long;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.lang.Boolean;
 import io.vertx.core.json.JsonObject;
 import java.lang.String;
 import io.vertx.core.logging.Logger;
@@ -480,16 +481,24 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
 				) {
 			e("i").a("class", "far fa-search w3-xxlarge w3-cell w3-cell-middle ").f().g("i");
-				e("input")
-					.a("type", "text")
-					.a("placeholder", "state")
-					.a("class", "value suggestStateKey w3-input w3-border w3-cell w3-cell-middle ")
-					.a("name", "setStateKey")
-					.a("id", classApiMethodMethod, "_stateKey")
-					.a("autocomplete", "off");
-					if("Page".equals(classApiMethodMethod)) {
-						a("oninput", "suggestSiteAgencyStateKey($(this).val() ? searchSiteStateFilters($(this.parentElement)) : [", pk == null ? "" : "{'name':'fq','value':'agencyKeys:" + pk + "'}", "], $('#listSiteAgencyStateKey_", classApiMethodMethod, "'), ", pk, "); ");
-					}
+			if("PUTCopy".equals(classApiMethodMethod)) {
+				{ e("div").f();
+					e("input")
+						.a("type", "checkbox")
+						.a("id", classApiMethodMethod, "_stateKey_clear")
+						.a("class", "stateKey_clear ")
+						.fg();
+					e("label").a("for", "classApiMethodMethod, \"_stateKey_clear").f().sx("clear").g("label");
+				} g("div");
+			}
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "state")
+				.a("class", "value suggestStateKey w3-input w3-border w3-cell w3-cell-middle ")
+				.a("name", "setStateKey")
+				.a("id", classApiMethodMethod, "_stateKey")
+				.a("autocomplete", "off");
+				a("oninput", "suggestSiteAgencyStateKey($(this).val() ? searchSiteStateFilters($(this.parentElement)) : [", pk == null ? "" : "{'name':'fq','value':'agencyKeys:" + pk + "'}", "], $('#listSiteAgencyStateKey_", classApiMethodMethod, "'), ", pk, "); ");
 
 				fg();
 
@@ -531,14 +540,16 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 										CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), SiteState.ROLES)
 										|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), SiteState.ROLES)
 										) {
-									{ e("div").a("class", "w3-cell-row ").f();
-										e("button")
-											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-pale-blue ")
-											.a("id", classApiMethodMethod, "_stateKey_add")
-											.a("onclick", "$(this).addClass('w3-disabled'); this.disabled = true; this.innerHTML = 'Sending…'; postSiteStateVals({ agencyKeys: [ \"", pk, "\" ] }, function() {}, function() { addError($('#", classApiMethodMethod, "stateKey')); });")
-											.f().sx("add a state")
-										.g("button");
-									} g("div");
+									if("Page".equals(classApiMethodMethod)) {
+										{ e("div").a("class", "w3-cell-row ").f();
+											e("button")
+												.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-pale-blue ")
+												.a("id", classApiMethodMethod, "_stateKey_add")
+												.a("onclick", "$(this).addClass('w3-disabled'); this.disabled = true; this.innerHTML = 'Sending…'; postSiteStateVals({ agencyKeys: [ \"", pk, "\" ] }, function() {}, function() { addError($('#", classApiMethodMethod, "stateKey')); });")
+												.f().sx("add a state")
+											.g("button");
+										} g("div");
+									}
 								}
 							} g("div");
 						} g("div");
@@ -1108,16 +1119,24 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
 				) {
 			e("i").a("class", "far fa-search w3-xxlarge w3-cell w3-cell-middle ").f().g("i");
-				e("input")
-					.a("type", "text")
-					.a("placeholder", "report cards")
-					.a("class", "value suggestReportCardKeys w3-input w3-border w3-cell w3-cell-middle ")
-					.a("name", "setReportCardKeys")
-					.a("id", classApiMethodMethod, "_reportCardKeys")
-					.a("autocomplete", "off");
-					if("Page".equals(classApiMethodMethod)) {
-						a("oninput", "suggestSiteAgencyReportCardKeys($(this).val() ? searchReportCardFilters($(this.parentElement)) : [", pk == null ? "" : "{'name':'fq','value':'agencyKey:" + pk + "'}", "], $('#listSiteAgencyReportCardKeys_", classApiMethodMethod, "'), ", pk, "); ");
-					}
+			if("PUTCopy".equals(classApiMethodMethod)) {
+				{ e("div").f();
+					e("input")
+						.a("type", "checkbox")
+						.a("id", classApiMethodMethod, "_reportCardKeys_clear")
+						.a("class", "reportCardKeys_clear ")
+						.fg();
+					e("label").a("for", "classApiMethodMethod, \"_reportCardKeys_clear").f().sx("clear").g("label");
+				} g("div");
+			}
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "report cards")
+				.a("class", "value suggestReportCardKeys w3-input w3-border w3-cell w3-cell-middle ")
+				.a("name", "setReportCardKeys")
+				.a("id", classApiMethodMethod, "_reportCardKeys")
+				.a("autocomplete", "off");
+				a("oninput", "suggestSiteAgencyReportCardKeys($(this).val() ? searchReportCardFilters($(this.parentElement)) : [", pk == null ? "" : "{'name':'fq','value':'agencyKey:" + pk + "'}", "], $('#listSiteAgencyReportCardKeys_", classApiMethodMethod, "'), ", pk, "); ");
 
 				fg();
 
@@ -1159,14 +1178,16 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 										CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), ReportCard.ROLES)
 										|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ReportCard.ROLES)
 										) {
-									{ e("div").a("class", "w3-cell-row ").f();
-										e("button")
-											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-pale-green ")
-											.a("id", classApiMethodMethod, "_reportCardKeys_add")
-											.a("onclick", "$(this).addClass('w3-disabled'); this.disabled = true; this.innerHTML = 'Sending…'; postReportCardVals({ agencyKey: \"", pk, "\" }, function() {}, function() { addError($('#", classApiMethodMethod, "reportCardKeys')); });")
-											.f().sx("add a report card")
-										.g("button");
-									} g("div");
+									if("Page".equals(classApiMethodMethod)) {
+										{ e("div").a("class", "w3-cell-row ").f();
+											e("button")
+												.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-pale-green ")
+												.a("id", classApiMethodMethod, "_reportCardKeys_add")
+												.a("onclick", "$(this).addClass('w3-disabled'); this.disabled = true; this.innerHTML = 'Sending…'; postReportCardVals({ agencyKey: \"", pk, "\" }, function() {}, function() { addError($('#", classApiMethodMethod, "reportCardKeys')); });")
+												.f().sx("add a report card")
+											.g("button");
+										} g("div");
+									}
 								}
 							} g("div");
 						} g("div");
@@ -1404,6 +1425,87 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		return stateAbbreviation == null ? "" : StringEscapeUtils.escapeHtml4(strStateAbbreviation());
 	}
 
+	///////////////////
+	// agencyIsState //
+	///////////////////
+
+	/**	 The entity agencyIsState
+	 *	 is defined as null before being initialized. 
+	 */
+	@JsonInclude(Include.NON_NULL)
+	protected Boolean agencyIsState;
+	@JsonIgnore
+	public Wrap<Boolean> agencyIsStateWrap = new Wrap<Boolean>().p(this).c(Boolean.class).var("agencyIsState").o(agencyIsState);
+
+	/**	<br/> The entity agencyIsState
+	 *  is defined as null before being initialized. 
+	 * <br/><a href="http://localhost:8983/solr/computate/select?q=*:*&fq=partEstEntite_indexed_boolean:true&fq=classeNomCanonique_enUS_indexed_string:org.southerncoalition.enus.agency.SiteAgency&fq=classeEtendGen_indexed_boolean:true&fq=entiteVar_enUS_indexed_string:agencyIsState">Find the entity agencyIsState in Solr</a>
+	 * <br/>
+	 * @param c is for wrapping a value to assign to this entity during initialization. 
+	 **/
+	protected abstract void _agencyIsState(Wrap<Boolean> c);
+
+	public Boolean getAgencyIsState() {
+		return agencyIsState;
+	}
+
+	public void setAgencyIsState(Boolean agencyIsState) {
+		this.agencyIsState = agencyIsState;
+		this.agencyIsStateWrap.alreadyInitialized = true;
+	}
+	public void setAgencyIsState(String o) {
+		this.agencyIsState = SiteAgency.staticSetAgencyIsState(siteRequest_, o);
+		this.agencyIsStateWrap.alreadyInitialized = true;
+	}
+	public static Boolean staticSetAgencyIsState(SiteRequestEnUS siteRequest_, String o) {
+		return Boolean.parseBoolean(o);
+	}
+	protected SiteAgency agencyIsStateInit() {
+		if(!agencyIsStateWrap.alreadyInitialized) {
+			_agencyIsState(agencyIsStateWrap);
+			if(agencyIsState == null)
+				setAgencyIsState(agencyIsStateWrap.o);
+		}
+		agencyIsStateWrap.alreadyInitialized(true);
+		return (SiteAgency)this;
+	}
+
+	public static Boolean staticSolrAgencyIsState(SiteRequestEnUS siteRequest_, Boolean o) {
+		return o;
+	}
+
+	public static String staticSolrStrAgencyIsState(SiteRequestEnUS siteRequest_, Boolean o) {
+		return o == null ? null : o.toString();
+	}
+
+	public static String staticSolrFqAgencyIsState(SiteRequestEnUS siteRequest_, String o) {
+		return SiteAgency.staticSolrStrAgencyIsState(siteRequest_, SiteAgency.staticSolrAgencyIsState(siteRequest_, SiteAgency.staticSetAgencyIsState(siteRequest_, o)));
+	}
+
+	public Boolean solrAgencyIsState() {
+		return SiteAgency.staticSolrAgencyIsState(siteRequest_, agencyIsState);
+	}
+
+	public String strAgencyIsState() {
+		return agencyIsState == null ? "" : agencyIsState.toString();
+	}
+
+	public String jsonAgencyIsState() {
+		return agencyIsState == null ? "" : agencyIsState.toString();
+	}
+
+	public String nomAffichageAgencyIsState() {
+		return null;
+	}
+
+	public String htmTooltipAgencyIsState() {
+		return null;
+	}
+
+	public String htmAgencyIsState() {
+		return agencyIsState == null ? "" : StringEscapeUtils.escapeHtml4(strAgencyIsState());
+	}
+
 	////////////////////
 	// agencyOnlyName //
 	////////////////////
@@ -1589,6 +1691,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		stateIdInit();
 		stateNameInit();
 		stateAbbreviationInit();
+		agencyIsStateInit();
 		agencyOnlyNameInit();
 		agencyCompleteNameInit();
 	}
@@ -1655,6 +1758,8 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 				return oSiteAgency.stateName;
 			case "stateAbbreviation":
 				return oSiteAgency.stateAbbreviation;
+			case "agencyIsState":
+				return oSiteAgency.agencyIsState;
 			case "agencyOnlyName":
 				return oSiteAgency.agencyOnlyName;
 			case "agencyCompleteName":
@@ -1729,6 +1834,8 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 			return SiteAgency.staticSetStateName(siteRequest_, o);
 		case "stateAbbreviation":
 			return SiteAgency.staticSetStateAbbreviation(siteRequest_, o);
+		case "agencyIsState":
+			return SiteAgency.staticSetAgencyIsState(siteRequest_, o);
 		case "agencyOnlyName":
 			return SiteAgency.staticSetAgencyOnlyName(siteRequest_, o);
 		case "agencyCompleteName":
@@ -1767,6 +1874,8 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 			return SiteAgency.staticSolrStateName(siteRequest_, (String)o);
 		case "stateAbbreviation":
 			return SiteAgency.staticSolrStateAbbreviation(siteRequest_, (String)o);
+		case "agencyIsState":
+			return SiteAgency.staticSolrAgencyIsState(siteRequest_, (Boolean)o);
 		case "agencyOnlyName":
 			return SiteAgency.staticSolrAgencyOnlyName(siteRequest_, (String)o);
 		case "agencyCompleteName":
@@ -1805,6 +1914,8 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 			return SiteAgency.staticSolrStrStateName(siteRequest_, (String)o);
 		case "stateAbbreviation":
 			return SiteAgency.staticSolrStrStateAbbreviation(siteRequest_, (String)o);
+		case "agencyIsState":
+			return SiteAgency.staticSolrStrAgencyIsState(siteRequest_, (Boolean)o);
 		case "agencyOnlyName":
 			return SiteAgency.staticSolrStrAgencyOnlyName(siteRequest_, (String)o);
 		case "agencyCompleteName":
@@ -1843,6 +1954,8 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 			return SiteAgency.staticSolrFqStateName(siteRequest_, o);
 		case "stateAbbreviation":
 			return SiteAgency.staticSolrFqStateAbbreviation(siteRequest_, o);
+		case "agencyIsState":
+			return SiteAgency.staticSolrFqAgencyIsState(siteRequest_, o);
 		case "agencyOnlyName":
 			return SiteAgency.staticSolrFqAgencyOnlyName(siteRequest_, o);
 		case "agencyCompleteName":
@@ -1964,6 +2077,12 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 				String stateAbbreviation = (String)solrDocument.get("stateAbbreviation_stored_string");
 				if(stateAbbreviation != null)
 					oSiteAgency.setStateAbbreviation(stateAbbreviation);
+			}
+
+			if(saves.contains("agencyIsState")) {
+				Boolean agencyIsState = (Boolean)solrDocument.get("agencyIsState_stored_boolean");
+				if(agencyIsState != null)
+					oSiteAgency.setAgencyIsState(agencyIsState);
 			}
 
 			if(saves.contains("agencyOnlyName")) {
@@ -2088,6 +2207,10 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 			document.addField("stateAbbreviation_indexed_string", stateAbbreviation);
 			document.addField("stateAbbreviation_stored_string", stateAbbreviation);
 		}
+		if(agencyIsState != null) {
+			document.addField("agencyIsState_indexed_boolean", agencyIsState);
+			document.addField("agencyIsState_stored_boolean", agencyIsState);
+		}
 		if(agencyOnlyName != null) {
 			document.addField("agencyOnlyName_indexed_string", agencyOnlyName);
 			document.addField("agencyOnlyName_stored_string", agencyOnlyName);
@@ -2139,6 +2262,8 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 				return "stateName_indexed_string";
 			case "stateAbbreviation":
 				return "stateAbbreviation_indexed_string";
+			case "agencyIsState":
+				return "agencyIsState_indexed_boolean";
 			case "agencyOnlyName":
 				return "agencyOnlyName_indexed_string";
 			case "agencyCompleteName":
@@ -2212,6 +2337,10 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		if(stateAbbreviation != null)
 			oSiteAgency.setStateAbbreviation(stateAbbreviation);
 
+		Boolean agencyIsState = (Boolean)solrDocument.get("agencyIsState_stored_boolean");
+		if(agencyIsState != null)
+			oSiteAgency.setAgencyIsState(agencyIsState);
+
 		String agencyOnlyName = (String)solrDocument.get("agencyOnlyName_stored_string");
 		if(agencyOnlyName != null)
 			oSiteAgency.setAgencyOnlyName(agencyOnlyName);
@@ -2252,6 +2381,8 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 				apiRequest.addVars("stateName");
 			if(!Objects.equals(stateAbbreviation, original.getStateAbbreviation()))
 				apiRequest.addVars("stateAbbreviation");
+			if(!Objects.equals(agencyIsState, original.getAgencyIsState()))
+				apiRequest.addVars("agencyIsState");
 			if(!Objects.equals(agencyOnlyName, original.getAgencyOnlyName()))
 				apiRequest.addVars("agencyOnlyName");
 			if(!Objects.equals(agencyCompleteName, original.getAgencyCompleteName()))
@@ -2265,7 +2396,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 	//////////////
 
 	@Override public int hashCode() {
-		return Objects.hash(super.hashCode(), agencyKey, agencyName, stateKey, imageLeft, imageTop, imageCoords, reportCardKeys, stateId, stateName, stateAbbreviation, agencyOnlyName, agencyCompleteName);
+		return Objects.hash(super.hashCode(), agencyKey, agencyName, stateKey, imageLeft, imageTop, imageCoords, reportCardKeys, stateId, stateName, stateAbbreviation, agencyIsState, agencyOnlyName, agencyCompleteName);
 	}
 
 	////////////
@@ -2289,6 +2420,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 				&& Objects.equals( stateId, that.stateId )
 				&& Objects.equals( stateName, that.stateName )
 				&& Objects.equals( stateAbbreviation, that.stateAbbreviation )
+				&& Objects.equals( agencyIsState, that.agencyIsState )
 				&& Objects.equals( agencyOnlyName, that.agencyOnlyName )
 				&& Objects.equals( agencyCompleteName, that.agencyCompleteName );
 	}
@@ -2311,6 +2443,7 @@ public abstract class SiteAgencyGen<DEV> extends Cluster {
 		sb.append( ", stateId: \"" ).append(stateId).append( "\"" );
 		sb.append( ", stateName: \"" ).append(stateName).append( "\"" );
 		sb.append( ", stateAbbreviation: \"" ).append(stateAbbreviation).append( "\"" );
+		sb.append( ", agencyIsState: " ).append(agencyIsState);
 		sb.append( ", agencyOnlyName: \"" ).append(agencyOnlyName).append( "\"" );
 		sb.append( ", agencyCompleteName: \"" ).append(agencyCompleteName).append( "\"" );
 		sb.append(" }");

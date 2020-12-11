@@ -63,7 +63,7 @@
     namespace: "{{SOUTHERNCOALITION_NAMESPACE}}"
     definition: "{{ lookup('template', 'southerncoalition_route.yml.j2') }}"
 - name: Create Solr collection
-  shell: "oc login {{SOUTHERNCOALITION_HOST}} --token={{REDHAT_OPENSHIFT_TOKEN}} && oc exec $(oc get pod -l app=computate-solr -o jsonpath='{.items[0].metadata.name}') -n southerncoalition -- /opt/solr/bin/solr create_collection -c site -n computate || true"
+  shell: "oc login {{SOUTHERNCOALITION_HOST}} --token={{REDHAT_OPENSHIFT_TOKEN}} && oc project {{SOLR_NAMESPACE}} && oc exec $(oc get pod -l app=computate-solr -o jsonpath='{.items[0].metadata.name}') -n southerncoalition -- /opt/solr/bin/solr create_collection -c site -n computate || true"
   register: create_collection
 - name: Print create_collection command
   debug:

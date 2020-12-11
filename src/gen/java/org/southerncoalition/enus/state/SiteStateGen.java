@@ -867,16 +867,24 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 				|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), ROLES)
 				) {
 			e("i").a("class", "far fa-search w3-xxlarge w3-cell w3-cell-middle ").f().g("i");
-				e("input")
-					.a("type", "text")
-					.a("placeholder", "agencies")
-					.a("class", "value suggestAgencyKeys w3-input w3-border w3-cell w3-cell-middle ")
-					.a("name", "setAgencyKeys")
-					.a("id", classApiMethodMethod, "_agencyKeys")
-					.a("autocomplete", "off");
-					if("Page".equals(classApiMethodMethod)) {
-						a("oninput", "suggestSiteStateAgencyKeys($(this).val() ? searchSiteAgencyFilters($(this.parentElement)) : [", pk == null ? "" : "{'name':'fq','value':'stateKey:" + pk + "'}", "], $('#listSiteStateAgencyKeys_", classApiMethodMethod, "'), ", pk, "); ");
-					}
+			if("PUTCopy".equals(classApiMethodMethod)) {
+				{ e("div").f();
+					e("input")
+						.a("type", "checkbox")
+						.a("id", classApiMethodMethod, "_agencyKeys_clear")
+						.a("class", "agencyKeys_clear ")
+						.fg();
+					e("label").a("for", "classApiMethodMethod, \"_agencyKeys_clear").f().sx("clear").g("label");
+				} g("div");
+			}
+			e("input")
+				.a("type", "text")
+				.a("placeholder", "agencies")
+				.a("class", "value suggestAgencyKeys w3-input w3-border w3-cell w3-cell-middle ")
+				.a("name", "setAgencyKeys")
+				.a("id", classApiMethodMethod, "_agencyKeys")
+				.a("autocomplete", "off");
+				a("oninput", "suggestSiteStateAgencyKeys($(this).val() ? searchSiteAgencyFilters($(this.parentElement)) : [", pk == null ? "" : "{'name':'fq','value':'stateKey:" + pk + "'}", "], $('#listSiteStateAgencyKeys_", classApiMethodMethod, "'), ", pk, "); ");
 
 				fg();
 
@@ -918,14 +926,16 @@ public abstract class SiteStateGen<DEV> extends Cluster {
 										CollectionUtils.containsAny(siteRequest_.getUserResourceRoles(), SiteAgency.ROLES)
 										|| CollectionUtils.containsAny(siteRequest_.getUserRealmRoles(), SiteAgency.ROLES)
 										) {
-									{ e("div").a("class", "w3-cell-row ").f();
-										e("button")
-											.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-pale-yellow ")
-											.a("id", classApiMethodMethod, "_agencyKeys_add")
-											.a("onclick", "$(this).addClass('w3-disabled'); this.disabled = true; this.innerHTML = 'Sending…'; postSiteAgencyVals({ stateKey: \"", pk, "\" }, function() {}, function() { addError($('#", classApiMethodMethod, "agencyKeys')); });")
-											.f().sx("add a agency")
-										.g("button");
-									} g("div");
+									if("Page".equals(classApiMethodMethod)) {
+										{ e("div").a("class", "w3-cell-row ").f();
+											e("button")
+												.a("class", "w3-btn w3-round w3-border w3-border-black w3-ripple w3-padding w3-pale-yellow ")
+												.a("id", classApiMethodMethod, "_agencyKeys_add")
+												.a("onclick", "$(this).addClass('w3-disabled'); this.disabled = true; this.innerHTML = 'Sending…'; postSiteAgencyVals({ stateKey: \"", pk, "\" }, function() {}, function() { addError($('#", classApiMethodMethod, "agencyKeys')); });")
+												.f().sx("add a agency")
+											.g("button");
+										} g("div");
+									}
 								}
 							} g("div");
 						} g("div");

@@ -8,19 +8,24 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.math.MathContext;
 import java.math.RoundingMode;
 import java.nio.charset.Charset;
 import java.text.AttributedString;
 import java.text.DecimalFormat;
 import java.text.MessageFormat;
-import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
+import java.util.Optional;
 
 import javax.imageio.ImageIO;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.exception.ExceptionUtils;
+import org.apache.solr.client.solrj.response.QueryResponse;
+import org.apache.solr.client.solrj.response.json.NestableJsonFacet;
+import org.apache.solr.common.util.SimpleOrderedMap;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartRenderingInfo;
 import org.jfree.chart.JFreeChart;
@@ -202,6 +207,196 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			c.o(agency_.getImageTop());
 	}
 
+	/**  
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 */ 
+	protected void _stateKey(Wrap<Long> c) {
+		if(agency_ != null)
+			c.o(agency_.getStateKey());
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 */ 
+	protected void _stateId(Wrap<String> c) {
+		if(agency_ != null)
+			c.o(agency_.getStateId());
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 */ 
+	protected void _agencyId(Wrap<String> c) {
+		if(agency_ != null)
+			c.o(agency_.getObjectId());
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 */ 
+	protected void _stateName(Wrap<String> c) {
+		if(agency_ != null)
+			c.o(agency_.getStateName());
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 */ 
+	protected void _stateAbbreviation(Wrap<String> c) {
+		if(agency_ != null)
+			c.o(agency_.getStateAbbreviation());
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 */ 
+	protected void _agencyOnlyName(Wrap<String> c) {
+		if(agency_ != null)
+			c.o(agency_.getAgencyOnlyName());
+	}
+
+	/**  
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 */ 
+	protected void _agencyName(Wrap<String> c) {
+		if(agency_ != null)
+			c.o(agency_.getAgencyName());
+	}
+
+	/**  
+	 * {@inheritDoc}
+	 * Indexed: true
+	 * Stored: true
+	 */ 
+	protected void _agencyIsState(Wrap<Boolean> c) {
+		if(agency_ != null)
+			c.o(agency_.getAgencyIsState());
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Stored: true
+	 */ 
+	protected void _agencyCoords(Wrap<String> c) {
+		if(agency_ != null)
+			c.o(agency_.getImageCoords());
+	}
+
+	/**   
+	 * {@inheritDoc}
+	 * Stored: true
+	 */ 
+	protected void _agencyLeft(Wrap<Integer> c) {
+		if(agency_ != null)
+			c.o(agency_.getImageLeft());
+	}
+
+	/**
+	 * {@inheritDoc}
+	 * Ignore: true
+	 */ 
+	protected void _stateReportCardSearch(SearchList<ReportCard> l) {
+		if(reportCardStartYear != null && agency_ != null && agency_.getAgencyIsState()) {
+			l.setQuery("*:*");
+			l.addFilterQuery("stateKey_indexed_long:" + stateKey);
+			l.addFilterQuery("reportCardStartYear_indexed_int:" + reportCardStartYear);
+			l.addFilterQuery("agencyIsState_indexed_boolean:false");
+			l.setC(ReportCard.class);
+			l.setStore(true);
+			l.setRows(0);
+			l.add("json.facet", "{pupilsTotal:'max(pupilsTotal_indexed_long)'}");
+			l.add("json.facet", "{pupilsIndigenousFemale:'max(pupilsIndigenousFemale_indexed_long)'}");
+			l.add("json.facet", "{pupilsIndigenousMale:'max(pupilsIndigenousMale_indexed_long)'}");
+			l.add("json.facet", "{pupilsAsianFemale:'max(pupilsAsianFemale_indexed_long)'}");
+			l.add("json.facet", "{pupilsAsianMale:'max(pupilsAsianMale_indexed_long)'}");
+			l.add("json.facet", "{pupilsLatinxFemale:'max(pupilsLatinxFemale_indexed_long)'}");
+			l.add("json.facet", "{pupilsLatinxMale:'max(pupilsLatinxMale_indexed_long)'}");
+			l.add("json.facet", "{pupilsBlackFemale:'max(pupilsBlackFemale_indexed_long)'}");
+			l.add("json.facet", "{pupilsBlackMale:'max(pupilsBlackMale_indexed_long)'}");
+			l.add("json.facet", "{pupilsWhiteFemale:'max(pupilsWhiteFemale_indexed_long)'}");
+			l.add("json.facet", "{pupilsWhiteMale:'max(pupilsWhiteMale_indexed_long)'}");
+			l.add("json.facet", "{pupilsPacificIslanderFemale:'max(pupilsPacificIslanderFemale_indexed_long)'}");
+			l.add("json.facet", "{pupilsPacificIslanderMale:'max(pupilsPacificIslanderMale_indexed_long)'}");
+			l.add("json.facet", "{pupilsMultiRacialFemale:'max(pupilsMultiRacialFemale_indexed_long)'}");
+			l.add("json.facet", "{pupilsMultiRacialMale:'max(pupilsMultiRacialMale_indexed_long)'}");
+			l.add("json.facet", "{teachersMale:'max(teachersMale_indexed_long)'}");
+			l.add("json.facet", "{teachersFemale:'max(teachersFemale_indexed_long)'}");
+			l.add("json.facet", "{teachersWhiteTotal:'max(teachersWhiteTotal_indexed_long)'}");
+			l.add("json.facet", "{teachersBlackTotal:'max(teachersBlackTotal_indexed_long)'}");
+			l.add("json.facet", "{teachersOtherTotal:'max(teachersOtherTotal_indexed_long)'}");
+			l.add("json.facet", "{delinquentComplaintsTotal:'max(delinquentComplaintsTotal_indexed_long)'}");
+			l.add("json.facet", "{delinquentComplaintsAtSchool:'max(delinquentComplaintsAtSchool_indexed_long)'}");
+			l.add("json.facet", "{delinquentComplaintsAsian:'max(delinquentComplaintsAsian_indexed_long)'}");
+			l.add("json.facet", "{delinquentComplaintsBlack:'max(delinquentComplaintsBlack_indexed_long)'}");
+			l.add("json.facet", "{delinquentComplaintsLatinx:'max(delinquentComplaintsLatinx_indexed_long)'}");
+			l.add("json.facet", "{delinquentComplaintsMultiRacial:'max(delinquentComplaintsMultiRacial_indexed_long)'}");
+			l.add("json.facet", "{delinquentComplaintsIndigenous:'max(delinquentComplaintsIndigenous_indexed_long)'}");
+			l.add("json.facet", "{delinquentComplaintsWhite:'max(delinquentComplaintsWhite_indexed_long)'}");
+			l.add("json.facet", "{delinquentComplaintsPacificIslander:'max(delinquentComplaintsPacificIslander_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsTotal:'max(shortTermSuspensionsTotal_indexed_long)'}");
+			l.add("json.facet", "{longTermSuspensionsTotal:'max(longTermSuspensionsTotal_indexed_long)'}");
+			l.add("json.facet", "{expulsionsTotal:'max(expulsionsTotal_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsAsianFemale:'max(shortTermSuspensionsAsianFemale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsAsianMale:'max(shortTermSuspensionsAsianMale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsBlackFemale:'max(shortTermSuspensionsBlackFemale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsBlackMale:'max(shortTermSuspensionsBlackMale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsLatinxFemale:'max(shortTermSuspensionsLatinxFemale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsLatinxMale:'max(shortTermSuspensionsLatinxMale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsIndigenousFemale:'max(shortTermSuspensionsIndigenousFemale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsIndigenousMale:'max(shortTermSuspensionsIndigenousMale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsMultiRacialFemale:'max(shortTermSuspensionsMultiRacialFemale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsMultiRacialMale:'max(shortTermSuspensionsMultiRacialMale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsPacificIslanderFemale:'max(shortTermSuspensionsPacificIslanderFemale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsPacificIslanderMale:'max(shortTermSuspensionsPacificIslanderMale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsWhiteFemale:'max(shortTermSuspensionsWhiteFemale_indexed_long)'}");
+			l.add("json.facet", "{shortTermSuspensionsWhiteMale:'max(shortTermSuspensionsWhiteMale_indexed_long)'}");
+			l.add("json.facet", "{examsCollegeReadyGrades38OverallPercent:'avg(examsCollegeReadyGrades38OverallPercent_indexed_double)'}");
+			l.add("json.facet", "{examsCollegeReadyGrades38IndigenousPercent:'avg(examsCollegeReadyGrades38IndigenousPercent_indexed_double)'}");
+			l.add("json.facet", "{examsCollegeReadyGrades38AsianPercent:'avg(examsCollegeReadyGrades38AsianPercent_indexed_double)'}");
+			l.add("json.facet", "{examsCollegeReadyGrades38BlackPercent:'avg(examsCollegeReadyGrades38BlackPercent_indexed_double)'}");
+			l.add("json.facet", "{examsCollegeReadyGrades38LatinxPercent:'avg(examsCollegeReadyGrades38LatinxPercent_indexed_double)'}");
+			l.add("json.facet", "{examsCollegeReadyGrades38MultiRacialPercent:'avg(examsCollegeReadyGrades38MultiRacialPercent_indexed_double)'}");
+			l.add("json.facet", "{examsCollegeReadyGrades38PacificIslanderPercent:'avg(examsCollegeReadyGrades38PacificIslanderPercent_indexed_double)'}");
+			l.add("json.facet", "{examsCollegeReadyGrades38WhitePercent:'avg(examsCollegeReadyGrades38WhitePercent_indexed_double)'}");
+			l.add("json.facet", "{examsCollegeReadyGrades912OverallPercent:'avg(examsCollegeReadyGrades912OverallPercent_indexed_double)'}");
+			l.add("json.facet", "{examsCollegeReadyGrades912IndigenousPercent:'avg(examsCollegeReadyGrades912IndigenousPercent_indexed_double)'}");
+			l.add("json.facet", "{examsCollegeReadyGrades912AsianPercent:'avg(examsCollegeReadyGrades912AsianPercent_indexed_double)'}");
+			l.add("json.facet", "{examsCollegeReadyGrades912BlackPercent:'avg(examsCollegeReadyGrades912BlackPercent_indexed_double)'}");
+			l.add("json.facet", "{examsCollegeReadyGrades912LatinxPercent:'avg(examsCollegeReadyGrades912LatinxPercent_indexed_double)'}");
+			l.add("json.facet", "{examsCollegeReadyGrades912MultiRacialPercent:'avg(examsCollegeReadyGrades912MultiRacialPercent_indexed_double)'}");
+			l.add("json.facet", "{examsCollegeReadyGrades912PacificIslanderPercent:'avg(examsCollegeReadyGrades912PacificIslanderPercent_indexed_double)'}");
+			l.add("json.facet", "{examsCollegeReadyGrades912WhitePercent:'avg(examsCollegeReadyGrades912WhitePercent_indexed_double)'}");
+			l.add("json.facet", "{graduateWithin4YearsOverallPercent:'avg(graduateWithin4YearsOverallPercent_indexed_double)'}");
+			l.add("json.facet", "{graduateWithin4YearsIndigenousPercent:'avg(graduateWithin4YearsIndigenousPercent_indexed_double)'}");
+			l.add("json.facet", "{graduateWithin4YearsAsianPercent:'avg(graduateWithin4YearsAsianPercent_indexed_double)'}");
+			l.add("json.facet", "{graduateWithin4YearsBlackPercent:'avg(graduateWithin4YearsBlackPercent_indexed_double)'}");
+			l.add("json.facet", "{graduateWithin4YearsLatinxPercent:'avg(graduateWithin4YearsLatinxPercent_indexed_double)'}");
+			l.add("json.facet", "{graduateWithin4YearsMultiRacialPercent:'avg(graduateWithin4YearsMultiRacialPercent_indexed_double)'}");
+			l.add("json.facet", "{graduateWithin4YearsPacificIslanderPercent:'avg(graduateWithin4YearsPacificIslanderPercent_indexed_double)'}");
+			l.add("json.facet", "{graduateWithin4YearsWhitePercent:'avg(graduateWithin4YearsWhitePercent_indexed_double)'}");
+		}
+	}
+
+	protected void _stateFacets(Wrap<NestableJsonFacet> w) {
+		if(reportCardStartYear != null && agency_ != null && agency_.getAgencyIsState()) {
+			w.o(stateReportCardSearch.getQueryResponse().getJsonFacetingResponse());
+		}
+	}
+
 	////////////////////////////////////////////////////////
 	// http://apps.schools.nc.gov/ords/f?p=145:15:::NO::: //
 	////////////////////////////////////////////////////////
@@ -216,6 +411,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: pupils total
 	 */ 
 	protected void _pupilsTotal(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("pupilsTotal"));
+		}
 	}
 	@Override
 	public String strPupilsTotal() {
@@ -232,6 +430,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Indigenous female
 	 */ 
 	protected void _pupilsIndigenousFemale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("pupilsIndigenousFemale"));
+		}
 	}
 
 	/**   
@@ -244,6 +445,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Indigenous male
 	 */  
 	protected void _pupilsIndigenousMale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("pupilsIndigenousMale"));
+		}
 	}
 
 	/**   
@@ -286,6 +490,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Asian female
 	 */ 
 	protected void _pupilsAsianFemale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("pupilsAsianFemale"));
+		}
 	}
 
 	/**   
@@ -298,6 +505,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Asian male
 	 */ 
 	protected void _pupilsAsianMale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("pupilsAsianMale"));
+		}
 	}
 
 	/**   
@@ -340,6 +550,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Latinx female
 	 */ 
 	protected void _pupilsLatinxFemale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("pupilsLatinxFemale"));
+		}
 	}
 
 	/**   
@@ -352,6 +565,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Latinx male
 	 */ 
 	protected void _pupilsLatinxMale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("pupilsLatinxMale"));
+		}
 	}
 
 	/**   
@@ -394,6 +610,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Black female
 	 */ 
 	protected void _pupilsBlackFemale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("pupilsBlackFemale"));
+		}
 	}
 
 	/**   
@@ -406,6 +625,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Black male
 	 */ 
 	protected void _pupilsBlackMale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("pupilsBlackMale"));
+		}
 	}
 
 	/**   
@@ -448,6 +670,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: White female
 	 */ 
 	protected void _pupilsWhiteFemale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("pupilsWhiteFemale"));
+		}
 	}
 
 	/**   
@@ -460,6 +685,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: White male
 	 */ 
 	protected void _pupilsWhiteMale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("pupilsWhiteMale"));
+		}
 	}
 
 	/**   
@@ -502,6 +730,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Pacific Islander female
 	 */ 
 	protected void _pupilsPacificIslanderFemale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("pupilsPacificIslanderFemale"));
+		}
 	}
 
 	/**   
@@ -514,6 +745,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Pacific Islander male
 	 */ 
 	protected void _pupilsPacificIslanderMale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("pupilsPacificIslanderMale"));
+		}
 	}
 
 	/**   
@@ -556,6 +790,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Multi Racial female
 	 */ 
 	protected void _pupilsMultiRacialFemale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("pupilsMultiRacialFemale"));
+		}
 	}
 
 	/**   
@@ -568,6 +805,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Multi Racial male
 	 */ 
 	protected void _pupilsMultiRacialMale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("pupilsMultiRacialMale"));
+		}
 	}
 
 	/**   
@@ -639,6 +879,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: male teachers total
 	 */ 
 	protected void _teachersMale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("teachersMale"));
+		}
 	}
 
 	/**   
@@ -651,6 +894,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: female teachers total
 	 */ 
 	protected void _teachersFemale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("teachersFemale"));
+		}
 	}
 
 	/**   
@@ -680,6 +926,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: White teachers
 	 */ 
 	protected void _teachersWhiteTotal(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue(""));
+		}
 	}
 
 	/**   
@@ -709,6 +958,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Black teachers
 	 */ 
 	protected void _teachersBlackTotal(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("teachersBlackTotal"));
+		}
 	}
 
 	/**   
@@ -738,6 +990,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Other teachers
 	 */ 
 	protected void _teachersOtherTotal(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("teachersOtherTotal"));
+		}
 	}
 
 	/**   
@@ -771,6 +1026,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: delinquent complaints total
 	 */ 
 	protected void _delinquentComplaintsTotal(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("delinquentComplaintsTotal"));
+		}
 	}
 
 	/**   
@@ -783,6 +1041,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: delinquent complaints at school
 	 */ 
 	protected void _delinquentComplaintsAtSchool(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("delinquentComplaintsAtSchool"));
+		}
 	}
 
 	/**   
@@ -812,6 +1073,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Asian complaints
 	 */ 
 	protected void _delinquentComplaintsAsian(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("delinquentComplaintsAsian"));
+		}
 	}
 
 	/**   
@@ -841,6 +1105,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Black complaints
 	 */ 
 	protected void _delinquentComplaintsBlack(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("delinquentComplaintsBlack"));
+		}
 	}
 
 	/**   
@@ -870,6 +1137,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Latinx complaints
 	 */ 
 	protected void _delinquentComplaintsLatinx(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("delinquentComplaintsLatinx"));
+		}
 	}
 
 	/**   
@@ -899,6 +1169,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Multi Racial complaints
 	 */ 
 	protected void _delinquentComplaintsMultiRacial(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("delinquentComplaintsMultiRacial"));
+		}
 	}
 
 	/**   
@@ -928,6 +1201,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Indigenous complaints
 	 */ 
 	protected void _delinquentComplaintsIndigenous(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("delinquentComplaintsIndigenous"));
+		}
 	}
 
 	/**   
@@ -957,6 +1233,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: White complaints
 	 */ 
 	protected void _delinquentComplaintsWhite(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("delinquentComplaintsWhite"));
+		}
 	}
 
 	/**   
@@ -986,6 +1265,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Pacific Islander complaints
 	 */ 
 	protected void _delinquentComplaintsPacificIslander(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("delinquentComplaintsPacificIslander"));
+		}
 	}
 
 	/**   
@@ -1019,6 +1301,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspension rate
 	 */ 
 	protected void _shortTermSuspensionRate(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("shortTermSuspensionRate"));
+		}
 	}
 	@Override
 	public String strShortTermSuspensionRate() {
@@ -1035,6 +1320,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions total
 	 */ 
 	protected void _shortTermSuspensionsTotal(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsTotal"));
+		}
 	}
 	@Override
 	public String strShortTermSuspensionsTotal() {
@@ -1051,6 +1339,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: long-term suspensions total
 	 */ 
 	protected void _longTermSuspensionsTotal(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("longTermSuspensionsTotal"));
+		}
 	}
 	@Override
 	public String strLongTermSuspensionsTotal() {
@@ -1067,6 +1358,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: expulsions total
 	 */ 
 	protected void _expulsionsTotal(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("expulsionsTotal"));
+		}
 	}
 
 	/**   
@@ -1079,6 +1373,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions Asian female
 	 */ 
 	protected void _shortTermSuspensionsAsianFemale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsAsianFemale"));
+		}
 	}
 
 	/**  
@@ -1091,6 +1388,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions Asian male
 	 */ 
 	protected void _shortTermSuspensionsAsianMale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsAsianMale"));
+		}
 	}
 
 	/**   
@@ -1149,6 +1449,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions Black female
 	 */ 
 	protected void _shortTermSuspensionsBlackFemale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsBlackFemale"));
+		}
 	}
 
 	/**   
@@ -1161,6 +1464,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions Black male
 	 */ 
 	protected void _shortTermSuspensionsBlackMale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsBlackMale"));
+		}
 	}
 
 	/**   
@@ -1219,6 +1525,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions Latinx female
 	 */ 
 	protected void _shortTermSuspensionsLatinxFemale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsLatinxFemale"));
+		}
 	}
 
 	/**   
@@ -1231,6 +1540,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions Latinx male
 	 */ 
 	protected void _shortTermSuspensionsLatinxMale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsLatinxMale"));
+		}
 	}
 
 	/**   
@@ -1289,6 +1601,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions Indigenous female
 	 */ 
 	protected void _shortTermSuspensionsIndigenousFemale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsIndigenousFemale"));
+		}
 	}
 
 	/**   
@@ -1301,6 +1616,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions Indigenous male
 	 */  
 	protected void _shortTermSuspensionsIndigenousMale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsIndigenousMale"));
+		}
 	}
 
 	/**   
@@ -1359,6 +1677,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions Multi Racial female
 	 */ 
 	protected void _shortTermSuspensionsMultiRacialFemale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsMultiRacialFemale"));
+		}
 	}
 
 	/**   
@@ -1371,6 +1692,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions Multi Racial male
 	 */ 
 	protected void _shortTermSuspensionsMultiRacialMale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsMultiRacialMale"));
+		}
 	}
 
 	/**   
@@ -1429,6 +1753,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions Pacific Islander female
 	 */ 
 	protected void _shortTermSuspensionsPacificIslanderFemale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsPacificIslanderFemale"));
+		}
 	}
 
 	/**   
@@ -1441,6 +1768,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions Pacific Islander male
 	 */ 
 	protected void _shortTermSuspensionsPacificIslanderMale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsPacificIslanderMale"));
+		}
 	}
 
 	/**   
@@ -1499,6 +1829,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions White female
 	 */ 
 	protected void _shortTermSuspensionsWhiteFemale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsWhiteFemale"));
+		}
 	}
 
 	/**   
@@ -1511,6 +1844,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions White male
 	 */ 
 	protected void _shortTermSuspensionsWhiteMale(Wrap<Long> c) {
+		if(stateFacets != null) {
+			c.o((Long)stateFacets.getStatValue("shortTermSuspensionsWhiteMale"));
+		}
 	}
 
 	/**   
@@ -1588,7 +1924,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			c.o(new BigDecimal(shortTermSuspensionsBlackTotal).divide(new BigDecimal(shortTermSuspensionsWhiteTotal), 4, RoundingMode.HALF_UP).setScale(1, RoundingMode.HALF_UP));
 	}
 	@Override public String strShortTermSuspensionsBlackVsWhite() {
-		return shortTermSuspensionsBlackVsWhite == null ? "" : shortTermSuspensionsBlackVsWhite.setScale(1, RoundingMode.CEILING).toString();
+		return shortTermSuspensionsBlackVsWhite == null ? "?" : (shortTermSuspensionsBlackVsWhite.setScale(1, RoundingMode.CEILING).toString() + "X");
 	}
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1605,6 +1941,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 3-8 overall
 	 */ 
 	protected void _examsCollegeReadyGrades38OverallPercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("examsCollegeReadyGrades38OverallPercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strExamsCollegeReadyGrades38OverallPercent() {
 		return examsCollegeReadyGrades38OverallPercent == null ? "" : examsCollegeReadyGrades38OverallPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1620,6 +1959,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 3-8 first nation
 	 */ 
 	protected void _examsCollegeReadyGrades38IndigenousPercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("examsCollegeReadyGrades38IndigenousPercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strExamsCollegeReadyGrades38IndigenousPercent() {
 		return examsCollegeReadyGrades38IndigenousPercent == null ? "" : examsCollegeReadyGrades38IndigenousPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1635,6 +1977,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 3-8 asian
 	 */ 
 	protected void _examsCollegeReadyGrades38AsianPercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("examsCollegeReadyGrades38AsianPercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strExamsCollegeReadyGrades38AsianPercent() {
 		return examsCollegeReadyGrades38AsianPercent == null ? "" : examsCollegeReadyGrades38AsianPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1650,6 +1995,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 3-8 black
 	 */ 
 	protected void _examsCollegeReadyGrades38BlackPercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("examsCollegeReadyGrades38BlackPercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strExamsCollegeReadyGrades38BlackPercent() {
 		return examsCollegeReadyGrades38BlackPercent == null ? "" : examsCollegeReadyGrades38BlackPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1665,6 +2013,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 3-8 hispanic
 	 */ 
 	protected void _examsCollegeReadyGrades38LatinxPercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("examsCollegeReadyGrades38LatinxPercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strExamsCollegeReadyGrades38LatinxPercent() {
 		return examsCollegeReadyGrades38LatinxPercent == null ? "" : examsCollegeReadyGrades38LatinxPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1680,6 +2031,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 3-8 multi-racial
 	 */ 
 	protected void _examsCollegeReadyGrades38MultiRacialPercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("examsCollegeReadyGrades38MultiRacialPercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strExamsCollegeReadyGrades38MultiRacialPercent() {
 		return examsCollegeReadyGrades38MultiRacialPercent == null ? "" : examsCollegeReadyGrades38MultiRacialPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1695,6 +2049,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 3-8 pacific islander
 	 */ 
 	protected void _examsCollegeReadyGrades38PacificIslanderPercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("examsCollegeReadyGrades38PacificIslanderPercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strExamsCollegeReadyGrades38PacificIslanderPercent() {
 		return examsCollegeReadyGrades38PacificIslanderPercent == null ? "" : examsCollegeReadyGrades38PacificIslanderPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1710,6 +2067,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 3-8 white
 	 */ 
 	protected void _examsCollegeReadyGrades38WhitePercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("examsCollegeReadyGrades38WhitePercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strExamsCollegeReadyGrades38WhitePercent() {
 		return examsCollegeReadyGrades38WhitePercent == null ? "" : examsCollegeReadyGrades38WhitePercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1725,6 +2085,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 9-12 overall
 	 */ 
 	protected void _examsCollegeReadyGrades912OverallPercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("examsCollegeReadyGrades912OverallPercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strExamsCollegeReadyGrades912OverallPercent() {
 		return examsCollegeReadyGrades912OverallPercent == null ? "" : examsCollegeReadyGrades912OverallPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1740,6 +2103,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 9-12 first nation
 	 */ 
 	protected void _examsCollegeReadyGrades912IndigenousPercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("examsCollegeReadyGrades912IndigenousPercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strExamsCollegeReadyGrades912IndigenousPercent() {
 		return examsCollegeReadyGrades912IndigenousPercent == null ? "" : examsCollegeReadyGrades912IndigenousPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1755,6 +2121,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 9-12 asian
 	 */ 
 	protected void _examsCollegeReadyGrades912AsianPercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("examsCollegeReadyGrades912AsianPercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strExamsCollegeReadyGrades912AsianPercent() {
 		return examsCollegeReadyGrades912AsianPercent == null ? "" : examsCollegeReadyGrades912AsianPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1770,6 +2139,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 9-12 black
 	 */ 
 	protected void _examsCollegeReadyGrades912BlackPercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("examsCollegeReadyGrades912BlackPercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strExamsCollegeReadyGrades912BlackPercent() {
 		return examsCollegeReadyGrades912BlackPercent == null ? "" : examsCollegeReadyGrades912BlackPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1785,6 +2157,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 9-12 hispanic
 	 */ 
 	protected void _examsCollegeReadyGrades912LatinxPercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("examsCollegeReadyGrades912LatinxPercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strExamsCollegeReadyGrades912LatinxPercent() {
 		return examsCollegeReadyGrades912LatinxPercent == null ? "" : examsCollegeReadyGrades912LatinxPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1800,6 +2175,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 9-12 multi-racial
 	 */ 
 	protected void _examsCollegeReadyGrades912MultiRacialPercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("examsCollegeReadyGrades912MultiRacialPercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strExamsCollegeReadyGrades912MultiRacialPercent() {
 		return examsCollegeReadyGrades912MultiRacialPercent == null ? "" : examsCollegeReadyGrades912MultiRacialPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1815,6 +2193,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 9-12 pacific islander
 	 */ 
 	protected void _examsCollegeReadyGrades912PacificIslanderPercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("examsCollegeReadyGrades912PacificIslanderPercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strExamsCollegeReadyGrades912PacificIslanderPercent() {
 		return examsCollegeReadyGrades912PacificIslanderPercent == null ? "" : examsCollegeReadyGrades912PacificIslanderPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1830,6 +2211,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: College ready exams grades 9-12 white
 	 */ 
 	protected void _examsCollegeReadyGrades912WhitePercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("examsCollegeReadyGrades912WhitePercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strExamsCollegeReadyGrades912WhitePercent() {
 		return examsCollegeReadyGrades912WhitePercent == null ? "" : examsCollegeReadyGrades912WhitePercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1845,6 +2229,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Graduate HS within 4 years overall
 	 */ 
 	protected void _graduateWithin4YearsOverallPercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("graduateWithin4YearsOverallPercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strGraduateWithin4YearsOverallPercent() {
 		return graduateWithin4YearsOverallPercent == null ? "" : graduateWithin4YearsOverallPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1860,6 +2247,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Graduate HS within 4 years first nation
 	 */ 
 	protected void _graduateWithin4YearsIndigenousPercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("graduateWithin4YearsIndigenousPercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strGraduateWithin4YearsIndigenousPercent() {
 		return graduateWithin4YearsIndigenousPercent == null ? "" : graduateWithin4YearsIndigenousPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1875,6 +2265,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Graduate HS within 4 years asian
 	 */ 
 	protected void _graduateWithin4YearsAsianPercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("graduateWithin4YearsAsianPercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strGraduateWithin4YearsAsianPercent() {
 		return graduateWithin4YearsAsianPercent == null ? "" : graduateWithin4YearsAsianPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1890,6 +2283,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Graduate HS within 4 years black
 	 */ 
 	protected void _graduateWithin4YearsBlackPercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("graduateWithin4YearsBlackPercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strGraduateWithin4YearsBlackPercent() {
 		return graduateWithin4YearsBlackPercent == null ? "" : graduateWithin4YearsBlackPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1905,6 +2301,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Graduate HS within 4 years hispanic
 	 */ 
 	protected void _graduateWithin4YearsLatinxPercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("graduateWithin4YearsLatinxPercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strGraduateWithin4YearsLatinxPercent() {
 		return graduateWithin4YearsLatinxPercent == null ? "" : graduateWithin4YearsLatinxPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1920,6 +2319,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Graduate HS within 4 years multi-racial
 	 */ 
 	protected void _graduateWithin4YearsMultiRacialPercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("graduateWithin4YearsMultiRacialPercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strGraduateWithin4YearsMultiRacialPercent() {
 		return graduateWithin4YearsMultiRacialPercent == null ? "" : graduateWithin4YearsMultiRacialPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1935,6 +2337,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Graduate HS within 4 years pacific islander
 	 */ 
 	protected void _graduateWithin4YearsPacificIslanderPercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("graduateWithin4YearsPacificIslanderPercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strGraduateWithin4YearsPacificIslanderPercent() {
 		return graduateWithin4YearsPacificIslanderPercent == null ? "" : graduateWithin4YearsPacificIslanderPercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1950,6 +2355,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: Graduate HS within 4 years white
 	 */ 
 	protected void _graduateWithin4YearsWhitePercent(Wrap<BigDecimal> c) {
+		if(stateFacets != null) {
+			c.o(new BigDecimal((Double)stateFacets.getStatValue("graduateWithin4YearsWhitePercent")).setScale(2, RoundingMode.HALF_UP));
+		}
 	}
 	@Override public String strGraduateWithin4YearsWhitePercent() {
 		return graduateWithin4YearsWhitePercent == null ? "" : graduateWithin4YearsWhitePercent.setScale(1, RoundingMode.CEILING).toString();
@@ -1962,11 +2370,11 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions black vs white
 	 */ 
 	protected void _examsCollegeReadyGrades38BlackVsWhite(Wrap<BigDecimal> c) {
-		if(examsCollegeReadyGrades38BlackPercent != null  && examsCollegeReadyGrades38WhitePercent != null)
+		if(examsCollegeReadyGrades38BlackPercent != null  && examsCollegeReadyGrades38WhitePercent != null && examsCollegeReadyGrades38WhitePercent.compareTo(BigDecimal.ZERO) != 0)
 			c.o(examsCollegeReadyGrades38WhitePercent.divide(examsCollegeReadyGrades38BlackPercent, 4, RoundingMode.HALF_UP).setScale(1, RoundingMode.HALF_UP));
 	}
 	@Override public String strExamsCollegeReadyGrades38BlackVsWhite() {
-		return examsCollegeReadyGrades38BlackVsWhite == null ? "" : examsCollegeReadyGrades38BlackVsWhite.setScale(1, RoundingMode.CEILING).toString();
+		return examsCollegeReadyGrades38BlackVsWhite == null ? "?" : (examsCollegeReadyGrades38BlackVsWhite.setScale(1, RoundingMode.CEILING).toString() + "X");
 	}
 
 	/** 
@@ -1976,99 +2384,11 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions Latinx vs white
 	 */
 	protected void _examsCollegeReadyGrades38LatinxVsWhite(Wrap<BigDecimal> c) {
-		if(examsCollegeReadyGrades38LatinxPercent != null  && examsCollegeReadyGrades38WhitePercent != null)
+		if(examsCollegeReadyGrades38LatinxPercent != null  && examsCollegeReadyGrades38WhitePercent != null && examsCollegeReadyGrades38WhitePercent.compareTo(BigDecimal.ZERO) != 0)
 			c.o(examsCollegeReadyGrades38WhitePercent.divide(examsCollegeReadyGrades38LatinxPercent, 4, RoundingMode.HALF_UP).setScale(1, RoundingMode.HALF_UP));
 	}
 	@Override public String strExamsCollegeReadyGrades38LatinxVsWhite() {
-		return examsCollegeReadyGrades38LatinxVsWhite == null ? "" : examsCollegeReadyGrades38LatinxVsWhite.setScale(1, RoundingMode.CEILING).toString();
-	}
-
-	/**  
-	 * {@inheritDoc}
-	 * Indexed: true
-	 * Stored: true
-	 */ 
-	protected void _stateKey(Wrap<Long> c) {
-		if(agency_ != null)
-			c.o(agency_.getStateKey());
-	}
-
-	/**   
-	 * {@inheritDoc}
-	 * Indexed: true
-	 * Stored: true
-	 */ 
-	protected void _stateId(Wrap<String> c) {
-		if(agency_ != null)
-			c.o(agency_.getStateId());
-	}
-
-	/**   
-	 * {@inheritDoc}
-	 * Indexed: true
-	 * Stored: true
-	 */ 
-	protected void _agencyId(Wrap<String> c) {
-		if(agency_ != null)
-			c.o(agency_.getObjectId());
-	}
-
-	/**   
-	 * {@inheritDoc}
-	 * Indexed: true
-	 * Stored: true
-	 */ 
-	protected void _stateName(Wrap<String> c) {
-		if(agency_ != null)
-			c.o(agency_.getStateName());
-	}
-
-	/**   
-	 * {@inheritDoc}
-	 * Indexed: true
-	 * Stored: true
-	 */ 
-	protected void _stateAbbreviation(Wrap<String> c) {
-		if(agency_ != null)
-			c.o(agency_.getStateAbbreviation());
-	}
-
-	/**   
-	 * {@inheritDoc}
-	 * Indexed: true
-	 * Stored: true
-	 */ 
-	protected void _agencyOnlyName(Wrap<String> c) {
-		if(agency_ != null)
-			c.o(agency_.getAgencyOnlyName());
-	}
-
-	/**  
-	 * {@inheritDoc}
-	 * Indexed: true
-	 * Stored: true
-	 */ 
-	protected void _agencyName(Wrap<String> c) {
-		if(agency_ != null)
-			c.o(agency_.getAgencyName());
-	}
-
-	/**   
-	 * {@inheritDoc}
-	 * Stored: true
-	 */ 
-	protected void _agencyCoords(Wrap<String> c) {
-		if(agency_ != null)
-			c.o(agency_.getImageCoords());
-	}
-
-	/**   
-	 * {@inheritDoc}
-	 * Stored: true
-	 */ 
-	protected void _agencyLeft(Wrap<Integer> c) {
-		if(agency_ != null)
-			c.o(agency_.getImageLeft());
+		return examsCollegeReadyGrades38LatinxVsWhite == null ? "?" : (examsCollegeReadyGrades38LatinxVsWhite.setScale(1, RoundingMode.CEILING).toString() + "X");
 	}
 
 	/**   
@@ -2216,8 +2536,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 				plot.setLabelShadowPaint(null);
 				plot.setLabelOutlinePaint(null);
 				plot.setShadowPaint(null);
+				plot.setInteriorGap(.15);
 				plot.setSectionDepth(0.5);
-				plot.setSimpleLabelOffset(new RectangleInsets(UnitType.RELATIVE, 0.12, 0.12, 0.12, 0.12));
+				plot.setSimpleLabelOffset(new RectangleInsets(UnitType.RELATIVE, -0.10, -0.10, -0.10, -0.10));
 				plot.setSectionPaint(dataset.getKey(0), Color.decode("#a84039"));
 				plot.setSectionPaint(dataset.getKey(1), Color.decode("#e97000"));
 				plot.setSectionPaint(dataset.getKey(2), Color.decode("#00b0f0"));
@@ -2299,8 +2620,9 @@ public class ReportCard extends ReportCardGen<Cluster> {
 				plot.setLabelShadowPaint(null);
 				plot.setLabelOutlinePaint(null);
 				plot.setShadowPaint(null);
+				plot.setInteriorGap(.15);
 				plot.setSectionDepth(0.5);
-				plot.setSimpleLabelOffset(new RectangleInsets(UnitType.RELATIVE, 0.12, 0.12, 0.12, 0.12));
+				plot.setSimpleLabelOffset(new RectangleInsets(UnitType.RELATIVE, -0.10, -0.10, -0.10, -0.10));
 				plot.setSectionPaint(dataset.getKey(0), Color.decode("#a84039"));
 				plot.setSectionPaint(dataset.getKey(1), Color.decode("#e97000"));
 				plot.setSectionPaint(dataset.getKey(2), Color.decode("#00b0f0"));
