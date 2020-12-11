@@ -1925,7 +1925,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			c.o(new BigDecimal(shortTermSuspensionsBlackTotal).divide(new BigDecimal(shortTermSuspensionsWhiteTotal), 4, RoundingMode.HALF_UP).setScale(1, RoundingMode.HALF_UP));
 	}
 	@Override public String strShortTermSuspensionsBlackVsWhite() {
-		return shortTermSuspensionsBlackVsWhite == null ? "?" : (shortTermSuspensionsBlackVsWhite.setScale(1, RoundingMode.CEILING).toString() + "X");
+		return (shortTermSuspensionsBlackVsWhite == null || shortTermSuspensionsBlackVsWhite.compareTo(BigDecimal.ZERO) == 0) ? "?" : (shortTermSuspensionsBlackVsWhite.setScale(1, RoundingMode.CEILING).toString() + "X");
 	}
 
 	/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -2375,7 +2375,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			c.o(examsCollegeReadyGrades38WhitePercent.divide(examsCollegeReadyGrades38BlackPercent, 4, RoundingMode.HALF_UP).setScale(1, RoundingMode.HALF_UP));
 	}
 	@Override public String strExamsCollegeReadyGrades38BlackVsWhite() {
-		return examsCollegeReadyGrades38BlackVsWhite == null ? "?" : (examsCollegeReadyGrades38BlackVsWhite.setScale(1, RoundingMode.CEILING).toString() + "X");
+		return (examsCollegeReadyGrades38BlackVsWhite == null || examsCollegeReadyGrades38BlackVsWhite.compareTo(BigDecimal.ZERO) == 0) ? "?" : (examsCollegeReadyGrades38BlackVsWhite.setScale(1, RoundingMode.CEILING).toString() + "X");
 	}
 
 	/** 
@@ -2389,7 +2389,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 			c.o(examsCollegeReadyGrades38WhitePercent.divide(examsCollegeReadyGrades38LatinxPercent, 4, RoundingMode.HALF_UP).setScale(1, RoundingMode.HALF_UP));
 	}
 	@Override public String strExamsCollegeReadyGrades38LatinxVsWhite() {
-		return examsCollegeReadyGrades38LatinxVsWhite == null ? "?" : (examsCollegeReadyGrades38LatinxVsWhite.setScale(1, RoundingMode.CEILING).toString() + "X");
+		return (examsCollegeReadyGrades38LatinxVsWhite == null || examsCollegeReadyGrades38LatinxVsWhite.compareTo(BigDecimal.ZERO) == 0) ? "?" : (examsCollegeReadyGrades38LatinxVsWhite.setScale(1, RoundingMode.CEILING).toString() + "X");
 	}
 
 	/**   
