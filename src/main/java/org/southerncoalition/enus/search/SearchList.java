@@ -161,6 +161,10 @@ public class SearchList<DEV> extends SearchListGen<DEV> {
 		return solrQuery.getTerms();
 	}
 
+	public SolrQuery addField(String field) {
+		return solrQuery.addField(field);
+	}
+
 	public SolrQuery addTermsField(String field) {
 		return solrQuery.addTermsField(field);
 	}

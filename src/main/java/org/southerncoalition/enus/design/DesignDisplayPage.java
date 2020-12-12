@@ -2,6 +2,7 @@ package org.southerncoalition.enus.design;
 
 import java.time.LocalDate;
 import java.time.temporal.TemporalAdjusters;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
@@ -93,6 +94,7 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 			l.addFilterQuery("agencyKey_indexed_long:[* TO *]");
 	
 			Boolean filtered = false;
+			Boolean filteredAgencyId = false;
 			for(String var : siteRequest_.getRequestVars().keySet()) {
 				String val = siteRequest_.getRequestVars().get(var);
 				if(!"design".equals(var) && StringUtils.isNotBlank(val)) {
@@ -100,6 +102,8 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 					if(varIndexed != null) {
 						filtered = true;
 						l.addFilterQuery(varIndexed + ":" + ClientUtils.escapeQueryChars(val));
+						if("agencyId_indexed_string".equals(varIndexed))
+							filteredAgencyId = true;
 					}
 				}
 			}
@@ -107,6 +111,100 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 				l.setRows(1000);
 			else
 				l.setRows(0);
+
+			if(!filteredAgencyId) {
+
+				l.addField("reportCardStartYear_stored_int");
+				l.addField("reportCardEndYear_stored_int");
+				l.addField("agencyCoords_stored_string");
+				l.addField("imageTop_stored_int");
+				l.addField("imageLeft_stored_int");
+				l.addField("agencyName_stored_string");
+				l.addField("reportCardYearsStr_stored_string");
+				l.addField("agencyId_stored_string");
+				l.addField("agencyName_stored_string");
+				l.addField("pupilsTotal_stored_long");
+				l.addField("pupilsBlackPercent_stored_double");
+				l.addField("pupilsLatinxPercent_stored_double");
+				l.addField("pupilsWhitePercent_stored_double");
+				l.addField("examsCollegeReadyGrades38BlackVsWhite_stored_double");
+				l.addField("examsCollegeReadyGrades38LatinxVsWhite_stored_double");
+				l.addField("delinquentComplaintsAtSchoolPercent_stored_double");
+				l.addField("shortTermSuspensionsBlackPercent_stored_double");
+				l.addField("shortTermSuspensionsLatinxPercent_stored_double");
+				l.addField("shortTermSuspensionsWhitePercent_stored_double");
+				l.addField("shortTermSuspensionsBlackVsWhite_stored_double");
+				l.addField("pupilsIndigenousFemale_stored_long");
+				l.addField("pupilsIndigenousMale_stored_long");
+				l.addField("pupilsAsianFemale_stored_long");
+				l.addField("pupilsAsianMale_stored_long");
+				l.addField("pupilsLatinxFemale_stored_long");
+				l.addField("pupilsLatinxMale_stored_long");
+				l.addField("pupilsBlackFemale_stored_long");
+				l.addField("pupilsBlackMale_stored_long");
+				l.addField("pupilsWhiteFemale_stored_long");
+				l.addField("pupilsWhiteMale_stored_long");
+				l.addField("pupilsPacificIslanderFemale_stored_long");
+				l.addField("pupilsPacificIslanderMale_stored_long");
+				l.addField("pupilsMultiRacialFemale_stored_long");
+				l.addField("pupilsMultiRacialMale_stored_long");
+				l.addField("teachersMale_stored_long");
+				l.addField("teachersFemale_stored_long");
+				l.addField("teachersWhiteTotal_stored_long");
+				l.addField("teachersBlackTotal_stored_long");
+				l.addField("teachersOtherTotal_stored_long");
+				l.addField("delinquentComplaintsTotal_stored_long");
+				l.addField("delinquentComplaintsAtSchool_stored_long");
+				l.addField("delinquentComplaintsAsian_stored_long");
+				l.addField("delinquentComplaintsBlack_stored_long");
+				l.addField("delinquentComplaintsLatinx_stored_long");
+				l.addField("delinquentComplaintsMultiRacial_stored_long");
+				l.addField("delinquentComplaintsIndigenous_stored_long");
+				l.addField("delinquentComplaintsWhite_stored_long");
+				l.addField("delinquentComplaintsPacificIslander_stored_long");
+				l.addField("shortTermSuspensionRate_stored_long");
+				l.addField("shortTermSuspensionsTotal_stored_long");
+				l.addField("longTermSuspensionsTotal_stored_long");
+				l.addField("expulsionsTotal_stored_long");
+				l.addField("shortTermSuspensionsAsianFemale_stored_long");
+				l.addField("shortTermSuspensionsAsianMale_stored_long");
+				l.addField("shortTermSuspensionsBlackFemale_stored_long");
+				l.addField("shortTermSuspensionsBlackMale_stored_long");
+				l.addField("shortTermSuspensionsLatinxFemale_stored_long");
+				l.addField("shortTermSuspensionsLatinxMale_stored_long");
+				l.addField("shortTermSuspensionsIndigenousFemale_stored_long");
+				l.addField("shortTermSuspensionsIndigenousMale_stored_long");
+				l.addField("shortTermSuspensionsMultiRacialFemale_stored_long");
+				l.addField("shortTermSuspensionsMultiRacialMale_stored_long");
+				l.addField("shortTermSuspensionsPacificIslanderFemale_stored_long");
+				l.addField("shortTermSuspensionsPacificIslanderMale_stored_long");
+				l.addField("shortTermSuspensionsWhiteFemale_stored_long");
+				l.addField("shortTermSuspensionsWhiteMale_stored_long");
+				l.addField("examsCollegeReadyGrades38OverallPercent_stored_double");
+				l.addField("examsCollegeReadyGrades38IndigenousPercent_stored_double");
+				l.addField("examsCollegeReadyGrades38AsianPercent_stored_double");
+				l.addField("examsCollegeReadyGrades38BlackPercent_stored_double");
+				l.addField("examsCollegeReadyGrades38LatinxPercent_stored_double");
+				l.addField("examsCollegeReadyGrades38MultiRacialPercent_stored_double");
+				l.addField("examsCollegeReadyGrades38PacificIslanderPercent_stored_double");
+				l.addField("examsCollegeReadyGrades38WhitePercent_stored_double");
+				l.addField("examsCollegeReadyGrades912OverallPercent_stored_double");
+				l.addField("examsCollegeReadyGrades912IndigenousPercent_stored_double");
+				l.addField("examsCollegeReadyGrades912AsianPercent_stored_double");
+				l.addField("examsCollegeReadyGrades912BlackPercent_stored_double");
+				l.addField("examsCollegeReadyGrades912LatinxPercent_stored_double");
+				l.addField("examsCollegeReadyGrades912MultiRacialPercent_stored_double");
+				l.addField("examsCollegeReadyGrades912PacificIslanderPercent_stored_double");
+				l.addField("examsCollegeReadyGrades912WhitePercent_stored_double");
+				l.addField("graduateWithin4YearsOverallPercent_stored_double");
+				l.addField("graduateWithin4YearsIndigenousPercent_stored_double");
+				l.addField("graduateWithin4YearsAsianPercent_stored_double");
+				l.addField("graduateWithin4YearsBlackPercent_stored_double");
+				l.addField("graduateWithin4YearsLatinxPercent_stored_double");
+				l.addField("graduateWithin4YearsMultiRacialPercent_stored_double");
+				l.addField("graduateWithin4YearsPacificIslanderPercent_stored_double");
+				l.addField("graduateWithin4YearsWhitePercent_stored_double");
+			}
 		}
 	}
 
