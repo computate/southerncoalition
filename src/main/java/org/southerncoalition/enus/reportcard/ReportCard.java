@@ -1921,8 +1921,8 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * DisplayName.enUS: short-term suspensions black vs white
 	 */ 
 	protected void _shortTermSuspensionsBlackVsWhite(Wrap<BigDecimal> c) {
-		if(shortTermSuspensionsBlackTotal != null  && shortTermSuspensionsWhiteTotal != null && shortTermSuspensionsWhiteTotal > 0)
-			c.o(new BigDecimal(shortTermSuspensionsBlackTotal).divide(new BigDecimal(shortTermSuspensionsWhiteTotal), 4, RoundingMode.HALF_UP).setScale(1, RoundingMode.HALF_UP));
+		if(shortTermSuspensionsBlackRate != null  && shortTermSuspensionsWhiteRate != null && shortTermSuspensionsWhiteRate.compareTo(BigDecimal.ZERO) != 0)
+			c.o(shortTermSuspensionsBlackRate.divide(shortTermSuspensionsWhiteRate, 4, RoundingMode.HALF_UP).setScale(1, RoundingMode.CEILING));
 	}
 	@Override public String strShortTermSuspensionsBlackVsWhite() {
 		return (shortTermSuspensionsBlackVsWhite == null || shortTermSuspensionsBlackVsWhite.compareTo(BigDecimal.ZERO) == 0) ? "?" : (shortTermSuspensionsBlackVsWhite.setScale(1, RoundingMode.CEILING).toString() + "X");
@@ -1957,7 +1957,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 27
 	 * HtmlCell: 2
-	 * DisplayName.enUS: College ready exams grades 3-8 first nation
+	 * DisplayName.enUS: College ready exams grades 3-8 indigenous
 	 */ 
 	protected void _examsCollegeReadyGrades38IndigenousPercent(Wrap<BigDecimal> c) {
 		if(stateFacets != null) {
@@ -2011,7 +2011,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 28
 	 * HtmlCell: 1
-	 * DisplayName.enUS: College ready exams grades 3-8 hispanic
+	 * DisplayName.enUS: College ready exams grades 3-8 latinx
 	 */ 
 	protected void _examsCollegeReadyGrades38LatinxPercent(Wrap<BigDecimal> c) {
 		if(stateFacets != null) {
@@ -2101,7 +2101,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 29
 	 * HtmlCell: 2
-	 * DisplayName.enUS: College ready exams grades 9-12 first nation
+	 * DisplayName.enUS: College ready exams grades 9-12 indigenous
 	 */ 
 	protected void _examsCollegeReadyGrades912IndigenousPercent(Wrap<BigDecimal> c) {
 		if(stateFacets != null) {
@@ -2155,7 +2155,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 30
 	 * HtmlCell: 1
-	 * DisplayName.enUS: College ready exams grades 9-12 hispanic
+	 * DisplayName.enUS: College ready exams grades 9-12 latinx
 	 */ 
 	protected void _examsCollegeReadyGrades912LatinxPercent(Wrap<BigDecimal> c) {
 		if(stateFacets != null) {
@@ -2245,7 +2245,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 31
 	 * HtmlCell: 2
-	 * DisplayName.enUS: Graduate HS within 4 years first nation
+	 * DisplayName.enUS: Graduate HS within 4 years indigenous
 	 */ 
 	protected void _graduateWithin4YearsIndigenousPercent(Wrap<BigDecimal> c) {
 		if(stateFacets != null) {
@@ -2299,7 +2299,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * Define: true
 	 * HtmlRow: 32
 	 * HtmlCell: 1
-	 * DisplayName.enUS: Graduate HS within 4 years hispanic
+	 * DisplayName.enUS: Graduate HS within 4 years latinx
 	 */ 
 	protected void _graduateWithin4YearsLatinxPercent(Wrap<BigDecimal> c) {
 		if(stateFacets != null) {
@@ -2368,7 +2368,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * {@inheritDoc}
 	 * Indexed: true
 	 * Stored: true
-	 * DisplayName.enUS: short-term suspensions black vs white
+	 * DisplayName.enUS: exams college ready grades 3-8 black vs white
 	 */ 
 	protected void _examsCollegeReadyGrades38BlackVsWhite(Wrap<BigDecimal> c) {
 		if(examsCollegeReadyGrades38BlackPercent != null  && examsCollegeReadyGrades38WhitePercent != null && examsCollegeReadyGrades38WhitePercent.compareTo(BigDecimal.ZERO) != 0)
@@ -2382,7 +2382,7 @@ public class ReportCard extends ReportCardGen<Cluster> {
 	 * {@inheritDoc}
 	 * Indexed: true
 	 * Stored: true
-	 * DisplayName.enUS: short-term suspensions Latinx vs white
+	 * DisplayName.enUS: exams colege ready grades 3-8 Latinx vs white
 	 */
 	protected void _examsCollegeReadyGrades38LatinxVsWhite(Wrap<BigDecimal> c) {
 		if(examsCollegeReadyGrades38LatinxPercent != null  && examsCollegeReadyGrades38WhitePercent != null && examsCollegeReadyGrades38WhitePercent.compareTo(BigDecimal.ZERO) != 0)

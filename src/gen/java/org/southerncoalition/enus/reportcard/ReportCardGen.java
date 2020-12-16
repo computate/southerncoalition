@@ -14942,7 +14942,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageExamsCollegeReadyGrades38IndigenousPercent() {
-		return "College ready exams grades 3-8 first nation";
+		return "College ready exams grades 3-8 indigenous";
 	}
 
 	public String htmTooltipExamsCollegeReadyGrades38IndigenousPercent() {
@@ -14961,7 +14961,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				) {
 			e("input")
 				.a("type", "text")
-				.a("placeholder", "College ready exams grades 3-8 first nation")
+				.a("placeholder", "College ready exams grades 3-8 indigenous")
 				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades38IndigenousPercent");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
 					a("class", "setExamsCollegeReadyGrades38IndigenousPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38IndigenousPercent w3-input w3-border ");
@@ -14989,7 +14989,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades38IndigenousPercent").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades38IndigenousPercent").a("class", "").f().sx("College ready exams grades 3-8 first nation").g("label");
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades38IndigenousPercent").a("class", "").f().sx("College ready exams grades 3-8 indigenous").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -15419,7 +15419,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageExamsCollegeReadyGrades38LatinxPercent() {
-		return "College ready exams grades 3-8 hispanic";
+		return "College ready exams grades 3-8 latinx";
 	}
 
 	public String htmTooltipExamsCollegeReadyGrades38LatinxPercent() {
@@ -15438,7 +15438,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				) {
 			e("input")
 				.a("type", "text")
-				.a("placeholder", "College ready exams grades 3-8 hispanic")
+				.a("placeholder", "College ready exams grades 3-8 latinx")
 				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades38LatinxPercent");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
 					a("class", "setExamsCollegeReadyGrades38LatinxPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades38LatinxPercent w3-input w3-border ");
@@ -15466,7 +15466,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades38LatinxPercent").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades38LatinxPercent").a("class", "").f().sx("College ready exams grades 3-8 hispanic").g("label");
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades38LatinxPercent").a("class", "").f().sx("College ready exams grades 3-8 latinx").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -16214,7 +16214,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageExamsCollegeReadyGrades912IndigenousPercent() {
-		return "College ready exams grades 9-12 first nation";
+		return "College ready exams grades 9-12 indigenous";
 	}
 
 	public String htmTooltipExamsCollegeReadyGrades912IndigenousPercent() {
@@ -16233,7 +16233,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				) {
 			e("input")
 				.a("type", "text")
-				.a("placeholder", "College ready exams grades 9-12 first nation")
+				.a("placeholder", "College ready exams grades 9-12 indigenous")
 				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades912IndigenousPercent");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
 					a("class", "setExamsCollegeReadyGrades912IndigenousPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912IndigenousPercent w3-input w3-border ");
@@ -16261,7 +16261,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades912IndigenousPercent").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades912IndigenousPercent").a("class", "").f().sx("College ready exams grades 9-12 first nation").g("label");
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades912IndigenousPercent").a("class", "").f().sx("College ready exams grades 9-12 indigenous").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -16691,7 +16691,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageExamsCollegeReadyGrades912LatinxPercent() {
-		return "College ready exams grades 9-12 hispanic";
+		return "College ready exams grades 9-12 latinx";
 	}
 
 	public String htmTooltipExamsCollegeReadyGrades912LatinxPercent() {
@@ -16710,7 +16710,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				) {
 			e("input")
 				.a("type", "text")
-				.a("placeholder", "College ready exams grades 9-12 hispanic")
+				.a("placeholder", "College ready exams grades 9-12 latinx")
 				.a("id", classApiMethodMethod, "_examsCollegeReadyGrades912LatinxPercent");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
 					a("class", "setExamsCollegeReadyGrades912LatinxPercent classReportCard inputReportCard", pk, "ExamsCollegeReadyGrades912LatinxPercent w3-input w3-border ");
@@ -16738,7 +16738,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardExamsCollegeReadyGrades912LatinxPercent").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades912LatinxPercent").a("class", "").f().sx("College ready exams grades 9-12 hispanic").g("label");
+							e("label").a("for", classApiMethodMethod, "_examsCollegeReadyGrades912LatinxPercent").a("class", "").f().sx("College ready exams grades 9-12 latinx").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -17486,7 +17486,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageGraduateWithin4YearsIndigenousPercent() {
-		return "Graduate HS within 4 years first nation";
+		return "Graduate HS within 4 years indigenous";
 	}
 
 	public String htmTooltipGraduateWithin4YearsIndigenousPercent() {
@@ -17505,7 +17505,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				) {
 			e("input")
 				.a("type", "text")
-				.a("placeholder", "Graduate HS within 4 years first nation")
+				.a("placeholder", "Graduate HS within 4 years indigenous")
 				.a("id", classApiMethodMethod, "_graduateWithin4YearsIndigenousPercent");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
 					a("class", "setGraduateWithin4YearsIndigenousPercent classReportCard inputReportCard", pk, "GraduateWithin4YearsIndigenousPercent w3-input w3-border ");
@@ -17533,7 +17533,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardGraduateWithin4YearsIndigenousPercent").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_graduateWithin4YearsIndigenousPercent").a("class", "").f().sx("Graduate HS within 4 years first nation").g("label");
+							e("label").a("for", classApiMethodMethod, "_graduateWithin4YearsIndigenousPercent").a("class", "").f().sx("Graduate HS within 4 years indigenous").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -17963,7 +17963,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageGraduateWithin4YearsLatinxPercent() {
-		return "Graduate HS within 4 years hispanic";
+		return "Graduate HS within 4 years latinx";
 	}
 
 	public String htmTooltipGraduateWithin4YearsLatinxPercent() {
@@ -17982,7 +17982,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				) {
 			e("input")
 				.a("type", "text")
-				.a("placeholder", "Graduate HS within 4 years hispanic")
+				.a("placeholder", "Graduate HS within 4 years latinx")
 				.a("id", classApiMethodMethod, "_graduateWithin4YearsLatinxPercent");
 				if("Page".equals(classApiMethodMethod) || "PATCH".equals(classApiMethodMethod)) {
 					a("class", "setGraduateWithin4YearsLatinxPercent classReportCard inputReportCard", pk, "GraduateWithin4YearsLatinxPercent w3-input w3-border ");
@@ -18010,7 +18010,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 				{ e("div").a("id", "suggest", classApiMethodMethod, "ReportCardGraduateWithin4YearsLatinxPercent").f();
 					{ e("div").a("class", "w3-card ").f();
 						{ e("div").a("class", "w3-cell-row w3-pale-green ").f();
-							e("label").a("for", classApiMethodMethod, "_graduateWithin4YearsLatinxPercent").a("class", "").f().sx("Graduate HS within 4 years hispanic").g("label");
+							e("label").a("for", classApiMethodMethod, "_graduateWithin4YearsLatinxPercent").a("class", "").f().sx("Graduate HS within 4 years latinx").g("label");
 						} g("div");
 						{ e("div").a("class", "w3-cell-row w3-padding ").f();
 							{ e("div").a("class", "w3-cell ").f();
@@ -18599,7 +18599,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageExamsCollegeReadyGrades38BlackVsWhite() {
-		return "short-term suspensions black vs white";
+		return "exams college ready grades 3-8 black vs white";
 	}
 
 	public String htmTooltipExamsCollegeReadyGrades38BlackVsWhite() {
@@ -18692,7 +18692,7 @@ public abstract class ReportCardGen<DEV> extends Cluster {
 	}
 
 	public String nomAffichageExamsCollegeReadyGrades38LatinxVsWhite() {
-		return "short-term suspensions Latinx vs white";
+		return "exams colege ready grades 3-8 Latinx vs white";
 	}
 
 	public String htmTooltipExamsCollegeReadyGrades38LatinxVsWhite() {
