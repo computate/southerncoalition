@@ -63,7 +63,7 @@ public class DesignDisplayPage extends DesignDisplayPageGen<DesignDisplayGenPage
 		if(o == null) {
 			LocalDate now = LocalDate.now();
 			LocalDate yearEndDate = now.with(TemporalAdjusters.firstDayOfMonth()).withMonth(6);
-			yearEndDate = now.isBefore(yearEndDate) ? yearEndDate.minusYears(1) : yearEndDate.minusYears(2);
+			yearEndDate = now.isBefore(yearEndDate) ? yearEndDate.minusYears(3) : yearEndDate.minusYears(2);
 			o = yearEndDate.getYear();
 		}
 		c.o(o);
